@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-12",
+  "source": "D:/dev/nottgard/games/godot/nottgard-survivors",
+  "destinations": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc",
+      "entries": []
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-web",
+      "entries": []
+    }
+  ],
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "3cb136999e7db39aa68e49295674cda7a941166dd95c1005f95142bfef9c3069"
+    },
+    {
+      "path": ".atena/add.yaml",
+      "sha256": "46f2f713ccd8559a7908cd02d97e69f7b9bdc8554b97b2bff1b0a0a8a78f1211"
+    },
+    {
+      "path": ".atena/state/plan.yaml",
+      "sha256": "2ea124869df83dc0921e937d73e484267c9354693daf0ad9c7925f02d6272f19"
+    },
+    {
+      "path": "project.godot",
+      "sha256": "f533792fe2582921bf30cc9004a4343961f40017cd0edf40ccf804a1f516fd00"
+    },
+    {
+      "path": "export_presets.cfg",
+      "sha256": "fb5d8b3efc889ab45c4376e57a2504bfcac4f16e63860c5984444d569e363410"
+    },
+    {
+      "path": "core/game.gd",
+      "sha256": "4edf5f28ebf7dc403a535543633410e273805d79682f17d6df304cd845f36575"
+    },
+    {
+      "path": "core/playtest.gd",
+      "sha256": "339dc9e69a7ee77ef40f4f73f7bc0d02ecb78f85f880d0fee0b97d5d12de7c0a"
+    },
+    {
+      "path": ".atena/vault/canon/DEC-NOTTGARD-NAME-20261011-r1.md",
+      "sha256": "fa4ccc8c404f9c0cb1ab1ea47c061ed4178c2b2f80c8abbe3e9c95e1f5280bfc"
+    }
+  ],
+  "game_writes": false
+}

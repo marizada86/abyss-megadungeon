@@ -1,0 +1,63 @@
+[
+  {
+    "preset": "Web Playtest Publico",
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.html",
+    "bytes": 5462,
+    "sha256": "f5cfec542242839bb42bef132b3b8829fc5b8a644c4d1c0d577ff8ca5955ac90"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.apple-touch-icon.png",
+    "bytes": 26422,
+    "sha256": "25bb91fd8d88f61c59a7c47fac4e9e9089139b889a8b9cc9462e82b564cd3572"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.apple-touch-icon.png.import",
+    "bytes": 989,
+    "sha256": "e30cde1675f66560e834eefab24d21cb4cf96ef767de6a21a29cf090ec4de644"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.audio.position.worklet.js",
+    "bytes": 2973,
+    "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.audio.worklet.js",
+    "bytes": 7298,
+    "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.icon.png",
+    "bytes": 9558,
+    "sha256": "fc1b5077d82ae14f52c51118c1f663e23585b46f54a338a9bf9dff320b062bcb"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.icon.png.import",
+    "bytes": 953,
+    "sha256": "b851951e71ccd51027c76152308308377cf1cedc7bea7dccc00ac316e851cfca"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.js",
+    "bytes": 279815,
+    "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.pck",
+    "bytes": 352519024,
+    "sha256": "dffdd3c99430d436b6757a554b37900a8dd2db69d442643165e74c56f035b59e"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.png",
+    "bytes": 21443,
+    "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.png.import",
+    "bytes": 938,
+    "sha256": "73ade8de4e123aac68db8ba3a8a6b216d98a9a6c7d23fc2f40ca158ade4e8a0d"
+  },
+  {
+    "path": "D:/dev/nottgard/games/launcher-web/nottgard-abyss-megadungeon/build/web-playtest/index.wasm",
+    "bytes": 39514754,
+    "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+  }
+]

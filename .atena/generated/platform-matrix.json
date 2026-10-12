@@ -1,0 +1,40 @@
+{
+  "platform": "pc",
+  "base": "b83f188a",
+  "common_content": "UNCHANGED_IDENTICAL",
+  "specific_files": [
+    "core/game.gd",
+    "core/playtest.gd",
+    "export_presets.cfg",
+    "tests/test_arcanist.gd",
+    "ui/abyss_panel.gd",
+    "ui/character_sheet.gd",
+    "ui/controller_options.gd",
+    "ui/event_pointer.gd",
+    "ui/ground_decals.gd",
+    "ui/hero_panel.gd",
+    "ui/hq_screen.gd",
+    "ui/hud.gd",
+    "ui/leaderboard.gd",
+    "ui/menu.gd",
+    "ui/options_panel.gd",
+    "ui/pause_menu.gd",
+    "ui/run.gd",
+    "ui/title.gd"
+  ],
+  "removed_files": [
+    "export_templates/nottgard-web.html",
+    "tests/test_mobile_controls.gd",
+    "tests/test_mobile_controls.gd.uid",
+    "ui/mobile_controls.gd",
+    "ui/mobile_controls.gd.uid",
+    "ui/touch_ui.gd",
+    "ui/touch_ui.gd.uid"
+  ],
+  "added_runtime_metadata": [
+    "data/build_info.json"
+  ],
+  "tests": "0 FAILURES",
+  "publication": "NOT_AUTHORIZED",
+  "human_acceptance": "PENDING_CP_SPLIT_02"
+}

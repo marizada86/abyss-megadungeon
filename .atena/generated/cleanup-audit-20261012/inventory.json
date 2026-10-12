@@ -1,0 +1,1553 @@
+{
+  "id": "EVID-NOTTGARD-CLEANUP-AUDIT-20261012",
+  "mode": "read-only-project-audit",
+  "totalBytes": 2241437731,
+  "groups": [
+    {
+      "path": "build",
+      "files": 3,
+      "bytes": 1385134928
+    },
+    {
+      "path": "assets",
+      "files": 2635,
+      "bytes": 499073374
+    },
+    {
+      "path": ".godot",
+      "files": 3163,
+      "bytes": 354087618
+    },
+    {
+      "path": ".atena",
+      "files": 27,
+      "bytes": 1216734
+    },
+    {
+      "path": "ui",
+      "files": 97,
+      "bytes": 767070
+    },
+    {
+      "path": "tests",
+      "files": 166,
+      "bytes": 458908
+    },
+    {
+      "path": "core",
+      "files": 52,
+      "bytes": 357793
+    },
+    {
+      "path": "data",
+      "files": 36,
+      "bytes": 297113
+    },
+    {
+      "path": "tools",
+      "files": 22,
+      "bytes": 35308
+    },
+    {
+      "path": "export_presets.cfg",
+      "files": 1,
+      "bytes": 2468
+    },
+    {
+      "path": "README.md",
+      "files": 1,
+      "bytes": 1506
+    },
+    {
+      "path": "icon.svg",
+      "files": 1,
+      "bytes": 1336
+    },
+    {
+      "path": "icon.svg.import",
+      "files": 1,
+      "bytes": 1012
+    },
+    {
+      "path": "project.godot",
+      "files": 1,
+      "bytes": 907
+    },
+    {
+      "path": "AGENTS.md",
+      "files": 1,
+      "bytes": 742
+    },
+    {
+      "path": ".gitignore",
+      "files": 1,
+      "bytes": 365
+    },
+    {
+      "path": ".gitattributes",
+      "files": 1,
+      "bytes": 309
+    },
+    {
+      "path": "Testar-PC.cmd",
+      "files": 1,
+      "bytes": 240
+    }
+  ],
+  "builds": [
+    {
+      "path": "build/NottgardSurvivors-Playtest.exe",
+      "bytes": 461711664,
+      "sha256": "36539ea586f51b8a2eb48e8287f59f2766cac57d2b2c5d3dd2185f97d62ef103"
+    },
+    {
+      "path": "build/NottgardSurvivors-QA.exe",
+      "bytes": 461711648,
+      "sha256": "89c4aac76ba75d8101db9131361b369c96d772ac86a6c8053b08757a6281e6a3"
+    },
+    {
+      "path": "build/NottgardSurvivors.exe",
+      "bytes": 461711616,
+      "sha256": "9aca42efc78538943efdc6cd39dcd4dcd8f1e3550b89b810a3fcc01fcd0a4893"
+    }
+  ],
+  "templates": [
+    {
+      "source": "core/boon_kinds.gd",
+      "template": "res://assets/icons/boons/%s.png"
+    },
+    {
+      "source": "core/boon_kinds.gd",
+      "template": "res://assets/icons/boons/%s.png"
+    },
+    {
+      "source": "core/boon_kinds.gd",
+      "template": "res://assets/icons/boons/%s.png"
+    },
+    {
+      "source": "core/catalog.gd",
+      "template": "res://assets/enemies/%s.png"
+    },
+    {
+      "source": "core/catalog.gd",
+      "template": "res://assets/icons/weapons/%s.png"
+    },
+    {
+      "source": "core/catalog.gd",
+      "template": "res://assets/icons/items/%s.png"
+    },
+    {
+      "source": "core/controller_input.gd",
+      "template": "res://assets/icons/controller/%s/%d.svg"
+    },
+    {
+      "source": "core/items.gd",
+      "template": "res://assets/icons/weapons/%s.png"
+    },
+    {
+      "source": "core/items.gd",
+      "template": "res://assets/icons/weapons/%s.png"
+    },
+    {
+      "source": "core/items.gd",
+      "template": "res://assets/icons/items/%s.png"
+    },
+    {
+      "source": "core/items.gd",
+      "template": "res://assets/icons/items/%s.png"
+    },
+    {
+      "source": "ui/character_sheet.gd",
+      "template": "res://assets/icons/ui/%s.png"
+    },
+    {
+      "source": "ui/character_sheet.gd",
+      "template": "res://assets/portraits/%s.png"
+    },
+    {
+      "source": "ui/character_sheet.gd",
+      "template": "res://assets/icons/abilities/%s.png"
+    },
+    {
+      "source": "ui/character_sheet.gd",
+      "template": "res://assets/icons/passives/%s.png"
+    },
+    {
+      "source": "ui/character_sheet.gd",
+      "template": "res://assets/icons/ui/%s.png"
+    },
+    {
+      "source": "ui/enemy_view.gd",
+      "template": "res://assets/enemies/%s.png"
+    },
+    {
+      "source": "ui/enemy_view.gd",
+      "template": "res://assets/animations/enemies/%s/%s.png"
+    },
+    {
+      "source": "ui/ground.gd",
+      "template": "res://assets/tiles/%s_ground.png"
+    },
+    {
+      "source": "ui/hero_panel.gd",
+      "template": "res://assets/icons/ui/%s.png"
+    },
+    {
+      "source": "ui/hero_panel.gd",
+      "template": "res://assets/portraits/%s.png"
+    },
+    {
+      "source": "ui/hero_view.gd",
+      "template": "res://assets/animations/heroes/%s/idle.png"
+    },
+    {
+      "source": "ui/hero_view.gd",
+      "template": "res://assets/heroes/%s.png"
+    },
+    {
+      "source": "ui/hero_view.gd",
+      "template": "res://assets/animations/heroes/%s"
+    },
+    {
+      "source": "ui/hud.gd",
+      "template": "res://assets/icons/abilities/%s.png"
+    },
+    {
+      "source": "ui/hud.gd",
+      "template": "res://assets/icons/stages/%s.png"
+    },
+    {
+      "source": "ui/hud.gd",
+      "template": "res://assets/icons/passives/%s.png"
+    },
+    {
+      "source": "ui/hud.gd",
+      "template": "res://assets/icons/items/%s.png"
+    },
+    {
+      "source": "ui/menu.gd",
+      "template": "res://assets/stages/%s_thumb.png"
+    },
+    {
+      "source": "ui/menu.gd",
+      "template": "res://assets/portraits/%s.png"
+    },
+    {
+      "source": "ui/overlay.gd",
+      "template": "res://assets/interactions/%s.png"
+    },
+    {
+      "source": "ui/overlay.gd",
+      "template": "res://assets/interactions/%s.png"
+    },
+    {
+      "source": "ui/overlay.gd",
+      "template": "res://assets/interactions/%s.png"
+    },
+    {
+      "source": "ui/overlay.gd",
+      "template": "res://assets/animations/interactions/%s.png"
+    },
+    {
+      "source": "ui/overlay.gd",
+      "template": "res://assets/pickups/%s.png"
+    },
+    {
+      "source": "ui/overlay.gd",
+      "template": "res://assets/enemies/%s.png"
+    },
+    {
+      "source": "ui/prop.gd",
+      "template": "res://assets/props/%s.png"
+    },
+    {
+      "source": "ui/prop.gd",
+      "template": "res://assets/props/%s_%02d.png"
+    },
+    {
+      "source": "ui/run.gd",
+      "template": "res://assets/stages/%s_fundo.png"
+    },
+    {
+      "source": "ui/run.gd",
+      "template": "res://assets/animations/interactions/%s.png"
+    },
+    {
+      "source": "ui/spawn_point.gd",
+      "template": "res://assets/enemies/%s.png"
+    }
+  ],
+  "candidates": [
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_e.png",
+      "bytes": 126642,
+      "supportReferences": [
+        "tests/test_animation_assets.gd"
+      ]
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_n.png",
+      "bytes": 117254,
+      "supportReferences": [
+        "tests/test_animation_assets.gd"
+      ]
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_ne.png",
+      "bytes": 117401,
+      "supportReferences": [
+        "tests/test_animation_assets.gd"
+      ]
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_nw.png",
+      "bytes": 152452,
+      "supportReferences": [
+        "tests/test_animation_assets.gd"
+      ]
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_s.png",
+      "bytes": 120212,
+      "supportReferences": [
+        "tests/test_animation_assets.gd"
+      ]
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_se.png",
+      "bytes": 112149,
+      "supportReferences": [
+        "tests/test_animation_assets.gd"
+      ]
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_sw.png",
+      "bytes": 159638,
+      "supportReferences": [
+        "tests/test_animation_assets.gd"
+      ]
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_w.png",
+      "bytes": 134931,
+      "supportReferences": [
+        "tests/test_animation_assets.gd"
+      ]
+    },
+    {
+      "path": "assets/audio/generation_report.json",
+      "bytes": 169,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/audio/sfx/progress/progress.levelup_01.wav",
+      "bytes": 30032,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/audio/sfx/progress/progress.levelup_02.wav",
+      "bytes": 30032,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/audio/sfx/ui/ui.click_01.wav",
+      "bytes": 3792,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/audio/sfx/ui/ui.click_02.wav",
+      "bytes": 3792,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/audio/sfx/ui/ui.confirm_01.wav",
+      "bytes": 3792,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/audio/sfx/ui/ui.confirm_02.wav",
+      "bytes": 3792,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/fonts/AlegreyaSans-Bold.ttf",
+      "bytes": 266856,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/fonts/OFL-AlegreyaSans.txt",
+      "bytes": 4405,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/fonts/OFL-CinzelDecorative.txt",
+      "bytes": 4393,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/fx/nevoa_textura_01.png",
+      "bytes": 1336975,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/tiles/dagruve_ground_atlas_v1.png",
+      "bytes": 13529,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/tiles/dagruve_ground_atlas_v2.png",
+      "bytes": 11361,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/tiles/docas_ground_atlas_v1.png",
+      "bytes": 12370,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/tiles/docas_ground_atlas_v2.png",
+      "bytes": 10174,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/tiles/durao_ground_baked_v1.png",
+      "bytes": 3581575,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/tiles/feng_tu_ground_baked_v1.png",
+      "bytes": 4228483,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/tiles/goranthis_ground_baked_v1.png",
+      "bytes": 4692415,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/tiles/molor_ground_baked_v1.png",
+      "bytes": 3785128,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/tiles/shedaklah_ground_baked_v1.png",
+      "bytes": 3992860,
+      "supportReferences": []
+    },
+    {
+      "path": "assets/tiles/shendilavri_ground_baked_v1.png",
+      "bytes": 4288012,
+      "supportReferences": []
+    }
+  ],
+  "versions": [
+    {
+      "path": "assets/tiles/dagruve_ground_atlas_v1.png",
+      "bytes": 13529
+    },
+    {
+      "path": "assets/tiles/dagruve_ground_atlas_v2.png",
+      "bytes": 11361
+    },
+    {
+      "path": "assets/tiles/docas_ground_atlas_v1.png",
+      "bytes": 12370
+    },
+    {
+      "path": "assets/tiles/docas_ground_atlas_v2.png",
+      "bytes": 10174
+    },
+    {
+      "path": "assets/tiles/durao_ground_baked_v1.png",
+      "bytes": 3581575
+    },
+    {
+      "path": "assets/tiles/feng_tu_ground_baked_v1.png",
+      "bytes": 4228483
+    },
+    {
+      "path": "assets/tiles/goranthis_ground_baked_v1.png",
+      "bytes": 4692415
+    },
+    {
+      "path": "assets/tiles/molor_ground_baked_v1.png",
+      "bytes": 3785128
+    },
+    {
+      "path": "assets/tiles/shedaklah_ground_baked_v1.png",
+      "bytes": 3992860
+    },
+    {
+      "path": "assets/tiles/shendilavri_ground_baked_v1.png",
+      "bytes": 4288012
+    }
+  ],
+  "duplicates": [
+    {
+      "sha256": "20ff4f6190550328662520d6dd1c0aef31a2a19d93c7ced813b75eddf5700d54",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.arrival_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.guardiao_verdadeiro.arrival_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.lu_yueh.phase_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.malcanthet.defeat_02.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 165504
+    },
+    {
+      "sha256": "865c17c0424cd9e4676a02e30f4758b439951a4d3d0ad5411ed43540fcfc4a07",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.arrival_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.guardiao_verdadeiro.arrival_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.molydeus_chefe.defeat_01.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 110336
+    },
+    {
+      "sha256": "b2ff619ed3986150d393ed5ac682bc8a362aa6ed46d24e604573a91a36d86ffc",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.arrival_03.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.lu_yueh.defeat_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.molydeus_chefe.defeat_02.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 110336
+    },
+    {
+      "sha256": "a562a902d86e1a3286481ddda19d685419f04faed420baded1d0b65cb56bfcde",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.blogbog.defeat_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.malcanthet.phase_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.socothbenoth.phase_01.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 110336
+    },
+    {
+      "sha256": "bbe74d739d2ff1c63b37ee3fa63c7b4c2894eae68838dcb5ba00d08f9baa36bc",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.blogbog.phase_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.guardiao_verdadeiro.defeat_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/result.defeat_02.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 110336
+    },
+    {
+      "sha256": "7cd9ca2ac1d9df879bab5d54c75beee44945d52a845a4467e444d16688d67ad3",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.blogbog.phase_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.guardiao_verdadeiro.defeat_02.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 55168
+    },
+    {
+      "sha256": "2c7cd961b2b7cba4a68c9bc97f3f91fac4969a7bade83fa92e53c882dab0f5ce",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.guardiao_verdadeiro.phase_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.lu_yueh.arrival_02.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 55168
+    },
+    {
+      "sha256": "69de7a17cb1c3a938422865479db8e436d4a49c66a7cee95abb7a4197b107ad1",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.lu_yueh.phase_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.malcanthet.defeat_01.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 55168
+    },
+    {
+      "sha256": "00b9e3fdbad0d267e4b947b1ce5b28d8f855d4c7a09d162b5e36330f3ed1a2cd",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.malcanthet.arrival_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.malcanthet.phase_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.molydeus_chefe.phase_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.sacerdote_mente_derretida.phase_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.socothbenoth.phase_02.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 220672
+    },
+    {
+      "sha256": "7da9393a167e48b639f7a445ec486b80110a26e99b88d5d48ae74e2bc7925996",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.malcanthet.arrival_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.molydeus_chefe.phase_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.sacerdote_mente_derretida.phase_02.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 110336
+    },
+    {
+      "sha256": "ca6cdcc6a708762876fbf2be4059d4a9455fc719ed81e1ea7d32aabd96f40e67",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.molydeus_chefe.arrival_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.socothbenoth.arrival_01.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 55168
+    },
+    {
+      "sha256": "c81a600e394dd0c2866561ecee90818648d7d6ecb558538bd5c22b3928e3ac48",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.sintese_abissal.arrival_01.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.zuggtmoy.phase_02.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 55168
+    },
+    {
+      "sha256": "a1a96a4ef31a85912c3f87c3fe4fabd6431b66e7db9eb05fd0e15361fe3ece9d",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.sintese_abissal.defeat_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/result.defeat_01.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 55168
+    },
+    {
+      "sha256": "adc68561475705e7b3d2e2d9f647b19ac17eba370faa64b58aa68ae07528bf53",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.sintese_abissal.phase_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.zuggtmoy.phase_01.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 55168
+    },
+    {
+      "sha256": "165ffd619dccbb75948f3c1865e89b49c8ec04d03420116c85afb101100fd54d",
+      "files": [
+        {
+          "path": "assets/audio/sfx/boss/boss.zuggtmoy.arrival_02.wav",
+          "bytes": 55168
+        },
+        {
+          "path": "assets/audio/sfx/boss/boss.zuggtmoy.defeat_01.wav",
+          "bytes": 55168
+        }
+      ],
+      "extraBytes": 55168
+    },
+    {
+      "sha256": "38123c523ec7fd1fc31423d88007835b4aca60d44c81ca30c94abad3ce8840f3",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.aberracao_shu.death_02.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.cultista_ghaunadaur.death_01.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "949dc07a1ffaa866606a0ebb513ba0a16a26f1cde6bb00d4af8ba8b1631d1b1d",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.alma_penada.action_01.wav",
+          "bytes": 18566
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.lu_yueh.action_01.wav",
+          "bytes": 18566
+        }
+      ],
+      "extraBytes": 18566
+    },
+    {
+      "sha256": "4f78b853f5dcce67ed11a259c8d1ae2e72b0cd73b7dfdde6acbd5c4581562dfe",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.alma_penada.death_02.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.demonio_de_gehenna.death_01.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "c3b47bf36510da3f577b899b4d7f8734cf48d6337f902f233adbd031283e4624",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.bolha_de_slime.death_02.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.molydeus_menor.death_01.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "487791b9ef4fcd325efca6322ef5c8788cb99b84ffe1d58b863e1bc7f52c45d3",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.cultista_arqueiro.action_01.wav",
+          "bytes": 18566
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.guardiao_de_goranthis.action_01.wav",
+          "bytes": 18566
+        }
+      ],
+      "extraBytes": 18566
+    },
+    {
+      "sha256": "ea601e3e37da174b4ddef078774b170bbe30eb5dba7b106097d470651bf76336",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.cultista_arqueiro.death_01.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.ilusao_de_socothbenoth.death_01.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.malcanthet.death_02.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 54772
+    },
+    {
+      "sha256": "587054e6f6db2fcae485366d6758a07613f8751c8175a740af47b5733e48781f",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.cultista_arqueiro.death_02.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.ilusao_de_socothbenoth.death_02.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "af49e099ce8bdac956c9a9bb96ff0307078f5991c90cc4f4c0fc7bdae80115c5",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.cultista_de_feng_tu.action_01.wav",
+          "bytes": 18566
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.telegraph_01.wav",
+          "bytes": 18566
+        }
+      ],
+      "extraBytes": 18566
+    },
+    {
+      "sha256": "0dd49d276d87f0217476364ceecd3bc6bcd2f031006bc686ae0f96a57cdc79c2",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.cultista_de_socothbenoth.death_01.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.lu_yueh.death_02.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "2f7fe55f54fe00d18c44eadb114f45166dfbaac11208361325c380a67dc96d21",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.cultista_thullgrime.death_01.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.gargula.death_01.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "bcdbc5e4c6de27b8979fc63306301d03dd9e65a081f6d6e5a6b089d650dd51c8",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.cultista_thullgrime.death_02.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.esporo_voador.death_01.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.gargula.death_02.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 54772
+    },
+    {
+      "sha256": "558b34f2b67d6d4d91ab70c41188dc3fe492a4760b64ba2d912b1c20ec8c0fdc",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.esporo_voador.death_02.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.sacerdote_mente_derretida.death_01.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "d8a7a37add4588c0002aaa8b18af7183673a5beccc75618be9baa3646278080f",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.estatua_do_templo.action_01.wav",
+          "bytes": 18566
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.ilusao_de_sucubo.action_01.wav",
+          "bytes": 18566
+        }
+      ],
+      "extraBytes": 18566
+    },
+    {
+      "sha256": "e52a2c1c6a63becc5191e802a14422475decfd6cae71cfd79219fb2e4a10e22a",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.estatua_do_templo.death_01.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.receptaculo_de_juiblex.death_01.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "1a905a717e90a6e3f8ce8435d3b6d8fb606d96a50ee1b01af96acf661abd3361",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.estatua_do_templo.death_02.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.receptaculo_de_juiblex.death_02.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "0c570400a7515fef1a4e881d5ef98376e57d4882f5e7b991eb2a056a315301f1",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.guarda_do_castelo.death_01.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.servo_de_zuggtmoy.death_01.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "427a32376d9f98816c8abf1a570033d3207326faf5d23e973b4135207612b5fe",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.guarda_do_castelo.death_02.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.servo_de_zuggtmoy.death_02.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "e65ca559fb854f068e89c6dc81aea49ea22b101bbd95a767fd1d33b772679d28",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.ilusao_de_socothbenoth.action_01.wav",
+          "bytes": 18566
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.molydeus_menor.action_01.wav",
+          "bytes": 18566
+        }
+      ],
+      "extraBytes": 18566
+    },
+    {
+      "sha256": "1033cc3753fe8849c071e6c5a7b027c1ccb6a647a38879b785355d2e82f64d70",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.master_of_cruelties.action_01.wav",
+          "bytes": 18566
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.notivago.action_01.wav",
+          "bytes": 18566
+        }
+      ],
+      "extraBytes": 18566
+    },
+    {
+      "sha256": "feaad7f034c9ef5cc7ba5b91b90e9e622aced54d67d15219ac2a04d44ea31077",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.pudim_negro.death_01.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.tentaculo_kraken.death_02.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "5d16026a3ec19d15c2fc7f09f4df33b5865f8ee3dc2bc574f0b82c7f84aaa71a",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.slime_corrosivo.death_02.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.tentaculo_kraken.death_01.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "0047efd995e3fe8d97d26fd55669be4e59d17ab3ecb49c637b6a1c8cd931a37f",
+      "files": [
+        {
+          "path": "assets/audio/sfx/enemy/enemy.sucubo.death_02.wav",
+          "bytes": 27386
+        },
+        {
+          "path": "assets/audio/sfx/enemy/enemy.zuggtmoy.death_01.wav",
+          "bytes": 27386
+        }
+      ],
+      "extraBytes": 27386
+    },
+    {
+      "sha256": "427623e7de3e7e058ea8d57eab521cf38088b6f36498e53ccfd23f36a835f29c",
+      "files": [
+        {
+          "path": "assets/audio/sfx/progress/progress.fountain_01.wav",
+          "bytes": 12392
+        },
+        {
+          "path": "assets/audio/sfx/progress/progress.unlock_01.wav",
+          "bytes": 12392
+        }
+      ],
+      "extraBytes": 12392
+    },
+    {
+      "sha256": "9b0c119d7ffa7d9fd8fc879655a9eedb9f2586e1b0dc5096813da53871d598b4",
+      "files": [
+        {
+          "path": "assets/audio/sfx/progress/progress.fountain_02.wav",
+          "bytes": 12392
+        },
+        {
+          "path": "assets/audio/sfx/progress/progress.unlock_02.wav",
+          "bytes": 12392
+        }
+      ],
+      "extraBytes": 12392
+    },
+    {
+      "sha256": "692f0bcac1815c98f4d247f47189417b56c701f63cec89c1fefef60389be6f12",
+      "files": [
+        {
+          "path": "assets/enemies/arbusto_quebravel.png",
+          "bytes": 167174
+        },
+        {
+          "path": "assets/enemies/cogumelo_fungico.png",
+          "bytes": 167174
+        }
+      ],
+      "extraBytes": 167174
+    },
+    {
+      "sha256": "de5d989a62090498bb626b12b3698406e3993b15859805227bd87958568310a4",
+      "files": [
+        {
+          "path": "assets/enemies/caixote_quebravel.png",
+          "bytes": 81413
+        },
+        {
+          "path": "assets/props/caixote_01.png",
+          "bytes": 81413
+        }
+      ],
+      "extraBytes": 81413
+    },
+    {
+      "sha256": "97ad156c84231b200a175bfad15a9e9232fc561aad3962a58a81f0bbc1212555",
+      "files": [
+        {
+          "path": "assets/enemies/candelabro_quebravel.png",
+          "bytes": 49597
+        },
+        {
+          "path": "assets/props/velas_01.png",
+          "bytes": 49597
+        }
+      ],
+      "extraBytes": 49597
+    },
+    {
+      "sha256": "ce81d3cfd119e64f69b81d38592170dfcb2c3f97393945bb03cdabf714a77b96",
+      "files": [
+        {
+          "path": "assets/enemies/manifestacao_de_juiblex.png",
+          "bytes": 263966
+        },
+        {
+          "path": "assets/enemies/receptaculo_de_juiblex.png",
+          "bytes": 263966
+        }
+      ],
+      "extraBytes": 263966
+    },
+    {
+      "sha256": "9b81fb4a94952166205f7fc1debb620bf8d095a520e5352c2ac47cfd57280335",
+      "files": [
+        {
+          "path": "assets/icons/abilities/dominacao.png",
+          "bytes": 11685
+        },
+        {
+          "path": "assets/icons/abilities/modify_memory.png",
+          "bytes": 11685
+        }
+      ],
+      "extraBytes": 11685
+    },
+    {
+      "sha256": "76c11a9e11313abed1c7776eafd19b6cbdf77d9d46580e29407def8927dc7d72",
+      "files": [
+        {
+          "path": "assets/icons/abilities/impacto_de_xargath.png",
+          "bytes": 19326
+        },
+        {
+          "path": "assets/icons/abilities/navios_em_chamas.png",
+          "bytes": 19326
+        }
+      ],
+      "extraBytes": 19326
+    },
+    {
+      "sha256": "50f3f2e3bb42bf2e240dcacc762d9ac1fa99325c4010e73933c51d507ad200c1",
+      "files": [
+        {
+          "path": "assets/icons/controller/generic/10.svg",
+          "bytes": 454
+        },
+        {
+          "path": "assets/icons/controller/xbox/10.svg",
+          "bytes": 454
+        }
+      ],
+      "extraBytes": 454
+    },
+    {
+      "sha256": "767dbe749dacb8a340d248efaf09058d8a1587ca0bc38c32f66eedd3598ec04a",
+      "files": [
+        {
+          "path": "assets/icons/controller/generic/4.svg",
+          "bytes": 378
+        },
+        {
+          "path": "assets/icons/controller/xbox/4.svg",
+          "bytes": 378
+        }
+      ],
+      "extraBytes": 378
+    },
+    {
+      "sha256": "0c47047898ed188bcc69fe46c0064a3567dbb5664d56b7824939487a92e26e13",
+      "files": [
+        {
+          "path": "assets/icons/controller/generic/6.svg",
+          "bytes": 329
+        },
+        {
+          "path": "assets/icons/controller/ps4/6.svg",
+          "bytes": 329
+        },
+        {
+          "path": "assets/icons/controller/ps5/6.svg",
+          "bytes": 329
+        },
+        {
+          "path": "assets/icons/controller/xbox/6.svg",
+          "bytes": 329
+        }
+      ],
+      "extraBytes": 987
+    },
+    {
+      "sha256": "b2e48d4d1e17a0f870b941cccd6c84d023b5ee63a3a536963e68a9c612706624",
+      "files": [
+        {
+          "path": "assets/icons/controller/generic/7.svg",
+          "bytes": 434
+        },
+        {
+          "path": "assets/icons/controller/xbox/7.svg",
+          "bytes": 434
+        }
+      ],
+      "extraBytes": 434
+    },
+    {
+      "sha256": "cd3582df0911b8dd34d82cd6ef90bfeb5dc3535e4f3027b46ace1bdf4a124652",
+      "files": [
+        {
+          "path": "assets/icons/controller/generic/8.svg",
+          "bytes": 458
+        },
+        {
+          "path": "assets/icons/controller/xbox/8.svg",
+          "bytes": 458
+        }
+      ],
+      "extraBytes": 458
+    },
+    {
+      "sha256": "04ea4b56355ef4b215db8472d2f78a37220064dd6e06eec4c192c7f58a555c52",
+      "files": [
+        {
+          "path": "assets/icons/controller/generic/9.svg",
+          "bytes": 430
+        },
+        {
+          "path": "assets/icons/controller/xbox/9.svg",
+          "bytes": 430
+        }
+      ],
+      "extraBytes": 430
+    },
+    {
+      "sha256": "89eb61b5255729c1680510514d3236d90f301afbd9d25c3fe9625b3530d17e67",
+      "files": [
+        {
+          "path": "assets/icons/controller/generic/aim.svg",
+          "bytes": 369
+        },
+        {
+          "path": "assets/icons/controller/ps4/aim.svg",
+          "bytes": 369
+        },
+        {
+          "path": "assets/icons/controller/ps5/aim.svg",
+          "bytes": 369
+        },
+        {
+          "path": "assets/icons/controller/xbox/aim.svg",
+          "bytes": 369
+        }
+      ],
+      "extraBytes": 1107
+    },
+    {
+      "sha256": "a687cd112b4425b974cd08ba383276e053c5bdc20c936d55236d6934e8e20e54",
+      "files": [
+        {
+          "path": "assets/icons/controller/generic/dpad.svg",
+          "bytes": 342
+        },
+        {
+          "path": "assets/icons/controller/ps4/dpad.svg",
+          "bytes": 342
+        },
+        {
+          "path": "assets/icons/controller/ps5/dpad.svg",
+          "bytes": 342
+        },
+        {
+          "path": "assets/icons/controller/xbox/dpad.svg",
+          "bytes": 342
+        }
+      ],
+      "extraBytes": 1026
+    },
+    {
+      "sha256": "2eb04789f862f9753a3007d296e3b8955b2fc8603d0346e98f3663c5d4886797",
+      "files": [
+        {
+          "path": "assets/icons/controller/generic/move.svg",
+          "bytes": 386
+        },
+        {
+          "path": "assets/icons/controller/ps4/move.svg",
+          "bytes": 386
+        },
+        {
+          "path": "assets/icons/controller/ps5/move.svg",
+          "bytes": 386
+        },
+        {
+          "path": "assets/icons/controller/xbox/move.svg",
+          "bytes": 386
+        }
+      ],
+      "extraBytes": 1158
+    },
+    {
+      "sha256": "a1b1310927d59b99c0dc1a125f5a560711783fbaf4bad024bb0c1489bca79ef5",
+      "files": [
+        {
+          "path": "assets/icons/controller/ps4/0.svg",
+          "bytes": 325
+        },
+        {
+          "path": "assets/icons/controller/ps5/0.svg",
+          "bytes": 325
+        }
+      ],
+      "extraBytes": 325
+    },
+    {
+      "sha256": "0c667414e1eb1cf44defaccbbcce6f24f4c31f67fe861c0ec5a1aa82e17492e3",
+      "files": [
+        {
+          "path": "assets/icons/controller/ps4/1.svg",
+          "bytes": 322
+        },
+        {
+          "path": "assets/icons/controller/ps5/1.svg",
+          "bytes": 322
+        }
+      ],
+      "extraBytes": 322
+    },
+    {
+      "sha256": "cbd71636243b17b4631024af740ce2aa20df0329cb76a4f91e12c2e9613b33d2",
+      "files": [
+        {
+          "path": "assets/icons/controller/ps4/10.svg",
+          "bytes": 434
+        },
+        {
+          "path": "assets/icons/controller/ps5/10.svg",
+          "bytes": 434
+        }
+      ],
+      "extraBytes": 434
+    },
+    {
+      "sha256": "37f181e4fb89ecce40e555369ada3394f227052ba21a22296b6edae681463dab",
+      "files": [
+        {
+          "path": "assets/icons/controller/ps4/2.svg",
+          "bytes": 334
+        },
+        {
+          "path": "assets/icons/controller/ps5/2.svg",
+          "bytes": 334
+        }
+      ],
+      "extraBytes": 334
+    },
+    {
+      "sha256": "3d01b8199096d5f5381519c2da076deb6927234323696f372447013576dcca3c",
+      "files": [
+        {
+          "path": "assets/icons/controller/ps4/3.svg",
+          "bytes": 318
+        },
+        {
+          "path": "assets/icons/controller/ps5/3.svg",
+          "bytes": 318
+        }
+      ],
+      "extraBytes": 318
+    },
+    {
+      "sha256": "ef245c0116b631fa779c51f2fab4f04c546e75856a8c7e0cbabada97e0af983a",
+      "files": [
+        {
+          "path": "assets/icons/controller/ps4/7.svg",
+          "bytes": 422
+        },
+        {
+          "path": "assets/icons/controller/ps5/7.svg",
+          "bytes": 422
+        }
+      ],
+      "extraBytes": 422
+    },
+    {
+      "sha256": "5bb945684f7e14c164d6185fe266a3ada4efeba7030b10a8fc5a7cca4eea187f",
+      "files": [
+        {
+          "path": "assets/icons/controller/ps4/8.svg",
+          "bytes": 446
+        },
+        {
+          "path": "assets/icons/controller/ps5/8.svg",
+          "bytes": 446
+        }
+      ],
+      "extraBytes": 446
+    },
+    {
+      "sha256": "a4e4ac815aec38c7efbbc8989cf17e376ae7b70e545daa1271f6363248bc1ac9",
+      "files": [
+        {
+          "path": "assets/icons/controller/ps4/9.svg",
+          "bytes": 410
+        },
+        {
+          "path": "assets/icons/controller/ps5/9.svg",
+          "bytes": 410
+        }
+      ],
+      "extraBytes": 410
+    },
+    {
+      "sha256": "53103bad736d8093a81c4ea53abde0d5e7d5f55c79abfe231a9464f2eb2b443c",
+      "files": [
+        {
+          "path": "assets/icons/items/ampulheta.png",
+          "bytes": 20731
+        },
+        {
+          "path": "assets/icons/weapons/ampulheta.png",
+          "bytes": 20731
+        }
+      ],
+      "extraBytes": 20731
+    },
+    {
+      "sha256": "20600df3d777c9d77574e4566f502edf04e16778bf59ac353d599c49ff8c2b8c",
+      "files": [
+        {
+          "path": "assets/icons/items/cajado_dos_desejos.png",
+          "bytes": 6208
+        },
+        {
+          "path": "assets/icons/weapons/cajado_dos_desejos.png",
+          "bytes": 6208
+        }
+      ],
+      "extraBytes": 6208
+    },
+    {
+      "sha256": "7fc61c4b2f42c0557e60e3d8fbb33b02fb57f4ac14d88c927bcf56dce7f14b9f",
+      "files": [
+        {
+          "path": "assets/icons/items/chicote_avarento.png",
+          "bytes": 19149
+        },
+        {
+          "path": "assets/icons/weapons/chicote_avarento.png",
+          "bytes": 19149
+        }
+      ],
+      "extraBytes": 19149
+    },
+    {
+      "sha256": "1e97f9943f6735efcb64401907bf3c312ecb61241c57f20e85ac5bcd3b393663",
+      "files": [
+        {
+          "path": "assets/icons/items/colar_dos_tentaculos.png",
+          "bytes": 15208
+        },
+        {
+          "path": "assets/icons/weapons/colar_dos_tentaculos.png",
+          "bytes": 15208
+        }
+      ],
+      "extraBytes": 15208
+    },
+    {
+      "sha256": "ef080a7932642e0c3a020ee32b2320ccb7b7d6d29d2b9c333534fd5f9ab3ffba",
+      "files": [
+        {
+          "path": "assets/icons/items/lamina_da_digestao.png",
+          "bytes": 12910
+        },
+        {
+          "path": "assets/icons/weapons/lamina_da_digestao.png",
+          "bytes": 12910
+        }
+      ],
+      "extraBytes": 12910
+    },
+    {
+      "sha256": "c9f3d101f1eba187016c4d1a546a1960529eb153b32ef07bd98d4758197867e0",
+      "files": [
+        {
+          "path": "assets/icons/items/machado_de_xargath.png",
+          "bytes": 15735
+        },
+        {
+          "path": "assets/icons/weapons/machado_de_xargath.png",
+          "bytes": 15735
+        }
+      ],
+      "extraBytes": 15735
+    },
+    {
+      "sha256": "fdf6c1f37ed8aabf0ae6287ad5035cf5a37aca76bc44e3034bb0e1cf801e20da",
+      "files": [
+        {
+          "path": "assets/icons/items/martelo_da_gloria.png",
+          "bytes": 15131
+        },
+        {
+          "path": "assets/icons/weapons/martelo_da_gloria.png",
+          "bytes": 15131
+        }
+      ],
+      "extraBytes": 15131
+    },
+    {
+      "sha256": "8652e878b70adfdd424e76a5f934cf27d2713157429e871ad187177f2de650cf",
+      "files": [
+        {
+          "path": "assets/icons/items/sopro_de_estrela.png",
+          "bytes": 19733
+        },
+        {
+          "path": "assets/icons/weapons/sopro_de_estrela.png",
+          "bytes": 19733
+        }
+      ],
+      "extraBytes": 19733
+    }
+  ],
+  "limits": [
+    "Static conservative scan; candidates are not proven unused.",
+    "Dynamic directories protected by printf templates. Other assembled paths and override behavior require manual review.",
+    "No engine run, game launch, save access or deletion.",
+    "Sizes are logical bytes; filesystem allocated space was not measured."
+  ]
+}

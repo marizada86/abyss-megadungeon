@@ -1,0 +1,90 @@
+{
+  "_enemy_speed": "SPEC-124: multiplicador global da velocidade dos inimigos moveis (speed > 0); 1.0 = valores de enemies.json.",
+  "enemy_speed_mult": 1.2,
+  "gold": {
+    "_spec": "SPEC-142 B-003 (BAL-023): economia de ouro. meta_coin_exponent: o ouro de cada fase entra no Quartel dividido por coin_mult^expoente (1.0 = valor-base, sem a inflacao x5 das fases finais; 0 = como antes). gold_hit_per_second: teto de moedas por segundo do Chicote Avarento (valor-base, sem coin_mult). reward_cap: teto do multiplicador de recompensa (descida x Marcas). run_only_sell: venda de pecas vale na run (escalada por coin_mult) mas nao entra no Quartel.",
+    "meta_coin_exponent": 1.0,
+    "gold_hit_per_second": 0.15,
+    "reward_cap": 3.0,
+    "run_only_sell": true
+  },
+  "opening": {
+    "hold_seconds": 90,
+    "fade_seconds": 240,
+    "cap_bonus": 6,
+    "n_mult": 1.25,
+    "max_mult": 1.2,
+    "every_mult": 0.85
+  },
+  "interactions": {
+    "_spec": "SPEC-122 B-004: baus, fontes e altares aleatorios (antes 50+25 s, ate 4 vivos).",
+    "min_seconds": 80,
+    "spread_seconds": 35,
+    "max_alive": 3
+  },
+  "happenings": {
+    "_spec": "SPEC-122 B-004: sorteio de acontecimentos opcionais por fase (antes 1 a 2).",
+    "optional_min": 0,
+    "optional_max": 1
+  },
+  "breakables": {
+    "min_seconds": 32,
+    "spread_seconds": 20,
+    "charisma_step": 0.06,
+    "loot": {
+      "base_chance": 0.55,
+      "chance_per_luck": 0.05,
+      "min_chance": 0.3,
+      "max_chance": 0.9,
+      "weights": {"gold": 65, "potion": 20, "magnet": 10, "item": 5},
+      "per_luck": {"gold": -3, "potion": 1, "magnet": 0.5, "item": 1.5},
+      "min_weight": {"gold": 20, "potion": 5, "magnet": 3, "item": 2}
+    }
+  },
+  "styx_lucidity_seconds": 300,
+  "risk_events": {
+    "bet_win_chance": 0.45,
+    "bet_min": 20
+  },
+  "rarity": {
+    "_spec": "SPEC-122 B-005: chances por tier = base + tier*per_tier; magico fixo; o resto e comum. Unicos so no proprio tier e ganham afixos sorteados.",
+    "unico_base": 0.005,
+    "unico_per_tier": 0.012,
+    "raro_base": 0.04,
+    "raro_per_tier": 0.025,
+    "incomum_base": 0.14,
+    "incomum_per_tier": 0.015,
+    "magico": 0.33,
+    "unique_extra_affixes": 3
+  },
+  "prices": {
+    "_spec": "SPEC-122 E5: preco por raridade. shop = loja (antes do coin_mult da fase); sell = venda. Valores antigos (16+8*rank e 8*(rank+1)) mantidos, Incomum no meio.",
+    "shop": {"comum": 16, "magico": 24, "incomum": 28, "raro": 32, "unico": 40},
+    "sell": {"comum": 8, "magico": 16, "incomum": 20, "raro": 24, "unico": 32}
+  },
+  "xp": {
+    "_spec": "SPEC-122 B-002: ritmo de nivel. need_mult e need_growth multiplicam a curva base; kill_mult reduz o XP coletado.",
+    "need_mult": 1.0,
+    "need_growth": 0.06,
+    "kill_mult": 0.75
+  },
+  "level_growth": {
+    "start_level": 15,
+    "hp_per_level": 1.0
+  },
+  "flank": {
+    "share": 0.6,
+    "max_arc": 1.0,
+    "open_distance": 10.0,
+    "close_distance": 2.5
+  },
+  "evolve_cinematic_seconds": 2.6,
+  "hourglass": {
+    "skip_seconds": 60,
+    "burst_max": 18
+  },
+  "ritual_blessing": {
+    "duration": 20.0,
+    "mods": {"dmg_pct": 0.2, "speed_pct": 0.15, "pickup": 1.0}
+  }
+}

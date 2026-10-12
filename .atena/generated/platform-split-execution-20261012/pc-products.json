@@ -1,0 +1,20 @@
+[
+  {
+    "preset": "Windows Desktop",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/build/NottgardSurvivors.exe",
+    "bytes": 461711616,
+    "sha256": "9aca42efc78538943efdc6cd39dcd4dcd8f1e3550b89b810a3fcc01fcd0a4893"
+  },
+  {
+    "preset": "Windows Playtest Publico",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/build/NottgardSurvivors-Playtest.exe",
+    "bytes": 461711664,
+    "sha256": "36539ea586f51b8a2eb48e8287f59f2766cac57d2b2c5d3dd2185f97d62ef103"
+  },
+  {
+    "preset": "Windows QA Interno",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/build/NottgardSurvivors-QA.exe",
+    "bytes": 461711648,
+    "sha256": "89c4aac76ba75d8101db9131361b369c96d772ac86a6c8053b08757a6281e6a3"
+  }
+]

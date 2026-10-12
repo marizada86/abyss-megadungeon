@@ -1,0 +1,1666 @@
+{
+  "id": "EVID-NOTTGARD-RESOURCE-CLEANUP-AUDIT-20261012",
+  "revision": "r1",
+  "pc": {
+    "checks": [
+      {
+        "path": "assets/tiles/dagruve_ground_atlas_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 13529,
+        "sha256": "8ca3b5ed8bc49ffc0b3945f93d624fa49936a40a24ca4687e2714b3d2a95ad3e",
+        "metadata": {
+          "path": "assets/tiles/dagruve_ground_atlas_v1.png.import",
+          "bytes": 985,
+          "sha256": "a0dbce494f7aa16ac39d909167539dac2b78731b10bf6034b4479fd58db52144"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/dagruve_ground_atlas_v2.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 11361,
+        "sha256": "9cb4ad6a0feed85ebc030b7c98c35038fcaa311d5e7b52c72b7b43366f0bed83",
+        "metadata": {
+          "path": "assets/tiles/dagruve_ground_atlas_v2.png.import",
+          "bytes": 986,
+          "sha256": "c2bd23eb5f6177c84498c6de011b9656e29ae58a202abf6d8f9db8a63d4ee3eb"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/docas_ground_atlas_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 12370,
+        "sha256": "627e6cc40f641fda7a9b4addb728aa1d47c371b38bd091dbb66ec81fafe01a93",
+        "metadata": {
+          "path": "assets/tiles/docas_ground_atlas_v1.png.import",
+          "bytes": 979,
+          "sha256": "53cb107179bcd82a4d22d409fa7441f1d358984f4ba348e672bcaf17805c9b13"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/docas_ground_atlas_v2.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 10174,
+        "sha256": "e7c4acb061af41a78985942fb425141148fb8df01d9b2309f889e7e567c74f97",
+        "metadata": {
+          "path": "assets/tiles/docas_ground_atlas_v2.png.import",
+          "bytes": 980,
+          "sha256": "4089a8dc273be93b64d99cdad40c3c90483adfb5f18dcc430fd099d729d60919"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/durao_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 3581575,
+        "sha256": "8d0a82f22777960b82dd21e5ef6fb63b279b2541023679c73d79ce57c2ba673a",
+        "metadata": {
+          "path": "assets/tiles/durao_ground_baked_v1.png.import",
+          "bytes": 980,
+          "sha256": "34d0cf624d1e3b96d47b8a7d7ffe2ea1cf0cc35d8a843a1824ce44c198730fe5"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/feng_tu_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 4228483,
+        "sha256": "9e5d2e6c6a2ccc6c657c34d1f74e1fca36cea8ce3487e8da2b74974344b40003",
+        "metadata": {
+          "path": "assets/tiles/feng_tu_ground_baked_v1.png.import",
+          "bytes": 986,
+          "sha256": "88b900a54d5d865d8e982a8f6d7c430cf7b226b934350fe9b2e4eb2b751328e7"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/goranthis_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 4692415,
+        "sha256": "aa3d3203ee0ab4c398a2f8ecbb9eeeebb4caa60ad50bf419a6e61684a072eee6",
+        "metadata": {
+          "path": "assets/tiles/goranthis_ground_baked_v1.png.import",
+          "bytes": 992,
+          "sha256": "1587d80634b0c3833b01f077af8e5723107e4093635a748cfdb9d76969fffd60"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/molor_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 3785128,
+        "sha256": "d37b654c4ad6ed355d43af30d455262c558a983a042d1999613fa5efbaa29009",
+        "metadata": {
+          "path": "assets/tiles/molor_ground_baked_v1.png.import",
+          "bytes": 980,
+          "sha256": "c4d49c4d9c02bfe7f7da3a0cd0a02e513e4af854accdb58dd5d51d28c60c935c"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/shedaklah_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 3992860,
+        "sha256": "74cd4ab06c799928ce5c77381d189400f5d52a54e66c9442b12ace0b8ee490df",
+        "metadata": {
+          "path": "assets/tiles/shedaklah_ground_baked_v1.png.import",
+          "bytes": 992,
+          "sha256": "70efe16caa84d6f0669ea86ae4f8fe713558366d1e173635e3231689dc8b0221"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/shendilavri_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 4288012,
+        "sha256": "25b2511a524e6621e6f3ada1824cb2f60df43309033cee3e23557c30294aeb3b",
+        "metadata": {
+          "path": "assets/tiles/shendilavri_ground_baked_v1.png.import",
+          "bytes": 998,
+          "sha256": "18ed9ff667d26a3d215e2c5841d5c92de4b9f5e860b8dea692a36e469f301de5"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/active.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 135163,
+        "sha256": "a026b41c6fbfccb11d6436cb06f2728bfd575d4f45635d451d188ac3ae00ae3c",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/active.png.import",
+          "bytes": 961,
+          "sha256": "acfcad12c5a04c387c6003c6e6c142551ceafeac07076d8d047d5c257503d69d"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/attack.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 72411,
+        "sha256": "fc4d31c33d6de710d99cad4a0dbac0d453ccd7f11fee73fc7ee5ae181e2ff75c",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/attack.png.import",
+          "bytes": 961,
+          "sha256": "f5efa487537a82158a41496d3016e6945424ae3e9d54059f70f29339049c1985"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/death.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 82740,
+        "sha256": "331af94552dd5f196d659ef0358c39ec7b306d8b6a62c050911f5e4319168d41",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/death.png.import",
+          "bytes": 957,
+          "sha256": "93fde9626a2c254251cc9dd2a125f0a0b916f78ad0089724460cb0a77269f0d2"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/idle.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 78830,
+        "sha256": "658833306eef0b69d7afa4d8e36b348b88a86fc5f1f5075b8fe1b5d3932b111b",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/idle.png.import",
+          "bytes": 954,
+          "sha256": "05f173f5f54e5123954ab6fffea8a9453dbae9882f73ad01641a2b6d4c3a37bb"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_e.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 126642,
+        "sha256": "ec2ff6005537fa7f5a3709745eaa6356e468f02c6e7cba5189a71c226f552a24",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_e.png.import",
+          "bytes": 961,
+          "sha256": "920eaa29f7ae7ebbb12086aa1468899fef76bcc21af40800e5703b4311e95c8a"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_n.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 117254,
+        "sha256": "4aab6af691e5e8bd1530a594a7babb36048b064b80ad4d2079deddac63b2dcf5",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_n.png.import",
+          "bytes": 961,
+          "sha256": "41d46c78ec7db77b065d5ce837cd4cea0787c5380a2443d051a060f66c733af7"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_ne.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 117401,
+        "sha256": "b4b5cb0c3baddf17cdc2004f45c73b4b1c55c77ddff25c83caf54d0fd359e8ab",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_ne.png.import",
+          "bytes": 963,
+          "sha256": "964dba1d457d55c3ff63d44b9355979e57361d9385c385c4aee1f0a9e8cbd397"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_nw.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 152452,
+        "sha256": "1be11aca0c1ac1d48bbe79e8010d0c335413cce687fd8d7aae8a41f9a0be6974",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_nw.png.import",
+          "bytes": 964,
+          "sha256": "02c2ec9c293ab619a6b5cca8734faa94087ba166c3c18c1aa15676e2e981091a"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_s.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 120212,
+        "sha256": "5215f2093a9a195dc66af2f451002f0121c2995fac8118f1608b5a75760748ab",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_s.png.import",
+          "bytes": 961,
+          "sha256": "7c2865530b21bbe61da0d6a45c240bf4d794b5c5ad7c0a9fc0badc162fae5437"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_se.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 112149,
+        "sha256": "301f86c44bd1b2f6b38ff0b5f575a41b9cefb75905f68a7eb3be8028feb758e1",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_se.png.import",
+          "bytes": 964,
+          "sha256": "bc349fc29d2173ec6f5fde7fd86e544ff8b9419f7ba04eb7c85c4d1f488e2d6f"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_sw.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 159638,
+        "sha256": "82111408542a15cf442352260b48e33f6e99a58b0964be9e61cacabee6a20044",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_sw.png.import",
+          "bytes": 964,
+          "sha256": "90a91d543f2e03f072b4c2e04979443002b63c0c4cd6e445575ff6309557bf91"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_w.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 134931,
+        "sha256": "9081cff3653852883dc1e4431b5f1836aa44d126c017df00aad70677402e96c2",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_w.png.import",
+          "bytes": 961,
+          "sha256": "c89a910da9c094daa52d560811732adb814dd80ca6af6e8f88e597288a721027"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/progress/progress.levelup_01.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 30032,
+        "sha256": "1db7a3285d11b33b07e8ab211063153d4881f6196ec8158f2f6f81bd301cabbb",
+        "metadata": {
+          "path": "assets/audio/sfx/progress/progress.levelup_01.wav.import",
+          "bytes": 541,
+          "sha256": "4d0fcc9c776aeee26a65d624c3ade1b3bbc83efd918bae4e312440148fad3b86"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/progress/progress.levelup_02.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 30032,
+        "sha256": "03e66b8028c35ded59707f47c69250a326e0eba827fd56f452965f722d055b89",
+        "metadata": {
+          "path": "assets/audio/sfx/progress/progress.levelup_02.wav.import",
+          "bytes": 541,
+          "sha256": "cf23e11b651a29dab24a706db0c90e0ecadd0ec10cc2fd0b64d7a627e7c4a5df"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/ui/ui.click_01.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 3792,
+        "sha256": "7256a4ba11d58d6376af25075708f32de2c6ebe9fe4cf3b1b59b43170ee6377d",
+        "metadata": {
+          "path": "assets/audio/sfx/ui/ui.click_01.wav.import",
+          "bytes": 511,
+          "sha256": "4047ebc57e1dd529660ecda2f85643d903ccc05a6f055e2d710d9cca844b09de"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/ui/ui.click_02.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 3792,
+        "sha256": "aecb9608b7744bdba6fbd298a0eebfab17f7604ed66f1e9beb97cb18fc2bc0e8",
+        "metadata": {
+          "path": "assets/audio/sfx/ui/ui.click_02.wav.import",
+          "bytes": 511,
+          "sha256": "3f956dcb1b95dc155271827ca74a92b6368111332cf65937023bf720e5dcedd1"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/ui/ui.confirm_01.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 3792,
+        "sha256": "0c8da778aac6ec11f3cf5c2f05db751e345f75eee5d2f8a1d07f3f872f7862eb",
+        "metadata": {
+          "path": "assets/audio/sfx/ui/ui.confirm_01.wav.import",
+          "bytes": 516,
+          "sha256": "f945624bc807ee1572466dca9621c2b8966bb4387f697a669e11298b7fe9b3a4"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/ui/ui.confirm_02.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 3792,
+        "sha256": "6ee9a961e9283a07636ae427c68a612f408b93c39a83738b40c8d4a403453641",
+        "metadata": {
+          "path": "assets/audio/sfx/ui/ui.confirm_02.wav.import",
+          "bytes": 517,
+          "sha256": "685f18d9262420c605cfdc155677cbd9034ae05010e535ec85fdef3090a7aca0"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/fonts/AlegreyaSans-Bold.ttf",
+        "group": "other",
+        "exists": true,
+        "bytes": 266856,
+        "sha256": "a3055a1893759bdbd7504bb22abc583769e7974c49353176eac0b03792c9fb8e",
+        "metadata": {
+          "path": "assets/fonts/AlegreyaSans-Bold.ttf.import",
+          "bytes": 788,
+          "sha256": "2417a78da8ec42a5ca9fa23a16a023b1d899d480ba6aec5db292fc5118176a28"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/fx/nevoa_textura_01.png",
+        "group": "other",
+        "exists": true,
+        "bytes": 1336975,
+        "sha256": "4e9eeeb1acb29a580c022b4b7787d7281722f902c22f7ac3c06dc3a54b7a59cd",
+        "metadata": {
+          "path": "assets/fx/nevoa_textura_01.png.import",
+          "bytes": 961,
+          "sha256": "03111a6973a65fbfbf7071e68fa0805e32afad930bb20ecab07484cd8af9e9e4"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      }
+    ],
+    "tableEmpty": true,
+    "screenReferences": [],
+    "overrideAssignments": [
+      {
+        "path": "tests/test_hero_strips.gd",
+        "line": 105,
+        "text": "HeroViewScript.strip_override = {&\"kayron\": {}}"
+      },
+      {
+        "path": "tests/test_hero_strips.gd",
+        "line": 108,
+        "text": "HeroViewScript.strip_override = saved"
+      }
+    ],
+    "stages": [
+      {
+        "path": "ui/stages/dagruve.tscn",
+        "paths": [
+          "res://assets/tiles/dagruve_ground_atlas_v3.png",
+          "res://assets/tiles/dagruve_ground_baked_v1.png"
+        ]
+      },
+      {
+        "path": "ui/stages/docas.tscn",
+        "paths": [
+          "res://assets/tiles/docas_ground_atlas_v3.png",
+          "res://assets/tiles/docas_ground_baked_v1.png"
+        ]
+      },
+      {
+        "path": "ui/stages/durao.tscn",
+        "paths": [
+          "res://assets/tiles/durao_ground_baked_v2.png"
+        ]
+      },
+      {
+        "path": "ui/stages/feng_tu.tscn",
+        "paths": [
+          "res://assets/tiles/feng_tu_ground_atlas_v1.png",
+          "res://assets/tiles/feng_tu_ground_baked_v2.png"
+        ]
+      },
+      {
+        "path": "ui/stages/goranthis.tscn",
+        "paths": [
+          "res://assets/tiles/goranthis_ground_atlas_v1.png",
+          "res://assets/tiles/goranthis_ground_baked_v2.png"
+        ]
+      },
+      {
+        "path": "ui/stages/molor.tscn",
+        "paths": [
+          "res://assets/tiles/molor_ground_atlas_v1.png",
+          "res://assets/tiles/molor_ground_baked_v2.png"
+        ]
+      },
+      {
+        "path": "ui/stages/pilares.tscn",
+        "paths": [
+          "res://assets/tiles/pilares_ground_atlas_v1.png",
+          "res://assets/tiles/pilares_ground_baked_v1.png"
+        ]
+      },
+      {
+        "path": "ui/stages/shedaklah.tscn",
+        "paths": [
+          "res://assets/tiles/shedaklah_ground_atlas_v1.png",
+          "res://assets/tiles/shedaklah_ground_baked_v2.png"
+        ]
+      },
+      {
+        "path": "ui/stages/shendilavri.tscn",
+        "paths": [
+          "res://assets/tiles/shendilavri_ground_atlas_v1.png",
+          "res://assets/tiles/shendilavri_ground_baked_v2.png"
+        ]
+      }
+    ],
+    "events": {
+      "ui.click": [
+        "res://assets/audio/sfx/ui/ui.click_01.mp3"
+      ],
+      "ui.confirm": [
+        "res://assets/audio/sfx/ui/ui.confirm_01.mp3"
+      ],
+      "progress.levelup": [
+        "res://assets/audio/sfx/progress/progress.levelup_01.mp3"
+      ]
+    },
+    "audioMissing": [],
+    "plannedMissing": []
+  },
+  "web": {
+    "checks": [
+      {
+        "path": "assets/tiles/dagruve_ground_atlas_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 13529,
+        "sha256": "8ca3b5ed8bc49ffc0b3945f93d624fa49936a40a24ca4687e2714b3d2a95ad3e",
+        "metadata": {
+          "path": "assets/tiles/dagruve_ground_atlas_v1.png.import",
+          "bytes": 985,
+          "sha256": "a0dbce494f7aa16ac39d909167539dac2b78731b10bf6034b4479fd58db52144"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/dagruve_ground_atlas_v2.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 11361,
+        "sha256": "9cb4ad6a0feed85ebc030b7c98c35038fcaa311d5e7b52c72b7b43366f0bed83",
+        "metadata": {
+          "path": "assets/tiles/dagruve_ground_atlas_v2.png.import",
+          "bytes": 986,
+          "sha256": "c2bd23eb5f6177c84498c6de011b9656e29ae58a202abf6d8f9db8a63d4ee3eb"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/docas_ground_atlas_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 12370,
+        "sha256": "627e6cc40f641fda7a9b4addb728aa1d47c371b38bd091dbb66ec81fafe01a93",
+        "metadata": {
+          "path": "assets/tiles/docas_ground_atlas_v1.png.import",
+          "bytes": 979,
+          "sha256": "53cb107179bcd82a4d22d409fa7441f1d358984f4ba348e672bcaf17805c9b13"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/docas_ground_atlas_v2.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 10174,
+        "sha256": "e7c4acb061af41a78985942fb425141148fb8df01d9b2309f889e7e567c74f97",
+        "metadata": {
+          "path": "assets/tiles/docas_ground_atlas_v2.png.import",
+          "bytes": 980,
+          "sha256": "4089a8dc273be93b64d99cdad40c3c90483adfb5f18dcc430fd099d729d60919"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/durao_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 3581575,
+        "sha256": "8d0a82f22777960b82dd21e5ef6fb63b279b2541023679c73d79ce57c2ba673a",
+        "metadata": {
+          "path": "assets/tiles/durao_ground_baked_v1.png.import",
+          "bytes": 980,
+          "sha256": "34d0cf624d1e3b96d47b8a7d7ffe2ea1cf0cc35d8a843a1824ce44c198730fe5"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/feng_tu_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 4228483,
+        "sha256": "9e5d2e6c6a2ccc6c657c34d1f74e1fca36cea8ce3487e8da2b74974344b40003",
+        "metadata": {
+          "path": "assets/tiles/feng_tu_ground_baked_v1.png.import",
+          "bytes": 986,
+          "sha256": "88b900a54d5d865d8e982a8f6d7c430cf7b226b934350fe9b2e4eb2b751328e7"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/goranthis_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 4692415,
+        "sha256": "aa3d3203ee0ab4c398a2f8ecbb9eeeebb4caa60ad50bf419a6e61684a072eee6",
+        "metadata": {
+          "path": "assets/tiles/goranthis_ground_baked_v1.png.import",
+          "bytes": 992,
+          "sha256": "1587d80634b0c3833b01f077af8e5723107e4093635a748cfdb9d76969fffd60"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/molor_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 3785128,
+        "sha256": "d37b654c4ad6ed355d43af30d455262c558a983a042d1999613fa5efbaa29009",
+        "metadata": {
+          "path": "assets/tiles/molor_ground_baked_v1.png.import",
+          "bytes": 980,
+          "sha256": "c4d49c4d9c02bfe7f7da3a0cd0a02e513e4af854accdb58dd5d51d28c60c935c"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/shedaklah_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 3992860,
+        "sha256": "74cd4ab06c799928ce5c77381d189400f5d52a54e66c9442b12ace0b8ee490df",
+        "metadata": {
+          "path": "assets/tiles/shedaklah_ground_baked_v1.png.import",
+          "bytes": 992,
+          "sha256": "70efe16caa84d6f0669ea86ae4f8fe713558366d1e173635e3231689dc8b0221"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/tiles/shendilavri_ground_baked_v1.png",
+        "group": "tiles",
+        "exists": true,
+        "bytes": 4288012,
+        "sha256": "25b2511a524e6621e6f3ada1824cb2f60df43309033cee3e23557c30294aeb3b",
+        "metadata": {
+          "path": "assets/tiles/shendilavri_ground_baked_v1.png.import",
+          "bytes": 998,
+          "sha256": "18ed9ff667d26a3d215e2c5841d5c92de4b9f5e860b8dea692a36e469f301de5"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/active.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 135163,
+        "sha256": "a026b41c6fbfccb11d6436cb06f2728bfd575d4f45635d451d188ac3ae00ae3c",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/active.png.import",
+          "bytes": 961,
+          "sha256": "acfcad12c5a04c387c6003c6e6c142551ceafeac07076d8d047d5c257503d69d"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/attack.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 72411,
+        "sha256": "fc4d31c33d6de710d99cad4a0dbac0d453ccd7f11fee73fc7ee5ae181e2ff75c",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/attack.png.import",
+          "bytes": 961,
+          "sha256": "f5efa487537a82158a41496d3016e6945424ae3e9d54059f70f29339049c1985"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/death.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 82740,
+        "sha256": "331af94552dd5f196d659ef0358c39ec7b306d8b6a62c050911f5e4319168d41",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/death.png.import",
+          "bytes": 957,
+          "sha256": "93fde9626a2c254251cc9dd2a125f0a0b916f78ad0089724460cb0a77269f0d2"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/idle.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 78830,
+        "sha256": "658833306eef0b69d7afa4d8e36b348b88a86fc5f1f5075b8fe1b5d3932b111b",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/idle.png.import",
+          "bytes": 954,
+          "sha256": "05f173f5f54e5123954ab6fffea8a9453dbae9882f73ad01641a2b6d4c3a37bb"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_e.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 126642,
+        "sha256": "ec2ff6005537fa7f5a3709745eaa6356e468f02c6e7cba5189a71c226f552a24",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_e.png.import",
+          "bytes": 961,
+          "sha256": "920eaa29f7ae7ebbb12086aa1468899fef76bcc21af40800e5703b4311e95c8a"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_n.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 117254,
+        "sha256": "4aab6af691e5e8bd1530a594a7babb36048b064b80ad4d2079deddac63b2dcf5",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_n.png.import",
+          "bytes": 961,
+          "sha256": "41d46c78ec7db77b065d5ce837cd4cea0787c5380a2443d051a060f66c733af7"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_ne.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 117401,
+        "sha256": "b4b5cb0c3baddf17cdc2004f45c73b4b1c55c77ddff25c83caf54d0fd359e8ab",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_ne.png.import",
+          "bytes": 963,
+          "sha256": "964dba1d457d55c3ff63d44b9355979e57361d9385c385c4aee1f0a9e8cbd397"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_nw.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 152452,
+        "sha256": "1be11aca0c1ac1d48bbe79e8010d0c335413cce687fd8d7aae8a41f9a0be6974",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_nw.png.import",
+          "bytes": 964,
+          "sha256": "02c2ec9c293ab619a6b5cca8734faa94087ba166c3c18c1aa15676e2e981091a"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_s.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 120212,
+        "sha256": "5215f2093a9a195dc66af2f451002f0121c2995fac8118f1608b5a75760748ab",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_s.png.import",
+          "bytes": 961,
+          "sha256": "7c2865530b21bbe61da0d6a45c240bf4d794b5c5ad7c0a9fc0badc162fae5437"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_se.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 112149,
+        "sha256": "301f86c44bd1b2f6b38ff0b5f575a41b9cefb75905f68a7eb3be8028feb758e1",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_se.png.import",
+          "bytes": 964,
+          "sha256": "bc349fc29d2173ec6f5fde7fd86e544ff8b9419f7ba04eb7c85c4d1f488e2d6f"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_sw.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 159638,
+        "sha256": "82111408542a15cf442352260b48e33f6e99a58b0964be9e61cacabee6a20044",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_sw.png.import",
+          "bytes": 964,
+          "sha256": "90a91d543f2e03f072b4c2e04979443002b63c0c4cd6e445575ff6309557bf91"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/animations/heroes_screen/kayron/move_w.png",
+        "group": "pilot",
+        "exists": true,
+        "bytes": 134931,
+        "sha256": "9081cff3653852883dc1e4431b5f1836aa44d126c017df00aad70677402e96c2",
+        "metadata": {
+          "path": "assets/animations/heroes_screen/kayron/move_w.png.import",
+          "bytes": 961,
+          "sha256": "c89a910da9c094daa52d560811732adb814dd80ca6af6e8f88e597288a721027"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/progress/progress.levelup_01.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 30032,
+        "sha256": "1db7a3285d11b33b07e8ab211063153d4881f6196ec8158f2f6f81bd301cabbb",
+        "metadata": {
+          "path": "assets/audio/sfx/progress/progress.levelup_01.wav.import",
+          "bytes": 541,
+          "sha256": "4d0fcc9c776aeee26a65d624c3ade1b3bbc83efd918bae4e312440148fad3b86"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/progress/progress.levelup_02.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 30032,
+        "sha256": "03e66b8028c35ded59707f47c69250a326e0eba827fd56f452965f722d055b89",
+        "metadata": {
+          "path": "assets/audio/sfx/progress/progress.levelup_02.wav.import",
+          "bytes": 541,
+          "sha256": "cf23e11b651a29dab24a706db0c90e0ecadd0ec10cc2fd0b64d7a627e7c4a5df"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/ui/ui.click_01.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 3792,
+        "sha256": "7256a4ba11d58d6376af25075708f32de2c6ebe9fe4cf3b1b59b43170ee6377d",
+        "metadata": {
+          "path": "assets/audio/sfx/ui/ui.click_01.wav.import",
+          "bytes": 511,
+          "sha256": "4047ebc57e1dd529660ecda2f85643d903ccc05a6f055e2d710d9cca844b09de"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/ui/ui.click_02.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 3792,
+        "sha256": "aecb9608b7744bdba6fbd298a0eebfab17f7604ed66f1e9beb97cb18fc2bc0e8",
+        "metadata": {
+          "path": "assets/audio/sfx/ui/ui.click_02.wav.import",
+          "bytes": 511,
+          "sha256": "3f956dcb1b95dc155271827ca74a92b6368111332cf65937023bf720e5dcedd1"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/ui/ui.confirm_01.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 3792,
+        "sha256": "0c8da778aac6ec11f3cf5c2f05db751e345f75eee5d2f8a1d07f3f872f7862eb",
+        "metadata": {
+          "path": "assets/audio/sfx/ui/ui.confirm_01.wav.import",
+          "bytes": 516,
+          "sha256": "f945624bc807ee1572466dca9621c2b8966bb4387f697a669e11298b7fe9b3a4"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/audio/sfx/ui/ui.confirm_02.wav",
+        "group": "audio",
+        "exists": true,
+        "bytes": 3792,
+        "sha256": "6ee9a961e9283a07636ae427c68a612f408b93c39a83738b40c8d4a403453641",
+        "metadata": {
+          "path": "assets/audio/sfx/ui/ui.confirm_02.wav.import",
+          "bytes": 517,
+          "sha256": "685f18d9262420c605cfdc155677cbd9034ae05010e535ec85fdef3090a7aca0"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/fonts/AlegreyaSans-Bold.ttf",
+        "group": "other",
+        "exists": true,
+        "bytes": 266856,
+        "sha256": "a3055a1893759bdbd7504bb22abc583769e7974c49353176eac0b03792c9fb8e",
+        "metadata": {
+          "path": "assets/fonts/AlegreyaSans-Bold.ttf.import",
+          "bytes": 788,
+          "sha256": "2417a78da8ec42a5ca9fa23a16a023b1d899d480ba6aec5db292fc5118176a28"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      },
+      {
+        "path": "assets/fx/nevoa_textura_01.png",
+        "group": "other",
+        "exists": true,
+        "bytes": 1336975,
+        "sha256": "4e9eeeb1acb29a580c022b4b7787d7281722f902c22f7ac3c06dc3a54b7a59cd",
+        "metadata": {
+          "path": "assets/fx/nevoa_textura_01.png.import",
+          "bytes": 961,
+          "sha256": "03111a6973a65fbfbf7071e68fa0805e32afad930bb20ecab07484cd8af9e9e4"
+        },
+        "fullPathReferences": [],
+        "basenameReferences": [],
+        "uidReferences": []
+      }
+    ],
+    "tableEmpty": true,
+    "screenReferences": [],
+    "overrideAssignments": [
+      {
+        "path": "tests/test_hero_strips.gd",
+        "line": 105,
+        "text": "HeroViewScript.strip_override = {&\"kayron\": {}}"
+      },
+      {
+        "path": "tests/test_hero_strips.gd",
+        "line": 108,
+        "text": "HeroViewScript.strip_override = saved"
+      }
+    ],
+    "stages": [
+      {
+        "path": "ui/stages/dagruve.tscn",
+        "paths": [
+          "res://assets/tiles/dagruve_ground_atlas_v3.png",
+          "res://assets/tiles/dagruve_ground_baked_v1.png"
+        ]
+      },
+      {
+        "path": "ui/stages/docas.tscn",
+        "paths": [
+          "res://assets/tiles/docas_ground_atlas_v3.png",
+          "res://assets/tiles/docas_ground_baked_v1.png"
+        ]
+      },
+      {
+        "path": "ui/stages/durao.tscn",
+        "paths": [
+          "res://assets/tiles/durao_ground_baked_v2.png"
+        ]
+      },
+      {
+        "path": "ui/stages/feng_tu.tscn",
+        "paths": [
+          "res://assets/tiles/feng_tu_ground_atlas_v1.png",
+          "res://assets/tiles/feng_tu_ground_baked_v2.png"
+        ]
+      },
+      {
+        "path": "ui/stages/goranthis.tscn",
+        "paths": [
+          "res://assets/tiles/goranthis_ground_atlas_v1.png",
+          "res://assets/tiles/goranthis_ground_baked_v2.png"
+        ]
+      },
+      {
+        "path": "ui/stages/molor.tscn",
+        "paths": [
+          "res://assets/tiles/molor_ground_atlas_v1.png",
+          "res://assets/tiles/molor_ground_baked_v2.png"
+        ]
+      },
+      {
+        "path": "ui/stages/pilares.tscn",
+        "paths": [
+          "res://assets/tiles/pilares_ground_atlas_v1.png",
+          "res://assets/tiles/pilares_ground_baked_v1.png"
+        ]
+      },
+      {
+        "path": "ui/stages/shedaklah.tscn",
+        "paths": [
+          "res://assets/tiles/shedaklah_ground_atlas_v1.png",
+          "res://assets/tiles/shedaklah_ground_baked_v2.png"
+        ]
+      },
+      {
+        "path": "ui/stages/shendilavri.tscn",
+        "paths": [
+          "res://assets/tiles/shendilavri_ground_atlas_v1.png",
+          "res://assets/tiles/shendilavri_ground_baked_v2.png"
+        ]
+      }
+    ],
+    "events": {
+      "ui.click": [
+        "res://assets/audio/sfx/ui/ui.click_01.mp3"
+      ],
+      "ui.confirm": [
+        "res://assets/audio/sfx/ui/ui.confirm_01.mp3"
+      ],
+      "progress.levelup": [
+        "res://assets/audio/sfx/progress/progress.levelup_01.mp3"
+      ]
+    },
+    "audioMissing": [],
+    "plannedMissing": []
+  },
+  "manifest": [
+    {
+      "path": "assets/tiles/dagruve_ground_atlas_v1.png",
+      "group": "tiles",
+      "exists": true,
+      "bytes": 13529,
+      "sha256": "8ca3b5ed8bc49ffc0b3945f93d624fa49936a40a24ca4687e2714b3d2a95ad3e",
+      "metadata": {
+        "path": "assets/tiles/dagruve_ground_atlas_v1.png.import",
+        "bytes": 985,
+        "sha256": "a0dbce494f7aa16ac39d909167539dac2b78731b10bf6034b4479fd58db52144"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/tiles/dagruve_ground_atlas_v2.png",
+      "group": "tiles",
+      "exists": true,
+      "bytes": 11361,
+      "sha256": "9cb4ad6a0feed85ebc030b7c98c35038fcaa311d5e7b52c72b7b43366f0bed83",
+      "metadata": {
+        "path": "assets/tiles/dagruve_ground_atlas_v2.png.import",
+        "bytes": 986,
+        "sha256": "c2bd23eb5f6177c84498c6de011b9656e29ae58a202abf6d8f9db8a63d4ee3eb"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/tiles/docas_ground_atlas_v1.png",
+      "group": "tiles",
+      "exists": true,
+      "bytes": 12370,
+      "sha256": "627e6cc40f641fda7a9b4addb728aa1d47c371b38bd091dbb66ec81fafe01a93",
+      "metadata": {
+        "path": "assets/tiles/docas_ground_atlas_v1.png.import",
+        "bytes": 979,
+        "sha256": "53cb107179bcd82a4d22d409fa7441f1d358984f4ba348e672bcaf17805c9b13"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/tiles/docas_ground_atlas_v2.png",
+      "group": "tiles",
+      "exists": true,
+      "bytes": 10174,
+      "sha256": "e7c4acb061af41a78985942fb425141148fb8df01d9b2309f889e7e567c74f97",
+      "metadata": {
+        "path": "assets/tiles/docas_ground_atlas_v2.png.import",
+        "bytes": 980,
+        "sha256": "4089a8dc273be93b64d99cdad40c3c90483adfb5f18dcc430fd099d729d60919"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/tiles/durao_ground_baked_v1.png",
+      "group": "tiles",
+      "exists": true,
+      "bytes": 3581575,
+      "sha256": "8d0a82f22777960b82dd21e5ef6fb63b279b2541023679c73d79ce57c2ba673a",
+      "metadata": {
+        "path": "assets/tiles/durao_ground_baked_v1.png.import",
+        "bytes": 980,
+        "sha256": "34d0cf624d1e3b96d47b8a7d7ffe2ea1cf0cc35d8a843a1824ce44c198730fe5"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/tiles/feng_tu_ground_baked_v1.png",
+      "group": "tiles",
+      "exists": true,
+      "bytes": 4228483,
+      "sha256": "9e5d2e6c6a2ccc6c657c34d1f74e1fca36cea8ce3487e8da2b74974344b40003",
+      "metadata": {
+        "path": "assets/tiles/feng_tu_ground_baked_v1.png.import",
+        "bytes": 986,
+        "sha256": "88b900a54d5d865d8e982a8f6d7c430cf7b226b934350fe9b2e4eb2b751328e7"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/tiles/goranthis_ground_baked_v1.png",
+      "group": "tiles",
+      "exists": true,
+      "bytes": 4692415,
+      "sha256": "aa3d3203ee0ab4c398a2f8ecbb9eeeebb4caa60ad50bf419a6e61684a072eee6",
+      "metadata": {
+        "path": "assets/tiles/goranthis_ground_baked_v1.png.import",
+        "bytes": 992,
+        "sha256": "1587d80634b0c3833b01f077af8e5723107e4093635a748cfdb9d76969fffd60"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/tiles/molor_ground_baked_v1.png",
+      "group": "tiles",
+      "exists": true,
+      "bytes": 3785128,
+      "sha256": "d37b654c4ad6ed355d43af30d455262c558a983a042d1999613fa5efbaa29009",
+      "metadata": {
+        "path": "assets/tiles/molor_ground_baked_v1.png.import",
+        "bytes": 980,
+        "sha256": "c4d49c4d9c02bfe7f7da3a0cd0a02e513e4af854accdb58dd5d51d28c60c935c"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/tiles/shedaklah_ground_baked_v1.png",
+      "group": "tiles",
+      "exists": true,
+      "bytes": 3992860,
+      "sha256": "74cd4ab06c799928ce5c77381d189400f5d52a54e66c9442b12ace0b8ee490df",
+      "metadata": {
+        "path": "assets/tiles/shedaklah_ground_baked_v1.png.import",
+        "bytes": 992,
+        "sha256": "70efe16caa84d6f0669ea86ae4f8fe713558366d1e173635e3231689dc8b0221"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/tiles/shendilavri_ground_baked_v1.png",
+      "group": "tiles",
+      "exists": true,
+      "bytes": 4288012,
+      "sha256": "25b2511a524e6621e6f3ada1824cb2f60df43309033cee3e23557c30294aeb3b",
+      "metadata": {
+        "path": "assets/tiles/shendilavri_ground_baked_v1.png.import",
+        "bytes": 998,
+        "sha256": "18ed9ff667d26a3d215e2c5841d5c92de4b9f5e860b8dea692a36e469f301de5"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/active.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 135163,
+      "sha256": "a026b41c6fbfccb11d6436cb06f2728bfd575d4f45635d451d188ac3ae00ae3c",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/active.png.import",
+        "bytes": 961,
+        "sha256": "acfcad12c5a04c387c6003c6e6c142551ceafeac07076d8d047d5c257503d69d"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/attack.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 72411,
+      "sha256": "fc4d31c33d6de710d99cad4a0dbac0d453ccd7f11fee73fc7ee5ae181e2ff75c",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/attack.png.import",
+        "bytes": 961,
+        "sha256": "f5efa487537a82158a41496d3016e6945424ae3e9d54059f70f29339049c1985"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/death.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 82740,
+      "sha256": "331af94552dd5f196d659ef0358c39ec7b306d8b6a62c050911f5e4319168d41",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/death.png.import",
+        "bytes": 957,
+        "sha256": "93fde9626a2c254251cc9dd2a125f0a0b916f78ad0089724460cb0a77269f0d2"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/idle.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 78830,
+      "sha256": "658833306eef0b69d7afa4d8e36b348b88a86fc5f1f5075b8fe1b5d3932b111b",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/idle.png.import",
+        "bytes": 954,
+        "sha256": "05f173f5f54e5123954ab6fffea8a9453dbae9882f73ad01641a2b6d4c3a37bb"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_e.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 126642,
+      "sha256": "ec2ff6005537fa7f5a3709745eaa6356e468f02c6e7cba5189a71c226f552a24",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/move_e.png.import",
+        "bytes": 961,
+        "sha256": "920eaa29f7ae7ebbb12086aa1468899fef76bcc21af40800e5703b4311e95c8a"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_n.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 117254,
+      "sha256": "4aab6af691e5e8bd1530a594a7babb36048b064b80ad4d2079deddac63b2dcf5",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/move_n.png.import",
+        "bytes": 961,
+        "sha256": "41d46c78ec7db77b065d5ce837cd4cea0787c5380a2443d051a060f66c733af7"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_ne.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 117401,
+      "sha256": "b4b5cb0c3baddf17cdc2004f45c73b4b1c55c77ddff25c83caf54d0fd359e8ab",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/move_ne.png.import",
+        "bytes": 963,
+        "sha256": "964dba1d457d55c3ff63d44b9355979e57361d9385c385c4aee1f0a9e8cbd397"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_nw.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 152452,
+      "sha256": "1be11aca0c1ac1d48bbe79e8010d0c335413cce687fd8d7aae8a41f9a0be6974",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/move_nw.png.import",
+        "bytes": 964,
+        "sha256": "02c2ec9c293ab619a6b5cca8734faa94087ba166c3c18c1aa15676e2e981091a"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_s.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 120212,
+      "sha256": "5215f2093a9a195dc66af2f451002f0121c2995fac8118f1608b5a75760748ab",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/move_s.png.import",
+        "bytes": 961,
+        "sha256": "7c2865530b21bbe61da0d6a45c240bf4d794b5c5ad7c0a9fc0badc162fae5437"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_se.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 112149,
+      "sha256": "301f86c44bd1b2f6b38ff0b5f575a41b9cefb75905f68a7eb3be8028feb758e1",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/move_se.png.import",
+        "bytes": 964,
+        "sha256": "bc349fc29d2173ec6f5fde7fd86e544ff8b9419f7ba04eb7c85c4d1f488e2d6f"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_sw.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 159638,
+      "sha256": "82111408542a15cf442352260b48e33f6e99a58b0964be9e61cacabee6a20044",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/move_sw.png.import",
+        "bytes": 964,
+        "sha256": "90a91d543f2e03f072b4c2e04979443002b63c0c4cd6e445575ff6309557bf91"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/animations/heroes_screen/kayron/move_w.png",
+      "group": "pilot",
+      "exists": true,
+      "bytes": 134931,
+      "sha256": "9081cff3653852883dc1e4431b5f1836aa44d126c017df00aad70677402e96c2",
+      "metadata": {
+        "path": "assets/animations/heroes_screen/kayron/move_w.png.import",
+        "bytes": 961,
+        "sha256": "c89a910da9c094daa52d560811732adb814dd80ca6af6e8f88e597288a721027"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/audio/sfx/progress/progress.levelup_01.wav",
+      "group": "audio",
+      "exists": true,
+      "bytes": 30032,
+      "sha256": "1db7a3285d11b33b07e8ab211063153d4881f6196ec8158f2f6f81bd301cabbb",
+      "metadata": {
+        "path": "assets/audio/sfx/progress/progress.levelup_01.wav.import",
+        "bytes": 541,
+        "sha256": "4d0fcc9c776aeee26a65d624c3ade1b3bbc83efd918bae4e312440148fad3b86"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/audio/sfx/progress/progress.levelup_02.wav",
+      "group": "audio",
+      "exists": true,
+      "bytes": 30032,
+      "sha256": "03e66b8028c35ded59707f47c69250a326e0eba827fd56f452965f722d055b89",
+      "metadata": {
+        "path": "assets/audio/sfx/progress/progress.levelup_02.wav.import",
+        "bytes": 541,
+        "sha256": "cf23e11b651a29dab24a706db0c90e0ecadd0ec10cc2fd0b64d7a627e7c4a5df"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/audio/sfx/ui/ui.click_01.wav",
+      "group": "audio",
+      "exists": true,
+      "bytes": 3792,
+      "sha256": "7256a4ba11d58d6376af25075708f32de2c6ebe9fe4cf3b1b59b43170ee6377d",
+      "metadata": {
+        "path": "assets/audio/sfx/ui/ui.click_01.wav.import",
+        "bytes": 511,
+        "sha256": "4047ebc57e1dd529660ecda2f85643d903ccc05a6f055e2d710d9cca844b09de"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/audio/sfx/ui/ui.click_02.wav",
+      "group": "audio",
+      "exists": true,
+      "bytes": 3792,
+      "sha256": "aecb9608b7744bdba6fbd298a0eebfab17f7604ed66f1e9beb97cb18fc2bc0e8",
+      "metadata": {
+        "path": "assets/audio/sfx/ui/ui.click_02.wav.import",
+        "bytes": 511,
+        "sha256": "3f956dcb1b95dc155271827ca74a92b6368111332cf65937023bf720e5dcedd1"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/audio/sfx/ui/ui.confirm_01.wav",
+      "group": "audio",
+      "exists": true,
+      "bytes": 3792,
+      "sha256": "0c8da778aac6ec11f3cf5c2f05db751e345f75eee5d2f8a1d07f3f872f7862eb",
+      "metadata": {
+        "path": "assets/audio/sfx/ui/ui.confirm_01.wav.import",
+        "bytes": 516,
+        "sha256": "f945624bc807ee1572466dca9621c2b8966bb4387f697a669e11298b7fe9b3a4"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/audio/sfx/ui/ui.confirm_02.wav",
+      "group": "audio",
+      "exists": true,
+      "bytes": 3792,
+      "sha256": "6ee9a961e9283a07636ae427c68a612f408b93c39a83738b40c8d4a403453641",
+      "metadata": {
+        "path": "assets/audio/sfx/ui/ui.confirm_02.wav.import",
+        "bytes": 517,
+        "sha256": "685f18d9262420c605cfdc155677cbd9034ae05010e535ec85fdef3090a7aca0"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/fonts/AlegreyaSans-Bold.ttf",
+      "group": "other",
+      "exists": true,
+      "bytes": 266856,
+      "sha256": "a3055a1893759bdbd7504bb22abc583769e7974c49353176eac0b03792c9fb8e",
+      "metadata": {
+        "path": "assets/fonts/AlegreyaSans-Bold.ttf.import",
+        "bytes": 788,
+        "sha256": "2417a78da8ec42a5ca9fa23a16a023b1d899d480ba6aec5db292fc5118176a28"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    },
+    {
+      "path": "assets/fx/nevoa_textura_01.png",
+      "group": "other",
+      "exists": true,
+      "bytes": 1336975,
+      "sha256": "4e9eeeb1acb29a580c022b4b7787d7281722f902c22f7ac3c06dc3a54b7a59cd",
+      "metadata": {
+        "path": "assets/fx/nevoa_textura_01.png.import",
+        "bytes": 961,
+        "sha256": "03111a6973a65fbfbf7071e68fa0805e32afad930bb20ecab07484cd8af9e9e4"
+      },
+      "fullPathReferences": [],
+      "basenameReferences": [],
+      "uidReferences": [],
+      "webHashMatches": true,
+      "originHashMatches": true,
+      "originMetadataMatches": true
+    }
+  ],
+  "groupSizes": [
+    {
+      "group": "tiles",
+      "resources": 10,
+      "bytes": 24625765
+    },
+    {
+      "group": "pilot",
+      "resources": 12,
+      "bytes": 1421355
+    },
+    {
+      "group": "audio",
+      "resources": 6,
+      "bytes": 78369
+    },
+    {
+      "group": "other",
+      "resources": 2,
+      "bytes": 1605580
+    }
+  ],
+  "totalBytes": 27731069,
+  "preserve": [
+    "assets/fonts/OFL-AlegreyaSans.txt",
+    "assets/fonts/OFL-CinzelDecorative.txt",
+    "assets/audio/generation_report.json"
+  ],
+  "engineTestsExecuted": false,
+  "deletionExecuted": false
+}

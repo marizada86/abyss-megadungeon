@@ -1,0 +1,79 @@
+{
+  "source_unchanged": true,
+  "changed_source": [],
+  "targets": {
+    "pc": {
+      "identical_to_base": 2994,
+      "different": [
+        "core/game.gd",
+        "core/playtest.gd",
+        "export_presets.cfg",
+        "tests/test_arcanist.gd",
+        "ui/abyss_panel.gd",
+        "ui/character_sheet.gd",
+        "ui/controller_options.gd",
+        "ui/event_pointer.gd",
+        "ui/ground_decals.gd",
+        "ui/hero_panel.gd",
+        "ui/hq_screen.gd",
+        "ui/hud.gd",
+        "ui/leaderboard.gd",
+        "ui/menu.gd",
+        "ui/options_panel.gd",
+        "ui/pause_menu.gd",
+        "ui/run.gd",
+        "ui/title.gd"
+      ],
+      "removed": [
+        "export_templates/nottgard-web.html",
+        "tests/test_mobile_controls.gd",
+        "tests/test_mobile_controls.gd.uid",
+        "ui/mobile_controls.gd",
+        "ui/mobile_controls.gd.uid",
+        "ui/touch_ui.gd",
+        "ui/touch_ui.gd.uid"
+      ],
+      "broken_literal_references": [],
+      "runtime_external": [],
+      "add_contract": true,
+      "save_identity_preserved": true
+    },
+    "web": {
+      "identical_to_base": 2994,
+      "different": [
+        "core/game.gd",
+        "core/playtest.gd",
+        "export_presets.cfg",
+        "tests/test_arcanist.gd",
+        "tests/test_playtest.gd",
+        "ui/abyss_panel.gd",
+        "ui/character_sheet.gd",
+        "ui/controller_options.gd",
+        "ui/event_pointer.gd",
+        "ui/ground_decals.gd",
+        "ui/hero_panel.gd",
+        "ui/hq_screen.gd",
+        "ui/hud.gd",
+        "ui/leaderboard.gd",
+        "ui/menu.gd",
+        "ui/options_panel.gd",
+        "ui/pause_menu.gd",
+        "ui/run.gd",
+        "ui/title.gd"
+      ],
+      "removed": [
+        "tests/test_mobile_controls.gd",
+        "tests/test_mobile_controls.gd.uid",
+        "ui/mobile_controls.gd",
+        "ui/mobile_controls.gd.uid",
+        "ui/touch_ui.gd",
+        "ui/touch_ui.gd.uid"
+      ],
+      "broken_literal_references": [],
+      "runtime_external": [],
+      "add_contract": true,
+      "save_identity_preserved": true
+    }
+  },
+  "common_assets_and_data": true
+}

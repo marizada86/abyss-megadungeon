@@ -1,0 +1,66 @@
+version: 2
+active_plan:
+  id: PLAN-NOTTGARD-PLATFORM-SPLIT-20261012
+  spec_id: SPEC-NOTTGARD-PLATFORM-SPLIT-20261012
+  revision: r1
+  mode: per-plan
+  approval: APPROVED_LOCAL_R1
+  authorization: aprovado (2026-10-12)
+  checkpoint: CP-SPLIT-02
+  platform: pc
+  status: LOCAL_DELIVERED_AWAITING_HUMAN_ACCEPTANCE
+  completed_steps: 5
+  total_steps: 5
+  current_step: B-SPLIT-003/S-SPLIT-005
+  human_acceptance: PENDING_PLAYTEST
+origin_return:
+  plan: PLAN-071
+  checkpoint: B-006/S-011
+  approval: per-plan approved 2026-10-06
+  status: LOCAL_DELIVERED_AWAITING_DEVICE_ACCEPTANCE
+  path: D:/dev/nottgard/games/godot/nottgard-survivors
+publication: NOT_AUTHORIZED
+commits: NOT_AUTHORIZED
+cleanup_deviation:
+  id: DEV-NOTTGARD-CLEANUP-20261012
+  plan: PLAN-NOTTGARD-CLEANUP-20261012
+  spec: SPEC-NOTTGARD-CLEANUP-20261012
+  revision: r1
+  mode: per-plan
+  approval: APPROVED_LOCAL_R1
+  authorization: 'aprovado (2026-10-12), proposta conservadora completa'
+  checkpoint: CP-CLEAN-02
+  status: COMPLETE_RETURNED
+  current_step: B-CLEAN-001/S-CLEAN-002
+  completed_steps: 2
+  total_steps: 2
+  evidence: EVID-NOTTGARD-CLEANUP-EXECUTION-20261012
+  removed_bytes: 1277653746
+  preserved_files_verified: 3018
+  return:
+    plan: PLAN-NOTTGARD-PLATFORM-SPLIT-20261012
+    revision: r1
+    checkpoint: CP-SPLIT-02
+    cursor: B-SPLIT-003/S-SPLIT-005
+    approval: APPROVED_LOCAL_R1
+    mode: per-plan
+    suspension: CLOSED
+    status: 'Retornado ao CP-SPLIT-02; aceite humano permanece pendente.'
+resource_cleanup_proposal:
+  deviation: DEV-NOTTGARD-RESOURCE-CLEANUP-20261012
+  plan: PLAN-NOTTGARD-RESOURCE-CLEANUP-20261012
+  spec: SPEC-NOTTGARD-RESOURCE-CLEANUP-20261012
+  revision: r1
+  status: PENDING_APPROVAL
+  mode: per-plan
+  mode_source: 'Proposto seguindo a limpeza anterior; confirmação junto ao novo escopo.'
+  approval: PENDING
+  checkpoint: CP-RESOURCE-CLEAN-01
+  current_step: B-RESOURCE-001/S-RESOURCE-001
+  completed_steps: 0
+  total_steps: 3
+  targets: [pc, web]
+  resources_per_project: 30
+  metadata_per_project: 30
+  evidence: EVID-NOTTGARD-RESOURCE-CLEANUP-AUDIT-20261012
+  original_plan_preserved: true

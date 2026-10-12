@@ -1,0 +1,50 @@
+add_version: '0.2'
+project:
+  id: PRJ-NOTTGARD-PC
+  name: Nottgard - Abyss Megadungeon
+interaction:
+  default_mode: direct
+  atena:
+    trigger: explicit-address
+    mode: guided
+  direct_execution:
+    allow_without_spec: true
+    reconciliation: propose-after-change
+specification:
+  require_zero_blocking_gaps: true
+  allow_explicit_defer: true
+  recommend_defaults: true
+bootstrap:
+  tooling_checks:
+    rtk:
+      enabled: true
+      required: false
+      ask_if_missing: true
+      ask_once: true
+      status: enabled
+policies:
+  remote_context: review-before-remote
+  draft_writing: allowed
+  publishing: explicit-approval
+  dependencies: allowlist-with-plan
+autonomy:
+  profile: guarded-autopilot
+  approval_selection: required-per-plan
+  report_mode: exceptions-and-final
+  max_retries: 3
+git:
+  local_commits: explicit-approval
+  direct_local_commits: explicit-approval
+  merge: explicit-approval
+  publish: explicit-approval
+skills:
+  record_opportunity_after_repetitions: 2
+  propose_after_repetitions: 3
+graph:
+  mode: derived
+  output: generated/graph.production.json
+platform:
+  target: windows-x86_64
+  mobile: deferred
+  source: D:/dev/nottgard/games/godot/nottgard-survivors
+  source_head: b83f188a6dae9d32f78420a318bffedcac4ff4a3
