@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "realSaveAccessed": false,
+  "browserExecutionTested": false,
+  "probes": [
+    {
+      "platform": "pc",
+      "mode": "before",
+      "pass": true,
+      "name": "Nottgard Survivors",
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-validation/pc/synthetic-appdata/Godot/app_userdata/Nottgard Survivors"
+    },
+    {
+      "platform": "pc",
+      "mode": "after",
+      "pass": true,
+      "name": "Nottgard - Abyss Megadungeon",
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-validation/pc/synthetic-appdata/Godot/app_userdata/Nottgard Survivors",
+      "selected": "Godot/app_userdata/Nottgard Survivors"
+    },
+    {
+      "platform": "pc",
+      "mode": "web-override",
+      "pass": true,
+      "name": "Nottgard - Abyss Megadungeon",
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-validation/pc/synthetic-appdata/godot/app_userdata/Nottgard Survivors",
+      "selected": "godot/app_userdata/Nottgard Survivors"
+    },
+    {
+      "platform": "pc",
+      "preservedFiles": 2955,
+      "mismatches": [],
+      "projectSha256": "6719fb77e574e034db22714c66f6f5a91e1331816ff9041e4647fe14c5a7747b",
+      "gameBehaviorUnchanged": true
+    },
+    {
+      "platform": "web",
+      "mode": "before",
+      "pass": true,
+      "name": "Nottgard Survivors",
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-validation/web/synthetic-appdata/Godot/app_userdata/Nottgard Survivors"
+    },
+    {
+      "platform": "web",
+      "mode": "after",
+      "pass": true,
+      "name": "Nottgard - Abyss Megadungeon",
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-validation/web/synthetic-appdata/Godot/app_userdata/Nottgard Survivors",
+      "selected": "Godot/app_userdata/Nottgard Survivors"
+    },
+    {
+      "platform": "web",
+      "mode": "web-override",
+      "pass": true,
+      "name": "Nottgard - Abyss Megadungeon",
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-validation/web/synthetic-appdata/godot/app_userdata/Nottgard Survivors",
+      "selected": "godot/app_userdata/Nottgard Survivors"
+    },
+    {
+      "platform": "web",
+      "preservedFiles": 2968,
+      "mismatches": [],
+      "projectSha256": "6719fb77e574e034db22714c66f6f5a91e1331816ff9041e4647fe14c5a7747b",
+      "gameBehaviorUnchanged": true
+    }
+  ]
+}

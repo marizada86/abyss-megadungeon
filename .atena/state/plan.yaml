@@ -51,16 +51,63 @@ resource_cleanup_proposal:
   plan: PLAN-NOTTGARD-RESOURCE-CLEANUP-20261012
   spec: SPEC-NOTTGARD-RESOURCE-CLEANUP-20261012
   revision: r1
-  status: PENDING_APPROVAL
+  status: COMPLETE_RETURNED
   mode: per-plan
-  mode_source: 'Proposto seguindo a limpeza anterior; confirmação junto ao novo escopo.'
-  approval: PENDING
-  checkpoint: CP-RESOURCE-CLEAN-01
-  current_step: B-RESOURCE-001/S-RESOURCE-001
-  completed_steps: 0
+  approval: APPROVED_LOCAL_R1
+  authorization: 'Aprovado por plano; remover 30 recursos e metadados no PC e Web, preservar ativos e validar ambos (2026-10-12)'
+  checkpoint: CP-RESOURCE-CLEAN-02
+  current_step: B-RESOURCE-002/S-RESOURCE-003
+  completed_steps: 3
   total_steps: 3
   targets: [pc, web]
   resources_per_project: 30
   metadata_per_project: 30
-  evidence: EVID-NOTTGARD-RESOURCE-CLEANUP-AUDIT-20261012
+  evidence: EVID-NOTTGARD-RESOURCE-CLEANUP-EXECUTION-20261012
   original_plan_preserved: true
+  return:
+    plan: PLAN-NOTTGARD-PLATFORM-SPLIT-20261012
+    revision: r1
+    checkpoint: CP-SPLIT-02
+    cursor: B-SPLIT-003/S-SPLIT-005
+    approval: APPROVED_LOCAL_R1
+    mode: per-plan
+    suspension: CLOSED
+    human_acceptance: PENDING_PLAYTEST
+pc_push_request:
+  id: DEV-NOTTGARD-PC-PUSH-20261012
+  status: READY_TO_COMMIT_AND_PUSH
+  push_authorization: 'vamos fazer o push do pc (2026-10-12)'
+  commit_authorization: 'autorizado (2026-10-12), commit do conjunto revisado e push para origin/main'
+  remote: origin
+  repository: https://github.com/marizada86/abyss-megadungeon.git
+  branch: main
+  base_head: b106b0c6cc8d8765123ff9a48afa3bda1587c27a
+  scope: 'Limpeza de recursos e nome do editor com saves preservados; somente projeto PC'
+  evidence: EVID-NOTTGARD-PC-PUSH-PREPARATION-20261012
+  web_push: NOT_AUTHORIZED
+  force_push: NOT_AUTHORIZED
+editor_name_proposal:
+  deviation: DEV-NOTTGARD-EDITOR-NAME-20261012
+  plan: PLAN-NOTTGARD-EDITOR-NAME-20261012
+  spec: SPEC-NOTTGARD-EDITOR-NAME-20261012
+  revision: r1
+  status: COMPLETE_RETURNED
+  mode: per-plan
+  approval: APPROVED_LOCAL_R1
+  authorization: 'aprovado, por plano (2026-10-12); proposta concreta r1 de nome no editor e caminhos legados de saves'
+  checkpoint: CP-EDITOR-NAME-02
+  current_step: B-EDITOR-NAME-002/S-EDITOR-NAME-003
+  completed_steps: 3
+  total_steps: 3
+  targets: [pc, web]
+  evidence: EVID-NOTTGARD-EDITOR-NAME-EXECUTION-20261012
+  original_plan_preserved: true
+  return:
+    plan: PLAN-NOTTGARD-PLATFORM-SPLIT-20261012
+    revision: r1
+    checkpoint: CP-SPLIT-02
+    cursor: B-SPLIT-003/S-SPLIT-005
+    approval: APPROVED_LOCAL_R1
+    mode: per-plan
+    suspension: CLOSED
+    human_acceptance: PENDING_PLAYTEST

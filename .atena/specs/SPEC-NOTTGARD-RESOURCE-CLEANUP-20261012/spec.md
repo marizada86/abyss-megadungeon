@@ -1,7 +1,7 @@
 ---
 id: SPEC-NOTTGARD-RESOURCE-CLEANUP-20261012
 revision: r1
-status: DRAFT_PENDING_APPROVAL
+status: DRAFT_AUTHORIZED_LOCAL_R1
 origin: guided-add
 implementation_preceded_spec: false
 ---
@@ -29,3 +29,5 @@ Plano de voo:
 Validação planejada nos clones sintéticos de PC/Web, com D:/Godot/godot.exe existente: import/parse headless e tests/test_terrain.gd, test_audio.gd, test_hero_strips.gd, test_animation_assets.gd, test_scripts_compile.gd. Usar perfil sintético por --controller-profile e isolar também user:// via configuração somente do clone para impedir save real. Falhas de baseline devem ser distinguidas de regressões; não alegar PASS por exit code sem conferir logs/falhas. Verificação estática de manifesto e referências após remoção; comparar fontes/recursos preservados por SHA-256. Não recriar .godot no projeto PC apenas para estes checks; testes em clones evitam repor o cache removido. Sem playtest novo ou reexport neste escopo.
 
 Evidência: [auditoria](../../evidence/EVID-NOTTGARD-RESOURCE-CLEANUP-AUDIT-20261012.md). Identidade/bible N/A para auditoria de dependências: nenhuma produção ou julgamento visual. Responsável: Atena neste chat, sem delegação. Reconciliação permitida: portagem de fatos operacionais e registro de exclusões; sem promoção canônica. Retorno: plano de separação r1, CP-SPLIT-02, B-SPLIT-003/S-SPLIT-005, per-plan aprovado, 5/5 etapas, aceite humano pendente.
+
+Autorização registrada em 2026-10-12: “Aprovado por plano. Pode remover os 30 recursos e seus metadados no PC e no Web, preservando os recursos ativos e validando os dois projetos.” CP-RESOURCE-CLEAN-01 APPROVED_LOCAL_R1.

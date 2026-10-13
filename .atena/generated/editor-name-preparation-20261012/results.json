@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "realSaveAccessed": false,
+  "sourceProjectsModified": false,
+  "results": [
+    {
+      "platform": "pc",
+      "mode": "before",
+      "pass": true,
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-probe/pc/synthetic-appdata/Godot/app_userdata/Nottgard Survivors",
+      "exitCode": 0
+    },
+    {
+      "platform": "pc",
+      "mode": "after",
+      "pass": true,
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-probe/pc/synthetic-appdata/Godot/app_userdata/Nottgard Survivors",
+      "selected": "Godot/app_userdata/Nottgard Survivors",
+      "exitCode": 0
+    },
+    {
+      "platform": "pc",
+      "mode": "web-override",
+      "pass": true,
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-probe/pc/synthetic-appdata/godot/app_userdata/Nottgard Survivors",
+      "selected": "godot/app_userdata/Nottgard Survivors",
+      "exitCode": 0
+    },
+    {
+      "platform": "pc",
+      "originalSha256": "f533792fe2582921bf30cc9004a4343961f40017cd0edf40ccf804a1f516fd00",
+      "candidateSha256": "6719fb77e574e034db22714c66f6f5a91e1331816ff9041e4647fe14c5a7747b"
+    },
+    {
+      "platform": "web",
+      "mode": "before",
+      "pass": true,
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-probe/web/synthetic-appdata/Godot/app_userdata/Nottgard Survivors",
+      "exitCode": 0
+    },
+    {
+      "platform": "web",
+      "mode": "after",
+      "pass": true,
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-probe/web/synthetic-appdata/Godot/app_userdata/Nottgard Survivors",
+      "selected": "Godot/app_userdata/Nottgard Survivors",
+      "exitCode": 0
+    },
+    {
+      "platform": "web",
+      "mode": "web-override",
+      "pass": true,
+      "userDir": "C:/Users/gui-m/.codex/visualizations/2026/10/12/01a13201-8812-7280-abed-0e698e6af2b6/editor-name-probe/web/synthetic-appdata/godot/app_userdata/Nottgard Survivors",
+      "selected": "godot/app_userdata/Nottgard Survivors",
+      "exitCode": 0
+    },
+    {
+      "platform": "web",
+      "originalSha256": "f533792fe2582921bf30cc9004a4343961f40017cd0edf40ccf804a1f516fd00",
+      "candidateSha256": "6719fb77e574e034db22714c66f6f5a91e1331816ff9041e4647fe14c5a7747b"
+    }
+  ]
+}

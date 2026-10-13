@@ -1,0 +1,20 @@
+{
+  "pc": {
+    "preservedFiles": 2958,
+    "excludedAutomaticGitMetadata": 37,
+    "mismatches": [],
+    "remaining": [],
+    "status": "PASS",
+    "removedFiles": 60,
+    "removedBytes": 27731069
+  },
+  "web": {
+    "preservedFiles": 6128,
+    "excludedAutomaticGitMetadata": 0,
+    "mismatches": [],
+    "remaining": [],
+    "status": "PASS",
+    "removedFiles": 60,
+    "removedBytes": 27731069
+  }
+}

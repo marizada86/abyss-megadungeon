@@ -1,0 +1,11 @@
+{
+  "platform": "web",
+  "phase": "candidate",
+  "status": "PASS",
+  "importExit": 0,
+  "testExit": 0,
+  "errors": [],
+  "testsPresent": true,
+  "isolated": true,
+  "timedOut": false
+}

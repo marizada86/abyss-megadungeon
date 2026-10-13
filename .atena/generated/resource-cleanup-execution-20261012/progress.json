@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE_RETURNED",
+  "completedSteps": 3,
+  "totalSteps": 3,
+  "baseline": "PASS_PC_WEB",
+  "candidate": "PASS_PC_WEB",
+  "originalDeletionExecuted": true,
+  "backupsRetained": false,
+  "totalRemovedBytes": 55462138,
+  "returnCheckpoint": "CP-SPLIT-02",
+  "humanAcceptance": "PENDING_PLAYTEST"
+}

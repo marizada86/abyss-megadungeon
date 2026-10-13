@@ -52,7 +52,7 @@ const ACTION_RUN_REROLL: StringName = &"run_reroll"
 const ACTION_OFFER_DETAILS: StringName = &"offer_details"
 
 func _ready() -> void:
-	# Keep project name/user:// unchanged; this is the visible window title only.
+	# Legacy user:// directory is explicit in project.godot; this sets the game window title.
 	if DisplayServer.get_name() != "headless":
 		get_window().set_deferred("title", Version.GAME_NAME)
 	var user_args := OS.get_cmdline_user_args()
