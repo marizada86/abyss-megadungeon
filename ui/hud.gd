@@ -19,7 +19,7 @@ signal pause_items_pressed
 const STATUS_MAX_LINES := 4
 const STACK_TOP := 90.0   # abaixo do relógio, do nome da fase e do ícone da regra
 const STACK_WIDTH := 640.0   # a barra do chefe tem 580 px; 640 deixa a direita livre para o questlog (x >= 968)
-const QUESTLOG_TOP := 66.0        # abaixo dos botões 1x e ? (y 12 a 58)
+const QUESTLOG_TOP := 92.0        # abaixo dos botões 1x e ? (y 12 a 58), com folga
 const QUESTLOG_MARGIN := 12.0
 const TOAST_MAX_COUNT := 4
 const TOAST_MAX_HEIGHT := 120.0   # cabe a epígrafe de 2 linhas e mais 3 avisos curtos; abaixo disso fica acima da fala do herói
@@ -99,8 +99,10 @@ func _ready() -> void:
 	aim_btn.pressed.connect(func(): aim_pressed.emit())
 	vol_slider.value_changed.connect(func(v: float):
 		Game.profile.data.settings.volume = v
-		Game.apply_settings())
+		Game.apply_audio())
+	vol_slider.drag_ended.connect(func(_changed: bool): Game.save())  # BUG-044: grava ao soltar, não a cada passo
 	# SPEC-131: painel do herói no padrão da ficha C, acima das linhas do Estige
+	_outline_world_labels()
 	hero_panel = HeroPanel.new()
 	hero_panel.name = "HeroPanel"
 	$StatBox.add_child(hero_panel)
@@ -118,6 +120,7 @@ func _ready() -> void:
 	boss_panel.visible = false
 	levelup_panel.visible = false
 	pause_panel.visible = false
+	_wrap_result_text_in_scroll()
 	result_panel.visible = false
 	revive_panel.visible = false
 	items_panel = CharacterSheet.new()
@@ -396,6 +399,9 @@ var _detail_nodes: Array = []
 var _detail_on := false
 
 func _process(_delta: float) -> void:
+	if hero_panel != null:   # SPEC-177 F-12: a pausa é translúcida; a ficha de status e os avisos não aparecem por trás do título
+		hero_panel.visible = not pause_panel.visible
+	toast_box.visible = not pause_panel.visible
 	if event_pointer != null:
 		event_pointer.battle = _battle
 		event_pointer.visible = _battle != null and _battle.state == "running" and not (items_panel.visible or levelup_panel.visible or pause_panel.visible or result_panel.visible or revive_panel.visible)
@@ -479,7 +485,8 @@ func update_stats(b: Battle) -> void:
 		boss_panel.visible = false
 	var lines: Array = []
 	for w in h.weapons:
-		lines.append("⚔ %s%s" % [w.display_name(), " (item)" if w.granted else ""])
+		var evolve_note := b.evolve_status(w)   # L1 (IN-095): o que falta para evoluir, só no nível máximo
+		lines.append("⚔ %s%s%s" % [w.display_name(), " (item)" if w.granted else "", (" · " + evolve_note) if evolve_note != "" else ""])
 	var pl: Array = []
 	for pid in h.passives:
 		pl.append("%s %d" % [Data.table("passives")[pid].name, h.passives[pid]])
@@ -502,7 +509,11 @@ func update_stats(b: Battle) -> void:
 		if b.stage.get("next", "") != "":
 			pr += "   [%s] %s ×%.2f" % [Game.controls.prompt("run_interact", "E"), "Retornar a Nottgard" if b.stage_id == "reino_abissal" else "Continuar" if b.stage_id == "docas" else "Descer", b.next_reward_multiplier()]
 	prompt_label.text = pr
-	quest_panel.update_entries(b.happenings.hud_entries(b), b.happenings.carrying_text())
+	var quest_entries: Array = b.happenings.hud_entries(b)
+	var chamber_row: Dictionary = b.chamber_entry()   # SPEC-175: a câmara selada diz o que a abre
+	if not chamber_row.is_empty():
+		quest_entries.append(chamber_row)
+	quest_panel.update_entries(quest_entries, b.happenings.carrying_text())
 	var eco_progress := b.ecos_progress()
 	eco_counter.visible = eco_progress.x > 0
 	eco_counter.text = "✦ Ecos %d/%d" % [eco_progress.x, eco_progress.y]
@@ -543,10 +554,8 @@ func show_offer(b: Battle) -> void:
 		var o: Dictionary = b.offer[i]
 		var is_card := o.has("brief")
 		var btn: Button = OfferCard.new() if is_card else Button.new()
-		var role_names := {"synergy": "SINERGIA", "defense": "DEFESA", "direction": "NOVA DIREÇÃO"}
-		var role := String(role_names.get(o.get("role", ""), ""))
 		if not is_card:
-			btn.text = "%d.  %s%s\n      %s" % [i + 1, "[%s] " % role if role != "" else "", o.name, o.desc]
+			btn.text = "%d.  %s\n      %s" % [i + 1, o.name, o.desc]   # sem rótulo de papel: o nome vem primeiro
 			btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
 			btn.custom_minimum_size = Vector2(620, 62)
 		var icon_path := offer_icon_path(o)
@@ -578,7 +587,7 @@ func show_offer(b: Battle) -> void:
 			btn.modulate = Color(1, 1, 1, 0.9)
 		btn.pressed.connect(func(): offer_chosen.emit(i))
 		offer_box.add_child(btn)
-		if i == 0:
+		if i == (b.offer_focus if b.offer_kind == "item" else 0):
 			btn.grab_focus()
 		if is_card:
 			var detail := (btn as OfferCard).build_detail(true)
@@ -606,10 +615,14 @@ func show_offer(b: Battle) -> void:
 	_update_controller_prompts()
 	if b.offer_kind == "levelup" and Game.controls.is_controller():
 		lv_title.text = "Nível %d — escolha" % b.hero.level
+	var want_focus: int = b.offer_focus if b.offer_kind == "item" else 0   # L1: na troca de item, o melhor pelo veredito
+	var seen := 0
 	for choice in offer_box.get_children():
 		if choice is Button and not choice.disabled:
-			choice.call_deferred("grab_focus")
-			break
+			if seen >= want_focus:
+				choice.call_deferred("grab_focus")
+				break
+			seen += 1
 
 func hide_offer() -> void:
 	levelup_panel.visible = false
@@ -687,6 +700,7 @@ func show_evolution(b: Battle) -> void:
 	title.add_theme_color_override("font_color", Color(1.0, 0.85, 0.3))
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	col.add_child(title)
+	Lettering.set_banner(title, "banner_evolucao", 92.0)
 	var icons := HBoxContainer.new()
 	icons.alignment = BoxContainer.ALIGNMENT_CENTER
 	icons.add_theme_constant_override("separation", 26)
@@ -790,13 +804,23 @@ func toast(text: String, color: Color = Color(1, 1, 1)) -> void:
 		return
 	_show_toast(text, color)
 
+## SPEC-177 F-11: luminância mínima do texto dos avisos (a fonte do tema já é creme, então a cor entra como cor da fonte, não como modulate).
+const TOAST_MIN_LUMA := 0.68
+
+static func legible_toast_color(c: Color) -> Color:
+	var luma := 0.299 * c.r + 0.587 * c.g + 0.114 * c.b
+	if luma >= TOAST_MIN_LUMA:
+		return c
+	var t := clampf((TOAST_MIN_LUMA - luma) / maxf(0.01, 1.0 - luma), 0.0, 1.0)
+	return c.lerp(Color(1, 1, 1, c.a), t)
+
 func _show_toast(text: String, color: Color) -> void:
 	var l := Label.new()
 	l.text = text
-	l.modulate = color
+	l.add_theme_color_override("font_color", legible_toast_color(color))
 	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	l.add_theme_color_override("font_outline_color", Color(0, 0, 0))
-	l.add_theme_constant_override("outline_size", 5)
+	l.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.95))
+	l.add_theme_constant_override("outline_size", 6)
 	var long := text.length() > TOAST_LONG_CHARS
 	if long:
 		# epígrafes de fase (SPEC-117) são longas: quebram na largura do aviso e ficam mais tempo na tela
@@ -905,6 +929,7 @@ func show_result(res: Dictionary, summary: Dictionary) -> void:
 	pause_panel.visible = false
 	hide_revive_offer()
 	result_title.text = "Vitória!" if res.won else "Você caiu..."
+	Lettering.set_banner(result_title, "banner_vitoria" if res.won else "banner_derrota", 104.0 if res.won else 73.0)
 	var background_path := "res://assets/ui/backgrounds/victory_background.png" if res.won else "res://assets/ui/backgrounds/defeat_background.png"
 	result_background.texture = load(background_path) if ResourceLoader.exists(background_path) else null
 	var t := int(res.time)
@@ -918,10 +943,11 @@ func show_result(res: Dictionary, summary: Dictionary) -> void:
 	for id in summary.achievements:
 		for a in Data.table("achievements").achievements:
 			if a.id == id:
-				names.append("★ %s — %s" % [a.name, a.reward.get("text", "")])
+				names.append(achievement_line(a))
 	if not names.is_empty():
 		txt += "\n\nConquistas:\n" + "\n".join(names)
 	result_text.text = txt
+	_fit_result_scroll()
 	var result_was_open := result_panel.visible
 	result_panel.visible = true
 	if not result_was_open:
@@ -956,3 +982,51 @@ func _build_pause_menu() -> void:
 		title.hide()   # o cabeçalho "PAUSA" agora é do PauseMenu
 	pause_menu.build(_pause_box, _pause_box.get_node("VolRow"))
 	pause_menu.is_blocked = func(): return items_panel.visible or _controls_panel.visible or _confirm_dialog.visible or Playtest.is_overlay_open()
+
+
+## BUG-045: a lista de conquistas rola dentro do painel de resultado; título e botões ficam sempre à vista.
+var _result_scroll: ScrollContainer
+
+func _wrap_result_text_in_scroll() -> void:
+	var box := result_text.get_parent()
+	var index := result_text.get_index()
+	_result_scroll = ScrollContainer.new()
+	_result_scroll.name = "ResultScroll"
+	_result_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_result_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	box.remove_child(result_text)
+	_result_scroll.add_child(result_text)
+	result_text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	box.add_child(_result_scroll)
+	box.move_child(_result_scroll, index)
+
+## Altura da lista = o que cabe na tela depois do título, dos botões e da moldura (folga de 140 px).
+func _fit_result_scroll() -> void:
+	if _result_scroll == null:
+		return
+	var box := result_text.get_parent().get_parent()
+	var row_height := 0.0
+	var row := box.get_node_or_null("Row")
+	if row != null:
+		row_height = row.get_combined_minimum_size().y
+	var title_height := maxf(result_title.get_combined_minimum_size().y, result_title.custom_minimum_size.y)
+	var viewport_height := get_viewport().get_visible_rect().size.y
+	var available := maxf(120.0, viewport_height - title_height - row_height - 140.0)
+	_result_scroll.custom_minimum_size.y = minf(result_text.get_combined_minimum_size().y, available)
+	_result_scroll.scroll_vertical = 0
+
+## BUG-045: toda conquista mostra o que dá; as que só pagam moedas diziam "Nome —" sem nada depois.
+static func achievement_line(a: Dictionary) -> String:
+	var reward: Dictionary = a.get("reward", {})
+	var text := String(reward.get("text", ""))
+	if text == "" and int(reward.get("coins", 0)) > 0:
+		text = "+%d moedas" % int(reward.coins)
+	return "★ %s — %s" % [a.name, text] if text != "" else "★ %s" % a.name
+
+## SPEC-177 F-13: relógio, nome da fase, armas e nome do chefe ficam sobre o mundo; em piso claro (Goranthis) sumiam.
+func _outline_world_labels() -> void:
+	for label in [timer_label, stage_label, %WeaponsLabel, %BossName]:
+		if label == null:
+			continue
+		label.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.92))
+		label.add_theme_constant_override("outline_size", 6 if label == timer_label else 5)

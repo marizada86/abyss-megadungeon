@@ -1,0 +1,9 @@
+{
+  "retained_add_inputs": [
+    ".atena/generated/ART-PROMPTS-016-animacoes-dos-herois.md",
+    ".atena/generated/HERO-ANIMATION-PROMPT-MANIFEST-001.json",
+    ".atena/generated/PROMPT-EXECUTION-RECORD-TEMPLATE-001.json"
+  ],
+  "excluded_optional_add_count": 192,
+  "reason": "No dev-tool captures, personal historical evidence or profiles in baseline snapshots; runtime assets untouched"
+}

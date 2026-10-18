@@ -110,22 +110,31 @@
     },
     "panels": [
       {
-        "image": "res://assets/hq/hq_n04_q1.png",
-        "text": "Shedaklah, andar 222: fungo de um lado, slime do outro."
+        "image": "res://assets/hq/chapter2_r1/hq_n04_q1_fungus_slime_frontier_v01.png",
+        "text": "Em Shedaklah, o domínio do fungo recuava diante do limo."
       },
       {
-        "image": "res://assets/hq/hq_n04_q2.png",
-        "text": "O Rio Estige parou. Algo o solidificou."
+        "image": "res://assets/hq/chapter2_r1/hq_n04_q2_zuggtmoy_reception_v01.png",
+        "text": "Marciela os levou até Zuggtmoy, senhora do fungo."
       },
       {
-        "image": "res://assets/hq/hq_n04_q3.png",
-        "text": "Zuggtmoy oferece um mapa em troca de conter Juiblex."
+        "image": "res://assets/hq/chapter2_r1/hq_n04_q3_map_negotiation_v01.png",
+        "text": "Em troca de ajuda contra Juiblex, ela ofereceu um mapa e orientação."
       },
       {
-        "image": "res://assets/hq/hq_n04_q4.png",
-        "text": "Adiante, o território de Juiblex."
+        "image": "res://assets/hq/chapter2_r1/hq_n04_q4_stilled_styx_v01.png",
+        "text": "O Estige havia parado. Juiblex se fortalecia com as almas do rio."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n04_q5_incomplete_activation_v01.png",
+        "text": "A passagem exigia os dois opostos da camada e uma essência de poder."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n04_q6_star_necklace_portal_v01.png",
+        "text": "O colar abriu a passagem. A luz era roxa: o caminho levava mais fundo."
       }
-    ]
+    ],
+    "caption_below_image": true
   },
   "hqn_05": {
     "title": "O Núcleo Verde",
@@ -600,5 +609,44 @@
         "text": "Do outro lado, Maelor reencontrou sua mãe."
       }
     ]
+  },
+  "hqn_21": {
+    "title": "O Caminho dos que Ficaram",
+    "chapter": 2,
+    "trigger": {
+      "type": "chapter2_content",
+      "milestone": "shedaklah_reunion"
+    },
+    "panels": [
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n21_q1_sylvaris_found_v01.png",
+        "text": "Enquanto isso, os que ficaram em Nottgard encontraram Sylvaris algemado entre as ruínas."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n21_q2_sylvaris_account_v02.png",
+        "text": "Thalion havia levado os presentes por portais."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n21_q3_zynara_laboratory_v01.png",
+        "text": "No laboratório de Zynara, eles encontraram um caminho para seguir o grupo."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n21_q4_hammer_loan_v01.png",
+        "text": "O martelo de Bromnor serviu para reativar a passagem."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n21_q5_portal_activated_v01.png",
+        "text": "Os cogumelos se iluminaram. O caminho para o Abismo estava aberto."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n21_q6_portal_crossings_v01.png",
+        "text": "Brook e Erik atravessaram. Durvall também chegou ao Abismo por esse portal."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n21_q7_shedaklah_reunion_v01.png",
+        "text": "Em Shedaklah, os caminhos voltaram a se encontrar."
+      }
+    ],
+    "caption_below_image": true
   }
 }

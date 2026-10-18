@@ -1,0 +1,14 @@
+[
+  {
+    "label": "source",
+    "archive": ".atena\\generated\\source-port-20261018\\b001\\source-text-baseline.zip",
+    "sha256": "aaa88589bc2bd66d81016f2bf3e141397098d26dec696d7eabf56bcce77e43fb",
+    "scope": "raw core/data/ui/tests text and project/export config before integration; no caches/profiles; asset backup required per changed path in next batch"
+  },
+  {
+    "label": "pc",
+    "archive": ".atena\\generated\\source-port-20261018\\b001\\pc-text-baseline.zip",
+    "sha256": "6b8fe2e1ae79b5739a1054474d67f865c6ac4d908e414d9f89e0ea447cfb5910",
+    "scope": "raw core/data/ui/tests text and project/export config before integration; no caches/profiles; asset backup required per changed path in next batch"
+  }
+]

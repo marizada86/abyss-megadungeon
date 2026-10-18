@@ -11,7 +11,8 @@ static func fresh() -> Dictionary:
 		"codex": {"enemies": {}, "items": {}, "weapons": {}},
 		"settings": {"aim": "auto", "volume": 0.7, "music_volume": 0.8, "sfx_volume": 0.9, "ambience_volume": 0.75,
 			"music_muted": false, "sfx_muted": false, "ambience_muted": false,
-			"window_mode": "windowed", "resolution": "1280x720", "fullscreen": false, "difficulty": 0, "abyss_marks": {}}}
+			"window_mode": "windowed", "resolution": "1280x720", "fullscreen": false, "difficulty": 0, "abyss_marks": {},
+			"visual_filter": "off", "ui_font": "fell", "atmosphere": "leve", "hints": "on", "hints_seen": {}}}
 
 func _init(d: Dictionary = {}) -> void:
 	data = fresh()
@@ -95,6 +96,17 @@ func _migrate_settings(source: Dictionary) -> void:
 	if not (String(data.settings.window_mode) in ["windowed", "borderless", "fullscreen"]):
 		data.settings.window_mode = "windowed"
 	data.settings.fullscreen = String(data.settings.window_mode) == "fullscreen"
+	# SPEC-173: filtro visual de tela; valor desconhecido volta para desligado.
+	if not (str(data.settings.get("visual_filter", "off")) in ["off", "paleta", "gravura"]):
+		data.settings.visual_filter = "off"
+	# SPEC-177 R5: atmosfera por fase (Desligada ou Leve); valor desconhecido volta para Leve.
+	if not (str(data.settings.get("atmosphere", "leve")) in ["off", "leve"]):
+		data.settings.atmosphere = "leve"
+	# SPEC-179 R2: dicas de primeira vez (on, off) e as já vistas.
+	if not (str(data.settings.get("hints", "on")) in ["on", "off"]):
+		data.settings.hints = "on"
+	if not (data.settings.get("hints_seen", {}) is Dictionary):
+		data.settings.hints_seen = {}
 
 func coins() -> int:
 	return int(data.coins)

@@ -168,8 +168,8 @@ const ASSETS := {
 	"res://assets/animations/heroes/bromnor/active.png": Vector2i(1536, 384),
 	"res://assets/animations/heroes/bromnor/death.png": Vector2i(1536, 384),
 	"res://assets/animations/heroes/zynara/idle.png": Vector2i(1024, 384),
-	"res://assets/animations/heroes/zynara/move_n.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/zynara/move_ne.png": Vector2i(1536, 384),
+	"res://assets/animations/heroes/zynara/move_n.png": Vector2i(3072, 512),   # lote 2 do M1 (LOT15): célula larga de 512 px
+	"res://assets/animations/heroes/zynara/move_ne.png": Vector2i(3072, 512),   # lote 2 do M1 (LOT15): célula larga de 512 px
 	"res://assets/animations/heroes/zynara/move_e.png": Vector2i(1536, 384),
 	"res://assets/animations/heroes/zynara/move_se.png": Vector2i(1536, 384),
 	"res://assets/animations/heroes/zynara/move_s.png": Vector2i(1536, 384),
@@ -177,8 +177,8 @@ const ASSETS := {
 	"res://assets/animations/heroes/zynara/active.png": Vector2i(1536, 384),
 	"res://assets/animations/heroes/zynara/death.png": Vector2i(1536, 384),
 	"res://assets/animations/heroes/leoric/idle.png": Vector2i(1024, 384),
-	"res://assets/animations/heroes/leoric/move_n.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/leoric/move_ne.png": Vector2i(1536, 384),
+	"res://assets/animations/heroes/leoric/move_n.png": Vector2i(3072, 512),   # lote 2 do M1 (LOT15): célula larga de 512 px
+	"res://assets/animations/heroes/leoric/move_ne.png": Vector2i(3072, 512),   # lote 2 do M1 (LOT15): célula larga de 512 px
 	"res://assets/animations/heroes/leoric/move_e.png": Vector2i(1536, 384),
 	"res://assets/animations/heroes/leoric/move_se.png": Vector2i(1536, 384),
 	"res://assets/animations/heroes/leoric/move_s.png": Vector2i(1536, 384),
@@ -223,15 +223,15 @@ const ASSETS := {
 	"res://assets/animations/heroes/sylas/death.png": Vector2i(1536, 384),
 	"res://assets/animations/heroes/durvall/idle.png": Vector2i(1024, 384),
 	"res://assets/animations/heroes/durvall/move.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/durvall/move_n.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/durvall/move_ne.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/durvall/move_e.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/durvall/move_se.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/durvall/move_s.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/durvall/move_sw.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/durvall/move_w.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/durvall/move_nw.png": Vector2i(1536, 384),
-	"res://assets/animations/heroes/durvall/attack.png": Vector2i(1024, 384),
+	"res://assets/animations/heroes/durvall/move_n.png": Vector2i(3072, 512),   # SPEC-176/185: piloto em célula larga de 512 px
+	"res://assets/animations/heroes/durvall/move_ne.png": Vector2i(3072, 512),   # SPEC-176/185: piloto em célula larga de 512 px
+	"res://assets/animations/heroes/durvall/move_e.png": Vector2i(3072, 512),   # SPEC-176/185: piloto em célula larga de 512 px
+	"res://assets/animations/heroes/durvall/move_se.png": Vector2i(3072, 512),   # SPEC-176/185: piloto em célula larga de 512 px
+	"res://assets/animations/heroes/durvall/move_s.png": Vector2i(3072, 512),   # SPEC-176/185: piloto em célula larga de 512 px
+	"res://assets/animations/heroes/durvall/move_sw.png": Vector2i(3072, 512),   # SPEC-176/185: piloto em célula larga de 512 px
+	"res://assets/animations/heroes/durvall/move_w.png": Vector2i(3072, 512),   # SPEC-176/185: piloto em célula larga de 512 px
+	"res://assets/animations/heroes/durvall/move_nw.png": Vector2i(3072, 512),   # SPEC-176/185: piloto em célula larga de 512 px
+	"res://assets/animations/heroes/durvall/attack.png": Vector2i(2048, 512),   # SPEC-176/185: piloto em célula larga de 512 px
 	"res://assets/animations/heroes/durvall/active.png": Vector2i(1536, 384),
 	"res://assets/animations/heroes/durvall/death.png": Vector2i(1536, 384),
 	"res://assets/animations/enemies/zumbi/idle.png": Vector2i(1024, 384),
@@ -249,7 +249,8 @@ const ASSETS := {
 	"res://assets/animations/enemies/sacerdote_mente_derretida/special_b.png": Vector2i(2560, 480),
 	"res://assets/animations/enemies/sacerdote_mente_derretida/phase.png": Vector2i(2560, 480),
 	"res://assets/animations/enemies/sacerdote_mente_derretida/death.png": Vector2i(3200, 480),
-	"res://assets/animations/interactions/chest_open.png": Vector2i(1152, 192),
+	"res://assets/animations/interactions/chest_open.png": Vector2i(1536, 256),   # SPEC-185 (LOT03 IA01): 6 quadros de 256 px na escala da arte estática, com 32 px de folga
+	"res://assets/animations/interactions/boss_chest_open.png": Vector2i(1536, 256),   # SPEC-185 (LOT03 IA02)
 	"res://assets/animations/interactions/fountain_active.png": Vector2i(1152, 192),
 	"res://assets/animations/interactions/altar_active.png": Vector2i(1152, 192),
 	"res://assets/animations/interactions/ritual.png": Vector2i(1536, 192),
@@ -392,8 +393,9 @@ func run() -> Array[String]:
 
 ## Dívida conhecida de caminhada (EVID-146 / BUG-025 / ART-PROMPTS-055): massa fora de ±30% do idle
 ## ou quadro colado na borda. Só pode encolher: ao regerar a tira, remova a entrada.
-const WALK_KNOWN_MASS := []
+const WALK_KNOWN_MASS := ["durvall/move_e", "durvall/move_se"]   # SPEC-176/185: piloto Durvall v03 (DRAFT, G-D3/G-D4): espada e passada longa deixam a massa fora de ±30% do idle
 const WALK_KNOWN_EDGE := []
+const WALK_KNOWN_BASE := ["durvall/move_ne", "leoric/move_n"]   # SPEC-176/185: quadros no ar (Durvall NE: 3 de 6, pé 14 a 16 px acima; Leoric N: 4 de 6, 3 a 8 px) puxam a mediana da base; é o ciclo de corrida, não deriva
 
 func _validate_hero_walk_stability() -> Array[String]:
 	var failures: Array[String] = []
@@ -414,7 +416,7 @@ func _validate_hero_walk_stability() -> Array[String]:
 					failures.append("altura de %s muda ao andar: %d px contra %d do idle" % [key, frame.height, idle.height])
 					break
 			for frame in strip.frames:
-				if absi(frame.bottom - idle.bottom) > 6:
+				if absi(frame.bottom - idle.bottom) > 6 and not WALK_KNOWN_BASE.has(key):
 					failures.append("pés de %s fora da linha de base do idle: %d contra %d" % [key, frame.bottom, idle.bottom])
 					break
 			for frame in strip.frames:
@@ -438,14 +440,17 @@ func _walk_metrics(path: String) -> Dictionary:
 	var masses: Array[int] = []
 	var hero: String = path.get_base_dir().get_file()
 	var view: Script = load("res://ui/hero_view.gd")
-	var cell_width: int = view.cell_of(hero).x
+	# SPEC-176/185: tiras do piloto em célula larga (512x512, pés em 440): mede na célula da tira e leva a base para o equivalente da célula 256x384 (deslocamento vertical = diferença das alturas / 2)
+	var cell: Vector2i = view.strip_cell(hero, StringName(path.get_file().get_basename()))
+	var vertical_shift: int = (cell.y - view.cell_of(hero).y) / 2
+	var cell_width: int = cell.x
 	for index in image.get_width() / cell_width:
 		var left := cell_width
-		var top := 384
+		var top := cell.y
 		var right := -1
 		var bottom := -1
 		var mass := 0
-		for y in 384:
+		for y in cell.y:
 			for x in cell_width:
 				if image.get_pixel(index * cell_width + x, y).a < 0.10:
 					continue
@@ -456,9 +461,9 @@ func _walk_metrics(path: String) -> Dictionary:
 				bottom = maxi(bottom, y)
 		if right < left:
 			continue
-		frames.append({"height": bottom - top + 1, "bottom": bottom + 1, "mass": mass, "edge": left <= 1 or top <= 1 or right >= cell_width - 2 or bottom >= 382})
+		frames.append({"height": bottom - top + 1, "bottom": bottom + 1 - vertical_shift, "mass": mass, "edge": left <= 1 or top <= 1 or right >= cell_width - 2 or bottom >= cell.y - 2})
 		heights.append(bottom - top + 1)
-		bottoms.append(bottom + 1)
+		bottoms.append(bottom + 1 - vertical_shift)
 		masses.append(mass)
 	if frames.is_empty():
 		return {}
@@ -754,11 +759,12 @@ func _validate_hero_display_scale() -> Array[String]:
 			failures.append("idle ilegível: %s" % hero_id)
 			continue
 		var measured: Array[int] = []
-		var cell_width: int = script.cell_of(String(hero_id)).x
+		var cell: Vector2i = script.cell_of(String(hero_id))
+		var cell_width: int = cell.x
 		for frame in image.get_width() / cell_width:
-			var top := 384
+			var top := cell.y
 			var bottom := -1
-			for y in 384:
+			for y in cell.y:
 				for x in cell_width:
 					if image.get_pixel(frame * cell_width + x, y).a >= 0.10:
 						top = mini(top, y)

@@ -1,0 +1,107 @@
+[
+  {
+    "path": "core/hq_catalog.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "core/terrain_layout.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "data/hqs.json",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "data/level_design.json",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "data/stage_rules.json",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "data/stage_story.json",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "data/stage_structures.json",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "data/stages.json",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "tests/test_hqs.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "tests/test_level_design.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "tests/test_playtest.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "tests/test_profile.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "tests/test_qa_sandbox.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "tests/test_stage_structures.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "tools/audit_projeto.gd",
+    "source_has_no_change_since_split": false,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "tools/run_one_test.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "ui/controller_options.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "ui/ground.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "ui/ground_decals.gd",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  },
+  {
+    "path": "ui/hq_screen.gd",
+    "source_has_no_change_since_split": false,
+    "resolution": "PRESERVE_PC_HQ_COMPOSITION_NO_DECORATION"
+  },
+  {
+    "path": "ui/hq_screen.tscn",
+    "source_has_no_change_since_split": true,
+    "resolution": "PRESERVE_PC_VARIANT_PER_CONTRACT"
+  }
+]

@@ -1,0 +1,345 @@
+[
+  {
+    "id": "F-PORT-001",
+    "feature": "Chefes nos nove mapas",
+    "workflow_and_expected_result": "Encontrar chefe; executar fases, totens, quadrantes, varreduras, interrupcoes, adds, marcas e enrage sem invalidar objetivos PC",
+    "paths": [
+      "core/boss_mechanics.gd",
+      "data/boss_mechanics.json",
+      "data/difficulty.json",
+      "core/battle.gd"
+    ],
+    "checks": [
+      "test_l5_boss_mechanics",
+      "test_l5_b001_verbs",
+      "test_l5_b002_bosses",
+      "test_l5_b003_bosses",
+      "test_l5_b004_bosses",
+      "test_dagruve_encounter"
+    ],
+    "integration_status": "B003_INTEGRATED_TECHNICAL_PASS_WITH_BASELINE_DEBTS",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b003_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B003-20261018-r1.md",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-002",
+    "feature": "Evolucoes e requisitos",
+    "workflow_and_expected_result": "Adquirir armas/passivas/atributos; mostrar requisitos e evoluir as cinco armas novas sem perder evolucoes existentes",
+    "paths": [
+      "core/weapon.gd",
+      "data/weapons.json",
+      "core/battle.gd"
+    ],
+    "checks": [
+      "test_l1_evolution_and_item_order",
+      "test_new_content",
+      "test_battle",
+      "test_abyss_marks"
+    ],
+    "integration_status": "B003_INTEGRATED_TECHNICAL_PASS_WITH_BASELINE_DEBTS",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b003_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B003-20261018-r1.md",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-003",
+    "feature": "Comportamento e dano",
+    "workflow_and_expected_result": "Combater inimigos L2/L4, campos/corrosao/dano continuo e feedback mantendo colisoes e movimento em raizes",
+    "paths": [
+      "core/enemy.gd",
+      "core/hero.gd",
+      "core/damage_feedback.gd",
+      "core/battle.gd"
+    ],
+    "checks": [
+      "test_l2_boss_field_and_corrosion",
+      "test_l3_damage_feedback",
+      "test_l4_readable_enemies",
+      "test_continuous_hurt",
+      "test_root_navigation"
+    ],
+    "integration_status": "B003_INTEGRATED_TECHNICAL_PASS_WITH_BASELINE_DEBTS",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b003_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B003-20261018-r1.md",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-004",
+    "feature": "Segredos e acontecimentos",
+    "workflow_and_expected_result": "Receber pista de camara selada; coletar/falar/negociar e encontrar objetivo com arte sem perder marcos de campanha",
+    "paths": [
+      "core/happenings.gd",
+      "data/secrets.json",
+      "data/stage_events.json",
+      "ui/happening_art.gd"
+    ],
+    "checks": [
+      "test_secrets",
+      "test_happening_art",
+      "test_stage_story",
+      "test_map_objectives"
+    ],
+    "integration_status": "B003_INTEGRATED_TECHNICAL_PASS_WITH_BASELINE_DEBTS",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b003_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B003-20261018-r1.md",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-005",
+    "feature": "Animacoes e identidade de herois",
+    "workflow_and_expected_result": "Escolher cada heroi; idle/8 direcoes/ataque/habilidade/morte nas celulas corretas; laboratorio separado; manter DRAFT e gates de M1",
+    "paths": [
+      "ui/hero_view.gd",
+      "assets/animations/heroes",
+      "assets/heroes"
+    ],
+    "checks": [
+      "test_animation_assets",
+      "test_hero_own_art",
+      "test_walk_lab",
+      "test_hero_scale"
+    ],
+    "integration_status": "B002_TECHNICAL_PASS_DRAFT_HUMAN_GATES_PENDING",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-006",
+    "feature": "Interacoes NPCs e quebraveis",
+    "workflow_and_expected_result": "Ver idles, interagir, abrir baus e quebrar props; fallback estatico para tira ausente/retida",
+    "paths": [
+      "ui/interaction_anim.gd",
+      "ui/overlay.gd",
+      "ui/prop.gd",
+      "data/interaction_anims.json",
+      "assets/animations/interactions"
+    ],
+    "checks": [
+      "test_interaction_anim",
+      "test_breakable_death_art",
+      "test_actor_strips_b003"
+    ],
+    "integration_status": "B002_INTEGRATED_VISUALS_RETAINED_IDLE_GATES_PRESERVED",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-007",
+    "feature": "Projeteis habilidades e SFX",
+    "workflow_and_expected_result": "Atacar e ativar habilidades com efeito e som correspondentes sem mudar alcance/dano pela apresentacao",
+    "paths": [
+      "core/projectile_vfx.gd",
+      "core/hero_ability_vfx.gd",
+      "core/radiant_pulse_vfx.gd",
+      "core/hourglass_vfx.gd",
+      "core/sfx.gd",
+      "data/audio_manifest.json"
+    ],
+    "checks": [
+      "test_projectile_and_ability_vfx",
+      "test_radiant_pulse_vfx",
+      "test_hourglass_vfx",
+      "test_vfx_sfx_coverage",
+      "test_audio"
+    ],
+    "integration_status": "B003_INTEGRATED_TECHNICAL_PASS_WITH_BASELINE_DEBTS",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b003_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B003-20261018-r1.md",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-008",
+    "feature": "Atmosfera filtros e acessibilidade",
+    "workflow_and_expected_result": "Alterar atmosfera/filtro/impacto reduzido durante run; persistir opcoes e manter perigo legivel",
+    "paths": [
+      "ui/visual_filter.gd",
+      "ui/atmosphere.gd",
+      "ui/danger_vignette.gd",
+      "core/danger_feedback.gd",
+      "data/atmosphere.json"
+    ],
+    "checks": [
+      "test_visual_filter",
+      "test_atmosphere",
+      "test_danger_feedback",
+      "test_toast_legibility"
+    ],
+    "integration_status": "B003_INTEGRATED_TECHNICAL_PASS_WITH_BASELINE_DEBTS",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b003_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B003-20261018-r1.md",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-009",
+    "feature": "UI fontes logo e retratos",
+    "workflow_and_expected_result": "Abrir titulo/Quartel/ficha/HUD/ofertas/pausa; lettering e fontes OFL, retratos com fallback, cursor e questlog legiveis",
+    "paths": [
+      "ui/ui_fonts.gd",
+      "ui/hero_portraits.gd",
+      "ui/lettering.gd",
+      "ui/hud.gd",
+      "ui/quest_panel.gd",
+      "ui/options_panel.gd",
+      "data/cursor.json"
+    ],
+    "checks": [
+      "test_ui_fonts",
+      "test_body_font",
+      "test_hero_portraits",
+      "test_lettering_assets",
+      "test_cursor",
+      "test_character_sheet",
+      "test_volume_and_result_panel"
+    ],
+    "integration_status": "B003_INTEGRATED_TECHNICAL_PASS_WITH_BASELINE_DEBTS",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b003_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B003-20261018-r1.md",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-010",
+    "feature": "Dicas e controles PC",
+    "workflow_and_expected_result": "Primeiro uso mostra dicas; desligar/rever dicas; teclado/mouse/controle navegam sem touch; volume nao reaplica janela",
+    "paths": [
+      "core/onboarding_hints.gd",
+      "data/onboarding_hints.json",
+      "core/controller_input.gd",
+      "core/game.gd"
+    ],
+    "checks": [
+      "test_onboarding_hints",
+      "test_controller_experience",
+      "test_platform_contract",
+      "controller_check"
+    ],
+    "integration_status": "B003_INTEGRATED_TECHNICAL_PASS_WITH_BASELINE_DEBTS",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b003_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B003-20261018-r1.md",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-011",
+    "feature": "Perfil telemetria local e QA",
+    "workflow_and_expected_result": "Carregar fixture antigo/novo, persistir configuracoes; medir quadros/maquina localmente; QA nao altera progresso real",
+    "paths": [
+      "core/profile.gd",
+      "core/playtest.gd",
+      "core/frame_stats.gd",
+      "core/machine_info.gd"
+    ],
+    "checks": [
+      "test_profile",
+      "test_save_resilience",
+      "test_playtest",
+      "test_frame_stats",
+      "test_qa_sandbox"
+    ],
+    "integration_status": "B003_INTEGRATED_TECHNICAL_PASS_WITH_BASELINE_DEBTS",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b003_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B003-20261018-r1.md",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  },
+  {
+    "id": "F-PORT-012",
+    "feature": "Campanha mapas HQs e preservacao PC",
+    "workflow_and_expected_result": "Percorrer capitulos/mapas e caminhos aprovados; concluir objetivos, retomar HQ e preservar texto/arte/legenda/enquadramento e gatilhos",
+    "paths": [
+      "core/chapter_flow.gd",
+      "core/root_path_generator.gd",
+      "core/hq_catalog.gd",
+      "data/chapter_flow.json",
+      "data/stages.json",
+      "data/hqs.json",
+      "ui/hq_screen.gd",
+      "ui/run.gd"
+    ],
+    "checks": [
+      "test_chapter_flow",
+      "test_chapter2_hqs",
+      "test_hqs",
+      "test_map_objectives",
+      "test_yggdrasil_map",
+      "test_yggdrasil_navigation",
+      "test_yggdrasil_art",
+      "test_root_art",
+      "test_domwieck_art",
+      "test_dagruve_encounter"
+    ],
+    "integration_status": "PC_CONTENT_PRESERVED_163_PROTECTED_PATHS_VERIFIED",
+    "source_baseline": "see baseline-source/results.json",
+    "pc_baseline": "see baseline-pc/results.json",
+    "content_state": "PRESERVE_SOURCE_DRAFT_AND_PC_CANON_GATES",
+    "acceptance": "TECHNICAL_CHECKS_PLUS_OWNER_WHEN_SUBJECTIVE",
+    "b004_verification": "RECONCILED_INPUT_HASHES_AND_VALID_EXISTING_CHECKS",
+    "b004_evidence": ".atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md",
+    "human_review": "PREPARED_PENDING_OWNER_FEEDBACK",
+    "baseline_debts": "30 assertions and 2 script errors remain globally; see B001/B003 evidence"
+  }
+]

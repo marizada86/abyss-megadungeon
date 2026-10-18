@@ -5,6 +5,10 @@ const SAVE_PATH := "user://profile.json"
 const SAVE_BACKUP_SUFFIX := ".bak"
 const SAVE_TEMP_SUFFIX := ".tmp"
 const SAVE_CORRUPT_SUFFIX := ".corrupt"
+const VISUAL_FILTERS := ["off", "paleta", "gravura"]  # SPEC-173; os rótulos ficam em ui/visual_filter.gd
+
+## SPEC-173: o filtro visual ou o impacto reduzido mudou (a partida aberta reaplica o filtro na hora).
+signal visual_settings_changed
 
 var profile: Profile
 var persisted := false
@@ -69,6 +73,7 @@ func _ready() -> void:
 	if save_notice != "":
 		logline(save_notice)
 	logline("Jogo iniciado v%s (%s)" % [Version.VERSION, Version.build_id()])
+	logline("Maquina: %s" % MachineInfo.short())   # PLAN-099 (SPEC-172)
 
 func ensure_input_actions() -> void:
 	# Substituir apenas bindings de controle; preservar teclado e mouse.
@@ -369,11 +374,25 @@ const WINDOW_MODES = ["windowed", "borderless", "fullscreen"]
 func reduced_impact() -> bool:
 	return bool(profile.data.settings.get("reduced_impact", false))
 
-func apply_settings() -> void:
+## BUG-044: contador só para teste; conta quantas vezes a janela foi reaplicada.
+var window_apply_count := 0
+
+## BUG-044: só o áudio (volume mestre e canais). Os sliders chamam esta; reaplicar a janela a cada passo
+## do slider piscava a tela (em tela cheia sai e volta) e redimensionava a janela.
+func apply_audio() -> void:
 	var s: Dictionary = profile.data.settings
 	AudioServer.set_bus_volume_db(0, linear_to_db(clampf(float(s.volume), 0.0, 1.0)))
 	if has_node("/root/Sfx"):
 		Sfx.apply_mix(s)
+
+func apply_settings() -> void:
+	apply_audio()
+	apply_window()
+
+## Modo de tela, borda e resolução. Só deve rodar na partida, ao mudar modo ou resolução.
+func apply_window() -> void:
+	var s: Dictionary = profile.data.settings
+	window_apply_count += 1
 	var style := String(s.get("window_mode", "windowed"))
 	if not (style in WINDOW_MODES):
 		style = "windowed"
@@ -400,6 +419,43 @@ func set_window_mode(style: String) -> void:
 	profile.data.settings.window_mode = style
 	profile.data.settings.fullscreen = style == "fullscreen"
 	apply_settings()
+	save()
+
+
+## SPEC-173: filtro visual de tela (off, paleta, gravura). Aplica na hora, na partida aberta.
+func set_visual_filter(mode: String) -> void:
+	if not (mode in VISUAL_FILTERS):
+		return
+	profile.data.settings.visual_filter = mode
+	save()
+	visual_settings_changed.emit()
+
+
+## SPEC-179 R2: dicas de primeira vez (on, off); "rever dicas" limpa as já vistas.
+func set_hints(mode: String) -> void:
+	if not (mode in ["on", "off"]):
+		return
+	profile.data.settings.hints = mode
+	save()
+
+func reset_hints() -> void:
+	profile.data.settings.hints_seen = {}
+	save()
+
+## SPEC-177 R5: atmosfera por fase (off, leve). Aplica na hora, na partida aberta.
+func set_atmosphere(mode: String) -> void:
+	if not (mode in ["off", "leve"]):
+		return
+	profile.data.settings.atmosphere = mode
+	save()
+	visual_settings_changed.emit()
+
+
+## SPEC-173 (MEC-066): fonte dos títulos (ver UiFonts). Vale ao reabrir a tela; não há reinício.
+func set_ui_font(id: String) -> void:
+	if UiFonts.normalize(id) != id:
+		return
+	profile.data.settings.ui_font = id
 	save()
 
 

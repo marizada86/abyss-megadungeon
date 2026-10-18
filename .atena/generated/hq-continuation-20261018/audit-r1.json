@@ -1,0 +1,351 @@
+{
+  "date": "2026-10-18",
+  "scope": "Local documentary and file integrity audit; no fresh visual or human acceptance",
+  "sequences": [
+    {
+      "hq": "19",
+      "panels": 12,
+      "checks": [
+        {
+          "panel": 1,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 2,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 3,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 4,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 5,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 6,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 7,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 8,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 9,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 10,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 11,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 12,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        }
+      ]
+    },
+    {
+      "hq": "20",
+      "panels": 7,
+      "checks": [
+        {
+          "panel": 1,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 2,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 3,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 4,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 5,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 6,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 7,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        }
+      ]
+    },
+    {
+      "hq": "21",
+      "panels": 7,
+      "checks": [
+        {
+          "panel": 1,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 2,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 3,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 4,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 5,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 6,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 7,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        }
+      ]
+    },
+    {
+      "hq": "04",
+      "panels": 6,
+      "checks": [
+        {
+          "panel": 1,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 2,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 3,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 4,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 5,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        },
+        {
+          "panel": 6,
+          "checks": {
+            "candidate": true,
+            "candidate_hash": true,
+            "approval": true,
+            "admitted_asset": true,
+            "admitted_asset_hash": true
+          }
+        }
+      ]
+    }
+  ],
+  "pass": true
+}

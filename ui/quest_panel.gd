@@ -6,12 +6,14 @@ extends PanelContainer
 
 const MAX_ROWS := 4
 const LOG_ALPHA := 0.8
-const LOG_WIDTH := 300.0
+const LOG_WIDTH := 350.0
 const GOLD := Color(0.93, 0.78, 0.4)
 const URGENT := Color(1.0, 0.45, 0.4)
 const URGENT_SECONDS := 10.0
+const TITLE := "Missões"   # cabeçalho fixo: sem ele as linhas soltas não dizem o que são
 
 var _rows: VBoxContainer
+var _title: Label
 var _signature := ""
 var _timers: Dictionary = {}  # id -> Label com o prazo restante
 var _progress: Dictionary = {}  # id -> have, para pulsar quando avança
@@ -23,10 +25,17 @@ func _init() -> void:
 	visible = false
 	modulate = Color(1, 1, 1, LOG_ALPHA)
 	add_theme_stylebox_override("panel", StyleBoxEmpty.new())
+	var root := VBoxContainer.new()
+	root.add_theme_constant_override("separation", 4)
+	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(root)
+	_title = _label(TITLE, 18, Color(0.74, 0.66, 0.5))
+	_title.name = "Title"
+	root.add_child(_title)
 	_rows = VBoxContainer.new()
 	_rows.add_theme_constant_override("separation", 3)
 	_rows.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(_rows)
+	root.add_child(_rows)
 
 ## `entries`: Happenings.hud_entries(); `carrying`: Happenings.carrying_text().
 func update_entries(entries: Array, carrying := "") -> void:
@@ -36,8 +45,12 @@ func update_entries(entries: Array, carrying := "") -> void:
 		_timers.clear()
 		visible = false
 		return
-	var shown: Array = entries.slice(0, MAX_ROWS)
-	var extra := entries.size() - shown.size()
+	# SPEC-175: a linha da câmara (kind "chamber") tem vaga reservada: os objetivos comuns cedem lugar a ela
+	var chamber: Array = entries.filter(func(e): return String(e.get("kind", "")) == "chamber")
+	var common: Array = entries.filter(func(e): return String(e.get("kind", "")) != "chamber")
+	var room := maxi(0, MAX_ROWS - chamber.size())
+	var shown: Array = common.slice(0, room) + chamber
+	var extra := common.size() - mini(common.size(), room)
 	var urgent := urgent_index(shown)
 	var sig: Array = [carrying, extra, urgent]
 	for e in shown:
@@ -83,12 +96,12 @@ func _rebuild(shown: Array, extra: int, carrying: String, urgent: int) -> void:
 	for i in shown.size():
 		var e: Dictionary = shown[i]
 		progress[String(e.id)] = int(e.have)
-		_rows.add_child(_row(e, i == urgent))
+		_rows.add_child(_row(e, i == urgent or String(e.get("kind", "")) == "chamber"))
 	_progress = progress
 	if extra > 0:
-		_rows.add_child(_label("+%d objetivo%s" % [extra, "" if extra == 1 else "s"], 14, Color(0.7, 0.7, 0.78)))
+		_rows.add_child(_label("+%d objetivo%s" % [extra, "" if extra == 1 else "s"], 17, Color(0.7, 0.7, 0.78)))
 	if carrying != "":
-		_rows.add_child(_label("Carregando: %s" % carrying, 14, Color(0.7, 0.95, 0.75)))
+		_rows.add_child(_label("Carregando: %s" % carrying, 17, Color(0.7, 0.95, 0.75)))
 
 func _row(e: Dictionary, with_text: bool) -> Control:
 	var v := VBoxContainer.new()
@@ -97,20 +110,20 @@ func _row(e: Dictionary, with_text: bool) -> Control:
 	var head := HBoxContainer.new()
 	head.add_theme_constant_override("separation", 8)
 	head.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var title := _label(String(e.title), 17, GOLD)
+	var title := _label(String(e.title), 21, GOLD)
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	title.clip_text = true
 	head.add_child(title)
 	if int(e.need) > 1:
-		head.add_child(_label("%d/%d" % [int(e.have), int(e.need)], 17, Color(0.7, 0.95, 0.75)))
+		head.add_child(_label("%d/%d" % [int(e.have), int(e.need)], 21, Color(0.7, 0.95, 0.75)))
 	if float(e.left) >= 0.0:
-		var t := _label("", 16, Color(0.85, 0.85, 0.9))
+		var t := _label("", 20, Color(0.85, 0.85, 0.9))
 		_timers[String(e.id)] = t
 		head.add_child(t)
-	head.add_child(_label("◆", 17, GOLD))
+	head.add_child(_label("◆", 21, GOLD))
 	v.add_child(head)
 	if with_text:
-		var text := _label(String(e.text), 14, Color(0.92, 0.9, 0.86))
+		var text := _label(String(e.text), 17, Color(0.92, 0.9, 0.86))
 		text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		text.custom_minimum_size.x = LOG_WIDTH
 		v.add_child(text)

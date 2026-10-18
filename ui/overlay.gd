@@ -1,10 +1,20 @@
 extends Node2D
 ## Desenha zonas, telégrafos, projéteis, coletáveis e interações. Um nó por camada (mode).
 
-@export_enum("under", "over") var mode := "over"
+@export_enum("under", "over", "text") var mode := "over"
 var battle: Battle
+## SPEC-173: com o filtro de tela, o texto do mundo (rótulos, nomes) é desenhado por uma 3ª instância (mode "text"), numa camada
+## acima do filtro, para não ser pixelizado. A instância "over" só enfileira o texto; a "text" desenha a fila de source.
+var split_text := false
+var source  # Node2D da instância "over" (sem tipo: o script não tem class_name)
+var _text_queue: Array[Dictionary] = []
 static var _texture_cache := {}
+const HAPPENING_ART := preload("res://ui/happening_art.gd")
 var _large_fx_by_quadrant: Array[int] = [0, 0, 0, 0]
+const ALTAR_FRAME_MS := 150   # SPEC-182 (AL01-CORR/v01): 6 quadros em 900 ms
+const RUIN_HEIGHT := 150.0    # SPEC-182: ruína (256 px de lado) desenhada atrás do baú do ponto
+const RUIN_DROP := 14.0       # a base da ruína fica um pouco abaixo do baú
+const ECO_ART_HEIGHT := 44.0  # SPEC-182: cristal do Eco (128 px de lado)
 const PARTICLE_CAP := 96
 const PARTICLES_PER_ZONE := 8
 const PARTICLES_PER_IMPACT := 12
@@ -165,8 +175,29 @@ func _draw() -> void:
 		return
 	if mode == "under":
 		_draw_zones()
+	elif mode == "text":
+		_draw_text_queue()
 	else:
+		_text_queue.clear()
 		_draw_over()
+
+## SPEC-173: rótulo do mundo. Com split_text, vai para a fila que a instância "text" desenha acima do filtro de tela.
+func _text(pos: Vector2, text: String, width: float, size: int, color: Color, outline: int = 0, outline_color: Color = Color(0, 0, 0, 0.85)) -> void:
+	if split_text:
+		_text_queue.append({"pos": pos, "text": text, "width": width, "size": size, "color": color, "outline": outline, "outline_color": outline_color})
+		return
+	_paint_text(pos, text, width, size, color, outline, outline_color)
+
+func _paint_text(pos: Vector2, text: String, width: float, size: int, color: Color, outline: int, outline_color: Color) -> void:
+	if outline > 0:
+		draw_string_outline(ThemeDB.fallback_font, pos, text, HORIZONTAL_ALIGNMENT_CENTER, width, size, outline, outline_color)
+	draw_string(ThemeDB.fallback_font, pos, text, HORIZONTAL_ALIGNMENT_CENTER, width, size, color)
+
+func _draw_text_queue() -> void:
+	if source == null:
+		return
+	for e in source._text_queue:
+		_paint_text(e.pos, e.text, e.width, e.size, e.color, e.outline, e.outline_color)
 
 func _draw_zones() -> void:
 	_large_fx_by_quadrant = [0, 0, 0, 0]
@@ -306,6 +337,10 @@ func _draw_trap(z: Dictionary) -> void:
 func _draw_telegraph(z: Dictionary) -> void:
 	var total := maxf(0.01, float(z.get("total", z.delay)))
 	var t := clampf(1.0 - float(z.delay) / total, 0.0, 1.0)
+	if z.has("src"):   # L4 A2: linha de quem lançou até o círculo, mais forte perto do golpe
+		var from := Iso.to_screen(z.src) + Vector2(0, -14)
+		var to := Iso.to_screen(z.pos)
+		draw_line(from, to, Color(1.0, 0.45, 0.2, 0.25 + t * 0.5), 1.5 + t * 1.5)
 	var beat := 0.5 + 0.5 * sin(_phase() * (5.0 + t * 9.0))
 	draw_colored_polygon(_ellipse(z.pos, z.radius), Color(0.92, 0.12, 0.08, 0.1 + t * 0.18))
 	draw_polyline(_ellipse_closed(z.pos, z.radius), Color(1.0, 0.3, 0.16, 0.56 + t * 0.34), 1.8 + t * 1.6)
@@ -412,8 +447,8 @@ func _draw_over() -> void:
 			# Eventos com PNG oficial em assets/interactions/<tipo>.png (loja, ferreiro, curandeiro, doação, aposta, ampulheta); sem PNG (arcanista, câmara) o quadrado colorido com rótulo é o provisório
 			"loja": col = Color(1.0, 0.85, 0.3); label = "loja [E/oeste]"; asset = "loja"
 			"ferreiro": col = Color(1.0, 0.5, 0.2); label = ("%s [E/oeste]" % String(it.name).to_lower()) if String(it.get("name", "")) != "" else "ferreiro [E/oeste]"; asset = "ferreiro"
-			"camara": col = Color(0.85, 0.7, 1.0); label = "câmara [E/oeste]" if battle.chamber_unlocked else "câmara selada"; asset = "camara_selada"  # SPEC-152: sem PNG (ART-043), vale o losango provisório
-			"arcanista": col = Color(0.6, 0.45, 1.0); label = "arcanista [E/oeste]"; asset = "arcanista"  # SPEC-149: sem PNG (ART-041), vale o losango roxo provisório
+			"camara": col = Color(0.85, 0.7, 1.0); label = "câmara [E/oeste]" if battle.chamber_unlocked else "câmara selada"; asset = "camara_aberta" if battle.chamber_unlocked else "camara_selada"  # SPEC-182 (FILA-028 SE02/SE03); antes SPEC-152: sem PNG (ART-043), vale o losango provisório
+			"arcanista": col = Color(0.6, 0.45, 1.0); label = "arcanista [E/oeste]"; asset = "arcanista"  # SPEC-182 (FILA-028 AR01); antes SPEC-149: sem PNG (ART-041), vale o losango roxo provisório
 			"curandeiro": col = Color(0.4, 1.0, 0.5); label = "curandeiro [E/oeste]"; asset = "curandeiro"
 			"doacao": col = Color(0.75, 0.45, 1.0); label = "altar da doação [E/oeste]"; asset = "doacao"
 			"aposta": col = Color(0.95, 0.8, 0.3); label = "mesa de aposta [E/oeste]"; asset = "aposta"
@@ -439,6 +474,8 @@ func _draw_over() -> void:
 		# Eventos em escala de personagem (heróis têm 40-85 px; o portal é a maior estrutura).
 		# Baús mantêm o tamanho original (54 px).
 		var base_h := (54.0 if it.kind in ["chest", "boss_chest"] else (100.0 if it.kind == "portal" else 80.0)) * size_scale
+		if asset != "" and String(it.kind) in ["event_item", "event_star"]:
+			base_h = 48.0 * size_scale
 		var texture := _texture("res://assets/interactions/%s.png" % asset)
 		var scenery_asset := ""
 		if String(it.get("name", "")) == "Poço de Oferendas":
@@ -451,29 +488,45 @@ func _draw_over() -> void:
 		var animation_id: String = {"fountain": "fountain_active", "altar": "altar_active", "ritual": "ritual", "portal": "portal"}.get(String(it.kind), "")
 		var animation_count: int = {"fountain_active": 6, "altar_active": 6, "ritual": 8, "portal": 8}.get(animation_id, 0)
 		var animation_texture := _texture("res://assets/animations/interactions/%s.png" % animation_id) if animation_id != "" else null
-		# O sheet animado do altar tem o corpo de pedra transparente (só poço e chamas): o chão e a estrada apareciam através dele.
-		# Enquanto o sheet não for refeito, o altar usa o sprite estático completo.
-		if scenery_texture != null or String(it.kind) == "altar":
+		# SPEC-182 (FILA-028 SE04 a SE11): a ruína da fase fica atrás do baú do ponto; só visual, o baú segue com a mesma posição e as mesmas regras
+		var ruin_texture: Texture2D = _texture("res://assets/interactions/%s.png" % String(it.get("ruin_art", ""))) if String(it.get("ruin_art", "")) != "" else null
+		if ruin_texture != null:
+			var ruin_h := RUIN_HEIGHT * size_scale
+			var ruin_dest := Rect2(draw_p.x - ruin_h * 0.5, draw_p.y - ruin_h + RUIN_DROP, ruin_h, ruin_h)
+			if not InteractionAnim.draw(self, String(it.get("ruin_art", "")), ruin_texture, ruin_dest, Time.get_ticks_msec(), InteractionAnim.phase_for(it.pos)):
+				draw_texture_rect(ruin_texture, ruin_dest, false)
+		# SPEC-182 (FILA-028 AL01): o sheet do altar foi refeito com o corpo de pedra opaco (AL01-CORR/v01, 6 quadros, ciclo de 900 ms);
+		# o sprite estático completo segue como reserva quando o sheet não carrega.
+		if scenery_texture != null:
 			animation_texture = null
 		if animation_texture != null and animation_count > 0:
 			var h := base_h
-			var frame := int(Time.get_ticks_msec() / 100) % animation_count
+			var frame := int(Time.get_ticks_msec() / (ALTAR_FRAME_MS if animation_id == "altar_active" else 100)) % animation_count
 			var w := h
 			draw_texture_rect_region(animation_texture, Rect2(draw_p.x - w * 0.5, draw_p.y - h, w, h), Rect2(frame * 192, 0, 192, 192))
 		elif texture != null:
 			var h := base_h
-			var w := h * float(texture.get_width()) / float(texture.get_height())
-			draw_texture_rect(texture, Rect2(draw_p.x - w * 0.5, draw_p.y - h, w, h), false)
+			# SPEC-185 (PLAN-110): com tira de idle para a arte, o quadro atual ocupa o retângulo da arte estática (ampliado pela folga); sem tira, a arte estática de sempre
+			var anim_asset := "" if scenery_texture != null else asset
+			var anim_phase := InteractionAnim.phase_for(it.pos)
+			if String(it.kind).begins_with("event_"):
+				var used_dest := HAPPENING_ART.destination_rect(texture, draw_p, h)
+				if not InteractionAnim.draw(self, anim_asset, texture, InteractionAnim.full_dest_from_used(texture, used_dest), Time.get_ticks_msec(), anim_phase):
+					draw_texture_rect_region(texture, used_dest, HAPPENING_ART.source_rect(texture))
+			else:
+				var w := h * float(texture.get_width()) / float(texture.get_height())
+				var full_dest := Rect2(draw_p.x - w * 0.5, draw_p.y - h, w, h)
+				if not InteractionAnim.draw(self, anim_asset, texture, full_dest, Time.get_ticks_msec(), anim_phase):
+					draw_texture_rect(texture, full_dest, false)
 		else:
 			draw_colored_polygon(PackedVector2Array([draw_p + Vector2(0, -18), draw_p + Vector2(14, 0), draw_p + Vector2(0, 9), draw_p + Vector2(-14, 0)]), Color(col, 0.35))
 			draw_rect(Rect2(draw_p + Vector2(-9, -22), Vector2(18, 16)), col.darkened(0.2))
-		var label_w := 220.0 if String(it.kind).begins_with("event_") else 110.0  # SPEC-118: rótulos de evento são nomes longos
+		var label_w := maxf(220.0, ThemeDB.fallback_font.get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, 15).x + 12.0) if String(it.kind).begins_with("event_") else 110.0
 		if String(it.kind).begins_with("event_"):
 			# SPEC-147: rótulo de quest maior e com contorno, para não se perder no cenário
-			draw_string_outline(ThemeDB.fallback_font, draw_p + Vector2(-label_w * 0.5, -base_h - 8.0), label, HORIZONTAL_ALIGNMENT_CENTER, label_w, 15, 5, Color(0, 0, 0, 0.85))
-			draw_string(ThemeDB.fallback_font, draw_p + Vector2(-label_w * 0.5, -base_h - 8.0), label, HORIZONTAL_ALIGNMENT_CENTER, label_w, 15, Color(col.lightened(0.25), 1.0))
+			_text(draw_p + Vector2(-label_w * 0.5, -base_h - 8.0), label, label_w, 15, Color(col.lightened(0.25), 1.0), 5)
 		else:
-			draw_string(ThemeDB.fallback_font, draw_p + Vector2(-label_w * 0.5, -base_h - 8.0), label, HORIZONTAL_ALIGNMENT_CENTER, label_w, 12, Color(col, 0.95))
+			_text(draw_p + Vector2(-label_w * 0.5, -base_h - 8.0), label, label_w, 12, Color(col, 0.95))
 	_draw_happenings()
 	_draw_ecos()
 	_draw_star_path()
@@ -494,6 +547,8 @@ func _draw_over() -> void:
 	for pr in battle.projectiles:
 		var p := Iso.to_screen(pr.pos) + Vector2(0, -16)
 		if pr.owner == "hero":
+			if ProjectileVfx.handles(pr, Game.reduced_impact()):
+				continue   # ART-029: o sprite de voo (ui/run.gd) substitui o circulo
 			var theme: Dictionary = pr.get("visual_theme", DivineVisuals.resolve(battle.hero.id, battle.visual_god, battle.visual_boon_selected))
 			var col: Color = theme.primary
 			var trail: Color = theme.aura_accent
@@ -502,11 +557,18 @@ func _draw_over() -> void:
 		else:
 			draw_circle(p, 5.0, Color(1.0, 0.25, 0.25))
 			draw_circle(p, 2.5, Color(1.0, 0.8, 0.6))
+	if battle.boss_mech != null:   # L5: mecânicas do chefe (turíbulos, imunidade, conjuração, varredura, quadrantes)
+		battle.boss_mech.draw_fx(self)
 	for e in battle.enemies:
 		if e.windup > 0.0:
 			var a := Iso.to_screen(e.pos)
 			var b := Iso.to_screen(e.pos + e.charge_dir * float(e.charge_ab.dist))
 			draw_line(a, b, Color(1.0, 0.25, 0.2, 0.6), 4.0)
+		if e.shoot_wind > 0.0:   # L4 B1: mira do atirador, a direção que o tiro vai seguir
+			var sa := Iso.to_screen(e.pos) + Vector2(0, -16)
+			var sb := Iso.to_screen(e.pos + e.shoot_dir * float(e.shoot_ab.get("range", 8.0))) + Vector2(0, -16)
+			var fade := clampf(1.0 - e.shoot_wind / 0.4, 0.0, 1.0)
+			draw_line(sa, sb, Color(1.0, 0.35, 0.25, 0.25 + fade * 0.55), 1.5 + fade)
 
 ## SPEC-129: estrela do Caminho de Tou Um (arte provisória: losango dourado). A seta de fora da tela é da HUD (SPEC-159).
 func _draw_star_path() -> void:
@@ -519,7 +581,7 @@ func _draw_star_path() -> void:
 	var c := mp + Vector2(0, -34)
 	draw_circle(c, 16.0 + 4.0 * pulse, Color(gold, 0.16 + 0.12 * pulse))
 	draw_colored_polygon(PackedVector2Array([c + Vector2(0, -12), c + Vector2(8, 0), c + Vector2(0, 12), c + Vector2(-8, 0)]), Color(gold, 0.95))
-	draw_string(ThemeDB.fallback_font, c + Vector2(-60, -20), "Estrela do Norte", HORIZONTAL_ALIGNMENT_CENTER, 120, 12, Color(gold, 0.95))
+	_text(c + Vector2(-60, -20), "Estrela do Norte", 120, 12, Color(gold, 0.95))
 
 ## SPEC-147: realce de item, alvo, NPC ou inimigo da quest que está dentro da tela. A cor vem do marcador, mas nunca
 ## fica apagada: o anel e a seta usam a cor com brilho mínimo para se destacar do cenário.
@@ -550,7 +612,16 @@ func _draw_ecos() -> void:
 		var strength := 1.0 - clampf(dist / clue, 0.0, 1.0)
 		var pulse := 0.5 + 0.5 * sin(Time.get_ticks_msec() / 220.0)
 		draw_circle(p + Vector2(0, -18), 10.0 + 6.0 * pulse, Color(0.8, 0.62, 1.0, (0.10 + 0.22 * strength) * (0.6 + 0.4 * pulse)))
-		draw_circle(p + Vector2(0, -18), 4.0, Color(0.95, 0.88, 1.0, 0.35 + 0.5 * strength))
+		var eco_texture := _texture("res://assets/interactions/eco.png")   # SPEC-182 (FILA-028 SE01): o cristal aparece conforme o herói se aproxima
+		if eco_texture != null:
+			var eco_h := ECO_ART_HEIGHT * (0.8 + 0.2 * pulse)
+			var eco_w := eco_h * float(eco_texture.get_width()) / float(eco_texture.get_height())
+			var eco_dest := Rect2(p.x - eco_w * 0.5, p.y - eco_h - 4.0, eco_w, eco_h)
+			var eco_tint := Color(1, 1, 1, 0.35 + 0.65 * strength)
+			if not InteractionAnim.draw(self, "eco", eco_texture, eco_dest, Time.get_ticks_msec(), InteractionAnim.phase_for(eco.pos), eco_tint):   # SPEC-185 (LOT10 ES05)
+				draw_texture_rect(eco_texture, eco_dest, false, eco_tint)
+		else:
+			draw_circle(p + Vector2(0, -18), 4.0, Color(0.95, 0.88, 1.0, 0.35 + 0.5 * strength))
 
 ## SPEC-118: aliados e peregrinos, círculo da arena e setas na borda para os objetivos fora da tela.
 func _draw_happenings() -> void:
@@ -560,11 +631,17 @@ func _draw_happenings() -> void:
 		draw_polyline(_ellipse_closed(hp_.arena.pos, float(hp_.arena.radius)), Color(1.0, 0.45, 0.15, 0.55 + 0.35 * pulse), 4.0)
 	for a in hp_.allies:
 		var p := Iso.to_screen(a.pos)
-		var tex: Texture2D = _texture("res://assets/enemies/%s.png" % String(a.sprite)) if String(a.sprite) != "" else null
-		var h := 64.0
+		var event_asset := String(a.get("asset", ""))
+		var tex: Texture2D = _texture("res://assets/interactions/%s.png" % event_asset) if event_asset != "" else (_texture("res://assets/enemies/%s.png" % String(a.sprite)) if String(a.sprite) != "" else null)
+		var h := 80.0 if event_asset != "" else 64.0
 		if tex != null:
-			var w := h * float(tex.get_width()) / float(tex.get_height())
-			draw_texture_rect(tex, Rect2(p.x - w * 0.5, p.y - h, w, h), false, Color(0.85, 1.0, 0.85))
+			if event_asset != "":
+				var ally_dest := HAPPENING_ART.destination_rect(tex, p, h)
+				if not InteractionAnim.draw(self, event_asset, tex, InteractionAnim.full_dest_from_used(tex, ally_dest), Time.get_ticks_msec(), InteractionAnim.phase_for(a.pos)):
+					draw_texture_rect_region(tex, ally_dest, HAPPENING_ART.source_rect(tex))
+			else:
+				var w := h * float(tex.get_width()) / float(tex.get_height())
+				draw_texture_rect(tex, Rect2(p.x - w * 0.5, p.y - h, w, h), false, Color(0.85, 1.0, 0.85))
 		else:
 			# NPC sem arte própria: figura provisória (ver ART do SPEC-118)
 			draw_circle(p + Vector2(0, -40), 8.0, Color(0.95, 0.85, 0.7))
@@ -573,7 +650,7 @@ func _draw_happenings() -> void:
 		var frac := clampf(float(a.hp) / maxf(1.0, float(a.max_hp)), 0.0, 1.0)
 		draw_rect(Rect2(p + Vector2(-20, -h - 10), Vector2(40, 4)), Color(0, 0, 0, 0.6))
 		draw_rect(Rect2(p + Vector2(-20, -h - 10), Vector2(40 * frac, 4)), Color(0.4, 1.0, 0.5))
-		draw_string(ThemeDB.fallback_font, p + Vector2(-60, -h - 14), String(a.label), HORIZONTAL_ALIGNMENT_CENTER, 120, 12, Color(0.75, 1.0, 0.8))
+		_text(p + Vector2(-60, -h - 14), String(a.label), 120, 12, Color(0.75, 1.0, 0.8))
 	var view := get_viewport_rect().grow(-EventPointer.MARGIN)
 	for m in hp_.markers(battle):
 		# SPEC-147 (IN-071): dentro da tela o alvo da quest ganha anel pulsante e uma seta que balança sobre ele;

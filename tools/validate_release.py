@@ -16,7 +16,7 @@ probe=session/'probe'; probe.mkdir()
 (probe/'probe.gd').write_text('extends SceneTree\nfunc _init() -> void:\n print("ISOLATED_USER_DIR="+OS.get_user_data_dir())\n quit()\n',encoding='utf-8')
 def invoke(name,args,timeout=180):
     startup=None
-    if os.name=='nt':
+    if os.name=='nt' and name != 'human-preview':
         startup=subprocess.STARTUPINFO(); startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW; startup.wShowWindow=0
     proc=subprocess.run(['rtk','proxy','D:/Godot/godot.exe',*args],cwd=root,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8',errors='replace',timeout=timeout,startupinfo=startup)
     (session/(name+'.log')).write_text(proc.stdout,encoding='utf-8')
@@ -30,9 +30,17 @@ print('PASS: synthetic user directory verified',flush=True)
 prep=invoke('import',['--headless','--editor','--import','--path',str(root),'--','--controller-profile',str(profile)],300)
 assert prep.returncode==0 and not re.search(r'SCRIPT ERROR:|Parse Error:',prep.stdout),prep.stdout[-6000:]
 print('PASS: Godot import',flush=True)
-if '--captures' in sys.argv:
-    proc=invoke('captures',['--path',str(root),'--position','-10000,-10000','--resolution','1280x720','--quit-after','2400','-s','tools/capture_chapter2_hqs.gd','--','--controller-profile',str(profile),'--capture-dir',str(session)])
-    passed=proc.returncode==0 and 'CAPTURES_PASS=12' in proc.stdout and re.search(r'ERROR:|SCRIPT ERROR:|CAPTURE_FAILED',proc.stdout) is None
+if '--playtest-integrated-hqs' in sys.argv:
+    print('Synthetic review: HQ21 then HQ04. Advance: Enter/Space/click. Esc: next HQ/exit.',flush=True)
+    proc=invoke('human-preview',['--path',str(root),'--resolution','1280x720','-s','tools/preview_integrated_hqs.gd','--','--controller-profile',str(profile)],43200)
+    print('SESSION='+str(session),flush=True)
+    sys.exit(proc.returncode)
+if '--captures' in sys.argv or '--integrated-hq-captures' in sys.argv:
+    integrated = '--integrated-hq-captures' in sys.argv
+    capture_script = 'tools/capture_integrated_hqs.gd' if integrated else 'tools/capture_chapter2_hqs.gd'
+    expected_captures = 26 if integrated else 12
+    proc=invoke('captures',['--path',str(root),'--position','-10000,-10000','--resolution','1280x720','--quit-after','2400','-s',capture_script,'--','--controller-profile',str(profile),'--capture-dir',str(session)])
+    passed=proc.returncode==0 and ('CAPTURES_PASS='+str(expected_captures)) in proc.stdout and re.search(r'ERROR:|SCRIPT ERROR:|CAPTURE_FAILED',proc.stdout) is None
     print(proc.stdout[-3000:],flush=True)
     (session/'capture-results.json').write_text(json.dumps(dict(passed=passed,user_data_dir=str(userdir),captures=[p.name for p in session.glob('*.png')]),indent=2),encoding='utf-8')
     print('SESSION='+str(session),flush=True)

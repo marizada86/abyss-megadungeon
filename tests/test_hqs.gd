@@ -21,7 +21,8 @@ const EXPECTED := {
 	"hqn_17": {"type": "stage_cleared", "stage": "docas"},
 	"hqn_18": {"type": "stage_cleared", "stage": "reino_abissal"},
 	"hqn_19": {"type": "chapter2_content", "milestone": "dagruve_resolution"},
-	"hqn_20": {"type": "chapter2_content", "milestone": "yggdrasil_traversed"}
+	"hqn_20": {"type": "chapter2_content", "milestone": "yggdrasil_traversed"},
+	"hqn_21": {"type": "chapter2_content", "milestone": "shedaklah_reunion"}
 }
 
 func run() -> Array:
@@ -42,7 +43,7 @@ func run() -> Array:
 			if hq.get("trigger", {}) != expected:
 				out.append("gatilho incorreto para %s: %s" % [hq_id, str(hq.get("trigger", {}))])
 		var panels: Array = hq.get("panels", [])
-		var expected_panel_count := int({"hqn_01":8,"hqn_02":5,"hqn_03":6,"hqn_14":5,"hqn_15":5,"hqn_16":5,"hqn_17":4,"hqn_18":8,"hqn_19":12,"hqn_20":7}.get(hq_id,4))
+		var expected_panel_count := int({"hqn_01":8,"hqn_02":5,"hqn_03":6,"hqn_04":6,"hqn_14":5,"hqn_15":5,"hqn_16":5,"hqn_17":4,"hqn_18":8,"hqn_19":12,"hqn_20":7,"hqn_21":7}.get(hq_id,4))
 		if panels.size() != expected_panel_count:
 			out.append("%s deveria ter %d quadros" % [hq_id, expected_panel_count])
 		for panel in panels:
@@ -53,6 +54,9 @@ func run() -> Array:
 				var texture := ResourceLoader.load(path) as Texture2D
 				if texture == null:
 					out.append("image failed to import: %s" % path)
+				elif hq_id == "hqn_04" and path.ends_with("hq_n04_q1_fungus_slime_frontier_v01.png"):
+					if texture.get_size() != Vector2(1640, 959):
+						out.append("HQ04 Q1 deve preservar a dimensão da fonte aprovada")
 				elif absf(float(texture.get_width()) / float(texture.get_height()) - 16.0 / 9.0) > 0.0021:
 					out.append("imagem fora da proporção-fonte aproximada 16:9 em %s: %dx%d" % [path, texture.get_width(), texture.get_height()])
 			if String(panel.get("text", "")).is_empty():

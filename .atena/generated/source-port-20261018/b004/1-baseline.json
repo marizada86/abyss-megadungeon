@@ -1,0 +1,17 @@
+{
+	"cpu_enemies": 29,
+	"cpu_state": "running",
+	"cpu_steps": 1800,
+	"cpu_total_ms": 573.307,
+	"godot": "4.7.2-stable (official)",
+	"objects": 4417.0,
+	"render_enemies": 32,
+	"render_median_ms": 1.401,
+	"render_p95_ms": 1.701,
+	"render_p99_ms": 1.838,
+	"resolution": "(1280, 720)",
+	"samples": 360,
+	"simulated_seconds": 29.9999999999996,
+	"static_memory_bytes": 82188586,
+	"user_dir": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/tmp/port-b4/user/a/Godot/app_userdata/Nottgard Survivors"
+}

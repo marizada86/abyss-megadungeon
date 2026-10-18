@@ -312,8 +312,9 @@ func _input(ev: InputEvent) -> void:
 
 func _refresh_hero() -> void:
 	var h := _b.hero
-	var portrait_path := "res://assets/portraits/%s.png" % h.id
-	_portrait.texture = load(portrait_path) if ResourceLoader.exists(portrait_path) else null
+	_portrait.texture = HeroPortraits.texture(h.id, HeroPortraits.FICHA)
+	# faixa 3:1 própria preenche a caixa; o retrato 3:2 do menu (fallback) segue centralizado inteiro
+	_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED if HeroPortraits.has_own(h.id, HeroPortraits.FICHA) else TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	_hero_label.text = h.name
 	_level_label.text = "Nível %d" % h.level
 	var names := {"forca": "FOR", "inteligencia": "INT", "constituicao": "CON", "carisma": "CAR"}
@@ -424,7 +425,8 @@ func _empty_entry(caption: String, detail: String) -> Dictionary:
 
 func _weapon_entry(w: Weapon) -> Dictionary:
 	var tag := "  [color=#99cc99](concedida por item)[/color]" if w.granted else ""
-	var status := "  [color=#ffd966]▲ pronta para evoluir[/color]" if w.can_evolve() else ""
+	var evolve_ready := w.can_evolve() and w.missing_attrs(_b.hero).is_empty()   # SPEC-174: atributo mínimo, quando a evolução o pede
+	var status := "  [color=#ffd966]▲ pronta para evoluir[/color]" if evolve_ready else ""
 	var dmg_line := _b.weapon_damage_text(w.params())
 	var hint := _b.evolve_hint(w)
 	var detail := "[font_size=22][b]%s[/b][/font_size]%s%s\n%s%s%s" % [w.display_name(), tag, status, String(w.def.get("desc", "")),
@@ -441,7 +443,7 @@ func _weapon_entry(w: Weapon) -> Dictionary:
 	var multi := w.max_level() > 1
 	return {"icon": Items.weapon_icon(String(w.id)), "letter": String(w.def.name).substr(0, 1),
 		"border": GRANTED_BORDER if w.granted else IRON, "badge": ("Nv%d" % w.level) if multi else "★",
-		"badge_max": (w.level >= w.max_level()) if multi else true, "evolve": w.can_evolve(), "empty": false, "detail": detail}
+		"badge_max": (w.level >= w.max_level()) if multi else true, "evolve": evolve_ready, "empty": false, "detail": detail}
 
 func _item_entry(it: Dictionary) -> Dictionary:
 	var rarity := String(it.get("rarity", "comum"))
@@ -494,7 +496,9 @@ func _boon_entry(bn: Dictionary) -> Dictionary:
 		"detail": "[font_size=22][b]☼ %s[/b][/font_size]%s\n%s" % [String(bn.get("name", "")), ("\n[color=#c9a8ee]Bênção de %s[/color]" % god) if god != "" else "", String(bn.get("desc", ""))]}
 
 func _add_section(s: Dictionary) -> void:
-	_content.add_child(_label(String(s.title), 15, GOLD))
+	var heading := _label(String(s.title), 15, GOLD)
+	_content.add_child(heading)
+	Lettering.decorate_label(heading, "placa_titulo_secao", 15)
 	var entries: Array = s.entries
 	if entries.is_empty():
 		_content.add_child(_label(String(s.get("empty_text", "")), 14, MUTED))

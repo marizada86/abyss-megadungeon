@@ -1,0 +1,18 @@
+{
+  "completed_steps": [
+    "S-PORT-005",
+    "S-PORT-006"
+  ],
+  "completed_total": 6,
+  "ordered_total": 8,
+  "remaining_steps": [
+    "S-PORT-007",
+    "S-PORT-008"
+  ],
+  "next_batch": "B-PORT-004",
+  "next_batch_approved": false,
+  "shared_state_other_plans_unchanged": "79fffc2e83847f1e7647a3b6dccf9891e25cdeaea59747357fd30422e90a3625",
+  "return_plan": "HQ05_SUSPENDED_CURSOR_PRESERVED",
+  "draft_promotion": false,
+  "verification": "B003_TECHNICAL_COMPLETE_WITH_INHERITED_DEBTS"
+}

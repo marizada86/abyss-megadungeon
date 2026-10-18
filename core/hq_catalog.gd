@@ -3,7 +3,7 @@ extends RefCounted
 
 const ORDER := [
 	"hqn_01", "hqn_02", "hqn_15", "hqn_16", "hqn_17", "hqn_18", "hqn_03", "hqn_14",
-	"hqn_19", "hqn_20", "hqn_04", "hqn_05", "hqn_06", "hqn_07", "hqn_08", "hqn_09", "hqn_10", "hqn_11", "hqn_12", "hqn_13"
+	"hqn_19", "hqn_20", "hqn_21", "hqn_04", "hqn_05", "hqn_06", "hqn_07", "hqn_08", "hqn_09", "hqn_10", "hqn_11", "hqn_12", "hqn_13"
 ]
 
 static func unlocked_ids(profile_data: Dictionary) -> Array[String]:
@@ -17,6 +17,8 @@ static func is_unlocked(profile_data: Dictionary, hq_id: String) -> bool:
 	var hq: Dictionary = Data.table("hqs").get(hq_id, {})
 	if hq.is_empty():
 		return false
+	if hq_id == "hqn_21" and (Dictionary(profile_data.get("hqs_seen", {})).has(hq_id) or Dictionary(profile_data.get("campaign_progress", {}).get("legacy_hq_access", {})).has(hq_id)):
+		return true
 	# Chapter 2 artwork is admitted; campaign scheduling has a separate contract.
 	if String(hq.get("trigger", {}).get("type", "")) == "chapter2_content":
 		if Game.qa_sandbox:

@@ -18,6 +18,10 @@ var barks: CheckBox
 var reduced_impact: CheckBox
 var display_mode: OptionButton
 var resolution: OptionButton
+var visual: OptionButton
+var atmosphere: OptionButton  # SPEC-177 R5-C/D
+var hints: OptionButton  # SPEC-179 R2
+var title_font: OptionButton
 var _syncing := false
 
 func _init() -> void:
@@ -62,6 +66,54 @@ func _init() -> void:
 		Game.set_resolution(resolution.get_item_text(i))
 		changed.emit())
 	add_child(_row("Resolução", resolution))
+	visual = OptionButton.new()  # SPEC-173 (MEC-065)
+	for label in VisualFilter.LABELS:
+		visual.add_item(label)
+	visual.item_selected.connect(func(i):
+		if _syncing:
+			return
+		Game.set_visual_filter(String(VisualFilter.MODES[i]))
+		changed.emit())
+	add_child(_row("Visual", visual))
+	atmosphere = OptionButton.new()  # SPEC-177 R5-C/D
+	for label in Atmosphere.LABELS:
+		atmosphere.add_item(label)
+	atmosphere.tooltip_text = "Partículas e gradação de cor por fase."
+	atmosphere.item_selected.connect(func(i):
+		if _syncing:
+			return
+		Game.set_atmosphere(String(Atmosphere.MODES[i]))
+		changed.emit())
+	add_child(_row("Atmosfera", atmosphere))
+	hints = OptionButton.new()  # SPEC-179 R2
+	hints.add_item("Ligadas")
+	hints.add_item("Desligadas")
+	hints.tooltip_text = "Dicas curtas na primeira vez que cada sistema aparece."
+	hints.item_selected.connect(func(i):
+		if _syncing:
+			return
+		Game.set_hints("on" if i == 0 else "off")
+		changed.emit())
+	var hints_row := _row("Dicas", hints)
+	var review := Button.new()
+	review.text = "Rever dicas"
+	review.tooltip_text = "As dicas já vistas voltam a aparecer."
+	review.pressed.connect(func():
+		Game.reset_hints()
+		changed.emit())
+	hints_row.add_child(review)
+	add_child(hints_row)
+	title_font = OptionButton.new()  # SPEC-173 (MEC-066)
+	for o in UiFonts.available():
+		title_font.add_item(String(o.label))
+	title_font.tooltip_text = "Fonte dos títulos. Vale ao reabrir a tela."
+	title_font.item_selected.connect(func(i):
+		if _syncing:
+			return
+		Game.set_ui_font(String(UiFonts.available()[i].id))
+		changed.emit())
+	add_child(_row("Fonte dos títulos", title_font))
+
 func _row(text: String, control: Control) -> Control:
 	var row := HBoxContainer.new()
 	var l := UiKit.label(text, 15)
@@ -108,17 +160,24 @@ func refresh() -> void:
 	reduced_impact.button_pressed = bool(s.get("reduced_impact", false))
 	display_mode.select(maxi(0, Game.WINDOW_MODES.find(String(s.get("window_mode", "windowed")))))
 	resolution.select(maxi(0, Game.SUPPORTED_RESOLUTIONS.find(String(s.get("resolution", "1280x720")))))
+	visual.select(maxi(0, VisualFilter.MODES.find(VisualFilter.mode_of(s))))
+	atmosphere.select(maxi(0, Atmosphere.MODES.find(Atmosphere.mode_of(s))))
+	hints.select(0 if String(s.get("hints", "on")) != "off" else 1)
+	var font_ids: Array = UiFonts.available().map(func(o): return String(o.id))
+	title_font.select(maxi(0, font_ids.find(UiFonts.normalize(s.get("ui_font", UiFonts.DEFAULT_ID)))))
 	_syncing = false
 
 func _save(key: String, value: Variant) -> void:
 	Game.profile.data.settings[key] = value
 	Game.save()
+	if key == "reduced_impact":
+		Game.visual_settings_changed.emit()  # SPEC-173: a gravura tira o grão com impacto reduzido
 	changed.emit()
 
 func _save_master(value: float) -> void:
 	Game.profile.data.settings.volume = value
-	Game.apply_settings()
-	Game.save()
+	Game.apply_audio()
+	_save_soon()
 	changed.emit()
 
 func _save_volume(key: String, value: float) -> void:
@@ -132,12 +191,45 @@ func _save_volume(key: String, value: float) -> void:
 			"sfx": sfx_mute.button_pressed = false
 			"ambience": ambience_mute.button_pressed = false
 		_syncing = false
-	Game.apply_settings()
-	Game.save()
+	Game.apply_audio()
+	_save_soon()
 	changed.emit()
 
 func _save_mute(channel: String, muted: bool) -> void:
 	Game.profile.data.settings["%s_muted" % channel] = muted
-	Game.apply_settings()
-	Game.save()
+	Game.apply_audio()
+	_save_soon()
 	changed.emit()
+
+## BUG-044: arrastar o slider dispara dezenas de mudanças; o save (com backup) é gravado uma vez, 0,4 s depois da última,
+## ou na hora se o painel sair da tela. Fora da árvore (testes) grava direto.
+const SAVE_DELAY := 0.4
+var _save_timer: Timer
+var save_pending := false
+
+func _save_soon() -> void:
+	save_pending = true
+	if not is_inside_tree():
+		flush_save()
+		return
+	if _save_timer == null:
+		_save_timer = Timer.new()
+		_save_timer.one_shot = true
+		_save_timer.timeout.connect(flush_save)
+		add_child(_save_timer)
+	_save_timer.start(SAVE_DELAY)
+
+func flush_save() -> void:
+	if not save_pending:
+		return
+	save_pending = false
+	if _save_timer != null and not _save_timer.is_stopped():
+		_save_timer.stop()
+	Game.save()
+
+func _exit_tree() -> void:
+	flush_save()
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_VISIBILITY_CHANGED and not is_visible_in_tree():
+		flush_save()

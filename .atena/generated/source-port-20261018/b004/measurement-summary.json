@@ -1,0 +1,22 @@
+{
+  "baseline": {
+    "render_median_ms": 1.392,
+    "render_p95_ms": 1.725,
+    "render_p99_ms": 1.853,
+    "static_memory_bytes": 82188480.0,
+    "cpu_total_ms": 568.817,
+    "cpu_enemies": 29.0
+  },
+  "candidate": {
+    "render_median_ms": 1.851,
+    "render_p95_ms": 2.283,
+    "render_p99_ms": 2.474,
+    "static_memory_bytes": 89794353.0,
+    "cpu_total_ms": 626.529,
+    "cpu_enemies": 29.0
+  },
+  "render_investigation_signal": false,
+  "candidate_p95_within_indicative_60fps": true,
+  "human_acceptance": false,
+  "acceptance_threshold": "DIAGNOSTIC_PROPOSAL_NOT_CANON"
+}

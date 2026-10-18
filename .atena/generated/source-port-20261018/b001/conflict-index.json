@@ -1,0 +1,1029 @@
+[
+  {
+    "path": ".gitignore",
+    "disposition": "PRESERVE_PC_CONTRACT_REVIEW",
+    "batch": "B-PORT-004"
+  },
+  {
+    "path": "AGENTS.md",
+    "disposition": "PRESERVE_PC_CONTRACT_REVIEW",
+    "batch": "B-PORT-004"
+  },
+  {
+    "path": "README.md",
+    "disposition": "PRESERVE_PC_CONTRACT_REVIEW",
+    "batch": "B-PORT-004"
+  },
+  {
+    "path": "assets/animations/heroes/arlindo/active.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/arlindo/attack.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/arlindo/death.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/arlindo/idle.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/arlindo/move_e.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/arlindo/move_n.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/arlindo/move_ne.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/arlindo/move_s.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/arlindo/move_se.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/durvall/attack.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/durvall/move_e.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/durvall/move_n.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/durvall/move_ne.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/durvall/move_nw.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/durvall/move_s.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/durvall/move_se.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/durvall/move_sw.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/durvall/move_w.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/erik/active.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/erik/attack.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/erik/death.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/erik/idle.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/erik/move_e.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/erik/move_n.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/erik/move_ne.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/erik/move_s.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/erik/move_se.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/leoric/move_n.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/leoric/move_ne.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/zynara/move_n.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/heroes/zynara/move_ne.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/interactions/altar_active.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/animations/interactions/chest_open.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/enemies/manifestacao_de_juiblex.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/heroes/arlindo.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/heroes/erik.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/hq/hq_n01_q1.png",
+    "disposition": "PRESERVE_PC_APPROVED_HQ_REVIEW_HASH_AND_COMPOSITION",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/hq/hq_n01_q2.png",
+    "disposition": "PRESERVE_PC_APPROVED_HQ_REVIEW_HASH_AND_COMPOSITION",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/hq/hq_n01_q3.png",
+    "disposition": "PRESERVE_PC_APPROVED_HQ_REVIEW_HASH_AND_COMPOSITION",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/hq/hq_n01_q4.png",
+    "disposition": "PRESERVE_PC_APPROVED_HQ_REVIEW_HASH_AND_COMPOSITION",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/hq/hq_n02_q1.png",
+    "disposition": "PRESERVE_PC_APPROVED_HQ_REVIEW_HASH_AND_COMPOSITION",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/hq/hq_n02_q2.png",
+    "disposition": "PRESERVE_PC_APPROVED_HQ_REVIEW_HASH_AND_COMPOSITION",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/hq/hq_n02_q3.png",
+    "disposition": "PRESERVE_PC_APPROVED_HQ_REVIEW_HASH_AND_COMPOSITION",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/hq/hq_n02_q4.png",
+    "disposition": "PRESERVE_PC_APPROVED_HQ_REVIEW_HASH_AND_COMPOSITION",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "assets/props/pilar_01.png",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002"
+  },
+  {
+    "path": "core/battle.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "_emerge_in_reach",
+      "_emit_continuous_hurt",
+      "_enemy_shot",
+      "_l2",
+      "_l4_lunge_step",
+      "_l4_pack_mult",
+      "_l4_strafe",
+      "_sentence",
+      "_update_chamber_seen",
+      "boss_field_rate",
+      "boss_power_factor",
+      "chamber_entry",
+      "chamber_key_def",
+      "chamber_status_text",
+      "evolution_passives_needed",
+      "evolve_status",
+      "l2_corrosion",
+      "l4_section"
+    ],
+    "pc_only_functions": [
+      "_dagruve_spawn_valid",
+      "_root_cell",
+      "_root_direction",
+      "_root_field",
+      "_root_grid",
+      "_root_grid_step",
+      "_root_resource_spot",
+      "_root_spawn_valid",
+      "_update_stage_objective",
+      "complete_stage",
+      "has_reach_objective",
+      "is_dagruve_encounter",
+      "objective_status",
+      "objective_target",
+      "stage_definition"
+    ]
+  },
+  {
+    "path": "core/controller_input.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "core/enemy.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "core/game.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "apply_audio",
+      "apply_window",
+      "reset_hints",
+      "set_atmosphere",
+      "set_hints",
+      "set_ui_font",
+      "set_visual_filter"
+    ],
+    "pc_only_functions": [
+      "qa_encounter_request_valid"
+    ]
+  },
+  {
+    "path": "core/happenings.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "core/hero.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": [
+      "sweep"
+    ]
+  },
+  {
+    "path": "core/hq_catalog.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "core/melee_vfx.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "core/playtest.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "_web_received",
+      "download_pending"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "core/profile.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "core/sfx.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "core/terrain_layout.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": [
+      "_index_root_support",
+      "has_roots",
+      "root_definition",
+      "root_edge_width",
+      "root_nearest",
+      "root_point",
+      "root_supports"
+    ]
+  },
+  {
+    "path": "core/weapon.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "evolve_min_attr",
+      "missing_attrs"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "data/abilities.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [],
+    "changed_keys": [
+      "arlindo"
+    ]
+  },
+  {
+    "path": "data/audio_manifest.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [],
+    "changed_keys": [
+      "events"
+    ]
+  },
+  {
+    "path": "data/cursor.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [],
+    "changed_keys": [
+      "cursor_mao",
+      "cursor_ponteiro",
+      "_note"
+    ]
+  },
+  {
+    "path": "data/difficulty.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [
+      "boss_mech",
+      "l2",
+      "l4"
+    ],
+    "pc_only_keys": [],
+    "changed_keys": []
+  },
+  {
+    "path": "data/enemies.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [
+      "totem_de_chefe"
+    ],
+    "pc_only_keys": [],
+    "changed_keys": [
+      "guardiao_verdadeiro",
+      "larva_de_lu_yueh",
+      "cultista_adaga",
+      "zumbi",
+      "alma_penada",
+      "escravo_de_rivenheart"
+    ]
+  },
+  {
+    "path": "data/hqs.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [
+      "hqn_15",
+      "hqn_16",
+      "hqn_17",
+      "hqn_18",
+      "hqn_19",
+      "hqn_20",
+      "hqn_21"
+    ],
+    "changed_keys": [
+      "hqn_02",
+      "hqn_03",
+      "hqn_14",
+      "hqn_04",
+      "hqn_01"
+    ]
+  },
+  {
+    "path": "data/level_design.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [
+      "domwieck",
+      "raiz_yggdrasil",
+      "reino_abissal"
+    ],
+    "changed_keys": [
+      "_kinds"
+    ]
+  },
+  {
+    "path": "data/secrets.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [],
+    "changed_keys": [
+      "_regras"
+    ]
+  },
+  {
+    "path": "data/stage_events.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [
+      "domwieck",
+      "reino_abissal"
+    ],
+    "changed_keys": [
+      "shendilavri",
+      "docas",
+      "dagruve",
+      "goranthis",
+      "molor",
+      "durao",
+      "feng_tu",
+      "shedaklah"
+    ]
+  },
+  {
+    "path": "data/stage_rules.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [
+      "domwieck",
+      "reino_abissal"
+    ],
+    "changed_keys": []
+  },
+  {
+    "path": "data/stage_story.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [
+      "domwieck",
+      "reino_abissal"
+    ],
+    "changed_keys": []
+  },
+  {
+    "path": "data/stage_structures.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [
+      "domwieck",
+      "reino_abissal"
+    ],
+    "changed_keys": []
+  },
+  {
+    "path": "data/stages.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [],
+    "pc_only_keys": [
+      "domwieck",
+      "reino_abissal"
+    ],
+    "changed_keys": [
+      "shendilavri",
+      "docas",
+      "dagruve",
+      "goranthis",
+      "molor",
+      "pilares",
+      "durao",
+      "feng_tu",
+      "shedaklah"
+    ]
+  },
+  {
+    "path": "data/weapons.json",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_keys": [
+      "constelacao_de_silva",
+      "dominio_coletivo",
+      "maca_demolidora",
+      "martelo_da_luz",
+      "raio_da_ruina"
+    ],
+    "pc_only_keys": [],
+    "changed_keys": [
+      "golpe_esmagador",
+      "sopro_de_estrela",
+      "martelo_da_gloria",
+      "dominar_pessoa",
+      "raio_enfraquecedor"
+    ]
+  },
+  {
+    "path": "export_presets.cfg",
+    "disposition": "PRESERVE_PC_CONTRACT_REVIEW",
+    "batch": "B-PORT-004"
+  },
+  {
+    "path": "project.godot",
+    "disposition": "PRESERVE_PC_CONTRACT_REVIEW",
+    "batch": "B-PORT-004"
+  },
+  {
+    "path": "tests/test_abyss_marks.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_animation_assets.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_arcanist.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_battle.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_data.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_fog_edge.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [
+      "_run_base"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_hero_own_art.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_hqs.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_lettering_assets.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_level_design.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_new_content.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [
+      "_lote1_evolutions",
+      "_offer_has_evolve"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_playtest.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_playtest_fixes.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_profile.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_qa_sandbox.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": [
+      "_assert_dagruve_request_isolation"
+    ]
+  },
+  {
+    "path": "tests/test_secrets.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [
+      "_chamber_log",
+      "_questlog_title"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tests/test_stage_structures.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tools/audit_projeto.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "tools/run_one_test.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-004",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/ability_slot.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/abyss_panel.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/character_sheet.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/controller_options.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/edge_fog.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/enemy_view.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "_ground_point"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/event_pointer.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/ground.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": [
+      "_draw_ailalore_garden",
+      "_draw_domwieck_building",
+      "_draw_domwieck_prototype",
+      "_draw_root_prototype",
+      "_draw_yggdrasil_prototype",
+      "_prepare_root_art",
+      "_set_root_art",
+      "root_art_config"
+    ]
+  },
+  {
+    "path": "ui/ground_decals.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/hero_panel.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/hero_view.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-002",
+    "source_only_functions": [
+      "_is_real_walk",
+      "_lab_apply_candidate",
+      "_lab_stride",
+      "lab_walk_fps",
+      "strip_cell"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/hq_screen.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/hq_screen.tscn",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003"
+  },
+  {
+    "path": "ui/hud.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "_cancel_mobile_action",
+      "_confirm_mobile_action",
+      "_confirm_offer",
+      "_fit_result_scroll",
+      "_outline_world_labels",
+      "_select_offer",
+      "_setup_mobile_offers",
+      "_wrap_result_text_in_scroll",
+      "achievement_line",
+      "clear_mobile_input",
+      "confirm_mobile",
+      "legible_toast_color"
+    ],
+    "pc_only_functions": [
+      "_cancel_action",
+      "_confirm_action_action",
+      "confirm_action"
+    ]
+  },
+  {
+    "path": "ui/leaderboard.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "_exit_tree",
+      "_web_received"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/lettering.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "decorate_label",
+      "set_banner"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/menu.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/menu.tscn",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003"
+  },
+  {
+    "path": "ui/offer_card.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/options_panel.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "_exit_tree",
+      "_notification",
+      "_save_soon",
+      "flush_save"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/overlay.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "_draw_text_queue",
+      "_paint_text",
+      "_text"
+    ],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/pause_menu.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/prop.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/quest_panel.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/run.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "_ability_effect",
+      "_hint_near",
+      "_mobile_command",
+      "_nova_effect",
+      "_on_visual_settings_changed",
+      "_retire_projectile_vfx",
+      "_setup_hints",
+      "_setup_visual_filter",
+      "_sync_ability_follow",
+      "_sync_projectile_vfx",
+      "_update_hints",
+      "can_show_aux_text"
+    ],
+    "pc_only_functions": [
+      "_clip_root_decals",
+      "_drain_campaign_hqs",
+      "_draw"
+    ]
+  },
+  {
+    "path": "ui/sheet_art.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/stage_progress.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/stage_structures.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/theme.tres",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003"
+  },
+  {
+    "path": "ui/title.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [],
+    "pc_only_functions": []
+  },
+  {
+    "path": "ui/ui_kit.gd",
+    "disposition": "SEMANTIC_INTEGRATION_REQUIRED",
+    "batch": "B-PORT-003",
+    "source_only_functions": [
+      "action_frame",
+      "catalog_slot",
+      "style_action_button"
+    ],
+    "pc_only_functions": []
+  }
+]

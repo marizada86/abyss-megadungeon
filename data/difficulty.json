@@ -1,6 +1,104 @@
 {
   "_enemy_speed": "SPEC-124: multiplicador global da velocidade dos inimigos moveis (speed > 0); 1.0 = valores de enemies.json.",
   "enemy_speed_mult": 1.2,
+  "l2": {
+    "_spec": "L2 do relato do T05 (EVID-250, EVID-252): enabled desliga tudo de uma vez (as sondas comparam antes e depois). field: com o chefe vivo as ondas continuam a field_rate do ritmo e do teto (antes só 1 inimigo a cada 3,5 s). boss_power: o PV do chefe cresce com o nível e o dano do herói (bonus = per_level x (nível - start_level) + per_dmg x dmg_pct, teto max_bonus). corrosion: a poça tira também pct_max_hp do PV máximo e, como a borda da névoa, suspende a regeneração passiva; edge_max_dps_pct sobe a rampa final da borda.",
+    "enabled": true,
+    "field": {
+      "rate": 0.4
+    },
+    "boss_power": {
+      "start_level": 6,
+      "per_level": 0.04,
+      "per_dmg": 0.35,
+      "max_bonus": 0.8
+    },
+    "corrosion": {
+      "puddle_pct_max_hp": 0.015,
+      "linger": 0.6,
+      "edge_max_dps_pct": 0.12
+    }
+  },
+  "boss_mech": {
+    "_spec": "L5 (PROPOSTA-l5-mecanicas-de-chefe, aprovada em 2026-10-14): mecânicas de chefe no estilo de raide, definidas em data/boss_mechanics.json. enabled liga tudo; verbs liga cada verbo. budget: mecânicas ativas ao mesmo tempo = base + ordem_da_fase / every_stages (cresce ao avançar). enrage: depois de start_s de luta o chefe ganha step de dano a cada every_s, até max_steps.",
+    "enabled": true,
+    "verbs": {
+      "totems": true,
+      "cast": true,
+      "sweep": true,
+      "quadrants": true,
+      "immune_adds": true,
+      "mark": true,
+      "enrage": true
+    },
+    "armor": {
+      "reduction": 0.4,
+      "seconds": 6.0
+    },
+    "off_bosses": [],
+    "budget": {
+      "base": 2,
+      "every_stages": 3
+    },
+    "enrage": {
+      "enabled": true,
+      "start_s": 90.0,
+      "every_s": 15.0,
+      "step": 0.08,
+      "max_steps": 5
+    },
+    "combat_orders": {
+      "dagruve": 0,
+      "docas": 1,
+      "shedaklah": 2,
+      "molor": 3,
+      "durao": 4,
+      "feng_tu": 5,
+      "shendilavri": 6,
+      "goranthis": 7,
+      "pilares": 8
+    }
+  },
+  "l4": {
+    "_spec": "L4 do relato do T05 (EVID-250, proposta em vault/drafts/PROPOSTA-l4-...): enabled desliga tudo. emerge: elite imóvel com golpe em área nasce a (alcance - margin) tiles do herói. telegraph: linha do golpe, sprite quente e aviso mais longo em delay_override (por inimigo). aim: o tiro sai windup s depois, na direção travada. strafe: atirador anda de lado dentro da faixa de manter distância. lunge: bote dos inimigos com move lunge. pack: inimigos com move pack andam solo x solo e em grupo x group quando há need aliados do mesmo tipo a radius tiles.",
+    "enabled": true,
+    "emerge": {
+      "enabled": true,
+      "margin": 1.2
+    },
+    "telegraph": {
+      "enabled": true,
+      "delay_override": {
+        "tentaculo_kraken": 1.3
+      }
+    },
+    "aim": {
+      "enabled": true,
+      "windup": 0.4
+    },
+    "strafe": {
+      "enabled": true,
+      "speed": 0.5,
+      "switch_min": 2.0,
+      "switch_max": 3.0
+    },
+    "lunge": {
+      "enabled": true,
+      "min": 1.6,
+      "max": 4.2,
+      "windup": 0.45,
+      "dist": 3.0,
+      "speed": 9.0,
+      "cd": 4.0
+    },
+    "pack": {
+      "enabled": true,
+      "solo": 0.85,
+      "group": 1.25,
+      "need": 2,
+      "radius": 3.0
+    }
+  },
   "gold": {
     "_spec": "SPEC-142 B-003 (BAL-023): economia de ouro. meta_coin_exponent: o ouro de cada fase entra no Quartel dividido por coin_mult^expoente (1.0 = valor-base, sem a inflacao x5 das fases finais; 0 = como antes). gold_hit_per_second: teto de moedas por segundo do Chicote Avarento (valor-base, sem coin_mult). reward_cap: teto do multiplicador de recompensa (descida x Marcas). run_only_sell: venda de pecas vale na run (escalada por coin_mult) mas nao entra no Quartel.",
     "meta_coin_exponent": 1.0,
@@ -36,9 +134,24 @@
       "chance_per_luck": 0.05,
       "min_chance": 0.3,
       "max_chance": 0.9,
-      "weights": {"gold": 65, "potion": 20, "magnet": 10, "item": 5},
-      "per_luck": {"gold": -3, "potion": 1, "magnet": 0.5, "item": 1.5},
-      "min_weight": {"gold": 20, "potion": 5, "magnet": 3, "item": 2}
+      "weights": {
+        "gold": 65,
+        "potion": 20,
+        "magnet": 10,
+        "item": 5
+      },
+      "per_luck": {
+        "gold": -3,
+        "potion": 1,
+        "magnet": 0.5,
+        "item": 1.5
+      },
+      "min_weight": {
+        "gold": 20,
+        "potion": 5,
+        "magnet": 3,
+        "item": 2
+      }
     }
   },
   "styx_lucidity_seconds": 300,
@@ -59,8 +172,20 @@
   },
   "prices": {
     "_spec": "SPEC-122 E5: preco por raridade. shop = loja (antes do coin_mult da fase); sell = venda. Valores antigos (16+8*rank e 8*(rank+1)) mantidos, Incomum no meio.",
-    "shop": {"comum": 16, "magico": 24, "incomum": 28, "raro": 32, "unico": 40},
-    "sell": {"comum": 8, "magico": 16, "incomum": 20, "raro": 24, "unico": 32}
+    "shop": {
+      "comum": 16,
+      "magico": 24,
+      "incomum": 28,
+      "raro": 32,
+      "unico": 40
+    },
+    "sell": {
+      "comum": 8,
+      "magico": 16,
+      "incomum": 20,
+      "raro": 24,
+      "unico": 32
+    }
   },
   "xp": {
     "_spec": "SPEC-122 B-002: ritmo de nivel. need_mult e need_growth multiplicam a curva base; kill_mult reduz o XP coletado.",
@@ -85,6 +210,10 @@
   },
   "ritual_blessing": {
     "duration": 20.0,
-    "mods": {"dmg_pct": 0.2, "speed_pct": 0.15, "pickup": 1.0}
+    "mods": {
+      "dmg_pct": 0.2,
+      "speed_pct": 0.15,
+      "pickup": 1.0
+    }
   }
 }

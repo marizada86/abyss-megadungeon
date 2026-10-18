@@ -11,7 +11,8 @@
       "reward": {
         "unlock_chamber": true
       },
-      "fonte_vault": "Sessão 3 (rituais na névoa de Dagruve)"
+      "fonte_vault": "Sessão 3 (rituais na névoa de Dagruve)",
+      "chamber_hint": "interrompa o ritual: fique sobre o selo"
     },
     {
       "id": "pulso_da_fratura",
@@ -37,7 +38,8 @@
       "reward": {
         "unlock_chamber": true
       },
-      "fonte_vault": "Sessão 20 parte 2 (criaturas aquáticas atacam as Docas)"
+      "fonte_vault": "Sessão 20 parte 2 (criaturas aquáticas atacam as Docas)",
+      "chamber_hint": "derrote as criaturas que atacam o cais"
     },
     {
       "id": "pulso_da_fenda",
@@ -74,7 +76,8 @@
       "items": [
         {
           "label": "Coração de Limo",
-          "source": "elite:receptaculo_de_juiblex"
+          "source": "elite:receptaculo_de_juiblex",
+          "asset": "coracao_limo"
         }
       ],
       "target": {
@@ -83,7 +86,8 @@
           200,
           140,
           190
-        ]
+        ],
+        "asset": "trono_zuggtmoy"
       },
       "hint_text": "Zuggtmoy: “Juiblex se fortalece no meu domínio. Traga-me o que pulsa dentro do receptáculo dele.”",
       "success_text": "Zuggtmoy aceita o Coração de Limo. O pacto está selado.",
@@ -124,7 +128,8 @@
             200,
             150,
             210
-          ]
+          ],
+          "asset": "esporo_zuggtmoy"
         },
         {
           "label": "limo de Juiblex",
@@ -132,7 +137,8 @@
             110,
             190,
             80
-          ]
+          ],
+          "asset": "limo_juiblex"
         }
       ],
       "target": {
@@ -141,7 +147,8 @@
           190,
           180,
           150
-        ]
+        ],
+        "asset": "arco_pedra"
       },
       "hint_text": "As runas acendem e apagam: falta um dos opostos.",
       "success_text": "Fungo e limo juntos: as runas do arco se acendem.",
@@ -158,7 +165,8 @@
           "n": 4
         }
       },
-      "fonte_vault": "Sessão 16 (arco que une os dois opostos)"
+      "fonte_vault": "Sessão 16 (arco que une os dois opostos)",
+      "chamber_hint": "leve esporo e limo ao arco de pedra"
     },
     {
       "id": "barqueiro_do_estige",
@@ -195,7 +203,8 @@
           }
         }
       ],
-      "fonte_vault": "Sessão 15 (Reaper conjura canoa por ouro)"
+      "fonte_vault": "Sessão 15 (Reaper conjura canoa por ouro)",
+      "asset": "npc_reaper_barqueiro"
     },
     {
       "id": "altar_disputado_shedaklah",
@@ -296,7 +305,9 @@
       "fail": {
         "elite": "receptaculo_de_juiblex"
       },
-      "fonte_vault": "Sessão 17 (Thullgrime; o ritual sustenta a massa; receptáculo de Juiblex)"
+      "fonte_vault": "Sessão 17 (Thullgrime; o ritual sustenta a massa; receptáculo de Juiblex)",
+      "asset": "massa_thullgrime",
+      "chamber_hint": "mate os carregadores antes que cheguem à massa"
     },
     {
       "id": "diario_do_chefe",
@@ -354,7 +365,8 @@
           "duration": 30
         }
       },
-      "fonte_vault": "Sessão 16 (desertores capturados; Molydeus caçam desertores)"
+      "fonte_vault": "Sessão 16 (desertores capturados; Molydeus caçam desertores)",
+      "asset": "npc_desertor_durao"
     },
     {
       "id": "patrulha_do_carcereiro",
@@ -400,7 +412,8 @@
           "duration": 30
         }
       },
-      "fonte_vault": "Sessão 16 (provação do machado de Xar'gath: arena de fogo, duelo)"
+      "fonte_vault": "Sessão 16 (provação do machado de Xar'gath: arena de fogo, duelo)",
+      "chamber_hint": "vença o duelo"
     },
     {
       "id": "vhaerith_na_jaula",
@@ -438,7 +451,8 @@
           }
         }
       ],
-      "fonte_vault": "Sessão 16 (Vhaerith, primo de Thalion; sangue de elfo verdadeiro; pede uma runa)"
+      "fonte_vault": "Sessão 16 (Vhaerith, primo de Thalion; sangue de elfo verdadeiro; pede uma runa)",
+      "asset": "npc_vhaerith_aetherion"
     }
   ],
   "feng_tu": [
@@ -471,7 +485,8 @@
       "npc": {
         "label": "João Barbosa",
         "hp": 70,
-        "speed": 1.1
+        "speed": 1.1,
+        "asset": "npc_joao_barbosa"
       },
       "title": "Escolta do peregrino",
       "warning_text": "João Barbosa, devoto de Tou Um, segue a Estrela do Norte.",
@@ -492,7 +507,8 @@
           "duration": 40
         }
       },
-      "fonte_vault": "Sessões 17 e 18 (João Barbosa guia ao templo de Tou Um)"
+      "fonte_vault": "Sessões 17 e 18 (João Barbosa guia ao templo de Tou Um)",
+      "chamber_hint": "proteja João até o templo"
     },
     {
       "id": "peregrinacao_da_estrela",
@@ -521,7 +537,8 @@
       "reward": {
         "heal_pct": 0.35
       },
-      "fonte_vault": "Sessão 18 (doença; peregrinação da estrela de oito dias cura)"
+      "fonte_vault": "Sessão 18 (doença; peregrinação da estrela de oito dias cura)",
+      "asset": "estrela_do_norte"
     },
     {
       "id": "altar_disputado_feng_tu",
@@ -625,7 +642,8 @@
           }
         }
       ],
-      "fonte_vault": "Sessão 18 (loja de itens sem magia em Rivenheart)"
+      "fonte_vault": "Sessão 18 (loja de itens sem magia em Rivenheart)",
+      "asset": "npc_mercador_rivenheart"
     },
     {
       "id": "o_convite",
@@ -698,10 +716,16 @@
           "hp": 90,
           "life": 40,
           "dice": "2d8",
-          "speed": 1.7
+          "speed": 1.7,
+          "assets": [
+            "npc_nyxara",
+            "npc_vaelis"
+          ]
         }
       },
-      "fonte_vault": "Sessão 18 (vítimas drenadas; Irmãs Radiantes como guias)"
+      "fonte_vault": "Sessão 18 (vítimas drenadas; Irmãs Radiantes como guias)",
+      "asset": "npc_vitima_enfeiticada",
+      "chamber_hint": "liberte as vítimas"
     }
   ],
   "goranthis": [
@@ -777,7 +801,8 @@
       "title": "Do trono ao lodo",
       "warning_text": "Alguém tira Socothbenoth do trono: o paraíso começa a ruir.",
       "result_text": "Era ilusão: paredes de carne, santuários que ferem, inimigos mais rápidos.",
-      "fonte_vault": "Sessão 19 (tirar Socothbenoth do trono revela o palácio de carne)"
+      "fonte_vault": "Sessão 19 (tirar Socothbenoth do trono revela o palácio de carne)",
+      "chamber_hint": "nada a fazer: o paraíso cai sozinho"
     },
     {
       "id": "o_nome_tres_vezes",
@@ -810,13 +835,15 @@
               "hp": 500,
               "life": 25,
               "dice": "3d10",
-              "speed": 1.8
+              "speed": 1.8,
+              "asset": "npc_grazzt_aliado"
             },
             "text": "Graz'zt emerge da sombra, triunfante."
           }
         }
       ],
-      "fonte_vault": "Sessões 19 e 20 (anel que invoca Graz'zt ao dizer o nome três vezes)"
+      "fonte_vault": "Sessões 19 e 20 (anel que invoca Graz'zt ao dizer o nome três vezes)",
+      "asset": "npc_grazzt_aliado"
     }
   ],
   "pilares": [

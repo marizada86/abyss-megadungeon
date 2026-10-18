@@ -1,0 +1,786 @@
+{
+  "source": [
+    {
+      "consumer": "tests/test_controller_experience.gd",
+      "reference": "res://.atena/generated/controller-experience/v01/unit-profile.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tests/test_evidence_queue.gd",
+      "reference": "res://.atena/generated/test-state",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tests/test_hero_animation_prompt_manifest.gd",
+      "reference": "res://.atena/generated/ART-PROMPTS-016-animacoes-dos-herois.md",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tests/test_hero_animation_prompt_manifest.gd",
+      "reference": "res://.atena/generated/HERO-ANIMATION-PROMPT-MANIFEST-001.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tests/test_prompt_execution_contract.gd",
+      "reference": "res://.atena/generated/PROMPT-EXECUTION-RECORD-TEMPLATE-001.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/audit_first_encounters.gd",
+      "reference": "res://.atena/generated/m3-onboarding/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/audit_first_encounters.gd",
+      "reference": "res://.atena/generated/m3-onboarding/primeiros-encontros.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/audit_prompt_execution.gd",
+      "reference": "res://.atena/generated/prompt-execution",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/audit_prop_grounding_report.gd",
+      "reference": "res://.atena/evidence/EVID-112-bug-013-auditoria-final-2026-09-29.md",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/audit_sfx_coverage.gd",
+      "reference": "res://.atena/generated/m2-game-feel/sfx-vfx-cobertura.md",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/build_lote2_scenery_assets.gd",
+      "reference": "res://.atena/generated/art-candidates/scenery-normalized",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_ability_hud.gd",
+      "reference": "res://.atena/generated/spec-127/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_ability_vfx.gd",
+      "reference": "res://.atena/generated/m2-game-feel/habilidades-v01/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_atmosphere_all.gd",
+      "reference": "res://.atena/generated/m2-game-feel/r5-cd-nove-fases/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_atmosphere_samples.gd",
+      "reference": "res://.atena/generated/m2-game-feel/r5-cd-amostras/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_b001.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b001/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_b002.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b002/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_b003.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b003/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_big_maps.gd",
+      "reference": "res://.atena/generated/big-maps",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_big_maps.gd",
+      "reference": "res://.atena/generated/big-maps/%s_%s_%d_%d.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_big_maps.gd",
+      "reference": "res://.atena/generated/big-maps/%s_%s_overview.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_big_maps.gd",
+      "reference": "res://.atena/generated/big-maps/%s_%s_poi_%s.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_body_font.gd",
+      "reference": "res://.atena/generated/plan-100/capturas-corpo3/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_breakables.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b002/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_chamber_log.gd",
+      "reference": "res://.atena/generated/mec-068-camara-selada/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_character_sheet.gd",
+      "reference": "res://.atena/generated/spec-130/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_danger_feel.gd",
+      "reference": "res://.atena/generated/m2-game-feel/r5/depois/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_event_pointer.gd",
+      "reference": "res://.atena/generated/mec-061-seta-de-evento/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_ficha_c_art.gd",
+      "reference": "res://.atena/generated/ficha-c-integration/v01/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_fila028.gd",
+      "reference": "res://.atena/generated/fila028-integration-2026-10-16/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_first_ui.gd",
+      "reference": "res://.atena/generated/m3-onboarding/ui-primeiros-encontros/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_game_feel.gd",
+      "reference": "res://.atena/generated/m2-game-feel/auditoria-v01/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_ground_spots.gd",
+      "reference": "res://.atena/generated/ground-review",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_ground_spots.gd",
+      "reference": "res://.atena/generated/ground-review/%s_%s_%d_%d.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_ground_spots.gd",
+      "reference": "res://.atena/generated/ground-review/%s_%s_overview.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_hero_own_art.gd",
+      "reference": "res://.atena/generated/hero-integration-2026-10-10/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_hero_panel.gd",
+      "reference": "res://.atena/generated/spec-131/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_hero_variants.gd",
+      "reference": "res://.atena/generated/bug-029-reducao/capturas",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_hero_variants.gd",
+      "reference": "res://.atena/generated/bug-029-reducao/capturas/%s_%s.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_hints.gd",
+      "reference": "res://.atena/generated/m3-onboarding/dicas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_juice_check.gd",
+      "reference": "res://.atena/generated/m2-game-feel/r5-e/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_korrak_walk.gd",
+      "reference": "res://.atena/generated/priority-review/%s_%s_runtime.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_l1.gd",
+      "reference": "res://.atena/generated/mariz-playtest/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_l3.gd",
+      "reference": "res://.atena/generated/mariz-playtest/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_l4.gd",
+      "reference": "res://.atena/generated/mariz-playtest/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_l5.gd",
+      "reference": "res://.atena/generated/mariz-playtest/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_l5_b001.gd",
+      "reference": "res://.atena/generated/mariz-playtest/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_l5_b002.gd",
+      "reference": "res://.atena/generated/mariz-playtest/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_l5_b003.gd",
+      "reference": "res://.atena/generated/mariz-playtest/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_l5_b004.gd",
+      "reference": "res://.atena/generated/mariz-playtest/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_lettering.gd",
+      "reference": "res://.atena/generated/spec-132/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_m1_durvall.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/m1-durvall/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_mariz_hud.gd",
+      "reference": "res://.atena/generated/mariz-playtest/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_mariz_ui.gd",
+      "reference": "res://.atena/generated/mariz-playtest/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_melee_vfx.gd",
+      "reference": "res://.atena/generated/priority-review/%s.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_molor_animations.gd",
+      "reference": "res://.atena/generated/priority-review/%s_runtime.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_pause_menu.gd",
+      "reference": "res://.atena/generated/plan-092/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_playtest.gd",
+      "reference": "res://.atena/generated/playtest-ranking/v01/central-1280.png",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_playtest.gd",
+      "reference": "res://.atena/generated/playtest-ranking/v01/ranking-1280.png",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_priority_images.gd",
+      "reference": "res://.atena/generated/priority-review",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_priority_images.gd",
+      "reference": "res://.atena/generated/priority-review/%s.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_quartel.gd",
+      "reference": "res://.atena/generated/plan-093/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_quest_hud.gd",
+      "reference": "res://.atena/generated/playtest-fixes-080/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_r3_prototype.gd",
+      "reference": "res://.atena/generated/m3-onboarding/r3-prototipo/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_random_events.gd",
+      "reference": "res://.atena/generated/plan-091/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_shedaklah_animations.gd",
+      "reference": "res://.atena/generated/priority-review/%s_runtime.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/capture_stage_progress.gd",
+      "reference": "res://.atena/generated/plan-089/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_title.gd",
+      "reference": "res://.atena/generated/logo-ln01-2026-10-16/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_transition.gd",
+      "reference": "res://.atena/generated/dev-033/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_ui_fonts.gd",
+      "reference": "res://.atena/generated/plan-100/capturas-fontes/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_visual_filter.gd",
+      "reference": "res://.atena/generated/plan-100/capturas/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/capture_weapon_vfx.gd",
+      "reference": "res://.atena/generated/m2-game-feel/armas-vfx-v01/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/check_shedaklah_source_bounds.gd",
+      "reference": "res://.atena/generated/art-candidates/enemies-%s/%s/",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/clean_molor_identity_alpha.gd",
+      "reference": "res://.atena/generated/art-candidates/enemies-molor/%s/%s_idle_00",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/clean_molor_identity_alpha.gd",
+      "reference": "res://.atena/generated/priority-review/molor_identities_clean.png",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/controller_check.gd",
+      "reference": "res://.atena/generated/controller-experience/v02/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/controller_preview.gd",
+      "reference": "res://.atena/generated/controller-experience/v01/pilot-profile.json",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/kit_test.gd",
+      "reference": "res://.atena/generated/playtest-kit-test",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/korrak_walk_probe.gd",
+      "reference": "res://.atena/generated/ground-review/probe_%s_%d.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/m1_inventory.gd",
+      "reference": "res://.atena/generated/m1-movimento",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/measure_walk_stride.gd",
+      "reference": "res://.atena/generated/walk-debug",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/measure_walk_stride.gd",
+      "reference": "res://.atena/generated/walk-debug/stride.csv",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/menu_start_check.gd",
+      "reference": "res://.atena/generated/controller-experience/v03/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/mobile_preview.gd",
+      "reference": "res://.atena/generated/mobile-controls/v02/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/normalize_ficha_c.gd",
+      "reference": "res://.atena/generated/art-candidates/ficha-c/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/normalize_ficha_c.gd",
+      "reference": "res://.atena/generated/ficha-c-integration/v01/assets/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/normalize_lote_2_candidates.gd",
+      "reference": "res://.atena/generated/art-candidates/scenery",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/normalize_lote_2_candidates.gd",
+      "reference": "res://.atena/generated/art-candidates/scenery-normalized",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/normalize_nyrelia_frames.gd",
+      "reference": "res://.atena/generated/animation-candidates/heroes/nyrelia/v01",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/playtest_interop.gd",
+      "reference": "res://.atena/generated/playtest-ranking/v01/godot-synthetic.log",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_actor_strips.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b003/",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/prepare_actor_strips.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b003/atores-preparacao.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_breakable_deaths.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b002/breakables-preparacao.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_breakable_deaths.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b002/breakables/",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_idle_strips.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b002/backup/%s_antes.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_idle_strips.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b002/idles-preparacao.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_idle_strips.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b002/idles/",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_lote_1_assets.gd",
+      "reference": "res://.atena/generated/art-candidates/lote-1",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/prepare_lote_1_assets.gd",
+      "reference": "res://.atena/generated/art-candidates/lote-1/approved",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/prepare_melee_vfx.gd",
+      "reference": "res://.atena/generated/art-candidates/vfx-pilot/melee_fisico_%s_%02d_v%s.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_melee_vfx.gd",
+      "reference": "res://.atena/generated/art-candidates/vfx/chicote/chicote_%s_v%s.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_melee_vfx.gd",
+      "reference": "res://.atena/generated/art-candidates/vfx/estocada_longa/estocada_longa_%s_v%s.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_molor_animations.gd",
+      "reference": "res://.atena/generated/art-candidates/enemies-molor/%s/",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_molor_animations.gd",
+      "reference": "res://.atena/generated/priority-review/%s_%s.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_molor_animations.gd",
+      "reference": "res://.atena/generated/priority-review/%s_all_states.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_pending_fog_texture.gd",
+      "reference": "res://.atena/generated/art-candidates/lote-1/approved/nevoa_textura_01.png",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_pending_fog_texture.gd",
+      "reference": "res://.atena/generated/art-candidates/lote-1/nevoa_textura_01_v03-tile-preview.png",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_pending_fog_texture.gd",
+      "reference": "res://.atena/generated/art-candidates/lote-1/nevoa_textura_01_v03.png",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_pending_fog_texture.gd",
+      "reference": "res://.atena/generated/art-candidates/lote-1/nevoa_textura_01_v03_seamless.png",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_shedaklah_animations.gd",
+      "reference": "res://.atena/generated/art-candidates/enemies-%s/%s/",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_shedaklah_animations.gd",
+      "reference": "res://.atena/generated/priority-review/%s_%s.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_shedaklah_animations.gd",
+      "reference": "res://.atena/generated/priority-review/%s_all_states.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_ui_art.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b001/fontes/",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/prepare_ui_art.gd",
+      "reference": "res://.atena/generated/chatgpt-integration-2026-10-17/b001/preparacao.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/promote_validated_decals.gd",
+      "reference": "res://.atena/generated/art-candidates/scenery-normalized",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tools/review_molor_candidate_frames.gd",
+      "reference": "res://.atena/generated/art-candidates/enemies-molor/blogbog/",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/review_shedaklah_identities.gd",
+      "reference": "res://.atena/generated/art-candidates/enemies-%s/%s/%s_idle_00_v%s.png",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/review_shedaklah_identities.gd",
+      "reference": "res://.atena/generated/priority-review/%s_identities_v%s.png",
+      "exists": false,
+      "directory": false
+    }
+  ],
+  "pc": [
+    {
+      "consumer": "tests/test_controller_experience.gd",
+      "reference": "res://.atena/generated/controller-experience/v01/unit-profile.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tests/test_domwieck_art.gd",
+      "reference": "res://.atena/generated/domwieck-art-20261017/kit-r1/manifest.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tests/test_evidence_queue.gd",
+      "reference": "res://.atena/generated/test-state",
+      "exists": true,
+      "directory": true
+    },
+    {
+      "consumer": "tests/test_hero_animation_prompt_manifest.gd",
+      "reference": "res://.atena/generated/ART-PROMPTS-016-animacoes-dos-herois.md",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tests/test_hero_animation_prompt_manifest.gd",
+      "reference": "res://.atena/generated/HERO-ANIMATION-PROMPT-MANIFEST-001.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tests/test_prompt_execution_contract.gd",
+      "reference": "res://.atena/generated/PROMPT-EXECUTION-RECORD-TEMPLATE-001.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tests/test_root_art.gd",
+      "reference": "res://.atena/generated/root-art-20261017/kit-r1/manifest.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tests/test_yggdrasil_art.gd",
+      "reference": "res://.atena/generated/yggdrasil-art-20261017/kit-r1/manifest.json",
+      "exists": true,
+      "directory": false
+    },
+    {
+      "consumer": "tools/audit_prompt_execution.gd",
+      "reference": "res://.atena/generated/prompt-execution",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/controller_check.gd",
+      "reference": "res://.atena/generated/controller-experience/v02/",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/kit_test.gd",
+      "reference": "res://.atena/generated/playtest-kit-test",
+      "exists": false,
+      "directory": false
+    },
+    {
+      "consumer": "tools/playtest_interop.gd",
+      "reference": "res://.atena/generated/playtest-ranking/v01/godot-synthetic.log",
+      "exists": false,
+      "directory": false
+    }
+  ]
+}

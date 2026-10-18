@@ -1,0 +1,9 @@
+# Integração HQ21/HQ04 PC — r1
+
+Autorização explícita “aprovado por plano”, DEC-HQ-INTEGRATION-20261018-APPROVAL-r1. S-I18-001/002 concluídas; S-I18-003 conferência humana preparada e pendente. Treze PNGs aceitos admitidos sem transformação/hash alterado. Sete painéis HQ21 e seis HQ04 com legendas literais CANON; ID/título/gatilho/acesso legado HQ04 preservados. HQ21 entre HQ20/HQ04 no catálogo; acesso de revisão QA ou marco reservado shedaklah_reunion, sem fabricar evento automático.
+
+Seis testes PASS no estado final do leitor: chapter2_hqs, hqs, chapter_flow, data, scripts_compile e profile. Teste cobre navegação, texto/contador, retomada, fechar/concluir, marcos/QA e ordem/acesso legado. Vinte e seis capturas finais geradas, 13 quadros em duas resoluções 1280×720/1920×1080. Primeira rodada revelou legenda escurecendo colar; corrigido enquadramento por metadado somente HQ21/HQ04, mantendo imagem inteira acima da legenda e comportamento original das demais. Repetidos testes e capturas após correção. Amostras finais vistas: imagem não padrão HQ04Q1, colar HQ04Q6 e reencontro HQ21Q7. Não alegar inspeção manual ampliada de todas as capturas ou aceite humano.
+
+Perfil e diretório de usuário sintéticos verificados por sonda antes de Godot; nenhum save real carregado. Comparação com snapshot confirma registros das demais HQs idênticos. Manifestos de produção reconciliados com admissão. Fontes, hashes, resultados/capturas em admission-r1.json e validation-r1.json. Portagem PC específica, sem Web; agendamento automático de campanha segue pendente. Sem commit/push/export/publicação.
+
+Conferência humana: playtest-r1.md e conferir-hqs.cmd abrem HQ21/HQ04 em sessão isolada. Critérios: legibilidade/conforto, colar visível, arte integral, avanço e saída. Aprovação humana não recebida ainda. Cursor de retorno HQ05 preservado: S-V05-001/CP-V05-01, seleção ainda pendente; não usar aprovação desta integração como aceite daquela seleção.

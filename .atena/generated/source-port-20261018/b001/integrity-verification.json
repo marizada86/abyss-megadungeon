@@ -1,0 +1,29 @@
+{
+  "original_tree_drifts": {
+    "source": [],
+    "pc": []
+  },
+  "runtime_unchanged": true,
+  "file_matrix_count": 4037,
+  "dispositions": {
+    "TEST_CONTRACT_INPUT_NON_RUNTIME": 6,
+    "REUSE_IDENTICAL": 2824,
+    "PRESERVE_PC_CONTRACT_REVIEW": 5,
+    "PRESERVE_PC": 89,
+    "PORT_WITH_DEPENDENCIES_KEEP_CONTENT_STATE": 457,
+    "SEMANTIC_INTEGRATION_REQUIRED": 114,
+    "PRESERVE_PC_APPROVED_HQ_REVIEW_HASH_AND_COMPOSITION": 148,
+    "EXCLUDE_MOBILE_TARGET": 12,
+    "REVIEW_DEV_TOOL_NO_AUTORUN": 382
+  },
+  "comparisons": {
+    "identical": 2827,
+    "pc_only": 232,
+    "different": 127,
+    "source_only": 851
+  },
+  "functional_families": 12,
+  "text_archives_valid": true,
+  "hq05_cursor_preserved": true,
+  "yaml_parse_verified": true
+}

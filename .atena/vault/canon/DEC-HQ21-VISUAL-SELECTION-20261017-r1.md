@@ -1,0 +1,3 @@
+# HQ21 — seleção visual aprovada r1
+
+CANON_OWNER_VISUAL_SELECTION_APPROVAL. Data 2026-10-17. O dono respondeu “APROVADO” à seleção visual r1 da HQ21, com pergunta explícita informando que o aceite autoriza Q1. Seleção: .atena/specs/SPEC-NOTTGARD-HQ21-VISUAL-20261017/selection-r1.md. Sete composições aprovadas como direção, sem aceite antecipado das imagens. Uso dos pacotes de identidade DRAFT aprovados na origem permitido; não promove lore adicional nem os pacotes completos. Regra de continuidade mantém aprovação de cada candidata e autoriza a seguinte. Sem integração, commit ou publicação por este aceite.

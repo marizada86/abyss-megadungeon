@@ -1,0 +1,24 @@
+{
+  "id": "PORT-PC-20261018-B004-r1",
+  "runtime_fingerprint": "bb60436a71f7e043df94ec7f178bd1c54398ef058e37afb9b8b63753536d6b17",
+  "runtime_sealed_paths": 1808,
+  "matrix_total_paths": 4037,
+  "final_dispositions": {
+    "RETAINED_TEST_INPUT": 6,
+    "REUSED_IDENTICAL": 2824,
+    "PRESERVED_PC_OR_APPROVED_HQ": 242,
+    "COPIED_SOURCE": 505,
+    "SEMANTICALLY_INTEGRATED_PC": 45,
+    "PRESERVED_PC_REVIEWED": 21,
+    "EXCLUDED_MOBILE": 12,
+    "CATALOGUED_DEV_SUPPORT_NO_ADMISSION": 382
+  },
+  "unresolved_file_dispositions": 0,
+  "source_original_unchanged": true,
+  "delivered_runtime_unchanged_since_b003": true,
+  "candidate_matches_delivery": true,
+  "reused_validation": "B001 source + B003 suite-final, smoke-final, import, controller and native probes; unchanged input hashes",
+  "human_acceptance": false,
+  "draft_and_retention_gates": "UNCHANGED",
+  "export_publication": "NOT_PERFORMED"
+}

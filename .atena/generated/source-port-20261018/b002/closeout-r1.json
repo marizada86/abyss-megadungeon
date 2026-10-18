@@ -1,0 +1,22 @@
+{
+  "status": "B002_COMPLETE_AWAITING_B003_APPROVAL",
+  "completed_steps": 4,
+  "total_steps": 8,
+  "completed_batches": 2,
+  "total_batches": 4,
+  "next_checkpoint": "CP-PORT-B003-APPROVAL",
+  "next_batch_authorized": false,
+  "portage_registered": true,
+  "source_unchanged": true,
+  "protected_paths": 163,
+  "copied_asset_files": 394,
+  "png_files": 201,
+  "targeted_tests_pass": 18,
+  "native_checks_pass": 37,
+  "retentions_and_draft_preserved": true,
+  "hq05_return_preserved": true,
+  "remaining_pc_baseline_debts": "30 assertions and 2 script errors; native GL teardown messages separately recorded",
+  "canon_promoted": false,
+  "real_save_access": false,
+  "commit_push_export": false
+}

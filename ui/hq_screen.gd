@@ -23,6 +23,8 @@ func start_hq(hq: Dictionary, resume_index: int = 0) -> void:
 	Game.controls.transition()
 	title_label.text = String(hq.get("title", ""))
 	panels = hq.get("panels", [])
+	# Some approved compositions place narrative objects at the lower edge.
+	panel_image.anchor_bottom = 0.7 if bool(hq.get("caption_below_image", false)) else 1.0
 	panel_index = clampi(resume_index, 0, maxi(0, panels.size() - 1))
 	is_closed = false
 	completed = false

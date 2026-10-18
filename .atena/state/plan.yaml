@@ -1,4 +1,88 @@
 version: 2
+source_port_20261018_proposal:
+  id: PLAN-NOTTGARD-SOURCE-PORT-20261018
+  revision: r1
+  classification: PLAN_DEVIATION
+  status: COMPLETE_TECHNICAL_HUMAN_PREPARED_WITH_PENDING_GATES
+  content_state: DRAFT
+  mode: per-batch
+  approval: APPROVED_OWNER_R1_B001_B002_B003_B004
+  authorization: 'Atena, aprovado por lote. Vamos fazer agora e depois retornar à HQ05. Pode começar o primeiro lote. (2026-10-18)'
+  authorized_batches: [B-PORT-001, B-PORT-002, B-PORT-003, B-PORT-004]
+  active_batch: null
+  planning_authorized: true
+  implementation_authorized: false
+  checkpoint: CP-PORT-008_COMPLETE_WITH_EXPLICIT_HUMAN_PENDING
+  ordered_steps: [S-PORT-001, S-PORT-002, S-PORT-003, S-PORT-004, S-PORT-005, S-PORT-006, S-PORT-007, S-PORT-008]
+  ordered_batches: [B-PORT-001, B-PORT-002, B-PORT-003, B-PORT-004]
+  current_step: S-PORT-008
+  completed_steps: 8
+  total_steps: 8
+  spec: .atena/specs/SPEC-NOTTGARD-SOURCE-PORT-20261018/plan-r1.md
+  evidence: .atena/evidence/EVID-NOTTGARD-SOURCE-PORT-PLAN-20261018-r1.md
+  audit: .atena/generated/source-port-20261018/audit-r1.json
+  proposed_route: DO_NOW_AND_RETURN_OWNER_APPROVED
+  proposed_return_plan: PLAN-NOTTGARD-HQ05-VISUAL-20261018
+  proposed_return_step: S-V05-001
+  proposed_return_checkpoint: CP-V05-01
+  preserved_return_approval: SELECTION_R1_AWAITING_OWNER_APPROVAL
+  suspension: ENDED_HQ05_RETURNED_AT_EXISTING_CHECKPOINT
+  b001_inventory: .atena/generated/source-port-20261018/b001/disposition-matrix.json
+  b001_conflicts: .atena/generated/source-port-20261018/b001/conflict-index.json
+  b001_snapshots: tmp/port-b1
+  b001_status: COMPLETE
+  b001_completed_steps: [S-PORT-001, S-PORT-002]
+  b001_evidence: .atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B001-20261018-r1.md
+  integration_contract: .atena/specs/SPEC-NOTTGARD-SOURCE-PORT-20261018/b001-integration-contract-r1.md
+  baseline_debts: .atena/specs/SPEC-NOTTGARD-SOURCE-PORT-20261018/b001-baseline-debts-r1.md
+  blocking_integration_gaps: 0
+  pc_baseline: 30_ASSERTION_FAILURES_2_SCRIPT_ERRORS_INHERITED_NOT_CLEAN
+  source_baseline: ZERO_ASSERTION_FAILURES_ZERO_SCRIPT_ERRORS_WITH_TEARDOWN_DEBT
+  runtime_modified: true
+  b002_authorization: 'Atena, aprovado o lote 2. Pode integrar os assets, leitores e animações, mantendo DRAFT e as retenções pendentes. (2026-10-18)'
+  b002_status: COMPLETE_TECHNICAL_PASS_WITH_BASELINE_DEBTS_AND_DRAFT_GATES
+  b002_completed_steps: [S-PORT-003, S-PORT-004]
+  b002_evidence: .atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B002-20261018-r1.md
+  b002_verification: .atena/generated/source-port-20261018/b002/verification-r1.json
+  b002_final_write_set: .atena/generated/source-port-20261018/b002/final-write-set.json
+  b002_human_acceptance: PENDING_NO_CANON_PROMOTION
+  b003_authorization: 'Atena, aprovado o lote 3. Pode integrar as mecânicas, a progressão e a interface, seguindo o contrato e preservando os mapas, as HQs, DRAFT e as retenções pendentes. (2026-10-18)'
+  next_activity: HQ05 retomada em S-V05-001 CP-V05-01; feedback humano da portagem pendente em paralelo
+  shared_state_policy: Preserve all other plans; reread current cursor before authorized execution
+  b003_status: COMPLETE_TECHNICAL_WITH_INHERITED_DEBTS
+  b003_completed_steps: [S-PORT-005, S-PORT-006]
+  b003_evidence: .atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B003-20261018-r1.md
+  b003_verification: .atena/generated/source-port-20261018/b003/verification-r1.json
+  b003_final_write_set: .atena/generated/source-port-20261018/b003/final-write-set.json
+  b003_functional_matrix: .atena/generated/source-port-20261018/b003/functional-matrix-r3.json
+  b003_human_acceptance: PENDING_DRAFT_GATES_RETAINED
+  b003_new_functional_failures: 0
+  b003_inherited_assertion_failures: 30
+  b003_inherited_script_errors: 2
+  b004_approval: APPROVED_OWNER_VALIDATION_AND_HUMAN_PREPARATION
+
+  b004_authorization: 'Atena, aprovado o lote 4. Pode executar a validação final e preparar a avaliação humana, preservando DRAFT e as retenções pendentes. Depois retornamos à HQ05. (2026-10-18)'
+
+  b004_status: COMPLETE_VALIDATION_AND_HUMAN_PREPARATION
+  b004_completed_steps: [S-PORT-007, S-PORT-008]
+  b004_evidence: .atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md
+  b004_integrity: .atena/generated/source-port-20261018/b004/integrity-r1.json
+  b004_functional_matrix: .atena/generated/source-port-20261018/b004/functional-matrix-final.json
+  b004_file_matrix: .atena/generated/source-port-20261018/b004/disposition-matrix-final.json
+  b004_measurement: .atena/generated/source-port-20261018/b004/measurement-summary.json
+  b004_launcher: .atena/generated/source-port-20261018/b004/Avaliar-Portagem.cmd
+  b004_human_review: .atena/specs/SPEC-NOTTGARD-SOURCE-PORT-20261018/human-review-r1.md
+  b004_human_feedback: .atena/specs/SPEC-NOTTGARD-SOURCE-PORT-20261018/human-feedback-r1.md
+  b004_human_acceptance: PENDING_NOT_PERFORMED
+  b004_draft_and_retention_gates: UNCHANGED
+  return_status: RETURNED_HQ05_SELECTION_R1_AWAITING_OWNER_APPROVAL
+
+  publication_authorization: 'Atena, vamos só comparr com o projeto antigo pra vewr se deu tudo certo. Depois commit e push (2026-10-18)'
+  publication_comparison: VERIFIED_NO_SOURCE_OR_DELIVERY_DRIFT
+  publication_evidence: .atena/evidence/EVID-NOTTGARD-SOURCE-PORT-PUBLISH-20261018-r1.md
+  publication_result_receipt: .atena/generated/source-port-20261018/publication/result.json
+  publication_content_gates: DRAFT_RETAINED_HUMAN_ACCEPTANCE_PENDING
+
 hq20_reference_production_plan:
   id: PLAN-NOTTGARD-HQ20-REFERENCE-PRODUCTION-20261017
   revision: r1
@@ -1651,7 +1735,6 @@ dagruve_chapter2_proposal:
   path_revision_suspension: CLOSED_PLAN_COMPLETE_RETURN_CURSOR_PRESERVED
   path_revision_return_cursor: CP-DAG-005_S-DAG-005_4_OF_5_OWNER_FEEDBACK_PENDING
 
-
 hq19_hq20_integration_plan:
   id: PLAN-NOTTGARD-HQ19-HQ20-INTEGRATION-20261017
   revision: r1
@@ -1733,3 +1816,242 @@ map_path_revision_proposal:
   s005_validation: .atena/generated/path-revision-20261017/s005-final-validation-r2.json
   s005_acceptance_canon: .atena/vault/canon/DEC-MAP-PATH-HUMAN-ACCEPTANCE-20261017-r2.md
   s005_completed_checkpoint: CP-PATH-005-HUMAN-FEEDBACK
+
+hq21_visual_production_plan:
+  id: PLAN-NOTTGARD-HQ21-VISUAL-20261017
+  revision: r1
+  classification: IN_PLAN
+  mode: per-step
+  approval_policy: APPROVAL_ALSO_AUTHORIZES_NEXT_CANDIDATE
+  status: COMPLETED_ALL_SEVEN_PANELS_APPROVED
+  current_step: S-P21-Q07
+  ordered_steps: [S-V21-001, S-P21-Q01, S-P21-Q02, S-P21-Q03, S-P21-Q04, S-P21-Q05, S-P21-Q06, S-P21-Q07]
+  completed_steps: 8
+  total_steps: 8
+  approved_visual_panels: 7
+  total_visual_panels: 7
+  checkpoint: CP-P21-Q07
+  authorization: VAMOS CONTINUAR COM OS HQS
+  spec: .atena/specs/SPEC-NOTTGARD-HQ21-VISUAL-20261017/selection-r1.md
+  reference_audit: .atena/generated/hq21-selection-20261017/audit-r1.json
+  evidence: .atena/evidence/EVID-NOTTGARD-HQ21-VISUAL-SELECTION-20261017-r1.md
+  generation_authorized: NONE_SCOPE_COMPLETE
+  runtime_authorized: false
+  next_activity: Produção HQ21 concluída; próxima HQ04 aguarda seleção visual própria
+  selection_approval: .atena/vault/canon/DEC-HQ21-VISUAL-SELECTION-20261017-r1.md
+  q1_record: .atena/generated/hq21-production-20261017/q1-production-r1.json
+  q1_candidate: .atena/generated/hq21-production-20261017/candidates/hq_n21_q1_sylvaris_found_v01.png
+  q1_approval: 'APPROVED_V01: APROVADO (2026-10-17)'
+  q1_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-Q1-CANDIDATE-20261017-v01.md
+  q1_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ21-Q1-20261017-r1.md
+  q2_spec: .atena/specs/SPEC-NOTTGARD-HQ21-VISUAL-20261017/q2-r1.md
+  q2_record: .atena/generated/hq21-production-20261017/q2-production-r1.json
+  q2_candidate: .atena/generated/hq21-production-20261017/candidates/hq_n21_q2_sylvaris_account_v01.png
+  q2_approval: 'APPROVED_V02: APROVADO (2026-10-17)'
+  q2_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-Q2-CANDIDATE-20261017-v01.md
+  sylvaris_ear_decision: .atena/vault/canon/DEC-SYLVARIS-CUT-EAR-TIPS-HQ21-20261017-r1.md
+  q2_v01_result: OWNER_REMINDER_CUT_ELF_EAR_TIPS
+  q2_v02_record: .atena/generated/hq21-production-20261017/q2-v02-production-r1.json
+  q2_v02_candidate: .atena/generated/hq21-production-20261017/candidates/hq_n21_q2_sylvaris_account_v02.png
+  q2_v02_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-Q2-CANDIDATE-20261017-v02.md
+  q2_v02_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ21-Q2-20261017-r1.md
+  q3_spec: .atena/specs/SPEC-NOTTGARD-HQ21-VISUAL-20261017/q3-r1.md
+  q3_record: .atena/generated/hq21-production-20261017/q3-production-r1.json
+  q3_candidate: .atena/generated/hq21-production-20261017/candidates/hq_n21_q3_zynara_laboratory_v01.png
+  q3_approval: 'APPROVED_V01: APROVADO (2026-10-17)'
+  q3_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-Q3-CANDIDATE-20261017-v01.md
+  q3_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ21-Q3-20261017-r1.md
+  q4_spec: .atena/specs/SPEC-NOTTGARD-HQ21-VISUAL-20261017/q4-r1.md
+  q4_record: .atena/generated/hq21-production-20261017/q4-production-r1.json
+  q4_candidate: .atena/generated/hq21-production-20261017/candidates/hq_n21_q4_hammer_loan_v01.png
+  q4_approval: 'APPROVED_V01: APROVADO (2026-10-17)'
+  q4_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-Q4-CANDIDATE-20261017-v01.md
+  q4_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ21-Q4-20261017-r1.md
+  q5_spec: .atena/specs/SPEC-NOTTGARD-HQ21-VISUAL-20261017/q5-r1.md
+  q5_record: .atena/generated/hq21-production-20261017/q5-production-r1.json
+  q5_candidate: .atena/generated/hq21-production-20261017/candidates/hq_n21_q5_portal_activated_v01.png
+  q5_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+  q5_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-Q5-CANDIDATE-20261017-v01.md
+  q5_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ21-Q5-20261017-r1.md
+  q6_spec: .atena/specs/SPEC-NOTTGARD-HQ21-VISUAL-20261017/q6-r1.md
+  q6_record: .atena/generated/hq21-production-20261017/q6-production-r1.json
+  q6_candidate: .atena/generated/hq21-production-20261017/candidates/hq_n21_q6_portal_crossings_v01.png
+  q6_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+  q6_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-Q6-CANDIDATE-20261017-v01.md
+  q6_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ21-Q6-20261017-r1.md
+  q7_spec: .atena/specs/SPEC-NOTTGARD-HQ21-VISUAL-20261017/q7-r1.md
+  q7_record: .atena/generated/hq21-production-20261017/q7-production-r1.json
+  q7_candidate: .atena/generated/hq21-production-20261017/candidates/hq_n21_q7_shedaklah_reunion_v01.png
+  q7_approval: 'APPROVED_V01: APROVADO (2026-10-17)'
+  q7_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-Q7-CANDIDATE-20261017-v01.md
+  q7_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ21-Q7-20261017-r1.md
+  sequence_manifest: .atena/generated/hq21-production-20261017/approved-sequence-r1.json
+  sequence_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-SEQUENCE-20261017-r1.md
+
+hq04_visual_production_plan:
+  id: PLAN-NOTTGARD-HQ04-VISUAL-20261017
+  revision: r1
+  classification: IN_PLAN
+  mode: per-step
+  approval_policy: APPROVAL_ALSO_AUTHORIZES_NEXT_CANDIDATE
+  status: COMPLETED_ALL_SIX_PANELS_APPROVED
+  current_step: S-P04-Q06
+  ordered_steps: [S-V04-001, S-P04-Q01, S-P04-Q02, S-P04-Q03, S-P04-Q04, S-P04-Q05, S-P04-Q06]
+  completed_steps: 7
+  total_steps: 7
+  approved_visual_panels: 6
+  total_visual_panels: 6
+  checkpoint: CP-P04-Q06
+  authorization: vamos la
+  spec: .atena/specs/SPEC-NOTTGARD-HQ04-VISUAL-20261017/selection-r1.md
+  reference_audit: .atena/generated/hq04-selection-20261017/audit-r1.json
+  evidence: .atena/evidence/EVID-NOTTGARD-HQ04-VISUAL-SELECTION-20261017-r1.md
+  generation_authorized: NONE_SCOPE_COMPLETE
+  runtime_authorized: false
+  next_activity: Produção HQ04 concluída; próxima HQ05 aguarda seleção visual própria
+  resolved_gap: GAP-HQ04-COLLAR-01 dono definiu pedras da estrela dourado e azul em 2026-10-18
+  selection_approval: .atena/vault/canon/DEC-HQ04-VISUAL-SELECTION-20261017-r1.md
+  q1_spec: .atena/specs/SPEC-NOTTGARD-HQ04-VISUAL-20261017/q1-r1.md
+  q1_record: .atena/generated/hq04-production-20261017/q1-production-r1.json
+  q1_candidate: .atena/generated/hq04-production-20261017/candidates/hq_n04_q1_fungus_slime_frontier_v01.png
+  q1_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+  q1_evidence: .atena/evidence/EVID-NOTTGARD-HQ04-Q1-CANDIDATE-20261017-v01.md
+  q1_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ04-Q1-20261017-r1.md
+  q2_spec: .atena/specs/SPEC-NOTTGARD-HQ04-VISUAL-20261017/q2-r1.md
+  q2_record: .atena/generated/hq04-production-20261017/q2-production-r1.json
+  q2_candidate: .atena/generated/hq04-production-20261017/candidates/hq_n04_q2_zuggtmoy_reception_v01.png
+  q2_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+  q2_evidence: .atena/evidence/EVID-NOTTGARD-HQ04-Q2-CANDIDATE-20261017-v01.md
+  q2_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ04-Q2-20261017-r1.md
+  q3_spec: .atena/specs/SPEC-NOTTGARD-HQ04-VISUAL-20261017/q3-r1.md
+  q3_record: .atena/generated/hq04-production-20261017/q3-production-r1.json
+  q3_candidate: .atena/generated/hq04-production-20261017/candidates/hq_n04_q3_map_negotiation_v01.png
+  q3_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+  q3_evidence: .atena/evidence/EVID-NOTTGARD-HQ04-Q3-CANDIDATE-20261017-v01.md
+  q3_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ04-Q3-20261017-r1.md
+  q4_spec: .atena/specs/SPEC-NOTTGARD-HQ04-VISUAL-20261017/q4-r1.md
+  q4_record: .atena/generated/hq04-production-20261017/q4-production-r1.json
+  q4_candidate: .atena/generated/hq04-production-20261017/candidates/hq_n04_q4_stilled_styx_v01.png
+  q4_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+  q4_evidence: .atena/evidence/EVID-NOTTGARD-HQ04-Q4-CANDIDATE-20261017-v01.md
+  q4_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ04-Q4-20261017-r1.md
+  q5_spec: .atena/specs/SPEC-NOTTGARD-HQ04-VISUAL-20261017/q5-r1.md
+  q5_record: .atena/generated/hq04-production-20261017/q5-production-r1.json
+  q5_candidate: .atena/generated/hq04-production-20261017/candidates/hq_n04_q5_incomplete_activation_v01.png
+  q5_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+  q5_evidence: .atena/evidence/EVID-NOTTGARD-HQ04-Q5-CANDIDATE-20261017-v01.md
+  q5_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ04-Q5-20261017-r1.md
+  q6_spec: .atena/specs/SPEC-NOTTGARD-HQ04-VISUAL-20261017/q6-r1.md
+  q6_gap_evidence: .atena/evidence/EVID-NOTTGARD-HQ04-Q6-COLLAR-GAP-20261017-r1.md
+  q6_necklace_decision: .atena/vault/canon/DEC-HQ04-STAR-STONE-NECKLACE-20261018-r1.md
+  q6_record: .atena/generated/hq04-production-20261017/q6-production-r1.json
+  q6_candidate: .atena/generated/hq04-production-20261017/candidates/hq_n04_q6_star_necklace_portal_v01.png
+  q6_approval: 'APPROVED_V01: aprovado (2026-10-18)'
+  q6_evidence: .atena/evidence/EVID-NOTTGARD-HQ04-Q6-CANDIDATE-20261018-v01.md
+  q6_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ04-Q6-20261018-r1.md
+  sequence_manifest: .atena/generated/hq04-production-20261017/approved-sequence-r1.json
+  sequence_evidence: .atena/evidence/EVID-NOTTGARD-HQ04-SEQUENCE-20261018-r1.md
+
+hq05_visual_production_plan:
+  id: PLAN-NOTTGARD-HQ05-VISUAL-20261018
+  revision: r1
+  classification: IN_PLAN
+  mode: per-step
+  approval_policy: APPROVAL_ALSO_AUTHORIZES_NEXT_CANDIDATE
+  status: SELECTION_R1_AWAITING_OWNER_APPROVAL
+  current_step: S-V05-001
+  ordered_steps: [S-V05-001, S-P05-Q01, S-P05-Q02, S-P05-Q03, S-P05-Q04, S-P05-Q05]
+  completed_steps: 0
+  total_steps: 6
+  approved_visual_panels: 0
+  total_visual_panels: 5
+  checkpoint: CP-V05-01
+  authorization: vamos lá
+  spec: .atena/specs/SPEC-NOTTGARD-HQ05-VISUAL-20261018/selection-r1.md
+  reference_audit: .atena/generated/hq05-selection-20261018/audit-r1.json
+  evidence: .atena/evidence/EVID-NOTTGARD-HQ05-VISUAL-SELECTION-20261018-r1.md
+  generation_authorized: false
+  runtime_authorized: false
+  next_activity: Aprovar seleção r1 incluindo proposta Blogbog e núcleo; aceite autoriza candidata Q1
+
+  returned_from: PLAN-NOTTGARD-HQ-INTEGRATION-20261018
+  return_authorization: 'Playtest aprovado; continuar com seleção visual HQ05 (2026-10-18)'
+  preserved_checkpoint_approval: SELECTION_R1_AWAITING_OWNER_APPROVAL
+  suspension_for_source_port: COMPLETED_RETURNED_20261018
+  suspension_authorization: Fazer agora e depois retornar a HQ05 aprovado em 2026-10-18
+  suspension_return_cursor: S-V05-001_CP-V05-01_SELECTION_R1_AWAITING_OWNER_APPROVAL  source_port_returned_from: PLAN-NOTTGARD-SOURCE-PORT-20261018
+  source_port_return_evidence: .atena/evidence/EVID-NOTTGARD-SOURCE-PORT-B004-20261018-r1.md
+  source_port_human_feedback: PENDING_IN_PARALLEL_NO_CANON_PROMOTION
+
+hq_integration_20261018_plan:
+  id: PLAN-NOTTGARD-HQ-INTEGRATION-20261018
+  revision: r1
+  classification: PLAN_DEVIATION
+  mode: per-plan
+  status: COMPLETE_OWNER_APPROVED_PLAYTEST
+  current_step: S-I18-003
+  ordered_steps: [S-I18-001, S-I18-002, S-I18-003]
+  completed_steps: 3
+  total_steps: 3
+  checkpoint: CP-I18-003_OWNER_ACCEPTED
+  spec: .atena/specs/SPEC-NOTTGARD-HQ-INTEGRATION-20261018/plan-r1.md
+  evidence: .atena/generated/hq-integration-20261018/preflight-r1.json
+  authorization_request: Atena, vamos aplicar as novas hqs no jogo
+  implementation_authorized: true
+  return_plan: PLAN-NOTTGARD-HQ05-VISUAL-20261018
+  return_step: S-V05-001
+  return_checkpoint: CP-V05-01
+  return_approval: SELECTION_R1_AWAITING_OWNER_APPROVAL
+  next_activity: Integração concluída; retorno à seleção visual HQ05 realizado
+  approval: .atena/vault/canon/DEC-HQ-INTEGRATION-20261018-APPROVAL-r1.md
+  admission: .atena/generated/hq-integration-20261018/admission-r1.json
+  validation: .atena/generated/hq-integration-20261018/validation-r1.json
+  final_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-HQ04-INTEGRATION-20261018-r1.md
+  human_review: APPROVED_OWNER_20261018
+  human_acceptance: .atena/vault/canon/DEC-HQ21-HQ04-PLAYTEST-ACCEPTED-20261018-r1.md
+  return_evidence: .atena/evidence/EVID-NOTTGARD-HQ21-HQ04-PLAYTEST-RETURN-20261018-r1.md
+  human_session: tmp/release-validation-20261018-043520
+  playtest: .atena/specs/SPEC-NOTTGARD-HQ-INTEGRATION-20261018/playtest-r1.md
+ 
+hq_continuation_review_20261018:
+  id: PLAN-NOTTGARD-HQ-CONTINUATION-20261018
+  revision: r1
+  classification: IN_PLAN_DIAGNOSTIC_AND_CONTINUATION_PROPOSAL
+  status: HQ05_VISUAL_SELECTION_AWAITING_OWNER_APPROVAL
+  mode: per-step
+  mode_basis: Existing HQ production choice preserved; integration retains per-plan
+  ordered_steps: [S-CONT-001, S-CONT-002, S-CONT-003, S-CONT-004, S-CONT-005, S-CONT-006, S-CONT-007, S-CONT-008]
+  completed_steps: 1
+  total_steps: 8
+  next_step: S-CONT-002
+  current_step: S-CONT-002
+  authorization: 'Atena, aprovado. Vamos conferir as HQ21 e HQ04 no jogo e depois continuar com a HQ05. (2026-10-18)'
+  checkpoint: CP-V05-01
+  spec: .atena/specs/SPEC-NOTTGARD-HQ-CONTINUATION-20261018/plan-r1.md
+  evidence: .atena/evidence/EVID-NOTTGARD-HQ-CONTINUATION-20261018-r1.md
+  audit: .atena/generated/hq-continuation-20261018/audit-r1.json
+  generation_authorized: false
+  implementation_authorized: false
+  return_plan: PLAN-NOTTGARD-HQ05-VISUAL-20261018
+  return_checkpoint: CP-V05-01
+  next_activity: Aprovar seleção visual HQ05 r1; aceite autoriza candidata Q1
+  shared_state_policy: Approved order; existing cursors and visual acceptance checkpoints preserved
+
+hqs_presentation_20261018:
+  classification: PLAN_DEVIATION
+  interaction: direct_execution
+  authorization: HTML com todas as HQs em D:/dev/hqs
+  status: COMPLETED_LOCAL_DELIVERY
+  output: D:/dev/hqs/index.html
+  hq_count: 21
+  panel_count: 114
+  offline: true
+  game_changed: false
+  published: false
+  manifest: .atena/generated/hqs-presentation-20261018/manifest-r1.json
+  validation: .atena/generated/hqs-presentation-20261018/navigation-check-r1.json
+  visual_browser_validation: UNAVAILABLE_LOCAL_PREVIEW
+  return_plan: PLAN-NOTTGARD-HQ-INTEGRATION-20261018
+  return_step: S-I18-003
+  return_checkpoint: CP-I18-003_HUMAN_ACCEPTANCE_PENDING
+  original_checkpoint_preserved: true

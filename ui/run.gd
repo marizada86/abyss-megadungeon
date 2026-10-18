@@ -31,6 +31,11 @@ var _campaign_ready := false
 var _stats_checkpoint_at := 60.0
 var _shake := 0.0
 var _numbers := 0
+var _aux_texts := 0   # SPEC-177 F-2: textos flutuantes que não são acerto (dano recebido, status, cura, loot)
+const AUX_TEXT_MAX := 8
+
+static func can_show_aux_text(current: int) -> bool:
+	return current < AUX_TEXT_MAX
 const NUMBER_MERGE_MS := 350
 var _recent_numbers := {}  # tid do alvo -> {label, amount, until}: soma acertos rápidos no mesmo alvo (MEC-031 D5)
 var _paused := false
@@ -40,6 +45,10 @@ var _items_focus: WeakRef
 var _recovery_offer := false
 var _stage_clear_events_seen: Dictionary = {}
 var _final_victory_event_seen := false
+var _proj_vfx: Array[Dictionary] = []
+var _ability_follow := {}
+var _active_dir := Vector2.ZERO
+var _swing_dir_frame := Vector2.ZERO
 var _divine_aura: Line2D
 var _divine_aura_accent: Line2D
 var _encounter_layer: CanvasLayer
@@ -51,6 +60,14 @@ var _fog_edges: Array[TextureRect] = []
 var _edge_fog: EdgeFog
 var _texture_cache: Dictionary = {}
 var _stage_background: CanvasLayer
+var _visual_filter: VisualFilter  # SPEC-173: entre o mundo e a HUD
+var _atmosphere: Atmosphere  # SPEC-177 R5-C/D: partículas e gradação por fase
+var _hints: OnboardingHints   # SPEC-179 R2: dicas de primeira vez
+var _hint_flags := {}
+var _hint_poll := 0.0
+var _text_layer: CanvasLayer      # SPEC-173: texto do mundo, acima do filtro
+var _text_fx: Node2D
+var _danger: DangerVignette       # M2 R5 (A): vinheta de vida baixa e de golpe recebido, abaixo do texto do mundo
 
 func _texture(path: String) -> Texture2D:
 	if not _texture_cache.has(path):
@@ -87,6 +104,8 @@ func _ready() -> void:
 	hud.pause_items_pressed.connect(_toggle_items_panel)
 	Game.controls.recovery_requested.connect(_controller_recovery)
 	_setup_encounter_overlays()
+	_setup_visual_filter()
+	_setup_hints()
 	_load_stage()
 	if Game.qa_sandbox:
 		if battle.stage_id == "raiz_yggdrasil":
@@ -99,6 +118,7 @@ func _ready() -> void:
 	stats_ctx.task_id = String(Game.profile.data.settings.get("playtest_task", "general"))
 	if Version.evidence_enabled():
 		battle.run_record.begin(battle, stats_ctx, "windows", Game.qa_sandbox)
+	Playtest.frame_stats.reset()
 	Playtest.record_run(battle)
 	if battle.state == "revive_offer":
 		hud.show_revive_offer(battle)
@@ -169,6 +189,13 @@ void fragment(){
 	decals.material = mat
 
 func _load_stage() -> void:
+	for entry in _proj_vfx:
+		if is_instance_valid(entry.node): entry.node.queue_free()
+	_proj_vfx.clear()
+	_ability_follow.clear()
+	if is_instance_valid(_atmosphere):   # SPEC-177 R5: o perfil da atmosfera acompanha a fase atual
+		_atmosphere.setup(battle.stage_id, Game.profile.data.settings)
+		_atmosphere.apply(Game.profile.data.settings, Game.touch_controls_enabled())
 	for n in enemy_nodes.values():
 		n.queue_free()
 	enemy_nodes.clear()
@@ -247,13 +274,50 @@ func _load_stage() -> void:
 	Sfx.start_music(battle.stage_id)
 	Sfx.start_ambience(battle.stage_id)
 
+## SPEC-173 (MEC-065): o filtro cabe entre o mundo e o texto do mundo, e o texto entre o filtro e a HUD; desligado, o filtro não desenha.
+## O texto (números de dano, falas, rótulos) vai numa camada que segue a câmera, para ficar nítido sob qualquer variante.
+func _setup_visual_filter() -> void:
+	hud.layer = VisualFilter.HUD_LAYER
+	_atmosphere = Atmosphere.new()   # antes do filtro: a gradação entra primeiro na mesma camada
+	add_child(_atmosphere)
+	_visual_filter = VisualFilter.new()
+	add_child(_visual_filter)
+	var danger_layer := CanvasLayer.new()
+	danger_layer.name = "DangerLayer"
+	danger_layer.layer = VisualFilter.TEXT_LAYER   # mesma camada do texto, desenhada antes dele
+	add_child(danger_layer)
+	_danger = DangerVignette.new()
+	danger_layer.add_child(_danger)
+	_text_layer = CanvasLayer.new()
+	_text_layer.name = "WorldText"
+	_text_layer.layer = VisualFilter.TEXT_LAYER
+	_text_layer.follow_viewport_enabled = true
+	add_child(_text_layer)
+	_text_fx = Node2D.new()
+	_text_fx.name = "TextFx"
+	_text_layer.add_child(_text_fx)
+	var text_overlay = (load("res://ui/overlay.gd") as GDScript).new()
+	text_overlay.mode = "text"
+	text_overlay.battle = battle
+	text_overlay.source = over
+	over.split_text = true
+	_text_layer.add_child(text_overlay)
+	_visual_filter.apply(Game.profile.data.settings)
+	Game.visual_settings_changed.connect(_on_visual_settings_changed)
+
+func _on_visual_settings_changed() -> void:
+	if is_instance_valid(_atmosphere):
+		_atmosphere.apply(Game.profile.data.settings, Game.touch_controls_enabled())
+	if is_instance_valid(_visual_filter):
+		_visual_filter.apply(Game.profile.data.settings)
+
 func _setup_encounter_overlays() -> void:
 	_encounter_layer = CanvasLayer.new()
 	_encounter_layer.layer = 20
 	add_child(_encounter_layer)
 	for edge in 4:
 		var fog := TextureRect.new()
-		fog.texture = _texture("res://assets/fx/nevoa_borda_01.png")
+		fog.texture = _texture("res://assets/fx/nevoa_mundo_frente_01.png") if ResourceLoader.exists("res://assets/fx/nevoa_mundo_frente_01.png") else _texture("res://assets/fx/nevoa_borda_01.png")   # SPEC-185 (FILA-030 NB02): frente da Maré; a faixa antiga fica de reserva
 		fog.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		fog.stretch_mode = TextureRect.STRETCH_SCALE
 		fog.modulate = Color(0.34, 0.62, 0.46, 0.0)
@@ -290,6 +354,9 @@ func _setup_encounter_overlays() -> void:
 	_boss_intro_title.add_theme_color_override("font_outline_color", Color(0.01, 0.01, 0.01))
 	_boss_intro_title.add_theme_constant_override("outline_size", 8)
 	_boss_intro_panel.add_child(_boss_intro_title)
+	Lettering.decorate_label(_boss_intro_title, "placa_chefe", 28)
+	_boss_intro_title.offset_top = -136.0
+	_boss_intro_title.offset_bottom = -64.0
 	_boss_intro_subtitle = Label.new()
 	_boss_intro_subtitle.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 	_boss_intro_subtitle.offset_left = -460.0
@@ -369,6 +436,7 @@ func _unhandled_input(ev: InputEvent) -> void:
 	if not ev.is_pressed() or (ev is InputEventKey and ev.echo):
 		return
 	if battle.state == "running" and ev.is_action_pressed("hero_active"):
+		_active_dir = battle.aim_dir
 		if battle.use_active(battle.aim_dir):
 			get_viewport().set_input_as_handled()
 		return
@@ -414,6 +482,8 @@ func _sync_cursor() -> void:
 func _exit_tree() -> void:
 	if get_tree().process_frame.is_connected(_sync_cursor):
 		get_tree().process_frame.disconnect(_sync_cursor)
+	if Game.visual_settings_changed.is_connected(_on_visual_settings_changed):
+		Game.visual_settings_changed.disconnect(_on_visual_settings_changed)
 	CursorSkin.reset()
 	if battle != null and not _result_shown:
 		Playtest.record_run(battle)
@@ -599,10 +669,12 @@ func _draw() -> void:
 func _process(dt: float) -> void:
 	if battle != null and not _result_shown and battle.run_time >= _stats_checkpoint_at:
 		_stats_checkpoint_at = battle.run_time + 60.0
-		battle.run_record.checkpoint(battle, "minute")
+		battle.run_record.checkpoint(battle, "minute", {"quadros": Playtest.frame_stats.lap()})   # PLAN-099
 		Playtest.record_run(battle)
 	if hero_node == null:
 		return
+	_sync_projectile_vfx()
+	_sync_ability_follow()
 	_shake = maxf(0.0, _shake - dt * 3.0)
 	camera.position = hero_node.position + Vector2(randf_range(-1, 1), randf_range(-1, 1)) * _shake * 6.0
 	_update_fog_overlay()
@@ -610,6 +682,10 @@ func _process(dt: float) -> void:
 		_edge_fog.proximity = battle.edge_proximity(battle.hero.pos)
 	_update_low_hp_bark()
 	_update_pending_bark()
+	_update_hints(dt)
+	if _danger != null:
+		var alive := battle.state != "dead" and battle.state != "won"
+		_danger.tick(dt, battle.hero.hp / maxf(battle.hero.max_hp, 1.0), alive, Game.reduced_impact())
 
 func _sync() -> void:
 	var h := battle.hero
@@ -631,6 +707,8 @@ func _sync() -> void:
 		else:
 			n.sync_visual(Iso.to_screen(e.pos))
 	_sync_decoys()
+	_sync_projectile_vfx()
+	_sync_ability_follow()
 	_update_divine_aura()
 
 func _show_result() -> void:
@@ -638,7 +716,7 @@ func _show_result() -> void:
 	get_tree().paused = false
 	var res := battle.result()
 	var outcome := "abandoned" if battle.death_reason == "abandoned" else "extracted" if battle.extracted else "won" if res.won else "dead"
-	battle.run_record.checkpoint(battle, "finish")
+	battle.run_record.checkpoint(battle, "finish", {"quadros_total": Playtest.frame_stats.total(), "maquina": MachineInfo.describe()})   # PLAN-099
 	Playtest.record_run(battle, outcome, true)
 	if battle.has_reach_objective() and Game.qa_sandbox:
 		Sfx.stop_ambience()
@@ -723,28 +801,38 @@ func _present_hq(hq_id: String, resume_index: int = 0, campaign: bool = false) -
 # ------------------------------------------------------------------ efeitos
 
 func _consume_events() -> void:
+	_swing_dir_frame = Vector2.ZERO
 	for ev in battle.events:
 		var at := Iso.to_screen(ev.pos) if ev.has("pos") else Vector2.ZERO
 		match String(ev.type):
 			"hit":
-				Sfx.play("combat.critical" if ev.crit else "combat.impact", -14.0)
-				if ev.crit:
-					_hit_stop(0.04)
+				# L3 (EVID-250): faixa do golpe (fração do PV do alvo em elite e chefe; crítico sobe a faixa) decide número, som e pausa
+				var hit_tier := String(ev.get("tier", ""))
+				var hit_frac := float(ev.get("frac", 0.0))
+				var hit_band := DamageFeedback.band(hit_frac, hit_tier, bool(ev.crit))
+				Sfx.play("combat.critical" if ev.crit else "combat.impact", DamageFeedback.sound_db(hit_band, bool(ev.crit), hit_tier), DamageFeedback.sound_pitch(hit_band))
+				var stop_s := DamageFeedback.hit_stop(hit_band, bool(ev.crit), hit_tier)
+				if stop_s > 0.0:
+					_hit_stop(stop_s)
 				var theme: Dictionary = ev.get("visual_theme", _divine_theme())
 				var number_col := _dcol(String(ev.get("dtype", "fisico")))
-				var merged: bool = not ev.crit and _merge_damage_number(int(ev.get("tid", 0)), int(ev.amount))
+				var merged: bool = not ev.crit and _merge_damage_number(int(ev.get("tid", 0)), int(ev.amount), hit_frac)
 				if not merged and _numbers < 14:
-					var label := _float_text(at + Vector2(randf_range(-6, 6), -36), str(ev.amount), number_col.lightened(0.25) if ev.crit else number_col, 22 if ev.crit else 14, ev.crit, theme.outline)
+					var tone: float = maxf(0.25 if ev.crit else 0.0, DamageFeedback.lighten(hit_band))
+					var label := _float_text(at + Vector2(randf_range(-6, 6), -36), str(ev.amount), number_col.lightened(tone), DamageFeedback.number_size(hit_band, bool(ev.crit)), bool(ev.crit) or hit_band >= 2, theme.outline, true, DamageFeedback.outline_size(hit_band))
 					if not ev.crit and ev.has("tid"):
-						_recent_numbers[int(ev.tid)] = {"label": label, "amount": int(ev.amount), "until": Time.get_ticks_msec() + NUMBER_MERGE_MS}
+						_recent_numbers[int(ev.tid)] = {"label": label, "amount": int(ev.amount), "frac": hit_frac, "tier": hit_tier, "color": number_col, "until": Time.get_ticks_msec() + int(DamageFeedback.MERGE_MS.get(hit_tier, NUMBER_MERGE_MS))}
 					if ev.has("visual_theme") and under.has_method("spawn_impact"):
 						under.call("spawn_impact", ev.pos, 3, theme.impact_accent)
 			"miss":
 				Sfx.play("combat.miss", -18.0)
 			"hurt":
-				Sfx.play("player.hurt")
-				_shake = 0.6
-				_float_text(at + Vector2(0, -58), "-%d" % ev.amount, Color(1.0, 0.3, 0.3), 16)
+				if not ev.get("continuous", false):   # SPEC-177 F-1: dano contínuo da névoa não soa nem treme a cada aviso
+					Sfx.play("player.hurt")
+					_shake = 0.6
+				if _danger != null:
+					_danger.on_hurt(float(ev.amount), battle.hero.max_hp, bool(ev.get("continuous", false)), Game.reduced_impact())
+				_float_text(at + Vector2(0, -58), "-%d" % ev.amount, Color(1.0, 0.35, 0.3), DamageFeedback.HURT_SIZE, false, Color(0, 0, 0), false, DamageFeedback.AUX_OUTLINE)
 			"text":
 				var cue := String(ev.text).to_lower()
 				if cue == "guarda": Sfx.play("player.guard")
@@ -753,20 +841,23 @@ func _consume_events() -> void:
 				elif cue == "invoca":
 					Sfx.play("enemy.summon")
 					if ev.has("enemy_id"): Sfx.play_enemy(String(ev.enemy_id), "action")
-				_float_text(at + Vector2(0, -50), ev.text, Color(0.7, 0.8, 1.0), 12)
+				_float_text(at + Vector2(0, -50), ev.text, Color(0.7, 0.8, 1.0), DamageFeedback.CUE_SIZE, false, Color(0, 0, 0), false, DamageFeedback.AUX_OUTLINE)
+				if cue == "dominado":
+					_ability_effect("dominacao", ev)
 			"heal":
 				Sfx.play("player.heal")
-				_float_text(at + Vector2(0, -60), "+%d" % ev.amount, Color(0.4, 1.0, 0.5), 14)
+				_float_text(at + Vector2(0, -60), "+%d" % ev.amount, Color(0.4, 1.0, 0.5), DamageFeedback.HEAL_SIZE, false, Color(0, 0, 0), false, DamageFeedback.AUX_OUTLINE)
 			"swing":
 				Sfx.play_weapon(String(ev.get("weapon", "")), "combat.swing")
 				hero_node.play_action(&"attack")
+				_swing_dir_frame = ev.get("dir", Vector2.ZERO)
 				_swing(ev, _divine_theme())
 			"cast":
 				Sfx.play_weapon(String(ev.get("weapon", "")), "combat.magic")
 				hero_node.play_action(&"attack")
 			"nova":
 				Sfx.play_weapon(String(ev.get("weapon", "")), "combat.nova")
-				_ring(ev.pos, ev.radius, _divine_theme().impact_accent, 0.35)
+				_nova_effect(ev)
 			"zone":
 				Sfx.play_weapon(String(ev.get("weapon", "")), "combat.zone")
 				var zone_theme: Dictionary = ev.get("visual_theme", _divine_theme())
@@ -789,6 +880,7 @@ func _consume_events() -> void:
 					Sfx.play_enemy(String(ev.enemy.id), "death")
 				_kill_burst(ev.enemy, ev.pos)
 			"streak":
+				_hint_flags["mare"] = true
 				Sfx.play("progress.levelup", -20.0)  # mais baixo que o level up (-17 dB no manifesto)
 				hud.toast("%s — %d abates (+%d%% XP por 5 s)" % [ev.name, ev.count, roundi(float(ev.xp_bonus) * 100.0)], Color(0.62, 0.55, 0.85))
 			"pickup":
@@ -800,6 +892,7 @@ func _consume_events() -> void:
 				Sfx.play("progress.item")
 				_loot_reveal(ev.item)
 			"item_offer":
+				_hint_flags["item_novo"] = true
 				_loot_reveal(ev.new_item)
 			"levelup":
 				Sfx.play("progress.levelup")
@@ -827,7 +920,9 @@ func _consume_events() -> void:
 			"active":
 				Sfx.play_hero(String(ev.get("hero_id", battle.hero.id)))
 				hero_node.play_action(&"active")
-				_ring(ev.pos, float(ev.get("radius", 2.0)), _dcol(String(ev.get("dtype", "radiante"))), 0.3)
+				if not _ability_effect(String(ev.get("ability_id", "")), ev):
+					_ring(ev.pos, float(ev.get("radius", 2.0)), _dcol(String(ev.get("dtype", "radiante"))), 0.3)
+				_swing_dir_frame = Vector2.ZERO
 			"boss_phase":
 				var active_boss: String = String(battle.stage.get("boss", ""))
 				Sfx.play_boss(active_boss, "phase")
@@ -839,7 +934,7 @@ func _consume_events() -> void:
 				if String(ev.get("ability", "")) == "summon": action = &"special_a"
 				elif String(ev.get("ability", "")) == "ring": action = &"special_b"
 				if String(ev.enemy_id) == "blogbog" and String(ev.get("ability", "")) == "summon": action = &"special"
-				if String(ev.enemy_id) in ["zuggtmoy", "socothbenoth", "sintese_abissal"] and String(ev.get("ability", "")) in ["summon", "ring"]: action = &"special"
+				if String(ev.enemy_id) in ["zuggtmoy", "socothbenoth", "sintese_abissal", "manifestacao_de_juiblex"] and String(ev.get("ability", "")) in ["summon", "ring"]: action = &"special"
 				if String(ev.enemy_id) == "molydeus_chefe" and String(ev.get("ability", "")) == "aoe": action = &"special"
 				if String(ev.enemy_id) == "lu_yueh" and String(ev.get("ability", "")) == "aoe": action = &"special"
 				_play_enemy_action(String(ev.enemy_id), ev.pos, action)
@@ -891,17 +986,19 @@ func _play_interaction(ev: Dictionary) -> void:
 	# Interativo fixo do cenário (poço, oficina) tem arte própria: a animação genérica da fonte seria um segundo asset por cima.
 	if bool(ev.get("fixed", false)):
 		return
-	var sequence: String = {"chest": "chest_open", "boss_chest": "chest_open", "fountain": "fountain_active", "altar": "altar_active", "ritual": "ritual", "portal": "portal"}.get(String(ev.kind), "")
-	var count: int = {"chest_open": 6, "fountain_active": 6, "altar_active": 6, "ritual": 8, "portal": 8}.get(sequence, 0)
+	var sequence: String = {"chest": "chest_open", "boss_chest": "boss_chest_open", "fountain": "fountain_active", "altar": "altar_active", "ritual": "ritual", "portal": "portal"}.get(String(ev.kind), "")
+	var count: int = {"chest_open": 6, "boss_chest_open": 6, "fountain_active": 6, "altar_active": 6, "ritual": 8, "portal": 8}.get(sequence, 0)
 	var path := "res://assets/animations/interactions/%s.png" % sequence
 	if count == 0 or not ResourceLoader.exists(path):
 		return
 	var frames := SpriteStripFrames.empty()
-	SpriteStripFrames.add_strip(frames, &"activate", path, Vector2i(192, 192), count, 10.0, false)
+	# SPEC-185 (LOT03 IA01/IA02): as aberturas dos baús têm célula de 256 px na escala da arte estática (192 px) com 32 px de folga; as demais seguem em 192 px
+	var cell := Vector2i(256, 256) if sequence in ["chest_open", "boss_chest_open"] else Vector2i(192, 192)
+	SpriteStripFrames.add_strip(frames, &"activate", path, cell, count, 10.0, false)
 	var animated := AnimatedSprite2D.new()
 	animated.sprite_frames = frames
 	animated.position = Iso.to_screen(ev.pos)
-	animated.offset = Vector2(0, -96)
+	animated.offset = Vector2(0, -96)   # a base da arte estática (192 px) fica no ponto da interação, com ou sem folga na célula
 	var height := 70.0 if ev.kind == "portal" else 54.0
 	animated.scale = Vector2.ONE * (height / 192.0)
 	fx.add_child(animated)
@@ -916,7 +1013,7 @@ func _dcol(dtype: String) -> Color:
 	return Color(0.85, 0.85, 0.9)
 
 ## Soma o acerto ao número recente do mesmo alvo, se ainda estiver na janela; devolve true se somou.
-func _merge_damage_number(tid: int, amount: int) -> bool:
+func _merge_damage_number(tid: int, amount: int, frac: float = 0.0) -> bool:
 	if tid == 0 or not _recent_numbers.has(tid):
 		return false
 	var entry: Dictionary = _recent_numbers[tid]
@@ -927,28 +1024,42 @@ func _merge_damage_number(tid: int, amount: int) -> bool:
 		return false
 	var label: Label = raw_label
 	entry.amount = int(entry.amount) + amount
+	entry.frac = float(entry.get("frac", 0.0)) + frac
 	label.text = str(entry.amount)
 	label.scale = Vector2.ONE * 1.2
+	# L3: a soma de golpes seguidos em elite e chefe pode subir de faixa
+	var merged_band := DamageFeedback.band(float(entry.frac), String(entry.get("tier", "")), false)
+	label.add_theme_font_size_override("font_size", DamageFeedback.number_size(merged_band, false))
+	label.add_theme_constant_override("outline_size", DamageFeedback.outline_size(merged_band))
 	return true
 
-func _float_text(at: Vector2, text: String, col: Color, size: int, critical: bool = false, outline: Color = Color(0, 0, 0)) -> Label:
+## `counted_as_hit`: o número de acerto entra no limite de 14; os demais textos (dano recebido, status, cura, loot) têm limite próprio (SPEC-177 F-2) e retornam null quando excedem.
+func _float_text(at: Vector2, text: String, col: Color, size: int, critical: bool = false, outline: Color = Color(0, 0, 0), counted_as_hit: bool = false, outline_px: int = -1) -> Label:
+	if not counted_as_hit and not can_show_aux_text(_aux_texts):
+		return null
 	var l := Label.new()
 	l.text = text
 	l.position = at
 	l.modulate = col
 	l.add_theme_font_size_override("font_size", size)
 	l.add_theme_color_override("font_outline_color", outline)
-	l.add_theme_constant_override("outline_size", 5 if critical else 4)
+	l.add_theme_constant_override("outline_size", outline_px if outline_px > 0 else (5 if critical else 4))
 	l.pivot_offset = Vector2(18, 12)
 	l.scale = Vector2.ONE * (0.7 if critical else 0.82)
-	fx.add_child(l)
-	_numbers += 1
+	_text_fx.add_child(l)
+	if counted_as_hit:
+		_numbers += 1
+	else:
+		_aux_texts += 1
 	var t := create_tween()
 	t.tween_property(l, "scale", Vector2.ONE * (1.15 if critical else 1.0), 0.12).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	t.tween_property(l, "position:y", at.y - 22, 0.6)
 	t.parallel().tween_property(l, "modulate:a", 0.0, 0.6)
 	t.tween_callback(func():
-		_numbers -= 1
+		if counted_as_hit:
+			_numbers -= 1
+		else:
+			_aux_texts -= 1
 		l.queue_free())
 	return l
 
@@ -1025,6 +1136,101 @@ func _play_sheet_effect(path: String, center: Vector2, radius: float, duration: 
 		tween.tween_interval(duration / 4.0)
 	tween.tween_callback(sprite.queue_free)
 
+## ART-029: sprite de voo para os projeteis do heroi com familia aceita; no impacto toca o quadro de impacto.
+## So apresentacao: posicao, dano e colisao continuam em Battle. Impacto reduzido mantem o circulo antigo.
+func _sync_projectile_vfx() -> void:
+	if battle == null:
+		return
+	var reduced := Game.reduced_impact()
+	var live: Array = []
+	if not reduced:
+		for pr in battle.projectiles:
+			if ProjectileVfx.handles(pr):
+				live.append(pr)
+	var kept: Array[Dictionary] = []
+	var i := 0
+	for pr in live:
+		while i < _proj_vfx.size() and not is_same(_proj_vfx[i].pr, pr):
+			_retire_projectile_vfx(_proj_vfx[i])
+			i += 1
+		var entry: Dictionary
+		if i < _proj_vfx.size():
+			entry = _proj_vfx[i]
+			i += 1
+			var node: AnimatedSprite2D = entry.node
+			node.position = ProjectileVfx.screen_position(pr.pos)
+			node.rotation = ProjectileVfx.rotation_for(pr.dir)
+		else:
+			var theme: Dictionary = pr.get("visual_theme", _divine_theme())
+			var sprite := ProjectileVfx.create_flight(pr, theme.primary)
+			if sprite == null:
+				continue
+			fx.add_child(sprite)
+			entry = {"pr": pr, "node": sprite, "family": ProjectileVfx.family_for(pr), "theme": theme}
+		kept.append(entry)
+	while i < _proj_vfx.size():
+		_retire_projectile_vfx(_proj_vfx[i])
+		i += 1
+	_proj_vfx = kept
+
+func _retire_projectile_vfx(entry: Dictionary) -> void:
+	var node: Node = entry.node
+	if is_instance_valid(node):
+		node.queue_free()
+	var pr: Dictionary = entry.pr
+	# Acertou (consumido com vida sobrando) ou chegou ao fim do alcance dentro do mapa: toca o impacto.
+	# Projeteis que perfuram nao somem no acerto, entao o fim do alcance e o seu impacto visivel.
+	var inside: bool = pr.pos.x >= 0.0 and pr.pos.y >= 0.0 and pr.pos.x <= battle.map_size.x and pr.pos.y <= battle.map_size.y
+	if inside and not Game.reduced_impact():
+		var impact := ProjectileVfx.create_impact(entry.family, pr.pos, entry.theme.impact_accent)
+		if impact != null:
+			fx.add_child(impact)
+
+## ART-030: efeito visual da habilidade ativa. Devolve false quando nao ha sprite (o anel antigo continua).
+func _ability_effect(ability_id: String, ev: Dictionary) -> bool:
+	if Game.reduced_impact() or not HeroAbilityVfx.supports(ability_id) or HeroAbilityVfx.frames_for(ability_id) == null:
+		return false
+	if ability_id == "dominacao" and String(ev.get("text", "")) == "":
+		return false   # o sigilo vem do evento de texto no alvo; no evento active o anel antigo continua
+	var heading: Vector2 = _swing_dir_frame if _swing_dir_frame.length() > 0.01 else _active_dir
+	var color: Color = _divine_theme().impact_accent
+	var data_distance := float(Data.table("abilities").get(String(battle.hero.id), {}).get("distance", 3.5))
+	var effect := HeroAbilityVfx.create_effect(ability_id, ev.merged({"distance": data_distance}), color, heading)
+	if effect == null:
+		return false
+	if HeroAbilityVfx.kind(ability_id) == "follow":
+		if _ability_follow.has(ability_id) and is_instance_valid(_ability_follow[ability_id]):
+			_ability_follow[ability_id].queue_free()
+		hero_node.add_child(effect)
+		_ability_follow[ability_id] = effect
+	else:
+		fx.add_child(effect)
+	return true
+
+## Guarda de Lliira e Sobrecarga Mistica: o anel dura enquanto o efeito de jogo dura.
+func _sync_ability_follow() -> void:
+	for id in _ability_follow.keys():
+		var node: Node = _ability_follow[id]
+		var alive := is_instance_valid(node)
+		if alive:
+			alive = (battle.active_guard > 0 and battle.active_guard_t > 0.0) if id == "guarda_de_lliira" else battle.active_buff_t > 0.0
+		if not alive:
+			if is_instance_valid(node):
+				node.queue_free()
+			_ability_follow.erase(id)
+
+func _nova_effect(event: Dictionary) -> void:
+	var color: Color = _divine_theme().impact_accent
+	var pulse := RadiantPulseVfx.create_effect(event, color, Game.reduced_impact())
+	if pulse == null:
+		pulse = HourglassVfx.create_effect(event, color, Game.reduced_impact())
+	if pulse != null:
+		fx.add_child(pulse)
+	elif HeroAbilityVfx.covers_nova(String(event.get("weapon", ""))) and not Game.reduced_impact() and HeroAbilityVfx.frames_for(String(event.weapon)) != null:
+		return   # ART-030: o sprite da habilidade (evento active) substitui o anel
+	else:
+		_ring(event.pos, event.radius, color, RadiantPulseVfx.DURATION)
+
 func _ring(center: Vector2, radius: float, col: Color, dur: float) -> void:
 	var line := Line2D.new()
 	var pts := PackedVector2Array()
@@ -1099,11 +1305,13 @@ func _kill_burst(enemy: Enemy, at: Vector2) -> void:
 	var tint := Color(enemy.color, 0.85).lightened(0.25)
 	var reduced := Game.reduced_impact()
 	if enemy.is_boss():
+		Sfx.play("combat.explosion", -10.0, 0.75)   # L3: a queda do chefe tem peso próprio, sem arquivo novo
 		_ring(at, 2.4, tint, 0.45)
 		if under.has_method("spawn_impact"):
 			under.call("spawn_impact", at, 6 if reduced else 16, tint)
 		_hit_stop(0.12)
 	elif enemy.affix != "" or enemy.drops_chest:
+		Sfx.play("combat.critical", -10.0, 0.8)   # L3: queda de elite, mais grave que o golpe
 		_ring(at, 1.2, Color(1.0, 0.85, 0.4), 0.3)
 		if under.has_method("spawn_impact"):
 			under.call("spawn_impact", at, 4 if reduced else 10, tint)
@@ -1167,12 +1375,67 @@ func _bark_now(trigger: String) -> void:
 	l.add_theme_color_override("font_outline_color", Color(0.05, 0.04, 0.08))
 	l.add_theme_constant_override("outline_size", 5)
 	l.position = hero_node.position + Vector2(-95, -118)
-	fx.add_child(l)
+	_text_fx.add_child(l)
 	_bark_label = l
 	var t := create_tween()
 	t.tween_interval(2.6)
 	t.tween_property(l, "modulate:a", 0.0, 0.6)
 	t.tween_callback(l.queue_free)
+
+## SPEC-179 R2: dicas de primeira vez. A regra (teto, chefe, vida) mora em OnboardingHints; aqui só os gatilhos.
+func _setup_hints() -> void:
+	_hints = OnboardingHints.new()
+	var settings: Dictionary = Game.profile.data.settings
+	if not (settings.get("hints_seen", null) is Dictionary):
+		settings["hints_seen"] = {}
+	_hints.seen = settings["hints_seen"]
+	_hints.enabled = String(settings.get("hints", "on")) != "off"
+
+func _hint_near(kinds: Array, radius: float) -> bool:
+	for it in battle.interactions:
+		if not it.used and kinds.has(String(it.kind)) and it.pos.distance_to(battle.hero.pos) <= radius:
+			return true
+	return false
+
+func _update_hints(dt: float) -> void:
+	if _hints == null or battle == null or not _hints.enabled:
+		return
+	_hint_poll -= dt
+	if _hint_poll > 0.0:
+		return
+	_hint_poll = 0.25
+	if battle.state != "running" and battle.state != "altar":
+		return
+	var wanted := ""
+	if battle.stage_cleared or battle.final_victory:
+		wanted = "extrair_descer"
+	elif battle.state == "altar":
+		wanted = "altar"
+	elif _hint_near(["ritual"], 3.5):
+		wanted = "ritual"
+	elif _hint_near(["chest", "boss_chest", "fountain"], 5.0):
+		wanted = "bau_fonte"
+	elif _hint_flags.get("item_novo", false):
+		wanted = "item_novo"
+	elif _hint_flags.get("mare", false):
+		wanted = "mare"
+	elif not battle.happenings.hud_entries(battle).is_empty() or not battle.chamber_entry().is_empty():
+		wanted = "questlog"
+	if wanted == "":
+		return
+	var boss_active: bool = battle.boss != null and not battle.boss.dead
+	var fraction: float = battle.hero.hp / maxf(1.0, battle.hero.max_hp)
+	if not _hints.can_show(wanted, battle.time, boss_active, fraction):
+		return
+	var text := OnboardingHints.render(OnboardingHints.text_of(wanted), {
+		"interact": Game.controls.prompt("run_interact", "E"), "pause": Game.controls.prompt("run_pause", "Esc"),
+		"extract": Game.controls.prompt("run_extract", "X"),
+		"detail": Game.controls.prompt("offer_details", "Shift"),
+		"next": ("×%.2f" % battle.next_reward_multiplier()).replace(".", ",")})
+	_hints.mark(wanted, battle.time)
+	if not Game.qa_sandbox:
+		Game.save()
+	hud.toast("Dica: " + text, Color(0.8, 0.92, 1.0))
 
 func _update_low_hp_bark() -> void:
 	if battle == null or battle.hero == null or battle.hero.dead:
@@ -1221,3 +1484,4 @@ func _pickup_feedback(kind: String, at: Vector2) -> void:
 		under.call("spawn_impact", at, 2, Color(1.0, 0.82, 0.3, 0.8))
 	if kind == "xp" or kind == "gold":
 		hud.pulse_xp()
+

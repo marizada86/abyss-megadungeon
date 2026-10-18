@@ -1,0 +1,36 @@
+{
+  "status": "B002_TECHNICAL_PASS_WITH_EXISTING_BASELINE_DEBTS",
+  "changed_existing_files": 53,
+  "source_original_unchanged": true,
+  "source_baseline_reused": "B001 full suite and input hashes still valid",
+  "protected_pc_paths_verified": 163,
+  "copied_asset_files": 394,
+  "copied_png_files": 201,
+  "authorized_write_paths": 445,
+  "generated_import_descriptor_changes_outside_write_set": [],
+  "retained_interaction_idles_absent": [
+    "npc_grazzt_aliado",
+    "ruina_durao",
+    "ruina_shendilavri",
+    "ruina_goranthis"
+  ],
+  "nyrelia_and_approved_hqs_unchanged": true,
+  "test_candidate_matches_delivery": true,
+  "targeted_tests_pass": 18,
+  "native_checks_pass": 37,
+  "render_sizes": [
+    "1280x720",
+    "1920x1080"
+  ],
+  "native_teardown_engine_messages": 7,
+  "native_human_acceptance": false,
+  "suite_assertion_failures": 30,
+  "known_original_script_errors": 2,
+  "additional_first_suite_error": "radiant test expected deferred evolution constelacao_de_silva; fixed phase expectation; targeted retry PASS",
+  "workspace_import": "PASS_ZERO_ERRORS",
+  "smoke": "11_STAGES_PASS_ZERO_ERRORS",
+  "controller": "94_CHECKS_ZERO_FAILURES_ZERO_ERRORS",
+  "new_gameplay_definitions_admitted": false,
+  "canon_promotion": false,
+  "commit_push_export": false
+}

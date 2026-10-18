@@ -1,0 +1,59 @@
+{
+  "status": "DRAFT_SELECTION",
+  "sources": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/vault/canon/HQ05-SCREENPLAY-APPROVED-20261017-r1.md",
+      "sha256": "088d974d317f947786e4ec7276fcdab6278b3835af711ba196475542388ba9a1"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/04_Locais/Molor.md",
+      "sha256": "ac9fa13b1e32687362b65b7bae445f84ac2d144612352128a77c8249fe87dfeb"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/03_NPCs/Juiblex.md",
+      "sha256": "75d54b2f692ac8ff8def3cd5731e966af5142443af123bf10e8bb1038d6e5a6c"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/10_Sessões/Arco 01 - Nottgard, A Noite Sem Fim/Sessão 16.md",
+      "sha256": "e08718069793933ad9ace6b1c8a076381d8dc2b3109bc2cf11a8aa4ce7195102"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-027/S15-S16-manifestacao-do-jogo/r01/README.md",
+      "sha256": "493ba44d5994ea0dc3f410247927ba90fae641e12bfc2362cb5d83b5b5fbab6a"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-027/S15-S16-manifestacao-do-jogo/r01/juiblex-front-candidate-v01-hq.png",
+      "sha256": "fb7c4ee9a29cf20034dd7d213110b7967cf35cbf93eb3a040808649a1a9f6dd8"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/data/enemies.json",
+      "sha256": "3013778a703b0265297f1ed5df16922a2cae0b88412dab38c343331d99bbed27"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq21-production-20261017/candidates/hq_n21_q7_shedaklah_reunion_v01.png",
+      "sha256": "9a22f4ebfffdfef472530bfdc75f32e7940fdd15224e5d355edd7b11cf897f25"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq04-production-20261017/candidates/hq_n04_q6_star_necklace_portal_v01.png",
+      "sha256": "52343f257704351248ee9d1a6c58114e765a9ca5bb88b9fa257e18f13eaa073a"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n05_q1.png",
+      "sha256": "225921f01768c439fe57d56432e8c2e0d1892068bc0993333f8b7c340ff83ec8"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n05_q2.png",
+      "sha256": "f62661917c203fc6b8125b46ad5de57c27c33ed855ec9fc40ccb0be453d3dfa0"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n05_q3.png",
+      "sha256": "4d67d91ff460e2c7af3175327f104a654bbeff2e3e57f4fac4908e09df3c8856"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n05_q4.png",
+      "sha256": "ebd9e7ea06857cb41b3b069bbad81c3f2cacf23f4d3cec11b75f1eeb9e9fa4ad"
+    }
+  ],
+  "inspection": "Four HQ05 legacy panels and Juiblex front seen this turn; accepted party references reused from HQ04; reinspect at character production. Session16 relevant excerpts only.",
+  "proposals": "New fungal Blogbog interpretation and organic green nucleus require selection acceptance; no exact portrait found in scoped search."
+}

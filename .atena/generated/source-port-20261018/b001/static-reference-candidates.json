@@ -1,0 +1,166 @@
+{
+  "source": [
+    {
+      "consumer": "core/version.gd",
+      "reference": "res://data/build_info.json"
+    },
+    {
+      "consumer": "data/lettering.json",
+      "reference": "res://assets/ui/title/prompt_clique.png"
+    },
+    {
+      "consumer": "tests/test_actor_strips_b003.gd",
+      "reference": "res://assets/animations/enemies/totem_de_chefe/death.png"
+    },
+    {
+      "consumer": "tests/test_boon_icons.gd",
+      "reference": "res://assets/icons/boons/nao_existe.png"
+    },
+    {
+      "consumer": "tests/test_character_sheet.gd",
+      "reference": "res://assets/icons/items/nao_existe.png"
+    },
+    {
+      "consumer": "tests/test_new_content.gd",
+      "reference": "res://assets/icons/items/nao_existe.png"
+    },
+    {
+      "consumer": "tests/test_quartel.gd",
+      "reference": "res://tmp/test-quartel/profile.json"
+    },
+    {
+      "consumer": "tests/test_save_resilience.gd",
+      "reference": "res://tmp/test-save-resilience"
+    },
+    {
+      "consumer": "tools/audit_strip_edges.gd",
+      "reference": "res://>"
+    },
+    {
+      "consumer": "tools/capture_ability_vfx.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_atmosphere_all.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_atmosphere_samples.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_character_sheet.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_danger_feel.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_first_ui.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_game_feel.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_hints.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_juice_check.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_mariz_ui.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_r3_prototype.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_transition.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/capture_weapon_vfx.gd",
+      "reference": "res://pasta/"
+    },
+    {
+      "consumer": "tools/reduce_hero_strips.gd",
+      "reference": "res://assets/animations/heroes_screen_preview/<modo>/<heroi>"
+    },
+    {
+      "consumer": "tools/reproject_road_tile.gd",
+      "reference": "res://assets/decals/arquivo.png"
+    }
+  ],
+  "pc": [
+    {
+      "consumer": "data/lettering.json",
+      "reference": "res://assets/ui/lettering/banner_derrota.png"
+    },
+    {
+      "consumer": "data/lettering.json",
+      "reference": "res://assets/ui/lettering/banner_evolucao.png"
+    },
+    {
+      "consumer": "data/lettering.json",
+      "reference": "res://assets/ui/lettering/banner_vitoria.png"
+    },
+    {
+      "consumer": "data/lettering.json",
+      "reference": "res://assets/ui/lettering/placa_chefe.png"
+    },
+    {
+      "consumer": "data/lettering.json",
+      "reference": "res://assets/ui/lettering/placa_titulo_larga.png"
+    },
+    {
+      "consumer": "data/lettering.json",
+      "reference": "res://assets/ui/lettering/placa_titulo_secao.png"
+    },
+    {
+      "consumer": "data/lettering.json",
+      "reference": "res://assets/ui/title/logo.png"
+    },
+    {
+      "consumer": "data/lettering.json",
+      "reference": "res://assets/ui/title/prompt_clique.png"
+    },
+    {
+      "consumer": "tests/test_boon_icons.gd",
+      "reference": "res://assets/icons/boons/nao_existe.png"
+    },
+    {
+      "consumer": "tests/test_character_sheet.gd",
+      "reference": "res://assets/icons/items/nao_existe.png"
+    },
+    {
+      "consumer": "tests/test_new_content.gd",
+      "reference": "res://assets/icons/items/nao_existe.png"
+    },
+    {
+      "consumer": "tests/test_platform_contract.gd",
+      "reference": "res://ui/mobile_controls.gd"
+    },
+    {
+      "consumer": "tests/test_platform_contract.gd",
+      "reference": "res://ui/touch_ui.gd"
+    },
+    {
+      "consumer": "tests/test_quartel.gd",
+      "reference": "res://tmp/test-quartel/profile.json"
+    },
+    {
+      "consumer": "tests/test_save_resilience.gd",
+      "reference": "res://tmp/test-save-resilience"
+    },
+    {
+      "consumer": "ui/cursor_skin.gd",
+      "reference": "res://assets/ui/cursor/"
+    }
+  ]
+}

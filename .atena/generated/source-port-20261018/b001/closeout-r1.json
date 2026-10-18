@@ -1,0 +1,28 @@
+{
+  "status": "B001_COMPLETE_WITH_PC_BASELINE_DEBTS",
+  "completed_steps": 2,
+  "total_steps": 8,
+  "next_gate": "CP-PORT-B002-APPROVAL",
+  "next_batch_authorized": false,
+  "runtime_unchanged": true,
+  "source_test_files": 111,
+  "pc_test_files": 92,
+  "source_suite_assertion_failures": 0,
+  "pc_suite_assertion_failures": 30,
+  "pc_suite_script_errors": 2,
+  "smoke_stages": {
+    "source": 9,
+    "pc": 11
+  },
+  "synthetic_controller_checks": {
+    "source": "94/0",
+    "pc": "94/0"
+  },
+  "source_mobile_retry": "146/0",
+  "known_teardown_errors_preserved": true,
+  "cold_import_and_mobile_harness_attempts_recorded": true,
+  "hq05_return_preserved": true,
+  "new_canonical_content": false,
+  "real_save_access": false,
+  "export_commit_push": false
+}

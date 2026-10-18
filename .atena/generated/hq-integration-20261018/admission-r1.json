@@ -1,0 +1,114 @@
+{
+  "platform": "windows-x86_64",
+  "authorization": ".atena/vault/canon/DEC-HQ-INTEGRATION-20261018-APPROVAL-r1.md",
+  "entries": [
+    {
+      "hq": "hqn_21",
+      "panel": 1,
+      "source": ".atena/generated/hq21-production-20261017/candidates/hq_n21_q1_sylvaris_found_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n21_q1_sylvaris_found_v01.png",
+      "sha256": "597db678425a1cc01246170e27c99c061c827b1e73431d720b7f562de40ff21f",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ21-Q1-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_21",
+      "panel": 2,
+      "source": ".atena/generated/hq21-production-20261017/candidates/hq_n21_q2_sylvaris_account_v02.png",
+      "target": "assets/hq/chapter2_r1/hq_n21_q2_sylvaris_account_v02.png",
+      "sha256": "3639fd339f2f22090a341b6054cd5512f9553f4088303ac4a27186f5c995b2d1",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ21-Q2-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_21",
+      "panel": 3,
+      "source": ".atena/generated/hq21-production-20261017/candidates/hq_n21_q3_zynara_laboratory_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n21_q3_zynara_laboratory_v01.png",
+      "sha256": "4a1ea156d079ae73ef85a5d7a0dcf07226cec7468ee9899f6f7b8e1ecb8bfcb8",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ21-Q3-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_21",
+      "panel": 4,
+      "source": ".atena/generated/hq21-production-20261017/candidates/hq_n21_q4_hammer_loan_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n21_q4_hammer_loan_v01.png",
+      "sha256": "85b530193485d9df95cb4695f5094fcf3c179dc56734b6cb84a8ef07dee4f0cb",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ21-Q4-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_21",
+      "panel": 5,
+      "source": ".atena/generated/hq21-production-20261017/candidates/hq_n21_q5_portal_activated_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n21_q5_portal_activated_v01.png",
+      "sha256": "48265505a6c12bee170b8ee18c67cc30cea992b7786740e42db850a4ba104996",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ21-Q5-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_21",
+      "panel": 6,
+      "source": ".atena/generated/hq21-production-20261017/candidates/hq_n21_q6_portal_crossings_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n21_q6_portal_crossings_v01.png",
+      "sha256": "2d21686197104397e88f5f3bb7f745db99abcb8e4bbde3ac8d1f8e44b7431daa",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ21-Q6-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_21",
+      "panel": 7,
+      "source": ".atena/generated/hq21-production-20261017/candidates/hq_n21_q7_shedaklah_reunion_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n21_q7_shedaklah_reunion_v01.png",
+      "sha256": "9a22f4ebfffdfef472530bfdc75f32e7940fdd15224e5d355edd7b11cf897f25",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ21-Q7-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_04",
+      "panel": 1,
+      "source": ".atena/generated/hq04-production-20261017/candidates/hq_n04_q1_fungus_slime_frontier_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n04_q1_fungus_slime_frontier_v01.png",
+      "sha256": "0b1cefef2761c2538abcab7bc7798bb994922b65b1dff4fca410ee9de00593b8",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ04-Q1-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_04",
+      "panel": 2,
+      "source": ".atena/generated/hq04-production-20261017/candidates/hq_n04_q2_zuggtmoy_reception_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n04_q2_zuggtmoy_reception_v01.png",
+      "sha256": "dbffafef54e490a89e9f783ef8632abeacf22aa7ac490e86968533816588323d",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ04-Q2-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_04",
+      "panel": 3,
+      "source": ".atena/generated/hq04-production-20261017/candidates/hq_n04_q3_map_negotiation_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n04_q3_map_negotiation_v01.png",
+      "sha256": "6c0d07b340970e4c79ab668355d74e50973eebf830467ffd9e2de8e4396dcd67",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ04-Q3-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_04",
+      "panel": 4,
+      "source": ".atena/generated/hq04-production-20261017/candidates/hq_n04_q4_stilled_styx_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n04_q4_stilled_styx_v01.png",
+      "sha256": "5d129f059d171173c186523b54e7c8e4015ceae4cb8b8ce3814af07ee1c8c10b",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ04-Q4-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_04",
+      "panel": 5,
+      "source": ".atena/generated/hq04-production-20261017/candidates/hq_n04_q5_incomplete_activation_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n04_q5_incomplete_activation_v01.png",
+      "sha256": "04a751f966ee27412d002755ef664b7ee7f03869dbd3ea9ff80900e30271e94e",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ04-Q5-20261017-r1.md"
+    },
+    {
+      "hq": "hqn_04",
+      "panel": 6,
+      "source": ".atena/generated/hq04-production-20261017/candidates/hq_n04_q6_star_necklace_portal_v01.png",
+      "target": "assets/hq/chapter2_r1/hq_n04_q6_star_necklace_portal_v01.png",
+      "sha256": "52343f257704351248ee9d1a6c58114e765a9ca5bb88b9fa257e18f13eaa073a",
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ04-Q6-20261018-r1.md"
+    }
+  ],
+  "automated_chapter2_triggers": false,
+  "hq04_legacy_trigger_preserved": true,
+  "hq21_access": "QA or shedaklah_reunion reserved milestone; no new campaign event",
+  "portage": "PC-specific content, no Web synchronization"
+}

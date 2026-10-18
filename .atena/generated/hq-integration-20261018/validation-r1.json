@@ -1,0 +1,75 @@
+{
+  "status": "TECHNICAL_PASS_HUMAN_REVIEW_PENDING",
+  "tests": [
+    {
+      "test": "test_chapter2_hqs",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "test": "test_hqs",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "test": "test_chapter_flow",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "test": "test_data",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "test": "test_scripts_compile",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "test": "test_profile",
+      "passed": true,
+      "exit_code": 0
+    }
+  ],
+  "test_session": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\tmp\\release-validation-20261018-041752",
+  "captures": [
+    "hqn_04-q1-1280x720.png",
+    "hqn_04-q1-1920x1080.png",
+    "hqn_04-q2-1280x720.png",
+    "hqn_04-q2-1920x1080.png",
+    "hqn_04-q3-1280x720.png",
+    "hqn_04-q3-1920x1080.png",
+    "hqn_04-q4-1280x720.png",
+    "hqn_04-q4-1920x1080.png",
+    "hqn_04-q5-1280x720.png",
+    "hqn_04-q5-1920x1080.png",
+    "hqn_04-q6-1280x720.png",
+    "hqn_04-q6-1920x1080.png",
+    "hqn_21-q1-1280x720.png",
+    "hqn_21-q1-1920x1080.png",
+    "hqn_21-q2-1280x720.png",
+    "hqn_21-q2-1920x1080.png",
+    "hqn_21-q3-1280x720.png",
+    "hqn_21-q3-1920x1080.png",
+    "hqn_21-q4-1280x720.png",
+    "hqn_21-q4-1920x1080.png",
+    "hqn_21-q5-1280x720.png",
+    "hqn_21-q5-1920x1080.png",
+    "hqn_21-q6-1280x720.png",
+    "hqn_21-q6-1920x1080.png",
+    "hqn_21-q7-1280x720.png",
+    "hqn_21-q7-1920x1080.png"
+  ],
+  "capture_session": "tmp/release-validation-20261018-041959",
+  "earlier_capture_session": "tmp/release-validation-20261018-041512 superseded: caption obscured necklace",
+  "visual_review": "Final samples inspected: HQ04Q1 1920x1080, HQ04Q6 1280x720, HQ21Q7 1280x720; image above caption, full art and necklace visible",
+  "asset_hashes_verified": 13,
+  "canonical_captions_verified": 13,
+  "unrelated_hq_records_unchanged": true,
+  "real_save_accessed": false,
+  "human_playtest": "PENDING",
+  "automatic_campaign_scheduling": "DEFERRED",
+  "portage": "PC-specific; no Web synchronization",
+  "publication": false
+}

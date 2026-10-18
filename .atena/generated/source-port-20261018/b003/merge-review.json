@@ -1,0 +1,128 @@
+[
+  {
+    "path": "core/battle.gd",
+    "merge_exit": 4,
+    "conflict_markers": 4,
+    "bytes": 182194
+  },
+  {
+    "path": "core/game.gd",
+    "merge_exit": 1,
+    "conflict_markers": 1,
+    "bytes": 22398
+  },
+  {
+    "path": "core/profile.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 13704
+  },
+  {
+    "path": "core/enemy.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 3940
+  },
+  {
+    "path": "core/weapon.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 2320
+  },
+  {
+    "path": "core/playtest.gd",
+    "merge_exit": 1,
+    "conflict_markers": 1,
+    "bytes": 47615
+  },
+  {
+    "path": "ui/run.gd",
+    "merge_exit": 6,
+    "conflict_markers": 6,
+    "bytes": 76268
+  },
+  {
+    "path": "ui/hud.gd",
+    "merge_exit": 1,
+    "conflict_markers": 1,
+    "bytes": 51477
+  },
+  {
+    "path": "ui/menu.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 25017
+  },
+  {
+    "path": "ui/options_panel.gd",
+    "merge_exit": 1,
+    "conflict_markers": 1,
+    "bytes": 9357
+  },
+  {
+    "path": "ui/character_sheet.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 26141
+  },
+  {
+    "path": "ui/overlay.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 35620
+  },
+  {
+    "path": "ui/enemy_view.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 21895
+  },
+  {
+    "path": "ui/ground.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 28680
+  },
+  {
+    "path": "ui/edge_fog.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 3288
+  },
+  {
+    "path": "ui/hero_panel.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 14545
+  },
+  {
+    "path": "ui/offer_card.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 5555
+  },
+  {
+    "path": "ui/stage_progress.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 4142
+  },
+  {
+    "path": "ui/lettering.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 7095
+  },
+  {
+    "path": "ui/title.gd",
+    "merge_exit": 1,
+    "conflict_markers": 1,
+    "bytes": 6313
+  },
+  {
+    "path": "ui/ui_kit.gd",
+    "merge_exit": 0,
+    "conflict_markers": 0,
+    "bytes": 14294
+  }
+]

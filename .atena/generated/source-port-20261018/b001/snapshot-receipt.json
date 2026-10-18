@@ -1,0 +1,15 @@
+{
+  "source": "D:\\dev\\nottgard\\games\\godot\\nottgard-survivors",
+  "pc": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon",
+  "snapshots": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\tmp\\port-b1",
+  "counts": {
+    "source_only": 1043,
+    "identical": 2827,
+    "pc_only": 232,
+    "different": 127
+  },
+  "source_original_writes": false,
+  "runtime_writes": false,
+  "manifest_scope": "runtime directories and bounded referenced ADD dependencies; original profiles excluded",
+  "source_git_status": "not verified; git -C source denied by sandbox; filesystem is authoritative"
+}
