@@ -21,7 +21,7 @@ Tudo foi rodado **headless**, com `APPDATA/LOCALAPPDATA/USERPROFILE` sintéticos
 | `smart-chain` / `smart` | bot mortal: mede quanto tempo um jogador novato sobrevive (piso). |
 | `idle`/`kite`/`brawl` | pisos de comparação (pilotos). |
 
-Limites a ter em mente: o bot começa **sem progressão meta** (Quartel, upgrades permanentes); joga bem pior que uma pessoa; usa 1–3 sementes por caso; o jogo **não é 100 % determinístico** entre processos (a mesma semente deu desfechos diferentes), então diferenças < ~15 % são ruído. Resultados são para **comparar** (versão antes/depois, herói contra herói, mapa contra mapa), não para dizer "está fácil/difícil" em absoluto. Fases depois de Domwieck (Shedaklah→Pilares) não têm entrada na campanha atual; só o piso mortal foi medido nelas.
+Limites a ter em mente: o bot começa **sem progressão meta** (Quartel, upgrades permanentes); joga bem pior que uma pessoa; usa 1–3 sementes por caso; a simulação é determinística para a mesma semente e entradas (verificado, ver §7), mas as sementes e o comportamento do bot mudam entre casos, então diferenças < ~15 % entre casos distintos devem ser tratadas como ruído. Resultados são para **comparar** (versão antes/depois, herói contra herói, mapa contra mapa), não para dizer "está fácil/difícil" em absoluto. Fases depois de Domwieck (Shedaklah→Pilares) não têm entrada na campanha atual; só o piso mortal foi medido nelas.
 
 Total: ~800 runs (12 heróis × 12 mapas + cadeias de campanha × 3 sementes, atual e baseline `2bc4d24`). **Zero erros de script** nos logs de todos os bots.
 
@@ -53,7 +53,7 @@ Total: ~800 runs (12 heróis × 12 mapas + cadeias de campanha × 3 sementes, at
 | B3 | Baixa | `audit_projeto.gd` avisa "curva": Dagruve (tier 0) aparece depois de Domwieck na ordenação por `order`; ordem de campanha ≠ ordem de dados. Sem efeito em jogo. | Docas order 0 → Reino 1 → Domwieck 2 → Dagruve 3. |
 | B4 | Média | 7 chefes (todos exceto o Sacerdote) **não têm `boss_presentations`**: entram sem cartaz/pausa de introdução e sem a Maré de Névoa configurada por presença. | `audit_projeto.gd`, `asset_gaps.gd`. Pode ser decisão de design; confirmar. |
 | B5 | Baixa | `stage_rules`/`stage_events`/`atmosphere`/`chronicles`/`stage_story` incompletos para os mapas novos (ver §4). | Dívida conhecida; dados dependem de lore. |
-| B6 | Info | Resultados do mesmo caso variam entre execuções (global/clock em algum ponto fora do RNG semeado); `core/` só usa RNG global em `sfx.gd`, então a causa está em outro lugar (ordem de dicionário/tempo de quadro). Afeta replays/`run_record`. | Chefe de Dagruve morreu aos 325 s numa sonda e não morreu em 660 s numa run com a mesma semente. |
+| B6 | — | **Retirado.** Eu havia registrado variação entre execuções da mesma semente; o teste dedicado (`determinism.gd`, 2 fases × 2 processos) deu estados idênticos. A diferença vinha de eu ter mudado o bot (distância de recuo) entre duas medições. | §7 |
 | B7 | Info | O bot **não encontrou** travamentos, objetivos inalcançáveis, NaN ou erros de script; os 3 mapas de raízes não prendem o herói com o campo de navegação. | 0 erros em ~800 runs. |
 
 ## 4. Assets faltantes (62 lacunas por convenção; falsos positivos removidos)
@@ -84,3 +84,8 @@ Causa real das 30 falhas: (a) 22 vinham de Reino Abissal/Domwieck estarem em `st
 - **Adiamentos explícitos, sem inventar conteúdo**: `tests/stage_contracts.gd` registra música, ambiência, crônica, decais e pesos de eventos aleatórios de Reino Abissal/Domwieck como adiados (dossiê dos mapas: não necessários ao protótipo; falta já é tolerada em runtime). `tests/test_stage_deferrals.gd` falha se o conteúdo passar a existir (remover o adiamento) ou se um mapa com chefe pedir adiamento.
 - **Contratos obsoletos atualizados**: descida de Docas leva ao `next` aprovado (Reino Abissal); QA lista o catálogo de HQs inteiro (21, incluindo as 18 preservadas); `test_fog_edge` ignora mapas sem chefe (`postboss_fog: false`).
 - **`tools/audit_projeto.gd`**: não acusa "chefe inexistente" em mapas de objetivo e compara a curva só entre as fases legadas, pela ordem de combate. Erros 0, avisos 13 → 9 (restam: 7 chefes sem `boss_presentations` e 2 crônicas dos mapas novos, ambos já listados acima).
+
+## 7. Verificações posteriores
+
+- **Determinismo (B6 retirado):** `determinism.gd` roda o mesmo `Battle` duas vezes por processo, em dois processos, em Dagruve e Docas (60 s simulados com movimento fixo): impressões digitais idênticas. Replays/`run_record` não estão em risco por isso.
+- **Heróis fracos (Arlindo, Nyrelia, Durvall):** `hero_dps.gd` mede dano em arena controlada. O dano direto do herói inicial é de 0,7 a 7,6 por segundo por herói; Arlindo (1,1), Nyrelia (1,5), Brook, Zynara, Leoric e Kayron (0,7–1,0) são de controle/área e dependem de efeito (lentidão, atordoamento, área). Os números vêm de `weapons.json`/`abilities.json` herdados da origem (ex.: `memoria_alterada` é 1d6 a cada 2,2 s, contra 1d6 a cada 1,5 s do `raio_enfraquecedor`). Não há defeito de código: é decisão de design de dados comuns, e mexer nelas exige portagem registrada e decisão do dono. Nada foi alterado.
