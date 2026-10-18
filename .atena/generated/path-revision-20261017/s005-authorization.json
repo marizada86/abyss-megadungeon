@@ -1,0 +1,14 @@
+{
+  "step": "S-PATH-005",
+  "revision": "r2",
+  "authorized": true,
+  "scope": "Abrir playtests isolados de Yggdrasil e primeira incursao abissal; avaliar caminhos, bordas, combate e leitura da espiral",
+  "build": ".atena/generated/path-revision-20261017/s004-build-r2.json",
+  "all_18_hashes_verified": true,
+  "authorization_recorded_utc": "2026-10-18T02:27:46.215Z",
+  "human_acceptance": {
+    "raiz_yggdrasil": "PENDING",
+    "reino_abissal": "PENDING"
+  },
+  "harness": "Copy of existing map entry with rotating Ygg seeds, readiness receipt, capture and initial pause only; no gameplay mutations"
+}

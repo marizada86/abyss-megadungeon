@@ -1,0 +1,304 @@
+{
+  "kind": "DOCUMENTARY_GEOMETRY_STUDY_NOT_GODOT_VALIDATION",
+  "grid_step": 0.5,
+  "base": {
+    "yggdrasil": {
+      "nodes": 12,
+      "edges": 17,
+      "independent_cycles": 6,
+      "occupied_fraction_grid": 0.3026388888888889,
+      "radii": {
+        "0.3": {
+          "cells": 4358,
+          "reachable": 4358,
+          "target_reachable": true
+        },
+        "0.4": {
+          "cells": 4256,
+          "reachable": 4256,
+          "target_reachable": true
+        },
+        "0.8": {
+          "cells": 3532,
+          "reachable": 3532,
+          "target_reachable": true
+        },
+        "1.2": {
+          "cells": 2878,
+          "reachable": 2878,
+          "target_reachable": true
+        }
+      }
+    },
+    "abyss": {
+      "nodes": 18,
+      "edges": 23,
+      "independent_cycles": 6,
+      "occupied_fraction_grid": 0.44854166666666667,
+      "radii": {
+        "0.3": {
+          "cells": 6459,
+          "reachable": 6459,
+          "target_reachable": true
+        },
+        "0.4": {
+          "cells": 6407,
+          "reachable": 6407,
+          "target_reachable": true
+        },
+        "0.8": {
+          "cells": 5311,
+          "reachable": 5311,
+          "target_reachable": true
+        },
+        "1.2": {
+          "cells": 4315,
+          "reachable": 4315,
+          "target_reachable": true
+        }
+      }
+    }
+  },
+  "seeds": [
+    {
+      "seed": 7502,
+      "geometry_sha256": "98f05d830a033f18abee0f563a3b65de86d413a8e3204ea1ebb84663fee4dea5",
+      "nodes": 12,
+      "edges": 17,
+      "independent_cycles": 6,
+      "occupied_fraction_grid": 0.3032638888888889,
+      "radii": {
+        "0.3": {
+          "cells": 4367,
+          "reachable": 4367,
+          "target_reachable": true
+        },
+        "0.4": {
+          "cells": 4217,
+          "reachable": 4217,
+          "target_reachable": true
+        },
+        "0.8": {
+          "cells": 3552,
+          "reachable": 3552,
+          "target_reachable": true
+        },
+        "1.2": {
+          "cells": 2868,
+          "reachable": 2868,
+          "target_reachable": true
+        }
+      }
+    },
+    {
+      "seed": 7503,
+      "geometry_sha256": "bc0ce7dbbfef3a35cc13c7a89bfa5276c42c5d479f5ba6294109f7cd647ca30a",
+      "nodes": 12,
+      "edges": 16,
+      "independent_cycles": 5,
+      "occupied_fraction_grid": 0.3013888888888889,
+      "radii": {
+        "0.3": {
+          "cells": 4340,
+          "reachable": 4340,
+          "target_reachable": true
+        },
+        "0.4": {
+          "cells": 4195,
+          "reachable": 4195,
+          "target_reachable": true
+        },
+        "0.8": {
+          "cells": 3540,
+          "reachable": 3540,
+          "target_reachable": true
+        },
+        "1.2": {
+          "cells": 2863,
+          "reachable": 2863,
+          "target_reachable": true
+        }
+      }
+    },
+    {
+      "seed": 7504,
+      "geometry_sha256": "048ff90108aa29000964512cc5000a3e1837a557264f76b891472d4b27de9294",
+      "nodes": 12,
+      "edges": 16,
+      "independent_cycles": 5,
+      "occupied_fraction_grid": 0.2932638888888889,
+      "radii": {
+        "0.3": {
+          "cells": 4223,
+          "reachable": 4223,
+          "target_reachable": true
+        },
+        "0.4": {
+          "cells": 4072,
+          "reachable": 4072,
+          "target_reachable": true
+        },
+        "0.8": {
+          "cells": 3406,
+          "reachable": 3406,
+          "target_reachable": true
+        },
+        "1.2": {
+          "cells": 2736,
+          "reachable": 2736,
+          "target_reachable": true
+        }
+      }
+    },
+    {
+      "seed": 7601,
+      "geometry_sha256": "2eb0d33a722da1fd9b4aa0d905e1e07c4609ffbc07a46cc658b0de1999ab2bbe",
+      "nodes": 12,
+      "edges": 16,
+      "independent_cycles": 5,
+      "occupied_fraction_grid": 0.28131944444444446,
+      "radii": {
+        "0.3": {
+          "cells": 4051,
+          "reachable": 4051,
+          "target_reachable": true
+        },
+        "0.4": {
+          "cells": 3886,
+          "reachable": 3886,
+          "target_reachable": true
+        },
+        "0.8": {
+          "cells": 3256,
+          "reachable": 3256,
+          "target_reachable": true
+        },
+        "1.2": {
+          "cells": 2589,
+          "reachable": 2589,
+          "target_reachable": true
+        }
+      }
+    },
+    {
+      "seed": 7602,
+      "geometry_sha256": "936ffa2737b336a2623fb412953ebc17425cd48414b92b241cec2d53a6ab137f",
+      "nodes": 12,
+      "edges": 16,
+      "independent_cycles": 5,
+      "occupied_fraction_grid": 0.2972916666666667,
+      "radii": {
+        "0.3": {
+          "cells": 4281,
+          "reachable": 4281,
+          "target_reachable": true
+        },
+        "0.4": {
+          "cells": 4135,
+          "reachable": 4135,
+          "target_reachable": true
+        },
+        "0.8": {
+          "cells": 3511,
+          "reachable": 3511,
+          "target_reachable": true
+        },
+        "1.2": {
+          "cells": 2865,
+          "reachable": 2865,
+          "target_reachable": true
+        }
+      }
+    },
+    {
+      "seed": 7603,
+      "geometry_sha256": "e7be86f820a6206ee4880e4f004e3e3c3b6d464aefd59e262103ffafa836b3ea",
+      "nodes": 12,
+      "edges": 17,
+      "independent_cycles": 6,
+      "occupied_fraction_grid": 0.31354166666666666,
+      "radii": {
+        "0.3": {
+          "cells": 4515,
+          "reachable": 4515,
+          "target_reachable": true
+        },
+        "0.4": {
+          "cells": 4338,
+          "reachable": 4338,
+          "target_reachable": true
+        },
+        "0.8": {
+          "cells": 3664,
+          "reachable": 3664,
+          "target_reachable": true
+        },
+        "1.2": {
+          "cells": 2952,
+          "reachable": 2952,
+          "target_reachable": true
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "geometry_sha256": "1fca6b9c905d4f64e48a18a164f7d8ef69803adf3fc1eb77c56eb9464c1f6dd8",
+      "nodes": 12,
+      "edges": 16,
+      "independent_cycles": 5,
+      "occupied_fraction_grid": 0.2945833333333333,
+      "radii": {
+        "0.3": {
+          "cells": 4242,
+          "reachable": 4242,
+          "target_reachable": true
+        },
+        "0.4": {
+          "cells": 4102,
+          "reachable": 4102,
+          "target_reachable": true
+        },
+        "0.8": {
+          "cells": 3458,
+          "reachable": 3458,
+          "target_reachable": true
+        },
+        "1.2": {
+          "cells": 2805,
+          "reachable": 2805,
+          "target_reachable": true
+        }
+      }
+    },
+    {
+      "seed": 42,
+      "geometry_sha256": "306a9d42e1ee8b5f5026947fcb4672277fd5b10e8425ee07640f56153112a9fe",
+      "nodes": 12,
+      "edges": 16,
+      "independent_cycles": 5,
+      "occupied_fraction_grid": 0.29694444444444446,
+      "radii": {
+        "0.3": {
+          "cells": 4276,
+          "reachable": 4276,
+          "target_reachable": true
+        },
+        "0.4": {
+          "cells": 4126,
+          "reachable": 4126,
+          "target_reachable": true
+        },
+        "0.8": {
+          "cells": 3484,
+          "reachable": 3484,
+          "target_reachable": true
+        },
+        "1.2": {
+          "cells": 2819,
+          "reachable": 2819,
+          "target_reachable": true
+        }
+      }
+    }
+  ]
+}

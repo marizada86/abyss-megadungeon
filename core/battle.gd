@@ -369,6 +369,15 @@ func load_stage(stage_key: String) -> void:
 	hero.styx_lucidity_loss = 0
 	hero.styx_forget_t = 0.0
 	hero.terrain_id = stage_key
+	root_layout = TerrainLayout.root_definition(stage_key).duplicate(true)
+	if stage_key == "raiz_yggdrasil":
+		root_layout = RootPathGenerator.new().generate(root_layout, _seed)
+	if not root_layout.is_empty():
+		root_layout.stage_id = stage_key
+		if root_layout.has("target") and has_reach_objective():
+			# Campaign and QA catalogues share the authoritative root floor plan.
+			stage.completion.target = root_layout.target.duplicate()
+	hero.root_layout = root_layout
 	if is_dagruve_encounter():
 		map_size = Vector2(60,60)
 		hero.map_size = map_size
@@ -378,10 +387,10 @@ func load_stage(stage_key: String) -> void:
 	if TerrainLayout.has_roots(stage_key):
 		map_size = Vector2(60,60)
 		hero.map_size = map_size
-		hero.pos = TerrainLayout.root_point(TerrainLayout.root_definition(stage_id).arrival)
+		hero.pos = TerrainLayout.root_point(root_layout.arrival)
 		# Scene props are replaced by ui/run after load_stage; old-stage blockers
 		# must not reject this arrival. Current props are checked in geometry QA.
-		if not TerrainLayout.root_supports(hero.pos, Hero.RADIUS, stage_id):
+		if not TerrainLayout.root_supports(hero.pos, Hero.RADIUS, stage_id, root_layout):
 			push_error("Root arrival has no supporting surface; stage aborted")
 			hero.dead = true
 	if _has_boon_effect("stage_heal"):
@@ -1389,9 +1398,13 @@ func _detonate_decoy(d: Dictionary) -> void:
 
 ## Move o inimigo deslizando pelos eixos; se quase não saiu do lugar (obstáculo redondo no caminho),
 ## contorna girando o passo e mantém o lado escolhido até andar livre (BUG-012).
+var root_layout: Dictionary = {}
 var _root_grids: Dictionary = {}
 var _root_fields: Dictionary = {}
 const ROOT_NEIGHBORS := [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.UP, Vector2i.DOWN]
+
+func _root_grid_step(radius: float) -> float:
+	return 0.5 if TerrainLayout.has_roots(stage_id) and radius > 0.8 else 1.0
 
 func _root_grid(radius: float) -> Dictionary:
 	var bucket := int(ceil(radius * 10.0))
@@ -1401,14 +1414,16 @@ func _root_grid(radius: float) -> Dictionary:
 	var cells: Dictionary = {}
 	# Circumscribed half-cell clearance makes every adjacent-cell segment safe,
 	# not just its endpoints. Four neighbors cannot cut a diagonal across a void.
-	for y in int(map_size.y):
-		for x in int(map_size.x):
-			if hero.can_stand(Vector2(x + 0.5, y + 0.5), float(bucket) / 10.0 + 0.71):
+	var step := _root_grid_step(radius)
+	for y in int(map_size.y / step):
+		for x in int(map_size.x / step):
+			if hero.can_stand((Vector2(x,y) + Vector2(0.5,0.5)) * step, float(bucket) / 10.0 + 0.71 * step):
 				cells[Vector2i(x, y)] = true
 	_root_grids[key] = cells
 	return cells
 
-func _root_cell(p: Vector2, cells: Dictionary) -> Vector2i:
+func _root_cell(p: Vector2, cells: Dictionary, step: float = 1.0) -> Vector2i:
+	p /= step
 	var cell := Vector2i(floor(p.x), floor(p.y))
 	if cells.has(cell):
 		return cell
@@ -1437,7 +1452,7 @@ func _root_cell(p: Vector2, cells: Dictionary) -> Vector2i:
 func _root_field(target: Vector2, radius: float) -> Dictionary:
 	var bucket := int(ceil(radius * 10.0))
 	var cells := _root_grid(radius)
-	var goal := _root_cell(target, cells)
+	var goal := _root_cell(target, cells, _root_grid_step(radius))
 	var key := "%s|%d|%d|%s|%s" % [stage_id, bucket, hero.blockers.hash(), map_size, goal]
 	var cached: Dictionary = _root_fields.get(bucket, {})
 	if cached.get("key", "") == key:
@@ -1466,11 +1481,11 @@ func _root_direction(from: Vector2, target: Vector2, radius: float) -> Vector2:
 		return delta.normalized() * minf(1.0, delta.length())
 	var bucket := int(ceil(radius * 10.0))
 	var cells := _root_grid(radius)
-	var goal := _root_cell(target, cells)
+	var goal := _root_cell(target, cells, _root_grid_step(radius))
 	var key := "%s|%d|%d|%s|%s" % [stage_id, bucket, hero.blockers.hash(), map_size, goal]
 	var cached: Dictionary = _root_fields.get(bucket, {})
 	var field: Dictionary = cached.field if cached.get("key", "") == key else _root_field(target, radius)
-	var cell := _root_cell(from, cells)
+	var cell := _root_cell(from, cells, _root_grid_step(radius))
 	if not field.has(cell):
 		return Vector2.ZERO
 	var next := cell
@@ -1480,28 +1495,28 @@ func _root_direction(from: Vector2, target: Vector2, radius: float) -> Vector2:
 		if field.has(neighbor) and int(field[neighbor]) < best:
 			next = neighbor
 			best = int(field[neighbor])
-	var waypoint := Vector2(next) + Vector2(0.5, 0.5)
+	var waypoint := (Vector2(next) + Vector2(0.5, 0.5)) * _root_grid_step(radius)
 	if best == 0 and hero.sweep(from, delta, radius).distance_to(target) < 0.001:
 		waypoint = target
 	return (waypoint - from).normalized() * minf(1.0, from.distance_to(waypoint))
 
 func _root_spawn_valid(at: Vector2, radius: float) -> bool:
-	var definition := TerrainLayout.root_definition(stage_id)
+	var definition := root_layout
 	var arrival := TerrainLayout.root_point(definition.get("arrival", [30,45]))
 	if not hero.can_stand(at, radius) or at.distance_to(hero.pos) < 8.0 or at.distance_to(arrival) < float(definition.get("arrival_clearance", 6.4)):
 		return false
-	return _root_field(hero.pos, radius).has(_root_cell(at, _root_grid(radius)))
+	return _root_field(hero.pos, radius).has(_root_cell(at, _root_grid(radius), _root_grid_step(radius)))
 
 func _root_resource_spot(at: Vector2, radius: float) -> Vector2:
 	if hero.can_stand(at, radius):
 		return at
-	var nearest := TerrainLayout.root_nearest(at, radius, stage_id)
+	var nearest := TerrainLayout.root_nearest(at, radius, stage_id, root_layout)
 	if hero.can_stand(nearest, radius):
 		return nearest
 	var best := Vector2.INF
 	var distance := INF
 	for cell: Vector2i in _root_grid(radius):
-		var candidate := Vector2(cell) + Vector2(0.5, 0.5)
+		var candidate := (Vector2(cell) + Vector2(0.5, 0.5)) * _root_grid_step(radius)
 		if candidate.distance_squared_to(at) < distance:
 			best = candidate
 			distance = candidate.distance_squared_to(at)
@@ -3212,7 +3227,7 @@ func _spawn(id: String, at: Vector2, minute_override: float = -1.0) -> Enemy:
 		e.hp = 0.0
 		return e
 	if TerrainLayout.has_roots(stage_id):
-		e.mobility = "air" if TerrainLayout.root_definition(stage_id).air_ids.has(id) else "ground"
+		e.mobility = "air" if root_layout.air_ids.has(id) else "ground"
 		if not at.is_finite() or not hero.can_stand(at, e.radius, e.mobility == "air"):
 			# Return an inert, unregistered sentinel for legacy callers that configure
 			# the returned object. It is never spawned, killed, rewarded or persisted.

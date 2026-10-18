@@ -1,0 +1,14 @@
+﻿{
+    "user_dir":  "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s004-20261018-020032-261/a/Godot/app_userdata/Nottgard Survivors",
+    "target":  "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon",
+    "results":  [
+                    {
+                        "test":  "test_level_design",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_reach_grid",
+                        "passed":  true
+                    }
+                ]
+}

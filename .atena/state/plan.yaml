@@ -1648,6 +1648,9 @@ dagruve_chapter2_proposal:
   human_playtest: OPENED_AWAITING_OWNER_FEEDBACK
   playtest_launch: .atena/generated/dagruve-chapter2-20261017/s005-launch.json
   playtest_launch_evidence: .atena/evidence/EVID-NOTTGARD-DAGRUVE-PLAYTEST-LAUNCH-20261017-r1.md
+  path_revision_suspension: CLOSED_PLAN_COMPLETE_RETURN_CURSOR_PRESERVED
+  path_revision_return_cursor: CP-DAG-005_S-DAG-005_4_OF_5_OWNER_FEEDBACK_PENDING
+
 
 hq19_hq20_integration_plan:
   id: PLAN-NOTTGARD-HQ19-HQ20-INTEGRATION-20261017
@@ -1671,22 +1674,62 @@ hq19_hq20_integration_plan:
   publication_receipt: .atena/generated/hq-integration-20261017/publication.json
 map_path_revision_proposal:
   id: PLAN-NOTTGARD-PATH-REVISION-20261017
-  revision: r1
+  revision: r2
   classification: PLAN_CHANGE_REQUEST
-  status: DRAFT_AWAITING_DIRECTION_APPROVAL
+  status: COMPLETED_S_PATH_005_OWNER_APPROVED
   mode: per-step
   mode_basis: Reutilizado do fluxo de mapas escolhido pelo titular
   ordered_steps: [S-PATH-001, S-PATH-002, S-PATH-003, S-PATH-004, S-PATH-005]
-  current_step: S-PATH-001
-  completed_steps: 0
+  current_step: S-PATH-005
+  completed_steps: 5
   total_steps: 5
-  checkpoint: CP-PATH-DIRECTION
+  checkpoint: CP-PATH-005-COMPLETE
   planning_authorized: true
   implementation_authorized: false
   generation_authorized: false
   spec: .atena/specs/SPEC-NOTTGARD-PATH-REVISION-20261017/proposal-r1.md
-  next_activity: Aprovar direcao e detalhar contrato S-PATH-001
-  next_step_approval: PENDING_DIRECTION_AND_S_PATH_001
+  next_activity: Plano de caminhos concluido; cursor Dagruve preservado aguardando feedback proprio
+  next_step_approval: NOT_REQUIRED_PLAN_COMPLETE
   dagruve_feedback: STILL_PENDING_NO_ACCEPTANCE_INFERRED
   return_policy: Persistir suspensao e cursor atualizado antes de execucao aprovada
   shared_state_policy: Preservar planos concluidos e HQs concorrentes
+  direction_approval: APPROVED_OWNER_R1
+  direction_canon: .atena/vault/canon/DEC-MAP-PATH-REVISION-DIRECTION-20261017-r1.md
+  contract: .atena/specs/SPEC-NOTTGARD-PATH-REVISION-20261017/contract-r1.md
+  contract_status: APPROVED_OWNER_R1
+  next_step: NONE_PLAN_COMPLETE
+  evidence: .atena/evidence/EVID-NOTTGARD-PATH-HUMAN-PLAYTEST-20261017-r2.md
+  validation: .atena/generated/path-revision-20261017/s005-final-validation-r2.json
+  portage_audit: .atena/generated/path-revision-20261017/portage-audit-r1.json
+  s002_authorization: Contrato r1 medidas posicoes teto17 aprovados; somente Yggdrasil e testes isolados
+  s002_baseline: .atena/generated/path-revision-20261017/s002-baseline.json
+  s002_evidence: .atena/evidence/EVID-NOTTGARD-PATH-YGGDRASIL-IMPLEMENTATION-20261017-r1.md
+  s002_validation: .atena/generated/path-revision-20261017/s002-final-validation.json
+  s002_build: .atena/generated/path-revision-20261017/s002-build.json
+  used_game_test_paths: 18
+  authorized_game_test_path_budget: 18
+  human_acceptance: APPROVED_OWNER_YGGDRASIL_AND_ABYSS
+  s003_authorization: Titular autorizou espiral conforme contrato r1 e testes isolados
+  s003_baseline: .atena/generated/path-revision-20261017/s003-baseline.json
+  s003_evidence: .atena/evidence/EVID-NOTTGARD-PATH-ABYSS-SPIRAL-20261017-r1.md
+  s003_validation: .atena/generated/path-revision-20261017/s003-final-validation.json
+  s003_build: .atena/generated/path-revision-20261017/s003-build.json
+  s004_authorization: Titular autorizou validacao conjunta e desempenho conforme contrato r1 em testes isolados
+  s004_evidence: .atena/evidence/EVID-NOTTGARD-PATH-JOINT-VALIDATION-20261017-r2.md
+  s004_progress: .atena/generated/path-revision-20261017/s004-validation-progress.json
+  s004_build: .atena/generated/path-revision-20261017/s004-build-r2.json
+  s004_performance: PASS_WITHIN_ORIGINAL_R1_LIMITS
+  s004_native_suites: 12_OF_12_PASS
+  scope_adjustment_proposal: .atena/specs/SPEC-NOTTGARD-PATH-REVISION-20261017/validation-adjustment-r2-draft.md
+  scope_adjustment_approval: APPROVED_OWNER_R2_18TH_FILE_IMPLEMENTED
+  s004_r2_authorization: .atena/generated/path-revision-20261017/s004-r2-authorization.json
+  scope_adjustment_canon: .atena/vault/canon/DEC-MAP-PATH-VALIDATION-ADJUSTMENT-20261017-r2.md
+  s004_validation: .atena/generated/path-revision-20261017/s004-final-validation-r2.json
+  s004_portage: .atena/generated/path-revision-20261017/s004-portage-r2.json
+  s004_completed_checkpoint: CP-PATH-004-R2
+  s005_authorization: .atena/generated/path-revision-20261017/s005-authorization.json
+  s005_opening: .atena/generated/path-revision-20261017/s005-opening.json
+  s005_evidence: .atena/evidence/EVID-NOTTGARD-PATH-HUMAN-PLAYTEST-20261017-r2.md
+  s005_validation: .atena/generated/path-revision-20261017/s005-final-validation-r2.json
+  s005_acceptance_canon: .atena/vault/canon/DEC-MAP-PATH-HUMAN-ACCEPTANCE-20261017-r2.md
+  s005_completed_checkpoint: CP-PATH-005-HUMAN-FEEDBACK

@@ -31,6 +31,7 @@ var _baked_path := ""
 @export var use_root_art := true: set = _set_root_art
 @export var use_domwieck_art := true
 @export var use_yggdrasil_art := true
+var root_layout: Dictionary = {}
 var _root_art_material: ShaderMaterial
 var _root_art_rect := Rect2()
 
@@ -65,9 +66,17 @@ func _prepare_root_art() -> bool:
 		if not texture is Texture2D:
 			return false
 		mat.set_shader_parameter({"surface":"surface_art","junctions":"junction_art","sides":"side_art","depth":"depth_art"}[id],texture)
-	var d := TerrainLayout.root_definition()
+	var d := TerrainLayout.root_definition() if root_layout.is_empty() else root_layout
 	var nodes := PackedVector3Array()
 	var edges := PackedVector4Array()
+	var widths := PackedFloat32Array()
+	var heights := PackedVector2Array()
+	var levels: Dictionary = {}
+	var length := 0.0
+	for i in range(1,d.spine.size()):
+		length += TerrainLayout.root_point(d.nodes[d.spine[i-1]]).distance_to(TerrainLayout.root_point(d.nodes[d.spine[i]]))
+		levels[d.spine[i]] = length
+	levels[d.spine[0]] = 0.0
 	var bounds := Rect2(Iso.to_screen(TerrainLayout.root_point(d.arrival)),Vector2.ZERO)
 	for node: Array in d.nodes.values():
 		nodes.append(Vector3(float(node[0]),float(node[1]),float(node[2])))
@@ -77,11 +86,20 @@ func _prepare_root_art() -> bool:
 		var a := TerrainLayout.root_point(d.nodes[edge[0]])
 		var b := TerrainLayout.root_point(d.nodes[edge[1]])
 		edges.append(Vector4(a.x,a.y,b.x,b.y))
-	if nodes.size()!=9 or edges.size()!=12:
+		widths.append(TerrainLayout.root_edge_width(d,edge)*0.5)
+		heights.append(Vector2(float(levels[edge[0]])/length,float(levels[edge[1]])/length))
+	if nodes.is_empty() or nodes.size()>32 or edges.is_empty() or edges.size()>32:
 		return false
+	mat.set_shader_parameter("node_count",nodes.size())
+	mat.set_shader_parameter("edge_count",edges.size())
+	nodes.resize(32)
+	edges.resize(32)
+	widths.resize(32)
+	heights.resize(32)
+	mat.set_shader_parameter("half_widths",widths)
+	mat.set_shader_parameter("edge_heights",heights)
 	mat.set_shader_parameter("root_nodes",nodes)
 	mat.set_shader_parameter("root_edges",edges)
-	mat.set_shader_parameter("half_width",float(d.width)*0.5)
 	for key in ["atlas_inset","side_height_px","depth_height_px","side_repeat_px","depth_repeat_px","depth_opacity","top_brightness"]:
 		mat.set_shader_parameter(key,float(config[key]))
 	mat.set_shader_parameter("side_rows",PackedFloat32Array(config.side_rows))
@@ -262,7 +280,7 @@ func _draw() -> void:
 
 func _draw_yggdrasil_prototype() -> void:
 	# Geometric QA study only; no approved final appearance is implied.
-	var d := TerrainLayout.root_definition("raiz_yggdrasil")
+	var d := TerrainLayout.root_definition("raiz_yggdrasil") if root_layout.is_empty() else root_layout
 	# Low-contrast vertical silhouette, separated from every supporting surface.
 	draw_colored_polygon(PackedVector2Array([Vector2(930,-1400),Vector2(1160,-1400),Vector2(1110,365),Vector2(978,420)]),Color("11151e"))
 	for i in 6:
@@ -288,7 +306,7 @@ func _draw_yggdrasil_prototype() -> void:
 	for shape in shapes:
 		var side := PackedVector2Array()
 		for p in shape:
-			side.append(p+Vector2(0,28))
+			side.append(p+Vector2(0,20))
 		draw_colored_polygon(side,Color("171820"))
 	for shape in shapes:
 		draw_colored_polygon(shape,Color("3e342f"))
@@ -311,7 +329,7 @@ func _draw_yggdrasil_prototype() -> void:
 func _draw_root_prototype() -> void:
 	# HQ17 Q3 v02: dark braided bark, suspended bridges and purple depth.
 	# Geometry comes from the same capsules/disks as supporting collisions.
-	var d := TerrainLayout.root_definition()
+	var d := TerrainLayout.root_definition() if root_layout.is_empty() else root_layout
 	var shapes: Array[PackedVector2Array] = []
 	for edge: Array in d.edges:
 		var a := TerrainLayout.root_point(d.nodes[edge[0]])
@@ -319,9 +337,9 @@ func _draw_root_prototype() -> void:
 		var path := PackedVector2Array()
 		var angle := (b - a).angle()
 		for i in 33:
-			path.append(Iso.to_screen(b + Vector2.from_angle(angle - PI * 0.5 + PI * float(i) / 32.0) * float(d.width) * 0.5))
+			path.append(Iso.to_screen(b + Vector2.from_angle(angle - PI * 0.5 + PI * float(i) / 32.0) * TerrainLayout.root_edge_width(d,edge) * 0.5))
 		for i in 33:
-			path.append(Iso.to_screen(a + Vector2.from_angle(angle + PI * 0.5 + PI * float(i) / 32.0) * float(d.width) * 0.5))
+			path.append(Iso.to_screen(a + Vector2.from_angle(angle + PI * 0.5 + PI * float(i) / 32.0) * TerrainLayout.root_edge_width(d,edge) * 0.5))
 		shapes.append(path)
 	for node: Array in d.nodes.values():
 		var path := PackedVector2Array()

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "build_hashes_verified": 18,
+  "technical_pass_reused": true,
+  "owner_accepted_maps": 2,
+  "completed_steps": 5,
+  "total_steps": 5,
+  "remaining_steps": 0,
+  "unrelated_plan_state_preserved": true,
+  "unrelated_state_sha256": "6d46ed92bcdcb2580e6dbfd118beafe3070f4a75e386eac82e99ea6e8f614cb3",
+  "log_errors": 0,
+  "canon_and_evidence_exist": true,
+  "dagruve_feedback": "STILL_PENDING",
+  "real_origin_application": "STILL_PENDING"
+}

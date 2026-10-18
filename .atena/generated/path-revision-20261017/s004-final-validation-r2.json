@@ -1,0 +1,130 @@
+{
+  "step": "S-PATH-004",
+  "revision": "r2",
+  "status": "PASS",
+  "completed_steps": 4,
+  "total_steps": 5,
+  "build": ".atena/generated/path-revision-20261017/s004-build-r2.json",
+  "authorization": ".atena/generated/path-revision-20261017/s004-r2-authorization.json",
+  "evidence": ".atena/evidence/EVID-NOTTGARD-PATH-JOINT-VALIDATION-20261017-r2.md",
+  "suites": {
+    "passed": 12,
+    "total": 12,
+    "reused_11": ".atena/generated/path-revision-20261017/s004-20261018-021014-969",
+    "new_native_objective": ".atena/generated/path-revision-20261017/s004-20261018-022041-748",
+    "names": [
+      "test_scripts_compile",
+      "test_yggdrasil_navigation",
+      "test_yggdrasil_map",
+      "test_yggdrasil_art",
+      "test_root_navigation",
+      "test_root_art",
+      "test_terrain",
+      "test_qa_sandbox",
+      "test_battle",
+      "test_level_design",
+      "test_reach_grid",
+      "test_map_objectives"
+    ]
+  },
+  "origin_candidate": {
+    "new_native_objective": ".atena/generated/path-revision-20261017/s004-20261018-022325-716",
+    "fixtures": [
+      {
+        "path": "data/stages.json",
+        "admitted_blocks": [
+          "reino_abissal",
+          "domwieck"
+        ],
+        "before_sha256": "31180d1f126cfd1a8b274fb68c8c35733199c801ce074ddc1da0d7f2d2b88594",
+        "after_sha256": "22d4fca2a20c2e6bf018185ee081b2d76bd6ab857e064cd6bf83a31cf9618952",
+        "pc_sha256": "38bcfe431893a11c8972b3439e513185e41c4a3c9906ae7d9dcaf304c39dad7b",
+        "scope": "SYNTHETIC_CANDIDATE_ONLY"
+      },
+      {
+        "path": "data/scenery.json",
+        "admitted_blocks": [],
+        "before_sha256": "80e9e7eeb2d3dfd19cd4fba23589f720dcfbf498b6265d25254d24b477fc5051",
+        "after_sha256": "80e9e7eeb2d3dfd19cd4fba23589f720dcfbf498b6265d25254d24b477fc5051",
+        "pc_sha256": "80e9e7eeb2d3dfd19cd4fba23589f720dcfbf498b6265d25254d24b477fc5051",
+        "scope": "SYNTHETIC_CANDIDATE_ONLY"
+      },
+      {
+        "path": "data/level_design.json",
+        "admitted_blocks": [
+          "reino_abissal",
+          "domwieck"
+        ],
+        "before_sha256": "ce5356dd33300e248108cd876045011bb35452a6b1d2edab23f676cea9ae69b4",
+        "after_sha256": "9d694f997795c625145256f9c2f9a62b991948dc729a8e12f14eb3a0d4398a89",
+        "pc_sha256": "9bf228a7f08956f66d2685b9f55cbe32b9a6dc086c1b284fa60352b4ea0dd4e0",
+        "scope": "SYNTHETIC_CANDIDATE_ONLY"
+      }
+    ],
+    "real_origin_modified": false,
+    "release_certification": false,
+    "previous_seven": ".atena/generated/path-revision-20261017/s004-20261018-021028-537",
+    "renewed_seven": ".atena/generated/path-revision-20261017/s004-20261018-022418-066",
+    "renewal_reason": "Integration fixtures and predecessor PC scenes admitted after prior seven-suite run",
+    "additional_predecessor_pc_dependencies": [
+      {
+        "path": "ui/stages/reino_abissal.tscn",
+        "before_sha256": null,
+        "pc_sha256": "2975537a0666bf0b88ca90f3e4a686f9305f3ce3d2674babd8a71f3b2171ba7e",
+        "purpose": "Existing PC scene dependency for native objective geometry test, synthetic candidate only"
+      },
+      {
+        "path": "ui/stages/domwieck.tscn",
+        "before_sha256": null,
+        "pc_sha256": "29161ceb21de12b5f5b589f5d4ca100b9455c90aed188efbdaa307ff60f4c296",
+        "purpose": "Existing PC scene dependency for native objective geometry test, synthetic candidate only"
+      },
+      {
+        "path": "ui/domwieck_art.gd",
+        "before_sha256": null,
+        "pc_sha256": "421dfa6546c4f5bbbc817a61bde01c7aa151518576ff09f0b5551dfa27467708",
+        "purpose": "Existing PC scene dependency for native objective geometry test, synthetic candidate only"
+      }
+    ]
+  },
+  "performance": {
+    "comparison": ".atena/generated/path-revision-20261017/s004-performance-comparison.json",
+    "status": "PASS",
+    "reused": true,
+    "reason": "All 17 code/resource/test hashes unchanged; revision r2 changes objective test only",
+    "raw_hashes_verified": true
+  },
+  "support_parity": {
+    "path": ".atena/generated/path-revision-20261017/s004-20261018-021406-268/parity.json",
+    "cached_base_generation_exercised": true,
+    "checks": 288000,
+    "mismatches": 0,
+    "reference": "Unmodified pre-optimization support implementation; same current geometry"
+  },
+  "render_sessions": [
+    ".atena/generated/path-revision-20261017/s004-20261018-020939-894",
+    ".atena/generated/path-revision-20261017/s004-20261018-021416-497"
+  ],
+  "reused": {
+    "yggdrasil_simulation": "test_yggdrasil_map in current 11-suite run",
+    "abyss_simulation": "s003-20261018-015311-108/simulation-result.json; support parity verifies unchanged physics",
+    "seeds": "128 seeds/128 unique/0 fallbacks in current yggdrasil_navigation"
+  },
+  "budget": {
+    "used": 18,
+    "authorized": 18
+  },
+  "history": {
+    "partial": ".atena/generated/path-revision-20261017/s004-validation-progress.json",
+    "previous_failure": ".atena/generated/path-revision-20261017/s004-20261018-015810-556/test_map_objectives.log",
+    "preview": ".atena/generated/path-revision-20261017/s004-20261018-021129-690/r2-preview.json",
+    "failed_candidate_attempt": {
+      "session": ".atena/generated/path-revision-20261017/s004-20261018-022124-026",
+      "reason": "Missing predecessor PC scenes reino_abissal/domwieck; engine errors rejected despite test runner reporting zero assertions",
+      "accepted": false
+    }
+  },
+  "portage": ".atena/generated/path-revision-20261017/s004-portage-r2.json",
+  "human_playtest": "PENDING_S_PATH_005_NOT_OPENED",
+  "next_checkpoint": "CP-PATH-005"
+}

@@ -26,11 +26,11 @@ func run() -> Array:
 	b._spawn_random_breakable()
 	_check(out,b.interactions.is_empty() and b.enemies.is_empty(),"Disabled prototype content appeared")
 	for i in 41:
-		b._spawn("cultista_adaga",Vector2(30,32))
+		b._spawn("cultista_adaga",TerrainLayout.root_point(b.root_layout.nodes.C1))
 	_check(out,b._combat_count()==40,"Admission exceeded strict cap")
 	b.time=240.0
 	b.enemies.clear()
-	_check(out,b._spawn("cultista_adaga",Vector2(30,32)).dead and b.enemies.is_empty(),"Offensive admission continued after 240s")
+	_check(out,b._spawn("cultista_adaga",TerrainLayout.root_point(b.root_layout.nodes.C1)).dead and b.enemies.is_empty(),"Offensive admission continued after 240s")
 	b.hero.pos=b.objective_target()
 	b.time=239.99
 	b._update_stage_objective(1.0)
@@ -80,9 +80,9 @@ func run() -> Array:
 	abandoned.step(Vector2.ZERO,4.0)
 	_check(out,abandoned.result().stages_cleared==0,"Abandon awarded stage completion")
 	var capped := _battle()
-	var summoner := capped._spawn("cultista_adaga",Vector2(30,32))
+	var summoner := capped._spawn("cultista_adaga",TerrainLayout.root_point(b.root_layout.nodes.C1))
 	for i in 39:
-		capped._spawn("cultista_adaga",Vector2(30,32))
+		capped._spawn("cultista_adaga",TerrainLayout.root_point(b.root_layout.nodes.C1))
 	capped._use_ability(summoner,0,{"t":"summon","id":"notivago","cap":99,"n":8},0.0,Vector2.ZERO)
 	_check(out,capped._combat_count()==40,"Summon bypassed cap")
 	summoner.split_id="notivago"

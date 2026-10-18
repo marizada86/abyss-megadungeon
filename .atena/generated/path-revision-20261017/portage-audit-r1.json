@@ -1,0 +1,126 @@
+{
+  "origin": "D:/dev/nottgard/games/godot/nottgard-survivors",
+  "mode": "READ_ONLY_AUDIT",
+  "candidate_package": "to be produced with implementation; tests in synthetic PC and origin copies",
+  "files": [
+    {
+      "path": "data/root_navigation.json",
+      "pc_sha256": "cc47f080affa033edfc0f9d5b5bf676e9f6a1d7c15523a20084c3a0616f7189d",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "core/root_path_generator.gd",
+      "pc_sha256": null,
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "core/terrain_layout.gd",
+      "pc_sha256": "8d9f77d3ee0d363fb7138abf3ba95afe93e8fd47e14206749e2c0d8fb7a949de",
+      "origin_sha256": "294262489d02de2a2e2463d4ae816121bcbded01468c32f3ea505d17ee2792c9",
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "core/hero.gd",
+      "pc_sha256": "e318f49f877625c9d1f05bda517a0cd6ae3b6312ab09b339b12c10bfbf26ea62",
+      "origin_sha256": "07e22df00d69b2d0d2f462c772de2bf8716e6ddd7f411e81646a18822c98abfa",
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "core/battle.gd",
+      "pc_sha256": "d9d3f04bff635ace6b4a62c20fe99d25a3a227f7e690362948837684d9d84748",
+      "origin_sha256": "f51a2c41c7325cf30e3dd61619b06e6197100c232128a5e522f2f8ff429a6884",
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "ui/run.gd",
+      "pc_sha256": "6c187ecfc276267ce01a0d84a8d2661988c60dd5727e8c5a9c94c4c8b0375b9f",
+      "origin_sha256": "c7c8c1bcd44fdb1ca01fca3f8fcacbdf9ed1535b3167ea588d677f05c9c982de",
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "ui/ground.gd",
+      "pc_sha256": "4c52113572ef5882f5ba5c1f98831b855c19b15bb5d33056328f595579913f6c",
+      "origin_sha256": "2788c2cff3dfe43743502d5c0cfb6cf9e4fabf82ed5a7914ba38d1f46b240a1e",
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "ui/yggdrasil_art.gd",
+      "pc_sha256": "0f20bbc81917df0878eca9d259bcc89517f21992d6e9068dc52e9985bc8873ee",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "ui/shaders/yggdrasil_root_art.gdshader",
+      "pc_sha256": "dc669df996d03ebd2f604176a0f47e58bb10c1ee6b9cba893278cb3c56b9ad02",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "ui/shaders/abyss_roots.gdshader",
+      "pc_sha256": "20000863f0230a68e56f0a771bf113e3ca6b52b1d1d3a0e48d2e4b656bd53079",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "data/yggdrasil_art.json",
+      "pc_sha256": "146e71823380b36d78409a1bf007bd393be80bbd3cef5c2468c944ee6c4e10d3",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "data/prototype_stages.json",
+      "pc_sha256": "f255170dcbf58901d3c48bb71a20021004e3c6b3c32dbefaf8467929cd807852",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "tests/test_yggdrasil_navigation.gd",
+      "pc_sha256": "cdb26801f0413fe8cab514f584ed8967dcb6f37cb536f95a5452cc7250083417",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "tests/test_yggdrasil_art.gd",
+      "pc_sha256": "51723c057f5df4d032ab77923eeab3c67b7269270399f5293770a442bcb49164",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "tests/test_root_navigation.gd",
+      "pc_sha256": "640f58c8bf9cdfdbe91ddd5bb2a16db7842e22d83e3d3bc1863472d2a5f9e1fb",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "tests/test_root_art.gd",
+      "pc_sha256": "11fe3ed3919d28d6f8006805e0238f050dc2bf6ad2757a3607fe293631f7c685",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    },
+    {
+      "path": "tests/test_yggdrasil_map.gd",
+      "pc_sha256": "fe2779124abf86fbd7d919962aefcd7ccd92f14101512a90caad1f79cf1f7a94",
+      "origin_sha256": null,
+      "scope": "CANDIDATE_PORTAGE_REQUIRED_FOR_COMMON_CHANGES",
+      "application": "NOT_AUTHORIZED_NOT_PERFORMED"
+    }
+  ]
+}

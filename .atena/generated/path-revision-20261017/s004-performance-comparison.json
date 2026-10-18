@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "baseline": ".atena/generated/path-revision-20261017/s004-20261018-020257-450",
+  "candidate": ".atena/generated/path-revision-20261017/s004-20261018-021214-634",
+  "environment": {
+    "debug": true,
+    "driver": "opengl3",
+    "engine": "4.7.2-stable (official)",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpu_api": "3.3.0 NVIDIA 616.92",
+    "max_fps": 0,
+    "processor": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+    "processors": 6,
+    "renderer": "gl_compatibility",
+    "resolution": "(1280, 720)",
+    "vsync": 0
+  },
+  "checks": [
+    {
+      "stage": "raiz_yggdrasil",
+      "metric": "simulation_cpu",
+      "statistic": "median_ms",
+      "unit": "ms",
+      "baseline": 2.559,
+      "candidate": 2.782,
+      "ratio": 1.0871434153966393,
+      "limit": 1.15,
+      "passed": true
+    },
+    {
+      "stage": "raiz_yggdrasil",
+      "metric": "simulation_cpu",
+      "statistic": "p95_ms",
+      "unit": "ms",
+      "baseline": 5.131,
+      "candidate": 3.861,
+      "ratio": 0.7524848957318262,
+      "limit": 1.15,
+      "passed": true
+    },
+    {
+      "stage": "raiz_yggdrasil",
+      "metric": "render_cpu",
+      "statistic": "p95_ms",
+      "unit": "ms",
+      "baseline": 1.44699998950958,
+      "candidate": 1.36100002384186,
+      "ratio": 0.9405667129984796,
+      "limit": 1.2,
+      "passed": true
+    },
+    {
+      "stage": "raiz_yggdrasil",
+      "metric": "render_gpu",
+      "statistic": "p95_ms",
+      "unit": "ms",
+      "baseline": 1.62600004673004,
+      "candidate": 1.89900004863739,
+      "ratio": 1.1678966753145952,
+      "limit": 1.2,
+      "passed": true
+    },
+    {
+      "stage": "reino_abissal",
+      "metric": "simulation_cpu",
+      "statistic": "median_ms",
+      "unit": "ms",
+      "baseline": 4.459,
+      "candidate": 3.007,
+      "ratio": 0.6743664498766541,
+      "limit": 1.15,
+      "passed": true
+    },
+    {
+      "stage": "reino_abissal",
+      "metric": "simulation_cpu",
+      "statistic": "p95_ms",
+      "unit": "ms",
+      "baseline": 8.737,
+      "candidate": 3.545,
+      "ratio": 0.4057456792949525,
+      "limit": 1.15,
+      "passed": true
+    },
+    {
+      "stage": "reino_abissal",
+      "metric": "render_cpu",
+      "statistic": "p95_ms",
+      "unit": "ms",
+      "baseline": 1.19399998950958,
+      "candidate": 1.24900005626678,
+      "ratio": 1.0460637079065558,
+      "limit": 1.2,
+      "passed": true
+    },
+    {
+      "stage": "reino_abissal",
+      "metric": "render_gpu",
+      "statistic": "p95_ms",
+      "unit": "ms",
+      "baseline": 3.35899996757507,
+      "candidate": 2.5550000667572,
+      "ratio": 0.7606430757430778,
+      "limit": 1.2,
+      "passed": true
+    }
+  ],
+  "render_metric": "Both CPU render (viewport + setup) and GPU instrumented time reported. Contract render interpreted conservatively: each must pass p95 <=1.20x.",
+  "raw_sha256": [
+    {
+      "session": "s004-20261018-020257-450",
+      "sha256": "1607154944470071224d55c5293e81f3371bb465383f1b1bf968873d70792fd3"
+    },
+    {
+      "session": "s004-20261018-020400-178",
+      "sha256": "1e8416c95001d3e13ad7c9c25a9999066427d1e5616a45bc99c7a9dd3f44860a"
+    },
+    {
+      "session": "s004-20261018-020755-491",
+      "sha256": "f6af5bb697f01033d54dabde7faa972e03323ad6eb00f7f25da2d4b821868214"
+    },
+    {
+      "session": "s004-20261018-021214-634",
+      "sha256": "1496ec36b518bbe57640c603e4e59619e4e3f44ea8b892d301e3d6a982b8ab17"
+    }
+  ],
+  "documentation": "https://docs.godotengine.org/en/stable/classes/class_renderingserver.html#class-renderingserver-method-viewport-get-measured-render-time-cpu",
+  "limits": "Single-process sequential hardware samples; same power mode/renderer/build/scenario, no causal or statistical-significance claim."
+}

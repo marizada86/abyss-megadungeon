@@ -1,0 +1,1 @@
+const fs=require('fs');for(const p of ['data/stages.json','data/prototype_stages.json']){console.log(p);console.log(JSON.stringify(JSON.parse(fs.readFileSync(p,'utf8')).reino_abissal,null,2))}console.log(fs.readFileSync('core/battle.gd','utf8').split('\n').slice(298,309).join('\n'));

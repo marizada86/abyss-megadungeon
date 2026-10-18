@@ -1,0 +1,72 @@
+{
+  "step": "S-PATH-004",
+  "revision": "r2",
+  "authorized_at_recorded": "2026-10-18T02:20:40.442Z",
+  "authorization": "Titular aprovou revisao r2, 18o arquivo, adaptacao e validacao para concluir S-PATH-004",
+  "budget": 18,
+  "path": "tests/test_map_objectives.gd",
+  "before": "d942d1701588377b4940f9f2da037922c15bfe6d03adabdf2799a1a0e3eda87d",
+  "approved_candidate": "4e9fcd979c35fb50e14bbf98fee1613ac9313c1e00b20ffb732083cb0ad638ab",
+  "baseline": ".atena/generated/path-revision-20261017/r2-review/test_map_objectives.before-r2.gd.txt",
+  "previous_17_hashes_verified": true,
+  "fixtures": [
+    {
+      "path": "data/stages.json",
+      "admitted_blocks": [
+        "reino_abissal",
+        "domwieck"
+      ],
+      "before_sha256": "31180d1f126cfd1a8b274fb68c8c35733199c801ce074ddc1da0d7f2d2b88594",
+      "after_sha256": "22d4fca2a20c2e6bf018185ee081b2d76bd6ab857e064cd6bf83a31cf9618952",
+      "pc_sha256": "38bcfe431893a11c8972b3439e513185e41c4a3c9906ae7d9dcaf304c39dad7b",
+      "scope": "SYNTHETIC_CANDIDATE_ONLY"
+    },
+    {
+      "path": "data/scenery.json",
+      "admitted_blocks": [],
+      "before_sha256": "80e9e7eeb2d3dfd19cd4fba23589f720dcfbf498b6265d25254d24b477fc5051",
+      "after_sha256": "80e9e7eeb2d3dfd19cd4fba23589f720dcfbf498b6265d25254d24b477fc5051",
+      "pc_sha256": "80e9e7eeb2d3dfd19cd4fba23589f720dcfbf498b6265d25254d24b477fc5051",
+      "scope": "SYNTHETIC_CANDIDATE_ONLY"
+    },
+    {
+      "path": "data/level_design.json",
+      "admitted_blocks": [
+        "reino_abissal",
+        "domwieck"
+      ],
+      "before_sha256": "ce5356dd33300e248108cd876045011bb35452a6b1d2edab23f676cea9ae69b4",
+      "after_sha256": "9d694f997795c625145256f9c2f9a62b991948dc729a8e12f14eb3a0d4398a89",
+      "pc_sha256": "9bf228a7f08956f66d2685b9f55cbe32b9a6dc086c1b284fa60352b4ea0dd4e0",
+      "scope": "SYNTHETIC_CANDIDATE_ONLY"
+    }
+  ],
+  "real_origin_modified": false,
+  "applied_sha256": "4e9fcd979c35fb50e14bbf98fee1613ac9313c1e00b20ffb732083cb0ad638ab",
+  "origin_candidate_test_sha256": "4e9fcd979c35fb50e14bbf98fee1613ac9313c1e00b20ffb732083cb0ad638ab",
+  "failed_candidate_attempt": {
+    "session": ".atena/generated/path-revision-20261017/s004-20261018-022124-026",
+    "reason": "Missing predecessor PC scenes reino_abissal/domwieck; engine errors rejected despite test runner reporting zero assertions",
+    "accepted": false
+  },
+  "additional_predecessor_pc_dependencies": [
+    {
+      "path": "ui/stages/reino_abissal.tscn",
+      "before_sha256": null,
+      "pc_sha256": "2975537a0666bf0b88ca90f3e4a686f9305f3ce3d2674babd8a71f3b2171ba7e",
+      "purpose": "Existing PC scene dependency for native objective geometry test, synthetic candidate only"
+    },
+    {
+      "path": "ui/stages/domwieck.tscn",
+      "before_sha256": null,
+      "pc_sha256": "29161ceb21de12b5f5b589f5d4ca100b9455c90aed188efbdaa307ff60f4c296",
+      "purpose": "Existing PC scene dependency for native objective geometry test, synthetic candidate only"
+    },
+    {
+      "path": "ui/domwieck_art.gd",
+      "before_sha256": null,
+      "pc_sha256": "421dfa6546c4f5bbbc817a61bde01c7aa151518576ff09f0b5551dfa27467708",
+      "purpose": "Existing PC scene dependency for native objective geometry test, synthetic candidate only"
+    }
+  ]
+}

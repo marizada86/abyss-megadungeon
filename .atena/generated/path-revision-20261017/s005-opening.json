@@ -1,0 +1,70 @@
+{
+  "step": "S-PATH-005",
+  "status": "OPEN_AWAITING_SEPARATE_OWNER_FEEDBACK",
+  "completed_steps": 4,
+  "total_steps": 5,
+  "build": ".atena/generated/path-revision-20261017/s004-build-r2.json",
+  "all_18_hashes_verified": true,
+  "sessions": [
+    {
+      "ready": {
+        "hero_position": [
+          30,
+          48
+        ],
+        "human_acceptance": "PENDING",
+        "map": "raiz_yggdrasil",
+        "paused": true,
+        "sandbox": true,
+        "save_path": "user://qa-sandbox/qa-20261017T232820/profile.json",
+        "seed": 7502,
+        "user_data_dir": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-raiz_yggdrasil-20261018-022808-657/appdata/Godot/app_userdata/Nottgard Survivors"
+      },
+      "session": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\path-revision-20261017\\s005-raiz_yggdrasil-20261018-022808-657",
+      "window_handle": 723554,
+      "profile": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\path-revision-20261017\\s005-raiz_yggdrasil-20261018-022808-657\\synthetic-profile.json",
+      "map": "raiz_yggdrasil",
+      "pid": 18540,
+      "status": "OPEN_PAUSED_AWAITING_OWNER_FEEDBACK",
+      "human_acceptance": "PENDING",
+      "user_dir": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-raiz_yggdrasil-20261018-022808-657/appdata/Godot/app_userdata/Nottgard Survivors"
+    },
+    {
+      "ready": {
+        "hero_position": [
+          30,
+          54
+        ],
+        "human_acceptance": "PENDING",
+        "map": "reino_abissal",
+        "paused": true,
+        "sandbox": true,
+        "save_path": "user://qa-sandbox/qa-20261017T232848/profile.json",
+        "seed": 4401,
+        "user_data_dir": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-reino_abissal-20261018-022837-750/appdata/Godot/app_userdata/Nottgard Survivors"
+      },
+      "session": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\path-revision-20261017\\s005-reino_abissal-20261018-022837-750",
+      "window_handle": 2624044,
+      "profile": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\path-revision-20261017\\s005-reino_abissal-20261018-022837-750\\synthetic-profile.json",
+      "map": "reino_abissal",
+      "pid": 29732,
+      "status": "OPEN_PAUSED_AWAITING_OWNER_FEEDBACK",
+      "human_acceptance": "PENDING",
+      "user_dir": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-reino_abissal-20261018-022837-750/appdata/Godot/app_userdata/Nottgard Survivors"
+    }
+  ],
+  "human_acceptance": {
+    "raiz_yggdrasil": "PENDING",
+    "reino_abissal": "PENDING"
+  },
+  "ygg_seeds": [
+    7502,
+    7503,
+    7504
+  ],
+  "ygg_variation": "Reopen Yggdrasil from map selector after leaving run; cycles these seeds",
+  "gameplay_modifications": false,
+  "initial_pause_only": true,
+  "technical_metrics_not_human_acceptance": true,
+  "evidence": ".atena/evidence/EVID-NOTTGARD-PATH-HUMAN-PLAYTEST-20261017-r2.md"
+}

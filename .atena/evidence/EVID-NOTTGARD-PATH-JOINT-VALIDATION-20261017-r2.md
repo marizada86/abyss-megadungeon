@@ -1,0 +1,23 @@
+# S-PATH-004 — validação conjunta concluída, revisão r2
+
+Resultado: PASS técnico, etapa 4/5 concluída; quatro etapas concluídas e uma restante. Relatório: .atena/generated/path-revision-20261017/s004-final-validation-r2.json. Build: .atena/generated/path-revision-20261017/s004-build-r2.json, 18/18 arquivos de jogo/testes e UID declarado separadamente. Aprovação r2 registrada antes da aplicação em .atena/generated/path-revision-20261017/s004-r2-authorization.json e na decisão DEC-MAP-PATH-VALIDATION-ADJUSTMENT-20261017-r2.
+
+## Adaptação e testes
+
+Aplicada exatamente a candidata aprovada em tests/test_map_objectives.gd, SHA256 4e9fcd979c35fb50e14bbf98fee1613ac9313c1e00b20ffb732083cb0ad638ab. Chegada, destinos, percurso bidirecional das arestas e spawns usam a geometria vigente, preservando verificações de Domwieck, duração, presença, pausa, morte, abandono, idempotência, limpeza, caps e chefes legados. Baseline preservado no recibo de autorização. A falha anterior e a prévia continuam históricas; não foram reclassificadas como aprovação nativa.
+
+Suíte nativa test_map_objectives: zero falhas no PC (.atena/generated/path-revision-20261017/s004-20261018-022041-748) e na cópia sintética candidata (.atena/generated/path-revision-20261017/s004-20261018-022325-716). Importação e execução sem erros, com APPDATA/LOCALAPPDATA/perfil novos e probe sem autoload confirmando user_dir isolado antes do jogo. Nenhum save real carregado.
+
+Consolidado PC: 12/12 suítes aprovadas. As outras 11 são reutilizadas de .atena/generated/path-revision-20261017/s004-20261018-021014-969; todos os 17 hashes anteriores foram conferidos e permanecem iguais. Na origem candidata os sete checks foram renovados em .atena/generated/path-revision-20261017/s004-20261018-022418-066 por causa dos fixtures de integração adicionados; também passou a suíte nativa de objetivos. Para esta integração, somente os blocos reino_abissal/domwieck de data/stages.json e data/level_design.json foram admitidos na cópia; data/scenery.json não possui esses blocos no PC e ficou intacto. A primeira tentativa candidata foi rejeitada por falta das cenas antigas do PC, mesmo com zero assertions reportadas. Foram admitidas as cenas existentes ui/stages/reino_abissal.tscn e ui/stages/domwieck.tscn e sua dependência ui/domwieck_art.gd, com hashes no recibo. São pré-requisitos de integração somente na cópia sintética, sem novos arquivos de jogo no PC. O erro e os demais pré-requisitos estão preservados no recibo de portagem/autorização. Isso não certifica release da origem.
+
+## Desempenho e correção
+
+Medições e método permanecem no relatório r1 e em .atena/generated/path-revision-20261017/s004-performance-comparison.json: CPU mediana/p95 ≤1,15×baseline; render CPU e GPU p95 ≤1,20×baseline, todos aprovados. Os hashes dos dados brutos foram conferidos. Não se repetiu benchmark por alteração exclusiva de teste. Godot 4.7.2 debug, OpenGL3/Compatibility, GTX1650, i5-9400F; 30 frames de aquecimento +600 medidos por mapa; seed7504/Ygg40 e seed7202/Abismo50. Limites de amostragem e fixtures sintéticos permanecem os descritos no relatório r1.
+
+Reutilizadas paridade de suporte (288.000 consultas, zero diferenças), 128 sementes/128 variantes/zero fallback, simulações integrais 240/360s e capturas/máscaras dos dois mapas em 1280×720 e 1920×1080. Nenhuma divergência interior de piso; tolerância de antialias de 1 pixel. Essas evidências continuam válidas porque o runtime não mudou na r2. Conforto e leitura de subida/descida exigem relato humano.
+
+## Portagem, referências e próximo checkpoint
+
+Pacote local atualizado com os 18 arquivos e hashes, pendente de aprovação para aplicação na origem: .atena/generated/path-revision-20261017/s004-portage-r2.json. Os hashes dos 17 caminhos da origem real foram comparados ao baseline e continuam iguais; não houve escrita na origem, sincronização, commit ou publicação. Fixtures pertencem somente à cópia sintética.
+
+O contrato r1 é complementado pelo ajuste r2 aprovado, com teto 18. Estado reconciliado em map_path_revision_proposal, preservando demais planos e o cursor Dagruve CP-DAG-005, cujo feedback continua pendente. S-PATH-005 ainda não foi autorizada nem aberta. Entrada: build r2 validada e cenários sintéticos; saída: dois relatos humanos explícitos. Checks de Yggdrasil: espessura, variedade entre sementes, alternativas, bordas e congestionamento. Checks do Abismo: espiral, alternativas, orientação/subida-descida, bordas e combate. Próximo checkpoint CP-PATH-005: autorizar abertura dos playtests isolados dos dois mapas, com build/controles/objetivos apresentados antes da abertura.

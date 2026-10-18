@@ -1,0 +1,8 @@
+const fs=require('fs'),crypto=require('crypto'),path=require('path');const base='.atena/generated/path-revision-20261017';
+const list=JSON.parse(fs.readFileSync(base+'/s002-baseline.json','utf8'));const files=list.map(e=>e.path);
+const baseline=files.map(p=>{const target=base+'/s003-before/'+p;fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(p,target);return {path:p,sha256:crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex')}});
+fs.writeFileSync(base+'/s003-baseline.json',JSON.stringify(baseline,null,2));
+const state='.atena/state/plan.yaml';let s=fs.readFileSync(state,'utf8');function edit(key,fields,append=''){const a=s.indexOf(key+':');if(a<0)throw Error(key);const m=/\n[a-zA-Z_][a-zA-Z0-9_]*:/.exec(s.slice(a));const b=m?a+m.index:s.length;let block=s.slice(a,b);for(const[k,v]of Object.entries(fields)){const re=new RegExp(`(^|\\n)( +)${k}:.*`);if(!re.test(block))throw Error(k);block=block.replace(re,`$1$2${k}: ${v}`)}s=s.slice(0,a)+block.trimEnd()+'\n'+append+s.slice(b)}
+edit('map_path_revision_proposal',{status:'S_PATH_003_IMPLEMENTING_ABYSS',current_step:'S-PATH-003',implementation_authorized:'true',next_activity:'Implementar espiral e checks isolados',next_step_approval:'AUTHORIZED_S_PATH_003_ONLY'},'  s003_authorization: Titular autorizou espiral conforme contrato r1 e testes isolados\n  s003_baseline: '+base+'/s003-baseline.json\n');
+edit('dagruve_chapter2_proposal',{path_revision_suspension:'ACTIVE_FOR_AUTHORIZED_S_PATH_003'});
+fs.writeFileSync(state,s);console.log('S-PATH-003 authorized; fresh 17-path baseline; return cursor retained.');

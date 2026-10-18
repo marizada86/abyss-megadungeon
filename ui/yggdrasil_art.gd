@@ -1,6 +1,7 @@
 extends Node2D
 ## Owner-approved visual composition; authoritative support remains TerrainLayout.
 const Layout = preload("res://core/terrain_layout.gd")
+var root_layout: Dictionary = {}
 var config: Dictionary = {}
 var textures: Dictionary = {}
 var floor_material: ShaderMaterial
@@ -17,8 +18,9 @@ class FloorLayer extends Node2D:
 		draw_rect(composer.floor_rect,Color.WHITE)
 
 class PassageMark extends Node2D:
+	var root_layout: Dictionary = {}
 	func _draw() -> void:
-		var d: Dictionary = Layout.root_definition("raiz_yggdrasil")
+		var d: Dictionary = Layout.root_definition("raiz_yggdrasil") if root_layout.is_empty() else root_layout
 		var at: Vector2 = Iso.to_screen(Layout.root_point(d.nodes.G))
 		draw_arc(at+Vector2(0,-20),18.0,PI,TAU,28,Color("a380c1"),3.0,true)
 
@@ -38,8 +40,8 @@ func prepare() -> bool:
 		if not resource is Texture2D:
 			return false
 		textures[id]=resource
-	var d: Dictionary=Layout.root_definition("raiz_yggdrasil")
-	if d.nodes.size()!=7 or d.edges.size()!=8 or d.revision!=config.geometry_revision:
+	var d: Dictionary=Layout.root_definition("raiz_yggdrasil") if root_layout.is_empty() else root_layout
+	if d.nodes.is_empty() or d.nodes.size()>32 or d.edges.size()<2 or d.edges.size()>32 or d.revision!=config.geometry_revision:
 		return false
 	floor_material=ShaderMaterial.new()
 	floor_material.shader=load(String(config.shader))
@@ -56,6 +58,11 @@ func prepare() -> bool:
 		var b: Vector2=Layout.root_point(d.nodes[edge[1]])
 		edges.append(Vector4(a.x,a.y,b.x,b.y))
 		widths.append(Layout.root_edge_width(d,edge)*0.5)
+	floor_material.set_shader_parameter("node_count",nodes.size())
+	floor_material.set_shader_parameter("edge_count",edges.size())
+	nodes.resize(32)
+	edges.resize(32)
+	widths.resize(32)
 	floor_material.set_shader_parameter("root_nodes",nodes)
 	floor_material.set_shader_parameter("root_edges",edges)
 	floor_material.set_shader_parameter("half_widths",widths)
@@ -84,6 +91,7 @@ func _ready() -> void:
 	floor_layer.z_index=3
 	add_child(floor_layer)
 	marker=PassageMark.new()
+	marker.root_layout=root_layout
 	marker.z_index=4
 	add_child(marker)
 	_refresh()

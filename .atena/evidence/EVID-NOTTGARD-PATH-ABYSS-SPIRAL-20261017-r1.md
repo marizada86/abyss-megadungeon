@@ -1,0 +1,19 @@
+# S-PATH-003 — primeira incursão abissal em espiral
+
+Contrato r1 e execução S-PATH-003 aprovados explicitamente pelo titular. Etapa3/5 concluída tecnicamente;2 restantes. Evidência estruturada: .atena/generated/path-revision-20261017/s003-final-validation.json e s003-build.json.
+
+Malha exata do contrato:18 junções,23 ligações, seis conexões alternativas, chegada(30,54), destino(30,31), principal6 e conexões4,5. Profundidade lateral24–40px e iluminação variando até12% conforme distância no percurso dominante, interpolada nas conexões. Mesma definição por batalha para colisão/navegação/Ground. Arrays32/32 com contagens reais e larguras por aresta. Fallback geométrico atualizado. Nenhum salto, queda, andar sobre vazio ou altura física.
+
+O cadastro liberado da campanha também contém Reino Abissal e ainda apontava para(30,15). Dentro de Battle, a cópia da fase carregada recebe o destino autoritativo da malha; o cadastro compartilhado data/stages.json não foi editado. Datas de ondas, duração360s, cap50, raio2 e presença3s preservados. Decais oficiais antigos podem retornar âncoras sobre o vazio; ui/run limita sua transparência pelo mesmo piso, sem editar PNGs ou ground_decals.gd.
+
+Checks PC:7 suítes (scripts_compile, root_navigation, root_art, terrain, yggdrasil_navigation, yggdrasil_map, yggdrasil_art) passaram nas sessões .atena/generated/path-revision-20261017/s003-20261018-014828-889, .atena/generated/path-revision-20261017/s003-20261018-014712-980, .atena/generated/path-revision-20261017/s003-20261018-015420-339. A regressão de128 sementes Yggdrasil passou. Grade de corpos>0,8 do Abismo usa o mesmo refinamento seguro0,5 já validado em Yggdrasil; movimento de campanha segue grade anterior. Testes de suporte, sweep, dash, empurrão, carga, voo sintético, IA, spawns, loot e confinamento mantidos no novo desenho.
+
+Simulação360s (.atena/generated/path-revision-20261017/s003-20261018-015311-108): máximo50 inimigos, sem corpos/loot fora do suporte, objetivo concluído no novo destino após3s. HP alto e armas removidas somente no harness; a primeira tentativa preparou o QA após o fixture e restaurou HP/armas, portanto foi invalidada e corrigida no harness. Não é avaliação de dificuldade humana.
+
+Capturas1280×720/1920×1080 e combate50 (.atena/generated/path-revision-20261017/s003-20261018-015321-384), sem erros de shader/execução. Máscara amostrou32.385 pontos e não encontrou divergências interiores entre shader e CPU; tolerância de1pixel na fronteira. Overview inspecionado, desenho quadrangular conforme a poligonal aprovada. Clareza subjetiva de subida/descida e conforto dependem de playtest. Métricas comparativas de desempenho pertencem à S-PATH-004 e ainda não foram executadas nesta etapa.
+
+Portagem registrada e candidata sintética atualizada;7 suítes passaram também na cópia da origem (.atena/generated/path-revision-20261017/s003-20261018-015020-546, .atena/generated/path-revision-20261017/s003-20261018-015352-660). Dependências PC anteriores estão declaradas no recibo; não é certificação de release da origem. Projeto original não foi alterado; aplicação do pacote continua PENDING_APPLICATION_OWNER_APPROVAL.
+
+10 caminhos alterados nesta etapa; união do plano17/17, mais UID automático declarado. Geometria, gerador e arte de Yggdrasil preservados em conteúdo; apenas expectativa de contagem abissal do teste cruzado mudou. PNGs abissais aprovados intactos. Sem commits/push/publicação.
+
+Próxima S-PATH-004: entrada builds S002/S003; saída validação conjunta de regressões, simulações e capturas reutilizando evidência válida, comparação CPU/render contra baseline sob critérios do contrato e registro de limites reais. Exige autorização CP-PATH-004 antes de iniciar. S-PATH-005 requer abertura/aceite humano separados dos dois mapas. Dagruve mantém feedback pendente.

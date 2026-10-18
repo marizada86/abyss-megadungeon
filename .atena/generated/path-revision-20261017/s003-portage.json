@@ -1,0 +1,35 @@
+{
+  "status": "LOCAL_CANDIDATE_PENDING_APPLICATION_OWNER_APPROVAL",
+  "origin": "D:/dev/nottgard/games/godot/nottgard-survivors",
+  "destination": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\path-revision-20261017\\origin-candidate",
+  "changed": [
+    "data/root_navigation.json",
+    "core/hero.gd",
+    "core/battle.gd",
+    "ui/run.gd",
+    "ui/ground.gd",
+    "ui/shaders/abyss_roots.gdshader",
+    "data/prototype_stages.json",
+    "tests/test_yggdrasil_navigation.gd",
+    "tests/test_root_navigation.gd",
+    "tests/test_root_art.gd"
+  ],
+  "predecessor_pc_dependencies": [
+    "core/enemy.gd",
+    "ui/stages/raiz_yggdrasil.tscn",
+    "data/prototype_stages.json",
+    "data/root_art.json",
+    "ui/shaders/abyss_roots.gdshader",
+    "assets/tiles/yggdrasil_r1",
+    "assets/tiles/reino_abissal_roots_r1",
+    ".atena/generated/yggdrasil-art-20261017/kit-r1/manifest.json",
+    ".atena/generated/root-art-20261017/kit-r1/manifest.json",
+    "core/chapter_flow.gd",
+    "tools/run_one_test.gd",
+    "tests/test_root_art.gd"
+  ],
+  "real_origin_modified": false,
+  "stage": "S-PATH-003",
+  "predecessor": "s002-build.json",
+  "candidate_context": "Mutable candidate advanced to S-PATH-004; historical S003 hashes/results remain in s003-build.json and s003-final-validation.json"
+}

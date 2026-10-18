@@ -5,9 +5,12 @@ uniform sampler2D surface_art : source_color, filter_nearest, repeat_disable;
 uniform sampler2D junction_art : source_color, filter_nearest, repeat_disable;
 uniform sampler2D side_art : source_color, filter_nearest, repeat_disable;
 uniform sampler2D depth_art : source_color, filter_nearest, repeat_disable;
-uniform vec3 root_nodes[9];
-uniform vec4 root_edges[12];
-uniform float half_width = 3.0;
+uniform vec3 root_nodes[32];
+uniform vec4 root_edges[32];
+uniform float half_widths[32];
+uniform vec2 edge_heights[32];
+uniform int node_count = 18;
+uniform int edge_count = 23;
 uniform float atlas_inset = 0.008;
 uniform float side_height_px = 32.0;
 uniform float depth_height_px = 76.0;
@@ -25,7 +28,7 @@ void vertex() {
 		VERTEX.y / 32.0 - VERTEX.x / 64.0);
 }
 
-float capsule_distance(vec2 p, vec4 edge) {
+float capsule_distance(vec2 p, vec4 edge, float half_width) {
 	vec2 ab = edge.zw - edge.xy;
 	float along = clamp(dot(p - edge.xy, ab) / dot(ab, ab), 0.0, 1.0);
 	return length(p - edge.xy - ab * along) - half_width;
@@ -33,11 +36,11 @@ float capsule_distance(vec2 p, vec4 edge) {
 
 float support_distance(vec2 p) {
 	float best = 10000.0;
-	for (int i = 0; i < 9; i++) {
+	for (int i = 0; i < node_count; i++) {
 		best = min(best, length(p - root_nodes[i].xy) - root_nodes[i].z);
 	}
-	for (int i = 0; i < 12; i++) {
-		best = min(best, capsule_distance(p, root_edges[i]));
+	for (int i = 0; i < edge_count; i++) {
+		best = min(best, capsule_distance(p, root_edges[i], half_widths[i]));
 	}
 	return best;
 }
@@ -47,14 +50,26 @@ vec2 atlas_uv(vec2 uv, int variant) {
 	return (cell + mix(vec2(atlas_inset), vec2(1.0-atlas_inset), clamp(uv,vec2(0.0),vec2(1.0)))) * 0.5;
 }
 
+float elevation_at(vec2 p) {
+ float best=10000.0;float level=0.0;
+ for(int i=0;i<edge_count;i++){
+  vec4 e=root_edges[i];vec2 ab=e.zw-e.xy;
+  float t=clamp(dot(p-e.xy,ab)/dot(ab,ab),0.0,1.0);
+  float distance=length(p-e.xy-ab*t)-half_widths[i];
+  if(distance<best){best=distance;level=mix(edge_heights[i].x,edge_heights[i].y,t);}
+ }
+ return level;
+}
+
 vec4 top_color(vec2 p, float boundary) {
 	float edge_best = 10000.0;
 	int edge_id = 0;
-	for (int i = 0; i < 12; i++) {
-		float distance = capsule_distance(p, root_edges[i]);
+	for (int i = 0; i < edge_count; i++) {
+		float distance = capsule_distance(p, root_edges[i], half_widths[i]);
 		if (distance < edge_best) { edge_best = distance; edge_id = i; }
 	}
 	vec4 edge = root_edges[edge_id];
+	float half_width = half_widths[edge_id];
 	vec2 tangent = normalize(edge.zw-edge.xy);
 	vec2 normal = vec2(-tangent.y,tangent.x);
 	vec2 offset = p-edge.xy;
@@ -62,7 +77,7 @@ vec4 top_color(vec2 p, float boundary) {
 	vec3 color = texture(surface_art,atlas_uv(uv,edge_id%4)).rgb;
 	float node_distance = 10000.0;
 	int node_id = 0;
-	for (int i = 0; i < 9; i++) {
+	for (int i = 0; i < node_count; i++) {
 		float distance = length(p-root_nodes[i].xy)/root_nodes[i].z;
 		if (distance < node_distance) {node_distance=distance; node_id=i;}
 	}
@@ -74,7 +89,7 @@ vec4 top_color(vec2 p, float boundary) {
 	vec2 node_uv = (p-node.xy)/(node.z*2.0)+0.5;
 	color = mix(color,texture(junction_art,atlas_uv(node_uv,node_id%4)).rgb,strongest);
 	// Subdued edge roll-off conveys the change of plane without a neon outline.
-	color *= top_brightness * mix(1.0,0.65,smoothstep(-0.45,0.0,boundary));
+	color *= mix(0.88,1.0,elevation_at(p)) * top_brightness * mix(1.0,0.65,smoothstep(-0.45,0.0,boundary));
 	return vec4(color,1.0);
 }
 
@@ -106,8 +121,9 @@ void fragment() {
 			color.rgb*=0.65;
 			color.a*=depth_opacity;
 		}
-		if (support_distance(p-vec2(side_height_px/32.0))<=0.0) {
-			float v=edge_fraction(p,side_height_px);
+		float local_height=mix(24.0,40.0,elevation_at(p));
+		if (support_distance(p-vec2(local_height/32.0))<=0.0) {
+			float v=edge_fraction(p,local_height);
 			int variant=int(floor((screen_x+4000.0)/side_repeat_px))%4;
 			vec2 side_uv=vec2(mix(atlas_inset,1.0-atlas_inset,fract((screen_x+4000.0)/side_repeat_px)),mix(side_rows[variant]+0.004,side_rows[variant+1]-0.004,v));
 			vec4 side=texture(side_art,side_uv);

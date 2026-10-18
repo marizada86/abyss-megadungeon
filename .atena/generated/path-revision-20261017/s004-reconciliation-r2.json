@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "state_updated_from_fresh_read": true,
+  "referenced_artifacts_exist": true,
+  "game_test_paths": 18,
+  "original_17_hashes_unchanged": true,
+  "objective_exact_approved_hash": true,
+  "performance_raw_hashes_verified": true,
+  "real_origin_baseline_unchanged": true,
+  "checkpoint": "CP-PATH-005",
+  "human_playtest_authorized": false
+}

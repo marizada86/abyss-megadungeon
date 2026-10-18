@@ -1,0 +1,16 @@
+{
+	"arrival": [
+		30.0,
+		54.0
+	],
+	"completed": true,
+	"failures": [],
+	"fixture_only": "High HP/no weapons in synthetic simulation; no human survival claim",
+	"max_enemies": 50,
+	"seconds": 360,
+	"seed": 7202,
+	"target": [
+		30.0,
+		31.0
+	]
+}

@@ -3,11 +3,13 @@ render_mode unshaded;
 uniform sampler2D ground_art : source_color, filter_linear, repeat_disable;
 uniform sampler2D edge_art : source_color, filter_linear, repeat_disable;
 uniform sampler2D detail_art : source_color, filter_linear, repeat_disable;
-uniform vec3 root_nodes[7];
-uniform vec4 root_edges[8];
-uniform float half_widths[8];
+uniform vec3 root_nodes[32];
+uniform vec4 root_edges[32];
+uniform float half_widths[32];
 uniform vec4 side_rects[4];
-uniform float side_height_px = 28.0;
+uniform int node_count = 12;
+uniform int edge_count = 17;
+uniform float side_height_px = 20.0;
 uniform float top_brightness = 0.72;
 uniform float detail_opacity = 0.16;
 uniform bool debug_top_mask = false;
@@ -20,9 +22,22 @@ float capsule_distance(vec2 p, int i) {
  return length(p-e.xy-ab*clamp(dot(p-e.xy,ab)/dot(ab,ab),0.0,1.0))-half_widths[i];
 }
 float support_distance(vec2 p) {
- float d=10000.0;
- for(int i=0;i<7;i++){d=min(d,length(p-root_nodes[i].xy)-root_nodes[i].z);}
- for(int i=0;i<8;i++){d=min(d,capsule_distance(p,i));}
+ // Consumers need exact distances only at the top rim (-0.35..0).
+ // Positive distances are used only for the support predicate; deep negative
+ // values have identical shading. Bounds therefore skip only irrelevant work.
+ float d=1.0;
+ for(int i=0;i<node_count;i++){
+  vec3 n=root_nodes[i];
+  if(any(greaterThan(abs(p-n.xy),vec2(n.z+1.0)))){continue;}
+  d=min(d,length(p-n.xy)-n.z);
+  if(d < -0.8){return d;}
+ }
+ for(int i=0;i<edge_count;i++){
+  vec4 e=root_edges[i];float margin=half_widths[i]+1.0;
+  if(any(lessThan(p,min(e.xy,e.zw)-vec2(margin))) || any(greaterThan(p,max(e.xy,e.zw)+vec2(margin)))){continue;}
+  d=min(d,capsule_distance(p,i));
+  if(d < -0.8){return d;}
+ }
  return d;
 }
 // Mirrored sampling keeps adjacent repetitions continuous, without editing sources.
@@ -34,7 +49,11 @@ vec3 wood(vec2 uv) {
 }
 vec4 surface(vec2 p,float boundary) {
  int closest=0;int second=0;float best=10000.0;float next_best=10000.0;
- for(int i=0;i<8;i++){
+ for(int i=0;i<edge_count;i++){
+  vec4 bounds=root_edges[i];
+  vec2 gap=max(min(bounds.xy,bounds.zw)-p,p-max(bounds.xy,bounds.zw));
+  float lower_bound=max(0.0,max(gap.x,gap.y))-half_widths[i];
+  if(lower_bound>next_best){continue;}
   float d=capsule_distance(p,i);
   if(d<best){next_best=best;second=closest;best=d;closest=i;}
   else if(d<next_best){next_best=d;second=i;}
@@ -51,7 +70,12 @@ vec4 surface(vec2 p,float boundary) {
  c=mix(c,wood(uv2),0.5*(1.0-smoothstep(0.0,1.5,next_best-best)));
  // Blend node shoulders smoothly with a fixed material field; no clamped borders.
  float nearest=10000.0;int node_id=0;
- for(int i=0;i<7;i++){float d=length(p-root_nodes[i].xy)/root_nodes[i].z;if(d<nearest){nearest=d;node_id=i;}}
+ for(int i=0;i<node_count;i++){
+  vec2 delta=abs(p-root_nodes[i].xy);
+  if(max(delta.x,delta.y)/root_nodes[i].z>=nearest){continue;}
+  float d=length(delta)/root_nodes[i].z;
+  if(d<nearest){nearest=d;node_id=i;}
+ }
  vec3 n=root_nodes[node_id];vec2 local=(p-n.xy)/(n.z*2.0)+0.5;
  float influence=(1.0-smoothstep(0.25,0.95,nearest));
  influence=max(influence,smoothstep(-0.7,0.0,best));

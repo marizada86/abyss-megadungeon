@@ -1,0 +1,70 @@
+[
+  {
+    "path": "data/root_navigation.json",
+    "sha256": "b282fc64bb9e18cefc33dcccaf58adaaecfaf9380d6adb7bb1711b84f9798ad1"
+  },
+  {
+    "path": "core/root_path_generator.gd",
+    "sha256": "2e648c34e2c6806bbd56b59679973e30ceb1605c5993f558aad449dea84610bc"
+  },
+  {
+    "path": "core/terrain_layout.gd",
+    "sha256": "d200faa4d038f8ab0af6243704f5d2c01a94cea2438fd7399fa52bb8c5b2812f"
+  },
+  {
+    "path": "core/hero.gd",
+    "sha256": "c14a637f555772cc7d1b0a4d2d69f437510009156a82d254697f4a5520f48e7f"
+  },
+  {
+    "path": "core/battle.gd",
+    "sha256": "2c162ac14a0fae1d99cb51d423e69850f7ba94b1478b60bf970c9ff5b1248ff1"
+  },
+  {
+    "path": "ui/run.gd",
+    "sha256": "9f876f0f0c48e80ac00d27812782e658ef0601d32b3eb1ba6d242871f048aac0"
+  },
+  {
+    "path": "ui/ground.gd",
+    "sha256": "9994f535ffb96bdd16a300210792eaf43231fa1c26f7fa69b575e6bd712a2b9d"
+  },
+  {
+    "path": "ui/yggdrasil_art.gd",
+    "sha256": "ea855565d35eeb900ccd0739d865de01399aa4db6f9e8ce5073fb1ba410a5bc2"
+  },
+  {
+    "path": "ui/shaders/yggdrasil_root_art.gdshader",
+    "sha256": "d0ffa720af1c2c32e5a97acc0a4ae1392a87ef7f9a190f8f8b8c7f3fac0a02d3"
+  },
+  {
+    "path": "ui/shaders/abyss_roots.gdshader",
+    "sha256": "20000863f0230a68e56f0a771bf113e3ca6b52b1d1d3a0e48d2e4b656bd53079"
+  },
+  {
+    "path": "data/yggdrasil_art.json",
+    "sha256": "b1b1bcfec74fee9f26a01b0c21abf99e6922d6beb04b963ed7d3f5f71f0611af"
+  },
+  {
+    "path": "data/prototype_stages.json",
+    "sha256": "f255170dcbf58901d3c48bb71a20021004e3c6b3c32dbefaf8467929cd807852"
+  },
+  {
+    "path": "tests/test_yggdrasil_navigation.gd",
+    "sha256": "e072c2bedfead1242f621d40bf4c209f12d135e5aa0e0b8ef9f36b7e775e5b00"
+  },
+  {
+    "path": "tests/test_yggdrasil_art.gd",
+    "sha256": "856f60a60cfee3c1a52ddf98caf19bd2033921d4f45bb1dbf940f85758c629bf"
+  },
+  {
+    "path": "tests/test_root_navigation.gd",
+    "sha256": "edd2463b61580217b3eabcd7f452c5b144eded08839bbfbdd658510565b092ed"
+  },
+  {
+    "path": "tests/test_root_art.gd",
+    "sha256": "11fe3ed3919d28d6f8006805e0238f050dc2bf6ad2757a3607fe293631f7c685"
+  },
+  {
+    "path": "tests/test_yggdrasil_map.gd",
+    "sha256": "0d2a21ca445158bc4ba24c3546b795713c3ccb3ec4f8adffad336fdd5b4a3850"
+  }
+]

@@ -1,0 +1,19 @@
+{
+	"arrival": [
+		30.0,
+		54.0
+	],
+	"completed": false,
+	"failures": [
+		"Duration/cap/early completion contract",
+		"Spiral objective could not complete"
+	],
+	"fixture_only": "High HP/no weapons in synthetic simulation; no human survival claim",
+	"max_enemies": 6,
+	"seconds": 360,
+	"seed": 7202,
+	"target": [
+		30.0,
+		31.0
+	]
+}

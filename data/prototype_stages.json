@@ -42,7 +42,7 @@
       "kind": "timed_reach",
       "target": [
         30,
-        15
+        31
       ],
       "radius": 2,
       "hold_seconds": 3,

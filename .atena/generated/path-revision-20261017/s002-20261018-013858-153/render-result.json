@@ -1,0 +1,52 @@
+{
+	"captures": [
+		"yggdrasil-7502-1280x720-overview.png",
+		"yggdrasil-7502-1920x1080-overview.png",
+		"yggdrasil-7502-combat40.png",
+		"yggdrasil-7503-1280x720-overview.png",
+		"yggdrasil-7503-1920x1080-overview.png",
+		"yggdrasil-7504-1280x720-overview.png",
+		"yggdrasil-7504-1920x1080-overview.png"
+	],
+	"failures": [
+		"QA geometry receipt differs from battle",
+		"QA geometry receipt differs from battle",
+		"QA geometry receipt differs from battle"
+	],
+	"harness_only": "Camera/HP/frozen process changes are capture fixtures; not human playtest",
+	"receipts": [
+		{
+			"generation": {
+				"attempts": 1,
+				"fallback": false,
+				"seed": 7502,
+				"version": "path-r1-lcg32"
+			},
+			"interior_mismatches": 0,
+			"mask_samples": 32385,
+			"seed": 7502
+		},
+		{
+			"generation": {
+				"attempts": 1,
+				"fallback": false,
+				"seed": 7503,
+				"version": "path-r1-lcg32"
+			},
+			"interior_mismatches": 0,
+			"mask_samples": 32385,
+			"seed": 7503
+		},
+		{
+			"generation": {
+				"attempts": 1,
+				"fallback": false,
+				"seed": 7504,
+				"version": "path-r1-lcg32"
+			},
+			"interior_mismatches": 0,
+			"mask_samples": 32385,
+			"seed": 7504
+		}
+	]
+}

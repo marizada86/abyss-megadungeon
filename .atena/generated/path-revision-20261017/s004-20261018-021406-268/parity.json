@@ -1,0 +1,6 @@
+{
+	"cached_base_generation_exercised": true,
+	"checks": 288000,
+	"mismatches": 0,
+	"reference": "Unmodified pre-optimization support implementation; same current geometry"
+}

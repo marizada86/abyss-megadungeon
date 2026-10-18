@@ -1,0 +1,99 @@
+diff --git a/tests/test_map_objectives.gd b/.atena/generated/path-revision-20261017/r2-review/test_map_objectives.gd.candidate.txt
+index 4c2c8b9..ef265cb 100644
+--- a/tests/test_map_objectives.gd
++++ b/.atena/generated/path-revision-20261017/r2-review/test_map_objectives.gd.candidate.txt
+@@ -7,7 +7,7 @@ func _battle(seed_value: int = 4301, stage_key: String = "reino_abissal") -> Bat
+ 	var b := Battle.new(seed_value, "durvall", stage_key)
+ 	b.map_size = Vector2(60, 60)
+ 	b.hero.map_size = b.map_size
+-	b.hero.pos = Vector2(30, 45)
++	b.hero.pos = TerrainLayout.root_point(b.root_layout.arrival) if TerrainLayout.has_roots(stage_key) else Vector2(30,45)
+ 	b.hero.weapons.clear()
+ 	b.stage.waves = []
+ 	b.stage.elites = []
+@@ -43,7 +43,7 @@ func _full_run(out: Array, stage_key: String) -> void:
+ 	var b := Battle.new(4306, "durvall", stage_key)
+ 	b.map_size = Vector2(60,60)
+ 	b.hero.map_size = b.map_size
+-	b.hero.pos = Vector2(30,45)
++	b.hero.pos = TerrainLayout.root_point(b.root_layout.arrival) if TerrainLayout.has_roots(stage_key) else Vector2(30,45)
+ 	b.hero.weapons.clear()
+ 	b.hero.max_hp = 1.0e9
+ 	b.hero.hp = b.hero.max_hp
+@@ -164,7 +164,7 @@ func _director(out: Array, stage_key: String) -> void:
+ 	var b := Battle.new(4302, "durvall", stage_key)
+ 	b.map_size = Vector2(60, 60)
+ 	b.hero.map_size = b.map_size
+-	b.hero.pos = Vector2(30, 45)
++	b.hero.pos = TerrainLayout.root_point(b.root_layout.arrival) if TerrainLayout.has_roots(stage_key) else Vector2(30,45)
+ 	b.time = float(b.stage.duration) - 0.01
+ 	b._director(10.0)
+ 	if b.enemies.is_empty():
+@@ -181,7 +181,7 @@ func _director(out: Array, stage_key: String) -> void:
+ 	var cap := Battle.new(4303, "durvall", stage_key)
+ 	cap.map_size = Vector2(60, 60)
+ 	cap.hero.map_size = cap.map_size
+-	cap.hero.pos = Vector2(30, 45)
++	cap.hero.pos = TerrainLayout.root_point(cap.root_layout.arrival) if TerrainLayout.has_roots(stage_key) else Vector2(30,45)
+ 	cap.time = 240.0
+ 	for i in int(cap.stage.cap) - 1:
+ 		cap.spawn_for_test("cultista_adaga", Vector2(30, 30) if stage_key == "reino_abissal" else Vector2(10,10))
+@@ -197,8 +197,8 @@ func _geometry(out: Array, stage_key: String) -> void:
+ 	var scene: PackedScene = load("res://ui/stages/%s.tscn" % stage_key)
+ 	var stage := scene.instantiate()
+ 	var ground: Node2D = stage.get_node("Ground")
+-	var start := Iso.to_ground(stage.get_node("Sorted/Hero").position)
+-	if Vector2(ground.map_size) != Vector2(60, 60) or start != Vector2(30, 45):
++	var start := TerrainLayout.root_point(TerrainLayout.root_definition(stage_key).arrival) if TerrainLayout.has_roots(stage_key) else Iso.to_ground(stage.get_node("Sorted/Hero").position)
++	if Vector2(ground.map_size) != Vector2(60, 60) or start != (Vector2(30,54) if stage_key == "reino_abissal" else Vector2(30,45)):
+ 		out.append("cena deve ter 60×60 e entrada do contrato")
+ 	var sorted: Node2D = stage.get_node("Sorted")
+ 	Scenery.apply(sorted, stage_key, start, Vector2(60, 60))
+@@ -223,13 +223,27 @@ func _geometry(out: Array, stage_key: String) -> void:
+ 	# Test actual prop-expanded collision geometry through the production reach grid.
+ 	b.hero.terrain_id = stage_key
+ 	var reach := b._reach_grid()
+-	for destination in [Vector2(30,15), Vector2(15,30), Vector2(45,30), Vector2(15,15), Vector2(45,45)]:
++	var destinations: Array = []
++	if TerrainLayout.has_roots(stage_key):
++		for node: Array in b.root_layout.nodes.values():
++			destinations.append(TerrainLayout.root_point(node))
++		destinations.append(b.objective_target())
++	else:
++		destinations=[Vector2(30,15),Vector2(15,30),Vector2(45,30),Vector2(15,15),Vector2(45,45)]
++	for destination: Vector2 in destinations:
+ 		if not b._reach_has(reach, destination):
+ 			out.append("destino inacessível pela geometria real: %s" % destination)
+-	for x in (range(28, 33) if stage_key == "reino_abissal" else range(27, 34)):
+-		for y in (range(15, 46) if stage_key == "reino_abissal" else range(11, 52)):
+-			if not b.hero.can_stand(Vector2(x, y), 0.4):
+-				out.append("eixo central deve ter seis unidades livres")
++	if TerrainLayout.has_roots(stage_key):
++		for edge: Array in b.root_layout.edges:
++			var a := TerrainLayout.root_point(b.root_layout.nodes[edge[0]])
++			var z := TerrainLayout.root_point(b.root_layout.nodes[edge[1]])
++			if b.hero.sweep(a,z-a,0.4).distance_to(z)>0.01 or b.hero.sweep(z,a-z,0.4).distance_to(a)>0.01:
++				out.append("conexao da espiral bloqueada pela geometria real")
++	else:
++		for x in range(27,34):
++			for y in range(11,52):
++				if not b.hero.can_stand(Vector2(x,y),0.4):
++					out.append("eixo central deve ter seis unidades livres")
+ 	if stage_key == "domwieck":
+ 		for side_x in [15,45]:
+ 			for x in range(side_x - 2, side_x + 3):
+@@ -240,12 +254,12 @@ func _geometry(out: Array, stage_key: String) -> void:
+ 			for blocker in b.hero.blockers:
+ 				if plaza.distance_to(Vector2(blocker.x,blocker.y)) < 6.0 + float(blocker.z):
+ 					out.append("Domwieck: prop invade bolsão de combate")
+-	var spawn_origins := [Vector2(15,15),Vector2(45,45),Vector2(15,45),start,Vector2(45,30)] if stage_key == "reino_abissal" else [Vector2(1,1),Vector2(59,59),Vector2(1,59),start,Vector2(52,36)]
++	var spawn_origins: Array = destinations if stage_key == "reino_abissal" else [Vector2(1,1),Vector2(59,59),Vector2(1,59),start,Vector2(52,36)]
+ 	for pos in spawn_origins:
+ 		b.hero.pos = pos
+ 		for i in 16:
+ 			var spawn := b._ring_pos()
+-			if not b.hero.can_stand(spawn, 0.4) or spawn.distance_to(Vector2(30,45)) < 6.4 or spawn.distance_to(pos) < 8.0 or spawn.x < 1.0 or spawn.y < 1.0 or spawn.x > 59.0 or spawn.y > 59.0:
++			if not b.hero.can_stand(spawn, 0.4) or spawn.distance_to(start) < 6.4 or spawn.distance_to(pos) < 8.0 or spawn.x < 1.0 or spawn.y < 1.0 or spawn.x > 59.0 or spawn.y > 59.0:
+ 				out.append("spawn de onda inválido perto de borda/obstáculo")
+ 	stage.free()
+ 	TerrainLayout.scale = old_scale

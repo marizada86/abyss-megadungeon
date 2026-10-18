@@ -1,0 +1,27 @@
+{
+  "status": "LOCAL_CANDIDATE_PENDING_APPLICATION_OWNER_APPROVAL",
+  "origin": "D:/dev/nottgard/games/godot/nottgard-survivors",
+  "destination": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\path-revision-20261017\\origin-candidate",
+  "changed": [
+    "core/root_path_generator.gd",
+    "core/terrain_layout.gd",
+    "ui/shaders/yggdrasil_root_art.gdshader"
+  ],
+  "predecessor_pc_dependencies": [
+    "core/enemy.gd",
+    "ui/stages/raiz_yggdrasil.tscn",
+    "data/prototype_stages.json",
+    "data/root_art.json",
+    "ui/shaders/abyss_roots.gdshader",
+    "assets/tiles/yggdrasil_r1",
+    "assets/tiles/reino_abissal_roots_r1",
+    ".atena/generated/yggdrasil-art-20261017/kit-r1/manifest.json",
+    ".atena/generated/root-art-20261017/kit-r1/manifest.json",
+    "core/chapter_flow.gd",
+    "tools/run_one_test.gd",
+    "tests/test_root_art.gd"
+  ],
+  "real_origin_modified": false,
+  "stage": "S-PATH-004",
+  "predecessor": "s003-build.json"
+}

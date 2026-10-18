@@ -314,26 +314,50 @@ static func root_point(raw: Array) -> Vector2:
 
 ## A complete disk must fit in one supporting primitive. This conservative
 ## erosion never admits a footprint into void at a concave junction.
-static func root_supports(p: Vector2, radius: float = 0.0, stage_id: String = "reino_abissal") -> bool:
-	var d := root_definition(stage_id)
+static func root_supports(p: Vector2, radius: float = 0.0, stage_id: String = "reino_abissal", definition: Dictionary = {}) -> bool:
+	var d := root_definition(stage_id) if definition.is_empty() else definition
 	if d.is_empty():
 		return false
-	for node: Array in d.nodes.values():
-		if p.distance_to(root_point(node)) <= float(node[2]) - radius:
-			return true
-	var default_half_width := float(d.width) * 0.5 - radius
-	for edge: Array in d.edges:
-		var half_width := float(edge[2]) * 0.5 - radius if edge.size() > 2 else default_half_width
-		if half_width < 0.0:
+	if not d.has("_support_cells"):
+		_index_root_support(d)
+	var cell := int(floor(p.x)) + 64 * int(floor(p.y))
+	for primitive: Array in d._support_cells.get(cell, []):
+		var margin := float(primitive[2]) - radius
+		if margin < 0.0:
 			continue
-		var a := root_point(d.nodes[edge[0]])
-		var b := root_point(d.nodes[edge[1]])
-		if p.distance_to(Geometry2D.get_closest_point_to_segment(p, a, b)) <= half_width:
+		var a: Vector2 = primitive[0]
+		var b: Vector2 = primitive[1]
+		var center := a if a == b else Geometry2D.get_closest_point_to_segment(p,a,b)
+		if p.distance_to(center) <= margin:
 			return true
 	return false
 
-static func root_nearest(p: Vector2, radius: float, stage_id: String = "reino_abissal") -> Vector2:
-	var d := root_definition(stage_id)
+static func _index_root_support(d: Dictionary) -> void:
+	# Immutable geometry, derived index owned by the same definition/battle.
+	# Only primitives whose un-eroded bounds contain this cell can support a body.
+	var cells: Dictionary = {}
+	var primitives: Array = []
+	for node: Array in d.nodes.values():
+		var p := root_point(node)
+		primitives.append([p,p,float(node[2])])
+	for edge: Array in d.edges:
+		primitives.append([root_point(d.nodes[edge[0]]),root_point(d.nodes[edge[1]]),root_edge_width(d,edge)*0.5])
+	for primitive: Array in primitives:
+		var a: Vector2 = primitive[0]
+		var b: Vector2 = primitive[1]
+		var radius := float(primitive[2])
+		var lo := a.min(b)-Vector2.ONE*radius
+		var hi := a.max(b)+Vector2.ONE*radius
+		for y in range(int(floor(lo.y)),int(floor(hi.y))+1):
+			for x in range(int(floor(lo.x)),int(floor(hi.x))+1):
+				var key := x + 64*y
+				if not cells.has(key):
+					cells[key] = []
+				cells[key].append(primitive)
+	d._support_cells = cells
+
+static func root_nearest(p: Vector2, radius: float, stage_id: String = "reino_abissal", definition: Dictionary = {}) -> Vector2:
+	var d := root_definition(stage_id) if definition.is_empty() else definition
 	if d.is_empty():
 		return Vector2.INF
 	var best := Vector2.INF

@@ -1,0 +1,122 @@
+{
+  "status": "S_PATH_002_TECHNICAL_PASS",
+  "pc": {
+    "session": ".atena/generated/path-revision-20261017/s002-20261018-013814-666",
+    "tests": [
+      "test_scripts_compile",
+      "test_yggdrasil_navigation",
+      "test_yggdrasil_map",
+      "test_yggdrasil_art",
+      "test_root_navigation",
+      "test_root_art",
+      "test_terrain"
+    ]
+  },
+  "origin_candidate": {
+    "sessions": [
+      ".atena/generated/path-revision-20261017/s002-20261018-013804-046",
+      ".atena/generated/path-revision-20261017/s002-20261018-014136-167"
+    ],
+    "tests": [
+      "test_scripts_compile",
+      "test_yggdrasil_navigation",
+      "test_yggdrasil_map",
+      "test_yggdrasil_art",
+      "test_root_navigation",
+      "test_root_art",
+      "test_terrain"
+    ],
+    "predecessor_dependencies": [
+      "core/enemy.gd",
+      "ui/stages/raiz_yggdrasil.tscn",
+      "data/prototype_stages.json",
+      "data/root_art.json",
+      "ui/shaders/abyss_roots.gdshader",
+      "assets/tiles/yggdrasil_r1",
+      "assets/tiles/reino_abissal_roots_r1",
+      ".atena/generated/yggdrasil-art-20261017/kit-r1/manifest.json",
+      ".atena/generated/root-art-20261017/kit-r1/manifest.json",
+      "core/chapter_flow.gd",
+      "tools/run_one_test.gd",
+      "tests/test_root_art.gd"
+    ],
+    "real_origin_modified": false,
+    "release_certification": false
+  },
+  "seeds": {
+    "count": 128,
+    "unique": 128,
+    "fallbacks": 0,
+    "radii": [
+      0.3,
+      0.4,
+      0.8,
+      1.2
+    ],
+    "real_ai_grids_checked": true
+  },
+  "render": {
+    "session": ".atena/generated/path-revision-20261017/s002-20261018-014104-891",
+    "captures": [
+      "yggdrasil-7502-1280x720-overview.png",
+      "yggdrasil-7502-1920x1080-overview.png",
+      "yggdrasil-7502-combat40.png",
+      "yggdrasil-7503-1280x720-overview.png",
+      "yggdrasil-7503-1920x1080-overview.png",
+      "yggdrasil-7504-1280x720-overview.png",
+      "yggdrasil-7504-1920x1080-overview.png"
+    ],
+    "failures": [],
+    "harness_only": "Camera/HP/frozen process changes are capture fixtures; not human playtest",
+    "receipts": [
+      {
+        "generation": {
+          "attempts": 1,
+          "fallback": false,
+          "seed": 7502,
+          "version": "path-r1-lcg32"
+        },
+        "interior_mismatches": 0,
+        "mask_samples": 32385,
+        "seed": 7502
+      },
+      {
+        "generation": {
+          "attempts": 1,
+          "fallback": false,
+          "seed": 7503,
+          "version": "path-r1-lcg32"
+        },
+        "interior_mismatches": 0,
+        "mask_samples": 32385,
+        "seed": 7503
+      },
+      {
+        "generation": {
+          "attempts": 1,
+          "fallback": false,
+          "seed": 7504,
+          "version": "path-r1-lcg32"
+        },
+        "interior_mismatches": 0,
+        "mask_samples": 32385,
+        "seed": 7504
+      }
+    ],
+    "inspection": "Overview seeds7502/7503/7504 and combat40 inspected; not human acceptance"
+  },
+  "independent_js_godot_parity_seeds": [
+    7502,
+    7503,
+    7504
+  ],
+  "build": ".atena/generated/path-revision-20261017/s002-build.json",
+  "used_paths": 14,
+  "total_budget": 17,
+  "metadata": [
+    "core/root_path_generator.gd.uid"
+  ],
+  "performance_acceptance": "DEFERRED_TO_AUTHORIZED_S_PATH_004",
+  "human_playtest": "PENDING_S_PATH_005",
+  "abyss": "UNCHANGED_UNTIL_S_PATH_003"
+}

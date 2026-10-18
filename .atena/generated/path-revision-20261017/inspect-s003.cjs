@@ -1,0 +1,1 @@
+const fs=require('fs');const base='.atena/generated/path-revision-20261017';for(const d of fs.readdirSync(base).filter(p=>p.startsWith('s003-')).sort()){for(const name of ['harness-errors.log','render-result.json','simulation-result.json']){const file=base+'/'+d+'/'+name;if(fs.existsSync(file))console.log(file+'\n'+fs.readFileSync(file,'utf8').slice(-3500))}}

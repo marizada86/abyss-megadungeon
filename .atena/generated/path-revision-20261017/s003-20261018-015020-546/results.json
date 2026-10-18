@@ -1,0 +1,34 @@
+﻿{
+    "user_dir":  "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s003-20261018-015020-546/a/Godot/app_userdata/Nottgard Survivors",
+    "target":  ".atena/generated/path-revision-20261017/origin-candidate",
+    "results":  [
+                    {
+                        "test":  "test_scripts_compile",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_yggdrasil_navigation",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_yggdrasil_map",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_yggdrasil_art",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_root_navigation",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_root_art",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_terrain",
+                        "passed":  true
+                    }
+                ]
+}

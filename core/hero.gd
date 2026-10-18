@@ -46,6 +46,7 @@ var push := Vector2.ZERO  # empurrão externo (tiles/s)
 var hit_flash := 0.0
 ## Efeitos exclusivos da run no Estige. Nunca alteram a ficha persistente.
 var terrain_id := ""
+var root_layout: Dictionary = {}
 var styx_lucidity_loss := 0
 var styx_forget_t := 0.0
 
@@ -227,7 +228,7 @@ func can_stand(p: Vector2, r: float = RADIUS, air: bool = false) -> bool:
 	if p.x < r or p.y < r or p.x > map_size.x - r or p.y > map_size.y - r:
 		return false
 	if TerrainLayout.has_roots(terrain_id):
-		if not air and not TerrainLayout.root_supports(p, r, terrain_id):
+		if not air and not TerrainLayout.root_supports(p, r, terrain_id, root_layout if root_layout.get("stage_id", terrain_id) == terrain_id else {}):
 			return false
 	elif TerrainLayout.is_blocked(terrain_id, p):
 		return false

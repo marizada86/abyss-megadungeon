@@ -1,0 +1,246 @@
+{
+  "status": "LOCAL_CANDIDATE_TESTED_PENDING_APPLICATION_OWNER_APPROVAL",
+  "origin": "D:/dev/nottgard/games/godot/nottgard-survivors",
+  "destination": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\path-revision-20261017\\origin-candidate",
+  "changed": [
+    "core/root_path_generator.gd",
+    "core/terrain_layout.gd",
+    "ui/shaders/yggdrasil_root_art.gdshader"
+  ],
+  "predecessor_pc_dependencies": [
+    "core/enemy.gd",
+    "ui/stages/raiz_yggdrasil.tscn",
+    "data/prototype_stages.json",
+    "data/root_art.json",
+    "ui/shaders/abyss_roots.gdshader",
+    "assets/tiles/yggdrasil_r1",
+    "assets/tiles/reino_abissal_roots_r1",
+    ".atena/generated/yggdrasil-art-20261017/kit-r1/manifest.json",
+    ".atena/generated/root-art-20261017/kit-r1/manifest.json",
+    "core/chapter_flow.gd",
+    "tools/run_one_test.gd",
+    "tests/test_root_art.gd"
+  ],
+  "real_origin_modified": false,
+  "stage": "S-PATH-004",
+  "predecessor": "s003-build.json",
+  "revision": "r2",
+  "files": [
+    {
+      "path": "data/root_navigation.json",
+      "sha256": "41251940151e83ed90960bc185eaeace4fc94bf32e25401b1b6c1d107852bc17"
+    },
+    {
+      "path": "core/root_path_generator.gd",
+      "sha256": "71eeef7ac2dedc4ab57359cd45b678bbe64f8a9828b39489d8150fe227751df9"
+    },
+    {
+      "path": "core/terrain_layout.gd",
+      "sha256": "a1f31a89e0494f9fb75f976b20cdcecc16d9d27c5d0eeefe6c703b18e140ae28"
+    },
+    {
+      "path": "core/hero.gd",
+      "sha256": "a1066f56d2701a66f2fd965ad2c06c061a1d5e2348706ab309c3dcf979caef91"
+    },
+    {
+      "path": "core/battle.gd",
+      "sha256": "e4d8348a03ec0bb64942a4029eefcbc295ec5384a613d5964360debeb53e7248"
+    },
+    {
+      "path": "ui/run.gd",
+      "sha256": "999f9e37b59dfae2047d854f141339e114908fd03eafbc67b4a5da511a4b1da9"
+    },
+    {
+      "path": "ui/ground.gd",
+      "sha256": "93782b02a349cb19c9beac28648a2afdfbea5c20e94207687a620beb652b396a"
+    },
+    {
+      "path": "ui/yggdrasil_art.gd",
+      "sha256": "ea855565d35eeb900ccd0739d865de01399aa4db6f9e8ce5073fb1ba410a5bc2"
+    },
+    {
+      "path": "ui/shaders/yggdrasil_root_art.gdshader",
+      "sha256": "0ed15203e7dea750d0bf67f9dc3146bc4202c70b383be0ce01338569465ccf6d"
+    },
+    {
+      "path": "ui/shaders/abyss_roots.gdshader",
+      "sha256": "9bba87265bb725149902c07363bbfe43313c87baf84c9bc009adf3cea6799619"
+    },
+    {
+      "path": "data/yggdrasil_art.json",
+      "sha256": "b1b1bcfec74fee9f26a01b0c21abf99e6922d6beb04b963ed7d3f5f71f0611af"
+    },
+    {
+      "path": "data/prototype_stages.json",
+      "sha256": "caa9a35a9d3f5c5c4154e17c6dce8649a0e952720465495c8e8244a64366d349"
+    },
+    {
+      "path": "tests/test_yggdrasil_navigation.gd",
+      "sha256": "0a055fd080cc048a6353ce0218417118360efdf4f5a9d0c01441e906198e905f"
+    },
+    {
+      "path": "tests/test_yggdrasil_art.gd",
+      "sha256": "856f60a60cfee3c1a52ddf98caf19bd2033921d4f45bb1dbf940f85758c629bf"
+    },
+    {
+      "path": "tests/test_root_navigation.gd",
+      "sha256": "f3b19075839cb7c61763b565bd7165fa4578c01349223ab2bb3614fb4923da34"
+    },
+    {
+      "path": "tests/test_root_art.gd",
+      "sha256": "4ec252435bcae4c5ab02133f49606d58dd9b1a4369c83cba7b945bd3fbe91a29"
+    },
+    {
+      "path": "tests/test_yggdrasil_map.gd",
+      "sha256": "0d2a21ca445158bc4ba24c3546b795713c3ccb3ec4f8adffad336fdd5b4a3850"
+    },
+    {
+      "path": "tests/test_map_objectives.gd",
+      "sha256": "4e9fcd979c35fb50e14bbf98fee1613ac9313c1e00b20ffb732083cb0ad638ab"
+    }
+  ],
+  "fixtures": [
+    {
+      "path": "data/stages.json",
+      "admitted_blocks": [
+        "reino_abissal",
+        "domwieck"
+      ],
+      "before_sha256": "31180d1f126cfd1a8b274fb68c8c35733199c801ce074ddc1da0d7f2d2b88594",
+      "after_sha256": "22d4fca2a20c2e6bf018185ee081b2d76bd6ab857e064cd6bf83a31cf9618952",
+      "pc_sha256": "38bcfe431893a11c8972b3439e513185e41c4a3c9906ae7d9dcaf304c39dad7b",
+      "scope": "SYNTHETIC_CANDIDATE_ONLY"
+    },
+    {
+      "path": "data/scenery.json",
+      "admitted_blocks": [],
+      "before_sha256": "80e9e7eeb2d3dfd19cd4fba23589f720dcfbf498b6265d25254d24b477fc5051",
+      "after_sha256": "80e9e7eeb2d3dfd19cd4fba23589f720dcfbf498b6265d25254d24b477fc5051",
+      "pc_sha256": "80e9e7eeb2d3dfd19cd4fba23589f720dcfbf498b6265d25254d24b477fc5051",
+      "scope": "SYNTHETIC_CANDIDATE_ONLY"
+    },
+    {
+      "path": "data/level_design.json",
+      "admitted_blocks": [
+        "reino_abissal",
+        "domwieck"
+      ],
+      "before_sha256": "ce5356dd33300e248108cd876045011bb35452a6b1d2edab23f676cea9ae69b4",
+      "after_sha256": "9d694f997795c625145256f9c2f9a62b991948dc729a8e12f14eb3a0d4398a89",
+      "pc_sha256": "9bf228a7f08956f66d2685b9f55cbe32b9a6dc086c1b284fa60352b4ea0dd4e0",
+      "scope": "SYNTHETIC_CANDIDATE_ONLY"
+    }
+  ],
+  "additional_predecessor_pc_dependencies": [
+    {
+      "path": "ui/stages/reino_abissal.tscn",
+      "before_sha256": null,
+      "pc_sha256": "2975537a0666bf0b88ca90f3e4a686f9305f3ce3d2674babd8a71f3b2171ba7e",
+      "purpose": "Existing PC scene dependency for native objective geometry test, synthetic candidate only"
+    },
+    {
+      "path": "ui/stages/domwieck.tscn",
+      "before_sha256": null,
+      "pc_sha256": "29161ceb21de12b5f5b589f5d4ca100b9455c90aed188efbdaa307ff60f4c296",
+      "purpose": "Existing PC scene dependency for native objective geometry test, synthetic candidate only"
+    },
+    {
+      "path": "ui/domwieck_art.gd",
+      "before_sha256": null,
+      "pc_sha256": "421dfa6546c4f5bbbc817a61bde01c7aa151518576ff09f0b5551dfa27467708",
+      "purpose": "Existing PC scene dependency for native objective geometry test, synthetic candidate only"
+    }
+  ],
+  "objective_test_pc_session": ".atena/generated/path-revision-20261017/s004-20261018-022041-748",
+  "objective_test_candidate_session": ".atena/generated/path-revision-20261017/s004-20261018-022325-716",
+  "seven_suite_candidate_session": ".atena/generated/path-revision-20261017/s004-20261018-022418-066",
+  "real_origin_audit": [
+    {
+      "path": "data/root_navigation.json",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "core/root_path_generator.gd",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "core/terrain_layout.gd",
+      "baseline": "294262489d02de2a2e2463d4ae816121bcbded01468c32f3ea505d17ee2792c9",
+      "current": "294262489d02de2a2e2463d4ae816121bcbded01468c32f3ea505d17ee2792c9"
+    },
+    {
+      "path": "core/hero.gd",
+      "baseline": "07e22df00d69b2d0d2f462c772de2bf8716e6ddd7f411e81646a18822c98abfa",
+      "current": "07e22df00d69b2d0d2f462c772de2bf8716e6ddd7f411e81646a18822c98abfa"
+    },
+    {
+      "path": "core/battle.gd",
+      "baseline": "f51a2c41c7325cf30e3dd61619b06e6197100c232128a5e522f2f8ff429a6884",
+      "current": "f51a2c41c7325cf30e3dd61619b06e6197100c232128a5e522f2f8ff429a6884"
+    },
+    {
+      "path": "ui/run.gd",
+      "baseline": "c7c8c1bcd44fdb1ca01fca3f8fcacbdf9ed1535b3167ea588d677f05c9c982de",
+      "current": "c7c8c1bcd44fdb1ca01fca3f8fcacbdf9ed1535b3167ea588d677f05c9c982de"
+    },
+    {
+      "path": "ui/ground.gd",
+      "baseline": "2788c2cff3dfe43743502d5c0cfb6cf9e4fabf82ed5a7914ba38d1f46b240a1e",
+      "current": "2788c2cff3dfe43743502d5c0cfb6cf9e4fabf82ed5a7914ba38d1f46b240a1e"
+    },
+    {
+      "path": "ui/yggdrasil_art.gd",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "ui/shaders/yggdrasil_root_art.gdshader",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "ui/shaders/abyss_roots.gdshader",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "data/yggdrasil_art.json",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "data/prototype_stages.json",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "tests/test_yggdrasil_navigation.gd",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "tests/test_yggdrasil_art.gd",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "tests/test_root_navigation.gd",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "tests/test_root_art.gd",
+      "baseline": null,
+      "current": null
+    },
+    {
+      "path": "tests/test_yggdrasil_map.gd",
+      "baseline": null,
+      "current": null
+    }
+  ],
+  "real_origin_test_sha256": null,
+  "release_certification": false
+}

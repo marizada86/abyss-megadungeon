@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "relative_links_checked": 8,
+  "build_hashes_verified": 18,
+  "pc_suites": "12/12",
+  "candidate_suites": "7 renewed + native objective",
+  "performance": "PASS_REUSED_HASH_VERIFIED",
+  "checkpoint": "CP-PATH-005",
+  "human_playtest_opened": false
+}

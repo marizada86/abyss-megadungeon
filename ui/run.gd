@@ -89,6 +89,11 @@ func _ready() -> void:
 	_setup_encounter_overlays()
 	_load_stage()
 	if Game.qa_sandbox:
+		if battle.stage_id == "raiz_yggdrasil":
+			var geometry_receipt := FileAccess.open(Game._save_path.get_base_dir().path_join("root-geometry.json"), FileAccess.WRITE)
+			if geometry_receipt != null:
+				geometry_receipt.store_string(JSON.stringify({"stage_id":battle.stage_id,"generation":battle.root_layout.generation,"nodes":battle.root_layout.nodes,"edges":battle.root_layout.edges},"\t"))
+				geometry_receipt.close()
 		battle.qa_prepare(Game.qa_launch)
 	var stats_ctx := Game.battle_ctx()
 	stats_ctx.task_id = String(Game.profile.data.settings.get("playtest_task", "general"))
@@ -123,6 +128,46 @@ func playtest_context() -> Dictionary:
 
 # ------------------------------------------------------------------ fase
 
+func _clip_root_decals(decals: Node2D) -> void:
+	# Legacy decal anchors may fall outside the redesigned roots. Preserve the
+	# approved textures while clipping their pixels to the exact supporting top.
+	var shader := Shader.new()
+	shader.code = """shader_type canvas_item;
+uniform vec3 nodes[32]; uniform vec4 edges[32]; uniform float widths[32];
+uniform int node_count; uniform int edge_count; varying vec2 ground;
+void vertex(){ground=vec2(VERTEX.x/64.0+VERTEX.y/32.0,VERTEX.y/32.0-VERTEX.x/64.0);}
+void fragment(){
+ float d=10000.0;
+ for(int i=0;i<node_count;i++){d=min(d,length(ground-nodes[i].xy)-nodes[i].z);}
+ for(int i=0;i<edge_count;i++){
+  vec4 e=edges[i];vec2 ab=e.zw-e.xy;
+  vec2 p=e.xy+ab*clamp(dot(ground-e.xy,ab)/dot(ab,ab),0.0,1.0);
+  d=min(d,length(ground-p)-widths[i]);
+ }
+ COLOR.a*=d<=0.0?1.0:0.0;
+}"""
+	var mat := ShaderMaterial.new()
+	mat.shader = shader
+	var nodes := PackedVector3Array()
+	var edges := PackedVector4Array()
+	var widths := PackedFloat32Array()
+	for n: Array in battle.root_layout.nodes.values():
+		nodes.append(Vector3(float(n[0]),float(n[1]),float(n[2])))
+	for e: Array in battle.root_layout.edges:
+		var a := TerrainLayout.root_point(battle.root_layout.nodes[e[0]])
+		var b := TerrainLayout.root_point(battle.root_layout.nodes[e[1]])
+		edges.append(Vector4(a.x,a.y,b.x,b.y))
+		widths.append(TerrainLayout.root_edge_width(battle.root_layout,e)*0.5)
+	mat.set_shader_parameter("node_count",nodes.size())
+	mat.set_shader_parameter("edge_count",edges.size())
+	nodes.resize(32)
+	edges.resize(32)
+	widths.resize(32)
+	mat.set_shader_parameter("nodes",nodes)
+	mat.set_shader_parameter("edges",edges)
+	mat.set_shader_parameter("widths",widths)
+	decals.material = mat
+
 func _load_stage() -> void:
 	for n in enemy_nodes.values():
 		n.queue_free()
@@ -132,6 +177,12 @@ func _load_stage() -> void:
 	var scene_path := "res://ui/stages/dagruve_thalion_qa.tscn" if battle.is_dagruve_encounter() else "res://ui/stages/%s.tscn" % battle.stage_id
 	var scene: PackedScene = load(scene_path)
 	stage_root = scene.instantiate()
+	if TerrainLayout.has_roots(battle.stage_id):
+		stage_root.get_node("Ground").root_layout = battle.root_layout
+		var art := stage_root.get_node_or_null("YggdrasilArt")
+		if art != null:
+			art.root_layout = battle.root_layout
+		stage_root.get_node("Sorted/Hero").position = Iso.to_screen(TerrainLayout.root_point(battle.root_layout.arrival))
 	slot.add_child(stage_root)
 	sorted = stage_root.get_node("Sorted")
 	hero_node = sorted.get_node("Hero")
@@ -143,6 +194,8 @@ func _load_stage() -> void:
 	decals.visual_seed = int(ground.get("visual_seed"))
 	# Somente assets oficiais estão no manifesto; Docas permanece sem decais.
 	decals.enabled = true
+	if battle.stage_id == "reino_abissal":
+		_clip_root_decals(decals)
 	stage_root.add_child(decals)
 	var msize := Vector2(ground.map_size)
 	_edge_fog = EdgeFog.new()   # SPEC-158: faixa de névoa junto às bordas do mapa

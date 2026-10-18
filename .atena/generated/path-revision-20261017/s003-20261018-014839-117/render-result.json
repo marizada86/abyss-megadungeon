@@ -1,0 +1,17 @@
+{
+	"captures": [
+		"abyss-7202-1280x720-overview.png",
+		"abyss-7202-1920x1080-overview.png",
+		"abyss-7502-combat40.png"
+	],
+	"failures": [],
+	"harness_only": "Camera/HP/frozen process changes are capture fixtures; not human playtest",
+	"receipts": [
+		{
+			"interior_mismatches": 0,
+			"mask_samples": 32385,
+			"revision": "r3",
+			"seed": 7202
+		}
+	]
+}

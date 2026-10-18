@@ -1,0 +1,37 @@
+{
+  "status": "LOCAL_CANDIDATE_PENDING_APPLICATION_OWNER_APPROVAL",
+  "origin": "D:/dev/nottgard/games/godot/nottgard-survivors",
+  "destination": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\path-revision-20261017\\origin-candidate",
+  "origin_modified": false,
+  "changed": [
+    "data/root_navigation.json",
+    "core/root_path_generator.gd",
+    "core/terrain_layout.gd",
+    "core/hero.gd",
+    "core/battle.gd",
+    "ui/run.gd",
+    "ui/ground.gd",
+    "ui/yggdrasil_art.gd",
+    "ui/shaders/yggdrasil_root_art.gdshader",
+    "data/yggdrasil_art.json",
+    "tests/test_yggdrasil_navigation.gd",
+    "tests/test_yggdrasil_art.gd",
+    "tests/test_root_navigation.gd",
+    "tests/test_yggdrasil_map.gd"
+  ],
+  "predecessor_pc_dependencies": [
+    "core/enemy.gd",
+    "ui/stages/raiz_yggdrasil.tscn",
+    "data/prototype_stages.json",
+    "data/root_art.json",
+    "ui/shaders/abyss_roots.gdshader",
+    "assets/tiles/yggdrasil_r1",
+    "assets/tiles/reino_abissal_roots_r1",
+    ".atena/generated/yggdrasil-art-20261017/kit-r1/manifest.json",
+    ".atena/generated/root-art-20261017/kit-r1/manifest.json",
+    "core/chapter_flow.gd",
+    "tools/run_one_test.gd",
+    "tests/test_root_art.gd"
+  ],
+  "limit": "PC root prototype prerequisites absent in origin; explicit candidate dependencies, not a full origin release certification"
+}

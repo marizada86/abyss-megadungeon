@@ -1,0 +1,1 @@
+const fs=require('fs');console.log(fs.readFileSync('tests/test_yggdrasil_map.gd','utf8').split('\n').slice(100,180).join('\n'));console.log(fs.readFileSync('core/battle.gd','utf8').split('\n').slice(405,470).join('\n'));

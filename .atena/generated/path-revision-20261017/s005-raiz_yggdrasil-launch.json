@@ -1,0 +1,23 @@
+﻿{
+    "ready":  {
+                  "hero_position":  [
+                                        30.0,
+                                        48.0
+                                    ],
+                  "human_acceptance":  "PENDING",
+                  "map":  "raiz_yggdrasil",
+                  "paused":  true,
+                  "sandbox":  true,
+                  "save_path":  "user://qa-sandbox/qa-20261017T232820/profile.json",
+                  "seed":  7502,
+                  "user_data_dir":  "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-raiz_yggdrasil-20261018-022808-657/appdata/Godot/app_userdata/Nottgard Survivors"
+              },
+    "session":  "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\path-revision-20261017\\s005-raiz_yggdrasil-20261018-022808-657",
+    "window_handle":  723554,
+    "profile":  "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\path-revision-20261017\\s005-raiz_yggdrasil-20261018-022808-657\\synthetic-profile.json",
+    "map":  "raiz_yggdrasil",
+    "pid":  18540,
+    "status":  "OPEN_PAUSED_AWAITING_OWNER_FEEDBACK",
+    "human_acceptance":  "PENDING",
+    "user_dir":  "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-raiz_yggdrasil-20261018-022808-657/appdata/Godot/app_userdata/Nottgard Survivors"
+}

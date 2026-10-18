@@ -1,0 +1,57 @@
+{
+  "status": "PARTIAL_AWAITING_R2_18TH_TEST_FILE_APPROVAL",
+  "completed_steps": 3,
+  "total_steps": 5,
+  "current_step": "S-PATH-004",
+  "suites": {
+    "passed": 11,
+    "total": 12,
+    "pc_session": ".atena/generated/path-revision-20261017/s004-20261018-021014-969",
+    "passed_names": [
+      "test_scripts_compile",
+      "test_yggdrasil_navigation",
+      "test_yggdrasil_map",
+      "test_yggdrasil_art",
+      "test_root_navigation",
+      "test_root_art",
+      "test_terrain",
+      "test_qa_sandbox",
+      "test_battle",
+      "test_level_design",
+      "test_reach_grid"
+    ],
+    "pending": "test_map_objectives",
+    "failure_log": ".atena/generated/path-revision-20261017/s004-20261018-015810-556/test_map_objectives.log",
+    "reason": "Old arrival/destinations/central corridor/spawn geometry expectations; no waiver"
+  },
+  "origin_candidate": {
+    "session": ".atena/generated/path-revision-20261017/s004-20261018-021028-537",
+    "passed_suites": 7,
+    "real_origin_modified": false,
+    "release_certification": false
+  },
+  "performance": ".atena/generated/path-revision-20261017/s004-performance-comparison.json",
+  "performance_pass": true,
+  "support_parity": {
+    "path": ".atena/generated/path-revision-20261017/s004-20261018-021406-268/parity.json",
+    "cached_base_generation_exercised": true,
+    "checks": 288000,
+    "mismatches": 0,
+    "reference": "Unmodified pre-optimization support implementation; same current geometry"
+  },
+  "render_sessions": [
+    ".atena/generated/path-revision-20261017/s004-20261018-020939-894",
+    ".atena/generated/path-revision-20261017/s004-20261018-021416-497"
+  ],
+  "draft_test_preview": ".atena/generated/path-revision-20261017/s004-20261018-021129-690/r2-preview.json",
+  "preview_is_not_native_suite_acceptance": true,
+  "reused": {
+    "yggdrasil_simulation": "test_yggdrasil_map in current 11-suite run",
+    "abyss_simulation": "s003-20261018-015311-108/simulation-result.json; support parity verifies unchanged physics",
+    "seeds": "128 seeds/128 unique/0 fallbacks in current yggdrasil_navigation"
+  },
+  "build": ".atena/generated/path-revision-20261017/s004-build.json",
+  "scope_adjustment": ".atena/specs/SPEC-NOTTGARD-PATH-REVISION-20261017/validation-adjustment-r2-draft.md",
+  "human_playtest": "PENDING_S_PATH_005_NOT_OPENED",
+  "power_scheme": "Balanced 381b4222-f694-41f0-9685-ff5bb260df2e verified before and after sequential baseline/candidate measurements"
+}

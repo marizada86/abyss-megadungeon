@@ -1,7 +1,7 @@
 ---
 id: SPEC-NOTTGARD-PATH-REVISION-20261017
 revision: r1
-status: DRAFT_AWAITING_DIRECTION_APPROVAL
+status: DIRECTION_APPROVED_CONTRACT_R1_DELIVERED
 origin: planned
 implementation_preceded_spec: false
 classification: PLAN_CHANGE_REQUEST
@@ -51,3 +51,5 @@ Aceitação subjetiva depende de playtest: variedade, orientação, leitura da a
 ## Relação com planos existentes
 
 Novo pedido classificado PLAN_CHANGE_REQUEST dos mapas concluídos, sem reabrir silenciosamente seus aceites antigos. Dagruve S-DAG-005 continua aguardando feedback; nenhuma aprovação inferida. HQ19/HQ20 e demais chats preservados. Antes de execução aprovada, registrar suspensão/cursor de retorno do fluxo Dagruve (CP-DAG-005, 4/5, abertura autorizada, aceite pendente). Nesta fase há apenas proposta documental, sem suspensão executiva nem alteração do jogo.
+
+Direção r1 aprovada e S-PATH-001 autorizada pelo titular. Contrato r1 entregue em contract-r1.md; implementação pendente de aprovação própria.

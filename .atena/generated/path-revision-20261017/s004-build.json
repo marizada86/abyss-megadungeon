@@ -1,0 +1,89 @@
+{
+  "step": "S-PATH-004",
+  "status": "PERFORMANCE_PASS_NATIVE_OBJECTIVE_TEST_PENDING_SCOPE_APPROVAL",
+  "files": [
+    {
+      "path": "data/root_navigation.json",
+      "sha256": "41251940151e83ed90960bc185eaeace4fc94bf32e25401b1b6c1d107852bc17"
+    },
+    {
+      "path": "core/root_path_generator.gd",
+      "sha256": "71eeef7ac2dedc4ab57359cd45b678bbe64f8a9828b39489d8150fe227751df9"
+    },
+    {
+      "path": "core/terrain_layout.gd",
+      "sha256": "a1f31a89e0494f9fb75f976b20cdcecc16d9d27c5d0eeefe6c703b18e140ae28"
+    },
+    {
+      "path": "core/hero.gd",
+      "sha256": "a1066f56d2701a66f2fd965ad2c06c061a1d5e2348706ab309c3dcf979caef91"
+    },
+    {
+      "path": "core/battle.gd",
+      "sha256": "e4d8348a03ec0bb64942a4029eefcbc295ec5384a613d5964360debeb53e7248"
+    },
+    {
+      "path": "ui/run.gd",
+      "sha256": "999f9e37b59dfae2047d854f141339e114908fd03eafbc67b4a5da511a4b1da9"
+    },
+    {
+      "path": "ui/ground.gd",
+      "sha256": "93782b02a349cb19c9beac28648a2afdfbea5c20e94207687a620beb652b396a"
+    },
+    {
+      "path": "ui/yggdrasil_art.gd",
+      "sha256": "ea855565d35eeb900ccd0739d865de01399aa4db6f9e8ce5073fb1ba410a5bc2"
+    },
+    {
+      "path": "ui/shaders/yggdrasil_root_art.gdshader",
+      "sha256": "0ed15203e7dea750d0bf67f9dc3146bc4202c70b383be0ce01338569465ccf6d"
+    },
+    {
+      "path": "ui/shaders/abyss_roots.gdshader",
+      "sha256": "9bba87265bb725149902c07363bbfe43313c87baf84c9bc009adf3cea6799619"
+    },
+    {
+      "path": "data/yggdrasil_art.json",
+      "sha256": "b1b1bcfec74fee9f26a01b0c21abf99e6922d6beb04b963ed7d3f5f71f0611af"
+    },
+    {
+      "path": "data/prototype_stages.json",
+      "sha256": "caa9a35a9d3f5c5c4154e17c6dce8649a0e952720465495c8e8244a64366d349"
+    },
+    {
+      "path": "tests/test_yggdrasil_navigation.gd",
+      "sha256": "0a055fd080cc048a6353ce0218417118360efdf4f5a9d0c01441e906198e905f"
+    },
+    {
+      "path": "tests/test_yggdrasil_art.gd",
+      "sha256": "856f60a60cfee3c1a52ddf98caf19bd2033921d4f45bb1dbf940f85758c629bf"
+    },
+    {
+      "path": "tests/test_root_navigation.gd",
+      "sha256": "f3b19075839cb7c61763b565bd7165fa4578c01349223ab2bb3614fb4923da34"
+    },
+    {
+      "path": "tests/test_root_art.gd",
+      "sha256": "4ec252435bcae4c5ab02133f49606d58dd9b1a4369c83cba7b945bd3fbe91a29"
+    },
+    {
+      "path": "tests/test_yggdrasil_map.gd",
+      "sha256": "0d2a21ca445158bc4ba24c3546b795713c3ccb3ec4f8adffad336fdd5b4a3850"
+    }
+  ],
+  "stage_changed_paths": [
+    "core/root_path_generator.gd",
+    "core/terrain_layout.gd",
+    "ui/shaders/yggdrasil_root_art.gdshader"
+  ],
+  "used_paths": 17,
+  "budget": 17,
+  "metadata": [
+    "core/root_path_generator.gd.uid"
+  ],
+  "pending_18th": {
+    "path": "tests/test_map_objectives.gd",
+    "sha256_unchanged": "d942d1701588377b4940f9f2da037922c15bfe6d03adabdf2799a1a0e3eda87d",
+    "candidate_sha256": "4e9fcd979c35fb50e14bbf98fee1613ac9313c1e00b20ffb732083cb0ad638ab"
+  }
+}

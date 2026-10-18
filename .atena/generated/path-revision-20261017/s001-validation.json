@@ -1,0 +1,14 @@
+{
+  "status": "DOCUMENTARY_PASS",
+  "game_modified": false,
+  "geometry_study": "study-r1.json",
+  "seed_examples": 8,
+  "radii": 4,
+  "connected_examples": true,
+  "distinct_seed_examples": 8,
+  "relative_links_checked": true,
+  "game_test_path_budget": 17,
+  "drawings_inspected": true,
+  "canon_scope": "direction only",
+  "runtime_validation": "NOT_RUN_NOT_IMPLEMENTED"
+}

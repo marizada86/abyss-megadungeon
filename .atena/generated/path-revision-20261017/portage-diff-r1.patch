@@ -1,0 +1,1508 @@
+diff --git a/core/battle.gd b/core/battle.gd
+index a32540f..61a177b 100644
+--- a/core/battle.gd
++++ b/core/battle.gd
+@@ -369,6 +369,15 @@ func load_stage(stage_key: String) -> void:
+ 	hero.styx_lucidity_loss = 0
+ 	hero.styx_forget_t = 0.0
+ 	hero.terrain_id = stage_key
++	root_layout = TerrainLayout.root_definition(stage_key).duplicate(true)
++	if stage_key == "raiz_yggdrasil":
++		root_layout = RootPathGenerator.new().generate(root_layout, _seed)
++	if not root_layout.is_empty():
++		root_layout.stage_id = stage_key
++		if root_layout.has("target") and has_reach_objective():
++			# Campaign and QA catalogues share the authoritative root floor plan.
++			stage.completion.target = root_layout.target.duplicate()
++	hero.root_layout = root_layout
+ 	if is_dagruve_encounter():
+ 		map_size = Vector2(60,60)
+ 		hero.map_size = map_size
+@@ -378,10 +387,10 @@ func load_stage(stage_key: String) -> void:
+ 	if TerrainLayout.has_roots(stage_key):
+ 		map_size = Vector2(60,60)
+ 		hero.map_size = map_size
+-		hero.pos = TerrainLayout.root_point(TerrainLayout.root_definition(stage_id).arrival)
++		hero.pos = TerrainLayout.root_point(root_layout.arrival)
+ 		# Scene props are replaced by ui/run after load_stage; old-stage blockers
+ 		# must not reject this arrival. Current props are checked in geometry QA.
+-		if not TerrainLayout.root_supports(hero.pos, Hero.RADIUS, stage_id):
++		if not TerrainLayout.root_supports(hero.pos, Hero.RADIUS, stage_id, root_layout):
+ 			push_error("Root arrival has no supporting surface; stage aborted")
+ 			hero.dead = true
+ 	if _has_boon_effect("stage_heal"):
+@@ -1389,10 +1398,14 @@ func _detonate_decoy(d: Dictionary) -> void:
+ 
+ ## Move o inimigo deslizando pelos eixos; se quase não saiu do lugar (obstáculo redondo no caminho),
+ ## contorna girando o passo e mantém o lado escolhido até andar livre (BUG-012).
++var root_layout: Dictionary = {}
+ var _root_grids: Dictionary = {}
+ var _root_fields: Dictionary = {}
+ const ROOT_NEIGHBORS := [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.UP, Vector2i.DOWN]
+ 
++func _root_grid_step(radius: float) -> float:
++	return 0.5 if TerrainLayout.has_roots(stage_id) and radius > 0.8 else 1.0
++
+ func _root_grid(radius: float) -> Dictionary:
+ 	var bucket := int(ceil(radius * 10.0))
+ 	var key := "%s|%d|%d|%s" % [stage_id, bucket, hero.blockers.hash(), map_size]
+@@ -1401,14 +1414,16 @@ func _root_grid(radius: float) -> Dictionary:
+ 	var cells: Dictionary = {}
+ 	# Circumscribed half-cell clearance makes every adjacent-cell segment safe,
+ 	# not just its endpoints. Four neighbors cannot cut a diagonal across a void.
+-	for y in int(map_size.y):
+-		for x in int(map_size.x):
+-			if hero.can_stand(Vector2(x + 0.5, y + 0.5), float(bucket) / 10.0 + 0.71):
++	var step := _root_grid_step(radius)
++	for y in int(map_size.y / step):
++		for x in int(map_size.x / step):
++			if hero.can_stand((Vector2(x,y) + Vector2(0.5,0.5)) * step, float(bucket) / 10.0 + 0.71 * step):
+ 				cells[Vector2i(x, y)] = true
+ 	_root_grids[key] = cells
+ 	return cells
+ 
+-func _root_cell(p: Vector2, cells: Dictionary) -> Vector2i:
++func _root_cell(p: Vector2, cells: Dictionary, step: float = 1.0) -> Vector2i:
++	p /= step
+ 	var cell := Vector2i(floor(p.x), floor(p.y))
+ 	if cells.has(cell):
+ 		return cell
+@@ -1437,7 +1452,7 @@ func _root_cell(p: Vector2, cells: Dictionary) -> Vector2i:
+ func _root_field(target: Vector2, radius: float) -> Dictionary:
+ 	var bucket := int(ceil(radius * 10.0))
+ 	var cells := _root_grid(radius)
+-	var goal := _root_cell(target, cells)
++	var goal := _root_cell(target, cells, _root_grid_step(radius))
+ 	var key := "%s|%d|%d|%s|%s" % [stage_id, bucket, hero.blockers.hash(), map_size, goal]
+ 	var cached: Dictionary = _root_fields.get(bucket, {})
+ 	if cached.get("key", "") == key:
+@@ -1466,11 +1481,11 @@ func _root_direction(from: Vector2, target: Vector2, radius: float) -> Vector2:
+ 		return delta.normalized() * minf(1.0, delta.length())
+ 	var bucket := int(ceil(radius * 10.0))
+ 	var cells := _root_grid(radius)
+-	var goal := _root_cell(target, cells)
++	var goal := _root_cell(target, cells, _root_grid_step(radius))
+ 	var key := "%s|%d|%d|%s|%s" % [stage_id, bucket, hero.blockers.hash(), map_size, goal]
+ 	var cached: Dictionary = _root_fields.get(bucket, {})
+ 	var field: Dictionary = cached.field if cached.get("key", "") == key else _root_field(target, radius)
+-	var cell := _root_cell(from, cells)
++	var cell := _root_cell(from, cells, _root_grid_step(radius))
+ 	if not field.has(cell):
+ 		return Vector2.ZERO
+ 	var next := cell
+@@ -1480,28 +1495,28 @@ func _root_direction(from: Vector2, target: Vector2, radius: float) -> Vector2:
+ 		if field.has(neighbor) and int(field[neighbor]) < best:
+ 			next = neighbor
+ 			best = int(field[neighbor])
+-	var waypoint := Vector2(next) + Vector2(0.5, 0.5)
++	var waypoint := (Vector2(next) + Vector2(0.5, 0.5)) * _root_grid_step(radius)
+ 	if best == 0 and hero.sweep(from, delta, radius).distance_to(target) < 0.001:
+ 		waypoint = target
+ 	return (waypoint - from).normalized() * minf(1.0, from.distance_to(waypoint))
+ 
+ func _root_spawn_valid(at: Vector2, radius: float) -> bool:
+-	var definition := TerrainLayout.root_definition(stage_id)
++	var definition := root_layout
+ 	var arrival := TerrainLayout.root_point(definition.get("arrival", [30,45]))
+ 	if not hero.can_stand(at, radius) or at.distance_to(hero.pos) < 8.0 or at.distance_to(arrival) < float(definition.get("arrival_clearance", 6.4)):
+ 		return false
+-	return _root_field(hero.pos, radius).has(_root_cell(at, _root_grid(radius)))
++	return _root_field(hero.pos, radius).has(_root_cell(at, _root_grid(radius), _root_grid_step(radius)))
+ 
+ func _root_resource_spot(at: Vector2, radius: float) -> Vector2:
+ 	if hero.can_stand(at, radius):
+ 		return at
+-	var nearest := TerrainLayout.root_nearest(at, radius, stage_id)
++	var nearest := TerrainLayout.root_nearest(at, radius, stage_id, root_layout)
+ 	if hero.can_stand(nearest, radius):
+ 		return nearest
+ 	var best := Vector2.INF
+ 	var distance := INF
+ 	for cell: Vector2i in _root_grid(radius):
+-		var candidate := Vector2(cell) + Vector2(0.5, 0.5)
++		var candidate := (Vector2(cell) + Vector2(0.5, 0.5)) * _root_grid_step(radius)
+ 		if candidate.distance_squared_to(at) < distance:
+ 			best = candidate
+ 			distance = candidate.distance_squared_to(at)
+@@ -3212,7 +3227,7 @@ func _spawn(id: String, at: Vector2, minute_override: float = -1.0) -> Enemy:
+ 		e.hp = 0.0
+ 		return e
+ 	if TerrainLayout.has_roots(stage_id):
+-		e.mobility = "air" if TerrainLayout.root_definition(stage_id).air_ids.has(id) else "ground"
++		e.mobility = "air" if root_layout.air_ids.has(id) else "ground"
+ 		if not at.is_finite() or not hero.can_stand(at, e.radius, e.mobility == "air"):
+ 			# Return an inert, unregistered sentinel for legacy callers that configure
+ 			# the returned object. It is never spawned, killed, rewarded or persisted.
+diff --git a/core/hero.gd b/core/hero.gd
+index 0f84140..f8197df 100644
+--- a/core/hero.gd
++++ b/core/hero.gd
+@@ -46,6 +46,7 @@ var push := Vector2.ZERO  # empurrão externo (tiles/s)
+ var hit_flash := 0.0
+ ## Efeitos exclusivos da run no Estige. Nunca alteram a ficha persistente.
+ var terrain_id := ""
++var root_layout: Dictionary = {}
+ var styx_lucidity_loss := 0
+ var styx_forget_t := 0.0
+ 
+@@ -227,7 +228,7 @@ func can_stand(p: Vector2, r: float = RADIUS, air: bool = false) -> bool:
+ 	if p.x < r or p.y < r or p.x > map_size.x - r or p.y > map_size.y - r:
+ 		return false
+ 	if TerrainLayout.has_roots(terrain_id):
+-		if not air and not TerrainLayout.root_supports(p, r, terrain_id):
++		if not air and not TerrainLayout.root_supports(p, r, terrain_id, root_layout if root_layout.get("stage_id", terrain_id) == terrain_id else {}):
+ 			return false
+ 	elif TerrainLayout.is_blocked(terrain_id, p):
+ 		return false
+diff --git a/core/terrain_layout.gd b/core/terrain_layout.gd
+index 9dd5a2b..75fe685 100644
+--- a/core/terrain_layout.gd
++++ b/core/terrain_layout.gd
+@@ -314,26 +314,50 @@ static func root_point(raw: Array) -> Vector2:
+ 
+ ## A complete disk must fit in one supporting primitive. This conservative
+ ## erosion never admits a footprint into void at a concave junction.
+-static func root_supports(p: Vector2, radius: float = 0.0, stage_id: String = "reino_abissal") -> bool:
+-	var d := root_definition(stage_id)
++static func root_supports(p: Vector2, radius: float = 0.0, stage_id: String = "reino_abissal", definition: Dictionary = {}) -> bool:
++	var d := root_definition(stage_id) if definition.is_empty() else definition
+ 	if d.is_empty():
+ 		return false
+-	for node: Array in d.nodes.values():
+-		if p.distance_to(root_point(node)) <= float(node[2]) - radius:
+-			return true
+-	var default_half_width := float(d.width) * 0.5 - radius
+-	for edge: Array in d.edges:
+-		var half_width := float(edge[2]) * 0.5 - radius if edge.size() > 2 else default_half_width
+-		if half_width < 0.0:
++	if not d.has("_support_cells"):
++		_index_root_support(d)
++	var cell := int(floor(p.x)) + 64 * int(floor(p.y))
++	for primitive: Array in d._support_cells.get(cell, []):
++		var margin := float(primitive[2]) - radius
++		if margin < 0.0:
+ 			continue
+-		var a := root_point(d.nodes[edge[0]])
+-		var b := root_point(d.nodes[edge[1]])
+-		if p.distance_to(Geometry2D.get_closest_point_to_segment(p, a, b)) <= half_width:
++		var a: Vector2 = primitive[0]
++		var b: Vector2 = primitive[1]
++		var center := a if a == b else Geometry2D.get_closest_point_to_segment(p,a,b)
++		if p.distance_to(center) <= margin:
+ 			return true
+ 	return false
+ 
+-static func root_nearest(p: Vector2, radius: float, stage_id: String = "reino_abissal") -> Vector2:
+-	var d := root_definition(stage_id)
++static func _index_root_support(d: Dictionary) -> void:
++	# Immutable geometry, derived index owned by the same definition/battle.
++	# Only primitives whose un-eroded bounds contain this cell can support a body.
++	var cells: Dictionary = {}
++	var primitives: Array = []
++	for node: Array in d.nodes.values():
++		var p := root_point(node)
++		primitives.append([p,p,float(node[2])])
++	for edge: Array in d.edges:
++		primitives.append([root_point(d.nodes[edge[0]]),root_point(d.nodes[edge[1]]),root_edge_width(d,edge)*0.5])
++	for primitive: Array in primitives:
++		var a: Vector2 = primitive[0]
++		var b: Vector2 = primitive[1]
++		var radius := float(primitive[2])
++		var lo := a.min(b)-Vector2.ONE*radius
++		var hi := a.max(b)+Vector2.ONE*radius
++		for y in range(int(floor(lo.y)),int(floor(hi.y))+1):
++			for x in range(int(floor(lo.x)),int(floor(hi.x))+1):
++				var key := x + 64*y
++				if not cells.has(key):
++					cells[key] = []
++				cells[key].append(primitive)
++	d._support_cells = cells
++
++static func root_nearest(p: Vector2, radius: float, stage_id: String = "reino_abissal", definition: Dictionary = {}) -> Vector2:
++	var d := root_definition(stage_id) if definition.is_empty() else definition
+ 	if d.is_empty():
+ 		return Vector2.INF
+ 	var best := Vector2.INF
+diff --git a/data/prototype_stages.json b/data/prototype_stages.json
+index 9018d73..0eb3f01 100644
+--- a/data/prototype_stages.json
++++ b/data/prototype_stages.json
+@@ -42,7 +42,7 @@
+       "kind": "timed_reach",
+       "target": [
+         30,
+-        15
++        31
+       ],
+       "radius": 2,
+       "hold_seconds": 3,
+diff --git a/data/root_navigation.json b/data/root_navigation.json
+index d9afaef..ad6a4f0 100644
+--- a/data/root_navigation.json
++++ b/data/root_navigation.json
+@@ -1,106 +1,407 @@
+ {
+   "reino_abissal": {
+-    "revision": "r2",
+-    "reference": "HQ17 Q3 v02 — approved root ground",
++    "revision": "r3",
++    "reference": "Approved HQ17 Q3/Q4 root kit r1; spiral contract r1",
+     "width": 6,
+     "air_ids": [],
+-    "arrival": [30,45],
++    "arrival": [
++      30,
++      54
++    ],
++    "target": [
++      30,
++      31
++    ],
+     "nodes": {
+-      "E": [30,45,6], "C": [30,30,6], "G": [30,15,4],
+-      "W": [15,30,6], "L": [45,30,6],
+-      "NO": [15,15,4], "NL": [45,15,4],
+-      "SO": [15,45,4], "SL": [45,45,4]
++      "E": [
++        30,
++        54,
++        3.5
++      ],
++      "A": [
++        7,
++        54,
++        3.5
++      ],
++      "B": [
++        7,
++        31,
++        3.5
++      ],
++      "C": [
++        7,
++        19,
++        3.5
++      ],
++      "D": [
++        7,
++        7,
++        3.5
++      ],
++      "F": [
++        19,
++        7,
++        3.5
++      ],
++      "H": [
++        42,
++        7,
++        3.5
++      ],
++      "I": [
++        54,
++        7,
++        3.5
++      ],
++      "J": [
++        54,
++        31,
++        3.5
++      ],
++      "K": [
++        54,
++        43,
++        3.5
++      ],
++      "L": [
++        42,
++        43,
++        3.5
++      ],
++      "M": [
++        30,
++        43,
++        3.5
++      ],
++      "N": [
++        19,
++        43,
++        3.5
++      ],
++      "O": [
++        19,
++        31,
++        3.5
++      ],
++      "P": [
++        19,
++        19,
++        3.5
++      ],
++      "Q": [
++        42,
++        19,
++        3.5
++      ],
++      "R": [
++        42,
++        31,
++        3.5
++      ],
++      "G": [
++        30,
++        31,
++        3.5
++      ]
+     },
+-    "edges": [["E","C"],["C","G"],["W","C"],["C","L"],
+-      ["E","SO"],["SO","W"],["W","NO"],["NO","G"],
+-      ["G","NL"],["NL","L"],["L","SL"],["SL","E"]]
++    "edges": [
++      [
++        "E",
++        "A",
++        6
++      ],
++      [
++        "A",
++        "B",
++        6
++      ],
++      [
++        "B",
++        "C",
++        6
++      ],
++      [
++        "C",
++        "D",
++        6
++      ],
++      [
++        "D",
++        "F",
++        6
++      ],
++      [
++        "F",
++        "H",
++        6
++      ],
++      [
++        "H",
++        "I",
++        6
++      ],
++      [
++        "I",
++        "J",
++        6
++      ],
++      [
++        "J",
++        "K",
++        6
++      ],
++      [
++        "K",
++        "L",
++        6
++      ],
++      [
++        "L",
++        "M",
++        6
++      ],
++      [
++        "M",
++        "N",
++        6
++      ],
++      [
++        "N",
++        "O",
++        6
++      ],
++      [
++        "O",
++        "P",
++        6
++      ],
++      [
++        "P",
++        "Q",
++        6
++      ],
++      [
++        "Q",
++        "R",
++        6
++      ],
++      [
++        "R",
++        "G",
++        6
++      ],
++      [
++        "B",
++        "O",
++        4.5
++      ],
++      [
++        "C",
++        "P",
++        4.5
++      ],
++      [
++        "F",
++        "P",
++        4.5
++      ],
++      [
++        "H",
++        "Q",
++        4.5
++      ],
++      [
++        "J",
++        "R",
++        4.5
++      ],
++      [
++        "L",
++        "R",
++        4.5
++      ]
++    ],
++    "spine": [
++      "E",
++      "A",
++      "B",
++      "C",
++      "D",
++      "F",
++      "H",
++      "I",
++      "J",
++      "K",
++      "L",
++      "M",
++      "N",
++      "O",
++      "P",
++      "Q",
++      "R",
++      "G"
++    ]
+   },
+   "raiz_yggdrasil": {
+-    "revision": "r3",
+-    "width": 12,
++    "revision": "r4",
++    "width": 7.5,
+     "air_ids": [],
+     "arrival": [
+       30,
+       48
+     ],
+     "arrival_clearance": 6.4,
++    "target": [
++      30,
++      12
++    ],
+     "nodes": {
+       "E": [
+         30,
+         48,
+-        8
++        4.5
+       ],
+-      "C": [
++      "C1": [
+         30,
+-        32,
+-        9
++        38,
++        4.5
++      ],
++      "C2": [
++        30,
++        26,
++        4.5
+       ],
+       "G": [
+         30,
+         12,
+-        6
++        4
++      ],
++      "W0": [
++        12,
++        48,
++        3
+       ],
+       "W1": [
+-        16,
+-        28,
+-        7
++        10,
++        34,
++        3.2
+       ],
+       "W2": [
++        12,
+         18,
+-        18,
+-        7
++        3.2
++      ],
++      "W3": [
++        20,
++        10,
++        3
++      ],
++      "L0": [
++        48,
++        48,
++        3
+       ],
+       "L1": [
+-        44,
+-        28,
+-        7
++        50,
++        34,
++        3.2
+       ],
+       "L2": [
+-        42,
++        48,
+         18,
+-        7
++        3.2
++      ],
++      "L3": [
++        40,
++        10,
++        3
+       ]
+     },
+     "edges": [
+       [
+         "E",
+-        "C",
+-        12
++        "C1",
++        7.5
+       ],
+       [
+-        "C",
++        "C1",
++        "C2",
++        7.5
++      ],
++      [
++        "C2",
+         "G",
+-        12
++        7.5
+       ],
+       [
+-        "C",
++        "E",
++        "W0",
++        4.8
++      ],
++      [
++        "W0",
+         "W1",
+-        9
++        4.8
+       ],
+       [
+         "W1",
+         "W2",
+-        9
++        4.8
+       ],
+       [
+         "W2",
++        "W3",
++        4.8
++      ],
++      [
++        "W3",
+         "G",
+-        9
++        4.8
+       ],
+       [
+-        "C",
++        "E",
++        "L0",
++        4.8
++      ],
++      [
++        "L0",
+         "L1",
+-        9
++        4.8
+       ],
+       [
+         "L1",
+         "L2",
+-        9
++        4.8
+       ],
+       [
+         "L2",
++        "L3",
++        4.8
++      ],
++      [
++        "L3",
+         "G",
+-        9
++        4.8
++      ],
++      [
++        "C1",
++        "W1",
++        5
++      ],
++      [
++        "C2",
++        "W2",
++        5
++      ],
++      [
++        "C1",
++        "L1",
++        5
++      ],
++      [
++        "C2",
++        "L2",
++        5
+       ]
+     ]
+   }
+diff --git a/data/yggdrasil_art.json b/data/yggdrasil_art.json
+index f647d8d..2b8c957 100644
+--- a/data/yggdrasil_art.json
++++ b/data/yggdrasil_art.json
+@@ -9,12 +9,12 @@
+     "trunk": "res://assets/tiles/yggdrasil_r1/trunk.png"
+   },
+   "import_max_size": 1024,
+-  "side_height_px": 28.0,
++  "side_height_px": 20.0,
+   "top_brightness": 0.72,
+   "detail_opacity": 0.16,
+   "background_tint": "30303b",
+   "background_rect": [-2300, -1350, 4600, 4600],
+   "side_rects": [[0,80,1254,270],[0,390,1254,270],[0,680,1254,280],[0,975,1254,240]],
+   "native_size": 1254,
+-  "geometry_revision": "r3"
++  "geometry_revision": "r4"
+ }
+diff --git a/tests/test_root_art.gd b/tests/test_root_art.gd
+index b7b1492..6a02117 100644
+--- a/tests/test_root_art.gd
++++ b/tests/test_root_art.gd
+@@ -12,7 +12,9 @@ func run() -> Array:
+ 	var d := TerrainLayout.root_definition()
+ 	var nodes: PackedVector3Array = mat.get_shader_parameter("root_nodes")
+ 	var edges: PackedVector4Array = mat.get_shader_parameter("root_edges")
+-	if nodes.size() != d.nodes.size() or edges.size() != d.edges.size() or float(mat.get_shader_parameter("half_width")) != float(d.width)*0.5:
++	var widths: PackedFloat32Array = mat.get_shader_parameter("half_widths")
++	var heights: PackedVector2Array = mat.get_shader_parameter("edge_heights")
++	if nodes.size()!=32 or edges.size()!=32 or widths.size()!=32 or heights.size()!=32 or int(mat.get_shader_parameter("node_count"))!=18 or int(mat.get_shader_parameter("edge_count"))!=23:
+ 		out.append("Art support does not use authoritative geometry")
+ 	var i := 0
+ 	for raw: Array in d.nodes.values():
+@@ -23,9 +25,13 @@ func run() -> Array:
+ 	for edge: Array in d.edges:
+ 		var a := TerrainLayout.root_point(d.nodes[edge[0]])
+ 		var b := TerrainLayout.root_point(d.nodes[edge[1]])
+-		if edges[i] != Vector4(a.x,a.y,b.x,b.y):
++		if edges[i] != Vector4(a.x,a.y,b.x,b.y) or not is_equal_approx(widths[i],TerrainLayout.root_edge_width(d,edge)*0.5):
+ 			out.append("Art passage changed endpoints")
++		if heights[i].x<0.0 or heights[i].x>1.0 or heights[i].y<0.0 or heights[i].y>1.0:
++			out.append("Spiral height interpolation outside contract")
+ 		i += 1
++	if heights[0].x!=0.0 or heights[16].y!=1.0:
++		out.append("Spiral progression does not run from outer entry to nucleus")
+ 	var bytes := 0
+ 	for id in config.textures:
+ 		var texture: Texture2D = load(String(config.textures[id]))
+diff --git a/tests/test_root_navigation.gd b/tests/test_root_navigation.gd
+index 4fdaab4..926b9f8 100644
+--- a/tests/test_root_navigation.gd
++++ b/tests/test_root_navigation.gd
+@@ -10,85 +10,87 @@ func run() -> Array:
+ 	b.map_size = Vector2(60,60)
+ 	b.hero.map_size = b.map_size
+ 	b.hero.blockers.clear()
+-	b.hero.pos = Vector2(30,45)
+-	var d := TerrainLayout.root_definition()
++	b.hero.pos = Vector2(30,54)
++	var d := b.root_layout
++	_check(out,d.nodes.size()==18 and d.edges.size()==23 and d.edges.size()-d.nodes.size()+1==6,"Spiral graph contract")
++	_check(out,b.objective_target()==Vector2(30,31) and int(b.stage.duration)==360 and int(b.stage.cap)==50,"Spiral objective/timing/cap changed")
+ 	# Explicit IDs and per-battle fields cannot overwrite the accepted r2 mesh.
+ 	var other := Battle.new(7503,"durvall","raiz_yggdrasil")
+ 	other.hero.blockers.clear()
+ 	for i in 3:
+-		_check(out,TerrainLayout.root_definition("raiz_yggdrasil").nodes.size()==7,"Yggdrasil definition unavailable")
+-		_check(out,TerrainLayout.root_definition().nodes.size()==9,"Default root definition contaminated")
+-		_check(out,b.hero.can_stand(Vector2(15,45)) and not other.hero.can_stand(Vector2(15,45)),"Root support IDs contaminated")
+-		_check(out,not b.hero.can_stand(Vector2(30,52.5)) and other.hero.can_stand(Vector2(30,52.5)),"Root arrival supports contaminated")
++		_check(out,TerrainLayout.root_definition("raiz_yggdrasil").nodes.size()==12,"Yggdrasil definition unavailable")
++		_check(out,TerrainLayout.root_definition().nodes.size()==18,"Default root definition contaminated")
++		_check(out,b.hero.can_stand(Vector2(14,54)) and not other.hero.can_stand(Vector2(14,54)),"Root support IDs contaminated")
++		_check(out,not b.hero.can_stand(Vector2(30,48)) and other.hero.can_stand(Vector2(30,48)),"Root arrival supports contaminated")
+ 		other._root_field(Vector2(30,12),0.4)
+-		b._root_field(Vector2(30,45),0.4)
++		b._root_field(Vector2(30,54),0.4)
+ 	_check(out,TerrainLayout.root_definition("unknown").is_empty(),"Unknown ID inherited root support")
+-	_check(out,not b.hero.dead and b.hero.pos == Vector2(30,45),"Root arrival initialization invalid")
++	_check(out,not b.hero.dead and b.hero.pos == Vector2(30,54),"Root arrival initialization invalid")
+ 	# Previous-stage scenery must be replaced, rather than reject a new arrival.
+-	b.hero.blockers = [Vector3(30,45,2)]
++	b.hero.blockers = [Vector3(30,54,2)]
+ 	b.load_stage("reino_abissal")
+ 	_check(out,not b.hero.dead,"Previous map blockers rejected root stage")
+ 	b.hero.blockers.clear()
+ 	_check(out, d.air_ids.is_empty(), "No campaign enemy gains unapproved flight")
+-	_check(out, not b.hero.can_stand(Vector2(22,22)), "Void must have no ground support")
+-	_check(out, b.hero.can_stand(Vector2(22,22),0.4,true), "Synthetic flight may cross root void")
++	_check(out, not b.hero.can_stand(Vector2(13,25)), "Void must have no ground support")
++	_check(out, b.hero.can_stand(Vector2(13,25),0.4,true), "Synthetic flight may cross root void")
+ 	_check(out, not b.hero.can_stand(Vector2(0.2,22),0.4,true), "Flight obeys outer bounds")
+-	b.hero.blockers = [Vector3(22,22,1)]
+-	_check(out, not b.hero.can_stand(Vector2(22,22),0.4,true), "Flight preserves object collisions")
++	b.hero.blockers = [Vector3(13,25,1)]
++	_check(out, not b.hero.can_stand(Vector2(13,25),0.4,true), "Flight preserves object collisions")
+ 	b.hero.blockers.clear()
+ 	for radius in [0.15,0.3,0.4,0.8,1.2]:
+-		var field := b._root_field(Vector2(30,45),radius)
++		var field := b._root_field(Vector2(30,54),radius)
+ 		var grid := b._root_grid(radius)
+ 		for node: Array in d.nodes.values():
+-			_check(out, field.has(b._root_cell(TerrainLayout.root_point(node),grid)), "Disconnected node/radius %s %s" % [node,radius])
++			_check(out, field.has(b._root_cell(TerrainLayout.root_point(node),grid,b._root_grid_step(radius))), "Disconnected node/radius %s %s" % [node,radius])
+ 		for edge: Array in d.edges:
+ 			var a := TerrainLayout.root_point(d.nodes[edge[0]])
+ 			var z := TerrainLayout.root_point(d.nodes[edge[1]])
+ 			_check(out, b.hero.sweep(a,z-a,radius).distance_to(z) < 0.001, "Blocked valid connection")
+ 		# Both endpoints are on roots, but the direct line crosses the central void.
+-		var start := Vector2(15,22)
+-		var end := Vector2(30,22)
++		var start := Vector2(7,25)
++		var end := Vector2(19,25)
+ 		var result := b.hero.sweep(start,end-start,radius)
+-		_check(out, result.x < 18.01-radius and b.hero.can_stand(result,radius), "Sweep crossed gap or left footprint unsupported")
++		_check(out, result.x < 10.01-radius and b.hero.can_stand(result,radius), "Sweep crossed gap or left footprint unsupported")
+ 		for i in 32:
+ 			var delta := Vector2.from_angle(TAU*float(i)/32.0)*60.0
+-			var at := b.hero.sweep(Vector2(30,45),delta,radius)
++			var at := b.hero.sweep(Vector2(30,54),delta,radius)
+ 			_check(out,b.hero.can_stand(at,radius),"Large diagonal swept move escaped roots")
+-		_check(out,not b.hero.can_stand(Vector2(18-radius+0.01,22),radius),"Center-only edge admission")
++		_check(out,not b.hero.can_stand(Vector2(10-radius+0.01,25),radius),"Center-only edge admission")
+ 	# Input and push share the same swept path, including excessive dt.
+-	b.hero.pos = Vector2(15,22)
++	b.hero.pos = Vector2(7,25)
+ 	b.hero.push = Vector2(50,0)
+ 	b.hero.step(Vector2.ZERO,1.0)
+-	_check(out,b.hero.pos.x < 17.71 and b.hero.can_stand(b.hero.pos),"Push tunneled across gap")
++	_check(out,b.hero.pos.x < 9.71 and b.hero.can_stand(b.hero.pos),"Push tunneled across gap")
+ 	b.hero.push = Vector2.ZERO
+ 	# Use the real dash ability with a long synthetic distance to cross both roots.
+ 	var dash := Battle.new(7203,"sylas","reino_abissal")
+-	dash.hero.pos = Vector2(15,22)
++	dash.hero.pos = Vector2(7,25)
+ 	dash.active_def.distance = 30.0
+ 	_check(out,dash.use_active(Vector2.RIGHT),"Dash ability did not execute")
+-	_check(out,dash.hero.pos.x < 17.71 and dash.hero.can_stand(dash.hero.pos),"Actual dash ability crossed void")
++	_check(out,dash.hero.pos.x < 9.71 and dash.hero.can_stand(dash.hero.pos),"Actual dash ability crossed void")
+ 	# Production displacement consumers and explicit enemy admission.
+-	var enemy := b._spawn("cultista_adaga",Vector2(15,22))
++	var enemy := b._spawn("cultista_adaga",Vector2(7,25))
+ 	_check(out,not enemy.dead and enemy.mobility == "ground","Wave enemy should remain terrestrial")
+ 	b._enemy_move(enemy,Vector2(30,0))
+-	_check(out,enemy.pos.x < 18 and b.hero.can_stand(enemy.pos,enemy.radius),"Enemy move tunneled")
+-	enemy.pos = Vector2(15,22)
+-	b.hero.pos = Vector2(14,22)
++	_check(out,enemy.pos.x < 10 and b.hero.can_stand(enemy.pos,enemy.radius),"Enemy move tunneled")
++	enemy.pos = Vector2(7,25)
++	b.hero.pos = Vector2(6,25)
+ 	b._apply_effects(enemy,{"knock":30})
+-	_check(out,enemy.pos.x < 18 and b.hero.can_stand(enemy.pos,enemy.radius),"Knockback escaped")
+-	enemy.pos = Vector2(15,22)
++	_check(out,enemy.pos.x < 10 and b.hero.can_stand(enemy.pos,enemy.radius),"Knockback escaped")
++	enemy.pos = Vector2(7,25)
+ 	enemy.charge_t = 1.0
+ 	enemy.charge_dir = Vector2.RIGHT
+ 	enemy.charge_ab = {"speed":30,"dice":"1d1"}
+ 	b._enemy_step(enemy,0.5)
+-	_check(out,enemy.pos.x < 18 and b.hero.can_stand(enemy.pos,enemy.radius),"Charge escaped")
++	_check(out,enemy.pos.x < 10 and b.hero.can_stand(enemy.pos,enemy.radius),"Charge escaped")
+ 	var flying := Enemy.new()
+-	flying.pos = Vector2(15,22)
++	flying.pos = Vector2(7,25)
+ 	flying.mobility = "air"
+-	b._enemy_move(flying,Vector2(15,0))
+-	_check(out,flying.pos.distance_to(Vector2(30,22)) < 0.001,"Synthetic flight blocked by void")
++	b._enemy_move(flying,Vector2(12,0))
++	_check(out,flying.pos.distance_to(Vector2(19,25)) < 0.001,"Synthetic flight blocked by void")
+ 	var count := b.enemies.size()
+-	var denied := b._spawn("cultista_adaga",Vector2(22,22))
++	var denied := b._spawn("cultista_adaga",Vector2(13,25))
+ 	_check(out,denied.dead and b.enemies.size() == count,"Secondary spawn admitted in void")
+ 	b._kill(denied)
+ 	_check(out,b.stats.kills == 0,"Rejected spawn generated kill")
+@@ -101,17 +103,17 @@ func run() -> Array:
+ 		for i in 32:
+ 			var at := b._ring_pos()
+ 			_check(out,at.is_finite() and b._root_spawn_valid(at,0.4),"Wave ring/fallback invalid")
+-	b._drop("gold",Vector2(22,22),7,"test")
++	b._drop("gold",Vector2(13,25),7,"test")
+ 	_check(out,b.pickups.size() == 1 and b.hero.can_stand(b.pickups[0].pos,0.15) and b.hero.gold == 0,"Airborne loot inaccessible or auto-paid")
+ 	b.pickups[0].magnet = true
+-	b.hero.pos = Vector2(30,22)
++	b.hero.pos = Vector2(19,25)
+ 	for i in 30:
+ 		b._update_pickups(0.02)
+ 		for p in b.pickups:
+ 			_check(out,b.hero.can_stand(p.pos,0.15),"Magnet moved loot off root")
+ 	# End-to-end detour around a void, with the actual enemy AI and body radius.
+-	var chaser := b._spawn("cultista_adaga",Vector2(15,22))
+-	b.hero.pos = Vector2(30,22)
++	var chaser := b._spawn("cultista_adaga",Vector2(7,25))
++	b.hero.pos = Vector2(19,25)
+ 	chaser.abilities = []
+ 	chaser.speed = 3.0
+ 	for i in 2400:
+@@ -122,5 +124,5 @@ func run() -> Array:
+ 	_check(out,chaser.pos.distance_to(b.hero.pos) < 2.0,"Chaser stuck at void instead of detouring")
+ 	# Surface restriction remains specific to Reino Abissal.
+ 	b.hero.terrain_id = "domwieck"
+-	_check(out,b.hero.can_stand(Vector2(22,22)),"Root restriction leaked into Domwieck")
++	_check(out,b.hero.can_stand(Vector2(13,25)),"Root restriction leaked into Domwieck")
+ 	return out
+diff --git a/tests/test_yggdrasil_art.gd b/tests/test_yggdrasil_art.gd
+index ac4e6db..54dc5aa 100644
+--- a/tests/test_yggdrasil_art.gd
++++ b/tests/test_yggdrasil_art.gd
+@@ -10,8 +10,8 @@ func run() -> Array:
+ 	var nodes: PackedVector3Array=art.floor_material.get_shader_parameter("root_nodes")
+ 	var edges: PackedVector4Array=art.floor_material.get_shader_parameter("root_edges")
+ 	var widths: PackedFloat32Array=art.floor_material.get_shader_parameter("half_widths")
+-	if nodes.size()!=7 or edges.size()!=8 or widths.size()!=8:
+-		out.append("Visual geometry array dimensions differ from accepted r3")
++	if nodes.size()!=32 or edges.size()!=32 or widths.size()!=32 or int(art.floor_material.get_shader_parameter("node_count"))!=12 or int(art.floor_material.get_shader_parameter("edge_count"))!=17:
++		out.append("Visual geometry array dimensions differ from approved r4")
+ 	var i:=0
+ 	for raw: Array in d.nodes.values():
+ 		if nodes[i]!=Vector3(float(raw[0]),float(raw[1]),float(raw[2])):
+@@ -21,7 +21,7 @@ func run() -> Array:
+ 	for edge: Array in d.edges:
+ 		var a:=TerrainLayout.root_point(d.nodes[edge[0]])
+ 		var b:=TerrainLayout.root_point(d.nodes[edge[1]])
+-		if edges[i]!=Vector4(a.x,a.y,b.x,b.y) or widths[i]!=TerrainLayout.root_edge_width(d,edge)*0.5:
++		if edges[i]!=Vector4(a.x,a.y,b.x,b.y) or not is_equal_approx(widths[i],TerrainLayout.root_edge_width(d,edge)*0.5):
+ 			out.append("Visual edge endpoints/width differ from support")
+ 		i+=1
+ 	var manifest: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://.atena/generated/yggdrasil-art-20261017/kit-r1/manifest.json"))
+@@ -37,7 +37,7 @@ func run() -> Array:
+ 		var cfg:=ConfigFile.new()
+ 		if cfg.load(p+".import")!=OK or int(cfg.get_value("params","process/size_limit",0))!=1024 or bool(cfg.get_value("params","mipmaps/generate",true)):
+ 			out.append("Import cap/mipmap policy differs")
+-	if bytes>16*1024*1024 or float(art.config.side_height_px)!=28.0:
++	if bytes>16*1024*1024 or float(art.config.side_height_px)!=20.0:
+ 		out.append("Memory/side-height budget exceeded")
+ 	var stage: Node2D=load("res://ui/stages/raiz_yggdrasil.tscn").instantiate()
+ 	if stage.get_node_or_null("YggdrasilArt")==null or not stage.get_node("Ground").use_yggdrasil_art:
+@@ -45,5 +45,10 @@ func run() -> Array:
+ 	if stage.get_node("Sorted/Hero").position!=Iso.to_screen(Vector2(30,48)):
+ 		out.append("Arrival moved")
+ 	stage.free()
++	var other=load("res://ui/yggdrasil_art.gd").new()
++	other.root_layout=RootPathGenerator.new().generate(d,7503)
++	if not other.prepare() or other.floor_material==art.floor_material or int(other.floor_material.get_shader_parameter("edge_count"))!=other.root_layout.edges.size():
++		out.append("Per-instance material/geometry unavailable")
++	other.free()
+ 	art.free()
+ 	return out
+diff --git a/tests/test_yggdrasil_map.gd b/tests/test_yggdrasil_map.gd
+index aaadb38..5665818 100644
+--- a/tests/test_yggdrasil_map.gd
++++ b/tests/test_yggdrasil_map.gd
+@@ -26,11 +26,11 @@ func run() -> Array:
+ 	b._spawn_random_breakable()
+ 	_check(out,b.interactions.is_empty() and b.enemies.is_empty(),"Disabled prototype content appeared")
+ 	for i in 41:
+-		b._spawn("cultista_adaga",Vector2(30,32))
++		b._spawn("cultista_adaga",TerrainLayout.root_point(b.root_layout.nodes.C1))
+ 	_check(out,b._combat_count()==40,"Admission exceeded strict cap")
+ 	b.time=240.0
+ 	b.enemies.clear()
+-	_check(out,b._spawn("cultista_adaga",Vector2(30,32)).dead and b.enemies.is_empty(),"Offensive admission continued after 240s")
++	_check(out,b._spawn("cultista_adaga",TerrainLayout.root_point(b.root_layout.nodes.C1)).dead and b.enemies.is_empty(),"Offensive admission continued after 240s")
+ 	b.hero.pos=b.objective_target()
+ 	b.time=239.99
+ 	b._update_stage_objective(1.0)
+@@ -80,9 +80,9 @@ func run() -> Array:
+ 	abandoned.step(Vector2.ZERO,4.0)
+ 	_check(out,abandoned.result().stages_cleared==0,"Abandon awarded stage completion")
+ 	var capped := _battle()
+-	var summoner := capped._spawn("cultista_adaga",Vector2(30,32))
++	var summoner := capped._spawn("cultista_adaga",TerrainLayout.root_point(b.root_layout.nodes.C1))
+ 	for i in 39:
+-		capped._spawn("cultista_adaga",Vector2(30,32))
++		capped._spawn("cultista_adaga",TerrainLayout.root_point(b.root_layout.nodes.C1))
+ 	capped._use_ability(summoner,0,{"t":"summon","id":"notivago","cap":99,"n":8},0.0,Vector2.ZERO)
+ 	_check(out,capped._combat_count()==40,"Summon bypassed cap")
+ 	summoner.split_id="notivago"
+diff --git a/tests/test_yggdrasil_navigation.gd b/tests/test_yggdrasil_navigation.gd
+index 509b4d7..d2ed7fd 100644
+--- a/tests/test_yggdrasil_navigation.gd
++++ b/tests/test_yggdrasil_navigation.gd
+@@ -8,9 +8,9 @@ func run() -> Array:
+ 	var out: Array = []
+ 	var b := Battle.new(7502,"durvall","raiz_yggdrasil")
+ 	b.hero.blockers.clear()
+-	var d := TerrainLayout.root_definition("raiz_yggdrasil")
++	var d: Dictionary = b.root_layout
+ 	_check(out,b.hero.pos==Vector2(30,48) and not b.hero.dead,"Yggdrasil arrival unsupported")
+-	_check(out,d.nodes.size()==7 and d.edges.size()==8 and d.air_ids.is_empty(),"Yggdrasil geometry/air contract changed")
++	_check(out,d.nodes.size()==12 and d.edges.size()>=16 and d.edges.size()<=17 and d.air_ids.is_empty(),"Yggdrasil geometry/air contract changed")
+ 	for radius in [Hero.RADIUS,0.4,0.8]:
+ 		var grid := b._root_grid(radius)
+ 		var field := b._root_field(Vector2(30,12),radius)
+@@ -27,7 +27,7 @@ func run() -> Array:
+ 			var stopped := b.hero.sweep(near,normal*12.0,radius)
+ 			_check(out,b.hero.can_stand(stopped,radius),"Outward displacement left supporting roots")
+ 	_check(out,not b.hero.can_stand(Vector2(15,45)),"Yggdrasil inherited unrelated western root")
+-	_check(out,b.hero.can_stand(Vector2(30,52.5)),"Yggdrasil arrival did not use its own radius/center")
++	_check(out,b.hero.can_stand(Vector2(30,51.5)),"Yggdrasil arrival did not use its own radius/center")
+ 	_check(out,b.hero.can_stand(Vector2(15,45),0.4,true),"Synthetic flight cannot cross internal void")
+ 	_check(out,not b.hero.can_stand(Vector2(-1,45),0.4,true),"Synthetic flight escaped outer map")
+ 	for node: Array in d.nodes.values():
+@@ -46,7 +46,7 @@ func run() -> Array:
+ 		b._update_pickups(0.02)
+ 		for pickup in b.pickups:
+ 			_check(out,b.hero.can_stand(pickup.pos,0.15),"Magnet crossed void")
+-	var chaser := b._spawn("cultista_adaga",Vector2(16,28))
++	var chaser := b._spawn("cultista_adaga",TerrainLayout.root_point(d.nodes.W1))
+ 	b.hero.pos=Vector2(30,22)
+ 	chaser.abilities=[]
+ 	chaser.speed=3.0
+@@ -57,30 +57,30 @@ func run() -> Array:
+ 			break
+ 	_check(out,chaser.pos.distance_to(b.hero.pos)<2.0,"Chaser could not traverse the branch")
+ 	# Exercise production movement consumers against an exposed arrival rim.
+-	var rim := Vector2(37.6,48)
++	var rim := Vector2(30,52.1)
+ 	b.hero.pos=rim
+-	b.hero.push=Vector2(50,0)
++	b.hero.push=Vector2(0,50)
+ 	b.hero.step(Vector2.ZERO,1.0)
+-	_check(out,b.hero.can_stand(b.hero.pos) and b.hero.pos.x<38.0,"Actual push escaped arrival rim")
++	_check(out,b.hero.can_stand(b.hero.pos) and b.hero.pos.y<52.5,"Actual push escaped arrival rim")
+ 	b.hero.push=Vector2.ZERO
+ 	var dash := Battle.new(7503,"sylas","raiz_yggdrasil")
+ 	dash.hero.pos=rim
+ 	dash.active_def.distance=30.0
+-	_check(out,dash.use_active(Vector2.RIGHT) and dash.hero.can_stand(dash.hero.pos) and dash.hero.pos.x<38.0,"Actual dash escaped arrival rim")
++	_check(out,dash.use_active(Vector2.DOWN) and dash.hero.can_stand(dash.hero.pos) and dash.hero.pos.y<52.5,"Actual dash escaped arrival rim")
+ 	var mover := b._spawn("cultista_adaga",rim)
+-	b._enemy_move(mover,Vector2(30,0))
+-	_check(out,b.hero.can_stand(mover.pos,mover.radius) and mover.pos.x<38.0,"Enemy advance escaped rim")
++	b._enemy_move(mover,Vector2(0,30))
++	_check(out,b.hero.can_stand(mover.pos,mover.radius) and mover.pos.y<52.5,"Enemy advance escaped rim")
+ 	mover.pos=rim
+-	b.hero.pos=Vector2(34,48)
++	b.hero.pos=Vector2(30,50)
+ 	b._apply_effects(mover,{"knock":30})
+ 	_check(out,b.hero.can_stand(mover.pos,mover.radius),"Actual knockback escaped rim")
+ 	mover.pos=rim
+ 	mover.charge_t=1.0
+-	mover.charge_dir=Vector2.RIGHT
++	mover.charge_dir=Vector2.DOWN
+ 	mover.charge_ab={"speed":30,"dice":"1d1"}
+ 	b._enemy_step(mover,0.5)
+-	_check(out,b.hero.can_stand(mover.pos,mover.radius) and mover.pos.x<38.0,"Actual charge escaped rim")
+-	var neighbor := b._spawn("cultista_adaga",rim-Vector2(0.2,0))
++	_check(out,b.hero.can_stand(mover.pos,mover.radius) and mover.pos.y<52.5,"Actual charge escaped rim")
++	var neighbor := b._spawn("cultista_adaga",rim-Vector2(0,0.2))
+ 	mover.pos=rim
+ 	mover.charge_t=0.0
+ 	mover.speed=0.0
+@@ -100,4 +100,54 @@ func run() -> Array:
+ 	for id in ["cultista_adaga","notivago","cultista_arqueiro","criatura_corrompida"]:
+ 		var actual := b._spawn(id,Vector2(30,32))
+ 		_check(out,not actual.dead and actual.mobility=="ground" and is_equal_approx(actual.radius,0.4 if id=="criatura_corrompida" else 0.3),"Wave body/ground contract changed: "+id)
++
++	# Reproducible topology, widths and routing across 128 seeds. No combat RNG use.
++	var seeds: Array = range(120)
++	seeds.append_array([7502,7503,7504,7601,7602,7603,1000001,2147483647])
++	var unique: Dictionary = {}
++	var fallback_count := 0
++	var base := TerrainLayout.root_definition("raiz_yggdrasil")
++	for seed_value: int in seeds:
++		var first := RootPathGenerator.new().generate(base,seed_value)
++		var second := RootPathGenerator.new().generate(base,seed_value)
++		_check(out,not first.is_empty() and first == second,"Seed is invalid/non-reproducible: %d" % seed_value)
++		if first.is_empty():
++			continue
++		unique[JSON.stringify([first.nodes,first.edges])] = true
++		fallback_count += int(first.generation.fallback)
++		_check(out,RootPathGenerator.valid(first),"Generated geometry violates bounds/area/graph guards")
++		for index in first.edges.size():
++			var width := float(first.edges[index][2])
++			_check(out,width>=7.0 and width<=8.0 if index<3 else width>=4.5 and width<=5.5,"Width outside approved range")
++		# Exercise the actual eroded four-neighbor AI grid, not just graph theory.
++		b.root_layout=first
++		b.hero.root_layout=first
++		b._root_grids.clear()
++		b._root_fields.clear()
++		for radius in [0.3,0.4,0.8,1.2]:
++			var cells := b._root_grid(radius)
++			var field := b._root_field(Vector2(30,12),radius)
++			_check(out,not cells.is_empty() and field.size()==cells.size() and field.has(b._root_cell(Vector2(30,48),cells,b._root_grid_step(radius))),"Disconnected real AI grid seed %d radius %s" % [seed_value,radius])
++	_check(out,unique.size()>=120 and fallback_count<=6,"Diversity/fallback contract failed")
++	var first_battle := Battle.new(7502,"durvall","raiz_yggdrasil")
++	var first_hash := JSON.stringify(first_battle.root_layout)
++	var second_battle := Battle.new(7503,"durvall","raiz_yggdrasil")
++	var abyss := Battle.new(7202,"durvall","reino_abissal")
++	var city := Battle.new(7202,"durvall","domwieck")
++	for i in 3:
++		second_battle._root_field(Vector2(30,12),0.4)
++		abyss._root_field(Vector2(30,15),0.4)
++		_check(out,JSON.stringify(first_battle.root_layout)==first_hash and first_battle.root_layout!=second_battle.root_layout,"Battle geometry contaminated by other seed/map")
++		_check(out,city.root_layout.is_empty() and abyss.root_layout.nodes.size()==18,"Geometry leaked into other stages")
++	first_battle.load_stage("domwieck")
++	_check(out,first_battle.root_layout.is_empty() and first_battle.hero.root_layout.is_empty(),"Root geometry survives a stage change")
++	var combat_rng := RandomNumberGenerator.new()
++	combat_rng.seed=7502
++	var rng_state := combat_rng.state
++	RootPathGenerator.new().generate(base,7502)
++	_check(out,combat_rng.state==rng_state,"Generator consumed unrelated RNG")
++	var malformed := base.duplicate(true)
++	malformed.edges[0][1]=malformed.edges[0][0]
++	_check(out,RootPathGenerator.new().generate(malformed,7502).is_empty(),"Unsafe fallback admitted malformed base")
++	print("PATH_SEEDS=128 UNIQUE=%d FALLBACKS=%d" % [unique.size(),fallback_count])
+ 	return out
+diff --git a/ui/ground.gd b/ui/ground.gd
+index 63d5fb6..d925953 100644
+--- a/ui/ground.gd
++++ b/ui/ground.gd
+@@ -31,6 +31,7 @@ var _baked_path := ""
+ @export var use_root_art := true: set = _set_root_art
+ @export var use_domwieck_art := true
+ @export var use_yggdrasil_art := true
++var root_layout: Dictionary = {}
+ var _root_art_material: ShaderMaterial
+ var _root_art_rect := Rect2()
+ 
+@@ -65,9 +66,17 @@ func _prepare_root_art() -> bool:
+ 		if not texture is Texture2D:
+ 			return false
+ 		mat.set_shader_parameter({"surface":"surface_art","junctions":"junction_art","sides":"side_art","depth":"depth_art"}[id],texture)
+-	var d := TerrainLayout.root_definition()
++	var d := TerrainLayout.root_definition() if root_layout.is_empty() else root_layout
+ 	var nodes := PackedVector3Array()
+ 	var edges := PackedVector4Array()
++	var widths := PackedFloat32Array()
++	var heights := PackedVector2Array()
++	var levels: Dictionary = {}
++	var length := 0.0
++	for i in range(1,d.spine.size()):
++		length += TerrainLayout.root_point(d.nodes[d.spine[i-1]]).distance_to(TerrainLayout.root_point(d.nodes[d.spine[i]]))
++		levels[d.spine[i]] = length
++	levels[d.spine[0]] = 0.0
+ 	var bounds := Rect2(Iso.to_screen(TerrainLayout.root_point(d.arrival)),Vector2.ZERO)
+ 	for node: Array in d.nodes.values():
+ 		nodes.append(Vector3(float(node[0]),float(node[1]),float(node[2])))
+@@ -77,11 +86,20 @@ func _prepare_root_art() -> bool:
+ 		var a := TerrainLayout.root_point(d.nodes[edge[0]])
+ 		var b := TerrainLayout.root_point(d.nodes[edge[1]])
+ 		edges.append(Vector4(a.x,a.y,b.x,b.y))
+-	if nodes.size()!=9 or edges.size()!=12:
++		widths.append(TerrainLayout.root_edge_width(d,edge)*0.5)
++		heights.append(Vector2(float(levels[edge[0]])/length,float(levels[edge[1]])/length))
++	if nodes.is_empty() or nodes.size()>32 or edges.is_empty() or edges.size()>32:
+ 		return false
++	mat.set_shader_parameter("node_count",nodes.size())
++	mat.set_shader_parameter("edge_count",edges.size())
++	nodes.resize(32)
++	edges.resize(32)
++	widths.resize(32)
++	heights.resize(32)
++	mat.set_shader_parameter("half_widths",widths)
++	mat.set_shader_parameter("edge_heights",heights)
+ 	mat.set_shader_parameter("root_nodes",nodes)
+ 	mat.set_shader_parameter("root_edges",edges)
+-	mat.set_shader_parameter("half_width",float(d.width)*0.5)
+ 	for key in ["atlas_inset","side_height_px","depth_height_px","side_repeat_px","depth_repeat_px","depth_opacity","top_brightness"]:
+ 		mat.set_shader_parameter(key,float(config[key]))
+ 	mat.set_shader_parameter("side_rows",PackedFloat32Array(config.side_rows))
+@@ -262,7 +280,7 @@ func _draw() -> void:
+ 
+ func _draw_yggdrasil_prototype() -> void:
+ 	# Geometric QA study only; no approved final appearance is implied.
+-	var d := TerrainLayout.root_definition("raiz_yggdrasil")
++	var d := TerrainLayout.root_definition("raiz_yggdrasil") if root_layout.is_empty() else root_layout
+ 	# Low-contrast vertical silhouette, separated from every supporting surface.
+ 	draw_colored_polygon(PackedVector2Array([Vector2(930,-1400),Vector2(1160,-1400),Vector2(1110,365),Vector2(978,420)]),Color("11151e"))
+ 	for i in 6:
+@@ -288,7 +306,7 @@ func _draw_yggdrasil_prototype() -> void:
+ 	for shape in shapes:
+ 		var side := PackedVector2Array()
+ 		for p in shape:
+-			side.append(p+Vector2(0,28))
++			side.append(p+Vector2(0,20))
+ 		draw_colored_polygon(side,Color("171820"))
+ 	for shape in shapes:
+ 		draw_colored_polygon(shape,Color("3e342f"))
+@@ -311,7 +329,7 @@ func _draw_yggdrasil_prototype() -> void:
+ func _draw_root_prototype() -> void:
+ 	# HQ17 Q3 v02: dark braided bark, suspended bridges and purple depth.
+ 	# Geometry comes from the same capsules/disks as supporting collisions.
+-	var d := TerrainLayout.root_definition()
++	var d := TerrainLayout.root_definition() if root_layout.is_empty() else root_layout
+ 	var shapes: Array[PackedVector2Array] = []
+ 	for edge: Array in d.edges:
+ 		var a := TerrainLayout.root_point(d.nodes[edge[0]])
+@@ -319,9 +337,9 @@ func _draw_root_prototype() -> void:
+ 		var path := PackedVector2Array()
+ 		var angle := (b - a).angle()
+ 		for i in 33:
+-			path.append(Iso.to_screen(b + Vector2.from_angle(angle - PI * 0.5 + PI * float(i) / 32.0) * float(d.width) * 0.5))
++			path.append(Iso.to_screen(b + Vector2.from_angle(angle - PI * 0.5 + PI * float(i) / 32.0) * TerrainLayout.root_edge_width(d,edge) * 0.5))
+ 		for i in 33:
+-			path.append(Iso.to_screen(a + Vector2.from_angle(angle + PI * 0.5 + PI * float(i) / 32.0) * float(d.width) * 0.5))
++			path.append(Iso.to_screen(a + Vector2.from_angle(angle + PI * 0.5 + PI * float(i) / 32.0) * TerrainLayout.root_edge_width(d,edge) * 0.5))
+ 		shapes.append(path)
+ 	for node: Array in d.nodes.values():
+ 		var path := PackedVector2Array()
+diff --git a/ui/run.gd b/ui/run.gd
+index d3b8028..81a940d 100644
+--- a/ui/run.gd
++++ b/ui/run.gd
+@@ -89,6 +89,11 @@ func _ready() -> void:
+ 	_setup_encounter_overlays()
+ 	_load_stage()
+ 	if Game.qa_sandbox:
++		if battle.stage_id == "raiz_yggdrasil":
++			var geometry_receipt := FileAccess.open(Game._save_path.get_base_dir().path_join("root-geometry.json"), FileAccess.WRITE)
++			if geometry_receipt != null:
++				geometry_receipt.store_string(JSON.stringify({"stage_id":battle.stage_id,"generation":battle.root_layout.generation,"nodes":battle.root_layout.nodes,"edges":battle.root_layout.edges},"\t"))
++				geometry_receipt.close()
+ 		battle.qa_prepare(Game.qa_launch)
+ 	var stats_ctx := Game.battle_ctx()
+ 	stats_ctx.task_id = String(Game.profile.data.settings.get("playtest_task", "general"))
+@@ -123,6 +128,46 @@ func playtest_context() -> Dictionary:
+ 
+ # ------------------------------------------------------------------ fase
+ 
++func _clip_root_decals(decals: Node2D) -> void:
++	# Legacy decal anchors may fall outside the redesigned roots. Preserve the
++	# approved textures while clipping their pixels to the exact supporting top.
++	var shader := Shader.new()
++	shader.code = """shader_type canvas_item;
++uniform vec3 nodes[32]; uniform vec4 edges[32]; uniform float widths[32];
++uniform int node_count; uniform int edge_count; varying vec2 ground;
++void vertex(){ground=vec2(VERTEX.x/64.0+VERTEX.y/32.0,VERTEX.y/32.0-VERTEX.x/64.0);}
++void fragment(){
++ float d=10000.0;
++ for(int i=0;i<node_count;i++){d=min(d,length(ground-nodes[i].xy)-nodes[i].z);}
++ for(int i=0;i<edge_count;i++){
++  vec4 e=edges[i];vec2 ab=e.zw-e.xy;
++  vec2 p=e.xy+ab*clamp(dot(ground-e.xy,ab)/dot(ab,ab),0.0,1.0);
++  d=min(d,length(ground-p)-widths[i]);
++ }
++ COLOR.a*=d<=0.0?1.0:0.0;
++}"""
++	var mat := ShaderMaterial.new()
++	mat.shader = shader
++	var nodes := PackedVector3Array()
++	var edges := PackedVector4Array()
++	var widths := PackedFloat32Array()
++	for n: Array in battle.root_layout.nodes.values():
++		nodes.append(Vector3(float(n[0]),float(n[1]),float(n[2])))
++	for e: Array in battle.root_layout.edges:
++		var a := TerrainLayout.root_point(battle.root_layout.nodes[e[0]])
++		var b := TerrainLayout.root_point(battle.root_layout.nodes[e[1]])
++		edges.append(Vector4(a.x,a.y,b.x,b.y))
++		widths.append(TerrainLayout.root_edge_width(battle.root_layout,e)*0.5)
++	mat.set_shader_parameter("node_count",nodes.size())
++	mat.set_shader_parameter("edge_count",edges.size())
++	nodes.resize(32)
++	edges.resize(32)
++	widths.resize(32)
++	mat.set_shader_parameter("nodes",nodes)
++	mat.set_shader_parameter("edges",edges)
++	mat.set_shader_parameter("widths",widths)
++	decals.material = mat
++
+ func _load_stage() -> void:
+ 	for n in enemy_nodes.values():
+ 		n.queue_free()
+@@ -132,6 +177,12 @@ func _load_stage() -> void:
+ 	var scene_path := "res://ui/stages/dagruve_thalion_qa.tscn" if battle.is_dagruve_encounter() else "res://ui/stages/%s.tscn" % battle.stage_id
+ 	var scene: PackedScene = load(scene_path)
+ 	stage_root = scene.instantiate()
++	if TerrainLayout.has_roots(battle.stage_id):
++		stage_root.get_node("Ground").root_layout = battle.root_layout
++		var art := stage_root.get_node_or_null("YggdrasilArt")
++		if art != null:
++			art.root_layout = battle.root_layout
++		stage_root.get_node("Sorted/Hero").position = Iso.to_screen(TerrainLayout.root_point(battle.root_layout.arrival))
+ 	slot.add_child(stage_root)
+ 	sorted = stage_root.get_node("Sorted")
+ 	hero_node = sorted.get_node("Hero")
+@@ -143,6 +194,8 @@ func _load_stage() -> void:
+ 	decals.visual_seed = int(ground.get("visual_seed"))
+ 	# Somente assets oficiais estão no manifesto; Docas permanece sem decais.
+ 	decals.enabled = true
++	if battle.stage_id == "reino_abissal":
++		_clip_root_decals(decals)
+ 	stage_root.add_child(decals)
+ 	var msize := Vector2(ground.map_size)
+ 	_edge_fog = EdgeFog.new()   # SPEC-158: faixa de névoa junto às bordas do mapa
+diff --git a/ui/shaders/abyss_roots.gdshader b/ui/shaders/abyss_roots.gdshader
+index 744e0ba..de5a06c 100644
+--- a/ui/shaders/abyss_roots.gdshader
++++ b/ui/shaders/abyss_roots.gdshader
+@@ -5,9 +5,12 @@ uniform sampler2D surface_art : source_color, filter_nearest, repeat_disable;
+ uniform sampler2D junction_art : source_color, filter_nearest, repeat_disable;
+ uniform sampler2D side_art : source_color, filter_nearest, repeat_disable;
+ uniform sampler2D depth_art : source_color, filter_nearest, repeat_disable;
+-uniform vec3 root_nodes[9];
+-uniform vec4 root_edges[12];
+-uniform float half_width = 3.0;
++uniform vec3 root_nodes[32];
++uniform vec4 root_edges[32];
++uniform float half_widths[32];
++uniform vec2 edge_heights[32];
++uniform int node_count = 18;
++uniform int edge_count = 23;
+ uniform float atlas_inset = 0.008;
+ uniform float side_height_px = 32.0;
+ uniform float depth_height_px = 76.0;
+@@ -25,7 +28,7 @@ void vertex() {
+ 		VERTEX.y / 32.0 - VERTEX.x / 64.0);
+ }
+ 
+-float capsule_distance(vec2 p, vec4 edge) {
++float capsule_distance(vec2 p, vec4 edge, float half_width) {
+ 	vec2 ab = edge.zw - edge.xy;
+ 	float along = clamp(dot(p - edge.xy, ab) / dot(ab, ab), 0.0, 1.0);
+ 	return length(p - edge.xy - ab * along) - half_width;
+@@ -33,11 +36,11 @@ float capsule_distance(vec2 p, vec4 edge) {
+ 
+ float support_distance(vec2 p) {
+ 	float best = 10000.0;
+-	for (int i = 0; i < 9; i++) {
++	for (int i = 0; i < node_count; i++) {
+ 		best = min(best, length(p - root_nodes[i].xy) - root_nodes[i].z);
+ 	}
+-	for (int i = 0; i < 12; i++) {
+-		best = min(best, capsule_distance(p, root_edges[i]));
++	for (int i = 0; i < edge_count; i++) {
++		best = min(best, capsule_distance(p, root_edges[i], half_widths[i]));
+ 	}
+ 	return best;
+ }
+@@ -47,14 +50,26 @@ vec2 atlas_uv(vec2 uv, int variant) {
+ 	return (cell + mix(vec2(atlas_inset), vec2(1.0-atlas_inset), clamp(uv,vec2(0.0),vec2(1.0)))) * 0.5;
+ }
+ 
++float elevation_at(vec2 p) {
++ float best=10000.0;float level=0.0;
++ for(int i=0;i<edge_count;i++){
++  vec4 e=root_edges[i];vec2 ab=e.zw-e.xy;
++  float t=clamp(dot(p-e.xy,ab)/dot(ab,ab),0.0,1.0);
++  float distance=length(p-e.xy-ab*t)-half_widths[i];
++  if(distance<best){best=distance;level=mix(edge_heights[i].x,edge_heights[i].y,t);}
++ }
++ return level;
++}
++
+ vec4 top_color(vec2 p, float boundary) {
+ 	float edge_best = 10000.0;
+ 	int edge_id = 0;
+-	for (int i = 0; i < 12; i++) {
+-		float distance = capsule_distance(p, root_edges[i]);
++	for (int i = 0; i < edge_count; i++) {
++		float distance = capsule_distance(p, root_edges[i], half_widths[i]);
+ 		if (distance < edge_best) { edge_best = distance; edge_id = i; }
+ 	}
+ 	vec4 edge = root_edges[edge_id];
++	float half_width = half_widths[edge_id];
+ 	vec2 tangent = normalize(edge.zw-edge.xy);
+ 	vec2 normal = vec2(-tangent.y,tangent.x);
+ 	vec2 offset = p-edge.xy;
+@@ -62,7 +77,7 @@ vec4 top_color(vec2 p, float boundary) {
+ 	vec3 color = texture(surface_art,atlas_uv(uv,edge_id%4)).rgb;
+ 	float node_distance = 10000.0;
+ 	int node_id = 0;
+-	for (int i = 0; i < 9; i++) {
++	for (int i = 0; i < node_count; i++) {
+ 		float distance = length(p-root_nodes[i].xy)/root_nodes[i].z;
+ 		if (distance < node_distance) {node_distance=distance; node_id=i;}
+ 	}
+@@ -74,7 +89,7 @@ vec4 top_color(vec2 p, float boundary) {
+ 	vec2 node_uv = (p-node.xy)/(node.z*2.0)+0.5;
+ 	color = mix(color,texture(junction_art,atlas_uv(node_uv,node_id%4)).rgb,strongest);
+ 	// Subdued edge roll-off conveys the change of plane without a neon outline.
+-	color *= top_brightness * mix(1.0,0.65,smoothstep(-0.45,0.0,boundary));
++	color *= mix(0.88,1.0,elevation_at(p)) * top_brightness * mix(1.0,0.65,smoothstep(-0.45,0.0,boundary));
+ 	return vec4(color,1.0);
+ }
+ 
+@@ -106,8 +121,9 @@ void fragment() {
+ 			color.rgb*=0.65;
+ 			color.a*=depth_opacity;
+ 		}
+-		if (support_distance(p-vec2(side_height_px/32.0))<=0.0) {
+-			float v=edge_fraction(p,side_height_px);
++		float local_height=mix(24.0,40.0,elevation_at(p));
++		if (support_distance(p-vec2(local_height/32.0))<=0.0) {
++			float v=edge_fraction(p,local_height);
+ 			int variant=int(floor((screen_x+4000.0)/side_repeat_px))%4;
+ 			vec2 side_uv=vec2(mix(atlas_inset,1.0-atlas_inset,fract((screen_x+4000.0)/side_repeat_px)),mix(side_rows[variant]+0.004,side_rows[variant+1]-0.004,v));
+ 			vec4 side=texture(side_art,side_uv);
+diff --git a/ui/shaders/yggdrasil_root_art.gdshader b/ui/shaders/yggdrasil_root_art.gdshader
+index e580c63..15bde76 100644
+--- a/ui/shaders/yggdrasil_root_art.gdshader
++++ b/ui/shaders/yggdrasil_root_art.gdshader
+@@ -3,11 +3,13 @@ render_mode unshaded;
+ uniform sampler2D ground_art : source_color, filter_linear, repeat_disable;
+ uniform sampler2D edge_art : source_color, filter_linear, repeat_disable;
+ uniform sampler2D detail_art : source_color, filter_linear, repeat_disable;
+-uniform vec3 root_nodes[7];
+-uniform vec4 root_edges[8];
+-uniform float half_widths[8];
++uniform vec3 root_nodes[32];
++uniform vec4 root_edges[32];
++uniform float half_widths[32];
+ uniform vec4 side_rects[4];
+-uniform float side_height_px = 28.0;
++uniform int node_count = 12;
++uniform int edge_count = 17;
++uniform float side_height_px = 20.0;
+ uniform float top_brightness = 0.72;
+ uniform float detail_opacity = 0.16;
+ uniform bool debug_top_mask = false;
+@@ -20,9 +22,22 @@ float capsule_distance(vec2 p, int i) {
+  return length(p-e.xy-ab*clamp(dot(p-e.xy,ab)/dot(ab,ab),0.0,1.0))-half_widths[i];
+ }
+ float support_distance(vec2 p) {
+- float d=10000.0;
+- for(int i=0;i<7;i++){d=min(d,length(p-root_nodes[i].xy)-root_nodes[i].z);}
+- for(int i=0;i<8;i++){d=min(d,capsule_distance(p,i));}
++ // Consumers need exact distances only at the top rim (-0.35..0).
++ // Positive distances are used only for the support predicate; deep negative
++ // values have identical shading. Bounds therefore skip only irrelevant work.
++ float d=1.0;
++ for(int i=0;i<node_count;i++){
++  vec3 n=root_nodes[i];
++  if(any(greaterThan(abs(p-n.xy),vec2(n.z+1.0)))){continue;}
++  d=min(d,length(p-n.xy)-n.z);
++  if(d < -0.8){return d;}
++ }
++ for(int i=0;i<edge_count;i++){
++  vec4 e=root_edges[i];float margin=half_widths[i]+1.0;
++  if(any(lessThan(p,min(e.xy,e.zw)-vec2(margin))) || any(greaterThan(p,max(e.xy,e.zw)+vec2(margin)))){continue;}
++  d=min(d,capsule_distance(p,i));
++  if(d < -0.8){return d;}
++ }
+  return d;
+ }
+ // Mirrored sampling keeps adjacent repetitions continuous, without editing sources.
+@@ -34,7 +49,11 @@ vec3 wood(vec2 uv) {
+ }
+ vec4 surface(vec2 p,float boundary) {
+  int closest=0;int second=0;float best=10000.0;float next_best=10000.0;
+- for(int i=0;i<8;i++){
++ for(int i=0;i<edge_count;i++){
++  vec4 bounds=root_edges[i];
++  vec2 gap=max(min(bounds.xy,bounds.zw)-p,p-max(bounds.xy,bounds.zw));
++  float lower_bound=max(0.0,max(gap.x,gap.y))-half_widths[i];
++  if(lower_bound>next_best){continue;}
+   float d=capsule_distance(p,i);
+   if(d<best){next_best=best;second=closest;best=d;closest=i;}
+   else if(d<next_best){next_best=d;second=i;}
+@@ -51,7 +70,12 @@ vec4 surface(vec2 p,float boundary) {
+  c=mix(c,wood(uv2),0.5*(1.0-smoothstep(0.0,1.5,next_best-best)));
+  // Blend node shoulders smoothly with a fixed material field; no clamped borders.
+  float nearest=10000.0;int node_id=0;
+- for(int i=0;i<7;i++){float d=length(p-root_nodes[i].xy)/root_nodes[i].z;if(d<nearest){nearest=d;node_id=i;}}
++ for(int i=0;i<node_count;i++){
++  vec2 delta=abs(p-root_nodes[i].xy);
++  if(max(delta.x,delta.y)/root_nodes[i].z>=nearest){continue;}
++  float d=length(delta)/root_nodes[i].z;
++  if(d<nearest){nearest=d;node_id=i;}
++ }
+  vec3 n=root_nodes[node_id];vec2 local=(p-n.xy)/(n.z*2.0)+0.5;
+  float influence=(1.0-smoothstep(0.25,0.95,nearest));
+  influence=max(influence,smoothstep(-0.7,0.0,best));
+diff --git a/ui/yggdrasil_art.gd b/ui/yggdrasil_art.gd
+index 5d4c46e..4819b83 100644
+--- a/ui/yggdrasil_art.gd
++++ b/ui/yggdrasil_art.gd
+@@ -1,6 +1,7 @@
+ extends Node2D
+ ## Owner-approved visual composition; authoritative support remains TerrainLayout.
+ const Layout = preload("res://core/terrain_layout.gd")
++var root_layout: Dictionary = {}
+ var config: Dictionary = {}
+ var textures: Dictionary = {}
+ var floor_material: ShaderMaterial
+@@ -17,8 +18,9 @@ class FloorLayer extends Node2D:
+ 		draw_rect(composer.floor_rect,Color.WHITE)
+ 
+ class PassageMark extends Node2D:
++	var root_layout: Dictionary = {}
+ 	func _draw() -> void:
+-		var d: Dictionary = Layout.root_definition("raiz_yggdrasil")
++		var d: Dictionary = Layout.root_definition("raiz_yggdrasil") if root_layout.is_empty() else root_layout
+ 		var at: Vector2 = Iso.to_screen(Layout.root_point(d.nodes.G))
+ 		draw_arc(at+Vector2(0,-20),18.0,PI,TAU,28,Color("a380c1"),3.0,true)
+ 
+@@ -38,8 +40,8 @@ func prepare() -> bool:
+ 		if not resource is Texture2D:
+ 			return false
+ 		textures[id]=resource
+-	var d: Dictionary=Layout.root_definition("raiz_yggdrasil")
+-	if d.nodes.size()!=7 or d.edges.size()!=8 or d.revision!=config.geometry_revision:
++	var d: Dictionary=Layout.root_definition("raiz_yggdrasil") if root_layout.is_empty() else root_layout
++	if d.nodes.is_empty() or d.nodes.size()>32 or d.edges.size()<2 or d.edges.size()>32 or d.revision!=config.geometry_revision:
+ 		return false
+ 	floor_material=ShaderMaterial.new()
+ 	floor_material.shader=load(String(config.shader))
+@@ -56,6 +58,11 @@ func prepare() -> bool:
+ 		var b: Vector2=Layout.root_point(d.nodes[edge[1]])
+ 		edges.append(Vector4(a.x,a.y,b.x,b.y))
+ 		widths.append(Layout.root_edge_width(d,edge)*0.5)
++	floor_material.set_shader_parameter("node_count",nodes.size())
++	floor_material.set_shader_parameter("edge_count",edges.size())
++	nodes.resize(32)
++	edges.resize(32)
++	widths.resize(32)
+ 	floor_material.set_shader_parameter("root_nodes",nodes)
+ 	floor_material.set_shader_parameter("root_edges",edges)
+ 	floor_material.set_shader_parameter("half_widths",widths)
+@@ -84,6 +91,7 @@ func _ready() -> void:
+ 	floor_layer.z_index=3
+ 	add_child(floor_layer)
+ 	marker=PassageMark.new()
++	marker.root_layout=root_layout
+ 	marker.z_index=4
+ 	add_child(marker)
+ 	_refresh()

@@ -1,0 +1,65 @@
+{
+  "plan": "PLAN-NOTTGARD-PATH-REVISION-20261017",
+  "step": "S-PATH-005",
+  "revision": "r2",
+  "status": "COMPLETE_APPROVED_OWNER",
+  "completed_steps": 5,
+  "total_steps": 5,
+  "remaining_steps": 0,
+  "owner_feedback_verbatim": "Atena, testei e aprovei os caminhos, as bordas e o combate nos dois mapas, incluindo a leitura da espiral abissal. Pode concluir a S-PATH-005 e registrar os resultados dos playtests.",
+  "recorded_utc": "2026-10-18T02:31:52.007Z",
+  "human_acceptance": {
+    "raiz_yggdrasil": {
+      "status": "APPROVED_OWNER",
+      "criteria": [
+        "caminhos",
+        "bordas",
+        "combate"
+      ]
+    },
+    "reino_abissal": {
+      "status": "APPROVED_OWNER",
+      "criteria": [
+        "caminhos",
+        "bordas",
+        "combate",
+        "leitura da espiral abissal"
+      ]
+    }
+  },
+  "acceptance_basis": "Explicit owner report for both maps; no inference from automated metrics",
+  "human_seed_coverage": "No per-seed coverage or timings asserted by owner",
+  "build": ".atena/generated/path-revision-20261017/s004-build-r2.json",
+  "all_18_hashes_verified": true,
+  "opening": ".atena/generated/path-revision-20261017/s005-opening.json",
+  "technical_validation": ".atena/generated/path-revision-20261017/s004-final-validation-r2.json",
+  "technical_results_reused": true,
+  "new_gameplay_changes": false,
+  "log_audit": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-raiz_yggdrasil-20261018-022808-657/engine.log",
+      "sha256": "2104300e69f65eb136667e81673c017f08344ac794eca3c720a17552d087357a",
+      "errors": 0
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-raiz_yggdrasil-20261018-022808-657/playtest-errors.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "errors": 0
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-reino_abissal-20261018-022837-750/engine.log",
+      "sha256": "2104300e69f65eb136667e81673c017f08344ac794eca3c720a17552d087357a",
+      "errors": 0
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-reino_abissal-20261018-022837-750/playtest-errors.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "errors": 0
+    }
+  ],
+  "evidence": ".atena/evidence/EVID-NOTTGARD-PATH-HUMAN-PLAYTEST-20261017-r2.md",
+  "canon": ".atena/vault/canon/DEC-MAP-PATH-HUMAN-ACCEPTANCE-20261017-r2.md",
+  "portage": "PENDING_APPLICATION_OWNER_APPROVAL",
+  "dagruve": "CP-DAG-005_S-DAG-005_4_OF_5_OWNER_FEEDBACK_PENDING",
+  "processes": "No process closed or changed during documentary completion"
+}

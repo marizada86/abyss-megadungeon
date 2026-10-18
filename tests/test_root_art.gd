@@ -12,7 +12,9 @@ func run() -> Array:
 	var d := TerrainLayout.root_definition()
 	var nodes: PackedVector3Array = mat.get_shader_parameter("root_nodes")
 	var edges: PackedVector4Array = mat.get_shader_parameter("root_edges")
-	if nodes.size() != d.nodes.size() or edges.size() != d.edges.size() or float(mat.get_shader_parameter("half_width")) != float(d.width)*0.5:
+	var widths: PackedFloat32Array = mat.get_shader_parameter("half_widths")
+	var heights: PackedVector2Array = mat.get_shader_parameter("edge_heights")
+	if nodes.size()!=32 or edges.size()!=32 or widths.size()!=32 or heights.size()!=32 or int(mat.get_shader_parameter("node_count"))!=18 or int(mat.get_shader_parameter("edge_count"))!=23:
 		out.append("Art support does not use authoritative geometry")
 	var i := 0
 	for raw: Array in d.nodes.values():
@@ -23,9 +25,13 @@ func run() -> Array:
 	for edge: Array in d.edges:
 		var a := TerrainLayout.root_point(d.nodes[edge[0]])
 		var b := TerrainLayout.root_point(d.nodes[edge[1]])
-		if edges[i] != Vector4(a.x,a.y,b.x,b.y):
+		if edges[i] != Vector4(a.x,a.y,b.x,b.y) or not is_equal_approx(widths[i],TerrainLayout.root_edge_width(d,edge)*0.5):
 			out.append("Art passage changed endpoints")
+		if heights[i].x<0.0 or heights[i].x>1.0 or heights[i].y<0.0 or heights[i].y>1.0:
+			out.append("Spiral height interpolation outside contract")
 		i += 1
+	if heights[0].x!=0.0 or heights[16].y!=1.0:
+		out.append("Spiral progression does not run from outer entry to nucleus")
 	var bytes := 0
 	for id in config.textures:
 		var texture: Texture2D = load(String(config.textures[id]))

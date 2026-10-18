@@ -1,0 +1,13 @@
+{
+	"hero_position": [
+		30.0,
+		54.0
+	],
+	"human_acceptance": "PENDING",
+	"map": "reino_abissal",
+	"paused": true,
+	"sandbox": true,
+	"save_path": "user://qa-sandbox/qa-20261017T232848/profile.json",
+	"seed": 4401,
+	"user_data_dir": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/path-revision-20261017/s005-reino_abissal-20261018-022837-750/appdata/Godot/app_userdata/Nottgard Survivors"
+}
