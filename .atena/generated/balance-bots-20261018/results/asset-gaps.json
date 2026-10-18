@@ -1,0 +1,439 @@
+{
+	"gaps": [
+		{
+			"caminho_esperado": "res://assets/animations/enemies/tentaculo_kraken",
+			"cat": "inimigo",
+			"detalhe": "faltam sequências: move; fase docas",
+			"gravidade": "degrada",
+			"id": "tentaculo_kraken"
+		},
+		{
+			"caminho_esperado": "res://assets/animations/enemies/molydeus_menor/{idle,move,attack,death}.png",
+			"cat": "inimigo",
+			"detalhe": "só sprite estático (sem animações); fase pilares",
+			"gravidade": "degrada",
+			"id": "molydeus_menor"
+		},
+		{
+			"caminho_esperado": "res://assets/animations/enemies/ilusao_de_sucubo/{idle,move,attack,death}.png",
+			"cat": "inimigo",
+			"detalhe": "só sprite estático (sem animações); fase shendilavri",
+			"gravidade": "degrada",
+			"id": "ilusao_de_sucubo"
+		},
+		{
+			"caminho_esperado": "res://assets/animations/enemies/ilusao_de_socothbenoth/{idle,move,attack,death}.png",
+			"cat": "inimigo",
+			"detalhe": "só sprite estático (sem animações); fase goranthis",
+			"gravidade": "degrada",
+			"id": "ilusao_de_socothbenoth"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/mask_faca_sombra.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Mask sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "mask_faca_sombra"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/mask_fechaduras.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Mask sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "mask_fechaduras"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/lliira_passo_leve.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Lliira sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "lliira_passo_leve"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/shar_pacto_perda.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Shar sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "shar_pacto_perda"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/shar_veu_noite.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Shar sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "shar_veu_noite"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/selune_prata.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Selûne sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "selune_prata"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/ghaunadaur_massa.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Ghaunadaur sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "ghaunadaur_massa"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/helion_tarn.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Helion sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "helion_tarn"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/lu_yueh_praga.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Lu Yueh sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "lu_yueh_praga"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/zuggtmoy_esporos.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Zuggtmoy sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "zuggtmoy_esporos"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/zuggtmoy_guarnicao.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Zuggtmoy sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "zuggtmoy_guarnicao"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/juiblex_gelatina.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Juiblex sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "juiblex_gelatina"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/boons/juiblex_colmeia.png",
+			"cat": "icone_bencao",
+			"detalhe": "bênção de Juiblex sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "juiblex_colmeia"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/weapons/maca_demolidora.png",
+			"cat": "icone_arma",
+			"detalhe": "arma sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "maca_demolidora"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/weapons/raio_da_ruina.png",
+			"cat": "icone_arma",
+			"detalhe": "arma sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "raio_da_ruina"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/weapons/dominio_coletivo.png",
+			"cat": "icone_arma",
+			"detalhe": "arma sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "dominio_coletivo"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/weapons/martelo_da_luz.png",
+			"cat": "icone_arma",
+			"detalhe": "arma sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "martelo_da_luz"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/weapons/constelacao_de_silva.png",
+			"cat": "icone_arma",
+			"detalhe": "arma sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "constelacao_de_silva"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/weapons/memoria_alterada.png",
+			"cat": "icone_arma",
+			"detalhe": "arma sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "memoria_alterada"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/weapons/tocha_do_incendiario.png",
+			"cat": "icone_arma",
+			"detalhe": "arma sem ícone próprio",
+			"gravidade": "cosmetico",
+			"id": "tocha_do_incendiario"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/items/espelho_das_almas_desejantes.png",
+			"cat": "icone_item_unico",
+			"detalhe": "item único sem ícone próprio (slot amuleto)",
+			"gravidade": "cosmetico",
+			"id": "espelho_das_almas_desejantes"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/stages/docas_rule.png",
+			"cat": "fase_icone",
+			"detalhe": "sem ícone da regra de fase no HUD (hud.gd mapeia só 7 fases; durao é vazio de propósito)",
+			"gravidade": "cosmetico",
+			"id": "docas"
+		},
+		{
+			"caminho_esperado": "assets/ui/boss-intros/zuggtmoy.png",
+			"cat": "fase_chefe",
+			"detalhe": "chefe zuggtmoy sem apresentação (boss_presentations.json: cartaz de introdução)",
+			"gravidade": "degrada",
+			"id": "shedaklah"
+		},
+		{
+			"caminho_esperado": "assets/ui/boss-intros/blogbog.png",
+			"cat": "fase_chefe",
+			"detalhe": "chefe blogbog sem apresentação (boss_presentations.json: cartaz de introdução)",
+			"gravidade": "degrada",
+			"id": "molor"
+		},
+		{
+			"caminho_esperado": "assets/ui/boss-intros/molydeus_chefe.png",
+			"cat": "fase_chefe",
+			"detalhe": "chefe molydeus_chefe sem apresentação (boss_presentations.json: cartaz de introdução)",
+			"gravidade": "degrada",
+			"id": "durao"
+		},
+		{
+			"caminho_esperado": "assets/ui/boss-intros/discipulo_pestilento.png",
+			"cat": "fase_chefe",
+			"detalhe": "chefe discipulo_pestilento sem apresentação (boss_presentations.json: cartaz de introdução)",
+			"gravidade": "degrada",
+			"id": "feng_tu"
+		},
+		{
+			"caminho_esperado": "assets/ui/boss-intros/malcanthet.png",
+			"cat": "fase_chefe",
+			"detalhe": "chefe malcanthet sem apresentação (boss_presentations.json: cartaz de introdução)",
+			"gravidade": "degrada",
+			"id": "shendilavri"
+		},
+		{
+			"caminho_esperado": "assets/ui/boss-intros/socothbenoth.png",
+			"cat": "fase_chefe",
+			"detalhe": "chefe socothbenoth sem apresentação (boss_presentations.json: cartaz de introdução)",
+			"gravidade": "degrada",
+			"id": "goranthis"
+		},
+		{
+			"caminho_esperado": "assets/ui/boss-intros/sintese_abissal.png",
+			"cat": "fase_chefe",
+			"detalhe": "chefe sintese_abissal sem apresentação (boss_presentations.json: cartaz de introdução)",
+			"gravidade": "degrada",
+			"id": "pilares"
+		},
+		{
+			"caminho_esperado": "assets/audio/music/reino_abissal.wav + manifest.music.reino_abissal",
+			"cat": "fase_audio",
+			"detalhe": "sem música no audio_manifest",
+			"gravidade": "degrada",
+			"id": "reino_abissal"
+		},
+		{
+			"caminho_esperado": "assets/audio/ambience/reino_abissal.wav + manifest.ambience.reino_abissal",
+			"cat": "fase_audio",
+			"detalhe": "sem ambiência no audio_manifest",
+			"gravidade": "degrada",
+			"id": "reino_abissal"
+		},
+		{
+			"caminho_esperado": "assets/decals/reino_abissal_remendo_01.png, reino_abissal_trilha_01.png",
+			"cat": "fase_decais",
+			"detalhe": "sem remendo/trilha de chão (ground_decals.json)",
+			"gravidade": "cosmetico",
+			"id": "reino_abissal"
+		},
+		{
+			"caminho_esperado": "data/chronicles.json",
+			"cat": "fase_texto",
+			"detalhe": "sem crônica de campanha (chronicles.json) — texto, depende de lore aprovada",
+			"gravidade": "cosmetico",
+			"id": "reino_abissal"
+		},
+		{
+			"caminho_esperado": "data/atmosphere.json",
+			"cat": "fase_atmosfera",
+			"detalhe": "sem atmosfera",
+			"gravidade": "cosmetico",
+			"id": "reino_abissal"
+		},
+		{
+			"caminho_esperado": "res://assets/stages/reino_abissal_thumb.png",
+			"cat": "fase_thumb",
+			"detalhe": "sem miniatura de seleção",
+			"gravidade": "degrada",
+			"id": "reino_abissal"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/stages/reino_abissal_rule.png",
+			"cat": "fase_icone",
+			"detalhe": "sem ícone da regra de fase no HUD (hud.gd mapeia só 7 fases; durao é vazio de propósito)",
+			"gravidade": "cosmetico",
+			"id": "reino_abissal"
+		},
+		{
+			"caminho_esperado": "assets/audio/music/domwieck.wav + manifest.music.domwieck",
+			"cat": "fase_audio",
+			"detalhe": "sem música no audio_manifest",
+			"gravidade": "degrada",
+			"id": "domwieck"
+		},
+		{
+			"caminho_esperado": "assets/audio/ambience/domwieck.wav + manifest.ambience.domwieck",
+			"cat": "fase_audio",
+			"detalhe": "sem ambiência no audio_manifest",
+			"gravidade": "degrada",
+			"id": "domwieck"
+		},
+		{
+			"caminho_esperado": "assets/decals/domwieck_remendo_01.png, domwieck_trilha_01.png",
+			"cat": "fase_decais",
+			"detalhe": "sem remendo/trilha de chão (ground_decals.json)",
+			"gravidade": "cosmetico",
+			"id": "domwieck"
+		},
+		{
+			"caminho_esperado": "data/chronicles.json",
+			"cat": "fase_texto",
+			"detalhe": "sem crônica de campanha (chronicles.json) — texto, depende de lore aprovada",
+			"gravidade": "cosmetico",
+			"id": "domwieck"
+		},
+		{
+			"caminho_esperado": "data/atmosphere.json",
+			"cat": "fase_atmosfera",
+			"detalhe": "sem atmosfera",
+			"gravidade": "cosmetico",
+			"id": "domwieck"
+		},
+		{
+			"caminho_esperado": "res://assets/stages/domwieck_thumb.png",
+			"cat": "fase_thumb",
+			"detalhe": "sem miniatura de seleção",
+			"gravidade": "degrada",
+			"id": "domwieck"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/stages/domwieck_rule.png",
+			"cat": "fase_icone",
+			"detalhe": "sem ícone da regra de fase no HUD (hud.gd mapeia só 7 fases; durao é vazio de propósito)",
+			"gravidade": "cosmetico",
+			"id": "domwieck"
+		},
+		{
+			"caminho_esperado": "assets/audio/music/raiz_yggdrasil.wav + manifest.music.raiz_yggdrasil",
+			"cat": "fase_audio",
+			"detalhe": "sem música no audio_manifest",
+			"gravidade": "degrada",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "assets/audio/ambience/raiz_yggdrasil.wav + manifest.ambience.raiz_yggdrasil",
+			"cat": "fase_audio",
+			"detalhe": "sem ambiência no audio_manifest",
+			"gravidade": "degrada",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "assets/decals/raiz_yggdrasil_remendo_01.png, raiz_yggdrasil_trilha_01.png",
+			"cat": "fase_decais",
+			"detalhe": "sem remendo/trilha de chão (ground_decals.json)",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "data/chronicles.json",
+			"cat": "fase_texto",
+			"detalhe": "sem crônica de campanha (chronicles.json) — texto, depende de lore aprovada",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "data/stage_story.json",
+			"cat": "fase_texto",
+			"detalhe": "sem stage_story",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "data/stage_rules.json",
+			"cat": "fase_regra",
+			"detalhe": "sem regra de fase (stage_rules.json)",
+			"gravidade": "degrada",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "data/stage_events.json",
+			"cat": "fase_eventos",
+			"detalhe": "sem stage_events",
+			"gravidade": "degrada",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "data/atmosphere.json",
+			"cat": "fase_atmosfera",
+			"detalhe": "sem atmosfera",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "res://assets/stages/raiz_yggdrasil_thumb.png",
+			"cat": "fase_thumb",
+			"detalhe": "sem miniatura de seleção",
+			"gravidade": "degrada",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/stages/raiz_yggdrasil_rule.png",
+			"cat": "fase_icone",
+			"detalhe": "sem ícone da regra de fase no HUD (hud.gd mapeia só 7 fases; durao é vazio de propósito)",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "Battle.BREAKABLE_TYPES_BY_STAGE",
+			"cat": "quebravel",
+			"detalhe": "sem quebráveis temáticos dedicados (usa fallback arbusto_quebravel)",
+			"gravidade": "cosmetico",
+			"id": "reino_abissal"
+		},
+		{
+			"caminho_esperado": "Battle.BREAKABLE_TYPES_BY_STAGE",
+			"cat": "quebravel",
+			"detalhe": "sem quebráveis temáticos dedicados (usa fallback arbusto_quebravel)",
+			"gravidade": "cosmetico",
+			"id": "domwieck"
+		},
+		{
+			"caminho_esperado": "Battle.BREAKABLE_TYPES_BY_STAGE",
+			"cat": "quebravel",
+			"detalhe": "sem quebráveis temáticos dedicados (usa fallback arbusto_quebravel)",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "res://assets/animations/enemies/sacerdote_mente_derretida/special.png",
+			"cat": "chefe_special",
+			"detalhe": "tem mecânica L5 mas sem sequência special.png",
+			"gravidade": "cosmetico",
+			"id": "sacerdote_mente_derretida"
+		},
+		{
+			"caminho_esperado": "res://assets/animations/enemies/discipulo_pestilento/special.png",
+			"cat": "chefe_special",
+			"detalhe": "tem mecânica L5 mas sem sequência special.png",
+			"gravidade": "cosmetico",
+			"id": "discipulo_pestilento"
+		}
+	],
+	"total": 62
+}

@@ -1,0 +1,8 @@
+BOT_ROOT= newgod-durvall smart-god durvall reino_abissal,domwieck,raiz_yggdrasil 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-2bc4d24 basenewgod-durvall smart-god durvall reino_abissal,domwieck,raiz_yggdrasil 1,2
+BOT_ROOT= newgod-korrak smart-god korrak reino_abissal,domwieck,raiz_yggdrasil 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-2bc4d24 basenewgod-korrak smart-god korrak reino_abissal,domwieck,raiz_yggdrasil 1,2
+BOT_ROOT= newgod-sylas smart-god sylas reino_abissal,domwieck,raiz_yggdrasil 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-2bc4d24 basenewgod-sylas smart-god sylas reino_abissal,domwieck,raiz_yggdrasil 1,2
+BOT_ROOT= newgod-maelor smart-god maelor reino_abissal,domwieck,raiz_yggdrasil 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-2bc4d24 basenewgod-maelor smart-god maelor reino_abissal,domwieck,raiz_yggdrasil 1,2
