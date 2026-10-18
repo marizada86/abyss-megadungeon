@@ -1,0 +1,44 @@
+{
+  "status": "APPROVED_V02",
+  "step": "S-P20-Q02",
+  "authorization": "o visual de marciela oficial foi definido em outro chat, atualize a imagem de acordo (2026-10-17)",
+  "tool": "built-in image_gen edit",
+  "tool_prompt": "q2-prompt-v02.txt",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq20-production-20261017/candidates/hq_n20_q2_marciela_meeting_v01.png",
+      "sha256": "ae4fac7df57dc62bf9a50e0aa258f1f8e947ae27d122b02215b8f4ec3254d673"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-038/S17-S18-manto-pantano/r01/marciela-front-candidate-v02-hq.png",
+      "sha256": "83be5bd2e02a9c90febe96d5782532ad04142ebacc115c2fbaf41e56c0144d84"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-038/S17-S18-manto-pantano/r01/marciela-back-v01-hq.png",
+      "sha256": "b825358cd7e3c453770431b1f0baf10b2549c19cb977f86eafb7a98677617265"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-038/S17-S18-manto-pantano/r01/marciela-portrait-three-quarter-v01-hq.png",
+      "sha256": "71c448eb3b8529b4a5d4e7ac3f1b5cf3f4c00d1bbad1c70ab2814db319dec685"
+    }
+  ],
+  "reference_authority": "CHAR-038 README: seis imagens aprovadas, EV-REF-099; pacote DRAFT, uso explicitamente solicitado pelo dono",
+  "runtime_admitted": false,
+  "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q2_marciela_meeting_v02.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-08415f7c-f199-420a-a294-3da8e732adfb.png",
+  "sha256": "399e277cd6a1431ff214bc698f429deac8336fed069616ff9b9f28a177645309",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "owner_approval": "aprovado (2026-10-17), aceite Q2 v02",
+  "inspection": {
+    "marciela_official_hood_loose_brown_hair": true,
+    "ragged_layers_cross_straps_double_belts": true,
+    "face_partial_profile": true,
+    "empty_hands": true,
+    "tree_and_companions_preserved": true,
+    "no_text": true
+  },
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q2-20261017-r1.md"
+}

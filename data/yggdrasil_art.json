@@ -1,0 +1,20 @@
+{
+  "revision": "r1",
+  "accepted_kit": "ASSET-APPROVAL-YGGDRASIL-ART-KIT-20261017-r1",
+  "shader": "res://ui/shaders/yggdrasil_root_art.gdshader",
+  "textures": {
+    "ground": "res://assets/tiles/yggdrasil_r1/ground.png",
+    "edge": "res://assets/tiles/yggdrasil_r1/edge.png",
+    "detail": "res://assets/tiles/yggdrasil_r1/detail.png",
+    "trunk": "res://assets/tiles/yggdrasil_r1/trunk.png"
+  },
+  "import_max_size": 1024,
+  "side_height_px": 28.0,
+  "top_brightness": 0.72,
+  "detail_opacity": 0.16,
+  "background_tint": "30303b",
+  "background_rect": [-2300, -1350, 4600, 4600],
+  "side_rects": [[0,80,1254,270],[0,390,1254,270],[0,680,1254,280],[0,975,1254,240]],
+  "native_size": 1254,
+  "geometry_revision": "r3"
+}

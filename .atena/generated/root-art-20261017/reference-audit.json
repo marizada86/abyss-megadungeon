@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "refs": [
+    {
+      "hq": "hqn_17",
+      "panel": 1,
+      "path": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\hq17-production-20261016\\candidates\\hq_n17_q1_descent_v01.png",
+      "sha256": "ef19806c3506cab8e29b1f8548864d660a0b7f88f6569a6bdb186b5b8dc017c8",
+      "approval": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\vault\\canon\\ASSET-APPROVAL-HQ17-Q1-20261016-r1.md",
+      "authority": "CANON_APPROVED_REFERENCE",
+      "visually_inspected": true
+    },
+    {
+      "hq": "hqn_17",
+      "panel": 3,
+      "path": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\hq17-production-20261016\\candidates\\hq_n17_q3_abyss_legion_v02.png",
+      "sha256": "5440f4c64b056f3f40f23e4ffc3e971632a64311e38b144fbae022618df650c0",
+      "approval": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\vault\\canon\\ASSET-APPROVAL-HQ17-Q3-20261016-r1.md",
+      "authority": "CANON_APPROVED_REFERENCE",
+      "visually_inspected": true
+    },
+    {
+      "hq": "hqn_17",
+      "panel": 4,
+      "path": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\hq17-production-20261016\\candidates\\hq_n17_q4_voice_v01.png",
+      "sha256": "18f55eee9e96731c9764937502d428a06071975a946af51441f83ba2f19e48fd",
+      "approval": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\vault\\canon\\ASSET-APPROVAL-HQ17-Q4-20261016-r1.md",
+      "authority": "CANON_APPROVED_REFERENCE",
+      "visually_inspected": true
+    },
+    {
+      "hq": "hqn_16",
+      "panel": 5,
+      "path": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\hq16-production-20261016\\candidates\\hq_n16_q5_roots_v02.png",
+      "sha256": "34e592d11780db11c67185ca1f0ef9eba46f4be0ab94e394f210a3c512f5d5f5",
+      "approval": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\vault\\canon\\ASSET-APPROVAL-HQ16-Q5-20261016-r1.md",
+      "authority": "CANON_APPROVED_REFERENCE",
+      "visually_inspected": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "data/root_navigation.json",
+      "sha256": "9e6593fc29c40b40e3e82637fd1735dec080097c540f4523c9e50213f4173845"
+    },
+    {
+      "path": "core/iso.gd",
+      "sha256": "f75784a817a0cc742adf0cd689a9babc9be1717c1d0629f5951c21c250c5b759"
+    },
+    {
+      "path": "core/terrain_layout.gd",
+      "sha256": "fd1834d1ffb53e22d8adb462d820307d1e183a608aa507ee98e74832cbce6516"
+    },
+    {
+      "path": "ui/ground.gd",
+      "sha256": "9bade1193a5ad1958962f09bcdd67f68de72d476dfdb35950d4ff71232b1c44d"
+    },
+    {
+      "path": "project.godot",
+      "sha256": "c15b85a17487d9edf3042aa67f2f5b102fc88d07f2badfb80da08a672f1c5fbf"
+    },
+    {
+      "path": ".atena/vault/canon/DEC-NOTTGARD-ROOT-PLAYTEST-APPROVED-20261017-r1.md",
+      "sha256": "8ee23061e4a71221625877cfcce8cdc1efab749561defce4c969b30ee9660438"
+    }
+  ],
+  "production_authorized": false,
+  "document_links_valid": true
+}

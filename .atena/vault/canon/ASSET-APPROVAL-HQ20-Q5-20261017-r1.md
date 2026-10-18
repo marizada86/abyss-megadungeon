@@ -1,0 +1,3 @@
+# HQ20 Q5 — aceite v01
+
+CANON_OWNER_ASSET_APPROVAL. 2026-10-17. O dono respondeu “aprovado” à Q5 v01. Arquivo `.atena/generated/hq20-production-20261017/candidates/hq_n20_q5_nidhogg_misses_v01.png`, SHA-256 `81b8fe39fe8bd22a8a515bc23fe0b4056ebffb8785b9a16959f48ae4d4bb8f7a`, 1672×941. Aprovada representação de Nidhogg como cobra gigante guardiã de Yggdrasil, corpo escamoso escuro, sem patas/asas/chifres, tentativa de mordida com Maelor ileso fora da boca. Esta cena serve como referência visual para continuidade Q6. Cinco de sete quadros com aceites individuais; candidata seguinte autorizada pela regra de continuidade, sem admissão no runtime.

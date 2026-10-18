@@ -1,0 +1,231 @@
+{
+  "id": "DOMWIECK-ART-KIT-R1",
+  "revision": "r1",
+  "status": "OWNER_APPROVED_VISUAL_KIT_R1",
+  "stage": "S-DART-003",
+  "authorized_scope": "Six PNGs only, no game integration",
+  "references": [
+    {
+      "asset": "assets/hq/chapter1_r1/hq_n18_q3_domwieck_invasion_v01.png",
+      "sha256": "919a1e8fa5c07e87fe2add11df7ec9c543d4a9d2c306e2db92d9cac5e1153e82",
+      "role": "Architecture, paving, active blue Tarn; exclude abyss/portal/troops"
+    },
+    {
+      "asset": "assets/hq/chapter1_r1/hq_n03_q1_garden_v03.png",
+      "sha256": "af234f301b8f720feb8586c9b088d4a82be73bb0331ce510cc6c1b633ca57adf",
+      "role": "Circular forest, red garden, intact star and beam"
+    },
+    {
+      "asset": "assets/hq/chapter1_r1/hq_n03_q2_adam_strike_v03.png",
+      "sha256": "724313bad05dfb24e9237a7d5a795b3173f26bff27c4ff8c435dab73342e5427",
+      "role": "Only Ailalore material, larger scale and light blue; exclude Adam, strike and collapse"
+    }
+  ],
+  "approved_sample_guidance": ".atena/vault/canon/ASSET-APPROVAL-DOMWIECK-ART-SAMPLES-20261017-r1.md",
+  "references_supplied_to_generator": "ONLY_THE_THREE_HQ_FILES_IN_EACH_CALL",
+  "entries": [
+    {
+      "id": "ground",
+      "version": "v01",
+      "path": ".atena/generated/domwieck-art-20261017/kit-r1/ground-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-54590f58-136a-488b-abc4-b66797a33de8.png",
+      "sha256": "3acea8c06624e18c970c201af083ccc2a2b69d29f847c40f1e1de1526643e0a3",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 2,
+      "alpha": {
+        "transparent_pixels": 0,
+        "partial_pixels": 0,
+        "opaque_pixels": 1572516,
+        "transparent_fraction": 0,
+        "visible_bbox_alpha_gt_16": [
+          0,
+          0,
+          1253,
+          1253
+        ],
+        "visible_outer_edge_pixels": 5012
+      },
+      "native_rgba8_bytes": 6290064,
+      "tool": "built-in image_gen.imagegen",
+      "prompt_file": ".atena/generated/domwieck-art-20261017/kit-r1/prompts.json",
+      "prompt_key": "ground",
+      "status": "OWNER_APPROVED_VISUAL_KIT_ENTRY",
+      "import_target_max_size": 1024,
+      "import_mipmaps": false,
+      "integration_restrictions": "Four overhead material variants. Ornamental quadrant for sparse accents; no seamless tiling guarantee. UV inset and seams to validate in integration."
+    },
+    {
+      "id": "architecture",
+      "version": "v01",
+      "path": ".atena/generated/domwieck-art-20261017/kit-r1/architecture-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-89e801dd-da33-4ecc-8d87-91bc5efc69be.png",
+      "sha256": "66e6ecea484751120beee730bdc8f5067ed1dd41562a894f22241e3f8e040f50",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 6,
+      "alpha": {
+        "transparent_pixels": 809976,
+        "partial_pixels": 762083,
+        "opaque_pixels": 457,
+        "transparent_fraction": 0.5150828354051723,
+        "visible_bbox_alpha_gt_16": [
+          71,
+          7,
+          1218,
+          1198
+        ],
+        "visible_outer_edge_pixels": 0
+      },
+      "native_rgba8_bytes": 6290064,
+      "tool": "built-in image_gen.imagegen",
+      "prompt_file": ".atena/generated/domwieck-art-20261017/kit-r1/prompts.json",
+      "prompt_key": "architecture",
+      "status": "OWNER_APPROVED_VISUAL_KIT_ENTRY",
+      "import_target_max_size": 1024,
+      "import_mipmaps": false,
+      "integration_restrictions": "Four independent sprites. Native shapes need measured individual rectangles/pivots; top-right spire has a narrow top margin. Never assume exact 2x2 clipping. Reduce display size to preserve routes."
+    },
+    {
+      "id": "vegetation",
+      "version": "v01",
+      "path": ".atena/generated/domwieck-art-20261017/kit-r1/vegetation-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-be37db7a-f9a7-49d6-b552-e0d13a1eb8f3.png",
+      "sha256": "5cdfce7984e59b844032e067024d7ee11c595880a0b61b8b6955ef136f77116c",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 6,
+      "alpha": {
+        "transparent_pixels": 763952,
+        "partial_pixels": 808355,
+        "opaque_pixels": 209,
+        "transparent_fraction": 0.48581508868590206,
+        "visible_bbox_alpha_gt_16": [
+          38,
+          44,
+          1222,
+          1198
+        ],
+        "visible_outer_edge_pixels": 0
+      },
+      "native_rgba8_bytes": 6290064,
+      "tool": "built-in image_gen.imagegen",
+      "prompt_file": ".atena/generated/domwieck-art-20261017/kit-r1/prompts.json",
+      "prompt_key": "vegetation",
+      "status": "OWNER_APPROVED_VISUAL_KIT_ENTRY",
+      "import_target_max_size": 1024,
+      "import_mipmaps": false,
+      "integration_restrictions": "Four crowns; lower-left tree extends across nominal central atlas split. Use individually measured rectangles rather than blind equal quadrants. Protect objective/approach visibility."
+    },
+    {
+      "id": "garden",
+      "version": "v01",
+      "path": ".atena/generated/domwieck-art-20261017/kit-r1/garden-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-77cc21f6-9c48-4d5c-9c9a-8a1e9cbe43b2.png",
+      "sha256": "42197f9b6f48cb07987a0fed9bdcba52618f99ff49ad8c41c268416069b05e5a",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 6,
+      "alpha": {
+        "transparent_pixels": 590503,
+        "partial_pixels": 981683,
+        "opaque_pixels": 330,
+        "transparent_fraction": 0.3755147801357824,
+        "visible_bbox_alpha_gt_16": [
+          37,
+          53,
+          1224,
+          1200
+        ],
+        "visible_outer_edge_pixels": 0
+      },
+      "native_rgba8_bytes": 6290064,
+      "tool": "built-in image_gen.imagegen",
+      "prompt_file": ".atena/generated/domwieck-art-20261017/kit-r1/prompts.json",
+      "prompt_key": "garden",
+      "status": "OWNER_APPROVED_VISUAL_KIT_ENTRY",
+      "import_target_max_size": 1024,
+      "import_mipmaps": false,
+      "integration_restrictions": "Only top-left, top-right and bottom-left flat cover variants proposed for admission. Bottom-right contains raised rubble and is EXCLUDED from runtime use; preserved in original only."
+    },
+    {
+      "id": "ailalore",
+      "version": "v01",
+      "path": ".atena/generated/domwieck-art-20261017/kit-r1/ailalore-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-8a7c81c4-e7ac-4811-b03e-4574e4e4f304.png",
+      "sha256": "320b27f6a7d39ca354b01c32e3d0dcfb6774e82b2bdd9b66b78e619acb036dd4",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 6,
+      "alpha": {
+        "transparent_pixels": 801952,
+        "partial_pixels": 770418,
+        "opaque_pixels": 146,
+        "transparent_fraction": 0.509980184621333,
+        "visible_bbox_alpha_gt_16": [
+          59,
+          78,
+          1223,
+          1197
+        ],
+        "visible_outer_edge_pixels": 0
+      },
+      "native_rgba8_bytes": 6290064,
+      "tool": "built-in image_gen.imagegen",
+      "prompt_file": ".atena/generated/domwieck-art-20261017/kit-r1/prompts.json",
+      "prompt_key": "ailalore",
+      "status": "OWNER_APPROVED_VISUAL_KIT_ENTRY",
+      "import_target_max_size": 1024,
+      "import_mipmaps": false,
+      "integration_restrictions": "One intact light-blue crystal cluster. Native margins narrower than requested; preserve tips with measured rect/pivot and UV inset. Size/brightness and edge fringe require in-engine review."
+    },
+    {
+      "id": "ambient",
+      "version": "v01",
+      "path": ".atena/generated/domwieck-art-20261017/kit-r1/ambient-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-baea0d3b-bb68-4ed5-84e4-2fa1a966431e.png",
+      "sha256": "f1adb4009128586237ef33122e60a5321f21cc041f7d422f91ed7275a9d40f9b",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 6,
+      "alpha": {
+        "transparent_pixels": 706583,
+        "partial_pixels": 865933,
+        "opaque_pixels": 0,
+        "transparent_fraction": 0.4493327889827512,
+        "visible_bbox_alpha_gt_16": [
+          75,
+          77,
+          1191,
+          1194
+        ],
+        "visible_outer_edge_pixels": 0
+      },
+      "native_rgba8_bytes": 6290064,
+      "tool": "built-in image_gen.imagegen",
+      "prompt_file": ".atena/generated/domwieck-art-20261017/kit-r1/prompts.json",
+      "prompt_key": "ambient",
+      "status": "OWNER_APPROVED_VISUAL_KIT_ENTRY",
+      "import_target_max_size": 1024,
+      "import_mipmaps": false,
+      "integration_restrictions": "Two fires plus blue aura/lattice. Lower blue motifs are stronger and broader than requested; low opacity and small footprint mandatory. No opaque sky or full-screen filter. Beam and Tarn arc remain engine composition."
+    }
+  ],
+  "import_policy": {
+    "native_originals_preserved": true,
+    "max_size_per_image": 1024,
+    "mipmaps": false,
+    "maximum_six_1024_square_rgba8_bytes": 25165824,
+    "measurement": "24 MiB raw RGBA8 per copy at proposed imported dimensions, not total runtime/GPU memory",
+    "import_uv_pivots_pending_integration": true
+  },
+  "owner_acceptance": "APPROVED_OWNER_R1",
+  "acceptance_evidence": ".atena/evidence/EVID-NOTTGARD-DOMWIECK-ART-KIT-ACCEPTANCE-20261017-r1.md",
+  "acceptance_canon": ".atena/vault/canon/ASSET-APPROVAL-DOMWIECK-ART-KIT-R1-20261017-r1.md"
+}

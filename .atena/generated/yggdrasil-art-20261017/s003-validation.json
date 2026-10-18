@@ -1,0 +1,17 @@
+{
+  "status": "PASS_FILE_INSPECTION_OWNER_ACCEPTANCE_PENDING",
+  "selected_components": 4,
+  "transparent_components": 2,
+  "native_size": [
+    1254,
+    1254
+  ],
+  "guarded_runtime_unchanged": true,
+  "approved_references_unchanged": true,
+  "shared_state_preserved": true,
+  "links_valid": true,
+  "current_step": "S-YART-003",
+  "completed_steps": 2,
+  "total_steps": 5,
+  "checkpoint": "CP-YART-003-ACCEPTANCE"
+}

@@ -65,7 +65,7 @@ func _ready() -> void:
 		ranking.name = "Ranking"
 		%Tabs.add_child(ranking)
 	heroes = p.heroes_sorted()
-	stages = p.stages_sorted()
+	stages = p.stages_sorted().filter(func(id): return not bool(Data.table("stages")[id].get("qa_only", false)))
 	version_label.text = "%s v%s%s" % [Version.GAME_NAME, Version.VERSION, "  ·  build de %s (%s)" % [Version.profile_slug(), Version.build_id()] if Version.evidence_enabled() else ""]
 	hero_list.item_selected.connect(func(_i): _refresh_hero())
 	stage_list.item_selected.connect(func(_i): _refresh_stage())
@@ -241,7 +241,7 @@ func _refresh_all() -> void:
 		var thumb: Texture2D = load(thumb_path) if ResourceLoader.exists(thumb_path) else null
 		stage_list.add_item(("%d. %s" if p.stage_unlocked(id) else "🔒 %d. %s") % [int(d.order) + 1, d.name], thumb)
 	hero_list.select(sel_h[0] if not sel_h.is_empty() else heroes.find(Game.run_hero))
-	stage_list.select(sel_s[0] if not sel_s.is_empty() else stages.find(Game.run_stage))
+	stage_list.select(clampi(sel_s[0] if not sel_s.is_empty() else stages.find(Game.run_stage), 0, stages.size() - 1))
 	_refresh_hero()
 	_refresh_stage()
 	_fill_upgrades()
@@ -291,14 +291,14 @@ func _refresh_stage() -> void:
 		return
 	var id: String = stages[sel[0]]
 	var d: Dictionary = Data.table("stages")[id]
-	var boss: Dictionary = Data.table("enemies")[d.boss]
+	var boss: Dictionary = Data.table("enemies").get(d.boss, {})
 	var bt: float = float(Game.profile.data.stats.best_time.get(id, 0.0))
 	var txt := "[b]%s[/b]\n%s\n\nChefe: [b]%s[/b] em %d:%02d%s\nRegra do andar: %s\nMoedas x%.1f" % [
-		d.name, d.sub, boss.name, int(d.duration) / 60, int(d.duration) % 60, " (infinito)" if d.get("endless", false) else "", _ambient_text(d.ambient), float(d.coin_mult)]
+		d.name, d.sub, boss.get("name", "Objetivo de chegada"), int(d.duration) / 60, int(d.duration) % 60, " (infinito)" if d.get("endless", false) else "", _ambient_text(d.ambient), float(d.coin_mult)]
 	if bt > 0.0:
 		txt += "\nMelhor tempo: %d:%02d" % [int(bt) / 60, int(bt) % 60]
 	if not Game.profile.stage_unlocked(id):
-		txt += "\n\n[color=#e0a040]Bloqueada: derrote o chefe de %s.[/color]" % Data.table("stages")[d.unlock].name
+		txt += "\n\n[color=#e0a040]Bloqueada: avance pela campanha até %s.[/color]" % Data.table("stages").get(d.unlock, {}).get("name", "avanço da campanha")
 	txt += "\n\n" + AbyssPanel.summary_line(id)
 	stage_info.text = txt
 	Game.run_stage = id
@@ -313,7 +313,7 @@ func _ambient_text(amb: Array) -> String:
 	return ", ".join(amb.map(func(a): return names.get(a, a)))
 
 func _update_play() -> void:
-	var ok: bool = Game.profile.hero_unlocked(Game.run_hero) and Game.profile.stage_unlocked(Game.run_stage)
+	var ok: bool = Data.table("stages").has(Game.run_stage) and Game.profile.hero_unlocked(Game.run_hero) and Game.profile.stage_unlocked(Game.run_stage)
 	play_btn.disabled = not ok
 	play_btn.text = "JOGAR" if ok else "Bloqueado"
 	play_btn.icon = Game.controls.glyph("ui_accept")
@@ -444,7 +444,7 @@ func _fill_hqs() -> void:
 	for hq_id in HQCatalog.unlocked_ids(Game.profile.data):
 		var hq: Dictionary = Data.table("hqs")[hq_id]
 		hq_ids.append(hq_id)
-		hq_list.add_item(String(hq.get("title", hq_id)))
+		hq_list.add_item(("Complementar: " if hq_id == "hqn_14" else "Arquivo histórico: " if hq_id in ["hqn_11", "hqn_12", "hqn_13"] else "") + String(hq.get("title", hq_id)))
 	# SPEC-117 H4: uma crônica por fase, liberada ao vencer a fase; as demais aparecem bloqueadas.
 	var chronicles: Dictionary = Data.table("chronicles")
 	var stage_ids: Array = Data.table("stages").keys()
@@ -509,7 +509,7 @@ func _refresh_hq_selection(index: int) -> void:
 		hq_play_btn.disabled = true
 		return
 	var hq: Dictionary = Data.table("hqs")[hq_ids[index]]
-	hq_info.text = "[b]%s[/b]\n4 quadros" % String(hq.get("title", ""))
+	hq_info.text = "[b]%s[/b]\n%d quadros" % [String(hq.get("title", "")), Array(hq.get("panels", [])).size()]
 	hq_play_btn.disabled = false
 
 func _open_selected_hq() -> void:
@@ -526,10 +526,23 @@ func _open_selected_hq() -> void:
 	_hq_open = true
 	screen.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(screen)
-	screen.call_deferred("start_hq", hq)
+	var cursor := 0
+	var pending := false
+	for row in Game.profile.data.campaign_progress.pending_hqs:
+		if row.id == hq_id:
+			cursor = int(row.panel_index)
+			pending = true
+	if pending:
+		screen.panel_changed.connect(func(index):
+			ChapterFlow.cursor(Game.profile.data, hq_id, index)
+			Game.save())
+	screen.call_deferred("start_hq", hq, cursor)
 	while not bool(screen.get("is_closed")):
 		await get_tree().process_frame
 	var completed := bool(screen.get("completed"))
+	if pending:
+		ChapterFlow.resolve(Game.profile.data, hq_id, completed)
+		Game.save()
 	_hq_open = false
 	hq_play_btn.call_deferred("grab_focus")
 	screen.queue_free()

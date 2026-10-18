@@ -1,142 +1,604 @@
 {
   "hqn_01": {
     "title": "Uma Noite Sem Fim",
-    "trigger": {"type": "first_run"},
+    "trigger": {
+      "type": "first_run"
+    },
     "panels": [
-      {"image": "res://assets/hq/hq_n01_q1.png", "text": "Não é noite. É a ausência do dia, desde que a Finbulnott engoliu o sol."},
-      {"image": "res://assets/hq/hq_n01_q2.png", "text": "Zynara: Há algo errado nas Docas."},
-      {"image": "res://assets/hq/hq_n01_q3.png", "text": "Runas entalhadas na Tarn. Um ritual para enfraquecê-la."},
-      {"image": "res://assets/hq/hq_n01_q4.png", "text": "Alguma coisa nos viu primeiro."}
+      {
+        "image": "res://assets/hq/hq_n01_q1.png",
+        "text": "Não é noite. É a ausência do dia, desde que a Finbulnott engoliu o sol."
+      },
+      {
+        "image": "res://assets/hq/hq_n01_q2.png",
+        "text": "Zynara: Investigue as docas.",
+        "text_right": "Helion: Procure Gilly."
+      },
+      {
+        "image": "res://assets/hq/hq_n01_q3.png",
+        "text": "Gilly: Há algo errado nas Docas. Quero que descubram o que está acontecendo."
+      },
+      {
+        "image": "res://assets/hq/hq_n01_q4.png",
+        "text": "Nas Docas, o movimento diminuiu. Entre os poucos que ficaram, eles encontraram Willie."
+      },
+      {
+        "image": "res://assets/hq/hq_n01_q5.png",
+        "text": "Um ritual enfraquecia a Tarn. Pelas trincas, a névoa verde entrava na cidade."
+      },
+      {
+        "image": "res://assets/hq/hq_n01_q6.png",
+        "text": "A névoa os alcançou. Uma presença se impôs às suas mentes."
+      },
+      {
+        "image": "res://assets/hq/hq_n01_q7.png",
+        "text": "Durvall: O que foi isso?"
+      },
+      {
+        "image": "res://assets/hq/hq_n01_q8.png",
+        "text": "Durvall: Alguma coisa nos viu primeiro."
+      }
     ]
   },
   "hqn_02": {
     "title": "Seremos um só",
-    "trigger": {"type": "stage_cleared", "stage": "docas"},
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "docas"
+    },
     "panels": [
-      {"image": "res://assets/hq/hq_n02_q1.png", "text": "Nas paredes do porão, uma só frase, repetida: Seremos um só."},
-      {"image": "res://assets/hq/hq_n02_q2.png", "text": "Um guardião alado. Mas era só uma cópia."},
-      {"image": "res://assets/hq/hq_n02_q3.png", "text": "Sylas executa o ritual: sangue celestial, sangue negro e um osso de galinha."},
-      {"image": "res://assets/hq/hq_n02_q4.png", "text": "A névoa recuou. Uma voz sussurrou: Só escuridão."}
+      {
+        "image": "res://assets/hq/hq_n02_q1.png",
+        "text": "Nas paredes do porão, uma frase se repetia em abissal: ‘Seremos um só.’"
+      },
+      {
+        "image": "res://assets/hq/hq_n02_q2.png",
+        "text": "Os registros descreviam um ritual: sangue celestial, sangue corrompido e um osso de galinha."
+      },
+      {
+        "image": "res://assets/hq/hq_n02_q3.png",
+        "text": "O Guardião Alado caiu. Seu sangue completaria o ritual."
+      },
+      {
+        "image": "res://assets/hq/hq_n02_q4.png",
+        "text": "Sylas misturou o sangue do Guardião ao de Kayron e realizou o ritual com o osso de galinha."
+      },
+      {
+        "image": "res://assets/hq/hq_n02_q5.png",
+        "text": "As trincas se fecharam. A névoa deixou de entrar por elas."
+      }
     ]
   },
   "hqn_03": {
     "title": "O Véu Vivo",
-    "trigger": {"type": "stage_reached", "stage": "shedaklah"},
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "domwieck"
+    },
     "panels": [
-      {"image": "res://assets/hq/hq_n03_q1.png", "text": "O exército abissal chegou à estrela."},
-      {"image": "res://assets/hq/hq_n03_q2.png", "text": "A luz de Ailalore falhou. A Tarn começou a cair."},
-      {"image": "res://assets/hq/hq_n03_q3.png", "text": "Nottgard resistirá. Por essa terra que tanto amamos, eu dou a minha vida. — Helion"},
-      {"image": "res://assets/hq/hq_n03_q4.png", "text": "Helion se tornou o Véu Vivo. Continuem protegendo Nottgard."}
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n03_q1_garden_v03.png",
+        "text": "Ao retornarem do Abismo, encontraram Nottgard sob invasão."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n03_q2_adam_strike_v03.png",
+        "text": "Adam atingiu Ailalore. A luz que sustentava a Tarn se apagou."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n03_q3_helion_choice_v02.png",
+        "text": "Helion: Nottgard resistirá. Por essa terra que tanto amamos, eu dou a minha vida."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n03_q4_seed_sacrifice_v01.png",
+        "text": "Helion plantou a semente que recebera de Leoric e entregou sua vida."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n03_q5_living_veil_v01.png",
+        "text": "As raízes envolveram as muralhas. O Véu Vivo tomou o lugar da Tarn."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n03_q6_nottgard_protected_v01.png",
+        "text": "Helion: Continuem protegendo Nottgard. Eu confio em vocês."
+      }
     ]
   },
   "hqn_04": {
     "title": "O Palácio de Zuggtmoy",
-    "trigger": {"type": "stage_cleared", "stage": "shedaklah"},
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "shedaklah"
+    },
     "panels": [
-      {"image": "res://assets/hq/hq_n04_q1.png", "text": "Shedaklah, andar 222: fungo de um lado, slime do outro."},
-      {"image": "res://assets/hq/hq_n04_q2.png", "text": "O Rio Estige parou. Algo o solidificou."},
-      {"image": "res://assets/hq/hq_n04_q3.png", "text": "Zuggtmoy oferece um mapa em troca de conter Juiblex."},
-      {"image": "res://assets/hq/hq_n04_q4.png", "text": "Adiante, o território de Juiblex."}
+      {
+        "image": "res://assets/hq/hq_n04_q1.png",
+        "text": "Shedaklah, andar 222: fungo de um lado, slime do outro."
+      },
+      {
+        "image": "res://assets/hq/hq_n04_q2.png",
+        "text": "O Rio Estige parou. Algo o solidificou."
+      },
+      {
+        "image": "res://assets/hq/hq_n04_q3.png",
+        "text": "Zuggtmoy oferece um mapa em troca de conter Juiblex."
+      },
+      {
+        "image": "res://assets/hq/hq_n04_q4.png",
+        "text": "Adiante, o território de Juiblex."
+      }
     ]
   },
   "hqn_05": {
     "title": "O Núcleo Verde",
-    "trigger": {"type": "stage_cleared", "stage": "molor"},
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "molor"
+    },
     "panels": [
-      {"image": "res://assets/hq/hq_n05_q1.png", "text": "O portal roxo levou mais fundo."},
-      {"image": "res://assets/hq/hq_n05_q2.png", "text": "Molor, andar 528: bolhas que crescem e explodem."},
-      {"image": "res://assets/hq/hq_n05_q3.png", "text": "O chefe de Molor caiu."},
-      {"image": "res://assets/hq/hq_n05_q4.png", "text": "Dentro dele, um núcleo verde ainda pulsava. Era parte de Juiblex."}
+      {
+        "image": "res://assets/hq/hq_n05_q1.png",
+        "text": "O portal roxo levou mais fundo."
+      },
+      {
+        "image": "res://assets/hq/hq_n05_q2.png",
+        "text": "Molor, andar 528: bolhas que crescem e explodem."
+      },
+      {
+        "image": "res://assets/hq/hq_n05_q3.png",
+        "text": "O chefe de Molor caiu."
+      },
+      {
+        "image": "res://assets/hq/hq_n05_q4.png",
+        "text": "Dentro dele, um núcleo verde ainda pulsava. Era parte de Juiblex."
+      }
     ]
   },
   "hqn_06": {
     "title": "A Jaula de Durao",
-    "trigger": {"type": "stage_cleared", "stage": "durao"},
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "durao"
+    },
     "panels": [
-      {"image": "res://assets/hq/hq_n06_q1.png", "text": "Durao, andar 274: uma guerra sem fim que terminou sem vencedor."},
-      {"image": "res://assets/hq/hq_n06_q2.png", "text": "Três carcereiros vigiam quem tenta fugir."},
-      {"image": "res://assets/hq/hq_n06_q3.png", "text": "Korrak empunha o machado de Xar'gath. Ele cobra uma provação."},
-      {"image": "res://assets/hq/hq_n06_q4.png", "text": "Na jaula, um elfo oferece o próprio sangue em troca de uma runa."}
+      {
+        "image": "res://assets/hq/hq_n06_q1.png",
+        "text": "Durao, andar 274: uma guerra sem fim que terminou sem vencedor."
+      },
+      {
+        "image": "res://assets/hq/hq_n06_q2.png",
+        "text": "Três carcereiros vigiam quem tenta fugir."
+      },
+      {
+        "image": "res://assets/hq/hq_n06_q3.png",
+        "text": "Korrak empunha o machado de Xar'gath. Ele cobra uma provação."
+      },
+      {
+        "image": "res://assets/hq/hq_n06_q4.png",
+        "text": "Na jaula, um elfo oferece o próprio sangue em troca de uma runa."
+      }
     ]
   },
   "hqn_07": {
     "title": "A Peregrinação da Estrela",
-    "trigger": {"type": "stage_cleared", "stage": "feng_tu"},
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "feng_tu"
+    },
     "panels": [
-      {"image": "res://assets/hq/hq_n07_q1.png", "text": "Feng-tu, andar 300: Tou Um e Lu Yueh disputam o andar."},
-      {"image": "res://assets/hq/hq_n07_q2.png", "text": "O Discípulo Pestilento e suas larvas."},
-      {"image": "res://assets/hq/hq_n07_q3.png", "text": "Só quem segue a estrela é curado."},
-      {"image": "res://assets/hq/hq_n07_q4.png", "text": "Oito dias de caminhada. A estrela nunca se aproxima. Eles se curaram."}
+      {
+        "image": "res://assets/hq/hq_n07_q1.png",
+        "text": "Feng-tu, andar 300: Tou Um e Lu Yueh disputam o andar."
+      },
+      {
+        "image": "res://assets/hq/hq_n07_q2.png",
+        "text": "O Discípulo Pestilento e suas larvas."
+      },
+      {
+        "image": "res://assets/hq/hq_n07_q3.png",
+        "text": "Só quem segue a estrela é curado."
+      },
+      {
+        "image": "res://assets/hq/hq_n07_q4.png",
+        "text": "Oito dias de caminhada. A estrela nunca se aproxima. Eles se curaram."
+      }
     ]
   },
   "hqn_08": {
     "title": "O Chifre de Malcanthet",
-    "trigger": {"type": "stage_cleared", "stage": "shendilavri"},
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "shendilavri"
+    },
     "panels": [
-      {"image": "res://assets/hq/hq_n08_q1.png", "text": "Rivenheart: luxo, ilusão e correntes."},
-      {"image": "res://assets/hq/hq_n08_q2.png", "text": "Malcanthet quer o Espelho de volta. Em segredo."},
-      {"image": "res://assets/hq/hq_n08_q3.png", "text": "Sete notas, sete runas. A parede se abriu."},
-      {"image": "res://assets/hq/hq_n08_q4.png", "text": "Graz'zt arrancou o chifre de Malcanthet e declarou guerra."}
+      {
+        "image": "res://assets/hq/hq_n08_q1.png",
+        "text": "Rivenheart: luxo, ilusão e correntes."
+      },
+      {
+        "image": "res://assets/hq/hq_n08_q2.png",
+        "text": "Malcanthet quer o Espelho de volta. Em segredo."
+      },
+      {
+        "image": "res://assets/hq/hq_n08_q3.png",
+        "text": "Sete notas, sete runas. A parede se abriu."
+      },
+      {
+        "image": "res://assets/hq/hq_n08_q4.png",
+        "text": "Graz'zt arrancou o chifre de Malcanthet e declarou guerra."
+      }
     ]
   },
   "hqn_09": {
     "title": "O Paraíso que Era Ilusão",
-    "trigger": {"type": "stage_cleared", "stage": "goranthis"},
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "goranthis"
+    },
     "panels": [
-      {"image": "res://assets/hq/hq_n09_q1.png", "text": "Goranthis, camada 597: o verdadeiro Paraíso."},
-      {"image": "res://assets/hq/hq_n09_q2.png", "text": "Comida, bebida e festa, tudo de graça. Tudo ilusão."},
-      {"image": "res://assets/hq/hq_n09_q3.png", "text": "Tirado do trono, o palácio revelou o que era: carne."},
-      {"image": "res://assets/hq/hq_n09_q4.png", "text": "O Estige voltou a correr. O grupo voltou para casa."}
+      {
+        "image": "res://assets/hq/hq_n09_q1.png",
+        "text": "Goranthis, camada 597: o verdadeiro Paraíso."
+      },
+      {
+        "image": "res://assets/hq/hq_n09_q2.png",
+        "text": "Comida, bebida e festa, tudo de graça. Tudo ilusão."
+      },
+      {
+        "image": "res://assets/hq/hq_n09_q3.png",
+        "text": "Tirado do trono, o palácio revelou o que era: carne."
+      },
+      {
+        "image": "res://assets/hq/hq_n09_q4.png",
+        "text": "O Estige voltou a correr. O grupo voltou para casa."
+      }
     ]
   },
   "hqn_10": {
     "title": "A Síntese Abissal",
-    "trigger": {"type": "final_victory", "stage": "pilares"},
+    "trigger": {
+      "type": "final_victory",
+      "stage": "pilares"
+    },
     "panels": [
-      {"image": "res://assets/hq/hq_n10_q1.png", "text": "O Castelo da Fome, cercado de fogo azul."},
-      {"image": "res://assets/hq/hq_n10_q2.png", "text": "Quando a lamparina apagar..."},
-      {"image": "res://assets/hq/hq_n10_q3.png", "text": "A Síntese Abissal."},
-      {"image": "res://assets/hq/hq_n10_q4.png", "text": "A névoa acabou. Mas os pilares no horizonte ainda estendem as mãos."}
+      {
+        "image": "res://assets/hq/hq_n10_q1.png",
+        "text": "O Castelo da Fome, cercado de fogo azul."
+      },
+      {
+        "image": "res://assets/hq/hq_n10_q2.png",
+        "text": "Quando a lamparina apagar..."
+      },
+      {
+        "image": "res://assets/hq/hq_n10_q3.png",
+        "text": "A Síntese Abissal."
+      },
+      {
+        "image": "res://assets/hq/hq_n10_q4.png",
+        "text": "A névoa acabou. Mas os pilares no horizonte ainda estendem as mãos."
+      }
     ]
   },
   "hqn_11": {
     "title": "A Concórdia Eterna",
     "achievement": "cacador_de_chefes",
     "panels": [
-      {"image": "res://assets/hq/hq_n11_q1.png", "text": "Fateridge. Guardas Celestiais contra a população."},
-      {"image": "res://assets/hq/hq_n11_q2.png", "text": "Bromnor sai ferido da forja."},
-      {"image": "res://assets/hq/hq_n11_q3.png", "text": "A Aurora da Concórdia Eterna."},
-      {"image": "res://assets/hq/hq_n11_q4.png", "text": "Bromnor virou luz."}
+      {
+        "image": "res://assets/hq/hq_n11_q1.png",
+        "text": "Fateridge. Guardas Celestiais contra a população."
+      },
+      {
+        "image": "res://assets/hq/hq_n11_q2.png",
+        "text": "Bromnor sai ferido da forja."
+      },
+      {
+        "image": "res://assets/hq/hq_n11_q3.png",
+        "text": "A Aurora da Concórdia Eterna."
+      },
+      {
+        "image": "res://assets/hq/hq_n11_q4.png",
+        "text": "Bromnor virou luz."
+      }
     ]
   },
   "hqn_12": {
     "title": "O Nome Aluris",
     "achievement": "aluris",
     "panels": [
-      {"image": "res://assets/hq/hq_n12_q1.png", "text": "A ponte foi reaberta. A cidade respirava de novo."},
-      {"image": "res://assets/hq/hq_n12_q2.png", "text": "Gilly pediu um nome. Para a ponte e para eles."},
-      {"image": "res://assets/hq/hq_n12_q3.png", "text": "Aluris. Em homenagem a uma cidade antiga que um dia existiu."},
-      {"image": "res://assets/hq/hq_n12_q4.png", "text": "Ninguém ali sabia o peso daquela palavra."}
+      {
+        "image": "res://assets/hq/hq_n12_q1.png",
+        "text": "A ponte foi reaberta. A cidade respirava de novo."
+      },
+      {
+        "image": "res://assets/hq/hq_n12_q2.png",
+        "text": "Gilly pediu um nome. Para a ponte e para eles."
+      },
+      {
+        "image": "res://assets/hq/hq_n12_q3.png",
+        "text": "Aluris. Em homenagem a uma cidade antiga que um dia existiu."
+      },
+      {
+        "image": "res://assets/hq/hq_n12_q4.png",
+        "text": "Ninguém ali sabia o peso daquela palavra."
+      }
     ]
   },
   "hqn_13": {
     "title": "O Cerco de Aluris",
     "achievement": "mestre_de_camadas",
     "panels": [
-      {"image": "res://assets/hq/hq_n13_q1.png", "text": "Eléstria, ano 700: um presente rasgou o céu."},
-      {"image": "res://assets/hq/hq_n13_q2.png", "text": "Nossa estrela está morrendo."},
-      {"image": "res://assets/hq/hq_n13_q3.png", "text": "Setenta anos de cerco, e a muralha não caía."},
-      {"image": "res://assets/hq/hq_n13_q4.png", "text": "Helion invocou uma rocha do céu. A muralha caiu."}
+      {
+        "image": "res://assets/hq/hq_n13_q1.png",
+        "text": "Eléstria, ano 700: um presente rasgou o céu."
+      },
+      {
+        "image": "res://assets/hq/hq_n13_q2.png",
+        "text": "Nossa estrela está morrendo."
+      },
+      {
+        "image": "res://assets/hq/hq_n13_q3.png",
+        "text": "Setenta anos de cerco, e a muralha não caía."
+      },
+      {
+        "image": "res://assets/hq/hq_n13_q4.png",
+        "text": "Helion invocou uma rocha do céu. A muralha caiu."
+      }
     ]
   },
   "hqn_14": {
     "title": "A Máscara",
     "achievement": "pilares_ativos",
     "panels": [
-      {"image": "res://assets/hq/hq_n14_q1.png", "text": "Entre a multidão, alguém usava uma máscara igual à dele."},
-      {"image": "res://assets/hq/hq_n14_q2.png", "text": "O colar mostrou uma aura amarela."},
-      {"image": "res://assets/hq/hq_n14_q3.png", "text": "Nyrelia, a sacerdotisa que o criou."},
-      {"image": "res://assets/hq/hq_n14_q4.png", "text": "Crianças não precisam carregar guerra."}
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n14_q1_matching_mask_v02.png",
+        "text": "Entre a multidão, Sylas viu uma máscara igual à sua."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n14_q2_yellow_aura_v01.png",
+        "text": "O colar revelou uma aura amarela, ligada a Mask."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n14_q3_nyrelia_encounter_v01.png",
+        "text": "Era Nyrelia, a sacerdotisa que o havia salvado quando criança."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n14_q4_old_bond_v01.png",
+        "text": "Ela também era uma Grimholder. Na infância, poupara Sylas das guerras dos adultos."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n14_q5_hidden_base_v01.png",
+        "text": "Agora, ela lhes mostrava o caminho até os Grimholders."
+      }
+    ]
+  },
+  "hqn_15": {
+    "title": "O Homem na Névoa",
+    "panels": [
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n15_q1_beyond_tarn_v02.png",
+        "text": "Mais tarde, a investigação os levou para além da Tarn, por Skygomork."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n15_q2_hallucination_v01.png",
+        "text": "Na névoa, até o rosto de um companheiro podia se tornar uma ameaça."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n15_q3_hidden_erik_v02.png",
+        "text": "Entre as sombras, encontraram Erik Blackthorn, batedor dos Grimholders."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n15_q4_amulet_of_light_v01.png",
+        "text": "O Amuleto da Luz o protegia dos efeitos da névoa."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n15_q5_guide_map_v01.png",
+        "text": "Erik aceitou guiá-los. Os cultistas se reuniam na Igreja das Sombras."
+      }
+    ],
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "docas"
+    }
+  },
+  "hqn_16": {
+    "title": "A Igreja das Sombras",
+    "panels": [
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n16_q1_recognition_v01.png",
+        "text": "Leoric reconheceu a igreja. Já estivera ali sob a influência dos cultistas."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n16_q2_cultists_v01.png",
+        "text": "No altar, os seguidores de Ghaunadaur continuavam seus rituais."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n16_q3_nott_fire_v01.png",
+        "text": "Kayron pôs fogo na Igreja de Nott."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n16_q4_box_ring_notebook_v01.png",
+        "text": "Uma caixa escondia o Anel da Passagem Sombria e um relato sobre os artefatos de Bromnor."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n16_q5_roots_v02.png",
+        "text": "Atrás da igreja, raízes vivas cobriam um caminho para baixo."
+      }
+    ],
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "docas"
+    }
+  },
+  "hqn_17": {
+    "title": "A Descida",
+    "panels": [
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n17_q1_descent_v01.png",
+        "text": "Erik foi à frente. As raízes conduziam a uma passagem sem fundo visível."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n17_q2_crossing_v02.png",
+        "text": "A passagem os levou para fora do plano material."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n17_q3_abyss_legion_v02.png",
+        "text": "No Reino Abissal, uma legião de demônios, notívagos e cultistas aguardava."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n17_q4_voice_v01.png",
+        "text": "Aqui é sua casa. Seja bem-vindo."
+      }
+    ],
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "docas"
+    }
+  },
+  "hqn_18": {
+    "title": "O Exército Atravessa",
+    "panels": [
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n18_q1_kein_ritual_v01.png",
+        "text": "No centro do ritual estava Kein, com o martelo de Bromnor."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n18_q2_first_sacrifice_v01.png",
+        "text": "Kein sacrificou o prisioneiro e abriu o caminho para o exército."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n18_q3_domwieck_invasion_v01.png",
+        "text": "O exército atravessou para Nottgard. A invasão começou em Domwieck."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n18_q4_beholder_v01.png",
+        "text": "Um segundo sacrifício trouxe um Beholder para o combate."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n18_q5_recovery_v01.png",
+        "text": "Kein caiu. O grupo recuperou o martelo e derrotou a criatura."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n18_q6_counter_ritual_v01.png",
+        "text": "Sylas fechou o portal. Então os dois cadáveres se uniram em um Death Tyrant."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n18_q7_vision_v02.png",
+        "text": "Depois de vencê-lo, Sylas viu Juiblex nas profundezas: uma parte de Ghaunadaur se espalhava pelo Abismo."
+      },
+      {
+        "image": "res://assets/hq/chapter1_r1/hq_n18_q8_return_v01.png",
+        "text": "A cidade precisava deles. Com o martelo e matéria abissal, Sylas abriu o caminho de volta."
+      }
+    ],
+    "trigger": {
+      "type": "stage_cleared",
+      "stage": "reino_abissal"
+    }
+  },
+  "hqn_19": {
+    "title": "A Ordem de Thalion",
+    "chapter": 2,
+    "trigger": {
+      "type": "chapter2_content",
+      "milestone": "dagruve_resolution"
+    },
+    "panels": [
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q1_aila_freed_v01.png",
+        "text": "Depois que o Véu se ergueu, o martelo libertou Aila de dentro da estrela."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q2_bromnor_legacy_v01.png",
+        "text": "Brook recebeu o legado de Bromnor. A arma tornou-se o Martelo da Glória."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q3_aila_awakens_v01.png",
+        "text": "Mais tarde, Maelor trouxe a luz que estava com Thalion. Aila despertou."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q4_sendrinah_prayer_v01.png",
+        "text": "A mensagem de Sendrinah era clara: a ameaça continuava no Plano Abissal."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q5_thalion_command_v01.png",
+        "text": "Thalion: Peguem-nos!"
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q6_roots_abduction_v01.png",
+        "text": "Thalion abriu portais. As raízes arrastaram Leoric e Korrak para o Abismo."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q7_separate_escapes_v01.png",
+        "text": "Kayron escapou. Brook estava fora do templo."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q8_roots_decay_v01.png",
+        "text": "Diante de Maelor e Aila, as primeiras raízes enfraqueceram e apodreceram."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q9_surrender_v01.png",
+        "text": "Maelor: Não machuque ela, a gente vai em paz, já estou rendido."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q10_interrogation_v01.png",
+        "text": "Sob custódia, Maelor foi interrogado por Thalion."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q11_maelor_sent_v01.png",
+        "text": "Depois do interrogatório, Thalion o enviou pelo mesmo caminho."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n19_q12_aila_retained_v01.png",
+        "text": "O grupo estava separado. Aila ficou com Thalion."
+      }
+    ],
+    "presentation_segments": [
+      {
+        "id": "before_dagruve",
+        "first_panel": 0,
+        "panel_count": 4
+      },
+      {
+        "id": "after_dagruve",
+        "first_panel": 4,
+        "panel_count": 8
+      }
+    ]
+  },
+  "hqn_20": {
+    "title": "Entre Raízes",
+    "chapter": 2,
+    "trigger": {
+      "type": "chapter2_content",
+      "milestone": "yggdrasil_traversed"
+    },
+    "panels": [
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n20_q1_wood_strength_v03.png",
+        "text": "Leoric e Korrak chegaram a uma raiz de Yggdrasil, entre os planos."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n20_q2_marciela_meeting_v02.png",
+        "text": "Foi ali que encontraram Marciela."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n20_q3_passage_v02.png",
+        "text": "Ela os guiou por uma passagem para Shedaklah."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n20_q4_maelor_alone_v01.png",
+        "text": "Maelor atravessou isolado."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n20_q5_nidhogg_misses_v01.png",
+        "text": "Nidhogg tentou mordê-lo. Não conseguiu."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n20_q6_maelor_escape_v01.png",
+        "text": "Maelor fugiu em direção ao portal."
+      },
+      {
+        "image": "res://assets/hq/chapter2_r1/hq_n20_q7_mother_reunion_v01.png",
+        "text": "Do outro lado, Maelor reencontrou sua mãe."
+      }
     ]
   }
 }

@@ -13,8 +13,8 @@ func run() -> Array:
 	var s := p.apply_run(_result())
 	if s.earned != 300 + 60:
 		out.append("moedas esperadas 360, veio %d" % s.earned)
-	if not p.data.cleared.has("dagruve") or not p.stage_unlocked("shedaklah"):
-		out.append("vencer dagruve deveria liberar shedaklah")
+	if not p.data.cleared.has("dagruve") or p.stage_unlocked("shedaklah"):
+		out.append("vitória isolada de Dagruve não deve furar a campanha nova")
 	if not p.data.achievements.has("primeiro_sangue") or not p.data.achievements.has("fechadura_aberta") or not p.data.achievements.has("veterano"):
 		out.append("conquistas de primeira run não concedidas: %s" % str(p.data.achievements.keys()))
 	if not p.data.codex.enemies.has("zumbi"):

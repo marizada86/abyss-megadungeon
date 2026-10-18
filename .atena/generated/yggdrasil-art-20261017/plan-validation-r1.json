@@ -1,0 +1,10 @@
+{
+  "status": "PASS_DOCUMENTARY_PLANNING",
+  "completed_steps": 1,
+  "total_steps": 5,
+  "links_valid": true,
+  "existing_plans_preserved": true,
+  "runtime_unchanged": true,
+  "production_blocking_gap": "HQ20 approved visual references not yet available",
+  "owner_reference_route": "Preparar e aprovar primeiro os quadros pertinentes da HQ20 (recomendado)."
+}

@@ -10,7 +10,9 @@ func run() -> Array:
 	var stages: Dictionary = Data.table("stages")
 	for sid in stages:
 		var s: Dictionary = stages[sid]
-		if not enemies.has(s.boss):
+		if String(s.get("completion", {}).get("kind", "boss")) == "timed_reach":
+			if String(s.boss) != "" or float(s.completion.hold_seconds) <= 0: out.append("objetivo inválido: " + sid)
+		elif not enemies.has(s.boss):
 			out.append("fase %s: chefe %s inexistente" % [sid, s.boss])
 		elif not enemies[s.boss].get("flags", []).has("boss"):
 			out.append("fase %s: %s não tem flag boss" % [sid, s.boss])
@@ -75,7 +77,7 @@ func run() -> Array:
 			out.append("fase %s sem regra principal" % sid)
 	if String(stages.dagruve.boss) != "sacerdote_mente_derretida" or String(stages.dagruve.next) != "docas":
 		out.append("Dagruve não está configurada antes de Docas")
-	if String(stages.docas.boss) != "guardiao_verdadeiro" or String(stages.docas.next) != "shedaklah":
+	if String(stages.docas.boss) != "guardiao_verdadeiro" or String(stages.docas.next) != "reino_abissal":
 		out.append("Docas não está configurada entre Dagruve e Shedaklah")
 	var styx_stages := ["shedaklah", "durao", "shendilavri", "goranthis"]
 	for sid in styx_stages:

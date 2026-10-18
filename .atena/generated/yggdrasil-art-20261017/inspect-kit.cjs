@@ -1,0 +1,17 @@
+const fs=require('fs'),zlib=require('zlib'),crypto=require('crypto');
+const kit='.atena/generated/yggdrasil-art-20261017/kit-r1/';
+const ids={ground:'4a4957ed-a285-4293-a317-b75d3e1d2007',edge:'88ec8531-3c5f-4aa7-a924-febece0d7c71',detail:'9ab68c2a-9bb1-4ffe-b53a-b139adfef586',trunk:'02df0a77-74a2-46d5-b7f5-90234b189a01'};
+const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+function inspect(p){
+ const b=fs.readFileSync(p);if(b.subarray(0,8).toString('hex')!=='89504e470d0a1a0a')throw Error('PNG signature');
+ let w,h,c;const chunks=[];for(let at=8;at<b.length;){const n=b.readUInt32BE(at),t=b.toString('ascii',at+4,at+8),d=b.subarray(at+8,at+8+n);if(t==='IHDR'){w=d.readUInt32BE(0);h=d.readUInt32BE(4);if(d[8]!==8||![2,6].includes(d[9])||d[12]!==0)throw Error('Unsupported PNG');c=d[9]===6?4:3;}if(t==='IDAT')chunks.push(d);at+=n+12;}
+ const stride=w*c,raw=zlib.inflateSync(Buffer.concat(chunks)),pixels=Buffer.alloc(w*h*c);let pos=0;
+ for(let y=0;y<h;y++){const f=raw[pos++];for(let x=0;x<stride;x++){const i=y*stride+x,a=x>=c?pixels[i-c]:0,u=y?pixels[i-stride]:0,ul=y&&x>=c?pixels[i-stride-c]:0;let v=0;if(f===1)v=a;else if(f===2)v=u;else if(f===3)v=Math.floor((a+u)/2);else if(f===4){const q=a+u-ul,pa=Math.abs(q-a),pb=Math.abs(q-u),pc=Math.abs(q-ul);v=pa<=pb&&pa<=pc?a:pb<=pc?u:ul;}else if(f!==0)throw Error('Filter');pixels[i]=(raw[pos++]+v)&255;}}
+ let zero=0,partial=0,opaque=0,red=0,pale=0,outer=0;const mask=new Uint8Array(w*h),rows=[];
+ for(let y=0;y<h;y++){let visible=0;for(let x=0;x<w;x++){const i=y*w+x,j=i*c,a=c===4?pixels[j+3]:255;if(a===0)zero++;else if(a===255)opaque++;else partial++;if(a>16){mask[i]=1;visible++;if(x===0||x===w-1||y===0||y===h-1)outer++;if(pixels[j]>200&&pixels[j+1]<80&&pixels[j+2]<80)red++;if(a<255&&pixels[j]>220&&pixels[j+1]>220&&pixels[j+2]>220)pale++;}}rows.push(visible);}
+ const components=[],queue=new Int32Array(w*h);if(c===4)for(let i=0;i<mask.length;i++)if(mask[i]){let head=0,tail=1,n=0,x0=w,y0=h,x1=0,y1=0;queue[0]=i;mask[i]=0;while(head<tail){const v=queue[head++],x=v%w,y=Math.floor(v/w);n++;x0=Math.min(x0,x);x1=Math.max(x1,x);y0=Math.min(y0,y);y1=Math.max(y1,y);for(const k of [x>0?v-1:-1,x<w-1?v+1:-1,y>0?v-w:-1,y<h-1?v+w:-1])if(k>=0&&mask[k]){mask[k]=0;queue[tail++]=k;}}if(n>100)components.push({pixels:n,rect:[x0,y0,x1-x0+1,y1-y0+1]});}
+ const bands=[];let start=-1;for(let y=0;y<=h;y++){if(y<h&&rows[y]>w*.2){if(start<0)start=y;}else if(start>=0){bands.push([start,y-1]);start=-1;}}
+ return {width:w,height:h,channels:c,alpha:{transparent:zero,partial,opaque,transparent_fraction:zero/(w*h),outer_visible_pixels:outer,pale_partial_pixels:pale,saturated_red_visible_pixels:red},components:components.sort((a,b)=>b.pixels-a.pixels).slice(0,10),occupied_row_bands:bands,native_rgba8_bytes:w*h*4};
+}
+const entries=[];for(const [id,uuid] of Object.entries(ids)){const source='C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-'+uuid+'.png',target=kit+id+(id==='detail'?'-v02.png':'-v01.png');if(!fs.existsSync(target))fs.copyFileSync(source,target);if(hash(source)!==hash(target))throw Error('Copy mismatch');const s=inspect(target);if(['edge','detail'].includes(id)&&(s.channels!==4||s.alpha.transparent_fraction<.05))throw Error('Alpha missing');if(['ground','trunk'].includes(id)&&(s.alpha.transparent||s.alpha.partial))throw Error('Opacity');entries.push({id,path:target,source_path:source,sha256:hash(target),...s});}
+fs.writeFileSync(kit+'inspection.json',JSON.stringify(entries,null,2)+'\n');console.log(JSON.stringify(entries,null,2));

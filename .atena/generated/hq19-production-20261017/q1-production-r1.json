@@ -1,0 +1,45 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P19-Q01",
+  "authorization": "autorizado (2026-10-17), uma candidata HQ19 Q1",
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-002/S14-desperta/r01/aila-front-candidate-v02.png",
+      "sha256": "4cae65599d50039d5dd491cf88dcb0dc4652c540337b7313d00def6e5c5035b5"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/chapter1_r1/hq_n03_q5_living_veil_v01.png",
+      "sha256": "d2a0d139d9334bd7fc6d330298647b951194b89875235d79318d0e367ff85eef"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/chapter1_r1/hq_n18_q5_recovery_v01.png",
+      "sha256": "115f34ca7b25d1127621b2576277bbfa81f20139ff7b034d2660aad90dda0f5e"
+    }
+  ],
+  "prompt": "q1-prompt-r1.txt",
+  "screenplay": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+  "runtime_authorized": false,
+  "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q1_aila_freed_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-7c1e836d-8f5e-4103-b088-29b0ed5a61e7.png",
+  "sha256": "09e77df412052d24e3c3725697ffac924e5a72f656b04702cd6f279014df5673",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "tool_prompt": "q1-tool-prompt-v01.txt",
+  "inspection": {
+    "image_valid": true,
+    "landscape_16_9": true,
+    "aila_wingless": true,
+    "eyes_closed": true,
+    "star_open": true,
+    "hammer_yellow": true,
+    "living_veil_present": true,
+    "no_tarn_dome": true,
+    "no_embedded_caption": true
+  },
+  "owner_approval": "aprovado (2026-10-17), aceite individual Q1 v01",
+  "runtime_admitted": false,
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q1-20261017-r1.md"
+}

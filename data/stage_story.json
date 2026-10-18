@@ -61,5 +61,17 @@
     "fonte_vault": "12_Lore/Pilares Ativos e Plano Abissal (Sessão 24)",
     "chefe": "Adam caiu no Castelo da Fome. Depois dele veio uma monstruosidade abissal, e só então os pilares surgiram.",
     "fonte_chefe": "03_NPCs/Adam (Sessões 23 e 24); 07_Criaturas/A Síntese Abissal; revelação sobre Durvall mantida em segredo (decisão do dono)"
+  },
+  "reino_abissal": {
+    "epigrafe": "Raízes colossais conduzem ao acampamento da legião e ao acesso ao ritual.",
+    "fonte_vault": "Sessão 12; contrato do capítulo 1 r1",
+    "chefe": "Sobreviva e alcance o destino indicado.",
+    "fonte_chefe": "Objetivo de chegada aprovado, sem chefe jogável"
+  },
+  "domwieck": {
+    "epigrafe": "Nottgard está sob invasão. Alcance o jardim de Ailalore.",
+    "fonte_vault": "Sessão 12; contrato do capítulo 1 r1",
+    "chefe": "Sobreviva e alcance o destino indicado.",
+    "fonte_chefe": "Objetivo de chegada aprovado, sem chefe jogável"
   }
 }

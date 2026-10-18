@@ -1,0 +1,23 @@
+{
+  "status": "APPROVED_OWNER_A_V01_B_V01",
+  "owner_statement": "aprovado",
+  "date": "2026-10-17",
+  "samples": [
+    {
+      "id": "A",
+      "path": ".atena/generated/yggdrasil-art-20261017/samples-r1/sample_a_branch_junction_edge_v01.png",
+      "sha256": "c3439eb3653d6218913f0116cc001ce33cee8c181bbb8096c74545772f3e6048"
+    },
+    {
+      "id": "B",
+      "path": ".atena/generated/yggdrasil-art-20261017/samples-r1/sample_b_trunk_universe_passage_v01.png",
+      "sha256": "3dddfba845ba7e0bec396a71fd289c765d3d6840f37c049aa29a24455ff9d78b"
+    }
+  ],
+  "canon": ".atena/vault/canon/ASSET-APPROVAL-YGGDRASIL-ART-SAMPLES-20261017-r1.md",
+  "evidence": ".atena/evidence/EVID-NOTTGARD-YGGDRASIL-ART-SAMPLES-ACCEPTANCE-20261017-r1.md",
+  "completed_steps": 2,
+  "total_steps": 5,
+  "next_step": "S-YART-003",
+  "generation_authorized": false
+}

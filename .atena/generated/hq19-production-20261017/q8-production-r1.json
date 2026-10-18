@@ -1,0 +1,48 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P19-Q08",
+  "authorization": "Instrução explícita de continuidade após Q7 aprovada (2026-10-17)",
+  "authorization_canon": ".atena/vault/canon/DEC-HQ-CANDIDATE-APPROVAL-CONTINUATION-20261017-r1.md",
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/maelor.png",
+      "sha256": "182e62852551f8514ad3a358a4d56c2115b90518ed8c959fc402a44a36457f3b"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-002/S14-desperta/r01/aila-front-candidate-v02.png",
+      "sha256": "4cae65599d50039d5dd491cf88dcb0dc4652c540337b7313d00def6e5c5035b5"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq19-production-20261017/candidates/hq_n19_q3_aila_awakens_v01.png",
+      "sha256": "df62ed7c37b0fd76898ee7121523e42ff69a2230da5a557cb3aada30e9287430"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq19-production-20261017/candidates/hq_n19_q6_roots_abduction_v01.png",
+      "sha256": "6c35f667b8b0c86022f7d3487886451bddd3009f1862c2d6995bcc1905297470"
+    }
+  ],
+  "tool_prompt": "q8-tool-prompt-v01.txt",
+  "screenplay": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+  "runtime_authorized": false,
+  "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q8_roots_decay_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-05b87b8e-99c4-4f5b-8dca-3c12e51fce4e.png",
+  "sha256": "8d666ee4002735be32c79df5c348d96a8683a178dee049995599e07eaf42335d",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "owner_approval": "aprovado (2026-10-17), aceite individual Q8 v01",
+  "runtime_admitted": false,
+  "inspection": {
+    "image_valid": true,
+    "landscape_16_9": true,
+    "maelor_identity_preserved": true,
+    "aila_wingless_unharmed": true,
+    "roots_decay_before_contact": true,
+    "no_shield_or_attack": true,
+    "stone_temple_continuity": true,
+    "no_embedded_caption": true
+  },
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q8-20261017-r1.md"
+}

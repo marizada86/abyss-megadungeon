@@ -1,0 +1,23 @@
+const fs=require('fs');
+const base='.atena/generated/domwieck-art-20261017/';
+let text=fs.readFileSync('.atena/generated/root-art-20261017/capture-s004.gd','utf8');
+text=text.replace('["reino_abissal","domwieck"]','["domwieck","reino_abissal"]');
+text=text.replace('["arrival","edge","target","junction_w","junction_l","combat"]','["arrival","plaza","target","garden","side_w","side_l","combat"]');
+text=text.replace('"edge":Vector2(16.8,22)','"plaza":Vector2(30,33)').replace('"junction_w":Vector2(15,30),"junction_l":Vector2(45,30)','"garden":Vector2(30,7),"side_w":Vector2(15,30),"side_l":Vector2(45,30)');
+text=text.replace('battle.hero.pos = {','battle.enemies.clear()\n\t\t\t\tbattle.pickups.clear()\n\t\t\t\tbattle.hero.pos = {');
+text=text.replace('for i in 50:', 'for i in (54 if stage_id == "domwieck" else 50):');
+text=text.replace('float(i)*TAU/50.0','float(i)*TAU/54.0');
+text=text.replace('stage_id == "reino_abissal" and phase in ["edge","combat"]','stage_id == "domwieck" and phase in ["target","combat"]');
+text=text.replace('"reino_abissal-%dx%d-%s-gray.png"','"domwieck-%dx%d-%s-gray.png"');
+// Root comparison uses only valid existing support points, no garden extension.
+text=text.replace('battle.time = 0.0 if phase', 'if stage_id == "reino_abissal" and phase == "garden":\n\t\t\t\t\tbattle.hero.pos=Vector2(30,15)\n\t\t\t\tbattle.time = 0.0 if phase');
+text=text.replace('"ROOT_SMOKE failures="','"DOMWIECK_SMOKE failures="');
+text=text.replace('if stage_id == "reino_abissal":\n\t\t\t# One overview','if stage_id == "domwieck":\n\t\t\t# One overview').replace('"root-network-overview.png"','"domwieck-overview.png"');
+fs.writeFileSync(base+'capture-s004.gd',text);
+let perf=fs.readFileSync('.atena/generated/root-art-20261017/render-audit.gd','utf8');
+perf=perf.slice(0,perf.indexOf('func _ground('))+perf.slice(perf.indexOf('func _percentiles('));
+perf=perf.replaceAll('"reino_abissal"','"domwieck"').replace('ground.use_root_art=art_enabled','ground.use_domwieck_art=art_enabled').replace('for i in 50:','for i in 54:');
+perf=perf.replace('var mask: Dictionary=await _mask_audit()','var mask: Dictionary={"scope":"Domwieck A/B visual toggle; root regression in capture run"}');
+perf=perf.replace('"ROOT_RENDER_AUDIT "','"DOMWIECK_RENDER_AUDIT "');
+fs.writeFileSync(base+'render-audit.gd',perf);
+console.log('Capture and A/B helpers saved.');

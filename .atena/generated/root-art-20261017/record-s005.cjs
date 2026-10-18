@@ -1,0 +1,17 @@
+const fs=require('fs');
+const base='.atena/generated/root-art-20261017/';
+const report=JSON.parse(fs.readFileSync(base+'s005-launch.json','utf8').replace(/^\uFEFF/,''));
+if(!report.isolated || report.errors.length || !report.windows.some(w=>w.window_handle && w.responding)) throw Error('Invalid launch');
+const evidence='.atena/evidence/EVID-NOTTGARD-ROOT-ART-PLAYTEST-LAUNCH-20261017-r1.md';
+fs.writeFileSync(evidence,`# S-RART-005 — abertura do playtest visual r1\n\nStatus: ACTIVE_AWAITING_OWNER_FEEDBACK. Plano r1, etapa 5/5, quatro etapas concluídas.\n\nAutorização: usuário respondeu “autorizado” à abertura do playtest visual da arte integrada em 2026-10-17. A autorização de execução não constitui aceite visual final.\n\nReino Abissal aberto pelo launcher isolado existente. Janela respondendo: ${report.windows[0].title}, PID ${report.windows[0].pid}. Sem erros de carregamento nos registros conferidos. APPDATA e LOCALAPPDATA redirecionados para sessão sintética; probe sem autoload confirmou user_dir dentro da sessão. Nenhum save real utilizado.\n\nSessão: ${report.session}\n\nRegistro verificável: ${base}s005-launch.json\n\nAvaliação humana pendente: continuidade visual com HQ17 Q3/Q4; leitura das bordas, caminhos e junções; contraste de inimigos, ataques e recursos; conforto durante combate. Bordas, caminhos e espaço de combate mantêm a aceitação anterior; esta etapa avalia a arte aplicada.\n\nOs sete testes e a auditoria técnica permanecem registrados em EVID-NOTTGARD-ROOT-ART-INTEGRATION-20261017-r1; nenhuma alteração de jogo nesta abertura exigiu repeti-los.\n\nPróximo checkpoint: retorno humano antes de concluir S-RART-005 ou promover aceite final.\n`);
+const path='.atena/state/plan.yaml';
+let state=fs.readFileSync(path,'utf8');
+const boundary=state.indexOf('\nroot_navigation_revision:');
+let block=state.slice(0,boundary);
+if(!block.includes('status: S_RART_005_ACTIVE_AWAITING_OWNER_FEEDBACK')) throw Error('Unexpected state');
+block=block.replace('visual_playtest: AUTHORIZED_AWAITING_LAUNCH','visual_playtest: OPEN_AWAITING_OWNER_FEEDBACK');
+block+='  visual_playtest_evidence: EVID-NOTTGARD-ROOT-ART-PLAYTEST-LAUNCH-20261017-r1\n  visual_playtest_launch: .atena/generated/root-art-20261017/s005-launch.json\n';
+fs.writeFileSync(path,block+state.slice(boundary));
+fs.appendFileSync('.atena/specs/SPEC-NOTTGARD-ROOT-ART-20261017/plan-r1.md',`\n\n## S-RART-005 — playtest visual aberto em 2026-10-17\n\nAutorizado pelo usuário: “autorizado”. Status ACTIVE_AWAITING_OWNER_FEEDBACK; quatro de cinco etapas concluídas. Reino Abissal aberto em janela responsiva com perfil sintético e isolamento confirmado, sem erros de carregamento. Evidência: ${evidence}. Aceite visual final pendente do usuário.\n`);
+for(const p of [evidence,path,'.atena/specs/SPEC-NOTTGARD-ROOT-ART-20261017/plan-r1.md',base+'s005-launch.json']) if(!fs.existsSync(p)) throw Error('Missing reference '+p);
+console.log('Launch evidence recorded. S-RART-005 active, 4/5 complete; owner feedback pending.');

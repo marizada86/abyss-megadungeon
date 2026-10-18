@@ -4,6 +4,8 @@ extends Control
 ## O estado (modo e fração) é uma conta estática e testada; o desenho só o aplica. Sem arte: tudo por código.
 
 const MODE_NONE := "none"
+const MODE_OBJECTIVE := "objective"
+const MODE_REACH := "reach"
 const MODE_STAGE := "stage"   # até o chefe: enche de 0 a 1
 const MODE_BOSS := "boss"     # chefe vivo: cheia, pulsando
 const MODE_FOG := "fog"       # depois do chefe, com a Maré de Névoa: esvazia até a frente cobrir o mapa
@@ -20,6 +22,12 @@ var battle: Battle
 static func state(b: Battle) -> Dictionary:
 	if b == null or b.stage.is_empty():
 		return {"mode": MODE_NONE, "fraction": 0.0}
+	if b.has_reach_objective():
+		if b.stage_cleared:
+			return {"mode": MODE_NONE, "fraction": 0.0}
+		if b.time < float(b.stage.duration):
+			return {"mode": MODE_OBJECTIVE, "fraction": clampf(b.time / float(b.stage.duration), 0.0, 1.0)}
+		return {"mode": MODE_REACH, "fraction": clampf(b.objective_presence / float(b.stage.completion.hold_seconds), 0.0, 1.0)}
 	if b.boss_dead:
 		if b.fog_state == "inactive":
 			return {"mode": MODE_NONE, "fraction": 0.0}

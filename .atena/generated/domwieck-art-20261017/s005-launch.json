@@ -1,0 +1,20 @@
+﻿{
+    "stage":  "S-DART-005",
+    "verified_utc":  "2026-10-17T21:59:13.9449614Z",
+    "session":  "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\map-playtest-sessions\\20261017-215833-382-651d5105",
+    "map":  "domwieck",
+    "user_dir":  "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\map-playtest-sessions\\20261017-215833-382-651d5105\\appdata\\Godot\\app_userdata\\Nottgard Survivors",
+    "isolated":  true,
+    "windows":  [
+                    {
+                        "pid":  33540,
+                        "title":  "Nottgard - Abyss Megadungeon (DEBUG)",
+                        "window_handle":  593030,
+                        "responding":  true
+                    }
+                ],
+    "errors":  [
+
+               ],
+    "owner_visual_acceptance":  "PENDING"
+}

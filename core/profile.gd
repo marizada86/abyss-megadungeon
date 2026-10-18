@@ -1,5 +1,6 @@
 class_name Profile
 extends RefCounted
+const Campaign := preload("res://core/chapter_flow.gd")
 ## Progressão permanente (moedas, melhorias, conquistas, códex). Sem I/O: Game salva/carrega `data`.
 
 var data := {}
@@ -16,7 +17,9 @@ func _init(d: Dictionary = {}) -> void:
 	data = fresh()
 	_merge(data, d)
 	_migrate_settings(d.get("settings", {}))
-	_migrate_stage_split()
+	Campaign.initialize(data, d)
+	if not d.has("campaign_progress"):
+		_migrate_stage_split()
 
 static func _merge(into: Dictionary, src: Dictionary) -> void:
 	for k in src:
@@ -169,8 +172,7 @@ func hero_unlocked(id: String) -> bool:
 	return false
 
 func stage_unlocked(id: String) -> bool:
-	var req: String = Data.table("stages")[id].unlock
-	return req == "start" or data.cleared.has(req)
+	return Campaign.stage_allowed(data, id)
 
 func heroes_sorted() -> Array:
 	return Data.table("heroes").keys()

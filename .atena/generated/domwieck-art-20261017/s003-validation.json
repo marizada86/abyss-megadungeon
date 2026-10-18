@@ -1,0 +1,56 @@
+{
+  "status": "PASS_FILE_INSPECTION_OWNER_ACCEPTANCE_PENDING",
+  "six_pngs": 6,
+  "real_alpha_files": 5,
+  "game_sources_unchanged": true,
+  "shared_state_preserved": true,
+  "document_links_valid": true,
+  "completed_steps": 2,
+  "total_steps": 5,
+  "stage": "S-DART-003",
+  "checkpoint": "CP-DART-003-ACCEPTANCE",
+  "entries": [
+    {
+      "id": "ground",
+      "width": 1254,
+      "height": 1254,
+      "transparent_fraction": 0,
+      "outer_edge_pixels": 5012
+    },
+    {
+      "id": "architecture",
+      "width": 1254,
+      "height": 1254,
+      "transparent_fraction": 0.5150828354051723,
+      "outer_edge_pixels": 0
+    },
+    {
+      "id": "vegetation",
+      "width": 1254,
+      "height": 1254,
+      "transparent_fraction": 0.48581508868590206,
+      "outer_edge_pixels": 0
+    },
+    {
+      "id": "garden",
+      "width": 1254,
+      "height": 1254,
+      "transparent_fraction": 0.3755147801357824,
+      "outer_edge_pixels": 0
+    },
+    {
+      "id": "ailalore",
+      "width": 1254,
+      "height": 1254,
+      "transparent_fraction": 0.509980184621333,
+      "outer_edge_pixels": 0
+    },
+    {
+      "id": "ambient",
+      "width": 1254,
+      "height": 1254,
+      "transparent_fraction": 0.4493327889827512,
+      "outer_edge_pixels": 0
+    }
+  ]
+}

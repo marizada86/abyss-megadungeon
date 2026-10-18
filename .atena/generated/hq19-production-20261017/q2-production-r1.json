@@ -1,0 +1,43 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P19-Q02",
+  "authorization": "autorizado (2026-10-17), uma candidata Q2",
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/brook.png",
+      "sha256": "795dd8b283aa15d20e1de302fc8772dbfa31cc89d8ac469e34c11cbfc6061dfd"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/bromnor.png",
+      "sha256": "0e9b90995ff1a3c16c5344bf370ab0665aa8a5e4e80e0d5312ec322140caf055"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq19-production-20261017/candidates/hq_n19_q1_aila_freed_v01.png",
+      "sha256": "09e77df412052d24e3c3725697ffac924e5a72f656b04702cd6f279014df5673"
+    }
+  ],
+  "tool_prompt": "q2-tool-prompt-v01.txt",
+  "screenplay": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+  "runtime_authorized": false,
+  "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q2_bromnor_legacy_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-0e71ba26-5efb-47e8-892f-9b490b2c89ba.png",
+  "sha256": "1ce28d932623d4999e3cb585b4a165710d2314c45e21158678e8b846b6603a22",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "inspection": {
+    "image_valid": true,
+    "landscape_16_9": true,
+    "brook_receives_with_two_hands": true,
+    "bromnor_spectral_with_pages": true,
+    "single_hammer_sun_emblem": true,
+    "red_light_and_fading_yellow": true,
+    "garden_living_veil_continuity": true,
+    "no_embedded_caption": true
+  },
+  "owner_approval": "aprovado (2026-10-17), aceite individual Q2 v01",
+  "runtime_admitted": false,
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q2-20261017-r1.md"
+}

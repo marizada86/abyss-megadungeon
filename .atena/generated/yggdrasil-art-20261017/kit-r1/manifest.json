@@ -1,0 +1,431 @@
+{
+  "id": "YGGDRASIL-ART-KIT-R1",
+  "revision": "r1",
+  "stage": "S-YART-003",
+  "status": "OWNER_APPROVED_KIT_R1_NOT_INTEGRATED",
+  "authorization": ".atena/generated/yggdrasil-art-20261017/kit-r1/authorization.json",
+  "entries": [
+    {
+      "id": "ground",
+      "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/ground-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-4a4957ed-a285-4293-a317-b75d3e1d2007.png",
+      "sha256": "c1c07b7fe28141fa16b8afc32f8ce6cbfee2e25adcc7d74207040c9fddbd6509",
+      "width": 1254,
+      "height": 1254,
+      "channels": 3,
+      "alpha": {
+        "transparent": 0,
+        "partial": 0,
+        "opaque": 1572516,
+        "transparent_fraction": 0,
+        "outer_visible_pixels": 5012,
+        "pale_partial_pixels": 0,
+        "saturated_red_visible_pixels": 0
+      },
+      "components": [],
+      "occupied_row_bands": [
+        [
+          0,
+          1253
+        ]
+      ],
+      "native_rgba8_bytes": 6290064,
+      "version": "v01",
+      "status": "OWNER_APPROVED_VISUAL_ASSET_NOT_INTEGRATED",
+      "tool": "native image_gen.imagegen",
+      "prompt_file": ".atena/generated/yggdrasil-art-20261017/kit-r1/ground-prompt-v01.txt",
+      "reference_input": {
+        "id": "A",
+        "path": ".atena/generated/yggdrasil-art-20261017/samples-r1/sample_a_branch_junction_edge_v01.png",
+        "sha256": "c3439eb3653d6218913f0116cc001ce33cee8c181bbb8096c74545772f3e6048"
+      },
+      "restrictions": "Flat overhead material; horizontal grain. Dense detail and prominent knots: control UV scale/contrast in integration. Seamless repetition requested, not certified; boundary UV and seams require engine review.",
+      "import_max_size_proposed": 1024,
+      "mipmaps_proposed": false,
+      "atlas_regions_proposed": null
+    },
+    {
+      "id": "edge",
+      "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/edge-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-88ec8531-3c5f-4aa7-a924-febece0d7c71.png",
+      "sha256": "e037e1b723a5a75cf62f1fdb22be1dc0024339acbcd001ebd94600ea2efa5885",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "alpha": {
+        "transparent": 615670,
+        "partial": 955339,
+        "opaque": 1507,
+        "transparent_fraction": 0.39151906880438736,
+        "outer_visible_pixels": 1518,
+        "pale_partial_pixels": 0,
+        "saturated_red_visible_pixels": 0
+      },
+      "components": [
+        {
+          "pixels": 240967,
+          "rect": [
+            0,
+            408,
+            1254,
+            231
+          ]
+        },
+        {
+          "pixels": 236203,
+          "rect": [
+            0,
+            104,
+            1254,
+            228
+          ]
+        },
+        {
+          "pixels": 235077,
+          "rect": [
+            0,
+            697,
+            1254,
+            245
+          ]
+        },
+        {
+          "pixels": 203111,
+          "rect": [
+            0,
+            994,
+            1254,
+            200
+          ]
+        }
+      ],
+      "occupied_row_bands": [
+        [
+          118,
+          321
+        ],
+        [
+          416,
+          627
+        ],
+        [
+          721,
+          927
+        ],
+        [
+          1010,
+          1186
+        ]
+      ],
+      "native_rgba8_bytes": 6290064,
+      "version": "v01",
+      "status": "OWNER_APPROVED_VISUAL_ASSET_NOT_INTEGRATED",
+      "tool": "native image_gen.imagegen",
+      "prompt_file": ".atena/generated/yggdrasil-art-20261017/kit-r1/edge-prompt-v01.txt",
+      "reference_input": {
+        "id": "A",
+        "path": ".atena/generated/yggdrasil-art-20261017/samples-r1/sample_a_branch_junction_edge_v01.png",
+        "sha256": "c3439eb3653d6218913f0116cc001ce33cee8c181bbb8096c74545772f3e6048"
+      },
+      "restrictions": "Four lateral strips. Use measured individual row regions, NOT equal quarter rows (first/second cross nominal boundaries). Repeat left/right seams require review; no additional walkable surface.",
+      "import_max_size_proposed": 1024,
+      "mipmaps_proposed": false,
+      "atlas_regions_proposed": [
+        [
+          0,
+          80,
+          1254,
+          270
+        ],
+        [
+          0,
+          390,
+          1254,
+          270
+        ],
+        [
+          0,
+          680,
+          1254,
+          280
+        ],
+        [
+          0,
+          975,
+          1254,
+          240
+        ]
+      ]
+    },
+    {
+      "id": "detail",
+      "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/detail-v02.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-9ab68c2a-9bb1-4ffe-b53a-b139adfef586.png",
+      "sha256": "1a5f3baaaca70865f0ded3b8e37ea594f2ce0fbef42f94ee19cd4152edd636e4",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "alpha": {
+        "transparent": 830266,
+        "partial": 742250,
+        "opaque": 0,
+        "transparent_fraction": 0.5279857247875379,
+        "outer_visible_pixels": 0,
+        "pale_partial_pixels": 0,
+        "saturated_red_visible_pixels": 0
+      },
+      "components": [
+        {
+          "pixels": 110214,
+          "rect": [
+            28,
+            227,
+            586,
+            299
+          ]
+        },
+        {
+          "pixels": 100892,
+          "rect": [
+            647,
+            240,
+            586,
+            268
+          ]
+        },
+        {
+          "pixels": 88856,
+          "rect": [
+            42,
+            766,
+            557,
+            341
+          ]
+        },
+        {
+          "pixels": 71495,
+          "rect": [
+            694,
+            841,
+            520,
+            240
+          ]
+        },
+        {
+          "pixels": 433,
+          "rect": [
+            1138,
+            480,
+            52,
+            16
+          ]
+        },
+        {
+          "pixels": 351,
+          "rect": [
+            768,
+            271,
+            56,
+            13
+          ]
+        },
+        {
+          "pixels": 313,
+          "rect": [
+            255,
+            1022,
+            48,
+            16
+          ]
+        },
+        {
+          "pixels": 304,
+          "rect": [
+            912,
+            243,
+            55,
+            25
+          ]
+        },
+        {
+          "pixels": 283,
+          "rect": [
+            303,
+            847,
+            43,
+            20
+          ]
+        },
+        {
+          "pixels": 240,
+          "rect": [
+            912,
+            1068,
+            42,
+            13
+          ]
+        }
+      ],
+      "occupied_row_bands": [
+        [
+          247,
+          501
+        ],
+        [
+          853,
+          1075
+        ]
+      ],
+      "native_rgba8_bytes": 6290064,
+      "version": "v02",
+      "status": "OWNER_APPROVED_VISUAL_ASSET_NOT_INTEGRATED",
+      "tool": "native image_gen.imagegen",
+      "prompt_file": ".atena/generated/yggdrasil-art-20261017/kit-r1/detail-prompt-v02.txt",
+      "reference_input": {
+        "id": "A",
+        "path": ".atena/generated/yggdrasil-art-20261017/samples-r1/sample_a_branch_junction_edge_v01.png",
+        "sha256": "c3439eb3653d6218913f0116cc001ce33cee8c181bbb8096c74545772f3e6048"
+      },
+      "restrictions": "v02 selected: four separated flat decals. Use 2x2 cells with inset UV and preserve alpha; v01 retained as rejected atlas due overlapping rectangular bounds. Keep sparse/low-opacity to avoid implying obstacles.",
+      "import_max_size_proposed": 1024,
+      "mipmaps_proposed": false,
+      "atlas_regions_proposed": [
+        [
+          0,
+          0,
+          627,
+          627
+        ],
+        [
+          627,
+          0,
+          627,
+          627
+        ],
+        [
+          0,
+          627,
+          627,
+          627
+        ],
+        [
+          627,
+          627,
+          627,
+          627
+        ]
+      ]
+    },
+    {
+      "id": "trunk",
+      "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/trunk-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-02df0a77-74a2-46d5-b7f5-90234b189a01.png",
+      "sha256": "0578924ad14d13a4ecc14ea31f45c6d95afb4dad3358473a3daf74faeaa59f8a",
+      "width": 1254,
+      "height": 1254,
+      "channels": 3,
+      "alpha": {
+        "transparent": 0,
+        "partial": 0,
+        "opaque": 1572516,
+        "transparent_fraction": 0,
+        "outer_visible_pixels": 5012,
+        "pale_partial_pixels": 0,
+        "saturated_red_visible_pixels": 0
+      },
+      "components": [],
+      "occupied_row_bands": [
+        [
+          0,
+          1253
+        ]
+      ],
+      "native_rgba8_bytes": 6290064,
+      "version": "v01",
+      "status": "OWNER_APPROVED_VISUAL_ASSET_NOT_INTEGRATED",
+      "tool": "native image_gen.imagegen",
+      "prompt_file": ".atena/generated/yggdrasil-art-20261017/kit-r1/trunk-prompt-v01.txt",
+      "reference_input": {
+        "id": "B",
+        "path": ".atena/generated/yggdrasil-art-20261017/samples-r1/sample_b_trunk_universe_passage_v01.png",
+        "sha256": "3dddfba845ba7e0bec396a71fd289c765d3d6840f37c049aa29a24455ff9d78b"
+      },
+      "restrictions": "Opaque distant cosmic tree background only. Many stars and foliage accents: attenuate contrast/brightness behind combat. Never a replacement for geometry or a foreground floor.",
+      "import_max_size_proposed": 1024,
+      "mipmaps_proposed": false,
+      "atlas_regions_proposed": null
+    }
+  ],
+  "reference_policy": "Only approved samples A/B supplied to generator; each derived from owner-approved HQ20 Q1 v03, Q3 v01 and Q4 v01. No new HQ or character inputs.",
+  "approved_hq_provenance": [
+    {
+      "panel": 1,
+      "version": "v03",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png",
+      "sha256": "527e6f1b1f2dd2df5c44f78e6368aba2fe900a660fb706edb06ee0db3a8831bd",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q1-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Wood material, monumental cosmic tree, overall scale",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    },
+    {
+      "panel": 3,
+      "version": "v01",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v01.png",
+      "sha256": "312ab4ff2575f484e68474aae73cdcea2e2f5f2702748f7283a7952966db2fc0",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q3-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Passage violet light and transition from root to target",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    },
+    {
+      "panel": 4,
+      "version": "v01",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q4_maelor_alone_v01.png",
+      "sha256": "cd4a2c6424a9587747b7055c57bfdb41a18b219c4e2fdd2fc81d87aed3b4ce01",
+      "dimensions": [
+        1672,
+        940
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q4-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Root side, thickness, cosmic void and visual depth",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    }
+  ],
+  "discarded_versions": [
+    {
+      "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/detail-v01.png",
+      "sha256": "efc8a51cef089ba994fd131f75bb1c78fe54f1e0678e3aaa42038fdda87766f8",
+      "reason": "Irregular motifs cross nominal quadrant boundaries; unsafe blind rectangular cuts. Excluded from selected four-component kit."
+    }
+  ],
+  "generation_calls": 5,
+  "selected_components": 4,
+  "native_sources_preserved": true,
+  "native_rgba8_total_bytes": 25160256,
+  "future_import_policy": {
+    "max_size": 1024,
+    "mipmaps": false,
+    "maximum_rgba8_bytes_per_copy": 16777216,
+    "not_total_gpu_memory": true,
+    "not_yet_applied": true
+  },
+  "pending_integration_checks": [
+    "UV projection, orientation and repeat seams",
+    "actual atlas clipping and alpha fringe on light/dark engine backgrounds",
+    "contrast and readability with 40 enemies",
+    "mask/collider equivalence and fallback r3",
+    "import cap and runtime budget"
+  ],
+  "owner_acceptance": ".atena/generated/yggdrasil-art-20261017/kit-owner-acceptance-r1.json",
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-YGGDRASIL-ART-KIT-20261017-r1.md"
+}

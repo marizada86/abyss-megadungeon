@@ -442,7 +442,10 @@ func update_stats(b: Battle) -> void:
 		stage_rule_icon.texture = load(stage_icon_path) if ResourceLoader.exists(stage_icon_path) else null
 	var t := int(b.time)
 	var dur := int(b.stage.duration)
-	if b.boss_spawned and not b.boss_dead:
+	if b.has_reach_objective():
+		var remaining := int(ceil(float(b.objective_status().remaining)))
+		timer_label.text = "%02d:%02d" % [remaining / 60, remaining % 60]
+	elif b.boss_spawned and not b.boss_dead:
 		timer_label.text = "CHEFE"
 	else:
 		timer_label.text = "%02d:%02d" % [t / 60, t % 60]
@@ -456,7 +459,18 @@ func update_stats(b: Battle) -> void:
 	%SpeedBtn.visible = b.can_speed_2x()
 	%SpeedBtn.set_pressed_no_signal(b.speed_scale() > 1.0)
 	%SpeedBtn.text = b.speed_label() if b.can_speed_2x() else "1x"
-	if b.boss != null and not b.boss.dead and b.boss_spawned:
+	if b.has_reach_objective():
+		var objective := b.objective_status()
+		var offset := Iso.to_screen(b.objective_target() - h.pos)
+		var arrows := ["→", "↘", "↓", "↙", "←", "↖", "↑", "↗"]
+		var arrow: String = arrows[posmod(int(round(offset.angle() / (PI / 4.0))), 8)] if offset.length() > 16.0 else "◎"
+		boss_panel.visible = not b.stage_cleared
+		boss_name.add_theme_font_size_override("font_size", 14)
+		boss_name.text = "%s %s · %s" % [arrow, String(b.stage.completion.get("target_label", "Ritual")), "aguarde o fim do tempo" if float(objective.remaining) > 0.0 else "permaneça %.1f / %.0f s" % [objective.presence, objective.hold]]
+		boss_bar.max_value = float(objective.hold)
+		boss_bar.value = float(objective.presence)
+	elif b.boss != null and not b.boss.dead and b.boss_spawned:
+		boss_name.remove_theme_font_size_override("font_size")
 		boss_panel.visible = true
 		boss_name.text = b.boss.name
 		boss_bar.max_value = b.boss.max_hp
@@ -486,7 +500,7 @@ func update_stats(b: Battle) -> void:
 	if pr == "" and (b.stage_cleared or b.final_victory):
 		pr = "[%s] Pausa → Extrair ×%.2f" % [Game.controls.prompt("run_pause", "Esc"), b.reward_multiplier()]
 		if b.stage.get("next", "") != "":
-			pr += "   [%s] Descer ×%.2f" % [Game.controls.prompt("run_interact", "E"), b.next_reward_multiplier()]
+			pr += "   [%s] %s ×%.2f" % [Game.controls.prompt("run_interact", "E"), "Retornar a Nottgard" if b.stage_id == "reino_abissal" else "Continuar" if b.stage_id == "docas" else "Descer", b.next_reward_multiplier()]
 	prompt_label.text = pr
 	quest_panel.update_entries(b.happenings.hud_entries(b), b.happenings.carrying_text())
 	var eco_progress := b.ecos_progress()
@@ -895,7 +909,7 @@ func show_result(res: Dictionary, summary: Dictionary) -> void:
 	result_background.texture = load(background_path) if ResourceLoader.exists(background_path) else null
 	var t := int(res.time)
 	var txt := "%s · %s\nTempo %02d:%02d · Nível %d · Abates %d · Chefes %d\nModo: %s · Profundidade %d · Multiplicador ×%.2f\n\n+%d moedas%s (total %d)" % [
-		Data.table("heroes")[res.hero].name, Data.table("stages")[res.stage].name, t / 60, t % 60, res.level, res.kills, res.bosses,
+		Data.table("heroes")[res.hero].name, Battle.stage_definition(String(res.stage)).name, t / 60, t % 60, res.level, res.kills, res.bosses,
 		"extraído" if res.extracted else ("derrota" if res.dead else "final"), int(res.get("descent_depth", 0)), float(res.get("reward_mult", 1.0)),
 		summary.earned, (" (%d%% da tentativa)" % int(round(float(summary.reward_rate) * 100.0))) if float(summary.reward_rate) < 1.0 else "", summary.coins]
 	if int(res.get("abyss_level", 0)) > 0:

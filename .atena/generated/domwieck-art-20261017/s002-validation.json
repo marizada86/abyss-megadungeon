@@ -1,0 +1,23 @@
+{
+  "status": "DELIVERED_OWNER_ACCEPTANCE_PENDING",
+  "references_verified": 3,
+  "selected_samples": [
+    {
+      "path": ".atena/generated/domwieck-art-20261017/candidates/domwieck-street-sample-v01.png",
+      "sha256": "62184e8ce312dae2feb2c5294a1609f9736c8c00c91c5e16b475cc9d81f2ee79",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": ".atena/generated/domwieck-art-20261017/candidates/domwieck-garden-sample-v02.png",
+      "sha256": "1386df85cf0a2a0d21d7951042028c90f2281e13cc65a1760d0103cac3bd6378",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "game_sources_unchanged": true,
+  "shared_state_preserved": true,
+  "document_links_valid": true,
+  "completed_steps": 1,
+  "total_steps": 5
+}

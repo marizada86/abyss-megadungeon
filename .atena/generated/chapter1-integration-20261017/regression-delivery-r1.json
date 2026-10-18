@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "step": "S-C1-005",
+  "revision": "r1",
+  "session": ".atena/generated/chapter1-integration-20261017/s004-validation-20261017-174216-717",
+  "persisted_panels": 46,
+  "distinct_godot_processes": 2,
+  "legacy_cases": 7,
+  "input_checks": 21,
+  "pause_presenter_combinations": 4,
+  "diary_openings": 2,
+  "runtime_changes": 0,
+  "runtime_hashes": {
+    "core/chapter_flow.gd": "48d00818985556c4e542d35f8149542f3c6dfa76a5bbd7da42ce1aa5ac6748b0",
+    "core/profile.gd": "38683289329650738ec7a60d3c5a5991d95ac6e5fa23c4848e7d82a23b2a66fa",
+    "core/game.gd": "9b94b30434f6c18486e3c9fedddd4c88796acaf915822da1750988052c08c5ec",
+    "core/controller_input.gd": "9210edce8354d5f3c362a5eef1d1fdd00ab7697a06b44875383fe453e0694ece",
+    "ui/hq_screen.gd": "6f8ff99ac63bfb5c9a8187065678faaa08cf78e227aabf800a35ddaf8cef271e",
+    "ui/run.gd": "17633f0cf67edcf9cf7cf12dee42f0bef166e42720ca70292e070562d936b8ee",
+    "data/chapter_flow.json": "8e602943e96570d10007c52e34286e6a6a457f58a757b051344521fbe009d66b",
+    "data/hqs.json": "dd87e6397259339a4917edfab336545ab161b8a80d677d95ff2a1c66c40ee32d"
+  },
+  "reused_integration_tests": ".atena/generated/chapter1-integration-20261017/s004-validation-20261017-172322-312/results.json",
+  "reused_render_smoke": ".atena/generated/chapter1-integration-20261017/s004-validation-20261017-172218-458/smoke-result.json",
+  "limits": [
+    "synthetic input events; physical controller pending",
+    "full-run resume unsupported by approved contract",
+    "new maps use provisional geometry",
+    "human difficulty/readability/feel acceptance pending"
+  ],
+  "next_step": "S-C1-006",
+  "next_checkpoint": "CP-C1-06",
+  "next_authorization": "PENDING"
+}

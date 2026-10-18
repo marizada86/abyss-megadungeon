@@ -1,0 +1,75 @@
+{
+  "id": "HQ19-VISUAL-SELECTION-20261017",
+  "revision": "r1",
+  "status": "APPROVED_R1",
+  "scope": "reference audit and visual selection only",
+  "direct_reuse": 0,
+  "new_compositions": 12,
+  "identity_reference_entries": 12,
+  "reuse_audit_entries": 16,
+  "spec": ".atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-visual-selection-r1.md",
+  "screenplay": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+  "owner_correction": ".atena/vault/canon/DEC-AILA-WINGLESS-HQ19-20261017-r1.md",
+  "generation_authorized": false,
+  "runtime_authorized": false,
+  "selection_blocking_gaps": [],
+  "resolvable": [],
+  "deferred": [
+    "candidate production",
+    "architectural detail",
+    "legible canonical glyphs",
+    "runtime integration"
+  ],
+  "panels": [
+    {
+      "panel": 1,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 2,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 3,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 4,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 5,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 6,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 7,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 8,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 9,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 10,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 11,
+      "strategy": "new composition using inspected references"
+    },
+    {
+      "panel": 12,
+      "strategy": "new composition using inspected references"
+    }
+  ],
+  "owner_approval": "aprovado (2026-10-17), seleção visual r1 somente",
+  "approval_canon": ".atena/vault/canon/DEC-HQ19-VISUAL-SELECTION-20261017-r1.md"
+}

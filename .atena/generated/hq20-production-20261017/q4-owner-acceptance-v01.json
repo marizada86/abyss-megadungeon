@@ -1,0 +1,12 @@
+{
+  "status": "APPROVED_OWNER_V01",
+  "owner_statement": "aprovado",
+  "date": "2026-10-17",
+  "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q4_maelor_alone_v01.png",
+  "sha256": "cd4a2c6424a9587747b7055c57bfdb41a18b219c4e2fdd2fc81d87aed3b4ce01",
+  "canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q4-20261017-r1.md",
+  "evidence": ".atena/evidence/EVID-NOTTGARD-HQ20-REFERENCES-ACCEPTANCE-20261017-r1.md",
+  "completed_steps": 3,
+  "total_steps": 3,
+  "next_step": null
+}

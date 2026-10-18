@@ -1,0 +1,256 @@
+{
+  "status": "OWNER_APPROVED_VISUAL_KIT_R1",
+  "version": "kit-r1",
+  "refs": [
+    {
+      "hq": "hqn_17",
+      "panel": 3,
+      "path": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\hq17-production-20261016\\candidates\\hq_n17_q3_abyss_legion_v02.png",
+      "sha256": "5440f4c64b056f3f40f23e4ffc3e971632a64311e38b144fbae022618df650c0",
+      "approval": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\vault\\canon\\ASSET-APPROVAL-HQ17-Q3-20261016-r1.md",
+      "authority": "CANON_APPROVED_REFERENCE",
+      "visually_inspected": true
+    },
+    {
+      "hq": "hqn_17",
+      "panel": 4,
+      "path": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\hq17-production-20261016\\candidates\\hq_n17_q4_voice_v01.png",
+      "sha256": "18f55eee9e96731c9764937502d428a06071975a946af51441f83ba2f19e48fd",
+      "approval": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\vault\\canon\\ASSET-APPROVAL-HQ17-Q4-20261016-r1.md",
+      "authority": "CANON_APPROVED_REFERENCE",
+      "visually_inspected": true
+    }
+  ],
+  "approved_sample_hash": "557ec234b2cdf9e684c3c152a6a649607aab561a71199bc31b39a478e6957a4f",
+  "assets": [
+    {
+      "id": "surface",
+      "source": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-11a61e97-a3eb-4d95-b182-b346f52926d9.png",
+      "file": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017/kit-r1/surface-v01.png",
+      "sha256": "03ecc1cd713b0055d5625390fd25d0d51b3368bc3e3206fa015b4d1fbdbb1da6",
+      "tool": "image_gen built-in",
+      "prompt_key": "surface",
+      "prompt_file": ".atena/generated/root-art-20261017/kit-prompts-r1.json",
+      "status": "OWNER_APPROVED_VISUAL_KIT_R1",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 2,
+      "channels": 3,
+      "alpha": {
+        "min": 255,
+        "max": 255,
+        "transparent": 0,
+        "partial": 0,
+        "opaque": 1572516,
+        "pale_fringe_pixels": 0
+      },
+      "near_full_width_strip_starts": [
+        0
+      ],
+      "rgba8_bytes": 6290064,
+      "atlas_rectangles_proposed": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "width": 627,
+          "height": 627
+        }
+      ],
+      "texture_import_max_size_proposed": 1024
+    },
+    {
+      "id": "junctions",
+      "source": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-d2caebe1-37ff-4f7d-96d6-8e959320ef2f.png",
+      "file": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017/kit-r1/junctions-v01.png",
+      "sha256": "c7d55ffe8017f128e99d523fe0b4ff01ce72462b6dec38ac9a27c5b20c37666e",
+      "tool": "image_gen built-in",
+      "prompt_key": "junctions",
+      "prompt_file": ".atena/generated/root-art-20261017/kit-prompts-r1.json",
+      "status": "OWNER_APPROVED_VISUAL_KIT_R1",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 2,
+      "channels": 3,
+      "alpha": {
+        "min": 255,
+        "max": 255,
+        "transparent": 0,
+        "partial": 0,
+        "opaque": 1572516,
+        "pale_fringe_pixels": 0
+      },
+      "near_full_width_strip_starts": [
+        0
+      ],
+      "rgba8_bytes": 6290064,
+      "atlas_rectangles_proposed": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "width": 627,
+          "height": 627
+        }
+      ],
+      "texture_import_max_size_proposed": 1024
+    },
+    {
+      "id": "sides",
+      "source": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-8a9bb51f-86ad-4255-a777-41109d423b7d.png",
+      "file": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017/kit-r1/sides-v01.png",
+      "sha256": "b62f243461c90087fef04c73222c51d8e2588dea6547b366bcef0da1ae1bea64",
+      "tool": "image_gen built-in",
+      "prompt_key": "sides",
+      "prompt_file": ".atena/generated/root-art-20261017/kit-prompts-r1.json",
+      "status": "OWNER_APPROVED_VISUAL_KIT_R1",
+      "width": 1774,
+      "height": 887,
+      "color_type": 6,
+      "channels": 4,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparent": 222115,
+        "partial": 1351368,
+        "opaque": 55,
+        "pale_fringe_pixels": 38
+      },
+      "near_full_width_strip_starts": [
+        0,
+        224,
+        446,
+        669
+      ],
+      "rgba8_bytes": 6294152,
+      "atlas_rectangles_proposed": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 1774,
+          "height": 222
+        },
+        {
+          "x": 0,
+          "y": 222,
+          "width": 1774,
+          "height": 222
+        },
+        {
+          "x": 0,
+          "y": 444,
+          "width": 1774,
+          "height": 221
+        },
+        {
+          "x": 0,
+          "y": 665,
+          "width": 1774,
+          "height": 222
+        }
+      ],
+      "texture_import_max_size_proposed": 1024
+    },
+    {
+      "id": "depth",
+      "source": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-5a4d8d4f-9440-4762-84cf-a1e6120747d4.png",
+      "file": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017/kit-r1/depth-v01.png",
+      "sha256": "bed12ff3bab524a36dc82c2a195520765524e80f33ea69f08eeb739b37061485",
+      "tool": "image_gen built-in",
+      "prompt_key": "depth",
+      "prompt_file": ".atena/generated/root-art-20261017/kit-prompts-r1.json",
+      "status": "OWNER_APPROVED_VISUAL_KIT_R1",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "channels": 4,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparent": 1067189,
+        "partial": 504657,
+        "opaque": 670,
+        "pale_fringe_pixels": 144
+      },
+      "near_full_width_strip_starts": [],
+      "rgba8_bytes": 6290064,
+      "atlas_rectangles_proposed": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "width": 627,
+          "height": 627
+        }
+      ],
+      "texture_import_max_size_proposed": 1024
+    }
+  ],
+  "gameplay_sources_unchanged": true,
+  "admitted_to_assets": false,
+  "native_rgba8_bytes": 25164344,
+  "notes": [
+    "Native generator dimensions retained; no resize or image editing outside imagegen",
+    "Target 1024 textures proposed via future Godot import max_size, requiring visual verification before admission",
+    "Atlas rectangle proposals require UV/edge check during integration",
+    "No runtime seam, collision alignment, performance or owner-approval claim"
+  ],
+  "owner_approval": {
+    "date": "2026-10-17",
+    "reply": "aprovado",
+    "scope": "four native visual kit files",
+    "canon": ".atena/vault/canon/ASSET-APPROVAL-ROOT-ART-KIT-R1-20261017-r1.md",
+    "evidence": ".atena/evidence/EVID-NOTTGARD-ROOT-ART-KIT-ACCEPTANCE-20261017-r1.md"
+  }
+}

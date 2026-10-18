@@ -1,0 +1,10 @@
+{
+  "classification": "PC_ONLY_QA_STAGE_NO_COMMON_BEHAVIOR_CHANGE",
+  "source_ground": "D:/dev/nottgard/games/godot/nottgard-survivors/ui/ground.gd",
+  "source_ground_sha256": "2788c2cff3dfe43743502d5c0cfb6cf9e4fabf82ed5a7914ba38d1f46b240a1e",
+  "source_has_yggdrasil_stage": false,
+  "source_ground_has_yggdrasil_branch": false,
+  "pc_ground_only_authorized_insertions": true,
+  "checks_both": "PC: runtime/tests/render regression. Origin: read-only presence and source check; Yggdrasil QA stage/branch absent, runtime feature test not applicable. No origin writes or synchronization.",
+  "port_required_for_common_behavior": false
+}

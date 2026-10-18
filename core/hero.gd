@@ -205,6 +205,9 @@ func step(screen_dir: Vector2, dt: float) -> void:
 	delta += push * dt
 	if delta == Vector2.ZERO:
 		return
+	if TerrainLayout.has_roots(terrain_id):
+		pos = sweep(pos, delta, RADIUS, false, true)
+		return
 	var nx := Vector2(pos.x + delta.x, pos.y)
 	if is_free(nx):
 		pos = nx
@@ -220,10 +223,13 @@ func is_free(p: Vector2, r: float = RADIUS) -> bool:
 	return true
 
 ## Só geometria (mapa, montanhas, objetos). Inimigos usam esta: o Esquecimento do Estige é restrição do herói (BUG-012).
-func can_stand(p: Vector2, r: float = RADIUS) -> bool:
+func can_stand(p: Vector2, r: float = RADIUS, air: bool = false) -> bool:
 	if p.x < r or p.y < r or p.x > map_size.x - r or p.y > map_size.y - r:
 		return false
-	if TerrainLayout.is_blocked(terrain_id, p):
+	if TerrainLayout.has_roots(terrain_id):
+		if not air and not TerrainLayout.root_supports(p, r, terrain_id):
+			return false
+	elif TerrainLayout.is_blocked(terrain_id, p):
 		return false
 	if blockers.is_empty():
 		return true
@@ -243,6 +249,24 @@ func can_stand(p: Vector2, r: float = RADIUS) -> bool:
 				if p.distance_to(Vector2(b.x, b.y)) < b.z + r:
 					return false
 	return true
+
+## Swept, axis-sliding movement. The extra half-step clearance is a continuous
+## safety margin between samples: no thin void crossing at high dt or speed.
+func sweep(from: Vector2, delta: Vector2, r: float = RADIUS, air: bool = false, hero_rules: bool = false) -> Vector2:
+	var count := maxi(1, int(ceil(delta.length() / minf(0.2, maxf(0.02, r * 0.5)))))
+	var part := delta / float(count)
+	var at := from
+	for i in count:
+		for axis in [Vector2(part.x, 0), Vector2(0, part.y)]:
+			if axis == Vector2.ZERO:
+				continue
+			var candidate: Vector2 = at + axis
+			if not can_stand(candidate, r, air) or not can_stand(at.lerp(candidate, 0.5), r + axis.length() * 0.5, air):
+				continue
+			if hero_rules and styx_forget_t > 0.0 and TerrainLayout.distance_to_styx(terrain_id, candidate) < TerrainLayout.distance_to_styx(terrain_id, at):
+				continue
+			at = candidate
+	return at
 
 ## Índice espacial dos bloqueios (PLAN-098). can_stand roda por inimigo e por passo; percorrer todos os bloqueios
 ## (até ~200 por fase) custava ~20 µs por chamada. O índice é refeito quando o conteúdo do array muda (hash + tamanho),

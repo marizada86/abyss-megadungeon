@@ -1,0 +1,9 @@
+# HQ01 Q2 — posição das falas r1
+
+IN_PLAN: correção da entrega S-HQ-002, etapa 2/16, sem iniciar HQ02. Autorização direta do dono: “coloque o texto de helion no quadrado da direita”. PC/Web já compõem o escopo. Registrar e implementar esta correção delimitada; não há decisão de lore ou imagem a renovar, nem gaps BLOCKING. Especificação anterior à implementação desta correção.
+
+Resultado esperado: em Q2, Zynara “Investigue as docas.” continua no lado esquerdo; Helion “Procure Gilly.” fica no lado direito, abaixo da cena Helion/Durvall. Ambos no mesmo quadro e faixa de legenda, sem embutir texto no PNG. Conteúdo, ordem, oito imagens, gatilhos e saves preservados.
+
+Implementação delimitada: campo opcional text_right no segundo panel de HQ01, com fala de Helion; text conserva só Zynara. Leitor possui segundo Label de legenda com mesmo estilo. Quando text_right estiver preenchido, repartir área horizontal em duas colunas com margem central; nos outros quadros, restaurar legenda única de largura integral e ocultar/limpar a direita. Retrocompatível com todas as demais HQs. Sem tratamento por ID, número de quadro ou busca do nome Helion no leitor.
+
+Arquivos PC/Web: data/hqs.json, ui/hq_screen.gd, ui/hq_screen.tscn, tests/test_hqs.gd. Snapshot/hashes antes de editar e portagem delimitada. Estender regressão de passagem por Q2 e quadro seguinte: fala/visibilidade/âncoras corretas, sem legenda residual. Executar test_hqs em ambos e conferir Q2 nas resoluções 1280×720 e 1920×1080 com processos/perfis sintéticos conforme validation.md. Sem necessidade de repetir test_profile/test_playtest, pois não mudam perfil, gatilhos ou ferramentas de teste. Browser confirmar a mesma distribuição em exportação local, se necessário para validar comportamento Web. Nenhuma geração de arte, commit, push ou publicação.

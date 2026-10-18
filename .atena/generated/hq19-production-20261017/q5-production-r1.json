@@ -1,0 +1,38 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P19-Q05",
+  "authorization": "autorizado (2026-10-17), uma candidata Q5",
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-054/inicio-Arco01-conselheiro/r01/thalion-front-candidate-v01.png",
+      "sha256": "c237fe44a855ee9387fa1528d290523e4b247f841a528431d7ab1fb2fb4cd103"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq19-production-20261017/candidates/hq_n19_q4_sendrinah_prayer_v01.png",
+      "sha256": "860c697980a74c11b2436cd00e473894682f58f9d59eeb2540bc1284cb4f71a5"
+    }
+  ],
+  "tool_prompt": "q5-tool-prompt-v01.txt",
+  "screenplay": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+  "runtime_authorized": false,
+  "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q5_thalion_command_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-f2906af2-9849-4229-a341-05b8833fc94e.png",
+  "sha256": "d3617c33de6a31a4dc923805c1bc4442eae1d9724be9dfc2e36340214d9b6115",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "inspection": {
+    "image_valid": true,
+    "landscape_16_9": true,
+    "thalion_identity_and_costume": true,
+    "command_gesture_with_living_soldiers": true,
+    "temple_stone_arches_candle_continuity": true,
+    "no_roots_or_portals_yet": true,
+    "no_embedded_caption": true
+  },
+  "owner_approval": "aprovado (2026-10-17), aceite individual Q5 v01",
+  "runtime_admitted": false,
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q5-20261017-r1.md"
+}

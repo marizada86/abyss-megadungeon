@@ -1,0 +1,13 @@
+{
+  "file": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017/candidates/reino-abissal-roots-sample-v01.png",
+  "sha256": "7279a80addf8f7ff981fa6ae6dcd78cf94fc9d2bcce99669075c376159fc59de",
+  "width": 1672,
+  "height": 941,
+  "status": "PRESERVED_NOT_SELECTED",
+  "inspection": [
+    "Cinematic perspective instead of strict game projection",
+    "Human scale annotation incorrectly labeled 6 units",
+    "Top sometimes resembles earthy fill; revise to uninterrupted wood fibers"
+  ],
+  "tool": "image_gen built-in"
+}

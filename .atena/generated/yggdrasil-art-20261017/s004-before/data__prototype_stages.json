@@ -1,0 +1,329 @@
+{
+  "reino_abissal": {
+    "name": "Reino Abissal",
+    "sub": "Primeira incursão · protótipo",
+    "order": 9,
+    "duration": 360,
+    "cap": 50,
+    "tier": 2,
+    "coin_mult": 1.45,
+    "hp_mult": 1.9,
+    "dmg_mult": 1.8,
+    "qa_only": true,
+    "ambient": [],
+    "ground": [
+      [
+        43,
+        31,
+        29
+      ],
+      [
+        52,
+        38,
+        32
+      ]
+    ],
+    "bg": [
+      12,
+      10,
+      20
+    ],
+    "prop": {
+      "color": [
+        70,
+        51,
+        40
+      ],
+      "height": 44,
+      "n": 0,
+      "kind": "carga"
+    },
+    "completion": {
+      "kind": "timed_reach",
+      "target": [
+        30,
+        15
+      ],
+      "radius": 2,
+      "hold_seconds": 3,
+      "text": "Resista e alcance o acesso ao ritual"
+    },
+    "waves": [
+      {
+        "t0": 0,
+        "t1": 180,
+        "id": "cultista_adaga",
+        "every": 4,
+        "n": 2,
+        "max": 12
+      },
+      {
+        "t0": 30,
+        "t1": 240,
+        "id": "notivago",
+        "every": 4,
+        "n": 2,
+        "max": 12
+      },
+      {
+        "t0": 90,
+        "t1": 360,
+        "id": "cultista_arqueiro",
+        "every": 6,
+        "n": 1,
+        "max": 6
+      },
+      {
+        "t0": 150,
+        "t1": 360,
+        "id": "cultista_cajado",
+        "every": 8,
+        "n": 1,
+        "max": 5
+      },
+      {
+        "t0": 210,
+        "t1": 360,
+        "id": "criatura_corrompida",
+        "every": 8,
+        "n": 1,
+        "max": 6
+      }
+    ],
+    "elites": [
+      {
+        "at": 120,
+        "id": "criatura_corrompida"
+      },
+      {
+        "at": 240,
+        "id": "cultista_cajado"
+      }
+    ],
+    "boss": "",
+    "interactions": {
+      "chest": 4,
+      "fountain": 1.4,
+      "altar": 2,
+      "loja": 1,
+      "ferreiro": 1,
+      "arcanista": 1,
+      "curandeiro": 1
+    },
+    "essence": "Primeira incursão",
+    "next": "",
+    "unlock": "docas",
+    "root_navigation": "reino_abissal"
+  },
+  "domwieck": {
+    "name": "Domwieck",
+    "sub": "Invasão · protótipo",
+    "order": 10,
+    "duration": 420,
+    "cap": 54,
+    "tier": 3,
+    "coin_mult": 1.6,
+    "hp_mult": 2.2,
+    "dmg_mult": 2,
+    "qa_only": true,
+    "ambient": [],
+    "ground": [
+      [
+        51,
+        59,
+        65
+      ],
+      [
+        57,
+        65,
+        71
+      ]
+    ],
+    "bg": [
+      9,
+      16,
+      28
+    ],
+    "prop": {
+      "color": [
+        77,
+        83,
+        86
+      ],
+      "height": 44,
+      "n": 0,
+      "kind": "carga"
+    },
+    "completion": {
+      "kind": "timed_reach",
+      "target": [
+        30,
+        15
+      ],
+      "radius": 2,
+      "hold_seconds": 3,
+      "text": "Resista à invasão e alcance Ailalore",
+      "target_label": "Santuário"
+    },
+    "waves": [
+      {
+        "t0": 0,
+        "t1": 210,
+        "id": "cultista_adaga",
+        "every": 3.5,
+        "n": 2,
+        "max": 14
+      },
+      {
+        "t0": 30,
+        "t1": 300,
+        "id": "notivago",
+        "every": 4.5,
+        "n": 3,
+        "max": 15
+      },
+      {
+        "t0": 90,
+        "t1": 420,
+        "id": "cultista_arqueiro",
+        "every": 6,
+        "n": 1,
+        "max": 6
+      },
+      {
+        "t0": 150,
+        "t1": 420,
+        "id": "criatura_corrompida",
+        "every": 7,
+        "n": 1,
+        "max": 7
+      },
+      {
+        "t0": 210,
+        "t1": 420,
+        "id": "cultista_cajado",
+        "every": 8,
+        "n": 1,
+        "max": 5
+      }
+    ],
+    "elites": [
+      {
+        "at": 140,
+        "id": "criatura_corrompida"
+      },
+      {
+        "at": 280,
+        "id": "cultista_cajado"
+      }
+    ],
+    "boss": "",
+    "interactions": {
+      "chest": 4,
+      "fountain": 1.4,
+      "altar": 2,
+      "loja": 1,
+      "ferreiro": 1,
+      "arcanista": 1,
+      "curandeiro": 1
+    },
+    "essence": "Resistência de Domwieck",
+    "next": "",
+    "unlock": "docas"
+  },
+  "raiz_yggdrasil": {
+    "name": "Raiz de Yggdrasil",
+    "sub": "Travessia interplanar · protótipo geométrico",
+    "order": 11,
+    "duration": 240,
+    "cap": 40,
+    "tier": 2,
+    "coin_mult": 1,
+    "hp_mult": 1.5,
+    "dmg_mult": 1.4,
+    "qa_only": true,
+    "ambient": [],
+    "ground": [
+      [
+        51,
+        42,
+        40
+      ],
+      [
+        62,
+        52,
+        47
+      ]
+    ],
+    "bg": [
+      10,
+      12,
+      22
+    ],
+    "prop": {
+      "color": [
+        66,
+        54,
+        46
+      ],
+      "height": 44,
+      "n": 0,
+      "kind": "carga"
+    },
+    "completion": {
+      "kind": "timed_reach",
+      "target": [
+        30,
+        12
+      ],
+      "radius": 2,
+      "hold_seconds": 3,
+      "text": "Resista e alcance a passagem para Shedaklah",
+      "target_label": "Passagem"
+    },
+    "waves": [
+      {
+        "t0": 0,
+        "t1": 150,
+        "id": "cultista_adaga",
+        "every": 4,
+        "n": 2,
+        "max": 12
+      },
+      {
+        "t0": 30,
+        "t1": 210,
+        "id": "notivago",
+        "every": 5,
+        "n": 2,
+        "max": 14
+      },
+      {
+        "t0": 90,
+        "t1": 240,
+        "id": "cultista_arqueiro",
+        "every": 7,
+        "n": 1,
+        "max": 6
+      },
+      {
+        "t0": 150,
+        "t1": 240,
+        "id": "criatura_corrompida",
+        "every": 9,
+        "n": 1,
+        "max": 8
+      }
+    ],
+    "elites": [],
+    "boss": "",
+    "interactions": {},
+    "essence": "Travessia de Yggdrasil · QA",
+    "next": "",
+    "unlock": "",
+    "root_navigation": "raiz_yggdrasil",
+    "prototype_no_interactions": true,
+    "prototype_no_breakables": true,
+    "prototype_strict_cap": true
+  }
+}

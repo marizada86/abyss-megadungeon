@@ -1,0 +1,41 @@
+from pathlib import Path
+import json,hashlib,yaml
+r=Path.cwd(); base=r/'.atena/generated/hq19-production-20261017'
+p=base/'q11-production-r1.json'; prior=json.loads(p.read_text(encoding='utf-8'))
+assert prior['owner_approval']=='PENDING_V01'
+assert hashlib.sha256((r/prior['candidate']).read_bytes()).hexdigest()==prior['sha256']
+approval='.atena/vault/canon/ASSET-APPROVAL-HQ19-Q11-20261017-r1.md'
+brief='.atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q12-production-brief-r1.md'
+assert not (r/approval).exists() and not (base/'q12-production-r1.json').exists()
+(r/approval).write_text(f'''# HQ19 Q11 — aceite individual v01
+
+CANON_OWNER_ASSET_APPROVAL. 2026-10-17. O dono respondeu “aprovado” à Q11 v01. S-P19-Q11 concluída. Arquivo: `{prior['candidate']}`. SHA-256: `{prior['sha256']}`. Dimensões: 1672×941. Aprovado envio de Maelor algemado por raízes negras pelo portal roxo, com Aila sem asas retida no lado material e Thalion vivo. Glifo permanece ilustrativo. Onze de 12 aceitas. Sem admissão no runtime. Aceite autoriza próxima candidata conforme regra explícita de continuidade.
+''',encoding='utf-8')
+(r/brief).write_text('''# HQ19 Q12 — produção r1
+
+Estado: AUTHORIZED. IN_PLAN. Etapa S-P19-Q12, última de 12; onze concluídas e uma restante. Uma candidata PC para aceite individual, autorizada pelo aceite Q11 e regra de continuidade.
+
+Cena: portal roxo se fecha, sem Maelor do lado material. Thalion vivo e Aila sem asas sob sua custódia permanecem no templo, guarda anônimo junto dela. Composição de encerramento que evidencia ausência e separação do grupo. Mostrar apenas último vestígio estreito da abertura, dissipando-se, raízes recolhidas, sem reabrir passagem inteira. Não acrescentar morte, redenção futura, destino posterior ou soltura de Aila. Sem personagens ausentes, ferimentos ou raízes prendendo Aila.
+
+Entradas: roteiro CANON HQ19 r2, seleção aprovada r1, bible DRAFT r2 autorizada como direção; Q11 aceita para continuidade exata de Thalion, Aila, guarda, templo e luz roxa. Manter roupas e identidades. Texto CANON separado da arte: “O grupo estava separado. Aila ficou com Thalion.” Saída: candidata pixel art denso horizontal aproximadamente 16:9, pedra e velas, faixa inferior calma, sem texto/UI/marca. Checks: portal fechando, Maelor ausente, Aila material/ilesa/sem asas/retida, Thalion vivo, cronologia e identidade, arquivo/dimensões/hash. Zero BLOCKING. Conferência final de sequência e integração são posteriores, sem aceite antecipado por esta produção.
+''',encoding='utf-8')
+prompt='''Use case: illustration-story. Generate ONE new full-frame cinematic landscape approximately 16:9, ideally 1672x941, dark fantasy PIXEL ART comic illustration for Nottgard HQ19 FINAL panel 12.
+Reference image is the accepted PREVIOUS PANEL, for exact visual continuity of Thalion, Aila, anonymous guard, dark Gothic stone temple, candles and purple portal location. Change the action to the instant AFTER Maelor has disappeared: he is COMPLETELY ABSENT from the new image. No body, hands, face, silhouette or ghost of Maelor anywhere.
+NARRATIVE: The portal CLOSES. The group has been separated. Aila remains with Thalion in the MATERIAL temple, under guard custody. A quiet ominous aftermath, no battle victory or redemption. On the LEFT, where the portal stood, show only the last THIN VERTICAL VIOLET SEAM of fading light, a few dissipating purple sparks, almost sealed, no traversable oval doorway or visible world beyond. Roots have withdrawn with Maelor; at most a few short black bark fragments lie inert near the seam, no active branches crossing the room. No floating readable writing or large glyph needed.
+On RIGHT/CENTER, Aila stands alive and uninjured, anxious looking toward the disappearing light where Maelor vanished. Preserve pale ash-blonde hair loosely tied back with soft stray strands, pale recognizable face, charcoal layered worn robe and cloak, brown belt and boots, fully covered, absolutely NO WINGS. The helmeted guard remains beside/behind her, one gauntleted hand securely holding her upper arm, restrained custody without violence. No freedom or escape. Thalion stands near them, alive, stern controlled expression, lowering the commanding hand after sending Maelor away, looking toward the fading seam or watching Aila. Preserve slender adult elf, pointed ears, long pale blonde wavy hair, BLUE eyes, sharp clean-shaven face, elaborate gold armor over deep blue clothes, embroidered deep red cape, RED wide angular ceremonial hat with blue central panel and sweeping gold ornaments. No horns, wounds, demon form, future religious conversion or reconciliatory gesture. Clear plausible anatomy.
+COMPOSITION: medium-wide closing shot, three visible figures only (Thalion, Aila, one guard), their identities and custody clear. The vacant left side of the temple and almost extinct violet seam communicate absence. Aila remains clearly apart from seam and roots, solid stone beneath her feet. Keep old stone arches/columns, restrained candle clusters, amber light and cool blue night shadows coherent with reference; subtle residual violet reflection near seam only. Do not invent a new room, throne, prison or deity portrait. No other named companions, Brook, Kayron, Leoric, Korrak, Maelor, hammer, ghost, floating pages, blood or corpse. Do not portray Aila's later fate, release, romance or rescue.
+STYLE: match reference dense sophisticated crisp PIXEL ART, controlled dithering and detailed stone/cloth/metal clusters, readable faces, realistic adult proportions, cinematic dark fantasy. NOT smooth 3D, anime or photorealism. Quieter lower strip for game caption rendered separately, no drawn box. Absolutely NO words, letters, captions, speech balloons, UI, logos, watermark, panel subdivisions or ornamental borders. ONE complete illustration.'''
+(base/'q12-tool-prompt-v01.txt').write_text(prompt,encoding='utf-8')
+paths=[base/'candidates/hq_n19_q11_maelor_sent_v01.png']
+(base/'q12-production-r1.json').write_text(json.dumps(dict(status='AUTHORIZED_IN_PROGRESS',step='S-P19-Q12',authorization='Q11 aprovada (2026-10-17), continuidade explicitamente autorizada',authorization_canon='.atena/vault/canon/DEC-HQ-CANDIDATE-APPROVAL-CONTINUATION-20261017-r1.md',tool='built-in image_gen',references=[dict(path=p.as_posix(),sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in paths],tool_prompt='q12-tool-prompt-v01.txt',screenplay='.atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md',runtime_authorized=False),ensure_ascii=False,indent=2),encoding='utf-8')
+state=r/'.atena/state/plan.yaml'; t=state.read_text(encoding='utf-8'); a=t.index('  hq19_visual_selection:\n'); b=t.index('  chapter_2_review:\n',a); block=t[a:b]
+for old,new in [('q11_production_status: CANDIDATE_V01_AWAITING_OWNER_APPROVAL','q11_production_status: APPROVED_V01'),('q11_approval: PENDING_V01',"q11_approval: 'APPROVED_V01: aprovado (2026-10-17)'"),('approved_visual_panels: 10','approved_visual_panels: 11'),("next_activity: 'Aceite individual HQ19 Q11 v01; aprovação autoriza próxima candidata Q12'","next_activity: 'Produzir candidata HQ19 Q12 autorizada por continuidade; 11/12 aprovadas'")]:
+    assert old in block,old
+    block=block.replace(old,new,1)
+block+=f"    q11_asset_approval: {approval}\n    q12_brief: {brief}\n    q12_production_status: AUTHORIZED_IN_PROGRESS\n    q12_production_authorization: 'Q11 aprovada (2026-10-17), continuidade autorizada'\n    q12_production_record: .atena/generated/hq19-production-20261017/q12-production-r1.json\n"
+t=t[:a]+block+t[b:]; yaml.safe_load(t)
+prior.update(status='APPROVED_V01',owner_approval='aprovado (2026-10-17), aceite individual Q11 v01',approval_canon=approval)
+p.write_text(json.dumps(prior,ensure_ascii=False,indent=2),encoding='utf-8'); state.write_text(t,encoding='utf-8')
+with (r/'.atena/evidence/EVID-NOTTGARD-HQ19-Q11-CANDIDATE-20261017-r1.md').open('a',encoding='utf-8') as f:
+    f.write('\n## Aceite individual\n\nQ11 aprovada: “aprovado”. Hash reconferido, aceite canônico registrado. Onze de 12 aceitas. Q12 preparada e autorizada pela regra de continuidade. Sem integração.\n')
+print('PASS: Q11 aprovada, hash conferido; Q12 preparada e autorizada; YAML válido.')

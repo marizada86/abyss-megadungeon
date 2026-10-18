@@ -1,0 +1,161 @@
+{
+  "status": "PASS_TECHNICAL_OWNER_VISUAL_PENDING",
+  "stage": "S-DART-004",
+  "completed_steps": 4,
+  "total_steps": 5,
+  "next_checkpoint": "CP-DART-005",
+  "changed_sources": [
+    {
+      "path": "assets/tiles/domwieck_r1/ground.png",
+      "sha256": "3acea8c06624e18c970c201af083ccc2a2b69d29f847c40f1e1de1526643e0a3"
+    },
+    {
+      "path": "assets/tiles/domwieck_r1/architecture.png",
+      "sha256": "66e6ecea484751120beee730bdc8f5067ed1dd41562a894f22241e3f8e040f50"
+    },
+    {
+      "path": "assets/tiles/domwieck_r1/vegetation.png",
+      "sha256": "5cdfce7984e59b844032e067024d7ee11c595880a0b61b8b6955ef136f77116c"
+    },
+    {
+      "path": "assets/tiles/domwieck_r1/garden.png",
+      "sha256": "42197f9b6f48cb07987a0fed9bdcba52618f99ff49ad8c41c268416069b05e5a"
+    },
+    {
+      "path": "assets/tiles/domwieck_r1/ailalore.png",
+      "sha256": "320b27f6a7d39ca354b01c32e3d0dcfb6774e82b2bdd9b66b78e619acb036dd4"
+    },
+    {
+      "path": "assets/tiles/domwieck_r1/ambient.png",
+      "sha256": "f1adb4009128586237ef33122e60a5321f21cc041f7d422f91ed7275a9d40f9b"
+    },
+    {
+      "path": "data/domwieck_art.json",
+      "sha256": "ddbcdf1e731ee70ca7ec2b1b49f198b7135092bee6723e2d7fdf6644415458c8"
+    },
+    {
+      "path": "ui/ground.gd",
+      "sha256": "b235f6ba4bdb794a2417359b51750f0e028f25a3bf926c92e95b73f47a9f1e76"
+    },
+    {
+      "path": "ui/domwieck_art.gd",
+      "sha256": "421dfa6546c4f5bbbc817a61bde01c7aa151518576ff09f0b5551dfa27467708"
+    },
+    {
+      "path": "ui/stages/domwieck.tscn",
+      "sha256": "29161ceb21de12b5f5b589f5d4ca100b9455c90aed188efbdaa307ff60f4c296"
+    },
+    {
+      "path": "tests/test_domwieck_art.gd",
+      "sha256": "af0c879d571364f6431fd9c232b7ddd9d454f0019a051d73ea62f714ac4b0c07"
+    }
+  ],
+  "guarded_sources_unchanged": true,
+  "approved_png_bytes_preserved": true,
+  "domwieck_only_ground_diff_verified": true,
+  "imported_rgba8_bytes": 25165824,
+  "tests": [
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\domwieck-art-20261017\\validation-20261017-214549-181\\test_domwieck_art.log",
+      "test": "test_domwieck_art"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\domwieck-art-20261017\\validation-20261017-214203-354\\test_root_art.log",
+      "test": "test_root_art"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\domwieck-art-20261017\\validation-20261017-214203-354\\test_root_navigation.log",
+      "test": "test_root_navigation"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\domwieck-art-20261017\\validation-20261017-214203-354\\test_map_objectives.log",
+      "test": "test_map_objectives"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\domwieck-art-20261017\\validation-20261017-214203-354\\test_level_design.log",
+      "test": "test_level_design"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\domwieck-art-20261017\\validation-20261017-214203-354\\test_terrain.log",
+      "test": "test_terrain"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\domwieck-art-20261017\\validation-20261017-214203-354\\test_chapter_flow.log",
+      "test": "test_chapter_flow"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\domwieck-art-20261017\\validation-20261017-214203-354\\test_scripts_compile.log",
+      "test": "test_scripts_compile"
+    }
+  ],
+  "smoke_session": "validation-20261017-214735-278",
+  "threat_session": "validation-20261017-215109-488",
+  "captures": 50,
+  "source_profile_preserved": true,
+  "render_audit_session": "validation-20261017-214806-462",
+  "render_audit": {
+    "baseline": {
+      "art_enabled": false,
+      "dt": 0.0166666666666667,
+      "frame_loop": {
+        "max_ms": 35.679,
+        "median_ms": 26.216,
+        "p95_ms": 29.318
+      },
+      "frames": 600,
+      "population": 54,
+      "seed": 7204,
+      "simulation": {
+        "max_ms": 3.543,
+        "median_ms": 1.567,
+        "p95_ms": 1.846
+      }
+    },
+    "candidate": {
+      "art_enabled": true,
+      "dt": 0.0166666666666667,
+      "frame_loop": {
+        "max_ms": 10.605,
+        "median_ms": 9.031,
+        "p95_ms": 9.731
+      },
+      "frames": 600,
+      "population": 54,
+      "seed": 7204,
+      "simulation": {
+        "max_ms": 1.971,
+        "median_ms": 1.57,
+        "p95_ms": 1.752
+      }
+    },
+    "failures": [],
+    "frame_median_ratio": 0.344484284406469,
+    "mask": {
+      "root_art_pixels_identical_to_baseline": true
+    },
+    "measurement": "Offscreen OpenGL frame loop with vsync disabled; includes simulation, UI sync, scheduling and render dispatch; not GPU timestamps or a certified gameplay FPS",
+    "user_data_dir": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/domwieck-art-20261017/validation-20261017-214806-462/appdata/Godot/app_userdata/Nottgard Survivors"
+  },
+  "shared_state_preserved": true,
+  "portage": {
+    "pc": "implemented_tested",
+    "web": "outside_approved_scope"
+  },
+  "human_visual_acceptance": "PENDING"
+}

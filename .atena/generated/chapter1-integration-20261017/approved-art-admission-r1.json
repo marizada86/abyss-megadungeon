@@ -1,0 +1,302 @@
+{
+  "status": "ADMITTED_PC_R1",
+  "panels": [
+    {
+      "hq": "hqn_15",
+      "panel": 1,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq15-production-20261016/candidates/hq_n15_q1_beyond_tarn_v02.png",
+      "destination": "assets/hq/chapter1_r1/hq_n15_q1_beyond_tarn_v02.png",
+      "sha256": "6e02b07b505c2e6ca2daae3e671604434d4e86f7ef7e6f8183288813534ae4d4",
+      "caption": "Mais tarde, a investigação os levou para além da Tarn, por Skygomork.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_15",
+      "panel": 2,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq15-production-20261016/candidates/hq_n15_q2_hallucination_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n15_q2_hallucination_v01.png",
+      "sha256": "5ab1d7321433454a3d1a33bfc325551067c23d409b7181553595bb0b799d4e51",
+      "caption": "Na névoa, até o rosto de um companheiro podia se tornar uma ameaça.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_15",
+      "panel": 3,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq15-production-20261016/candidates/hq_n15_q3_hidden_erik_v02.png",
+      "destination": "assets/hq/chapter1_r1/hq_n15_q3_hidden_erik_v02.png",
+      "sha256": "e4c373751cb3c53f755993ef08c9afc7042ebd26f3e67ab56f315ad929ac46c1",
+      "caption": "Entre as sombras, encontraram Erik Blackthorn, batedor dos Grimholders.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_15",
+      "panel": 4,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq15-production-20261016/candidates/hq_n15_q4_amulet_of_light_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n15_q4_amulet_of_light_v01.png",
+      "sha256": "3dff7ed70b5199d50b2ccd86408872493611409d4622df4bc4c96be60040a571",
+      "caption": "O Amuleto da Luz o protegia dos efeitos da névoa.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_15",
+      "panel": 5,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq15-production-20261016/candidates/hq_n15_q5_guide_map_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n15_q5_guide_map_v01.png",
+      "sha256": "e790e52ecca6c4cfe611353bf2aea34035ebefac5da5e5cdab5fe34b583985db",
+      "caption": "Erik aceitou guiá-los. Os cultistas se reuniam na Igreja das Sombras.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_16",
+      "panel": 1,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq16-production-20261016/candidates/hq_n16_q1_recognition_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n16_q1_recognition_v01.png",
+      "sha256": "f9875790bfb1b1cc752417aa6e0f5886b03bf87548209bc992774c1536bc7944",
+      "caption": "Leoric reconheceu a igreja. Já estivera ali sob a influência dos cultistas.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_16",
+      "panel": 2,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq16-production-20261016/candidates/hq_n16_q2_cultists_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n16_q2_cultists_v01.png",
+      "sha256": "9c4e45f87de300773aa6c17882d20ff77e34ff5287e78bb5c73d135f04e2f33f",
+      "caption": "No altar, os seguidores de Ghaunadaur continuavam seus rituais.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_16",
+      "panel": 3,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq16-production-20261016/candidates/hq_n16_q3_nott_fire_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n16_q3_nott_fire_v01.png",
+      "sha256": "176a6ee5201c07c39b0e502dee50eba91a6bdd5be68007032a0bf36aa3cd6b97",
+      "caption": "Kayron pôs fogo na Igreja de Nott.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_16",
+      "panel": 4,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq16-production-20261016/candidates/hq_n16_q4_box_ring_notebook_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n16_q4_box_ring_notebook_v01.png",
+      "sha256": "0f0bd55082fb867b0693f607c80daa6085a1ee05b06778c2907d309dbd0b1ca3",
+      "caption": "Uma caixa escondia o Anel da Passagem Sombria e um relato sobre os artefatos de Bromnor.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_16",
+      "panel": 5,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq16-production-20261016/candidates/hq_n16_q5_roots_v02.png",
+      "destination": "assets/hq/chapter1_r1/hq_n16_q5_roots_v02.png",
+      "sha256": "34e592d11780db11c67185ca1f0ef9eba46f4be0ab94e394f210a3c512f5d5f5",
+      "caption": "Atrás da igreja, raízes vivas cobriam um caminho para baixo.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_17",
+      "panel": 1,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq17-production-20261016/candidates/hq_n17_q1_descent_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n17_q1_descent_v01.png",
+      "sha256": "ef19806c3506cab8e29b1f8548864d660a0b7f88f6569a6bdb186b5b8dc017c8",
+      "caption": "Erik foi à frente. As raízes conduziam a uma passagem sem fundo visível.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_17",
+      "panel": 2,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq17-production-20261016/candidates/hq_n17_q2_crossing_v02.png",
+      "destination": "assets/hq/chapter1_r1/hq_n17_q2_crossing_v02.png",
+      "sha256": "53732da53f520f00a2a1a51058350ae892fe8e7d7e831975d0f06562e7ba43df",
+      "caption": "A passagem os levou para fora do plano material.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_17",
+      "panel": 3,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq17-production-20261016/candidates/hq_n17_q3_abyss_legion_v02.png",
+      "destination": "assets/hq/chapter1_r1/hq_n17_q3_abyss_legion_v02.png",
+      "sha256": "5440f4c64b056f3f40f23e4ffc3e971632a64311e38b144fbae022618df650c0",
+      "caption": "No Reino Abissal, uma legião de demônios, notívagos e cultistas aguardava.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_17",
+      "panel": 4,
+      "source": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq17-production-20261016/candidates/hq_n17_q4_voice_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n17_q4_voice_v01.png",
+      "sha256": "18f55eee9e96731c9764937502d428a06071975a946af51441f83ba2f19e48fd",
+      "caption": "Aqui é sua casa. Seja bem-vindo.",
+      "text_role": "voice_in_leoric_mind"
+    },
+    {
+      "hq": "hqn_18",
+      "panel": 1,
+      "source": ".atena/generated/hq18-production-20261016/candidates/hq_n18_q1_kein_ritual_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n18_q1_kein_ritual_v01.png",
+      "sha256": "05d508252815add5a05d7dbc086de4514a3e54c6c35837033bee0a53ec7742d8",
+      "caption": "No centro do ritual estava Kein, com o martelo de Bromnor.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_18",
+      "panel": 2,
+      "source": ".atena/generated/hq18-production-20261017/candidates/hq_n18_q2_first_sacrifice_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n18_q2_first_sacrifice_v01.png",
+      "sha256": "8fb9473b03360e791bfffcabeb31121e6dd1b660b150f705a33e1d2568180b90",
+      "caption": "Kein sacrificou o prisioneiro e abriu o caminho para o exército.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_18",
+      "panel": 3,
+      "source": ".atena/generated/hq18-production-20261017/candidates/hq_n18_q3_domwieck_invasion_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n18_q3_domwieck_invasion_v01.png",
+      "sha256": "919a1e8fa5c07e87fe2add11df7ec9c543d4a9d2c306e2db92d9cac5e1153e82",
+      "caption": "O exército atravessou para Nottgard. A invasão começou em Domwieck.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_18",
+      "panel": 4,
+      "source": ".atena/generated/hq18-production-20261017/candidates/hq_n18_q4_beholder_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n18_q4_beholder_v01.png",
+      "sha256": "1ba8d08a22bed4b47d1b221147c40cc2129dd31c5dca71a570d986971511745d",
+      "caption": "Um segundo sacrifício trouxe um Beholder para o combate.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_18",
+      "panel": 5,
+      "source": ".atena/generated/hq18-production-20261017/candidates/hq_n18_q5_recovery_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n18_q5_recovery_v01.png",
+      "sha256": "115f34ca7b25d1127621b2576277bbfa81f20139ff7b034d2660aad90dda0f5e",
+      "caption": "Kein caiu. O grupo recuperou o martelo e derrotou a criatura.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_18",
+      "panel": 6,
+      "source": ".atena/generated/hq18-production-20261017/candidates/hq_n18_q6_counter_ritual_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n18_q6_counter_ritual_v01.png",
+      "sha256": "21741d7dd19048fdde9ec57d49689c9d45d18e7509f96324b71df50ce00144ce",
+      "caption": "Sylas fechou o portal. Então os dois cadáveres se uniram em um Death Tyrant.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_18",
+      "panel": 7,
+      "source": ".atena/generated/hq18-production-20261017/candidates/hq_n18_q7_vision_v02.png",
+      "destination": "assets/hq/chapter1_r1/hq_n18_q7_vision_v02.png",
+      "sha256": "b20e64eca1084526ccdad3529a58e2745f36b50e8bcd8cc351f93016c53b1eb6",
+      "caption": "Depois de vencê-lo, Sylas viu Juiblex nas profundezas: uma parte de Ghaunadaur se espalhava pelo Abismo.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_18",
+      "panel": 8,
+      "source": ".atena/generated/hq18-production-20261017/candidates/hq_n18_q8_return_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n18_q8_return_v01.png",
+      "sha256": "37855fdda7358f2e9d400d9724144cc9a9e74efad4e9c5d35b3cb9cae68e46ee",
+      "caption": "A cidade precisava deles. Com o martelo e matéria abissal, Sylas abriu o caminho de volta.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_03",
+      "panel": 1,
+      "source": ".atena/generated/hq03-production-20261017/candidates/hq_n03_q1_garden_v03.png",
+      "destination": "assets/hq/chapter1_r1/hq_n03_q1_garden_v03.png",
+      "sha256": "af234f301b8f720feb8586c9b088d4a82be73bb0331ce510cc6c1b633ca57adf",
+      "caption": "Ao retornarem do Abismo, encontraram Nottgard sob invasão.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_03",
+      "panel": 2,
+      "source": ".atena/generated/hq03-production-20261017/candidates/hq_n03_q2_adam_strike_v03.png",
+      "destination": "assets/hq/chapter1_r1/hq_n03_q2_adam_strike_v03.png",
+      "sha256": "724313bad05dfb24e9237a7d5a795b3173f26bff27c4ff8c435dab73342e5427",
+      "caption": "Adam atingiu Ailalore. A luz que sustentava a Tarn se apagou.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_03",
+      "panel": 3,
+      "source": ".atena/generated/hq03-production-20261017/candidates/hq_n03_q3_helion_choice_v02.png",
+      "destination": "assets/hq/chapter1_r1/hq_n03_q3_helion_choice_v02.png",
+      "sha256": "5f1be7f59c95aa6385dd8213d0c1eb0a664ffbff131b7e8eefd25e73a9d4c854",
+      "caption": "Nottgard resistirá. Por essa terra que tanto amamos, eu dou a minha vida.",
+      "text_role": "helion_dialogue"
+    },
+    {
+      "hq": "hqn_03",
+      "panel": 4,
+      "source": ".atena/generated/hq03-production-20261017/candidates/hq_n03_q4_seed_sacrifice_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n03_q4_seed_sacrifice_v01.png",
+      "sha256": "42a5cd6eade95bdadce82e1cc061e44191c8f795af362fc17f09d8f7d8299a30",
+      "caption": "Helion plantou a semente que recebera de Leoric e entregou sua vida.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_03",
+      "panel": 5,
+      "source": ".atena/generated/hq03-production-20261017/candidates/hq_n03_q5_living_veil_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n03_q5_living_veil_v01.png",
+      "sha256": "d2a0d139d9334bd7fc6d330298647b951194b89875235d79318d0e367ff85eef",
+      "caption": "As raízes envolveram as muralhas. O Véu Vivo tomou o lugar da Tarn.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_03",
+      "panel": 6,
+      "source": ".atena/generated/hq03-production-20261017/candidates/hq_n03_q6_nottgard_protected_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n03_q6_nottgard_protected_v01.png",
+      "sha256": "763259f8b36bee6df33a48741cd1bf231dd287146a70ff83055ac7f5b4c9ebc0",
+      "caption": "Continuem protegendo Nottgard. Eu confio em vocês.",
+      "text_role": "helion_voice"
+    },
+    {
+      "hq": "hqn_14",
+      "panel": 1,
+      "source": ".atena/generated/hq14-production-20261017/candidates/hq_n14_q1_matching_mask_v02.png",
+      "destination": "assets/hq/chapter1_r1/hq_n14_q1_matching_mask_v02.png",
+      "sha256": "bef73a9d706044d791d9b60954ab0468ad8153fa69a44e292521e28d4b804566",
+      "caption": "Entre a multidão, Sylas viu uma máscara igual à sua.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_14",
+      "panel": 2,
+      "source": ".atena/generated/hq14-production-20261017/candidates/hq_n14_q2_yellow_aura_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n14_q2_yellow_aura_v01.png",
+      "sha256": "09e94b38c3870bf4a745dd704ca119915327327dc5653ee64a846bd19b231984",
+      "caption": "O colar revelou uma aura amarela, ligada a Mask.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_14",
+      "panel": 3,
+      "source": ".atena/generated/hq14-production-20261017/candidates/hq_n14_q3_nyrelia_encounter_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n14_q3_nyrelia_encounter_v01.png",
+      "sha256": "ef220420e1bfa33be108a61dd3161e29db0d0204e228a23725a1c37e13c4974a",
+      "caption": "Era Nyrelia, a sacerdotisa que o havia salvado quando criança.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_14",
+      "panel": 4,
+      "source": ".atena/generated/hq14-production-20261017/candidates/hq_n14_q4_old_bond_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n14_q4_old_bond_v01.png",
+      "sha256": "95e64cf34df31b29440b7c1fcea7992b006018e05f9bc555aba9031e0d522343",
+      "caption": "Ela também era uma Grimholder. Na infância, poupara Sylas das guerras dos adultos.",
+      "text_role": "narration"
+    },
+    {
+      "hq": "hqn_14",
+      "panel": 5,
+      "source": ".atena/generated/hq14-production-20261017/candidates/hq_n14_q5_hidden_base_v01.png",
+      "destination": "assets/hq/chapter1_r1/hq_n14_q5_hidden_base_v01.png",
+      "sha256": "37f5990430eae81d32866d2fbb66d06acbabd215763bf9c974599b253fdf85c8",
+      "caption": "Agora, ela lhes mostrava o caminho até os Grimholders.",
+      "text_role": "narration"
+    }
+  ]
+}

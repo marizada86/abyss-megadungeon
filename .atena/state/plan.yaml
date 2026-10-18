@@ -1,4 +1,1374 @@
 version: 2
+hq20_reference_production_plan:
+  id: PLAN-NOTTGARD-HQ20-REFERENCE-PRODUCTION-20261017
+  revision: r1
+  classification: IN_PLAN_REFERENCE_DEPENDENCY
+  status: COMPLETE_OWNER_APPROVED_Q1_Q3_Q4
+  mode: per-step
+  current_step: S-P20-Q04
+  completed_steps: 3
+  total_steps: 3
+  ordered_steps: [S-P20-Q01, S-P20-Q03, S-P20-Q04]
+  next_step: null
+  checkpoint: CP-P20-Q04
+  approval: APPROVED_OWNER_Q4_V01_ALL_THREE_COMPLETE
+  authorization: 'Selecao r1 aprovada e autorizada somente candidata HQ20 Q1 com imagegen, 2026-10-17'
+  generation_authorized: NONE_PLAN_COMPLETE
+  runtime_authorized: false
+  spec: .atena/specs/SPEC-NOTTGARD-HQ20-REFERENCE-PRODUCTION-20261017/q4-r1.md
+  output_directory: .atena/generated/hq20-production-20261017/candidates
+  next_activity: 'Tres referencias concluidas; retornar ao checkpoint das amostras do mapa'
+
+
+  candidate: .atena/generated/hq20-production-20261017/candidates/hq_n20_q4_maelor_alone_v01.png
+  receipt: .atena/generated/hq20-production-20261017/q4-receipt-v01.json
+  evidence: EVID-NOTTGARD-HQ20-Q4-CANDIDATE-20261017-v01
+
+  cosmic_definition: .atena/vault/canon/DEC-YGGDRASIL-COSMIC-TREE-20261017-r1.md
+  v01_result: OWNER_REQUESTED_COSMIC_TREE_CORRECTION
+  wood_direction: .atena/vault/canon/DEC-YGGDRASIL-WOOD-STRENGTH-20261017-r1.md
+  v02_result: OWNER_REQUESTED_MORE_WOOD_AND_STRENGTH
+  completed_checkpoint: CP-P20-Q04
+  accepted_candidate: .atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png
+  acceptance_canon: .atena/vault/canon/ASSET-APPROVAL-HQ20-Q1-20261017-r1.md
+  owner_approval_receipt: .atena/generated/hq20-production-20261017/q1-owner-acceptance-v03.json
+  q3_authorization: autorizado (2026-10-17), somente candidata Q3
+  q3_accepted_candidate: .atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v01.png
+  q3_acceptance_canon: .atena/vault/canon/ASSET-APPROVAL-HQ20-Q3-20261017-r1.md
+  q3_owner_approval_receipt: .atena/generated/hq20-production-20261017/q3-owner-acceptance-v01.json
+  q4_authorization: autorizado (2026-10-17), somente candidata Q4
+  q4_acceptance_canon: .atena/vault/canon/ASSET-APPROVAL-HQ20-Q4-20261017-r1.md
+  q4_owner_approval_receipt: .atena/generated/hq20-production-20261017/q4-owner-acceptance-v01.json
+  consolidated_references: .atena/generated/yggdrasil-art-20261017/approved-reference-audit-r2.json
+
+hq20_reference_selection_plan:
+  id: PLAN-NOTTGARD-HQ20-REFERENCE-SELECTION-20261017
+  revision: r1
+  classification: IN_PLAN_REFERENCE_DEPENDENCY
+  status: COMPLETE_OWNER_APPROVED_R1
+  mode: per-step
+  mode_basis: 'Reutilizado do fluxo de HQs/mapas ja escolhido'
+  current_step: S-V20-001
+  completed_steps: 1
+  total_steps: 1
+  next_step: null
+  checkpoint: CP-V20-01
+  approval: APPROVED_OWNER_VISUAL_SELECTION_R1
+  authorization: 'Direcao r1 e HQ20 Q1/Q3/Q4 aprovados; detalhar selecao antes da producao, 2026-10-17'
+  spec: .atena/specs/SPEC-NOTTGARD-HQ20-REFERENCE-SELECTION-20261017/selection-r1.md
+  audit: .atena/generated/hq20-reference-selection-20261017/audit-r1.json
+  evidence: EVID-NOTTGARD-HQ20-REFERENCE-SELECTION-20261017-r1
+  generation_authorized: false
+  implementation_authorized: false
+  selection_status: APPROVED_OWNER_R1
+  blocking_selection_gaps: 0
+  marciela: INDIRECT_BACKLIT_BACK_VIEW_OWNER_APPROVED
+  next_activity: 'Selecao concluida; producao Q1 autorizada em plano proprio'
+  shared_state_policy: 'Preservar arte Yggdrasil, HQ19 concorrente e demais planos'
+
+
+  acceptance_canon: .atena/vault/canon/DEC-HQ20-REFERENCE-VISUAL-SELECTION-20261017-r1.md
+
+yggdrasil_art_plan:
+  id: PLAN-NOTTGARD-YGGDRASIL-ART-20261017
+  revision: r1
+  classification: IN_PLAN
+  status: COMPLETE_OWNER_APPROVED_ART_R1_GEOMETRY_R3
+  mode: per-step
+  mode_basis: 'Reutilizado do fluxo de mapas e arte ja escolhido pelo usuario'
+  current_step: S-YART-005
+  completed_steps: 5
+  total_steps: 5
+  next_step: null
+  checkpoint: CP-YART-005
+  approval: APPROVED_OWNER_VISUAL_PLAYTEST_R1
+  authorization: 'Planejar a arte final de Yggdrasil usando as HQs, 2026-10-17'
+  planning_authorized: true
+  production_authorized: false
+  implementation_authorized: false
+  remote_reference_use_authorized: false
+  direction_status: CANON_OWNER_APPROVED_R1
+  spec: .atena/specs/SPEC-NOTTGARD-YGGDRASIL-ART-20261017/plan-r1.md
+  reference_brief: .atena/specs/SPEC-NOTTGARD-YGGDRASIL-ART-20261017/hq20-reference-brief-r1.md
+  reference_audit: .atena/generated/yggdrasil-art-20261017/reference-audit-r1.json
+  evidence: EVID-NOTTGARD-YGGDRASIL-ART-PLAN-20261017-r1
+  reference_route: PREPARE_APPROVE_HQ20_FIRST_OWNER_SELECTED
+  proposed_reference_panels: HQ20_Q1_Q3_Q4_OWNER_SCOPE_APPROVED
+  reference_images: OWNER_APPROVED_Q1_V03_Q3_V01_Q4_V01
+  blocking_production_gaps: 0
+  documentary_blocking_gaps: 0
+  next_step_approval: NOT_APPLICABLE_PLAN_COMPLETE
+  next_activity: 'Plano de arte concluido; nenhuma etapa restante neste escopo'
+  generation_readiness: KIT_OWNER_APPROVED_NO_NEW_GENERATION
+  proposed_runtime_budget: 10
+  shared_state_policy: 'Preservar prototipo Yggdrasil concluido e todos os demais planos'
+  deferred: 'Integracao capitulo2, outros mapas, audio, animacao, Web e publicacao'
+
+  direction_canon: .atena/vault/canon/DEC-YGGDRASIL-ART-DIRECTION-20261017-r1.md
+  hq20_selection_spec: .atena/specs/SPEC-NOTTGARD-HQ20-REFERENCE-SELECTION-20261017/selection-r1.md
+
+  approved_reference_audit: .atena/generated/yggdrasil-art-20261017/approved-reference-audit-r2.json
+  reference_completion_evidence: EVID-NOTTGARD-HQ20-REFERENCES-ACCEPTANCE-20261017-r1
+  sample_scope: .atena/specs/SPEC-NOTTGARD-YGGDRASIL-ART-20261017/samples-r1.md
+  sample_authorization: autorizado (2026-10-17), duas amostras usando apenas tres HQ20 aprovadas
+  authorized_production_scope: FOUR_COMPONENT_PNGS_AND_MANIFEST_ONLY
+  sample_receipt: .atena/generated/yggdrasil-art-20261017/sample-receipt-r1.json
+  sample_review: .atena/generated/yggdrasil-art-20261017/sample-review-r1.md
+  sample_evidence: EVID-NOTTGARD-YGGDRASIL-ART-SAMPLES-20261017-r1
+  sample_acceptance: APPROVED_OWNER_A_V01_B_V01
+  completed_checkpoint: CP-YART-005
+  sample_acceptance_canon: .atena/vault/canon/ASSET-APPROVAL-YGGDRASIL-ART-SAMPLES-20261017-r1.md
+  sample_acceptance_evidence: EVID-NOTTGARD-YGGDRASIL-ART-SAMPLES-ACCEPTANCE-20261017-r1
+  sample_owner_acceptance: .atena/generated/yggdrasil-art-20261017/sample-owner-acceptance-r1.json
+  kit_scope: .atena/specs/SPEC-NOTTGARD-YGGDRASIL-ART-20261017/kit-r1.md
+  kit_authorization: autorizado (2026-10-17), quatro PNGs com amostras e HQ20 aprovadas, sem aplicacao
+  kit_manifest: .atena/generated/yggdrasil-art-20261017/kit-r1/manifest.json
+  kit_review: .atena/generated/yggdrasil-art-20261017/kit-r1/review.md
+  kit_evidence: EVID-NOTTGARD-YGGDRASIL-ART-KIT-20261017-r1
+  kit_acceptance: APPROVED_OWNER_R1
+  kit_acceptance_canon: .atena/vault/canon/ASSET-APPROVAL-YGGDRASIL-ART-KIT-20261017-r1.md
+  kit_owner_acceptance: .atena/generated/yggdrasil-art-20261017/kit-owner-acceptance-r1.json
+  kit_acceptance_evidence: EVID-NOTTGARD-YGGDRASIL-ART-KIT-ACCEPTANCE-20261017-r1
+  integration_scope: .atena/specs/SPEC-NOTTGARD-YGGDRASIL-ART-20261017/integration-r1.md
+
+  integration_authorization: autorizado, S-YART-004 e testes isolados
+  integration_baseline: .atena/generated/yggdrasil-art-20261017/s004-baseline.json
+
+  integration_evidence: EVID-NOTTGARD-YGGDRASIL-ART-INTEGRATION-20261017-r1
+  integration_admission: .atena/generated/yggdrasil-art-20261017/s004-admission.json
+  integration_validation: .atena/generated/yggdrasil-art-20261017/s004-final-validation.json
+  playtest_scope: .atena/specs/SPEC-NOTTGARD-YGGDRASIL-ART-20261017/playtest-r1.md
+  human_visual_playtest: OWNER_APPROVED_R1
+  playtest_authorization: autorizado, S-YART-005 abertura do teste visual
+  human_playtest_session: D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/map-playtest-sessions/20261018-001702-103-777f09f2
+  human_playtest_launch: .atena/generated/yggdrasil-art-20261017/s005-launch.json
+  playtest_acceptance_canon: .atena/vault/canon/DEC-YGGDRASIL-ART-PLAYTEST-ACCEPTED-20261017-r1.md
+  playtest_acceptance_evidence: EVID-NOTTGARD-YGGDRASIL-ART-PLAYTEST-ACCEPTANCE-20261017-r1
+  playtest_owner_acceptance: .atena/generated/yggdrasil-art-20261017/s005-owner-acceptance-r1.json
+
+yggdrasil_map_plan:
+  id: PLAN-NOTTGARD-YGGDRASIL-MAP-20261017
+  revision: r1
+  classification: IN_PLAN
+  status: COMPLETE_OWNER_APPROVED_R3
+  mode: per-step
+  mode_basis: 'Modo já escolhido no fluxo de mapas; reaproveitado para o novo recorte'
+  current_step: S-YGG-005
+  completed_steps: 5
+  total_steps: 5
+  next_step: null
+  checkpoint: CP-YGG-005
+  approval: APPROVED_S_YGG_005_OWNER_ACCEPTANCE_R3
+  authorization: 'VAMOS LÁ (2026-10-17), após proposta de reconciliação e plano de ambiente/referências/recursos de Yggdrasil sem produção'
+  spec: .atena/specs/SPEC-NOTTGARD-YGGDRASIL-MAP-20261017/plan-r1.md
+  evidence: EVID-NOTTGARD-YGGDRASIL-MAP-PLAN-20261017-r1
+  research: .atena/generated/yggdrasil-map-20261017/research-r1.json
+  planning_authorized: true
+  implementation_authorized: true
+  art_generation_authorized: false
+  remote_reference_use_authorized: false
+  design_status: APPROVED_PROTOTYPE_R3_OWNER_PLAYTEST
+  blocking_gaps_for_next_documentary_step: 0
+  implementation_readiness: AUTHORIZED_S_YGG_003
+  final_art_readiness: BLOCKED_SPECIFIC_VISUAL_REFERENCE_SELECTION
+  next_step_approval: NOT_APPLICABLE_PLAN_COMPLETE
+  next_activity: 'Plano do prototipo concluido; nenhuma etapa restante neste escopo'
+  deferred: 'Arte final e integração capítulo 2 exigem planos/checkpoints próprios'
+  shared_state_policy: 'Preservar edição concorrente das HQs, capítulo 1 e artes já aceitos'
+
+  scope_acceptance_and_contract_authorization: "aaprovado e autorizado (2026-10-17), após recorte r1 e proposta explícita de S-YGG-002 sem código ou arte"
+  completed_checkpoint: CP-YGG-005
+  scope_acceptance_canon: .atena/vault/canon/DEC-YGGDRASIL-PROTOTYPE-SCOPE-20261017-r1.md
+  technical_contract: .atena/specs/SPEC-NOTTGARD-YGGDRASIL-MAP-20261017/technical-contract-r1.md
+  technical_contract_data: .atena/generated/yggdrasil-map-20261017/contract-r1.json
+  technical_contract_acceptance: APPROVED_OWNER_R1
+  contract_evidence: EVID-NOTTGARD-YGGDRASIL-MAP-CONTRACT-20261017-r1
+  proposed_game_test_files: 13
+  proposed_test_suites: 12
+
+  implementation_authorization: 'apraovado e autorizado (2026-10-17), contrato r1 e S-YGG-003'
+  technical_contract_canon: .atena/vault/canon/DEC-YGGDRASIL-PROTOTYPE-CONTRACT-20261017-r1.md
+  implementation_baseline: .atena/generated/yggdrasil-map-20261017/s003-baseline.json
+
+  implementation_status: COMPLETE_FULL_ISOLATED_VALIDATION_PASS
+  implementation_evidence: EVID-NOTTGARD-YGGDRASIL-PROTOTYPE-20261017-r1
+  implementation_validation: .atena/generated/yggdrasil-map-20261017/s003-final-validation.json
+  changed_game_test_files: 14
+  full_validation: PASS_12_OF_12_APPROVED_R2
+  human_playtest: COMPLETE_OWNER_APPROVED_R3
+
+  validation_authorization: autorizado (2026-10-17), validação isolada S-YGG-004
+
+  validation_evidence: EVID-NOTTGARD-YGGDRASIL-VALIDATION-20261017-r2
+  validation_results: .atena/generated/yggdrasil-map-20261017/s004-final-validation-r2.json
+  scope_adjustment_proposal: .atena/specs/SPEC-NOTTGARD-YGGDRASIL-MAP-20261017/validation-adjustment-r2-draft.md
+  scope_adjustment_approval: APPROVED_OWNER_R2_14TH_TEST_FILE
+  blocking_validation_gaps: 0
+
+  scope_adjustment_authorization: aprovado (2026-10-17), revisao r2 e teste adicional
+  authorized_game_test_files: 14
+
+  scope_adjustment_canon: .atena/vault/canon/DEC-YGGDRASIL-VALIDATION-ADJUSTMENT-20261017-r2.md
+
+  human_playtest_authorization: autroizado (2026-10-17), abertura S-YGG-005
+  human_playtest_session: .atena/generated/map-playtest-sessions/20261017-232001-925-d808aad1
+  human_playtest_launch: .atena/generated/yggdrasil-map-20261017/r3-retest-launch.json
+
+  human_playtest_feedback: EVID-NOTTGARD-YGGDRASIL-PLAYTEST-FEEDBACK-20261017-r1
+  thicker_branches_proposal: .atena/specs/SPEC-NOTTGARD-YGGDRASIL-MAP-20261017/thicker-branches-r3-draft.md
+  thicker_branches_approval: APPROVED_OWNER_R3_IMPLEMENT_VALIDATE_REOPEN
+  thicker_branches_authorization: aprovado r3, implementar validar e reabrir playtest (2026-10-17)
+
+  thicker_branches_validation: .atena/generated/yggdrasil-map-20261017/r3-validation.json
+  thicker_branches_evidence: EVID-NOTTGARD-YGGDRASIL-THICKER-BRANCHES-20261017-r3
+
+  human_playtest_acceptance: EVID-NOTTGARD-YGGDRASIL-PLAYTEST-ACCEPTANCE-20261017-r3
+  human_playtest_acceptance_canon: .atena/vault/canon/DEC-YGGDRASIL-PROTOTYPE-PLAYTEST-ACCEPTED-20261017-r3.md
+  completion_receipt: .atena/generated/yggdrasil-map-20261017/s005-owner-acceptance-r3.json
+
+domwieck_art_plan:
+  id: PLAN-NOTTGARD-DOMWIECK-ART-20261017
+  revision: r1
+  classification: IN_PLAN
+  status: COMPLETE_OWNER_APPROVED_R1
+  mode: per-step
+  mode_basis: 'Aprovação por etapa já escolhida no fluxo de mapas e arte'
+  current_step: S-DART-005
+  completed_steps: 5
+  total_steps: 5
+  next_step: null
+  checkpoint: CP-DART-005
+  approval: APPROVED_S_DART_005_OWNER_VISUAL_ACCEPTANCE
+  authorization: 'Atena, vamos planejar a arte final de Domwieck, usando as HQs como referência. (2026-10-17)'
+  spec: .atena/specs/SPEC-NOTTGARD-DOMWIECK-ART-20261017/plan-r1.md
+  evidence: EVID-NOTTGARD-DOMWIECK-ART-PLAN-20261017-r1
+  reference_audit: .atena/generated/domwieck-art-20261017/reference-audit-r1.json
+  direction_status: CANON_OWNER_APPROVED_R1
+  planning_authorized: true
+  production_authorized: true
+  implementation_authorized: true
+  remote_reference_use_authorized: true
+  proposed_reference_scope: HQ18_Q3_V01_HQ03_Q1_V03_HQ03_Q2_V03_LIMITED_ROLES
+  blocking_design_gaps: 0
+  next_step_approval: NOT_APPLICABLE_PLAN_COMPLETE
+  next_activity: 'Plano concluído; nenhuma etapa restante neste escopo'
+  shared_state_policy: 'Preservar demais planos, campanha integrada e raízes concluídas 5/5'
+  sample_authorization: "Atena, aprovada a direção r1. Pode iniciar a S-DART-002 com imagegen, criando as amostras de rua/praça e jardim/santuário, usando somente HQ18 Q3 v01, HQ03 Q1 v03 e HQ03 Q2 v03, esta última só para aparência e escala da estrela. (2026-10-17)"
+  authorized_production_scope: SIX_PNG_KIT_ONLY
+  direction_canon: .atena/vault/canon/DEC-DOMWIECK-ART-DIRECTION-20261017-r1.md
+  sample_receipt: .atena/generated/domwieck-art-20261017/sample-receipt-r1.json
+  sample_review: .atena/generated/domwieck-art-20261017/sample-review-r1.md
+  sample_evidence: EVID-NOTTGARD-DOMWIECK-ART-SAMPLES-20261017-r1
+  sample_acceptance: APPROVED_OWNER_STREET_V01_GARDEN_V02
+  kit_production_authorized: true
+  completed_checkpoint: CP-DART-005
+  sample_acceptance_evidence: EVID-NOTTGARD-DOMWIECK-ART-SAMPLES-ACCEPTANCE-20261017-r1
+  sample_acceptance_canon: .atena/vault/canon/ASSET-APPROVAL-DOMWIECK-ART-SAMPLES-20261017-r1.md
+  kit_authorization: "autorizado (2026-10-17), após proposta explícita de seis PNGs com as mesmas referências e limites, sem aplicação no mapa"
+  kit_manifest: .atena/generated/domwieck-art-20261017/kit-r1/manifest.json
+  kit_review: .atena/generated/domwieck-art-20261017/kit-r1/review.md
+  kit_evidence: EVID-NOTTGARD-DOMWIECK-ART-KIT-20261017-r1
+  kit_delivery: COMPLETE_OWNER_APPROVED
+  kit_acceptance: APPROVED_OWNER_R1
+  kit_acceptance_evidence: EVID-NOTTGARD-DOMWIECK-ART-KIT-ACCEPTANCE-20261017-r1
+  kit_acceptance_canon: .atena/vault/canon/ASSET-APPROVAL-DOMWIECK-ART-KIT-R1-20261017-r1.md
+  integration_authorization: "autorizado (2026-10-17), em resposta à integração, ajustes de recorte/escala/brilho, preservação das rotas/combate e testes isolados previstos"
+  integration_baseline: .atena/generated/domwieck-art-20261017/s004-baseline.json
+
+  integration_status: COMPLETE_TECHNICAL_PASS
+  integration_evidence: EVID-NOTTGARD-DOMWIECK-ART-INTEGRATION-20261017-r1
+  integration_validation: .atena/generated/domwieck-art-20261017/s004-final-validation.json
+  changed_game_test_files: 11
+  visual_playtest: COMPLETE_OWNER_APPROVED
+
+  visual_playtest_authorization: "autorizado (2026-10-17), em resposta à abertura da S-DART-005 e playtest visual isolado de Domwieck"
+
+  visual_playtest_evidence: EVID-NOTTGARD-DOMWIECK-ART-PLAYTEST-LAUNCH-20261017-r1
+  visual_playtest_launch: .atena/generated/domwieck-art-20261017/s005-launch.json
+
+  visual_playtest_acceptance: 'aprovado (2026-10-17), após playtest visual isolado de Domwieck e solicitação de aprovação do visual'
+  visual_playtest_acceptance_evidence: EVID-NOTTGARD-DOMWIECK-ART-PLAYTEST-ACCEPTANCE-20261017-r1
+  visual_playtest_acceptance_canon: .atena/vault/canon/ASSET-APPROVAL-DOMWIECK-ART-INTEGRATED-R1-20261017-r1.md
+  final_validation: .atena/generated/domwieck-art-20261017/s005-final-validation.json
+  remaining_steps: 0
+
+root_art_plan:
+  id: PLAN-NOTTGARD-ROOT-ART-20261017
+  revision: r1
+  classification: IN_PLAN
+  status: COMPLETE_OWNER_APPROVED_R1
+  mode: per-step
+  mode_basis: 'Mesmo fluxo de mapas/raízes; aprovação por etapa já escolhida'
+  current_step: S-RART-005
+  completed_steps: 5
+  total_steps: 5
+  next_step: null
+  checkpoint: CP-RART-005
+  approval: APPROVED_S_RART_005_OWNER_VISUAL_ACCEPTANCE
+  authorization: 'Atena, vamos planejar a arte final das raízes do Reino Abissal, usando as HQs como referência. (2026-10-17)'
+  spec: .atena/specs/SPEC-NOTTGARD-ROOT-ART-20261017/plan-r1.md
+  evidence: EVID-NOTTGARD-ROOT-ART-PLAN-20261017-r1
+  reference_audit: .atena/generated/root-art-20261017/reference-audit.json
+  planning_authorized: true
+  production_authorized: true
+  implementation_authorized: true
+  remote_reference_use_authorized: true
+  blocking_design_gaps: 0
+  prerequisite: 'Navegação r2 concluída e aceita; preservar geometria e espaço de combate'
+  next_activity: 'Plano concluído; nenhuma etapa restante neste escopo'
+  shared_state_policy: 'Planos de mapas/campanha/HQs preservados; reler estado vigente antes de cada checkpoint'
+  sample_authorization: "Atena, aprovada a direção r1. Pode iniciar a S-RART-002, produzindo a amostra de passagem, junção e borda com imagegen, usando somente HQ17 Q3 e Q4 como referências. (2026-10-17)"
+  authorized_reference_scope: HQ17_Q3_V02_AND_Q4_V01_ONLY
+  sample_candidate: .atena/generated/root-art-20261017/candidates/reino-abissal-roots-sample-v02.png
+  sample_receipt: .atena/generated/root-art-20261017/sample-v02-receipt.json
+  sample_evidence: EVID-NOTTGARD-ROOT-ART-SAMPLE-20261017-r1
+  sample_acceptance: APPROVED_OWNER_V02
+  sample_delivery: COMPLETE_OWNER_APPROVED
+  kit_production_authorized: true
+  completed_checkpoint: CP-RART-005
+  next_step_approval: NOT_APPLICABLE_PLAN_COMPLETE
+  sample_acceptance_evidence: EVID-NOTTGARD-ROOT-ART-SAMPLE-ACCEPTANCE-20261017-r1
+
+  kit_authorization: "autorizado (2026-10-17), após pergunta explícita sobre produzir superfície, junções, laterais e profundidade, sem aplicação no mapa"
+  kit_manifest: .atena/generated/root-art-20261017/kit-r1/manifest.json
+  kit_review: .atena/generated/root-art-20261017/kit-r1/review.md
+  kit_evidence: EVID-NOTTGARD-ROOT-ART-KIT-20261017-r1
+  kit_delivery: COMPLETE_OWNER_APPROVED
+  kit_acceptance: APPROVED_OWNER_R1
+  native_dimension_policy: PRESERVE_GENERATED_ORIGINALS_VALIDATE_1024_IMPORT_IN_S_RART_004
+  kit_acceptance_evidence: EVID-NOTTGARD-ROOT-ART-KIT-ACCEPTANCE-20261017-r1
+  kit_acceptance_canon: .atena/vault/canon/ASSET-APPROVAL-ROOT-ART-KIT-R1-20261017-r1.md
+  integration_authorization: "autorizado (2026-10-17), após pergunta explícita sobre aplicar a arte e executar testes isolados preservando bordas, caminhos e espaço de combate"
+  integration_status: COMPLETE_TECHNICAL_PASS
+  integration_evidence: EVID-NOTTGARD-ROOT-ART-INTEGRATION-20261017-r1
+  integration_validation: .atena/generated/root-art-20261017/s004-final-validation.json
+  visual_playtest: COMPLETE_OWNER_APPROVED
+  changed_game_test_files: 8
+
+  visual_playtest_authorization: "autorizado (2026-10-17), em resposta à abertura da S-RART-005 e do playtest visual isolado"
+  visual_playtest_evidence: EVID-NOTTGARD-ROOT-ART-PLAYTEST-LAUNCH-20261017-r1
+  visual_playtest_launch: .atena/generated/root-art-20261017/s005-launch.json
+  visual_playtest_acceptance: "Atena, testei e aprovei o visual das raízes. Pode concluir a S-RART-005 e registrar o resultado do playtest. (2026-10-17)"
+  visual_playtest_acceptance_evidence: EVID-NOTTGARD-ROOT-ART-PLAYTEST-ACCEPTANCE-20261017-r1
+  visual_playtest_acceptance_canon: .atena/vault/canon/ASSET-APPROVAL-ROOT-ART-INTEGRATED-R1-20261017-r1.md
+  final_validation: .atena/generated/root-art-20261017/s005-final-validation.json
+
+root_navigation_revision:
+  id: SPEC-NOTTGARD-ROOT-NAVIGATION-20261017
+  revision: r2
+  classification: PLAN_CHANGE_REQUEST
+  status: COMPLETE_OWNER_APPROVED_R2
+  mode: per-step
+  current_step: S-ROOT-003
+  completed_steps: 3
+  total_steps: 3
+  next_step: null
+  checkpoint: CP-ROOT-003
+  approval: APPROVED_R2_S_ROOT_003
+  design_authorization: 'vamos lá, após proposta explícita de detalhar caminhos e conexões antes de implementar (2026-10-17)'
+  movement_decision: .atena/vault/canon/DEC-NOTTGARD-ROOT-EDGE-BLOCKED-20261017-r1.md
+  document: .atena/specs/SPEC-NOTTGARD-MISSING-MAPS-20261017/root-navigation-r2.md
+  implementation_authorized: true
+  return_policy: 'Não substitui plano compartilhado; reler cursor e integração concorrente antes de execução aprovada'
+  implementation_authorization: "Atena, aprovada a revisão r2. Pode iniciar a S-ROOT-002, implementando as raízes com bordas travadas e executando os testes isolados. (2026-10-17)"
+  reference_reminder: "Raízes de referência nas HQs; HQ17 Q3 v02 reinspecionada"
+  baseline: .atena/generated/root-navigation-20261017/baseline.json
+
+  completed_checkpoint: CP-ROOT-003
+  next_step_approval: NOT_APPLICABLE_PLAN_COMPLETE
+  implementation_status: COMPLETE_TECHNICAL_PASS
+  evidence: EVID-NOTTGARD-ROOT-NAVIGATION-20261017-r1
+  validation: .atena/generated/root-navigation-20261017/final-validation.json
+  changed_game_test_files: 10
+  human_playtest: COMPLETE_OWNER_APPROVED
+
+  playtest_authorization: "Atena, autorizado. Pode iniciar a S-ROOT-003 e abrir o playtest do Reino Abissal para avaliarmos as bordas, os caminhos e o congestionamento no combate. (2026-10-17)"
+  playtest_map: reino_abissal
+
+  playtest_session: D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/map-playtest-sessions/20261017-180148-895-efc27f5e
+  playtest_launch_evidence: EVID-NOTTGARD-ROOT-HUMAN-LAUNCH-20261017-r1
+
+  playtest_acceptance: "Atena, testei e aprovei as bordas, os caminhos e o espaço para combater. Pode concluir a S-ROOT-003 e registrar o resultado do playtest."
+  playtest_acceptance_date: 2026-10-17
+  playtest_acceptance_evidence: EVID-NOTTGARD-ROOT-PLAYTEST-ACCEPTANCE-20261017-r1
+  remaining_steps: 0
+  closure: COMPLETE_NO_OTHER_PLAN_ADVANCED
+
+map_playtest_entry:
+  id: DEV-NOTTGARD-MAP-PLAYTEST-ENTRY-20261017
+  revision: r2
+  classification: PLAN_DEVIATION
+  status: COMPLETE_RETURNED_HUMAN_PLAYTEST_PENDING
+  mode: per-step
+  current_step: S-MAP-ACCESS-001
+  completed_steps: 1
+  total_steps: 1
+  approval: APPROVED_ONE_STEP_LOCAL_ENTRY
+  authorization: 'sim (2026-10-17), em resposta à criação de atalho com escolha Reino Abissal/Domwieck e perfil isolado'
+  spec: .atena/specs/SPEC-NOTTGARD-MISSING-MAPS-20261017/playtest-entry-r1.md
+  evidence: EVID-NOTTGARD-MAP-PLAYTEST-ENTRY-20261017-r2
+  correction_request: 'não abriu (2026-10-17), janela cinza no atalho'
+  correction: 'Preparar índice de classes do Godot após sonda de isolamento; interromper se preparação/autoload falhar'
+  launcher: Testar-Mapas.cmd
+  validation: BOTH_MAPS_LAUNCH_AND_RETURN_PASS_ISOLATED
+  human_feedback: APPROVED_PROTOTYPES_WITH_ABYSS_ROOT_MOVEMENT_PROPOSAL
+  human_feedback_evidence: EVID-NOTTGARD-MAP-PLAYTEST-FEEDBACK-20261017-r1
+  movement_proposal_classification: PLAN_CHANGE_REQUEST_R2_IMPLEMENTED_TECHNICAL_PASS
+  movement_implementation_authorized: true
+  return:
+    plan: PLAN-NOTTGARD-MISSING-MAPS-20261017
+    revision: r1
+    cursor: S-MAP-004
+    completed_steps: 4
+    total_steps: 7
+    checkpoint: CP-MAP-005
+    next_step_approval: PENDING
+    mode: per-step
+    suspension: CLOSED_RETURNED_TO_PENDING_CP_MAP_005
+missing_maps_proposal:
+  id: PLAN-NOTTGARD-MISSING-MAPS-20261017
+  revision: r1
+  classification: PLAN_CHANGE_REQUEST
+  status: COMPLETE_RECONCILED_PRIOR_ACCEPTED_DELIVERIES
+  mode: per-step
+  mode_basis: 'Modo já escolhido para campanha/fechamento; sem nova aprovação de execução inferida'
+  request: 'Atena, vamos fazer um plano para fazer os mapas faltantes (2026-10-17)'
+  document: .atena/specs/SPEC-NOTTGARD-MISSING-MAPS-20261017/plan.md
+  current_step: S-MAP-007
+  completed_steps: 7
+  total_steps: 7
+  next_step: null
+  checkpoint: null
+  scope_adjustment: .atena/specs/SPEC-NOTTGARD-MISSING-MAPS-20261017/s003-catalog-scope-adjustment-r1.md
+  scope_adjustment_approval: APPROVED_R1
+  scope_adjustment_authorization: 'Atena, autorizado o ajuste. Pode separar o cadastro em data/prototype_stages.json, mantendo o teto de 13 arquivos e as exigências dos testes existentes, e concluir a validação da S-MAP-003. (2026-10-17)'
+  prototype_evidence: EVID-NOTTGARD-MAP003-PROTOTYPE-20261017-r2
+  validation_status: PASS_S_MAP_004_FIVE_CHECKS_AND_TWO_PROTOTYPE_SMOKE
+  completed_checkpoint: CP-MAP-007_RECONCILED
+  domwieck_authorization: 'Atena, aprovado. Pode iniciar a S-MAP-004, criando o protótipo funcional de Domwieck conforme o dossiê r1, com testes isolados e aprovação por etapa. (2026-10-17)'
+  domwieck_scope: .atena/specs/SPEC-NOTTGARD-MISSING-MAPS-20261017/s004-prototype-scope-r1.md
+  domwieck_evidence: EVID-NOTTGARD-MAP004-PROTOTYPE-20261017-r1
+  implementation_status: COMPLETE_CAMPAIGN_AND_ACCEPTED_MAP_ART
+  s003_final_validation: .atena/generated/missing-maps-20261017/s003-final-validation.json
+  final_validation: .atena/generated/missing-maps-20261017/s004-final-validation.json
+  changed_game_test_files: 8
+  file_budget: 8
+  next_activity: 'Plano reconciliado; Yggdrasil segue plano documental próprio'
+  next_step_approval: NOT_APPLICABLE_RECONCILED_COMPLETE
+  dossier: .atena/specs/SPEC-NOTTGARD-MISSING-MAPS-20261017/environments-resources-r1.md
+  evidence: EVID-NOTTGARD-MISSING-MAPS-DOSSIER-20261017-r1
+  baseline: .atena/generated/missing-maps-20261017/baseline-r1.json
+  validation: .atena/generated/missing-maps-20261017/validation-r1.json
+  approval: APPROVED_RECONCILIATION_PRIOR_ACCEPTANCES_REUSED
+  implementation_authorization: 'Atena, aprovado o dossiê r1. Pode iniciar a S-MAP-003, criando o protótipo funcional de Reino Abissal com raízes geométricas provisórias, objetos locais conferidos e testes isolados. (2026-10-17)'
+  authorization: 'Atena, aprovado. Vamos priorizar os mapas e iniciar a S-MAP-002, detalhando os ambientes e os recursos de Reino Abissal e Domwieck. (2026-10-17)'
+  planning_authorized: true
+  implementation_authorized: true
+  implementation_scope: 'Reino Abissal e Domwieck integrados e aceitos; entregas reconciliadas com planos capítulo 1/navegação/arte'
+  scope: 'Preparar primeiro Reino Abissal e Domwieck no capítulo 1; Raiz de Yggdrasil diferida ao capítulo 2'
+  existing_plan_preserved: true
+  suspension: CLOSED_RECONCILED_TO_ACCEPTED_CHAPTER1
+  return:
+    plan: PLAN-NOTTGARD-CHAPTER1-CLOSEOUT-20261016
+    revision: r1
+    cursor: S-C1-003
+    checkpoint: CP-C1-04
+    observed_status: S_C1_003_COMPLETE_S_C1_004_AUTHORIZATION_PENDING
+    mode: per-step
+    approval: APPROVED_R1_S_C1_003_HQ15_SELECTION
+    policy: 'Prioridade documental dos mapas; preservar autorizações individuais e trabalho concorrente da HQ14; reler estado mais recente no retorno, sem restaurar snapshot'
+  reconciliation_evidence: EVID-NOTTGARD-MAPS-RECONCILIATION-20261017-r1
+  reconciliation_authorization: "VAMOS LÁ (2026-10-17), reconciliação documental autorizada"
+  physical_controller_test: NOT_SEPARATELY_REPORTED_PRESERVED_LIMIT
+  return_snapshot_is_historical: true
+  remaining_steps: 0
+
+all_hq_screenplays:
+  deviation: DEV-NOTTGARD-ALL-HQ-SCRIPTS-20261016
+  revision: r2
+  status: BOTH_CHAPTER_SCREENPLAYS_APPROVED
+  authorization: 'Atena, vamos fazer o roteiro de todas as hqs (2026-10-16): elaboração textual integral'
+  scope: 'PC; 11 HQs existentes mantidas e 7 propostas; HQ11/HQ12/HQ13 retiradas da seleção; preservar acervo/IDs'
+  supplement: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/screenplay-first-r1.md
+  output: .atena/vault/drafts/HQ-COMPLETE-SCREENPLAYS-20261016-r2.md
+  current_step: S-SCRIPT-003
+  completed_steps: 3
+  total_steps: 3
+  editorial_approval: BOTH_CHAPTERS_APPROVED
+  art_authorized: false
+  runtime_authorized: false
+  suspension: CLOSED_TEXT_DRAFT_DELIVERED
+  evidence: EVID-NOTTGARD-ALL-HQ-SCRIPTS-20261016
+  validation: .atena/generated/all-hq-scripts-20261016/revision-r2.json
+  hq_count: 18
+  panel_count: 121
+  next_activity: 'HQ19: seleção visual r1 aprovada; candidata Q1 aguarda autorização por etapa'
+  next_checkpoint: null
+  approved_chapter_2_output: .atena/vault/canon/CHAPTER2-SCREENPLAYS-APPROVED-20261017-r2.md
+  chapter_1_closeout:
+    plan: PLAN-NOTTGARD-CHAPTER1-CLOSEOUT-20261016
+    revision: r1
+    status: COMPLETE_OWNER_ACCEPTED
+    request: 'Atena, vamos finalizar o capítulo 1 primeiro (2026-10-16)'
+    classification: PLAN_CHANGE_REQUEST_PRIORITY_CHAPTER_1
+    proposal: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/chapter1-closeout-r1.md
+    mode: per-step
+    current_step: S-C1-006
+    integration_preparation_authorization: autorizado (2026-10-17), preparação somente
+    integration_preflight: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/chapter1-integration-preflight-r1.md
+    integration_baseline: .atena/generated/chapter1-integration-20261017/baseline-r1.json
+    integration_art_manifest: .atena/generated/chapter1-integration-20261017/approved-art-admission-r1.json
+    integration_implementation_authorized: false
+    integration_implementation_status: COMPLETE_DIRECTED_VALIDATION_PASS
+    integration_delivery: .atena/generated/chapter1-integration-20261017/delivery-r1.json
+    regression_authorization: 'autorizado (2026-10-17), S-C1-005: regressão ampliada com perfis sintéticos'
+    regression_authorized: false
+    regression_status: PASS
+    regression_delivery: .atena/generated/chapter1-integration-20261017/regression-delivery-r1.json
+    regression_evidence: EVID-NOTTGARD-CHAPTER1-REGRESSION-20261017-r1
+    human_playtest_proposal: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/chapter1-playtest-r1.md
+    human_playtest_authorized: true
+    human_playtest_session: .atena/generated/chapter1-human-playtest-20261017/s006-20261017-174635-269
+    human_playtest_launch: .atena/generated/chapter1-human-playtest-20261017/s006-20261017-174635-269/launch.json
+    human_playtest_evidence: EVID-NOTTGARD-CHAPTER1-HUMAN-PLAYTEST-20261017-r1
+    human_playtest_authorization: 'autorizado (2026-10-17), S-C1-006: abrir versão local com perfil sintético e avaliar capítulo 1'
+    human_acceptance: APPROVED_BY_OWNER
+    owner_acceptance: 'Atena, playtest aprovado. Vamos finalizar o capítulo 1.'
+    acceptance_canon: .atena/vault/canon/DEC-NOTTGARD-CHAPTER1-ACCEPTANCE-20261017-r1.md
+    closeout_evidence: .atena/evidence/EVID-NOTTGARD-CHAPTER1-CLOSEOUT-20261017-r1.md
+    closeout_report: .atena/generated/chapter1-human-playtest-20261017/chapter1-closeout-r1.json
+    integration_evidence: EVID-NOTTGARD-CHAPTER1-INTEGRATION-20261017-r1
+    integration_authorization: 'aprovado (2026-10-17), escopo r1 e coordenação única'
+    integration_maps_handoff: S_MAP_004_COMPLETE_VALIDATED_SINGLE_EXECUTOR_S_C1_004
+    completed_steps: 6
+    total_steps: 6
+    next_step: null
+    checkpoint: CP-C1-06
+    approval: APPROVED_OWNER_CHAPTER1_CLOSEOUT_R1
+    authorization: 'Atena, aprovado. Vamos detalhar os mapas e as transições do capítulo 1 (2026-10-16)'
+    authorized_scope: 'Recorte capítulo 1 r1 e S-C1-002: desenho documental de mapas, transições, gatilhos e compatibilidade; sem código/arte'
+    completed_checkpoint: CP-C1-06
+    selection_authorization: 'Atena, aprovado. Vamos começar a seleção visual da HQ15, conferindo as referências dos personagens e o que podemos reaproveitar (2026-10-16)'
+    selection_scope: 'S-C1-003/HQ15: pesquisa, inspeção e proposta visual; geração/admissão pendentes'
+    design_acceptance_canon: .atena/vault/canon/DEC-NOTTGARD-CHAPTER1-MAPS-CONTRACT-20261016-r1.md
+    design_contract: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/chapter1-maps-transitions-r1.md
+    structured_contract: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/chapter1-flow-contract-r1.json
+    design_acceptance: 'APPROVED_R1: Atena, aprovado. Vamos começar a seleção visual da HQ15, conferindo as referências dos personagens e o que podemos reaproveitar (2026-10-16)'
+    evidence: EVID-NOTTGARD-CHAPTER1-MAPS-DESIGN-20261016
+    validation: .atena/generated/chapter1-design-20261016/validation.json
+    next_step_authorization: 'HQ15_SELECTION_AUTHORIZED_ONLY: pedido direto do dono (2026-10-16); sem geração/admissão automática'
+    hq15_selection_status: APPROVED_R1
+    hq15_selection_approval: 'aprovado (2026-10-16), em resposta à seleção e autorização explícita da candidata Q1'
+    hq15_selection_canon: .atena/vault/canon/DEC-HQ15-VISUAL-SELECTION-20261016-r1.md
+    hq15_selection: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/hq15-art-selection-r1.md
+    hq15_selection_evidence: EVID-NOTTGARD-HQ15-VISUAL-SELECTION-20261016
+    hq15_selection_manifest: .atena/generated/hq15-selection-20261016/selection-r1.json
+    hq15_selection_preview: .atena/generated/hq15-selection-20261016/referencias-personagens.jpg
+    hq15_reuse: '0 manter diretamente; 2 adaptar referência Erik; 3 composições novas'
+    next_activity: 'Capítulo 1 concluído; capítulo 2 aguarda pedido e checkpoint próprios'
+    art_generation_authorized: false
+    hq15_q1_production_authorization: 'aprovado (2026-10-16), após seleção r1 e pergunta explícita sobre produzir candidata Q1'
+    hq15_q1_production_status: COMPLETE_V02
+    hq15_q1_candidate: .atena/generated/hq15-production-20261016/candidates/hq_n15_q1_beyond_tarn_v02.png
+    hq15_q1_receipt: .atena/generated/hq15-production-20261016/q1-v02-receipt.json
+    hq15_q1_evidence: EVID-NOTTGARD-HQ15-Q1-CANDIDATE-20261016
+    hq15_q1_approval: 'APPROVED_V02: aprovado (2026-10-16), com anexo visual idêntico à candidata'
+    hq15_q1_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ15-Q1-20261016-r1.md
+    hq15_approved_panels: 5
+    hq15_total_panels: 5
+    hq15_q1_runtime_admitted: true
+    hq15_q2_production_authorization: 'autorizo (2026-10-16), após pergunta explícita sobre produzir a candidata Q2'
+    hq15_q2_production_status: COMPLETE_V01
+    hq15_q2_candidate: .atena/generated/hq15-production-20261016/candidates/hq_n15_q2_hallucination_v01.png
+    hq15_q2_receipt: .atena/generated/hq15-production-20261016/q2-v01-receipt.json
+    hq15_q2_evidence: EVID-NOTTGARD-HQ15-Q2-CANDIDATE-20261016
+    hq15_q2_approval: 'APPROVED_V01: aprovado (2026-10-16), em resposta ao aceite individual do quadro'
+    hq15_q2_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ15-Q2-20261016-r1.md
+    hq15_q2_runtime_admitted: true
+    hq15_q3_production_authorization: 'autorizo (2026-10-16), após pergunta explícita sobre produzir candidata Q3'
+    hq15_q3_production_status: COMPLETE_V02
+    hq15_q3_candidate: .atena/generated/hq15-production-20261016/candidates/hq_n15_q3_hidden_erik_v02.png
+    hq15_q3_receipt: .atena/generated/hq15-production-20261016/q3-v02-receipt.json
+    hq15_q3_evidence: EVID-NOTTGARD-HQ15-Q3-CANDIDATE-20261016
+    hq15_q3_v01_feedback: 'Erik deitado no chão, escondido de barriga para baixo no meio do mato (pedido do dono)'
+    hq15_q3_approval: 'APPROVED_V02: aprovado (2026-10-16), após correção da pose deitado de barriga para baixo no mato'
+    hq15_q3_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ15-Q3-20261016-r1.md
+    hq15_q3_runtime_admitted: true
+    hq15_q4_production_authorization: 'autorizado (2026-10-16), após pergunta explícita sobre produzir candidata Q4'
+    hq15_q4_production_status: COMPLETE_V01
+    hq15_q4_candidate: .atena/generated/hq15-production-20261016/candidates/hq_n15_q4_amulet_of_light_v01.png
+    hq15_q4_receipt: .atena/generated/hq15-production-20261016/q4-v01-receipt.json
+    hq15_q4_evidence: EVID-NOTTGARD-HQ15-Q4-CANDIDATE-20261016
+    hq15_q4_approval: 'APPROVED_V01: aprovado (2026-10-16), em resposta ao aceite individual do quadro'
+    hq15_q4_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ15-Q4-20261016-r1.md
+    hq15_q4_runtime_admitted: true
+    hq15_q5_production_authorization: 'autorizado (2026-10-16), após pergunta explícita sobre produzir candidata Q5'
+    hq15_q5_production_status: COMPLETE_V02
+    hq15_q5_candidate: .atena/generated/hq15-production-20261016/candidates/hq_n15_q5_guide_map_v01.png
+    hq15_q5_receipt: .atena/generated/hq15-production-20261016/q5-v01-approved-receipt.json
+    hq15_q5_evidence: EVID-NOTTGARD-HQ15-Q5-CANDIDATE-20261016
+    hq15_q5_approval: 'APPROVED_V01: aprovado com anexo RGB idêntico à v01 de mapa detalhado (2026-10-16)'
+    hq15_q5_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ15-Q5-20261016-r1.md
+    hq15_sequence: .atena/generated/hq15-production-20261016/hq15-sequence-r1.json
+    hq15_sequence_approval: 'APPROVED_R1: aprovado (2026-10-16), após pergunta explícita sobre sequência completa'
+    hq15_sequence_canon: .atena/vault/canon/DEC-HQ15-SEQUENCE-APPROVAL-20261016-r1.md
+    hq15_visual_production_status: COMPLETE_APPROVED_5_PANELS_AND_SEQUENCE
+    hq16_selection_authorization: 'autorizado (2026-10-16), após proposta explícita de seleção visual HQ16'
+    hq16_selection_status: APPROVED_R1
+    hq16_selection_approval: 'aprovado (2026-10-16), após seleção r1 e pergunta explícita sobre produzir somente Q1'
+    hq16_selection_canon: .atena/vault/canon/DEC-HQ16-VISUAL-SELECTION-20261016-r1.md
+    hq16_selection: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/hq16-art-selection-r1.md
+    hq16_selection_manifest: .atena/generated/hq16-selection-20261016/selection-r1.json
+    hq16_selection_evidence: EVID-NOTTGARD-HQ16-VISUAL-SELECTION-20261016
+    hq16_reuse: '0 quadros inteiros; 5 composições novas com referências existentes'
+    hq16_generation_authorized: false
+    hq16_q1_production_authorization: 'aprovado (2026-10-16), autorização delimitada à candidata Q1'
+    hq16_q1_production_status: COMPLETE_V02
+    hq16_q1_candidate: .atena/generated/hq16-production-20261016/candidates/hq_n16_q1_recognition_v01.png
+    hq16_q1_receipt: .atena/generated/hq16-production-20261016/q1-v01-approved-receipt.json
+    hq16_q1_evidence: EVID-NOTTGARD-HQ16-Q1-CANDIDATE-20261016
+    hq16_q1_approval: 'APPROVED_V01: exec-f0fdefec-bada-4082-abdd-bd6cced0380c aprovada (2026-10-16)'
+    hq16_q1_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ16-Q1-20261016-r1.md
+    hq16_q1_runtime_admitted: true
+    hq16_approved_panels: 5
+    hq16_total_panels: 5
+    hq16_q2_production_authorization: 'autorizado (2026-10-16), após pergunta explícita sobre produzir candidata Q2'
+    hq16_q2_production_status: COMPLETE_V01
+    hq16_q2_candidate: .atena/generated/hq16-production-20261016/candidates/hq_n16_q2_cultists_v01.png
+    hq16_q2_receipt: .atena/generated/hq16-production-20261016/q2-v01-receipt.json
+    hq16_q2_evidence: EVID-NOTTGARD-HQ16-Q2-CANDIDATE-20261016
+    hq16_q2_approval: 'APPROVED_V01: aprovado (2026-10-16), após apresentação e pergunta de aceite individual'
+    hq16_q2_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ16-Q2-20261016-r1.md
+    hq16_q2_runtime_admitted: true
+    hq16_q3_production_authorization: 'autorizado (2026-10-16), após pergunta explícita sobre produzir candidata Q3'
+    hq16_q3_production_status: COMPLETE_V01
+    hq16_q3_candidate: .atena/generated/hq16-production-20261016/candidates/hq_n16_q3_nott_fire_v01.png
+    hq16_q3_receipt: .atena/generated/hq16-production-20261016/q3-v01-receipt.json
+    hq16_q3_evidence: EVID-NOTTGARD-HQ16-Q3-CANDIDATE-20261016
+    hq16_q3_approval: 'APPROVED_V01: aprovado (2026-10-16), após apresentação e pergunta de aceite individual'
+    hq16_q3_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ16-Q3-20261016-r1.md
+    hq16_q3_runtime_admitted: true
+    hq16_q4_production_authorization: 'autorziado (2026-10-16), entendido como autorizado em resposta explícita à produção Q4'
+    hq16_q4_production_status: COMPLETE_V01
+    hq16_q4_candidate: .atena/generated/hq16-production-20261016/candidates/hq_n16_q4_box_ring_notebook_v01.png
+    hq16_q4_receipt: .atena/generated/hq16-production-20261016/q4-v01-receipt.json
+    hq16_q4_evidence: EVID-NOTTGARD-HQ16-Q4-CANDIDATE-20261016
+    hq16_q4_approval: 'APPROVED_V01: aprovado (2026-10-16), após apresentação e pergunta de aceite individual'
+    hq16_q4_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ16-Q4-20261016-r1.md
+    hq16_q4_runtime_admitted: true
+    hq16_q5_production_authorization: 'autorizado (2026-10-16), após pergunta explícita sobre produzir candidata Q5'
+    hq16_q5_production_status: COMPLETE_V02
+    hq16_q5_candidate: .atena/generated/hq16-production-20261016/candidates/hq_n16_q5_roots_v02.png
+    hq16_q5_receipt: .atena/generated/hq16-production-20261016/q5-v02-receipt.json
+    hq16_q5_evidence: EVID-NOTTGARD-HQ16-Q5-CANDIDATE-20261016
+    hq16_q5_approval: 'APPROVED_V02: aprovado (2026-10-16), após correção da descida e pergunta de aceite individual'
+    hq16_q5_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ16-Q5-20261016-r1.md
+    hq16_sequence: .atena/generated/hq16-production-20261016/hq16-sequence-r1.json
+    hq16_sequence_approval: 'APPROVED_R1: aprovado (2026-10-16), após pergunta explícita sobre cinco imagens e legendas'
+    hq16_sequence_canon: .atena/vault/canon/DEC-HQ16-SEQUENCE-APPROVAL-20261016-r1.md
+    hq16_visual_production_status: COMPLETE_APPROVED_5_PANELS_AND_SEQUENCE
+    hq17_selection_authorization: 'autorizado (2026-10-16), após proposta explícita de seleção visual HQ17'
+    hq17_selection_status: APPROVED_R1
+    hq17_selection_approval: 'aprovado (2026-10-16), após seleção e pergunta explícita sobre produzir somente Q1'
+    hq17_selection_canon: .atena/vault/canon/DEC-HQ17-VISUAL-SELECTION-20261016-r1.md
+    hq17_selection: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/hq17-art-selection-r1.md
+    hq17_selection_manifest: .atena/generated/hq17-selection-20261016/selection-r1.json
+    hq17_selection_evidence: EVID-NOTTGARD-HQ17-VISUAL-SELECTION-20261016
+    hq17_reuse: '0 quadros inteiros; 1 adaptação de referência e 3 composições novas'
+    hq17_generation_authorized: false
+    hq17_q1_production_authorization: 'aprovado (2026-10-16), autorização delimitada à candidata Q1'
+    hq17_q1_production_status: COMPLETE_V01
+    hq17_q1_candidate: .atena/generated/hq17-production-20261016/candidates/hq_n17_q1_descent_v01.png
+    hq17_q1_receipt: .atena/generated/hq17-production-20261016/q1-v01-receipt.json
+    hq17_q1_evidence: EVID-NOTTGARD-HQ17-Q1-CANDIDATE-20261016
+    hq17_q1_approval: 'APPROVED_V01: aprovado (2026-10-16), após apresentação e pergunta de aceite individual'
+    hq17_q1_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ17-Q1-20261016-r1.md
+    hq17_q1_runtime_admitted: true
+    hq17_approved_panels: 4
+    hq17_total_panels: 4
+    hq17_q2_production_authorization: 'autorizado (2026-10-16), após pergunta explícita sobre produzir candidata Q2'
+    hq17_q2_production_status: COMPLETE_V02
+    hq17_q2_candidate: .atena/generated/hq17-production-20261016/candidates/hq_n17_q2_crossing_v02.png
+    hq17_q2_receipt: .atena/generated/hq17-production-20261016/q2-v02-receipt.json
+    hq17_q2_evidence: EVID-NOTTGARD-HQ17-Q2-CANDIDATE-20261016
+    hq17_q2_feedback: 'o portal deve ser roxo'
+    hq17_q2_color_direction: .atena/vault/canon/DEC-HQ17-PORTAL-PURPLE-20261016-r1.md
+    hq17_q2_approval: 'APPROVED_V02: aprovado (2026-10-16), após correção do portal roxo e pergunta de aceite individual'
+    hq17_q2_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ17-Q2-20261016-r1.md
+    hq17_q2_runtime_admitted: true
+    hq17_q3_production_authorization: 'autorizado (2026-10-16), após pergunta explícita sobre produzir candidata Q3'
+    hq17_q3_production_status: COMPLETE_V02
+    hq17_q3_candidate: .atena/generated/hq17-production-20261016/candidates/hq_n17_q3_abyss_legion_v02.png
+    hq17_q3_receipt: .atena/generated/hq17-production-20261016/q3-v02-receipt.json
+    hq17_q3_evidence: EVID-NOTTGARD-HQ17-Q3-CANDIDATE-20261016
+    hq17_q3_feedback: 'Todo o solo daí são raízes; substituir terras vermelhas por raízes'
+    abyss_terrain_direction: .atena/vault/canon/DEC-ABYSS-ROOT-GROUND-20261016-r1.md
+    hq17_q3_approval: 'APPROVED_V02: aprovado (2026-10-16), após correção do solo em raízes e pergunta de aceite individual'
+    hq17_q3_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ17-Q3-20261016-r1.md
+    hq17_q3_runtime_admitted: true
+    hq17_q4_production_authorization: 'autorizado (2026-10-16), após pergunta explícita sobre produzir candidata Q4'
+    hq17_q4_production_status: COMPLETE_V01
+    hq17_q4_candidate: .atena/generated/hq17-production-20261016/candidates/hq_n17_q4_voice_v01.png
+    hq17_q4_receipt: .atena/generated/hq17-production-20261016/q4-v01-receipt.json
+    hq17_q4_evidence: EVID-NOTTGARD-HQ17-Q4-CANDIDATE-20261016
+    hq17_q4_approval: 'APPROVED_V01: aprovado (2026-10-16), após apresentação e pergunta de aceite individual'
+    hq17_q4_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ17-Q4-20261016-r1.md
+    hq17_sequence: .atena/generated/hq17-production-20261016/hq17-sequence-r1.json
+    hq17_sequence_approval: 'APPROVED_R1: aprovado (2026-10-16), após pergunta explícita sobre quatro imagens e textos'
+    hq17_sequence_canon: .atena/vault/canon/DEC-HQ17-SEQUENCE-APPROVAL-20261016-r1.md
+    hq17_visual_production_status: COMPLETE_APPROVED_4_PANELS_AND_SEQUENCE
+    hq18_selection_authorization: 'autorizado (2026-10-16), após proposta explícita de seleção visual HQ18'
+    hq18_selection_status: APPROVED_R1
+    hq18_selection_approval: 'aprovado (2026-10-16), seleção r1 e autorização explícita de produzir somente Q1'
+    hq18_selection_canon: .atena/vault/canon/DEC-HQ18-VISUAL-SELECTION-20261016-r1.md
+    hq18_selection: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/hq18-art-selection-r1.md
+    hq18_selection_manifest: .atena/generated/hq18-selection-20261016/selection-r1.json
+    hq18_selection_evidence: EVID-NOTTGARD-HQ18-VISUAL-SELECTION-20261016
+    hq18_reuse: '0 quadros inteiros; 8 composições novas com referências existentes'
+    hq18_generation_authorized: false
+    hq18_q1_production_authorization: 'aprovado (2026-10-16), autorização delimitada à candidata Q1'
+    hq18_q1_production_status: COMPLETE_V01
+    hq18_q1_candidate: .atena/generated/hq18-production-20261016/candidates/hq_n18_q1_kein_ritual_v01.png
+    hq18_q1_receipt: .atena/generated/hq18-production-20261016/q1-v01-receipt.json
+    hq18_q1_evidence: EVID-NOTTGARD-HQ18-Q1-CANDIDATE-20261016
+    hq18_q1_approval: 'APPROVED_V01: aprovado (2026-10-16), após apresentação e pergunta de aceite individual'
+    hq18_q1_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ18-Q1-20261016-r1.md
+    hq18_q1_runtime_admitted: true
+    hq18_approved_panels: 8
+    hq18_q8_candidate: .atena/generated/hq18-production-20261017/candidates/hq_n18_q8_return_v01.png
+    hq18_q8_receipt: .atena/generated/hq18-production-20261017/q8-v01-receipt.json
+    hq18_q8_production_authorization: vamos continuar com a foto de Sylas (2026-10-17)
+    hq18_q8_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    hq18_q8_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ18-Q8-20261017-r1.md
+    hq18_sequence: .atena/generated/hq18-production-20261017/hq18-sequence-r1.json
+    hq18_sequence_approval: 'APPROVED_R1: aprovado (2026-10-17), oito quadros e legendas'
+    hq18_sequence_canon: .atena/vault/canon/DEC-HQ18-SEQUENCE-APPROVAL-20261017-r1.md
+    hq18_visual_production_status: COMPLETE_APPROVED_8_PANELS_AND_SEQUENCE
+    hq03_selection: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/hq03-art-selection-r1.md
+    hq03_selection_manifest: .atena/generated/hq03-selection-20261017/selection-r1.json
+    hq03_selection_authorization: 'autorizado (2026-10-17), seleção visual da HQ03'
+    hq03_selection_status: APPROVED_R1
+    hq03_selection_evidence: EVID-NOTTGARD-HQ03-VISUAL-SELECTION-20261017
+    hq03_generation_authorized: false
+    hq03_q6_production_authorization: autorizado (2026-10-17), somente candidata Q6
+    hq03_q5_production_authorization: autorizado (2026-10-17), somente candidata Q5
+    hq03_q4_production_authorization: autorizado (2026-10-17), somente candidata Q4
+    hq03_q3_production_authorization: autorizado (2026-10-17), somente candidata Q3
+    hq03_q2_production_authorization: autorizado (2026-10-17), somente candidata Q2
+    hq03_generation_scope: seis quadros e sequência aprovados; produção concluída
+    hq03_q6_candidate: .atena/generated/hq03-production-20261017/candidates/hq_n03_q6_nottgard_protected_v01.png
+    hq03_q6_receipt: .atena/generated/hq03-production-20261017/q6-v01-receipt.json
+    hq03_q6_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    hq03_q6_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ03-Q6-20261017-r1.md
+    hq03_sequence: .atena/generated/hq03-production-20261017/hq03-sequence-r1.json
+    hq03_sequence_approval: 'APPROVED_R1: aprovado (2026-10-17), seis quadros e legendas'
+    hq03_sequence_canon: .atena/vault/canon/DEC-HQ03-SEQUENCE-APPROVAL-20261017-r1.md
+    hq03_visual_production_status: COMPLETE_APPROVED_6_PANELS_AND_SEQUENCE
+    hq14_selection: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/hq14-art-selection-r1.md
+    hq14_selection_manifest: .atena/generated/hq14-selection-20261017/selection-r1.json
+    hq14_selection_authorization: 'autorizado (2026-10-17), seleção visual HQ14'
+    hq14_selection_status: APPROVED_R1
+    hq14_generation_authorized: false
+    hq14_q2_production_authorization: autorizado (2026-10-17), somente candidata Q2
+    hq14_generation_scope: cinco quadros e sequência aprovados; produção concluída
+    hq14_q5_production_authorization: autorizo (2026-10-17), somente candidata Q5
+    hq14_q5_candidate: .atena/generated/hq14-production-20261017/candidates/hq_n14_q5_hidden_base_v01.png
+    hq14_q5_receipt: .atena/generated/hq14-production-20261017/q5-v01-receipt.json
+    hq14_q5_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    hq14_q5_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ14-Q5-20261017-r1.md
+    hq14_sequence: .atena/generated/hq14-production-20261017/hq14-sequence-r1.json
+    hq14_sequence_approval: 'APPROVED_R1: aprovado (2026-10-17), cinco quadros e legendas'
+    hq14_sequence_canon: .atena/vault/canon/DEC-HQ14-SEQUENCE-APPROVAL-20261017-r1.md
+    hq14_visual_production_status: COMPLETE_APPROVED_5_PANELS_AND_SEQUENCE
+    hq14_q5_runtime_admitted: true
+    hq14_q4_production_authorization: autorizado (2026-10-17), somente candidata Q4
+    hq14_q4_candidate: .atena/generated/hq14-production-20261017/candidates/hq_n14_q4_old_bond_v01.png
+    hq14_q4_receipt: .atena/generated/hq14-production-20261017/q4-v01-receipt.json
+    hq14_q4_approval: 'APPROVED_V01: aprovada (2026-10-17)'
+    hq14_q4_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ14-Q4-20261017-r1.md
+    hq14_q4_runtime_admitted: true
+    hq14_q3_production_authorization: autorizado (2026-10-17), somente candidata Q3
+    hq14_q3_candidate: .atena/generated/hq14-production-20261017/candidates/hq_n14_q3_nyrelia_encounter_v01.png
+    hq14_q3_receipt: .atena/generated/hq14-production-20261017/q3-v01-receipt.json
+    hq14_q3_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    hq14_q3_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ14-Q3-20261017-r1.md
+    hq14_q3_runtime_admitted: true
+    hq14_q2_candidate: .atena/generated/hq14-production-20261017/candidates/hq_n14_q2_yellow_aura_v01.png
+    hq14_q2_receipt: .atena/generated/hq14-production-20261017/q2-v01-receipt.json
+    hq14_q2_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    hq14_q2_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ14-Q2-20261017-r1.md
+    hq14_q2_runtime_admitted: true
+    hq14_q1_candidate: .atena/generated/hq14-production-20261017/candidates/hq_n14_q1_matching_mask_v02.png
+    hq14_q1_receipt: .atena/generated/hq14-production-20261017/q1-v02-receipt.json
+    hq14_q1_approval: 'APPROVED_V02: aprovado (2026-10-17)'
+    hq14_q1_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ14-Q1-20261017-r1.md
+    hq14_approved_panels: 5
+    hq14_total_panels: 5
+    hq14_q1_v01_status: REJECTED_HORN_POSITION_PRESERVED
+    hq14_q1_runtime_admitted: true
+    hq14_selection_canon: .atena/vault/canon/DEC-HQ14-VISUAL-SELECTION-20261017-r1.md
+    hq14_selection_approval: 'aprovado (2026-10-17), seleção r1 e Q1'
+    hq14_selection_evidence: EVID-NOTTGARD-HQ14-VISUAL-SELECTION-20261017
+    hq03_q6_runtime_admitted: false
+    hq03_q5_candidate: .atena/generated/hq03-production-20261017/candidates/hq_n03_q5_living_veil_v01.png
+    hq03_q5_receipt: .atena/generated/hq03-production-20261017/q5-v01-receipt.json
+    hq03_q5_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    hq03_q5_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ03-Q5-20261017-r1.md
+    hq03_q5_runtime_admitted: false
+    hq03_q4_candidate: .atena/generated/hq03-production-20261017/candidates/hq_n03_q4_seed_sacrifice_v01.png
+    hq03_q4_receipt: .atena/generated/hq03-production-20261017/q4-v01-receipt.json
+    hq03_q4_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    hq03_q4_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ03-Q4-20261017-r1.md
+    hq03_q4_runtime_admitted: false
+    hq03_q3_candidate: .atena/generated/hq03-production-20261017/candidates/hq_n03_q3_helion_choice_v02.png
+    hq03_q3_receipt: .atena/generated/hq03-production-20261017/q3-v02-receipt.json
+    hq03_q3_approval: 'APPROVED_V02: aprovado (2026-10-17)'
+    hq03_q3_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ03-Q3-20261017-r1.md
+    hq03_q3_seed_direction: .atena/vault/canon/DEC-HELION-GOLDEN-SEED-20261017-r1.md
+    hq03_q3_runtime_admitted: false
+    hq03_q2_candidate: .atena/generated/hq03-production-20261017/candidates/hq_n03_q2_adam_strike_v03.png
+    hq03_q2_receipt: .atena/generated/hq03-production-20261017/q2-v03-receipt.json
+    hq03_q2_approval: 'APPROVED_V03: aprovado (2026-10-17)'
+    hq03_q2_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ03-Q2-20261017-r1.md
+    hq03_q2_star_direction: .atena/vault/canon/DEC-AILALORE-STAR-SCALE-COLOR-20261017-r1.md
+    hq03_q2_owner_identity_direction: .atena/vault/canon/DEC-ADAM-ATTACHED-REFERENCES-20261017-r1.md
+    hq03_adam_reference_audit: .atena/generated/hq03-production-20261017/reference-audit/audit-r1.json
+    kayron_future_visual_direction: .atena/vault/canon/DEC-KAYRON-WHITE-SKIN-20261017-r1.md
+    kayron_white_front_reference: .atena/generated/hq03-production-20261017/reference-audit/kayron-white-front.png
+    kayron_white_back_reference: .atena/generated/hq03-production-20261017/reference-audit/kayron-white-back.png
+    hq03_q2_runtime_admitted: false
+    hq03_q1_candidate: .atena/generated/hq03-production-20261017/candidates/hq_n03_q1_garden_v03.png
+    hq03_q1_receipt: .atena/generated/hq03-production-20261017/q1-v03-receipt.json
+    hq03_q1_approval: 'APPROVED_V03: aprovado (2026-10-17)'
+    hq03_q1_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ03-Q1-20261017-r1.md
+    hq03_approved_panels: 6
+    hq03_total_panels: 6
+    hq03_q1_v02_status: REJECTED_BY_OWNER_PRESERVED
+    hq03_q1_v01_status: REJECTED_BY_OWNER_PRESERVED
+    hq03_q1_visual_direction: .atena/vault/canon/DEC-AILALORE-GARDEN-VISUAL-20261017-r1.md
+    hq03_q1_runtime_admitted: false
+    hq03_selection_canon: .atena/vault/canon/DEC-HQ03-VISUAL-SELECTION-20261017-r1.md
+    hq03_selection_approval: 'aprovado (2026-10-17), seleção r1 e Q1'
+    hq18_q8_runtime_admitted: true
+    hq18_total_panels: 8
+    hq18_q2_production_authorization: 'autorizado (2026-10-17), após pergunta explícita sobre produzir candidata Q2'
+    hq18_q2_production_status: COMPLETE_V01
+    hq18_q2_candidate: .atena/generated/hq18-production-20261017/candidates/hq_n18_q2_first_sacrifice_v01.png
+    hq18_q2_receipt: .atena/generated/hq18-production-20261017/q2-v01-receipt.json
+    hq18_q2_evidence: EVID-NOTTGARD-HQ18-Q2-CANDIDATE-20261017
+    hq18_q2_approval: 'APPROVED_V01: aprovado (2026-10-17), após apresentação e pergunta de aceite individual'
+    hq18_q2_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ18-Q2-20261017-r1.md
+    hq18_q2_runtime_admitted: true
+    hq18_q3_production_authorization: 'autorizado (2026-10-17), após pergunta explícita sobre produzir candidata Q3'
+    hq18_q3_production_status: COMPLETE_V01
+    hq18_q3_candidate: .atena/generated/hq18-production-20261017/candidates/hq_n18_q3_domwieck_invasion_v01.png
+    hq18_q3_receipt: .atena/generated/hq18-production-20261017/q3-v01-receipt.json
+    hq18_q3_evidence: EVID-NOTTGARD-HQ18-Q3-CANDIDATE-20261017
+    hq18_q3_approval: 'APPROVED_V01: aprovado (2026-10-17), após apresentação e pergunta de aceite individual'
+    hq18_q3_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ18-Q3-20261017-r1.md
+    hq18_q3_runtime_admitted: true
+    hq18_q4_production_authorization: 'autorizado (2026-10-17), após pergunta explícita sobre produzir candidata Q4'
+    hq18_q4_production_status: COMPLETE_V01
+    hq18_q4_candidate: .atena/generated/hq18-production-20261017/candidates/hq_n18_q4_beholder_v01.png
+    hq18_q4_receipt: .atena/generated/hq18-production-20261017/q4-v01-receipt.json
+    hq18_q4_evidence: EVID-NOTTGARD-HQ18-Q4-CANDIDATE-20261017
+    hq18_q4_approval: 'APPROVED_V01: aprovado (2026-10-17), após apresentação e pergunta de aceite individual'
+    hq18_q4_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ18-Q4-20261017-r1.md
+    hq18_q4_runtime_admitted: true
+    hq18_q5_production_authorization: 'autorizado (2026-10-17), após pergunta explícita sobre produzir candidata Q5'
+    hq18_q5_production_status: COMPLETE_V01
+    hq18_q5_candidate: .atena/generated/hq18-production-20261017/candidates/hq_n18_q5_recovery_v01.png
+    hq18_q5_receipt: .atena/generated/hq18-production-20261017/q5-v01-receipt.json
+    hq18_q5_evidence: EVID-NOTTGARD-HQ18-Q5-CANDIDATE-20261017
+    hq18_q5_approval: 'APPROVED_V01: aprovado (2026-10-17), após apresentação e pergunta de aceite individual'
+    hq18_q5_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ18-Q5-20261017-r1.md
+    hq18_q5_runtime_admitted: true
+    hq18_q6_production_authorization: 'autorizado (2026-10-17), após pergunta explícita sobre produzir candidata Q6'
+    hq18_q6_production_status: COMPLETE_V01
+    hq18_q6_candidate: .atena/generated/hq18-production-20261017/candidates/hq_n18_q6_counter_ritual_v01.png
+    hq18_q6_receipt: .atena/generated/hq18-production-20261017/q6-v01-receipt.json
+    hq18_q6_evidence: EVID-NOTTGARD-HQ18-Q6-CANDIDATE-20261017
+    hq18_q6_approval: 'APPROVED_V01: aprovado (2026-10-17), após apresentação e pergunta de aceite individual'
+    hq18_q6_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ18-Q6-20261017-r1.md
+    hq18_q6_runtime_admitted: true
+    hq18_q7_production_authorization: 'autorizado (2026-10-17), após pergunta explícita sobre produzir candidata Q7'
+    hq18_q7_production_status: COMPLETE_V02
+    hq18_q7_candidate: .atena/generated/hq18-production-20261017/candidates/hq_n18_q7_vision_v02.png
+    hq18_q7_receipt: .atena/generated/hq18-production-20261017/q7-v02-receipt.json
+    hq18_q7_evidence: EVID-NOTTGARD-HQ18-Q7-CANDIDATE-20261017
+    hq18_q7_approval: 'APPROVED_V02: Aprovada, Sylas usa o martelo no contra-ritual (2026-10-17)'
+    hq18_q7_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ18-Q7-20261017-r1.md
+    hq18_q7_runtime_admitted: true
+    hq17_q4_runtime_admitted: true
+    hq16_q5_runtime_admitted: true
+    hq15_q5_runtime_admitted: true
+    art_generation_scope: 'HQ15 sequência aceita; sem produção adicional ou admissão em assets autorizadas'
+    suspension: CLOSED_CHAPTER1_OWNER_ACCEPTED
+    return:
+      hq_plan: PLAN-NOTTGARD-HQ-REVIEW-20261015
+      hq_revision: r1
+      hq_mode: per-step
+      hq_cursor: B-HQ-002/S-HQ-004
+      hq_checkpoint: HQ03_SCREENPLAY_APPROVED_CHAPTER1_ART_PENDING
+      hq_approval: APPROVED_R1_PER_STEP_S_HQ_001
+      hq03_text: APPROVED_CHAPTER1_20261016
+      hq02_browser: PENDING_PRESERVED
+      flow_plan: PLAN-NOTTGARD-CAMPAIGN-FLOW-20261016
+      flow_revision: r1
+      flow_mode: per-step
+      flow_checkpoint: CP-FLOW-01
+      flow_scope_approval: PENDING_R1_OUTSIDE_CHAPTER1_REFINED_SCOPE
+      platform_split_checkpoint: CP-SPLIT-02
+      platform_split_approval: APPROVED_LOCAL_R1
+    platform: pc
+    chapter_1_text: APPROVED_8_HQS_46_PANELS
+    chapter_1_pending_art_selection: 'Nenhuma; 33 quadros admitidos e verificados na integração PC'
+    chapter_2: PENDING_SEPARATE_REVIEW_AND_AUTHORIZATION
+    implementation_authorized: false
+  hq19_visual_selection:
+    plan: PLAN-NOTTGARD-HQ19-VISUAL-SELECTION-20261017
+    revision: r1
+    classification: IN_PLAN_VISUAL_PREPARATION_AFTER_EDITORIAL_CLOSEOUT
+    status: COMPLETE_SELECTION_APPROVED
+    mode: per-step
+    current_step: S-V19-001
+    completed_steps: 1
+    total_steps: 1
+    activity: OWNER_SELECTION_ACCEPTANCE_RECORDED
+    checkpoint: CP-V19-01
+    authorization: 'Atena, vamos começar a seleção visual da HQ19, conferindo as referências dos personagens e o que podemos reaproveitar. (2026-10-17)'
+    approval: APPROVED_R1
+    spec: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-visual-selection-r1.md
+    manifest: .atena/generated/hq19-selection-20261017/selection-r1.json
+    audit: .atena/generated/hq19-selection-20261017/audit-r1.json
+    references_preview: .atena/generated/hq19-selection-20261017/references-r1.jpg
+    reuse_preview: .atena/generated/hq19-selection-20261017/reuse-audit-r1.jpg
+    evidence: EVID-NOTTGARD-HQ19-VISUAL-SELECTION-20261017-r1
+    aila_owner_correction: .atena/vault/canon/DEC-AILA-WINGLESS-HQ19-20261017-r1.md
+    generation_authorized: false
+    runtime_authorized: false
+    next_activity: 'HQ19 produção visual concluída; integração pendente de checkpoint próprio'
+    owner_approval: 'aprovado (2026-10-17), em resposta à seleção visual r1'
+    approval_canon: .atena/vault/canon/DEC-HQ19-VISUAL-SELECTION-20261017-r1.md
+    q1_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q1-production-brief-r1.md
+    q1_production_status: APPROVED_V01
+    q1_production_authorization: 'autorizado (2026-10-17), uma candidata Q1 conforme brief r1'
+    q1_production_step: S-P19-Q01
+    q1_production_record: .atena/generated/hq19-production-20261017/q1-production-r1.json
+    q1_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q1_aila_freed_v01.png
+    q1_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q1_evidence: EVID-NOTTGARD-HQ19-Q1-CANDIDATE-20261017-r1
+    q1_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q1-20261017-r1.md
+    approved_visual_panels: 12
+    total_visual_panels: 12
+    q2_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q2-production-brief-r1.md
+    q2_production_status: APPROVED_V01
+    q2_production_authorization: 'autorizado (2026-10-17), candidata Q2 conforme brief r1'
+    q2_production_record: .atena/generated/hq19-production-20261017/q2-production-r1.json
+    q2_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q2_bromnor_legacy_v01.png
+    q2_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q2_evidence: EVID-NOTTGARD-HQ19-Q2-CANDIDATE-20261017-r1
+    q2_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q2-20261017-r1.md
+    q3_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q3-production-brief-r1.md
+    q3_production_status: APPROVED_V01
+    q3_production_authorization: 'autorizado (2026-10-17), candidata Q3 conforme brief r1'
+    q3_production_record: .atena/generated/hq19-production-20261017/q3-production-r1.json
+    q3_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q3_aila_awakens_v01.png
+    q3_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q3_evidence: EVID-NOTTGARD-HQ19-Q3-CANDIDATE-20261017-r1
+    q3_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q3-20261017-r1.md
+    q4_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q4-production-brief-r1.md
+    q4_production_status: APPROVED_V01
+    q4_production_authorization: 'autorizado (2026-10-17), candidata Q4 conforme brief r1'
+    q4_production_record: .atena/generated/hq19-production-20261017/q4-production-r1.json
+    q4_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q4_sendrinah_prayer_v01.png
+    q4_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q4_evidence: EVID-NOTTGARD-HQ19-Q4-CANDIDATE-20261017-r1
+    q4_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q4-20261017-r1.md
+    q5_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q5-production-brief-r1.md
+    q5_production_status: APPROVED_V01
+    q5_production_authorization: 'autorizado (2026-10-17), candidata Q5 conforme brief r1'
+    q5_production_record: .atena/generated/hq19-production-20261017/q5-production-r1.json
+    q5_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q5_thalion_command_v01.png
+    q5_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q5_evidence: EVID-NOTTGARD-HQ19-Q5-CANDIDATE-20261017-r1
+    q5_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q5-20261017-r1.md
+    q6_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q6-production-brief-r1.md
+    q6_production_status: APPROVED_V01
+    q6_production_authorization: 'autorizado (2026-10-17), candidata Q6 conforme brief r1'
+    q6_production_record: .atena/generated/hq19-production-20261017/q6-production-r1.json
+    q6_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q6_roots_abduction_v01.png
+    q6_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q6_evidence: EVID-NOTTGARD-HQ19-Q6-CANDIDATE-20261017-r1
+    q6_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q6-20261017-r1.md
+    q7_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q7-production-brief-r1.md
+    q7_production_status: APPROVED_V01
+    q7_production_authorization: 'autorizado (2026-10-17), candidata Q7 conforme brief r1'
+    q7_production_record: .atena/generated/hq19-production-20261017/q7-production-r1.json
+    q7_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q7_separate_escapes_v01.png
+    q7_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q7_evidence: EVID-NOTTGARD-HQ19-Q7-CANDIDATE-20261017-r1
+    q7_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q7-20261017-r1.md
+    q8_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q8-production-brief-r1.md
+    q8_production_status: APPROVED_V01
+    candidate_continuation_policy: APPROVAL_ALSO_AUTHORIZES_NEXT_CANDIDATE
+    candidate_continuation_decision: .atena/vault/canon/DEC-HQ-CANDIDATE-APPROVAL-CONTINUATION-20261017-r1.md
+    q8_production_authorization: 'Instrução explícita de continuidade após Q7 aprovada (2026-10-17)'
+    q8_production_record: .atena/generated/hq19-production-20261017/q8-production-r1.json
+    q8_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q8_roots_decay_v01.png
+    q8_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q8_evidence: EVID-NOTTGARD-HQ19-Q8-CANDIDATE-20261017-r1
+    q8_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q8-20261017-r1.md
+    q9_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q9-production-brief-r1.md
+    q9_production_status: APPROVED_V01
+    q9_production_authorization: 'Q8 aprovada (2026-10-17), continuidade autorizada'
+    q9_production_record: .atena/generated/hq19-production-20261017/q9-production-r1.json
+    q9_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q9_surrender_v01.png
+    q9_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q9_evidence: EVID-NOTTGARD-HQ19-Q9-CANDIDATE-20261017-r1
+    q9_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q9-20261017-r1.md
+    q10_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q10-production-brief-r1.md
+    q10_production_status: APPROVED_V01
+    q10_production_authorization: 'Q9 aprovada (2026-10-17), continuidade autorizada'
+    q10_production_record: .atena/generated/hq19-production-20261017/q10-production-r1.json
+    q10_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q10_interrogation_v01.png
+    q10_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q10_evidence: EVID-NOTTGARD-HQ19-Q10-CANDIDATE-20261017-r1
+    q10_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q10-20261017-r1.md
+    q11_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q11-production-brief-r1.md
+    q11_production_status: APPROVED_V01
+    q11_production_authorization: 'Q10 aprovada (2026-10-17), continuidade autorizada'
+    q11_production_record: .atena/generated/hq19-production-20261017/q11-production-r1.json
+    q11_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q11_maelor_sent_v01.png
+    q11_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q11_evidence: EVID-NOTTGARD-HQ19-Q11-CANDIDATE-20261017-r1
+    q11_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q11-20261017-r1.md
+    q12_brief: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/hq19-q12-production-brief-r1.md
+    q12_production_status: APPROVED_V01
+    q12_production_authorization: 'Q11 aprovada (2026-10-17), continuidade autorizada'
+    q12_production_record: .atena/generated/hq19-production-20261017/q12-production-r1.json
+    q12_candidate: .atena/generated/hq19-production-20261017/candidates/hq_n19_q12_aila_retained_v01.png
+    q12_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+    q12_evidence: EVID-NOTTGARD-HQ19-Q12-CANDIDATE-20261017-r1
+    q12_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ19-Q12-20261017-r1.md
+    visual_production_status: COMPLETE_VISUAL_PRODUCTION_INDIVIDUALLY_APPROVED
+    approved_sequence_manifest: .atena/generated/hq19-production-20261017/approved-sequence-r1.json
+    approved_sequence_preview: .atena/generated/hq19-production-20261017/hq19-approved-sequence-r1.jpg
+    visual_sequence_evidence: .atena/evidence/EVID-NOTTGARD-HQ19-VISUAL-SEQUENCE-20261017-r1.md
+    visual_sequence_inspection: PASS_ATENA_CONTACT_SHEET
+  chapter_2_review:
+    plan: PLAN-NOTTGARD-CHAPTER2-EDITORIAL-20261017
+    revision: r1
+    classification: IN_PLAN_RESUME_DEFERRED_EDITORIAL_REVIEW
+    status: COMPLETE_EDITORIAL_APPROVED
+    mode: per-step
+    authorization: 'Atena, vamos começar o capítulo 2, confirmando o roteiro das HQs uma por vez. (2026-10-17)'
+    current_step: S-C2-010
+    current_hq: hqn_10
+    completed_steps: 10
+    total_steps: 10
+    checkpoint: CP-C2-10
+    approval: APPROVED_ALL_TEN_HQS_R1
+    order: [hqn_19, hqn_20, hqn_21, hqn_04, hqn_05, hqn_06, hqn_07, hqn_08, hqn_09, hqn_10]
+    approved_hqs: [hqn_19, hqn_20, hqn_21, hqn_04, hqn_05, hqn_06, hqn_07, hqn_08, hqn_09, hqn_10]
+    spec: .atena/specs/SPEC-NOTTGARD-CHAPTER2-EDITORIAL-20261017/spec.md
+    last_reviewed_draft: .atena/vault/drafts/HQ10-CHAPTER2-REVIEW-20261017-r1.md
+    evidence: EVID-NOTTGARD-CHAPTER2-EDITORIAL-START-20261017-r1
+    art_authorized: false
+    runtime_authorized: false
+    next_activity: 'Revisão editorial concluída; produção visual e integração dependem de plano próprio'
+    completed_checkpoint: CP-C2-10
+    hq19_approval: APPROVED_R2_AILA_WINGLESS_BROOK_HANDOVER_DAGRUVE_SPLIT
+    hq19_authorization: 'Atena, HQ19 aprovada, incluindo a entrega do martelo a Brook e a divisão antes e depois de Dagruve. Vamos para a próxima HQ.'
+    hq19_canon: .atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md
+    hq20_review_evidence: EVID-NOTTGARD-HQ19-APPROVAL-HQ20-REVIEW-20261017-r1
+    hq20_approval: APPROVED_R1_SEVEN_PANELS
+    hq20_authorization: 'Atena, HQ20 aprovada com os sete quadros. Vamos para a próxima HQ.'
+    hq20_canon: .atena/vault/canon/HQ20-SCREENPLAY-APPROVED-20261017-r1.md
+    hq21_review_evidence: EVID-NOTTGARD-HQ20-APPROVAL-HQ21-REVIEW-20261017-r1
+    hq21_approval: APPROVED_R1_SEVEN_PANELS
+    hq21_authorization: 'Atena, HQ21 aprovada com os sete quadros. Vamos para a próxima HQ.'
+    hq21_canon: .atena/vault/canon/HQ21-SCREENPLAY-APPROVED-20261017-r1.md
+    hq04_review_evidence: EVID-NOTTGARD-HQ21-APPROVAL-HQ04-REVIEW-20261017-r1
+    hq04_approval: APPROVED_R1_SIX_PANELS
+    hq04_authorization: 'Atena, HQ04 aprovada com os seis quadros. Vamos para a próxima HQ.'
+    hq04_canon: .atena/vault/canon/HQ04-SCREENPLAY-APPROVED-20261017-r1.md
+    hq05_review_evidence: EVID-NOTTGARD-HQ04-APPROVAL-HQ05-REVIEW-20261017-r1
+    hq05_approval: APPROVED_R1_FIVE_PANELS
+    hq05_authorization: 'Atena, HQ05 aprovada com os cinco quadros. Vamos para a próxima HQ.'
+    hq05_canon: .atena/vault/canon/HQ05-SCREENPLAY-APPROVED-20261017-r1.md
+    hq06_review_evidence: EVID-NOTTGARD-HQ05-APPROVAL-HQ06-REVIEW-20261017-r1
+    hq06_approval: APPROVED_R1_SEVEN_PANELS
+    hq06_authorization: 'Atena, HQ06 aprovada com os sete quadros. Vamos para a próxima HQ.'
+    hq06_canon: .atena/vault/canon/HQ06-SCREENPLAY-APPROVED-20261017-r1.md
+    hq07_review_evidence: EVID-NOTTGARD-HQ06-APPROVAL-HQ07-REVIEW-20261017-r1
+    hq07_approval: APPROVED_R1_SIX_PANELS
+    hq07_authorization: 'confirmado, em resposta à HQ07 com seis quadros (2026-10-17)'
+    hq07_canon: .atena/vault/canon/HQ07-SCREENPLAY-APPROVED-20261017-r1.md
+    hq08_review_evidence: EVID-NOTTGARD-HQ07-APPROVAL-HQ08-REVIEW-20261017-r1
+    hq08_approval: APPROVED_R1_EIGHT_PANELS
+    hq08_authorization: 'Atena, HQ08 aprovada com os oito quadros. Vamos para a próxima HQ.'
+    hq08_canon: .atena/vault/canon/HQ08-SCREENPLAY-APPROVED-20261017-r1.md
+    hq09_review_evidence: EVID-NOTTGARD-HQ08-APPROVAL-HQ09-REVIEW-20261017-r1
+    hq09_approval: APPROVED_R1_SEVEN_PANELS
+    hq09_authorization: 'Atena, HQ09 aprovada com os sete quadros. Vamos para a próxima HQ.'
+    hq09_canon: .atena/vault/canon/HQ09-SCREENPLAY-APPROVED-20261017-r1.md
+    hq10_review_evidence: EVID-NOTTGARD-HQ09-APPROVAL-HQ10-REVIEW-20261017-r1
+    hq10_approval: APPROVED_R1_TEN_PANELS
+    hq10_authorization: 'Atena, HQ10 aprovada com os dez quadros. Vamos consolidar os roteiros aprovados do capítulo 2.'
+    hq10_canon: .atena/vault/canon/HQ10-SCREENPLAY-APPROVED-20261017-r1.md
+    consolidated_canon: .atena/vault/canon/CHAPTER2-SCREENPLAYS-APPROVED-20261017-r2.md
+    consolidated_manifest: .atena/generated/chapter2-editorial-20261017/consolidated-r2.json
+    consolidation_evidence: EVID-NOTTGARD-CHAPTER2-SCREENPLAYS-CONSOLIDATION-20261017-r1
+    panel_count: 75
+    next_step: null
+  chapter_review:
+    authorization: 'Atena, vamos confirmar todos os HQs, de capítulo em capítulo (2026-10-16)'
+    classification: IN_PLAN_EDITORIAL_REVIEW_GROUPING
+    status: BOTH_CHAPTER_SCREENPLAYS_APPROVED
+    revision: r2
+    current_chapter: 2
+    total_main_chapters: 2
+    completed_chapters: 2
+    chapter_1_main: [hqn_01, hqn_02, hqn_15, hqn_16, hqn_17, hqn_18, hqn_03]
+    chapter_1_complementary: [hqn_14]
+    chapter_1_previously_approved: [hqn_01, hqn_02]
+    chapter_1_pending: []
+    chapter_1_approval: APPROVED_WITH_OWNER_CORRECTION_AND_REMOVALS
+    chapter_1_authorization: 'HQ16 - 3. Kayron põe fogo na igreja de Nott; retire A Concórdia Eterna, O Nome Aluris, O Cerco e Aluris; o resto está aprovado (2026-10-16)'
+    chapter_1_canon: .atena/vault/canon/CHAPTER1-SCREENPLAYS-APPROVED-20261016-r1.md
+    chapter_1_removed_from_selection: [hqn_11, hqn_12, hqn_13]
+    chapter_1_removed_runtime: false
+    chapter_2: [hqn_19, hqn_20, hqn_21, hqn_04, hqn_05, hqn_06, hqn_07, hqn_08, hqn_09, hqn_10]
+    chapter_2_approval: APPROVED_ALL_TEN_HQS_75_PANELS
+    boundary: 'Capítulo 1 encerra com sacrifício de Helion; complementares anteriores vinculadas à revisão do capítulo 1'
+    operational_mode: per-step
+    limits: 'Agrupamento de aceite textual; não autoriza arte/runtime nem aprova a proposta FLOW completa'
+    chapter_2_canon: .atena/vault/canon/CHAPTER2-SCREENPLAYS-APPROVED-20261017-r2.md
+  return:
+    hq_plan: PLAN-NOTTGARD-HQ-REVIEW-20261015
+    hq_revision: r1
+    hq_mode: per-step
+    hq_cursor: B-HQ-002/S-HQ-004
+    hq_checkpoint: HQ03_SCREENPLAY_R1_AWAITING_OWNER_APPROVAL
+    hq_authorization: 'proxima hq (2026-10-16): roteiro antes de arte'
+    hq02_browser: PENDING_PRESERVED
+    flow_plan: PLAN-NOTTGARD-CAMPAIGN-FLOW-20261016
+    flow_revision: r1
+    flow_mode: per-step
+    flow_checkpoint: CP-FLOW-01
+    flow_next_step: B-FLOW-001/S-FLOW-002
+    flow_scope_approval: PENDING_R1
+campaign_flow_proposal:
+  id: PLAN-NOTTGARD-CAMPAIGN-FLOW-20261016
+  spec_id: SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016
+  revision: r1
+  classification: PLAN_CHANGE_REQUEST
+  status: DRAFT_AWAITING_SCOPE_APPROVAL
+  mode: per-step
+  mode_authorization: 'Somente PC, por etapa (resposta direta do dono, 2026-10-16)'
+  platform: pc
+  scope_approval: PENDING_R1
+  checkpoint: CP-FLOW-01
+  completed_steps: 1
+  total_steps: 8
+  current_step: B-FLOW-001/S-FLOW-001
+  next_step: B-FLOW-001/S-FLOW-002
+  next_step_authorization: PENDING
+  research_authorization: 'Atena, vamos fazer um plano; pesquise em D:/dev/nottgard/vault (2026-10-16)'
+  evidence: EVID-NOTTGARD-CAMPAIGN-FLOW-20261016
+  spec: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/spec.md
+  plan: .atena/specs/SPEC-NOTTGARD-CAMPAIGN-FLOW-20261016/plan.md
+  chapter_boundary: 'Após o sacrifício de Helion, mantendo a decisão anterior (dono, 2026-10-16)'
+  thalion_outcome: 'O combate termina com Thalion enviando parte do grupo ao Abismo, sem morrer (dono, 2026-10-16)'
+  web_port: DEFERRED_PC_ONLY_OWNER_CHOICE
+  deferred_port_id: DEV-NOTTGARD-CAMPAIGN-FLOW-WEB-20261016
+  implementation_authorized: false
+  prior_plans_preserved: true
+  suspension: NOT_ACTIVATED_PLANNING_ONLY
+  proposed_return:
+    plan: PLAN-NOTTGARD-HQ-REVIEW-20261015
+    revision: r1
+    mode: per-step
+    cursor: B-HQ-002/S-HQ-004
+    checkpoint: HQ03_SCREENPLAY_R1_AWAITING_OWNER_APPROVAL
+    hq02_browser: PENDING_PRESERVED
+    activation: 'Reler estado e persistir suspensão/cursor antes de executar a etapa 2, após aprovação'
+hq_review_proposal:
+  deviation: DEV-NOTTGARD-HQ-REVIEW-20261015
+  plan: PLAN-NOTTGARD-HQ-REVIEW-20261015
+  spec: SPEC-NOTTGARD-HQ-REVIEW-20261015
+  revision: r1
+  status: S_HQ_004_SCREENPLAY_APPROVED_HQ02_BROWSER_DEFERRED
+  mode: per-step
+  recommended_mode: per-step
+  approval: APPROVED_R1_PER_STEP_S_HQ_001
+  authorization: '3, aprovado; Para ambos (2026-10-15): r1, per-step, PC e Web; início de S-HQ-001'
+  checkpoint: CP-HQ-01
+  completed_steps: 2
+  total_steps: 16
+  next_step: B-HQ-002/S-HQ-003
+  proposed_platforms: [pc, web]
+  platform_scope_approval: APPROVED_PC_WEB
+  current_step: B-HQ-002/S-HQ-004
+  step_authorization: 'proxima hq (2026-10-16): iniciar revisão da HQ03, roteiro antes de arte; respeitar decisão do encerramento do capítulo 1'
+  next_step_authorization: PENDING_S_HQ_005
+  current_hq: hqn_03
+  editorial_checkpoint: HQ03_SCREENPLAY_APPROVED_CHAPTER1_ART_PENDING
+  hq03_screenplay_proposal: .atena/vault/drafts/HQ03-SCREENPLAY-20261016-r1.md
+  hq03_screenplay_approval: 'APPROVED_CHAPTER1_20261016: o resto está aprovado, após correção HQ16 e retirada de HQ11/HQ12/HQ13'
+  hq03_screenplay_canon: .atena/vault/canon/CHAPTER1-SCREENPLAYS-APPROVED-20261016-r1.md
+  hq03_runtime_authorized: false
+  hq02_deferred_checkpoint: 'S-HQ-003 / HQ02_BROWSER_VERIFICATION_PENDING; preservado ao avançar para revisão textual da próxima HQ por pedido do dono'
+  hq02_integration_evidence: EVID-NOTTGARD-HQ02-INTEGRATION-20261016
+  hq02_integration_result: 'PASS: PC/Web catálogo, hashes, textos, test_hqs/test_profile/test_playtest, leitor 1280/1920 e Diário/replay; browser pendente por timeout de acesso local'
+  hq02_browser_result: 'PENDING: exportação gerada; navegador integrado falhou no acesso localhost/127.0.0.1 com ERR_CONNECTION_TIMED_OUT'
+  hq02_q5_candidate: .atena/generated/hq02-review-20261016/candidates/hq_n02_q5_sealed_dome_v02.png
+  hq02_q5_receipt: .atena/generated/hq02-review-20261016/q5-v02-candidate-receipt.json
+  hq02_q5_approval: 'APPROVED_V02: aprovado (2026-10-16); SHA-256 f50526fe485a418f3079fd1889f9f3bfb24b845f4d81058593e09b5b18555498'
+  hq02_q5_asset_approval: ASSET-APPROVAL-HQ02-Q5-20261016-r1
+  hq02_sequence_manifest: .atena/generated/hq02-review-20261016/hq02-sequence-r1.json
+  hq02_sequence_approval: 'APPROVED_R1: aprovado (2026-10-16), após apresentação dos cinco quadros e textos e pedido de integração/teste PC/Web'
+  hq02_integration_spec: .atena/specs/SPEC-NOTTGARD-HQ-REVIEW-20261015/hq02-integration-r1.md
+  hq02_q5_v01_feedback: 'retire a névoa de dentro da Tarn (2026-10-16)'
+  hq02_q5_v02_authorization: 'Remover toda névoa interna da candidata; manter domo azul íntegro e névoa verde somente externa'
+  hq02_q4_candidate: .atena/generated/hq02-review-20261016/candidates/hq_n02_q4_ritual_v01.png
+  hq02_q4_receipt: .atena/generated/hq02-review-20261016/q4-candidate-receipt.json
+  hq02_q4_approval: 'APPROVED_V01: aprovado (2026-10-16); SHA-256 19e2406373b46934635b3f7e8e5549338e6e0709d85a78d169b6fe068c27422c'
+  hq02_q4_asset_approval: ASSET-APPROVAL-HQ02-Q4-20261016-r1
+  hq02_q5_production_basis: 'Q4 aceita; continuidade S-HQ-003 e seleção aprovada; adaptar vista das docas/Tarn HQ01 Q5 v02 para superfície íntegra, validar candidata e depois sequência'
+  hq02_q3_candidate: .atena/generated/hq02-review-20261016/candidates/hq_n02_q3_guardian_v02.png
+  hq02_q3_receipt: .atena/generated/hq02-review-20261016/q3-v02-candidate-receipt.json
+  hq02_q3_approval: 'APPROVED_V02: aprovado (2026-10-16); SHA-256 020341654f183f1aeda247f005bfc1360e641c7dd41009398cd5ff868fcb75d9'
+  hq02_q3_asset_approval: ASSET-APPROVAL-HQ02-Q3-20261016-r1
+  hq02_q4_production_basis: 'Q3 v02 aceita; continuidade S-HQ-003 conforme roteiro r2 e seleção aprovada; produzir ritual por Sylas e validar antes de Q5'
+  hq02_q3_v01_feedback: 'falta bastante sangue no chão (2026-10-16)'
+  hq02_q3_v02_authorization: 'Correção localizada solicitada pelo dono: aumentar bastante sangue negro no chão; preservar composição, personagens e narração'
+  hq02_q2_candidate: .atena/generated/hq02-review-20261016/candidates/hq_n02_q2_discovery_v01.png
+  hq02_q2_receipt: .atena/generated/hq02-review-20261016/q2-candidate-receipt.json
+  hq02_q2_approval: 'APPROVED_V01: aprovado (2026-10-16); SHA-256 feda47259535b051c5b6dc2e2004e4f37311d8ac045e5226af826f237ecd7321'
+  hq02_q2_asset_approval: ASSET-APPROVAL-HQ02-Q2-20261016-r1
+  hq02_q3_production_basis: 'Continuidade de S-HQ-003; Q2 aceita; produzir Guardião verdadeiro caído com sangue negro conforme roteiro r2 e referência aprovada; validar antes de Q4'
+  hq02_q1_candidate: .atena/generated/hq02-review-20261016/candidates/hq_n02_q1_descent_v01.png
+  hq02_q1_receipt: .atena/generated/hq02-review-20261016/q1-candidate-receipt.json
+  hq02_q1_approval: 'APPROVED_V01: aprovado (2026-10-16); SHA-256 9b3b1a16f1e81a9944f05a7404d4ca809d8aab8185544d6ac9ab235a67a689eb'
+  hq02_q1_asset_approval: ASSET-APPROVAL-HQ02-Q1-20261016-r1
+  hq02_q2_production_basis: 'Continuidade da etapa HQ02 e seleção aprovadas; Q1 aceita; produzir biblioteca conforme roteiro CANON r2 e validar candidata antes de Q3'
+  hq02_screenplay: .atena/vault/canon/HQ02-SCREENPLAY-20261015-r2.md
+  hq02_art_selection: .atena/specs/SPEC-NOTTGARD-HQ-REVIEW-20261015/hq02-art-selection-r1.md
+  hq02_art_selection_approval: 'APPROVED_R1_WITH_GAME_GUARDIAN: arpovado (2026-10-16), no contexto da seleção e recomendação corrigida da referência do Guardião'
+  hq02_guardian_visual_audit: EVID-NOTTGARD-GUARDIAN-GAME-VISUAL-20261015
+  hq02_guardian_reference_proposal: 'APPROVED: guardiao_verdadeiro do runtime, humanoide com asas de penas e energia violeta; preservar somente salão da antiga HQ'
+  hq02_guardian_reference_approval: DEC-HQ02-GUARDIAN-REFERENCE-20261016-r1
+  hq02_q1_production_authorization: 'Continuidade da etapa S-HQ-003 autorizada; roteiro r2 e seleção corrigida aceitos; produzir candidata Q1 e validar antes de Q2'
+  hq02_runtime_authorized: true
+  q2_layout_evidence: EVID-NOTTGARD-HQ01-Q2-DIALOGUE-LAYOUT-20261015
+  q2_layout_result: 'PASS: Zynara à esquerda, Helion à direita; test_hqs e capturas 1280x720/1920x1080 em ambos os projetos'
+  q2_layout_owner_acceptance: 'APPROVED: aprovado (2026-10-15), após apresentação do Quadro 2 com Zynara à esquerda e Helion à direita'
+  q2_layout_authorization: 'coloque o texto de helion no quadrado da direita (2026-10-15): corrigir posição da fala em PC/Web, mantendo conteúdo e imagens'
+  q2_layout_spec: .atena/specs/SPEC-NOTTGARD-HQ-REVIEW-20261015/hq01-q2-dialogue-layout-r1.md
+  integration_evidence: EVID-NOTTGARD-HQ01-INTEGRATION-20261015
+  integration_result: 'PASS: catálogo/arte/testes PC e Web; leitor 1280x720/1920x1080, Diário/replay e navegador local'
+  q8_candidate: .atena/generated/hq-review-20261015/candidates/hq_n01_q8_cellar_v01.png
+  q8_candidate_receipt: .atena/generated/hq-review-20261015/q8-candidate-receipt.json
+  q8_candidate_approval: 'APPROVED_V01: aprovado (2026-10-15); SHA-256 b273bdfb04252407db925720ba5e4bc9602de6fcf5a32d52587e412b1b033ee1'
+  q8_asset_approval: ASSET-APPROVAL-HQ01-Q8-20261015-r1
+  sequence_manifest: .atena/generated/hq-review-20261015/hq01-approved-sequence-r1.json
+  sequence_approval: 'APPROVED: aprovado (2026-10-15), após apresentação dos oito quadros e textos para preparação da integração PC/Web'
+  integration_spec: .atena/specs/SPEC-NOTTGARD-HQ-REVIEW-20261015/hq01-integration-r1.md
+  q7_candidate: .atena/generated/hq-review-20261015/candidates/hq_n01_q7_observes_v01.png
+  q7_candidate_receipt: .atena/generated/hq-review-20261015/q7-candidate-receipt.json
+  q7_candidate_approval: 'APPROVED_V01: aprovado (2026-10-15); SHA-256 75dda9e65bd09a388bd81bd3a1c89f82627c5a18d0f9a638697b14c837c593fb'
+  q7_asset_approval: ASSET-APPROVAL-HQ01-Q7-20261015-r1
+  q8_production_basis: 'Continuidade individual HQ01 autorizada; Q7 aprovada; seleção prevê adaptar antigo Q4 para entrada do porão, validar candidata e depois sequência completa'
+  q6_candidate: .atena/generated/hq-review-20261015/candidates/hq_n01_q6_contact_v01.png
+  q6_candidate_receipt: .atena/generated/hq-review-20261015/q6-candidate-receipt.json
+  q6_candidate_approval: 'APPROVED_V01: aprovado (2026-10-15); SHA-256 612adfc2099dbab65f8a2e400387998536b0d4a40e769ccd6ffe4a342904dcde'
+  q6_asset_approval: ASSET-APPROVAL-HQ01-Q6-20261015-r1
+  q7_production_basis: 'Continuidade individual da HQ01 autorizada; Q6 aprovada; roteiro r2 prevê Durvall observando os três se recompondo, novo enquadramento e validação da candidata'
+  q5_candidate: .atena/generated/hq-review-20261015/candidates/hq_n01_q5_fissures_v02.png
+  q5_candidate_receipt: .atena/generated/hq-review-20261015/q5-v02-candidate-receipt.json
+  q5_candidate_approval: 'APPROVED_V02: aprovado (2026-10-15); SHA-256 502bfa478ec8253d0068d88364972d04825968aeba6c1c1d336bbfb943aa23d1'
+  q5_asset_approval: ASSET-APPROVAL-HQ01-Q5-20261015-r1
+  q6_production_basis: 'Continuidade da produção individual HQ01 autorizada; Q5 v02 aprovada; roteiro r2 define três abalados e Durvall firme; candidata para validação'
+  q5_v01_rejection: 'Retirar roxo; domo somente azul, trincas sutis azul-claras sem partes faltando e névoa entrando pelas linhas (2026-10-15)'
+  q5_v02_authorization: 'Correção explícita do dono (2026-10-15): remover símbolos/efeitos roxos da barreira; preencher aberturas; fissuras finas claras com névoa verde'
+  q5_visual_decision: DEC-NOTTGARD-TARN-FISSURES-20261015-r1
+  q4_candidate: .atena/generated/hq-review-20261015/candidates/hq_n01_q4_docks_v01.png
+  q4_candidate_receipt: .atena/generated/hq-review-20261015/q4-candidate-receipt.json
+  q4_candidate_approval: 'APPROVED_V01: aprovado (2026-10-15); SHA-256 3105074cdbeb60df6f05898d1c1530a42c18738b656aff6112fb0f0a39a27aa5'
+  q4_asset_approval: ASSET-APPROVAL-HQ01-Q4-20261015-r1
+  q5_production_basis: 'Continuidade da HQ01 autorizada; Q4 aprovada; seleção aprovada prevê adaptar antigo Q3 como detalhe sem personagens para ritual/fissuras e validar candidata'
+  q3_v02_authorization: 'prossiga (2026-10-15), após apresentação do retrato nominal de Gilly e divergências da candidata v01; corrigir identidade e preservar cena'
+  q3_candidate: .atena/generated/hq-review-20261015/candidates/hq_n01_q3_mission_v02.png
+  q3_candidate_receipt: .atena/generated/hq-review-20261015/q3-v02-candidate-receipt.json
+  q3_candidate_approval: 'APPROVED_V02: aprovado (2026-10-15); SHA-256 300b2b556da26eefd9b4249498fb19d2c537e512a25844a2ae1cf816555c12ef'
+  q3_asset_approval: ASSET-APPROVAL-HQ01-Q3-20261015-r1
+  q4_production_basis: 'Continuidade da produção individual da HQ01 autorizada por tudo aprovado, após aceite de Q3 v02; seleção aprovada prevê adaptar antigo Q2 e validar cada candidata'
+  q4_identity_readiness: 'Willie: ficha do vault e referência nominal Desktop/nottgard/Willie.png inspecionadas; quatro retratos oficiais; sem gaps BLOCKING para candidata, aparência final depende de validação'
+  q3_v01_rejection: 'Gilly está errado, verifique a referência dele no vault (2026-10-15); original preservado'
+  q3_reference_audit: EVID-NOTTGARD-GILLY-REFERENCE-CORRECTION-20261015
+  q3_correct_reference: C:/Users/gui-m/Desktop/nottgard/Gilly.png
+  q2_candidate: .atena/generated/hq-review-20261015/candidates/hq_n01_q2_calls_v01.png
+  q2_candidate_receipt: .atena/generated/hq-review-20261015/q2-candidate-receipt.json
+  q2_candidate_approval: 'APPROVED_V01: aprovado (2026-10-15); SHA-256 4bd0b72c32fc0ccef686154775eeafe5afffd664c30ede741a46f2be4a1239e9'
+  q2_asset_approval: ASSET-APPROVAL-HQ01-Q2-20261015-r1
+  q3_production_authorization: 'aprovado (2026-10-15), em resposta ao aceite de Q2 e avanço para Q3 com Gilly bêbado e Durvall bebendo suco de laranja'
+  q3_identity_readiness: 'Correção autorizada a partir de Gilly.png nominal apresentado ao dono; sem gaps BLOCKING para edição localizada; aparência final depende da validação de v02'
+  q2_production_authorization: 'Atena, tudo aaprovado (2026-10-15): seleção e revisão de personagens aprovadas; produzir candidata Q2 e validar antes de seguir'
+  art_selection: .atena/specs/SPEC-NOTTGARD-HQ-REVIEW-20261015/hq01-art-selection-r1.md
+  art_selection_status: APPROVED_ONE_KEEP_FOUR_ADAPT_THREE_NEW
+  art_selection_approval: 'Atena, aprovado; somente conferir personagens contra referências (2026-10-15)'
+  character_audit: EVID-NOTTGARD-HQ01-CHARACTER-AUDIT-20261015
+  character_audit_result: OLD_GROUP_ART_NOT_APPROVED_FOR_DIRECT_REUSE
+  art_selection_authorization: 'Validar imagens existentes e a gerar para HQ1 (2026-10-15); seleção somente'
+  visual_readiness_gaps: 'Helion e Gilly aceitos nas respectivas imagens; referência nominal de Willie localizada e inspecionada para candidata Q4, aceite visual pendente'
+  current_screenplay: .atena/vault/canon/HQ01-SCREENPLAY-20261015-r2.md
+  screenplay_approval: 'APPROVED_HQ01_R2_EIGHT_PANELS: aprovado (2026-10-15)'
+  next_screenplay_proposal: .atena/vault/canon/HQ02-SCREENPLAY-20261015-r2.md
+  next_screenplay_approval: 'APPROVED_HQ02_R2_ALL_FIVE_PANELS: aprovado após apresentação integral da r2 com Willie (2026-10-15)'
+  screenplay_revision: r2
+  screenplay_panel_count: 8
+  screenplay_r2_owner_changes: 'Gilly bêbado no quadro 3; contato com a névoa em dois quadros coletivos, Durvall sem abalo'
+  screenplay_authorization: 'vamos continuar com os roteiros (2026-10-15): elaboração textual, sem nova arte'
+  production_hold: 'HQ03 roteiro aprovado no capítulo 1; prontidão/arte e integração continuam sem autorização nova; HQ02 integrada, navegador pendente em S-HQ-003'
+  workflow_change_classification: PLAN_CHANGE_REQUEST_ANALYSIS
+  workflow_change_proposal: .atena/specs/SPEC-NOTTGARD-HQ-REVIEW-20261015/script-first-proposal.md
+  opening_script: .atena/vault/drafts/HQ-OPENING-SCRIPT-20261015-r1.md
+  opening_script_status: DRAFT_OWNER_OUTLINE_WITH_RESEARCH_GAPS
+  opening_script_gaps: 'HQ01 r2 aprovada em oito quadros; HQ02 r2 aprovada em cinco quadros com Willie no porão; reconciliar implementação/spec e próximos roteiros do capítulo antes de arte e integração'
+  chapter_direction: DEC-NOTTGARD-CHAPTERS-20261015-r1
+  chapter_direction_authorization: 'Véu Vivo encerra capítulo 1; capítulo 2 abre com chegadas ao Abismo e encontro com Marciela (2026-10-15)'
+  chapter2_opening: .atena/vault/drafts/HQ-CHAPTER2-OPENING-20261015-r2.md
+  chapter2_status: DRAFT_OWNER_ARRIVAL_CLARIFICATIONS_APPLIED
+  chapter2_arrival_decision: DEC-NOTTGARD-ABYSS-ARRIVALS-20261015-r1
+  chapter2_resolved: 'Thalion envia Maelor após interrogatório; runa nórdica, portal roxo e cipós/raízes; Nidhogg erra a mordida; Aila fica com Thalion; Durvall cruza no laboratório de Zynara'
+  chapter2_gaps: 'Distribuição do elenco por quadro; montagem e quantidade de quadros; reconciliar fontes antigas do vault externo em escopo próprio'
+  vault_arrivals_audit: EVID-NOTTGARD-VAULT-ARRIVALS-AUDIT-20261015
+  q1_authorization: 'Aprovado: corrigir guia, refazer Q1 com domo azul e névoa verde; manter texto; validar imagem antes de seguir (2026-10-15)'
+  tarn_decision: DEC-NOTTGARD-TARN-20261015-r1
+  q1_candidate: .atena/generated/hq-review-20261015/candidates/hq_n01_q1_dome_v01.png
+  q1_candidate_approval: 'APPROVED: aprovado (2026-10-15), v01 SHA-256 32f6c43131112166d2cf74828288ca45152d58c1bf9d6939a426d1a1b239dd6b'
+  q1_caption: KEEP_CURRENT_VERBATIM
+  q1_runtime_admission: ACCEPTED_CANDIDATE_PENDING_COMPLETE_HQ_ACCEPTANCE
+  q1_asset_approval: ASSET-APPROVAL-HQ01-Q1-20261015-r1
+  current_panel: HQ03_SCREENPLAY_REVIEW
+  tarn_guide_port_receipt: .atena/generated/hq-review-20261015/q1-guide-port-receipt.json
+  completed_evidence: EVID-NOTTGARD-HQ-REVIEW-READINESS-20261015
+  web_coordination_receipt: .atena/generated/hq-review-20261015/web-coordination-receipt.json
+  evidence: EVID-NOTTGARD-HQ-REVIEW-PREPARATION-20261015
+  implementation_authorized: true
+  implementation_scope: 'Somente sequência HQ01 aprovada, oito quadros PC/Web, ajuste do teste correspondente; preservar IDs, gatilhos, outras HQs e saves'
+  original_plan_preserved: true
+  return:
+    plan: PLAN-NOTTGARD-PLATFORM-SPLIT-20261012
+    revision: r1
+    checkpoint: CP-SPLIT-02
+    cursor: B-SPLIT-003/S-SPLIT-005
+    approval: APPROVED_LOCAL_R1
+    mode: per-plan
+    suspension: ACTIVE_FOR_HQ_REVIEW
+    human_acceptance: PENDING_PLAYTEST
 active_plan:
   id: PLAN-NOTTGARD-PLATFORM-SPLIT-20261012
   spec_id: SPEC-NOTTGARD-PLATFORM-SPLIT-20261012
@@ -111,3 +1481,212 @@ editor_name_proposal:
     mode: per-plan
     suspension: CLOSED
     human_acceptance: PENDING_PLAYTEST
+
+dev_migration_proposal:
+  id: PLAN-DEV-GAMES-VAULTS-MIGRATION-20261016
+  spec_id: SPEC-DEV-GAMES-VAULTS-MIGRATION-20261016
+  revision: r1
+  classification: IN_PLAN_B_MIG_002_VAULTS_ONLY
+  status: B_MIG_002_WAITING_DIRECTORY_RELEASE
+  mode: per-batch
+  mode_authorization: 'Pedido explícito do dono em 2026-10-16: prepare o plano, com aprovação por lote'
+  planning_authorized: true
+  execution_authorized: true
+  checkpoint: CP-MIG-002
+  current_step: B-MIG-002/S-MIG-003
+  completed_steps: 2
+  total_steps: 10
+  completed_batches: 1
+  total_batches: 5
+  current_batch_approval: APPROVED_R1_VAULTS_AND_ALIASES_ONLY
+  batch_authorization: "Atena, aprovo o lote B-MIG-002. Pode migrar os vaults independentes, mantendo os aliases nos caminhos antigos e verificando a integridade de cada um. Não avance para os jogos ainda."
+  source_moves_authorized: true
+  spec: .atena/specs/SPEC-DEV-GAMES-VAULTS-MIGRATION-20261016/spec.md
+  plan: .atena/specs/SPEC-DEV-GAMES-VAULTS-MIGRATION-20261016/plan.md
+  manifest: .atena/specs/SPEC-DEV-GAMES-VAULTS-MIGRATION-20261016/migration-manifest.json
+  evidence: EVID-DEV-GAMES-VAULTS-MIGRATION-PLAN-20261016-r1
+  scope: '10 jogos e 3 conjuntos de vault independentes; launcher/site/apps e vaults vinculados preservados'
+  compatibility_proposal: 'Junction temporária nas origens; exige aprovação explícita no lote e preflight'
+  suspension: ACTIVE_VAULT_MIGRATION_ONLY
+  return_snapshot: .atena/generated/dev-organization-20261016/b002-return-context.json
+  return_cursor_policy: 'Nenhum plano de produto interrompido; reler o estado mais recente ao encerrar o diagnóstico'
+  return_policy: 'Reler todos os planos afetados; persistir suspensão e cursor/autorizações de retorno imediatamente antes de execução aprovada'
+  observed_concurrent_plan: PLAN-NOTTGARD-CHAPTER1-CLOSEOUT-20261016
+  observed_concurrent_step: S-C1-002
+  observed_concurrent_status: TECHNICAL_DESIGN_IN_PROGRESS
+  batches:
+    - id: B-MIG-001
+      checkpoint: CP-MIG-001
+      approval: APPROVED_R1_DIAGNOSTIC_ONLY
+      status: COMPLETE_DIAGNOSTIC
+    - id: B-MIG-002
+      checkpoint: CP-MIG-002
+      approval: APPROVED_R1_VAULTS_AND_ALIASES_ONLY
+    - id: B-MIG-003
+      checkpoint: CP-MIG-003
+      approval: PENDING
+      readiness: HOLD_LINKED_WORKTREE_AND_RUNTIME_GAPS
+    - id: B-MIG-004
+      checkpoint: CP-MIG-004
+      approval: PENDING
+    - id: B-MIG-005
+      checkpoint: CP-MIG-005
+      approval: PENDING
+  diagnostic_evidence: EVID-DEV-GAMES-VAULTS-MIGRATION-B001-20261016-r1
+  diagnostic_report: .atena/specs/SPEC-DEV-GAMES-VAULTS-MIGRATION-20261016/b001-diagnostics-r1.md
+  next_dossiers: .atena/specs/SPEC-DEV-GAMES-VAULTS-MIGRATION-20261016/batch-dossiers-r1.md
+  source_moves_completed: 0
+  diagnostic_execution_concluded: true
+  next_action: WAIT_VAULT_PROCESS_DIRECTORY_RELEASE_THEN_REVALIDATE_B_MIG_002
+  vault_batch_blocker: WINDOWS_DIRECTORY_IN_USE_NOTTGARD
+  vault_batch_blocking_processes: [36060, 34696, 5052, 40836, 39220, 38244]
+  vault_batch_approval_retained: true
+  vault_batch_hold_report: .atena/specs/SPEC-DEV-GAMES-VAULTS-MIGRATION-20261016/b002-directory-lock-r1.md
+
+
+hq20_completion_production_plan:
+  id: PLAN-NOTTGARD-HQ20-COMPLETION-20261017
+  revision: r1
+  classification: IN_PLAN
+  mode: per-step
+  approval_policy: APPROVAL_ALSO_AUTHORIZES_NEXT_CANDIDATE
+  status: COMPLETE_VISUAL_PRODUCTION_INDIVIDUALLY_APPROVED
+  current_step: S-P20-Q07
+  ordered_steps: [S-P20-Q02, S-P20-Q03C, S-P20-Q05, S-P20-Q06, S-P20-Q07]
+  completed_steps: 5
+  total_steps: 5
+  existing_approved_panels: [1, 3, 4]
+  authorization: continue (2026-10-17), produção HQ20 neste chat
+  spec: .atena/specs/SPEC-NOTTGARD-HQ20-COMPLETION-20261017/q2-r1.md
+  q2_record: .atena/generated/hq20-production-20261017/q2-production-r1.json
+  next_activity: HQ20 produção visual concluída; integração pendente de checkpoint próprio
+  runtime_authorized: false
+  future_gap: Nenhum BLOCKING para Q6; Nidhogg visual aprovado na Q5
+  q2_candidate: .atena/generated/hq20-production-20261017/candidates/hq_n20_q2_marciela_meeting_v01.png
+  q2_approval: 'APPROVED_V02: aprovado (2026-10-17)'
+  q2_evidence: .atena/evidence/EVID-NOTTGARD-HQ20-Q2-CANDIDATE-20261017-v01.md
+
+  q2_v01_result: OWNER_REQUESTED_OFFICIAL_MARCIELA
+  q2_v02_record: .atena/generated/hq20-production-20261017/q2-v02-production-r1.json
+  marciela_reference: D:/dev/nottgard/vault/output/referencias-personagens/CHAR-038/S17-S18-manto-pantano/r01/marciela-front-candidate-v02-hq.png
+  q2_v02_candidate: .atena/generated/hq20-production-20261017/candidates/hq_n20_q2_marciela_meeting_v02.png
+  q2_v02_evidence: .atena/evidence/EVID-NOTTGARD-HQ20-Q2-CANDIDATE-20261017-v02.md
+  marciela_q3_continuity: APPROVED_V02_OFFICIAL_REFERENCE
+  q2_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ20-Q2-20261017-r1.md
+  q3_correction_spec: .atena/specs/SPEC-NOTTGARD-HQ20-COMPLETION-20261017/q3-correction-r1.md
+  q3_v02_record: .atena/generated/hq20-production-20261017/q3-v02-production-r1.json
+  q3_v02_candidate: .atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v02.png
+  q3_v02_approval: 'APPROVED_V02: aprovado (2026-10-17)'
+  q3_v02_evidence: .atena/evidence/EVID-NOTTGARD-HQ20-Q3-CANDIDATE-20261017-v02.md
+  q3_v02_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ20-Q3-20261017-r2.md
+  q5_preparation: .atena/specs/SPEC-NOTTGARD-HQ20-COMPLETION-20261017/q5-preparation-r1.md
+  q5_authorization: Próxima candidata autorizada pelo aceite Q3; referência requerida
+  q5_reference_gap: RESOLVED_OWNER_GIANT_SNAKE_DEFINITION
+  readiness_evidence: .atena/evidence/EVID-NOTTGARD-HQ20-Q3-ACCEPTANCE-Q5-READINESS-20261017-r1.md
+  nidhogg_identity_decision: .atena/vault/canon/DEC-NIDHOGG-GIANT-SNAKE-20261017-r1.md
+  q5_record: .atena/generated/hq20-production-20261017/q5-production-r1.json
+  q5_candidate: .atena/generated/hq20-production-20261017/candidates/hq_n20_q5_nidhogg_misses_v01.png
+  q5_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+  q5_evidence: .atena/evidence/EVID-NOTTGARD-HQ20-Q5-CANDIDATE-20261017-v01.md
+  q5_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ20-Q5-20261017-r1.md
+  q6_spec: .atena/specs/SPEC-NOTTGARD-HQ20-COMPLETION-20261017/q6-r1.md
+  q6_record: .atena/generated/hq20-production-20261017/q6-production-r1.json
+  q6_candidate: .atena/generated/hq20-production-20261017/candidates/hq_n20_q6_maelor_escape_v01.png
+  q6_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+  q6_evidence: .atena/evidence/EVID-NOTTGARD-HQ20-Q6-CANDIDATE-20261017-v01.md
+  q6_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ20-Q6-20261017-r1.md
+  q7_spec: .atena/specs/SPEC-NOTTGARD-HQ20-COMPLETION-20261017/q7-r1.md
+  q7_record: .atena/generated/hq20-production-20261017/q7-production-r1.json
+  q7_candidate: .atena/generated/hq20-production-20261017/candidates/hq_n20_q7_mother_reunion_v01.png
+  q7_approval: 'APPROVED_V01: aprovado (2026-10-17)'
+  q7_evidence: .atena/evidence/EVID-NOTTGARD-HQ20-Q7-CANDIDATE-20261017-v01.md
+  q7_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ20-Q7-20261017-r1.md
+  approved_visual_panels: 7
+  total_visual_panels: 7
+  sequence_manifest: .atena/generated/hq20-production-20261017/approved-sequence-r1.json
+  sequence_preview: .atena/generated/hq20-production-20261017/hq20-approved-sequence-r1.jpg
+  sequence_inspection: PASS_ATENA_CONTACT_SHEET
+  sequence_evidence: .atena/evidence/EVID-NOTTGARD-HQ20-VISUAL-SEQUENCE-20261017-r1.md
+dagruve_chapter2_proposal:
+  id: PLAN-NOTTGARD-DAGRUVE-CHAPTER2-20261017
+  revision: r1
+  classification: IN_PLAN
+  status: S_DAG_005_AWAITING_OWNER_PLAYTEST_FEEDBACK
+  mode: per-step
+  mode_basis: Reutilizado do fluxo de mapas aprovado pelo usuario
+  current_step: S-DAG-005
+  completed_steps: 4
+  total_steps: 5
+  next_step: S-DAG-005
+  checkpoint: CP-DAG-005
+  approval: APPROVED_OWNER_DOSSIER_R1_QA_CONTRACT
+  authorization: 'aprovado autorizado, prioridade e dossie S-DAG-002'
+  implementation_authorized: false
+  production_authorized: false
+  spec: .atena/specs/SPEC-NOTTGARD-DAGRUVE-CHAPTER2-20261017/proposal-r1.md
+  next_activity: 'Aguardar avaliacao humana de rotas, pressao, area marcada e duracao'
+  shared_state_policy: Preservar campanha geral e planos HQ concorrentes
+  scope_approval_response: aprovado autorizado
+  dossier: .atena/specs/SPEC-NOTTGARD-DAGRUVE-CHAPTER2-20261017/dossier-r1.md
+  dossier_evidence: EVID-NOTTGARD-DAGRUVE-DOSSIER-20261017-r1
+  dossier_audit: .atena/generated/dagruve-chapter2-20261017/audit-r1.json
+  encounter_contract: CANON_OWNER_APPROVED_QA_R1
+  next_step_approval: AUTHORIZED_S_DAG_005_HUMAN_PLAYTEST
+  contract_canon: .atena/vault/canon/DEC-DAGRUVE-QA-ENCOUNTER-CONTRACT-20261017-r1.md
+  s003_authorization: .atena/generated/dagruve-chapter2-20261017/s003-authorization.json
+  s003_baseline: .atena/generated/dagruve-chapter2-20261017/s003-baseline.json
+  prototype_evidence: EVID-NOTTGARD-DAGRUVE-PROTOTYPE-20261017-r1
+  prototype_validation: .atena/generated/dagruve-chapter2-20261017/s003-final-validation.json
+  extended_validation_scope: .atena/specs/SPEC-NOTTGARD-DAGRUVE-CHAPTER2-20261017/validation-r1.md
+  shutdown_resource_observation: DIAGNOSED_MENU_AUDIO_HARNESS_TEARDOWN_CLEAN_STANDARD_AND_VARIANT
+  s004_authorization: .atena/generated/dagruve-chapter2-20261017/s004-authorization.json
+
+  extended_validation_evidence: EVID-NOTTGARD-DAGRUVE-VALIDATION-20261017-r1
+  extended_validation: .atena/generated/dagruve-chapter2-20261017/s004-final-validation.json
+  validated_build: .atena/generated/dagruve-chapter2-20261017/s004-build.json
+  playtest_scope: .atena/specs/SPEC-NOTTGARD-DAGRUVE-CHAPTER2-20261017/playtest-r1.md
+  human_playtest: OPENED_AWAITING_OWNER_FEEDBACK
+  playtest_launch: .atena/generated/dagruve-chapter2-20261017/s005-launch.json
+  playtest_launch_evidence: .atena/evidence/EVID-NOTTGARD-DAGRUVE-PLAYTEST-LAUNCH-20261017-r1.md
+
+hq19_hq20_integration_plan:
+  id: PLAN-NOTTGARD-HQ19-HQ20-INTEGRATION-20261017
+  revision: r1
+  mode: per-step
+  status: INTEGRATED_VALIDATED_PUBLICATION_AUTHORIZED
+  current_step: S-I20-003
+  ordered_steps: [S-I20-001, S-I20-002, S-I20-003]
+  completed_steps: 2
+  total_steps: 3
+  authorization: integrar tudo, commit e push (2026-10-17)
+  spec: .atena/specs/SPEC-NOTTGARD-HQ19-HQ20-INTEGRATION-20261017/spec.md
+  admission: .atena/generated/hq-integration-20261017/admission-r1.json
+  automatic_chapter2_triggers: false
+  commit_authorized: true
+  push_authorized: true
+  next_activity: Commit e push autorizados; resultado operacional no recibo de publicação
+
+  validation: .atena/generated/hq-integration-20261017/validation-r1.json
+  evidence: .atena/evidence/EVID-NOTTGARD-HQ19-HQ20-INTEGRATION-20261017-r1.md
+  publication_receipt: .atena/generated/hq-integration-20261017/publication.json
+map_path_revision_proposal:
+  id: PLAN-NOTTGARD-PATH-REVISION-20261017
+  revision: r1
+  classification: PLAN_CHANGE_REQUEST
+  status: DRAFT_AWAITING_DIRECTION_APPROVAL
+  mode: per-step
+  mode_basis: Reutilizado do fluxo de mapas escolhido pelo titular
+  ordered_steps: [S-PATH-001, S-PATH-002, S-PATH-003, S-PATH-004, S-PATH-005]
+  current_step: S-PATH-001
+  completed_steps: 0
+  total_steps: 5
+  checkpoint: CP-PATH-DIRECTION
+  planning_authorized: true
+  implementation_authorized: false
+  generation_authorized: false
+  spec: .atena/specs/SPEC-NOTTGARD-PATH-REVISION-20261017/proposal-r1.md
+  next_activity: Aprovar direcao e detalhar contrato S-PATH-001
+  next_step_approval: PENDING_DIRECTION_AND_S_PATH_001
+  dagruve_feedback: STILL_PENDING_NO_ACCEPTANCE_INFERRED
+  return_policy: Persistir suspensao e cursor atualizado antes de execucao aprovada
+  shared_state_policy: Preservar planos concluidos e HQs concorrentes

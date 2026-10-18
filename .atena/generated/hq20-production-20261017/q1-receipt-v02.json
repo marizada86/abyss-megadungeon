@@ -1,0 +1,62 @@
+{
+  "id": "HQ20-Q1-CANDIDATE-20261017",
+  "version": "v02",
+  "status": "DRAFT_AWAITING_OWNER_APPROVAL",
+  "tool": "built-in image_gen edit",
+  "panel": 1,
+  "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-9d480930-c562-4456-b814-ce9dc2e1708c.png",
+  "local_path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_cosmic_tree_v02.png",
+  "sha256": "df53b3c708ac42e4ed5ebd525d66c9d0f23a4077901b1378be05c8b1b27dbbe4",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "prompt_path": ".atena/generated/hq20-production-20261017/q1-prompt-v02.txt",
+  "edit_target": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_root_arrival_v01.png",
+  "identity_references": [
+    {
+      "id": "leoric",
+      "path": "assets/portraits/leoric.png",
+      "sha256": "b25ae3839e5a7bf3e760d38f7505d82d35ddcbf4f383a16d0cf4b36d787785df",
+      "dimensions": [
+        640,
+        427
+      ],
+      "inspected": true,
+      "authority": "Existing official portrait used in accepted HQ19 continuity",
+      "role": "Q1 and Q3",
+      "limits": "Face, costume and silhouette continuity; no ability activation invented."
+    },
+    {
+      "id": "korrak",
+      "path": "assets/portraits/korrak.png",
+      "sha256": "3963a790e5895971834861ad290e04e74c18a845e73f38bf1caa678ba9632c4e",
+      "dimensions": [
+        640,
+        427
+      ],
+      "inspected": true,
+      "authority": "Existing official portrait used in accepted HQ19 continuity",
+      "role": "Q1 and Q3",
+      "limits": "Face/body/clothing only. Exclude depicted later-acquired axe."
+    }
+  ],
+  "owner_correction": ".atena/vault/canon/DEC-YGGDRASIL-COSMIC-TREE-20261017-r1.md",
+  "review": {
+    "viewed": true,
+    "cosmic_tree_and_star_field_visible": true,
+    "large_branching_tree_in_space": true,
+    "wide_solid_root_and_side_face": true,
+    "two_travelers_supported": true,
+    "korrak_without_axe": true,
+    "leoric_visibly_shorter": true,
+    "quantitative_character_height_ratio_not_certified": true,
+    "no_extra_figures_text_portal_or_named_planes": true,
+    "cosmic_paths": "Visual branching routes, not a canonical map/count of planes",
+    "galaxy_motifs": "Illustrative cosmic setting only, not named planes or new cosmological rules"
+  },
+  "previous_candidate_preserved": true,
+  "runtime_unchanged": true,
+  "owner_acceptance": "PENDING",
+  "other_panels_generated": false
+}

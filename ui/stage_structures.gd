@@ -13,7 +13,7 @@ const SEARCH_RADIUS := 12
 
 static func attach_for_stage(parent: Node2D, stage_key: String, start_ground: Vector2, map_size: Vector2, blockers: Array) -> Node2D:
 	var profile: Dictionary = Data.table("stage_structures").get(stage_key, {})
-	if profile.is_empty():
+	if profile.is_empty() or bool(profile.get("disabled", false)):
 		return null
 	var target_data: Array = profile.get("target", [map_size.x * 0.5, map_size.y * 0.5])
 	var target := Vector2(float(target_data[0]), float(target_data[1]))

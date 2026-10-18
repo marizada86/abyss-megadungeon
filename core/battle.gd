@@ -62,6 +62,10 @@ const BREAKABLE_DEFAULT_TYPES := ["arbusto_quebravel"]
 var rng := RandomNumberGenerator.new()
 var hero: Hero
 var stage_id := ""
+var _qa_isolated := false
+var _qa_encounter_id := ""
+var qa_encounter_error := ""
+var _qa_saved_fog_off := false
 var stage: Dictionary = {}
 var enemies: Array = []
 var projectiles: Array = []
@@ -95,6 +99,7 @@ var boss_spawned := false
 var boss_dead := false
 var boss_repeat := 0
 var stage_cleared := false
+var objective_presence := 0.0
 ## Pausa breve, dirigida por dados, antes de liberar o primeiro chefe.
 var boss_intro_remaining := 0.0
 ## Maré de Névoa pós-chefe. Exposta para a UI e para os testes, sem depender dela.
@@ -210,6 +215,15 @@ func _init(seed_value: int = 1, hero_id: String = "durvall", stage_key: String =
 	rng.seed = seed_value
 	_seed = seed_value
 	styx_rng.seed = seed_value ^ 0x5179
+	_qa_isolated = bool(ctx.get("qa_sandbox", false))
+	var requested_encounter := String(ctx.get("encounter_id", ""))
+	if not requested_encounter.is_empty():
+		if not _qa_isolated or requested_encounter != "dagruve_thalion_r1" or stage_key != "dagruve":
+			qa_encounter_error = "Encounter requires the allowed Dagruve QA context"
+		else:
+			_qa_encounter_id = requested_encounter
+			ctx = {"qa_sandbox": true, "encounter_id": requested_encounter}
+	_qa_saved_fog_off = _fog_rules_off
 	difficulty = float(ctx.get("difficulty", 1.0))
 	_set_abyss_marks(ctx.get("abyss_marks", {}), stage_key)
 	hero = Hero.make(hero_id, ctx.get("meta_mods", {}), ctx.get("bonus_mods", {}))
@@ -224,6 +238,9 @@ func _init(seed_value: int = 1, hero_id: String = "durvall", stage_key: String =
 	hero.weapons.append(Weapon.make(start_w))
 	codex.weapons[start_w] = true
 	load_stage(stage_key)
+	if not qa_encounter_error.is_empty():
+		hero.dead = true
+		state = "dead"
 
 ## SPEC-141: grava as marcas da run e pré-calcula os multiplicadores (1.0 sem marcas, para a run seguir idêntica).
 func _set_abyss_marks(raw: Variant, start_stage: String) -> void:
@@ -280,12 +297,31 @@ func _apply_awake_boss(boss_e: Enemy) -> void:
 		{"t": "ring", "n": int(p.ring_n) + int(p.ring_n_per_level) * lv, "dice": String(p.dice), "speed": float(p.speed)},
 		{"t": "enrage", "speed": float(p.enrage_speed), "bonus": int(p.enrage_bonus_per_level) * lv}]})
 
+static func stage_definition(stage_key: String) -> Dictionary:
+	var released: Dictionary = Data.table("stages")
+	if released.has(stage_key):
+		return released[stage_key]
+	var prototype: Dictionary = Data.table("prototype_stages").get(stage_key, {})
+	return prototype if bool(prototype.get("qa_only", false)) and not prototype.has("base_stage") else {}
+
 func load_stage(stage_key: String) -> void:
 	stage_id = stage_key
-	stage = Data.table("stages")[stage_key].duplicate(true)
+	stage = stage_definition(stage_key).duplicate(true)
+	if is_dagruve_encounter():
+		var overlay: Dictionary = Data.table("prototype_stages").get(_qa_encounter_id, {})
+		if bool(overlay.get("qa_only", false)) and String(overlay.get("base_stage", "")) == "dagruve":
+			stage.merge(overlay.duplicate(true), true)
+		_fog_rules_off = true
+	elif not _qa_encounter_id.is_empty():
+		_fog_rules_off = _qa_saved_fog_off
+	if _qa_isolated and has_reach_objective():
+		stage.qa_only = true
 	stage_rule = Data.table("stage_rules").get(stage_key, {}).duplicate(true)
 	_apply_alive_mark()
 	stage_events = Happenings.select(stage_key, Data.table("stage_events").get(stage_key, []), _seed)
+	if is_dagruve_encounter():
+		stage_rule = {}
+		stage_events = []
 	happenings.reset()
 	kinds.reset_stage(self)
 	enemies.clear()
@@ -303,6 +339,7 @@ func load_stage(stage_key: String) -> void:
 	boss_dead = false
 	boss_repeat = 0
 	stage_cleared = false
+	objective_presence = 0.0
 	boss_intro_remaining = 0.0
 	fog_state = "inactive"
 	fog_elapsed = 0.0
@@ -332,7 +369,21 @@ func load_stage(stage_key: String) -> void:
 	hero.styx_lucidity_loss = 0
 	hero.styx_forget_t = 0.0
 	hero.terrain_id = stage_key
+	if is_dagruve_encounter():
+		map_size = Vector2(60,60)
+		hero.map_size = map_size
 	hero.pos = map_size * 0.5
+	_root_fields.clear()
+	_root_grids.clear()
+	if TerrainLayout.has_roots(stage_key):
+		map_size = Vector2(60,60)
+		hero.map_size = map_size
+		hero.pos = TerrainLayout.root_point(TerrainLayout.root_definition(stage_id).arrival)
+		# Scene props are replaced by ui/run after load_stage; old-stage blockers
+		# must not reject this arrival. Current props are checked in geometry QA.
+		if not TerrainLayout.root_supports(hero.pos, Hero.RADIUS, stage_id):
+			push_error("Root arrival has no supporting surface; stage aborted")
+			hero.dead = true
 	if _has_boon_effect("stage_heal"):
 		_heal_hero(hero.max_hp * 0.15)
 	if not stats.stage_ids.has(stage_key):
@@ -347,7 +398,12 @@ static func xp_need_for(lv: int) -> int:
 func spawn_for_test(id: String, at: Vector2) -> Enemy:
 	return _spawn(id, at, 0.0)
 
+func is_dagruve_encounter() -> bool:
+	return _qa_isolated and _qa_encounter_id == "dagruve_thalion_r1" and stage_id == "dagruve"
+
 func qa_prepare(request: Variant) -> void:
+	if is_dagruve_encounter():
+		return # Fixed reference build; QA shortcuts cannot award the encounter.
 	var qa: Dictionary = request if request is Dictionary else {"target_state": String(request)}
 	_apply_qa_build(qa)
 	var event_id := String(qa.get("event_id", ""))
@@ -355,6 +411,9 @@ func qa_prepare(request: Variant) -> void:
 		_prepare_qa_stage_event(event_id, float(qa.get("prelude_seconds", 5.0)))
 		return
 	var target_state := String(qa.get("target_state", "running"))
+	if has_reach_objective() and target_state in ["boss", "boss_70", "boss_35", "portal"]:
+		events.append({"type": "toast", "text": "Esta fase termina por objetivo; cenário de chefe indisponível."})
+		return
 	if target_state == "boss":
 		time = maxf(0.0, float(stage.duration) - float(qa.get("prelude_seconds", 5.0)))
 		_skip_stage_events_before(time)
@@ -449,6 +508,8 @@ func _skip_stage_events_before(at: float) -> void:
 			_stage_events_done["%s.warning" % event_id] = true
 
 func _spawn_qa_boss() -> void:
+	if String(stage.get("boss", "")).is_empty():
+		return
 	boss = spawn_for_test(String(stage.boss), hero.pos + Vector2(2, 0))
 	boss_spawned = true
 	events.append({"type": "boss", "enemy": boss})
@@ -544,11 +605,14 @@ func use_active(dir: Vector2 = Vector2.ZERO) -> bool:
 			var target_pos := hero.pos + move_dir * float(p.distance)
 			if float(p.get("decoy_life", 0.0)) > 0.0:
 				_spawn_decoy(p)
-			for i in range(10, 0, -1):
-				var candidate := hero.pos.lerp(target_pos, float(i) / 10.0)
-				if hero.is_free(candidate):
-					hero.pos = candidate
-					break
+			if TerrainLayout.has_roots(stage_id):
+				hero.pos = hero.sweep(hero.pos, target_pos - hero.pos, Hero.RADIUS, false, true)
+			else:
+				for i in range(10, 0, -1):
+					var candidate := hero.pos.lerp(target_pos, float(i) / 10.0)
+					if hero.is_free(candidate):
+						hero.pos = candidate
+						break
 			for e in enemies:
 				if not e.dead and e.pos.distance_to(hero.pos) <= radius + e.radius:
 					_apply_effects(e, {"weaken": p.weaken})
@@ -669,6 +733,65 @@ func step(screen_dir: Vector2, dt: float) -> void:
 	_update_interactions(dt)
 	_update_ecos()
 	_director(dt)
+	_update_stage_objective(dt)
+
+func has_reach_objective() -> bool:
+	return String(stage.get("completion", {}).get("kind", "boss")) == "timed_reach"
+
+func objective_target() -> Vector2:
+	var target: Array = stage.get("completion", {}).get("target", [30, 15])
+	return Vector2(float(target[0]), float(target[1]))
+
+func objective_status() -> Dictionary:
+	if not has_reach_objective():
+		return {}
+	var definition: Dictionary = stage.completion
+	return {"text": String(definition.text), "remaining": maxf(0.0, float(stage.duration) - time),
+		"presence": objective_presence, "hold": float(definition.hold_seconds), "completed": stage_cleared}
+
+func _update_stage_objective(dt: float) -> void:
+	if not has_reach_objective() or stage_cleared or state != "running" or hero.dead:
+		return
+	var definition: Dictionary = stage.completion
+	if time < float(stage.duration) or hero.pos.distance_to(objective_target()) > float(definition.radius):
+		objective_presence = 0.0
+		return
+	# Only count the part of this simulation step after the timer threshold.
+	objective_presence += minf(dt, maxf(0.0, time - float(stage.duration)))
+	if objective_presence + 0.000001 >= float(definition.hold_seconds):
+		objective_presence = float(definition.hold_seconds)
+		complete_stage("objective")
+
+func complete_stage(reason: String) -> bool:
+	if stage_cleared or state in ["dead", "won"] or hero.dead:
+		return false
+	if reason == "objective":
+		if state != "running" or not has_reach_objective() or time < float(stage.duration) or objective_presence < float(stage.completion.hold_seconds) or hero.pos.distance_to(objective_target()) > float(stage.completion.radius):
+			return false
+		# Clear without _kill: no kills, XP, drops, boss loot or kill callbacks.
+		enemies.clear()
+		projectiles.clear()
+		zones.clear()
+		decoys.clear()
+		_shielders.clear()
+		_grid.clear()
+		happenings.reset()
+		interactions.clear()
+		_key_wave.clear()
+		events.append({"type": "objective_completed", "stage": stage_id})
+	elif reason != "boss" or has_reach_objective() or not boss_dead:
+		return false
+	stage_cleared = true
+	stats.stages_cleared += 1
+	if not stats.cleared_ids.has(stage_id):
+		stats.cleared_ids.append(stage_id)
+	if reason == "objective":
+		if bool(stage.get("qa_only", false)) or String(stage.get("next", "")) == "":
+			state = "won"
+		else:
+			_add_interaction("portal", objective_target() + Vector2(0, 2))
+			events.append({"type": "toast", "text": "Retornar a Nottgard (E/oeste) ou extrair (X/norte)."})
+	return true
 
 func _build_grid() -> void:
 	_grid.clear()
@@ -880,7 +1003,9 @@ func _apply_effects(e: Enemy, p: Dictionary) -> void:
 		e.burn_dps = maxf(e.burn_dps, float(p.burn) * 1.5)
 	if float(p.get("knock", 0.0)) > 0.0 and not e.is_boss():
 		var away: Vector2 = (e.pos - hero.pos).normalized() * float(p.knock)
-		if hero.can_stand(e.pos + away, e.radius):
+		if TerrainLayout.has_roots(stage_id):
+			e.pos = hero.sweep(e.pos, away, e.radius, e.mobility == "air")
+		elif hero.can_stand(e.pos + away, e.radius):
 			e.pos += away
 
 # ------------------------------------------------------------------ projéteis e zonas
@@ -1055,7 +1180,10 @@ func _charmed_step(e: Enemy, dt: float) -> void:
 		return
 	if best > e.radius + target.radius + 0.7:
 		var np := e.pos + (target.pos - e.pos).normalized() * e.speed * dt
-		if hero.can_stand(np, e.radius):
+		if TerrainLayout.has_roots(stage_id):
+			var direction := _root_direction(e.pos, target.pos, e.radius) if e.mobility != "air" else (target.pos - e.pos).normalized()
+			_enemy_move(e, direction * e.speed * dt)
+		elif hero.can_stand(np, e.radius):
 			e.pos = np
 	elif e.atk_cd <= 0.0:
 		e.atk_cd = ENEMY_ATK_CD
@@ -1145,7 +1273,9 @@ func _enemy_step(e: Enemy, dt: float) -> void:
 	if e.charge_t > 0.0:
 		e.charge_t -= dt
 		var np: Vector2 = e.pos + e.charge_dir * float(e.charge_ab.speed) * dt
-		if hero.can_stand(np, e.radius):
+		if TerrainLayout.has_roots(stage_id):
+			e.pos = hero.sweep(e.pos, np - e.pos, e.radius, e.mobility == "air")
+		elif hero.can_stand(np, e.radius):
 			e.pos = np
 		if dist <= e.radius + HERO_HIT_R + 0.2 and e.atk_cd <= 0.0:
 			e.atk_cd = 1.0
@@ -1172,6 +1302,8 @@ func _enemy_step(e: Enemy, dt: float) -> void:
 		elif dist > ENEMY_ATK_RANGE * 0.6:
 			mv = _chase_dir(e, dir, dist)
 		if mv != Vector2.ZERO:
+			if TerrainLayout.has_roots(stage_id) and e.mobility != "air" and mv.dot(to) > 0.0:
+				mv = _root_direction(e.pos, hero.pos if lure.is_empty() else Vector2(lure.pos), e.radius)
 			_enemy_move(e, mv * spd * dt)
 	var k := Vector2i(int(floor(e.pos.x)), int(floor(e.pos.y)))
 	for dx in range(-1, 2):
@@ -1183,7 +1315,11 @@ func _enemy_step(e: Enemy, dt: float) -> void:
 					var l := off.length()
 					var min_d: float = e.radius + o.radius
 					if l < min_d and l > 0.001:
-						e.pos += off / l * (min_d - l) * 0.35
+						var separation := off / l * (min_d - l) * 0.35
+						if TerrainLayout.has_roots(stage_id):
+							e.pos = hero.sweep(e.pos, separation, e.radius, e.mobility == "air")
+						else:
+							e.pos += separation
 	if e.has_flag("inerte"):
 		return
 	var reach := 1.4 if e.speed == 0.0 else ENEMY_ATK_RANGE + e.radius * 0.3
@@ -1200,7 +1336,8 @@ func _goal_step(e: Enemy, dt: float) -> void:
 	if to.length() <= 0.9:
 		happenings.on_goal_reached(self, e)
 		return
-	_enemy_move(e, to.normalized() * e.speed * (0.5 if e.slow_t > 0.0 else 1.0) * dt)
+	var direction := _root_direction(e.pos, e.goal, e.radius) if TerrainLayout.has_roots(stage_id) and e.mobility != "air" else to.normalized()
+	_enemy_move(e, direction * e.speed * (0.5 if e.slow_t > 0.0 else 1.0) * dt)
 
 # ------------------------------------------------------------------ cópia-isca (MEC-029)
 
@@ -1252,7 +1389,128 @@ func _detonate_decoy(d: Dictionary) -> void:
 
 ## Move o inimigo deslizando pelos eixos; se quase não saiu do lugar (obstáculo redondo no caminho),
 ## contorna girando o passo e mantém o lado escolhido até andar livre (BUG-012).
+var _root_grids: Dictionary = {}
+var _root_fields: Dictionary = {}
+const ROOT_NEIGHBORS := [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.UP, Vector2i.DOWN]
+
+func _root_grid(radius: float) -> Dictionary:
+	var bucket := int(ceil(radius * 10.0))
+	var key := "%s|%d|%d|%s" % [stage_id, bucket, hero.blockers.hash(), map_size]
+	if _root_grids.has(key):
+		return _root_grids[key]
+	var cells: Dictionary = {}
+	# Circumscribed half-cell clearance makes every adjacent-cell segment safe,
+	# not just its endpoints. Four neighbors cannot cut a diagonal across a void.
+	for y in int(map_size.y):
+		for x in int(map_size.x):
+			if hero.can_stand(Vector2(x + 0.5, y + 0.5), float(bucket) / 10.0 + 0.71):
+				cells[Vector2i(x, y)] = true
+	_root_grids[key] = cells
+	return cells
+
+func _root_cell(p: Vector2, cells: Dictionary) -> Vector2i:
+	var cell := Vector2i(floor(p.x), floor(p.y))
+	if cells.has(cell):
+		return cell
+	var best := Vector2i(-1, -1)
+	var dist := INF
+	# Valid bodies at the edge are always close to a safe grid cell. Avoid a
+	# whole-map scan for each enemy every frame when hugging the root border.
+	for y in range(-2,3):
+		for x in range(-2,3):
+			var candidate := cell + Vector2i(x,y)
+			if not cells.has(candidate):
+				continue
+			var distance := (Vector2(candidate) + Vector2(0.5,0.5)).distance_squared_to(p)
+			if distance < dist:
+				best = candidate
+				dist = distance
+	if best.x >= 0:
+		return best
+	for candidate: Vector2i in cells:
+		var distance := (Vector2(candidate) + Vector2(0.5, 0.5)).distance_squared_to(p)
+		if distance < dist:
+			best = candidate
+			dist = distance
+	return best
+
+func _root_field(target: Vector2, radius: float) -> Dictionary:
+	var bucket := int(ceil(radius * 10.0))
+	var cells := _root_grid(radius)
+	var goal := _root_cell(target, cells)
+	var key := "%s|%d|%d|%s|%s" % [stage_id, bucket, hero.blockers.hash(), map_size, goal]
+	var cached: Dictionary = _root_fields.get(bucket, {})
+	if cached.get("key", "") == key:
+		return cached.field
+	var distances: Dictionary = {}
+	if not cells.has(goal):
+		return distances
+	var queue: Array[Vector2i] = [goal]
+	distances[goal] = 0
+	var cursor := 0
+	while cursor < queue.size():
+		var current := queue[cursor]
+		cursor += 1
+		for offset: Vector2i in ROOT_NEIGHBORS:
+			var next := current + offset
+			if cells.has(next) and not distances.has(next):
+				distances[next] = int(distances[current]) + 1
+				queue.append(next)
+	# Keep only the most recent field for this footprint. Bound cache growth.
+	_root_fields[bucket] = {"key":key, "field":distances}
+	return distances
+
+func _root_direction(from: Vector2, target: Vector2, radius: float) -> Vector2:
+	var delta := target - from
+	if delta.length() <= 2.0 and hero.sweep(from, delta, radius).distance_to(target) < 0.001:
+		return delta.normalized() * minf(1.0, delta.length())
+	var bucket := int(ceil(radius * 10.0))
+	var cells := _root_grid(radius)
+	var goal := _root_cell(target, cells)
+	var key := "%s|%d|%d|%s|%s" % [stage_id, bucket, hero.blockers.hash(), map_size, goal]
+	var cached: Dictionary = _root_fields.get(bucket, {})
+	var field: Dictionary = cached.field if cached.get("key", "") == key else _root_field(target, radius)
+	var cell := _root_cell(from, cells)
+	if not field.has(cell):
+		return Vector2.ZERO
+	var next := cell
+	var best := int(field[cell])
+	for offset: Vector2i in ROOT_NEIGHBORS:
+		var neighbor := cell + offset
+		if field.has(neighbor) and int(field[neighbor]) < best:
+			next = neighbor
+			best = int(field[neighbor])
+	var waypoint := Vector2(next) + Vector2(0.5, 0.5)
+	if best == 0 and hero.sweep(from, delta, radius).distance_to(target) < 0.001:
+		waypoint = target
+	return (waypoint - from).normalized() * minf(1.0, from.distance_to(waypoint))
+
+func _root_spawn_valid(at: Vector2, radius: float) -> bool:
+	var definition := TerrainLayout.root_definition(stage_id)
+	var arrival := TerrainLayout.root_point(definition.get("arrival", [30,45]))
+	if not hero.can_stand(at, radius) or at.distance_to(hero.pos) < 8.0 or at.distance_to(arrival) < float(definition.get("arrival_clearance", 6.4)):
+		return false
+	return _root_field(hero.pos, radius).has(_root_cell(at, _root_grid(radius)))
+
+func _root_resource_spot(at: Vector2, radius: float) -> Vector2:
+	if hero.can_stand(at, radius):
+		return at
+	var nearest := TerrainLayout.root_nearest(at, radius, stage_id)
+	if hero.can_stand(nearest, radius):
+		return nearest
+	var best := Vector2.INF
+	var distance := INF
+	for cell: Vector2i in _root_grid(radius):
+		var candidate := Vector2(cell) + Vector2(0.5, 0.5)
+		if candidate.distance_squared_to(at) < distance:
+			best = candidate
+			distance = candidate.distance_squared_to(at)
+	return best
+
 func _enemy_move(e: Enemy, step_v: Vector2) -> void:
+	if TerrainLayout.has_roots(stage_id):
+		e.pos = hero.sweep(e.pos, step_v, e.radius, e.mobility == "air")
+		return
 	var before := e.pos
 	var nx := Vector2(e.pos.x + step_v.x, e.pos.y)
 	if hero.can_stand(nx, e.radius):
@@ -1552,6 +1810,8 @@ func _breakable_loot(at: Vector2) -> void:
 ## MEC-035: destrutíveis de posição fixa da fase (data/scenery.json). Não usa a RNG da batalha.
 ## Chamado depois que os bloqueios do cenário são conhecidos (ui/run.gd); sem ele, bot e testes não mudam.
 func place_scenery() -> int:
+	if is_dagruve_encounter():
+		return 0 # Props are visual/colliding; legacy traps, wells and secrets stay off.
 	var placed := 0
 	var spec: Dictionary = Data.table("scenery").get(stage_id, {})
 	for entry in spec.get("destrutiveis", []):
@@ -1714,6 +1974,8 @@ func wipe_map() -> int:
 	return n
 
 func _on_boss_dead(e: Enemy) -> void:
+	if (boss_dead and not bool(stage.get("endless", false))) or has_reach_objective():
+		return
 	run_record.checkpoint(self, "boss_dead", {"id": e.id})
 	boss_dead = true
 	stats.bosses += 1
@@ -1736,9 +1998,7 @@ func _on_boss_dead(e: Enemy) -> void:
 		boss_spawned = false
 		time = 0.0
 		return
-	stage_cleared = true
-	stats.stages_cleared += 1
-	stats.cleared_ids.append(stage_id)
+	complete_stage("boss")
 	var nxt: String = stage.get("next", "")
 	if nxt != "":
 		_add_interaction("portal", e.pos + Vector2(0, 2.0))
@@ -1851,10 +2111,20 @@ func fog_damage_per_second() -> float:
 	return lerpf(float(fog_config.get("start_dps_pct", 0.01)), float(fog_config.get("max_dps_pct", 0.03)), ratio)
 
 func _drop(kind: String, at: Vector2, value: float, src: String = "") -> void:
-	if pickups.size() >= MAX_PICKUPS and kind != "potion":
+	if pickups.size() >= MAX_PICKUPS and kind != "potion" and not TerrainLayout.has_roots(stage_id):
 		_collect(kind, value, src)
 		return
-	pickups.append({"kind": kind, "pos": at + Vector2(rng.randf_range(-0.3, 0.3), rng.randf_range(-0.3, 0.3)), "value": value, "magnet": false, "src": src})
+	var drop_at := at + Vector2(rng.randf_range(-0.3, 0.3), rng.randf_range(-0.3, 0.3))
+	if TerrainLayout.has_roots(stage_id):
+		drop_at = _root_resource_spot(drop_at, 0.15)
+		if not drop_at.is_finite():
+			return
+		if pickups.size() >= MAX_PICKUPS:
+			for existing in pickups:
+				if existing.kind == kind and String(existing.get("src", "")) == src:
+					existing.value += value
+					return # Preserve rewards on the network without automatic payment.
+	pickups.append({"kind": kind, "pos": drop_at, "value": value, "magnet": false, "src": src})
 
 func _collect(kind: String, value: float, src: String = "") -> void:
 	events.append({"type": "pickup", "kind": kind, "pos": hero.pos})
@@ -1929,7 +2199,11 @@ func _update_pickups(dt: float) -> void:
 			continue
 		if d <= rng_pick or p.magnet:
 			p.magnet = true
-			p.pos += (hero.pos - p.pos).normalized() * (5.0 + rng_pick) * dt
+			if TerrainLayout.has_roots(stage_id):
+				var direction := _root_direction(p.pos, hero.pos, 0.15)
+				p.pos = hero.sweep(p.pos, direction * minf(d, (5.0 + rng_pick) * dt), 0.15)
+			else:
+				p.pos += (hero.pos - p.pos).normalized() * (5.0 + rng_pick) * dt
 		keep.append(p)
 	pickups = keep
 
@@ -2071,7 +2345,7 @@ func _reach_static() -> void:
 	for cy in d.y:
 		for cx in d.x:
 			var p := (Vector2(cx, cy) + Vector2(0.5, 0.5)) * REACH_CELL
-			if p.x < r or p.y < r or p.x > map_size.x - r or p.y > map_size.y - r or TerrainLayout.is_blocked(hero.terrain_id, p):
+			if not hero.can_stand(p, r):
 				grid[cy * d.x + cx] = 2
 	for b in hero.blockers:
 		var reach_r: float = b.z + r
@@ -2555,7 +2829,7 @@ func enter_next_stage() -> void:
 	var recovery := 0.4 * maxf(0.35, 1.0 - float(descent_depth) * 0.15)
 	_heal_hero(hero.max_hp * recovery)
 	load_stage(nxt)
-	events.append({"type": "toast", "text": "Você desce: %s — recompensa ×%.2f" % [Data.table("stages")[nxt].name, reward_multiplier()]})
+	events.append({"type": "toast", "text": "Continuar: %s — recompensa ×%.2f" % [Data.table("stages")[nxt].name, reward_multiplier()]})
 
 func extract() -> void:
 	if stage_cleared or final_victory:
@@ -2886,6 +3160,34 @@ func reroll() -> bool:
 # ------------------------------------------------------------------ diretor e ambiente
 
 func _ring_pos() -> Vector2:
+	if is_dagruve_encounter():
+		var phase := rng.randf()*TAU
+		for i in 64:
+			var candidate := hero.pos+Vector2.from_angle(phase+float(i)*TAU/64.0)*9.0
+			if _dagruve_spawn_valid(candidate,0.4):
+				return candidate
+		return Vector2.INF
+	if TerrainLayout.has_roots(stage_id):
+		var phase := rng.randf() * TAU
+		for i in 32:
+			var candidate := hero.pos + Vector2.from_angle(phase + float(i) * TAU / 32.0) * 9.0
+			if _root_spawn_valid(candidate, 0.4):
+				return candidate
+		var grid := _root_grid(0.4)
+		for cell: Vector2i in grid:
+			var candidate := Vector2(cell) + Vector2(0.5, 0.5)
+			if candidate.distance_to(hero.pos) <= 11.0 and _root_spawn_valid(candidate, 0.4):
+				return candidate
+		return Vector2.INF # No admission; no unvalidated fallback or debt spike.
+	if has_reach_objective():
+		# Deterministic bounded fallback: never spawn in the arrival clearing,
+		# outside the map, or inside scenery when the hero hugs an edge.
+		var phase := rng.randf() * TAU
+		for i in 32:
+			var angle := phase + float(i) * TAU / 32.0
+			var candidate := (hero.pos + Vector2.from_angle(angle) * 9.0).clamp(Vector2(1, 1), map_size - Vector2(1, 1))
+			if candidate.distance_to(hero.pos) >= 8.0 and candidate.distance_to(Vector2(30, 45)) >= 6.4 and hero.can_stand(candidate, 0.4):
+				return candidate
 	for i in 8:
 		var ang := rng.randf() * TAU
 		var p := hero.pos + Vector2(cos(ang), sin(ang)) * rng.randf_range(8.0, 11.0)
@@ -2893,10 +3195,30 @@ func _ring_pos() -> Vector2:
 			return p
 	return hero.pos + Vector2(8, 0)
 
+func _dagruve_spawn_valid(at: Vector2, radius: float) -> bool:
+	return at.is_finite() and at.x>=1.0 and at.y>=1.0 and at.x<=map_size.x-1.0 and at.y<=map_size.y-1.0 and at.distance_to(Vector2(30,30))>=5.0+radius and at.distance_to(objective_target())>=3.0+radius and at.distance_to(hero.pos)>=5.0+radius and hero.can_stand(at,radius)
+
 func _spawn(id: String, at: Vector2, minute_override: float = -1.0) -> Enemy:
 	var mn := minute() if minute_override < 0.0 else minute_override
 	var hp_mark := 1.0 if Data.table("enemies")[id].get("flags", []).has("quebravel") else _mk_hp
 	var e := Enemy.make(id, at, mn, float(stage.hp_mult) * difficulty * hp_mark, tier())
+	if is_dagruve_encounter() and (not id in ["cultista_adaga","cultista_arqueiro"] or not _dagruve_spawn_valid(at,e.radius)):
+		e.dead = true
+		e.hp = 0.0
+		return e
+	# Optional QA prototype policy; default false preserves every released map.
+	if bool(stage.get("prototype_strict_cap", false)) and not e.has_flag("quebravel") and (stage_cleared or time >= float(stage.duration) or _combat_count() >= int(stage.cap)):
+		e.dead = true
+		e.hp = 0.0
+		return e
+	if TerrainLayout.has_roots(stage_id):
+		e.mobility = "air" if TerrainLayout.root_definition(stage_id).air_ids.has(id) else "ground"
+		if not at.is_finite() or not hero.can_stand(at, e.radius, e.mobility == "air"):
+			# Return an inert, unregistered sentinel for legacy callers that configure
+			# the returned object. It is never spawned, killed, rewarded or persisted.
+			e.dead = true
+			e.hp = 0.0
+			return e
 	e.pos = e.pos.clamp(Vector2(0.6, 0.6), map_size - Vector2(0.6, 0.6))
 	if happenings.enemy_speed_mult != 1.0 and not e.is_boss():
 		e.speed *= happenings.enemy_speed_mult
@@ -2934,6 +3256,8 @@ func _chase_dir(e: Enemy, dir: Vector2, dist: float) -> Vector2:
 
 func _spawn_elite(id: String, at: Vector2) -> Enemy:
 	var e := _spawn(id, at)
+	if e.dead:
+		return e
 	if _stage_order() < AFFIX_FIRST_AFFIXED_STAGE:
 		_apply_affix(e, AFFIXES[rng.randi() % AFFIXES.size()])
 	else:
@@ -3047,7 +3371,7 @@ func horde_active() -> bool:
 	return _horde_state == 2
 
 func _horde_step(dt: float) -> void:
-	if _stage_order() < HORDE_FIRST_STAGE or bool(stage.get("endless", false)) or boss_spawned or _horde_state >= 3:
+	if has_reach_objective() or _stage_order() < HORDE_FIRST_STAGE or bool(stage.get("endless", false)) or boss_spawned or _horde_state >= 3:
 		return
 	var start := float(stage.duration) * HORDE_AT
 	if _horde_state == 0 and time >= start - HORDE_WARNING:
@@ -3080,10 +3404,14 @@ func _horde_step(dt: float) -> void:
 			_spawn(String(w.id), _ring_pos())
 
 func _director(dt: float) -> void:
+	if has_reach_objective() and (stage_cleared or time >= float(stage.duration)):
+		return
 	_horde_step(dt)
-	var opening := opening_factor()
+	var opening := 0.0 if is_dagruve_encounter() else opening_factor()
 	var o: Dictionary = Data.table("difficulty").get("opening", {})
 	var cap := int(stage.cap) + int(minute()) * 3 + int(round(float(o.get("cap_bonus", 0)) * opening))
+	if has_reach_objective():
+		cap = int(stage.cap)
 	if _mk_density != 1.0:
 		cap = int(float(cap) * _mk_density)
 	if _combat_count() < cap:
@@ -3091,8 +3419,12 @@ func _director(dt: float) -> void:
 			var w: Dictionary = stage.waves[wi]
 			if time < float(w.t0) or time > float(w.t1):
 				continue
+			if is_dagruve_encounter() and time >= float(w.t1):
+				continue
 			_acc[wi] = float(_acc.get(wi, 0.0)) + dt
 			var every := float(w.every) * SPAWN_SLOW * lerpf(1.0, float(o.get("every_mult", 1.0)), opening)
+			if is_dagruve_encounter():
+				every = float(w.every)
 			every /= _mk_density
 			if _acc[wi] >= every:
 				_acc[wi] = 0.0
@@ -3104,23 +3436,23 @@ func _director(dt: float) -> void:
 						_spawn(String(w.id), _ring_pos())
 	for i in stage.elites.size():
 		var el: Dictionary = stage.elites[i]
-		if not _elites_done.has(i) and time >= float(el.at):
+		if not _elites_done.has(i) and time >= float(el.at) and (not has_reach_objective() or _combat_count() < cap):
 			_elites_done[i] = true
 			_spawn_elite(String(el.id), _ring_pos())
-	if _mk_elites > 0 and not boss_spawned and not stage.elites.is_empty() and _mk_elites >= int(AbyssMarks.def("elites").extra_elite_level):
+	if _mk_elites > 0 and not boss_spawned and not stage.elites.is_empty() and _mk_elites >= int(AbyssMarks.def("elites").extra_elite_level) and (not has_reach_objective() or _combat_count() < cap):
 		_awake_elite_t += dt
 		if _awake_elite_t >= float(AbyssMarks.def("elites").extra_elite_every):
 			_awake_elite_t = 0.0
 			var awake_pick: Dictionary = stage.elites[abyss_rng.randi() % stage.elites.size()]
 			_spawn_elite(String(awake_pick.id), _ring_pos())
-	if descent_depth > 0 and not stage.elites.is_empty():
+	if descent_depth > 0 and not stage.elites.is_empty() and (not has_reach_objective() or _combat_count() < cap):
 		var pressure_mark := int(time / maxf(70.0, 130.0 - float(descent_depth) * 10.0))
 		var pressure_key := "pressure_%d" % pressure_mark
 		if pressure_mark > 0 and not _elites_done.has(pressure_key):
 			_elites_done[pressure_key] = true
 			var pressure_elite: Dictionary = stage.elites[rng.randi() % stage.elites.size()]
 			_spawn_elite(String(pressure_elite.id), _ring_pos())
-	if not boss_spawned and time >= float(stage.duration):
+	if not has_reach_objective() and not boss_spawned and time >= float(stage.duration):
 		boss_spawned = true
 		var scale_extra := 1.0 + 0.5 * boss_repeat
 		boss = _spawn(happenings.boss_id(self), _ring_pos(), 0.0)
@@ -3166,6 +3498,8 @@ func _breakable_interval() -> float:
 	return base * clampf(1.0 - float(cfg.get("charisma_step", 0.0)) * float(hero.attr_mod("carisma")), 0.6, 1.0)
 
 func _spawn_random_breakable() -> void:
+	if bool(stage.get("prototype_no_breakables", false)):
+		return
 	var types: Array = BREAKABLE_TYPES_BY_STAGE.get(stage_id, BREAKABLE_DEFAULT_TYPES)
 	if types.is_empty():
 		return
@@ -3174,6 +3508,8 @@ func _spawn_random_breakable() -> void:
 	_spawn(id, hero.pos + Vector2(cos(ang), sin(ang)) * rng.randf_range(6.0, 11.0))
 
 func _spawn_random_interaction() -> void:
+	if bool(stage.get("prototype_no_interactions", false)):
+		return
 	var alive_n := interactions.filter(func(i): return not i.used and i.kind != "portal" and not bool(i.get("fixed", false))).size()
 	if alive_n >= int(Data.table("difficulty").get("interactions", {}).get("max_alive", 4)):
 		return

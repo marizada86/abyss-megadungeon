@@ -1,0 +1,35 @@
+{
+  "status": "CANDIDATE_V01_AWAITING_OWNER_APPROVAL",
+  "step": "S-P20-Q02",
+  "authorization": "continue (2026-10-17), após escolha de produção HQ20 neste chat",
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png",
+      "sha256": "527e6f1b1f2dd2df5c44f78e6368aba2fe900a660fb706edb06ee0db3a8831bd"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v01.png",
+      "sha256": "312ab4ff2575f484e68474aae73cdcea2e2f5f2702748f7283a7952966db2fc0"
+    }
+  ],
+  "tool_prompt": "q2-prompt-v01.txt",
+  "spec": ".atena/specs/SPEC-NOTTGARD-HQ20-COMPLETION-20261017/q2-r1.md",
+  "runtime_admitted": false,
+  "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q2_marciela_meeting_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-d0e38f9e-1668-4929-8b52-be33e29ff38a.png",
+  "sha256": "ae4fac7df57dc62bf9a50e0aa258f1f8e947ae27d122b02215b8f4ec3254d673",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "owner_approval": "PENDING_V01",
+  "inspection": {
+    "three_figures": true,
+    "peaceful_meeting": true,
+    "marciela_indirect_back_view": true,
+    "wood_strength_cosmic_continuity": true,
+    "korrak_no_axe": true,
+    "no_portal_or_text": true
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "CONTRACT-NOTTGARD-CHAPTER1-FLOW-20261016",
+  "revision": "r1",
+  "status": "DRAFT_AWAITING_DESIGN_ACCEPTANCE",
+  "implementation_authorized": false,
+  "platform": "windows-x86_64",
+  "gameplay_values": "initial_playtest_values",
+  "spec": "chapter1-maps-transitions-r1.md",
+  "campaign_stages": ["docas", "reino_abissal", "domwieck"],
+  "main_hq_order": ["hqn_01", "hqn_02", "hqn_15", "hqn_16", "hqn_17", "hqn_18", "hqn_03"],
+  "complementary_hqs": ["hqn_14"],
+  "removed_from_active_selection": ["hqn_11", "hqn_12", "hqn_13"],
+  "stage_definitions": {
+    "docas": {
+      "existing": true,
+      "campaign_order": 0,
+      "unlock": "start",
+      "next": "reino_abissal",
+      "duration": 300,
+      "completion": {"kind": "boss", "boss_id": "guardiao_verdadeiro"},
+      "balance": "preserve_current"
+    },
+    "reino_abissal": {
+      "existing": false,
+      "campaign_order": 1,
+      "unlock": "docas",
+      "next": "domwieck",
+      "duration": 360,
+      "map_size": [60, 60],
+      "tier": 2,
+      "cap": 50,
+      "hp_mult": 1.9,
+      "dmg_mult": 1.8,
+      "coin_mult": 1.45,
+      "boss": "",
+      "completion": {"kind": "timed_reach", "hold_seconds": 3, "radius": 2, "target_normalized": [0.5, 0.25]},
+      "spawn_normalized": [0.5, 0.75],
+      "postboss_fog": false,
+      "stop_new_waves_at_duration": true,
+      "waves": [
+        {"t0": 0, "t1": 180, "id": "cultista_adaga", "every": 4, "n": 2, "max": 12},
+        {"t0": 30, "t1": 240, "id": "notivago", "every": 4, "n": 2, "max": 12},
+        {"t0": 90, "t1": 360, "id": "cultista_arqueiro", "every": 6, "n": 1, "max": 6},
+        {"t0": 150, "t1": 360, "id": "cultista_cajado", "every": 8, "n": 1, "max": 5},
+        {"t0": 210, "t1": 360, "id": "criatura_corrompida", "every": 8, "n": 1, "max": 6}
+      ],
+      "elites": [{"at": 120, "id": "criatura_corrompida"}, {"at": 240, "id": "cultista_cajado"}]
+    },
+    "domwieck": {
+      "existing": false,
+      "campaign_order": 2,
+      "unlock": "reino_abissal",
+      "next": "",
+      "duration": 420,
+      "map_size": [60, 60],
+      "tier": 3,
+      "cap": 54,
+      "hp_mult": 2.2,
+      "dmg_mult": 2,
+      "coin_mult": 1.6,
+      "boss": "",
+      "completion": {"kind": "timed_reach", "hold_seconds": 3, "radius": 2, "target_normalized": [0.5, 0.25]},
+      "spawn_normalized": [0.5, 0.75],
+      "postboss_fog": false,
+      "stop_new_waves_at_duration": true,
+      "waves": [
+        {"t0": 0, "t1": 210, "id": "cultista_adaga", "every": 3.5, "n": 2, "max": 14},
+        {"t0": 30, "t1": 300, "id": "notivago", "every": 4.5, "n": 3, "max": 15},
+        {"t0": 90, "t1": 420, "id": "cultista_arqueiro", "every": 6, "n": 1, "max": 6},
+        {"t0": 150, "t1": 420, "id": "criatura_corrompida", "every": 7, "n": 1, "max": 7},
+        {"t0": 210, "t1": 420, "id": "cultista_cajado", "every": 8, "n": 1, "max": 5}
+      ],
+      "elites": [{"at": 140, "id": "criatura_corrompida"}, {"at": 280, "id": "cultista_cajado"}]
+    }
+  },
+  "events": [
+    {"id": "T-C1-001", "event": "campaign_first_start", "stage": "docas", "queue": ["hqn_01"]},
+    {"id": "T-C1-002", "event": "stage_cleared", "stage": "docas", "queue": ["hqn_02", "hqn_15", "hqn_16", "hqn_17"], "unlock_diary": ["hqn_14"], "unlock_stage": "reino_abissal"},
+    {"id": "T-C1-004", "event": "stage_cleared", "stage": "reino_abissal", "queue": ["hqn_18"], "unlock_stage": "domwieck"},
+    {"id": "T-C1-006", "event": "stage_cleared", "stage": "domwieck", "queue": ["hqn_03"]},
+    {"id": "T-C1-007", "event": "chapter_final_hq_resolved", "stage": "domwieck", "milestone": "chapter1_closed", "destination": "result_then_menu"}
+  ],
+  "save_extension": {
+    "field": "campaign_progress",
+    "version": 1,
+    "fields": ["version", "milestones", "pending_hqs", "presentation_done", "legacy_stage_access", "legacy_hq_access", "next_stage"],
+    "allowed_milestones": ["docas_cleared", "reino_abissal_cleared", "domwieck_cleared", "chapter1_closed"],
+    "presentation_statuses": ["read", "dismissed", "legacy"],
+    "queue_entry_fields": ["id", "panel_index"],
+    "preserve_unknown_fields": true,
+    "full_run_resume": false,
+    "migration_rewards": 0,
+    "migration_new_stage_clears": 0
+  },
+  "preserved_ids": ["dagruve", "docas", "shedaklah", "molor", "durao", "feng_tu", "shendilavri", "goranthis", "pilares"],
+  "deferred": ["chapter2_review_and_implementation", "web_port", "visual_readiness_and_art"],
+  "constraints": {
+    "adam_killed": false,
+    "new_enemy_definitions": false,
+    "new_dependencies": false,
+    "real_save_access": false,
+    "objective_completion_is_boss_kill": false,
+    "removed_hq_assets_deleted": false,
+    "change_existing_achievements": false
+  }
+}

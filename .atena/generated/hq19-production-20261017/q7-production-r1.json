@@ -1,0 +1,47 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P19-Q07",
+  "authorization": "autorizado (2026-10-17), uma candidata Q7 conforme brief r1",
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq03-production-20261017/reference-audit/kayron-white-front.png",
+      "sha256": "c4b24ae5c596150fad0ccf32e1137b90b121d739faf2a85035320ee9a1ad084e"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/brook.png",
+      "sha256": "795dd8b283aa15d20e1de302fc8772dbfa31cc89d8ac469e34c11cbfc6061dfd"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq19-production-20261017/candidates/hq_n19_q2_bromnor_legacy_v01.png",
+      "sha256": "1ce28d932623d4999e3cb585b4a165710d2314c45e21158678e8b846b6603a22"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq19-production-20261017/candidates/hq_n19_q5_thalion_command_v01.png",
+      "sha256": "d3617c33de6a31a4dc923805c1bc4442eae1d9724be9dfc2e36340214d9b6115"
+    }
+  ],
+  "tool_prompt": "q7-tool-prompt-v01.txt",
+  "screenplay": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+  "runtime_authorized": false,
+  "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q7_separate_escapes_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-3279a5be-6936-4798-8564-dc39315f205b.png",
+  "sha256": "77f121f3ad58226f4111385e5b6a29d1997a5b94ff8df1271af74d62dbbfb837",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "owner_approval": "aprovado (2026-10-17), aceite individual Q7 v01",
+  "runtime_admitted": false,
+  "inspection": {
+    "image_valid": true,
+    "landscape_16_9": true,
+    "kayron_white_outfit_red_sash": true,
+    "window_escape_guards_behind": true,
+    "two_separate_vignettes": true,
+    "brook_outside_stationary": true,
+    "brook_rectangular_hammer_red_glow": true,
+    "no_embedded_caption": true
+  },
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q7-20261017-r1.md"
+}

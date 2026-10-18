@@ -1,0 +1,43 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P20-Q07",
+  "authorization": "Q6 aprovada (2026-10-17), próxima candidata autorizada",
+  "tool": "built-in image_gen",
+  "tool_prompt": "q7-prompt-v01.txt",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-038/S17-S18-manto-pantano/r01/marciela-portrait-three-quarter-v01-hq.png",
+      "sha256": "71c448eb3b8529b4a5d4e7ac3f1b5cf3f4c00d1bbad1c70ab2814db319dec685"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/maelor.png",
+      "sha256": "182e62852551f8514ad3a358a4d56c2115b90518ed8c959fc402a44a36457f3b"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq20-production-20261017/candidates/hq_n20_q2_marciela_meeting_v02.png",
+      "sha256": "399e277cd6a1431ff214bc698f429deac8336fed069616ff9b9f28a177645309"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq20-production-20261017/candidates/hq_n20_q6_maelor_escape_v01.png",
+      "sha256": "860fd6c4bbfe175d3ca1c48bd4aad29e6d9efa1755bb45fa2230be375b9bad09"
+    }
+  ],
+  "runtime_admitted": false,
+  "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q7_mother_reunion_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-565abeb0-db81-4e64-9aef-9fd8205cf780.png",
+  "sha256": "656fdefb05e74359fb229800d6f15bf6bdbac53d7faa8d525d70dd4b81d36b2d",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "owner_approval": "aprovado (2026-10-17), aceite Q7 v01",
+  "inspection": {
+    "maelor_and_marciela_identity": true,
+    "mutual_recognition": true,
+    "marciela_hood_loose_hair_official_costume": true,
+    "fungal_destination_root_ground": true,
+    "no_aila_or_other_figures": true,
+    "no_text": true
+  },
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q7-20261017-r1.md"
+}

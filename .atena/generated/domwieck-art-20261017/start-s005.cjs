@@ -1,0 +1,13 @@
+const fs=require('fs'),crypto=require('crypto');
+const base='.atena/generated/domwieck-art-20261017/';
+const read=p=>fs.readFileSync(p,'utf8').replace(/^\uFEFF/,'');
+const technical=JSON.parse(read(base+'s004-final-validation.json'));
+for(const e of technical.changed_sources)if(crypto.createHash('sha256').update(fs.readFileSync(e.path)).digest('hex')!==e.sha256)throw Error('Build changed '+e.path);
+const p='.atena/state/plan.yaml',state=read(p),end=state.indexOf('\nroot_art_plan:');let block=state.slice(0,end);
+if(end<0||!block.includes('status: S_DART_004_COMPLETE_AWAITING_CP_DART_005'))throw Error('Unexpected checkpoint');
+block=block.replace('status: S_DART_004_COMPLETE_AWAITING_CP_DART_005','status: S_DART_005_ACTIVE_AWAITING_OWNER_FEEDBACK').replace('current_step: S-DART-004','current_step: S-DART-005').replace('approval: APPROVED_S_DART_004_INTEGRATION_ISOLATED_TESTS','approval: APPROVED_S_DART_005_ISOLATED_VISUAL_PLAYTEST').replace('next_step_approval: PENDING_S_DART_005','next_step_approval: APPROVED_S_DART_005').replace("next_activity: 'Autorizar S-DART-005: playtest visual isolado e aceite final'","next_activity: 'Playtest visual isolado e avaliação humana do visual integrado'").replace('visual_playtest: PENDING_OWNER_AUTHORIZATION','visual_playtest: AUTHORIZED_AWAITING_LAUNCH');
+block+='  visual_playtest_authorization: "autorizado (2026-10-17), em resposta à abertura da S-DART-005 e playtest visual isolado de Domwieck"\n';
+fs.writeFileSync(p,block+state.slice(end));
+fs.writeFileSync(base+'s005-start.json',JSON.stringify({stage:'S-DART-005',started_utc:new Date().toISOString(),authorized:true,build_hashes_verified:11},null,2)+'\n');
+fs.writeFileSync(base+'verify-s005.ps1',read('.atena/generated/root-art-20261017/verify-s005.ps1').replaceAll('root-art-20261017','domwieck-art-20261017').replaceAll('S-RART-005','S-DART-005').replace("map='reino_abissal'","map='domwieck'"));
+console.log('Authorization saved; build hashes verified.');

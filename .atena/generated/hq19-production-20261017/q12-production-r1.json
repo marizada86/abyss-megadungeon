@@ -1,0 +1,36 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P19-Q12",
+  "authorization": "Q11 aprovada (2026-10-17), continuidade explicitamente autorizada",
+  "authorization_canon": ".atena/vault/canon/DEC-HQ-CANDIDATE-APPROVAL-CONTINUATION-20261017-r1.md",
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq19-production-20261017/candidates/hq_n19_q11_maelor_sent_v01.png",
+      "sha256": "ab926c2540c8d7f4e44eed3d1704ef8a2c538bf24cf4703c93ae27a10e2029fe"
+    }
+  ],
+  "tool_prompt": "q12-tool-prompt-v01.txt",
+  "screenplay": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+  "runtime_authorized": false,
+  "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q12_aila_retained_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-715ad5ac-e019-43f7-82c6-0a7dc3583f8a.png",
+  "sha256": "fd6f14c41495df7405b8f612f47810b94890ae6a618a309a7d450116d4109d78",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "owner_approval": "aprovado (2026-10-17), aceite individual Q12 v01",
+  "runtime_admitted": false,
+  "inspection": {
+    "image_valid": true,
+    "landscape_16_9": true,
+    "portal_closing_violet_seam": true,
+    "maelor_absent": true,
+    "aila_wingless_guarded_material_side": true,
+    "thalion_alive_reference_costume": true,
+    "temple_continuity": true,
+    "no_embedded_caption": true
+  },
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q12-20261017-r1.md"
+}

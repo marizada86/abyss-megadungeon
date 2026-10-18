@@ -1,0 +1,38 @@
+{
+  "id": "YGGDRASIL-KIT-OWNER-ACCEPTANCE-R1",
+  "user_response": "aprovado",
+  "scope": "Visual appearance of selected kit r1, not runtime validation or integration authorization",
+  "entries": [
+    {
+      "id": "ground",
+      "version": "v01",
+      "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/ground-v01.png",
+      "sha256": "c1c07b7fe28141fa16b8afc32f8ce6cbfee2e25adcc7d74207040c9fddbd6509"
+    },
+    {
+      "id": "edge",
+      "version": "v01",
+      "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/edge-v01.png",
+      "sha256": "e037e1b723a5a75cf62f1fdb22be1dc0024339acbcd001ebd94600ea2efa5885"
+    },
+    {
+      "id": "detail",
+      "version": "v02",
+      "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/detail-v02.png",
+      "sha256": "1a5f3baaaca70865f0ded3b8e37ea594f2ce0fbef42f94ee19cd4152edd636e4"
+    },
+    {
+      "id": "trunk",
+      "version": "v01",
+      "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/trunk-v01.png",
+      "sha256": "0578924ad14d13a4ecc14ea31f45c6d95afb4dad3358473a3daf74faeaa59f8a"
+    }
+  ],
+  "completed_step": "S-YART-003",
+  "completed_steps": 3,
+  "total_steps": 5,
+  "next_step": "S-YART-004",
+  "next_authorization": "PENDING",
+  "canon": ".atena/vault/canon/ASSET-APPROVAL-YGGDRASIL-ART-KIT-20261017-r1.md",
+  "evidence": ".atena/evidence/EVID-NOTTGARD-YGGDRASIL-ART-KIT-ACCEPTANCE-20261017-r1.md"
+}

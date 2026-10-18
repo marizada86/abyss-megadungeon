@@ -1,0 +1,282 @@
+[
+  {
+    "label": "Aila S14 sem asas",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-002/S14-desperta/r01/aila-front-candidate-v02.png",
+    "sha256": "4cae65599d50039d5dd491cf88dcb0dc4652c540337b7313d00def6e5c5035b5",
+    "size": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "label": "Aila costas",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-002/S14-desperta/r01/aila-back-v01.png",
+    "sha256": "c9d75a500a93018738c601136e04f5ed3912fcdc9a7e2c03d2a4163ca95d4715",
+    "size": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "label": "Thalion frontal DRAFT",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-054/inicio-Arco01-conselheiro/r01/thalion-front-candidate-v01.png",
+    "sha256": "c237fe44a855ee9387fa1528d290523e4b247f841a528431d7ab1fb2fb4cd103",
+    "size": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "label": "Thalion nominal",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/vault/15_Fontes/Referências Visuais/Desktop Nottgard/thalion.jpg",
+    "sha256": "ff88ed46952af4aa4319b4d174d1c26cb62235e965548dc6c6a1f165646836c1",
+    "size": [
+      1824,
+      2322
+    ]
+  },
+  {
+    "label": "Bromnor frontal DRAFT",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-010/historico-em-vida/r01/bromnor-front-candidate-v01.png",
+    "sha256": "ab7642aa08288e16a9a0c53de93d322c20b3110b4b4c9938b345823f39170f92",
+    "size": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "label": "Brook retrato atual",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/brook.png",
+    "sha256": "795dd8b283aa15d20e1de302fc8772dbfa31cc89d8ac469e34c11cbfc6061dfd",
+    "size": [
+      1536,
+      1024
+    ]
+  },
+  {
+    "label": "Maelor retrato atual",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/maelor.png",
+    "sha256": "182e62852551f8514ad3a358a4d56c2115b90518ed8c959fc402a44a36457f3b",
+    "size": [
+      640,
+      427
+    ]
+  },
+  {
+    "label": "Leoric retrato atual",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/leoric.png",
+    "sha256": "b25ae3839e5a7bf3e760d38f7505d82d35ddcbf4f383a16d0cf4b36d787785df",
+    "size": [
+      640,
+      427
+    ]
+  },
+  {
+    "label": "Korrak retrato atual",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/korrak.png",
+    "sha256": "3963a790e5895971834861ad290e04e74c18a845e73f38bf1caa678ba9632c4e",
+    "size": [
+      640,
+      427
+    ]
+  },
+  {
+    "label": "Kayron branco frontal",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq03-production-20261017/reference-audit/kayron-white-front.png",
+    "sha256": "c4b24ae5c596150fad0ccf32e1137b90b121d739faf2a85035320ee9a1ad084e",
+    "size": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "label": "Sylas retrato atual",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/sylas.png",
+    "sha256": "62fc2053324b359fd88bd8278c0408b23a73a8b4e174c0d41621e309686512c3",
+    "size": [
+      640,
+      427
+    ]
+  },
+  {
+    "label": "Bromnor retrato atual",
+    "kind": "identity",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/bromnor.png",
+    "sha256": "0e9b90995ff1a3c16c5344bf370ab0665aa8a5e4e80e0d5312ec322140caf055",
+    "size": [
+      640,
+      427
+    ]
+  },
+  {
+    "label": "hq_n11_q1.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n11_q1.png",
+    "sha256": "eb001ceba4cd99e2cfdac9277cb16125090cb6948928dc436501d7d65309aa04",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n11_q2.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n11_q2.png",
+    "sha256": "2258503f4d4283d974186f3d849667ab6664c782e19cce1d9eee5ea92853c142",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n11_q3.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n11_q3.png",
+    "sha256": "4dd10234a0a9c5fe342cbc294d3207a2a04a1edb775ceae6e33087820b2838d3",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n11_q4.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n11_q4.png",
+    "sha256": "4c44fbf01dee6fa34b6e413dd5fbad3ae06d9ee609ce6fc24fb4d9294445c478",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n03_q1.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n03_q1.png",
+    "sha256": "ebe27dc27b5fec2312b4d89651154f00e9f63d11061f9d68bf379e8199b4dd97",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n03_q2.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n03_q2.png",
+    "sha256": "2c80a19779ca5cb2b97eb1eb05619f5ec397a7e9dd7ffc9960beca00b315060d",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n03_q3.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n03_q3.png",
+    "sha256": "a302006819dd15090e95c3cb02a84c6210a403372fc889594ed6596bc2d7c1bd",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n03_q4.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/hq_n03_q4.png",
+    "sha256": "01783ce71426e31a0881e253b69599c8de74be27ccef8cdc7f4c55dae961cc2b",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n03_q1_garden_v03.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/chapter1_r1/hq_n03_q1_garden_v03.png",
+    "sha256": "af234f301b8f720feb8586c9b088d4a82be73bb0331ce510cc6c1b633ca57adf",
+    "size": [
+      1671,
+      941
+    ]
+  },
+  {
+    "label": "hq_n03_q5_living_veil_v01.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/chapter1_r1/hq_n03_q5_living_veil_v01.png",
+    "sha256": "d2a0d139d9334bd7fc6d330298647b951194b89875235d79318d0e367ff85eef",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n03_q6_nottgard_protected_v01.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/chapter1_r1/hq_n03_q6_nottgard_protected_v01.png",
+    "sha256": "763259f8b36bee6df33a48741cd1bf231dd287146a70ff83055ac7f5b4c9ebc0",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n18_q5_recovery_v01.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/chapter1_r1/hq_n18_q5_recovery_v01.png",
+    "sha256": "115f34ca7b25d1127621b2576277bbfa81f20139ff7b034d2660aad90dda0f5e",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n16_q5_roots_v02.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/chapter1_r1/hq_n16_q5_roots_v02.png",
+    "sha256": "34e592d11780db11c67185ca1f0ef9eba46f4be0ab94e394f210a3c512f5d5f5",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n15_q1_beyond_tarn_v02.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/chapter1_r1/hq_n15_q1_beyond_tarn_v02.png",
+    "sha256": "6e02b07b505c2e6ca2daae3e671604434d4e86f7ef7e6f8183288813534ae4d4",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "hq_n14_q5_hidden_base_v01.png",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/hq/chapter1_r1/hq_n14_q5_hidden_base_v01.png",
+    "sha256": "37f5990430eae81d32866d2fbb66d06acbabd215763bf9c974599b253fdf85c8",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  {
+    "label": "Kayron canon branco",
+    "kind": "reuse_candidate",
+    "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq03-production-20261017/q1-v02-character-reference-sheet.jpg",
+    "sha256": "c8f2157bd8c2f091c8b14d8e2739e2bfd4d5f065bebffef8162fb0e2e07ff6e5",
+    "size": [
+      1600,
+      620
+    ]
+  }
+]

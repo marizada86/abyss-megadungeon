@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE_OWNER_APPROVED_R1",
+  "stage": "S-RART-005",
+  "completed_steps": 5,
+  "total_steps": 5,
+  "remaining_steps": 0,
+  "completed_checkpoint": "CP-RART-005",
+  "owner_acceptance": "Atena, testei e aprovei o visual das raízes. Pode concluir a S-RART-005 e registrar o resultado do playtest.",
+  "evidence": ".atena/evidence/EVID-NOTTGARD-ROOT-ART-PLAYTEST-ACCEPTANCE-20261017-r1.md",
+  "canon": ".atena/vault/canon/ASSET-APPROVAL-ROOT-ART-INTEGRATED-R1-20261017-r1.md",
+  "technical_validation": ".atena/generated/root-art-20261017/s004-final-validation.json",
+  "game_test_source_hashes_unchanged": true,
+  "prior_checks_reused": true,
+  "shared_state_preserved": true,
+  "document_links_valid": true,
+  "game_sources_changed_this_step": false,
+  "recorded_utc": "2026-10-17T20:02:57.274Z"
+}

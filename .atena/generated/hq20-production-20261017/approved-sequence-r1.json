@@ -1,0 +1,112 @@
+{
+  "status": "COMPLETE_VISUAL_PRODUCTION_INDIVIDUALLY_APPROVED",
+  "screenplay": ".atena/vault/canon/HQ20-SCREENPLAY-APPROVED-20261017-r1.md",
+  "approved_panels": 7,
+  "total_panels": 7,
+  "panels": [
+    {
+      "panel": 1,
+      "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png",
+      "sha256": "527e6f1b1f2dd2df5c44f78e6368aba2fe900a660fb706edb06ee0db3a8831bd",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q1-20261017-r1.md",
+      "record": "q1-owner-acceptance-v03.json",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n20_q1_wood_strength_v03.png"
+    },
+    {
+      "panel": 2,
+      "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q2_marciela_meeting_v02.png",
+      "sha256": "399e277cd6a1431ff214bc698f429deac8336fed069616ff9b9f28a177645309",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q2-20261017-r1.md",
+      "record": "q2-v02-production-r1.json",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n20_q2_marciela_meeting_v02.png"
+    },
+    {
+      "panel": 3,
+      "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v02.png",
+      "sha256": "3cf1279324cc03b68d882d37bd977d6de380ba52ddf1bae6917878f6b1c5ebd8",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q3-20261017-r2.md",
+      "record": "q3-v02-production-r1.json",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n20_q3_passage_v02.png"
+    },
+    {
+      "panel": 4,
+      "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q4_maelor_alone_v01.png",
+      "sha256": "cd4a2c6424a9587747b7055c57bfdb41a18b219c4e2fdd2fc81d87aed3b4ce01",
+      "dimensions": [
+        1672,
+        940
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q4-20261017-r1.md",
+      "record": "q4-owner-acceptance-v01.json",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n20_q4_maelor_alone_v01.png"
+    },
+    {
+      "panel": 5,
+      "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q5_nidhogg_misses_v01.png",
+      "sha256": "81b8fe39fe8bd22a8a515bc23fe0b4056ebffb8785b9a16959f48ae4d4bb8f7a",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q5-20261017-r1.md",
+      "record": "q5-production-r1.json",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n20_q5_nidhogg_misses_v01.png"
+    },
+    {
+      "panel": 6,
+      "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q6_maelor_escape_v01.png",
+      "sha256": "860fd6c4bbfe175d3ca1c48bd4aad29e6d9efa1755bb45fa2230be375b9bad09",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q6-20261017-r1.md",
+      "record": "q6-production-r1.json",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n20_q6_maelor_escape_v01.png"
+    },
+    {
+      "panel": 7,
+      "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q7_mother_reunion_v01.png",
+      "sha256": "656fdefb05e74359fb229800d6f15bf6bdbac53d7faa8d525d70dd4b81d36b2d",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q7-20261017-r1.md",
+      "record": "q7-production-r1.json",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n20_q7_mother_reunion_v01.png"
+    }
+  ],
+  "preview": ".atena/generated/hq20-production-20261017/hq20-approved-sequence-r1.jpg",
+  "visual_sequence_inspection": "PASS_ATENA_CONTACT_SHEET",
+  "runtime_admitted": true,
+  "sequence_checks": {
+    "correct_yggdrasil_q1_v03": true,
+    "marciela_official_q2_q3_q7": true,
+    "two_routes_no_simultaneous_arrival_claim": true,
+    "nidhogg_alive_maelor_unharmed": true,
+    "portal_purple": true,
+    "mother_reunion_no_aila": true
+  },
+  "runtime_verified": false,
+  "campaign_automatic_triggers": false
+}

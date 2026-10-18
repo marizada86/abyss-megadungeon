@@ -1,0 +1,42 @@
+{
+  "status": "APPROVED_V02",
+  "step": "S-P20-Q03C",
+  "authorization": "Q2 v02 aprovada; correção de continuidade de Marciela oficial e regra de próxima candidata",
+  "tool": "built-in image_gen edit",
+  "tool_prompt": "q3-prompt-v02.txt",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v01.png",
+      "sha256": "312ab4ff2575f484e68474aae73cdcea2e2f5f2702748f7283a7952966db2fc0"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq20-production-20261017/candidates/hq_n20_q2_marciela_meeting_v02.png",
+      "sha256": "399e277cd6a1431ff214bc698f429deac8336fed069616ff9b9f28a177645309"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-038/S17-S18-manto-pantano/r01/marciela-back-v01-hq.png",
+      "sha256": "b825358cd7e3c453770431b1f0baf10b2549c19cb977f86eafb7a98677617265"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-038/S17-S18-manto-pantano/r01/marciela-front-candidate-v02-hq.png",
+      "sha256": "83be5bd2e02a9c90febe96d5782532ad04142ebacc115c2fbaf41e56c0144d84"
+    }
+  ],
+  "spec": ".atena/specs/SPEC-NOTTGARD-HQ20-COMPLETION-20261017/q3-correction-r1.md",
+  "runtime_admitted": false,
+  "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v02.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-35c9578e-5bcb-4f0d-a23a-25ac87dee756.png",
+  "sha256": "3cf1279324cc03b68d882d37bd977d6de380ba52ddf1bae6917878f6b1c5ebd8",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "owner_approval": "aprovado (2026-10-17), aceite Q3 v02",
+  "inspection": {
+    "marciela_official_costume": true,
+    "pointing_gesture_back_view": true,
+    "tree_companions_and_purple_portal_preserved": true,
+    "no_text": true
+  },
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q3-20261017-r2.md"
+}

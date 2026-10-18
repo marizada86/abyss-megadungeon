@@ -1,0 +1,9 @@
+# HQ02 — integração PC/Web
+
+Plano HQ-REVIEW r1, S-HQ-003; aceite conjunto e integração explícitos em 2026-10-16. Cinco artes e narrações exatas integradas em PC e Web. Backups individuais, hashes antes/depois e recibos em `.atena/generated/hq02-review-20261016/integration/{pc,web}/`. Somente cinco PNGs, panels de hqn_02 e teste pertinente alterados por plataforma; ID/título/gatilho docas e outras treze HQs preservados. Catálogo: 61 imagens, HQ01=8, HQ02=5, demais=4.
+
+Isolamento confirmado por sonda sem autoload em cada sessão, com APPDATA/LOCALAPPDATA e perfil sintéticos. Importação, test_hqs, test_profile e test_playtest PASS em ambos. Smoke do leitor: dez capturas por plataforma (cinco quadros em 1280×720 e 1920×1080), textos completos sem overflow, contador, conclusão, Diário com cinco quadros, replay voltando ao primeiro e sem recompensa repetida PASS. Capturas inspecionadas do ritual PC 1280 e Guardião Web 1920 confirmam leitura; a faixa translúcida padrão escurece a parte inferior das imagens sem cobrir o texto. Sem alteração do leitor ou artes aceitas.
+
+Exportação Web local gerada com sucesso. Tentativas de abrir no navegador integrado `http://127.0.0.1:59835/` e `http://localhost:59835/` falharam com `net::ERR_CONNECTION_TIMED_OUT`. Não foi executada interação no navegador desta exportação. Verificação real de browser continua pendente conforme validation.md; execução nativa do projeto Web não a substitui. S-HQ-003 permanece entregue localmente aguardando esse check, sem concluir etapa nem autorizar S-HQ-004.
+
+Verificação estática final, hashes/textos, checks e caminhos dos logs/capturas em `integration/final-verification.json`. Nenhum save real, dependência, commit, push ou publicação. Preservado plano original de portagem e outros trabalhos. Servidor local de teste encerrado após tentativas; exportação e evidências preservadas.

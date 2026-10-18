@@ -1,0 +1,55 @@
+{
+  "id": "YGGDRASIL-APPROVED-HQ20-REFERENCES-20261017",
+  "revision": "r2",
+  "status": "ALL_THREE_OWNER_APPROVED",
+  "references": [
+    {
+      "panel": 1,
+      "version": "v03",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png",
+      "sha256": "527e6f1b1f2dd2df5c44f78e6368aba2fe900a660fb706edb06ee0db3a8831bd",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q1-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Wood material, monumental cosmic tree, overall scale",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    },
+    {
+      "panel": 3,
+      "version": "v01",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v01.png",
+      "sha256": "312ab4ff2575f484e68474aae73cdcea2e2f5f2702748f7283a7952966db2fc0",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q3-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Passage violet light and transition from root to target",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    },
+    {
+      "panel": 4,
+      "version": "v01",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q4_maelor_alone_v01.png",
+      "sha256": "cd4a2c6424a9587747b7055c57bfdb41a18b219c4e2fdd2fc81d87aed3b4ce01",
+      "dimensions": [
+        1672,
+        940
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q4-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Root side, thickness, cosmic void and visual depth",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    }
+  ],
+  "prior_audit": ".atena/generated/yggdrasil-art-20261017/reference-audit-r1.json",
+  "cosmic_authority": ".atena/vault/canon/DEC-YGGDRASIL-COSMIC-TREE-20261017-r1.md",
+  "wood_authority": ".atena/vault/canon/DEC-YGGDRASIL-WOOD-STRENGTH-20261017-r1.md",
+  "generation_for_map_authorized": false,
+  "runtime_authorized": false,
+  "runtime_hashes_unchanged": true
+}

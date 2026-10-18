@@ -1,0 +1,7 @@
+# HQ19 Q11 — produção r1
+
+Estado: AUTHORIZED. IN_PLAN. Etapa S-P19-Q11, décima primeira de 12; dez concluídas e duas restantes incluindo esta. Uma candidata PC para aceite individual, autorizada pelo aceite Q10 e regra de continuidade.
+
+Escopo: após o interrogatório, nova runa de inspiração nórdica abre portal roxo atrás de Maelor; raízes negras/cipós o prendem e puxam para o Abismo. Aila permanece no lado material, sob custódia e sem asas. Thalion vivo pode figurar no lado material, identidade e roupas Q10. Maelor conserva algemas visíveis do Q10, sem definir nova condição por omissão. Captura mágica posterior não reescreve falha inicial de raízes Q8. Glifo ilustrativo não estabelece alfabeto canônico.
+
+Entradas: roteiro CANON HQ19 r2, seleção r1 aprovada, bible DRAFT r2 autorizada; Q10 aceita para personagens/algemas/custódia, Q6 aceita para portal e raízes. Saída: quadro horizontal aproximadamente 16:9 em pixel art denso, pedra e velas do templo preservadas. Raízes saem da abertura, sem converter o piso todo em raízes. Ação de Maelor arrastado legível, Aila claramente afastada e fora do portal, sem contato de raízes, sem morte/ferimento. Texto CANON separado: “Depois do interrogatório, Thalion o enviou pelo mesmo caminho.” Sem texto na arte. Checks: identidades, posição temporal, portal roxo, raízes negras, Aila material/ilesa, anatomia, arquivo/dimensões/hash. Zero BLOCKING. Integração e teste no jogo fora deste escopo.

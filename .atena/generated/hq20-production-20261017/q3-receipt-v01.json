@@ -1,0 +1,50 @@
+{
+  "id": "HQ20-Q3-CANDIDATE-20261017",
+  "version": "v01",
+  "status": "DRAFT_AWAITING_OWNER_APPROVAL",
+  "panel": 3,
+  "tool": "built-in image_gen",
+  "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-7733c984-f56f-4949-ae03-886db4f96d78.png",
+  "local_path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v01.png",
+  "sha256": "312ab4ff2575f484e68474aae73cdcea2e2f5f2702748f7283a7952966db2fc0",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "prompt_path": ".atena/generated/hq20-production-20261017/q3-prompt-v01.txt",
+  "references": [
+    {
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png",
+      "sha256": "527e6f1b1f2dd2df5c44f78e6368aba2fe900a660fb706edb06ee0db3a8831bd"
+    },
+    {
+      "path": "assets/portraits/leoric.png",
+      "sha256": "b25ae3839e5a7bf3e760d38f7505d82d35ddcbf4f383a16d0cf4b36d787785df"
+    },
+    {
+      "path": "assets/portraits/korrak.png",
+      "sha256": "3963a790e5895971834861ad290e04e74c18a845e73f38bf1caa678ba9632c4e"
+    }
+  ],
+  "review": {
+    "viewed": true,
+    "three_figures_only": true,
+    "wood_and_cosmic_continuity_with_accepted_q1": true,
+    "leoric_and_korrak_on_root": true,
+    "korrak_no_axe": true,
+    "marciela_backlit_back_view_with_pointing_gesture": true,
+    "marciela_no_visible_face_or_defined_species": true,
+    "violet_opening_with_fungal_terrain_beyond": true,
+    "no_text_or_legible_runes": true,
+    "no_combat_maelor_aila_nidhogg": true,
+    "marciela_clothing": "Generic dark silhouette, not a newly approved detailed costume",
+    "sheds_landscape": "Illustrative portal-framed fungal terrain; not an accepted map of Shedaklah"
+  },
+  "runtime_unchanged": true,
+  "generated_this_step": [
+    3
+  ],
+  "owner_acceptance": "PENDING",
+  "accepted_references": 1,
+  "total_reference_panels": 3
+}

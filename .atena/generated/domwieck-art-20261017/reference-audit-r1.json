@@ -1,0 +1,99 @@
+{
+  "status": "PASS_PLANNING_REFERENCES",
+  "date": "2026-10-17",
+  "references": [
+    {
+      "manifest": ".atena/generated/hq18-production-20261017/hq18-sequence-r1.json",
+      "panel": 3,
+      "asset": "assets/hq/chapter1_r1/hq_n18_q3_domwieck_invasion_v01.png",
+      "role": "Architecture, paving, active blue Tarn; exclude abyss/portal/troops",
+      "source": ".atena/generated/hq18-production-20261017/candidates/hq_n18_q3_domwieck_invasion_v01.png",
+      "sha256": "919a1e8fa5c07e87fe2add11df7ec9c543d4a9d2c306e2db92d9cac5e1153e82",
+      "width": 1672,
+      "height": 941,
+      "visually_inspected": true,
+      "authority": "CANON_APPROVED_SEQUENCE_R1",
+      "future_generation_authorization": "PENDING_CP_DART_002"
+    },
+    {
+      "manifest": ".atena/generated/hq03-production-20261017/hq03-sequence-r1.json",
+      "panel": 1,
+      "asset": "assets/hq/chapter1_r1/hq_n03_q1_garden_v03.png",
+      "role": "Circular forest, red garden, intact star and beam",
+      "source": ".atena/generated/hq03-production-20261017/candidates/hq_n03_q1_garden_v03.png",
+      "sha256": "af234f301b8f720feb8586c9b088d4a82be73bb0331ce510cc6c1b633ca57adf",
+      "width": 1671,
+      "height": 941,
+      "visually_inspected": true,
+      "authority": "CANON_APPROVED_SEQUENCE_R1",
+      "future_generation_authorization": "PENDING_CP_DART_002"
+    },
+    {
+      "manifest": ".atena/generated/hq03-production-20261017/hq03-sequence-r1.json",
+      "panel": 2,
+      "asset": "assets/hq/chapter1_r1/hq_n03_q2_adam_strike_v03.png",
+      "role": "Only Ailalore material, larger scale and light blue; exclude Adam, strike and collapse",
+      "source": ".atena/generated/hq03-production-20261017/candidates/hq_n03_q2_adam_strike_v03.png",
+      "sha256": "724313bad05dfb24e9237a7d5a795b3173f26bff27c4ff8c435dab73342e5427",
+      "width": 1671,
+      "height": 941,
+      "visually_inspected": true,
+      "authority": "CANON_APPROVED_SEQUENCE_R1",
+      "future_generation_authorization": "PENDING_CP_DART_002"
+    }
+  ],
+  "guarded_sources": [
+    {
+      "path": "ui/ground.gd",
+      "sha256": "ff20ca3ba0fe4893aecfc05ae60f64fbe610ea0c4b1c6c23260d2983e1439657"
+    },
+    {
+      "path": "ui/stages/domwieck.tscn",
+      "sha256": "e07958afbb6274485b5bb7a5e7b1983db228b0822a29dec511e389fefecd0be7"
+    },
+    {
+      "path": "ui/stages/reino_abissal.tscn",
+      "sha256": "2975537a0666bf0b88ca90f3e4a686f9305f3ce3d2674babd8a71f3b2171ba7e"
+    },
+    {
+      "path": "core/terrain_layout.gd",
+      "sha256": "fd1834d1ffb53e22d8adb462d820307d1e183a608aa507ee98e74832cbce6516"
+    },
+    {
+      "path": "core/battle.gd",
+      "sha256": "f62ae798afeda96ed71986b0a9638744fd9968825d1ee35672d9cb61d38bd79d"
+    },
+    {
+      "path": "core/hero.gd",
+      "sha256": "6f2b398d6bcaae818061ac9fdfb6e2d34dbe4f0b6f04ea3565d5654b4bf46195"
+    },
+    {
+      "path": "core/enemy.gd",
+      "sha256": "51785173e6e0cae9e89d44948c15d6f27b39cf4988117d1b64063f018d29a943"
+    },
+    {
+      "path": "data/level_design.json",
+      "sha256": "b33f0b7329ffa3263d1c15d2e2309b052ed6d600e16635fc87060f832ee2aba6"
+    },
+    {
+      "path": "data/stages.json",
+      "sha256": "38bcfe431893a11c8972b3439e513185e41c4a3c9906ae7d9dcaf304c39dad7b"
+    },
+    {
+      "path": "data/root_navigation.json",
+      "sha256": "9e6593fc29c40b40e3e82637fd1735dec080097c540f4523c9e50213f4173845"
+    },
+    {
+      "path": "data/root_art.json",
+      "sha256": "14c15255c9a6089be0b2517600ab1d329daf76c24b4139b96d3c322f43a6df9b"
+    },
+    {
+      "path": "core/chapter_flow.gd",
+      "sha256": "48d00818985556c4e542d35f8149542f3c6dfa76a5bbd7da42ce1aa5ac6748b0"
+    }
+  ],
+  "prototype_capture": ".atena/generated/root-art-20261017/validation-20261017-193929-368/domwieck-1280x720-target.png",
+  "prototype_capture_visually_inspected": true,
+  "no_image_generation": true,
+  "no_game_source_edits": true
+}

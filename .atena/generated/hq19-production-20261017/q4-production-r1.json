@@ -1,0 +1,39 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P19-Q04",
+  "authorization": "autorizado (2026-10-17), uma candidata Q4",
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/vault/output/referencias-personagens/CHAR-002/S14-desperta/r01/aila-front-candidate-v02.png",
+      "sha256": "4cae65599d50039d5dd491cf88dcb0dc4652c540337b7313d00def6e5c5035b5"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq19-production-20261017/candidates/hq_n19_q3_aila_awakens_v01.png",
+      "sha256": "df62ed7c37b0fd76898ee7121523e42ff69a2230da5a557cb3aada30e9287430"
+    }
+  ],
+  "tool_prompt": "q4-tool-prompt-v01.txt",
+  "screenplay": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+  "runtime_authorized": false,
+  "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q4_sendrinah_prayer_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-3bf5d0d5-4df6-4dc4-a6de-48180bca6ab4.png",
+  "sha256": "860c697980a74c11b2436cd00e473894682f58f9d59eeb2540bc1284cb4f71a5",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "inspection": {
+    "image_valid": true,
+    "landscape_16_9": true,
+    "aila_wingless_same_clothes": true,
+    "kneeling_clasped_hands_prayer": true,
+    "statue_indirect_blurred_no_face": true,
+    "stone_temple_candlelight": true,
+    "no_divine_apparition": true,
+    "no_embedded_caption": true
+  },
+  "owner_approval": "aprovado (2026-10-17), aceite individual Q4 v01",
+  "runtime_admitted": false,
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q4-20261017-r1.md"
+}

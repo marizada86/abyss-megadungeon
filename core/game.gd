@@ -17,7 +17,7 @@ var qa_menu_tab := 0
 var qa_error := ""
 var _real_save_signature: Dictionary = {}
 var run_hero := "durvall"
-var run_stage := "dagruve"
+var run_stage := "docas"
 var last_result: Dictionary = {}
 var last_summary: Dictionary = {}
 var log_lines: Array = []
@@ -329,7 +329,23 @@ func end_qa_sandbox() -> bool:
 	load_profile()
 	return unchanged
 
+static func qa_encounter_request_valid(request: Dictionary) -> bool:
+	if String(request.get("stage_id", "")) == "dagruve_thalion_r1":
+		return false # This is an overlay id, never a standalone stage.
+	var id := String(request.get("encounter_id", ""))
+	if id.is_empty():
+		return true
+	if id != "dagruve_thalion_r1" or String(request.get("stage_id", "dagruve")) != "dagruve" or String(request.get("target_state", "running")) != "running":
+		return false
+	for key in ["scene", "scene_path", "stage_override", "overlay"]:
+		if request.has(key):
+			return false
+	return true
+
 func start_qa_run(request: Dictionary) -> bool:
+	if not qa_encounter_request_valid(request):
+		qa_error = "Cenário QA inválido; nenhum perfil ou cena foi aberto."
+		return false
 	if not Version.evidence_enabled():
 		qa_error = "O Navegador QA so esta disponivel na build de playtest."
 		return false
@@ -409,10 +425,12 @@ func difficulty() -> float:
 	return 1.0 + 0.25 * int(profile.data.settings.difficulty)
 
 func battle_ctx() -> Dictionary:
+	if qa_sandbox and String(qa_launch.get("encounter_id", "")) == "dagruve_thalion_r1" and qa_encounter_request_valid(qa_launch):
+		return {"meta_mods": {}, "bonus_mods": {}, "difficulty": 1.0, "abyss_marks": {}, "qa_sandbox": true, "encounter_id": "dagruve_thalion_r1"}
 	var meta := profile.meta_mods()
 	Hero.add_mods(meta, profile.bonus_mods())
 	Hero.add_mods(meta, {"gold_pct": 0.25 * int(profile.data.settings.difficulty)})
-	return {"meta_mods": meta, "bonus_mods": {}, "difficulty": difficulty(), "abyss_marks": run_abyss_marks()}
+	return {"meta_mods": meta, "bonus_mods": {}, "difficulty": difficulty(), "abyss_marks": run_abyss_marks(), "qa_sandbox": qa_sandbox}
 
 ## Marcas escolhidas no Quartel (SPEC-141); a escolha fica no perfil e cada marca só vale se a conquista dela foi ganha (SPEC-143).
 func abyss_marks() -> Dictionary:
@@ -426,6 +444,13 @@ func set_abyss_marks(marks: Dictionary) -> void:
 	save()
 
 func start_run(hero_id: String, stage_id: String) -> void:
+	if not Data.table("heroes").has(hero_id) or not Data.table("stages").has(stage_id):
+		return
+	if not qa_sandbox and (not profile.hero_unlocked(hero_id) or not profile.stage_unlocked(stage_id)):
+		return
+	if not qa_sandbox:
+		ChapterFlow.prepare_start(profile.data, stage_id)
+		save()
 	run_hero = hero_id
 	run_stage = stage_id
 	logline("Run: %s em %s" % [hero_id, stage_id])

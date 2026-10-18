@@ -1,0 +1,100 @@
+{
+  "id": "YGGDRASIL-ART-LOCAL-ADMISSION-R1",
+  "status": "INTEGRATED_TECHNICALLY_VALIDATED_OWNER_PLAYTEST_APPROVED",
+  "assets": [
+    {
+      "id": "ground",
+      "approved_source": ".atena/generated/yggdrasil-art-20261017/kit-r1/ground-v01.png",
+      "path": "assets/tiles/yggdrasil_r1/ground.png",
+      "sha256": "c1c07b7fe28141fa16b8afc32f8ce6cbfee2e25adcc7d74207040c9fddbd6509",
+      "import_size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "edge",
+      "approved_source": ".atena/generated/yggdrasil-art-20261017/kit-r1/edge-v01.png",
+      "path": "assets/tiles/yggdrasil_r1/edge.png",
+      "sha256": "e037e1b723a5a75cf62f1fdb22be1dc0024339acbcd001ebd94600ea2efa5885",
+      "import_size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "detail",
+      "approved_source": ".atena/generated/yggdrasil-art-20261017/kit-r1/detail-v02.png",
+      "path": "assets/tiles/yggdrasil_r1/detail.png",
+      "sha256": "1a5f3baaaca70865f0ded3b8e37ea594f2ce0fbef42f94ee19cd4152edd636e4",
+      "import_size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "trunk",
+      "approved_source": ".atena/generated/yggdrasil-art-20261017/kit-r1/trunk-v01.png",
+      "path": "assets/tiles/yggdrasil_r1/trunk.png",
+      "sha256": "0578924ad14d13a4ecc14ea31f45c6d95afb4dad3358473a3daf74faeaa59f8a",
+      "import_size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/tiles/yggdrasil_r1/ground.png",
+      "sha256": "c1c07b7fe28141fa16b8afc32f8ce6cbfee2e25adcc7d74207040c9fddbd6509"
+    },
+    {
+      "path": "assets/tiles/yggdrasil_r1/edge.png",
+      "sha256": "e037e1b723a5a75cf62f1fdb22be1dc0024339acbcd001ebd94600ea2efa5885"
+    },
+    {
+      "path": "assets/tiles/yggdrasil_r1/detail.png",
+      "sha256": "1a5f3baaaca70865f0ded3b8e37ea594f2ce0fbef42f94ee19cd4152edd636e4"
+    },
+    {
+      "path": "assets/tiles/yggdrasil_r1/trunk.png",
+      "sha256": "0578924ad14d13a4ecc14ea31f45c6d95afb4dad3358473a3daf74faeaa59f8a"
+    },
+    {
+      "path": "data/yggdrasil_art.json",
+      "sha256": "146e71823380b36d78409a1bf007bd393be80bbd3cef5c2468c944ee6c4e10d3"
+    },
+    {
+      "path": "ui/ground.gd",
+      "sha256": "4c52113572ef5882f5ba5c1f98831b855c19b15bb5d33056328f595579913f6c"
+    },
+    {
+      "path": "ui/yggdrasil_art.gd",
+      "sha256": "0f20bbc81917df0878eca9d259bcc89517f21992d6e9068dc52e9985bc8873ee"
+    },
+    {
+      "path": "ui/stages/raiz_yggdrasil.tscn",
+      "sha256": "c0fed70be605e76ddf60eb87215df9c6a6eba482559e8d909e0cffa4e09fa25c"
+    },
+    {
+      "path": "ui/shaders/yggdrasil_root_art.gdshader",
+      "sha256": "dc669df996d03ebd2f604176a0f47e58bb10c1ee6b9cba893278cb3c56b9ad02"
+    },
+    {
+      "path": "tests/test_yggdrasil_art.gd",
+      "sha256": "51723c057f5df4d032ab77923eeab3c67b7269270399f5293770a442bcb49164"
+    }
+  ],
+  "file_count": 10,
+  "maximum_paths": 10,
+  "derived_import_uid_metadata_excluded": true,
+  "source_PNGs_untouched": true,
+  "rgba8_bytes_per_copy": 16777216,
+  "geometry_revision": "r3",
+  "geometry_unchanged": true,
+  "fallback_preserved": true,
+  "tests": ".atena/generated/yggdrasil-art-20261017/s004-20261018-000748/tests-result.json",
+  "render": ".atena/generated/yggdrasil-art-20261017/s004-20261018-001045/render-result.json",
+  "portability": ".atena/generated/yggdrasil-art-20261017/s004-portability.json",
+  "owner_playtest_acceptance": ".atena/generated/yggdrasil-art-20261017/s005-owner-acceptance-r1.json"
+}

@@ -2,11 +2,13 @@ extends Control
 ## Leitor reutilizável de HQ; a cena permanece ativa enquanto a run está pausada.
 
 signal closed
+signal panel_changed(index: int)
 
 @onready var panel_image: TextureRect = %PanelImage
 @onready var title_label: Label = %HqTitle
 @onready var panel_counter: Label = %PanelCounter
 @onready var caption_label: Label = %Caption
+@onready var caption_right_label: Label = %CaptionRight
 
 var panels: Array = []
 var panel_index := 0
@@ -17,11 +19,11 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	Game.controls.changed.connect(_update_hint)
 	_update_hint()
-func start_hq(hq: Dictionary) -> void:
+func start_hq(hq: Dictionary, resume_index: int = 0) -> void:
 	Game.controls.transition()
 	title_label.text = String(hq.get("title", ""))
 	panels = hq.get("panels", [])
-	panel_index = 0
+	panel_index = clampi(resume_index, 0, maxi(0, panels.size() - 1))
 	is_closed = false
 	completed = false
 	visible = true
@@ -79,8 +81,13 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _show_panel() -> void:
+	panel_changed.emit(panel_index)
 	var panel: Dictionary = panels[panel_index]
 	var image_path := String(panel.get("image", ""))
 	panel_image.texture = load(image_path) as Texture2D if ResourceLoader.exists(image_path) else null
 	caption_label.text = String(panel.get("text", ""))
+	caption_right_label.text = String(panel.get("text_right", ""))
+	var split_caption := not caption_right_label.text.strip_edges().is_empty()
+	caption_right_label.visible = split_caption
+	caption_label.anchor_right = 0.48 if split_caption else 0.945
 	panel_counter.text = "Quadro %d de %d" % [panel_index + 1, panels.size()]

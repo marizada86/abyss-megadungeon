@@ -26,6 +26,8 @@ var decoy_nodes := {}  # MEC-029: id da isca (Battle) -> visual
 var enemy_nodes := {}
 var start_pos := Vector2.ZERO
 var _result_shown := false
+var _hq_draining := false
+var _campaign_ready := false
 var _stats_checkpoint_at := 60.0
 var _shake := 0.0
 var _numbers := 0
@@ -56,6 +58,12 @@ func _texture(path: String) -> Texture2D:
 	return _texture_cache[path]
 
 func _ready() -> void:
+	var definition := Battle.stage_definition(Game.run_stage)
+	if definition.is_empty() or (bool(definition.get("qa_only", false)) and not Game.qa_sandbox):
+		set_physics_process(false)
+		set_process(false)
+		Game.call_deferred("goto_menu")
+		return
 	Game.screen_name = "run"
 	var seed := int(Game.qa_launch.get("seed", Time.get_ticks_usec() % 1000000)) if Game.qa_sandbox else int(Time.get_ticks_usec() % 1000000)
 	battle = Battle.new(seed, Game.run_hero, Game.run_stage, Game.battle_ctx())
@@ -89,12 +97,21 @@ func _ready() -> void:
 	Playtest.record_run(battle)
 	if battle.state == "revive_offer":
 		hud.show_revive_offer(battle)
-	hud.toast("%s — %s" % [battle.stage.name, Data.table("stage_story").get(battle.stage_id, {}).get("epigrafe", battle.stage.sub)], Color(0.9, 0.85, 0.6))
+	var intro := String(battle.stage.sub) if battle.is_dagruve_encounter() else String(Data.table("stage_story").get(battle.stage_id, {}).get("epigrafe", battle.stage.sub))
+	hud.toast("%s — %s" % [battle.stage.name, intro], Color(0.9, 0.85, 0.6))
 	# SPEC-117 H6: uma linha sobre Adam nas Docas e em Shedaklah, logo depois da epígrafe
-	var rumor := String(Data.table("stage_story").get(battle.stage_id, {}).get("rumor", ""))
+	if not Game.qa_sandbox:
+		ChapterFlow.prepare_start(Game.profile.data, battle.stage_id)
+		Game.save()
+		await _drain_campaign_hqs()
+	_campaign_ready = true
+	var rumor := "" if battle.is_dagruve_encounter() else String(Data.table("stage_story").get(battle.stage_id, {}).get("rumor", ""))
 	if rumor != "":
 		get_tree().create_timer(4.5).timeout.connect(func(): if is_instance_valid(hud): hud.toast(rumor, Color(0.75, 0.7, 0.9)))
 	_bark("entrada")
+	if battle.has_reach_objective() and Game.qa_sandbox:
+		hud.toast("Protótipo: %s. Resista por %d minutos e permaneça %.0f s no destino." % [battle.stage.completion.text, int(battle.stage.duration) / 60, float(battle.stage.completion.hold_seconds)])
+		return # No HQ, milestone or profile progression in this isolated slice.
 	await _present_hqs(HQCatalog.newly_triggered_ids(Game.profile.data, "first_run"))
 	await _record_stage_reached(battle.stage_id)
 
@@ -112,7 +129,8 @@ func _load_stage() -> void:
 	enemy_nodes.clear()
 	if stage_root != null:
 		stage_root.queue_free()
-	var scene: PackedScene = load("res://ui/stages/%s.tscn" % battle.stage_id)
+	var scene_path := "res://ui/stages/dagruve_thalion_qa.tscn" if battle.is_dagruve_encounter() else "res://ui/stages/%s.tscn" % battle.stage_id
+	var scene: PackedScene = load(scene_path)
 	stage_root = scene.instantiate()
 	slot.add_child(stage_root)
 	sorted = stage_root.get_node("Sorted")
@@ -165,10 +183,11 @@ func _load_stage() -> void:
 		art.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		art.modulate = Color(0.45, 0.45, 0.45)
 		_stage_background.add_child(art)
-	for sp in stage_root.get_node("SpawnPoints").get_children():
-		for i in int(sp.count):
-			var off := Vector2(battle.rng.randf_range(-1, 1), battle.rng.randf_range(-1, 1)) * float(sp.scatter)
-			battle.spawn_for_test(String(sp.enemy_id), Iso.to_ground(sp.position) + off)
+	if not battle.is_dagruve_encounter():
+		for sp in stage_root.get_node("SpawnPoints").get_children():
+			for i in int(sp.count):
+				var off := Vector2(battle.rng.randf_range(-1, 1), battle.rng.randf_range(-1, 1)) * float(sp.scatter)
+				battle.spawn_for_test(String(sp.enemy_id), Iso.to_ground(sp.position) + off)
 	battle.stage_changed = false
 	camera.position = hero_node.position
 	Sfx.set_context(battle.hero.id, battle.stage_id)
@@ -454,6 +473,7 @@ func _notification(what: int) -> void:
 			_toggle_pause()
 
 func _physics_process(dt: float) -> void:
+	if not _campaign_ready or _hq_draining: return
 	if get_tree().paused or _result_shown or not Game.controls.focused:
 		return
 	if _hit_stop_t > 0.0:
@@ -499,6 +519,7 @@ func _physics_process(dt: float) -> void:
 	_sync()
 	_consume_events()
 	hud.update_stats(battle)
+	queue_redraw()
 	if battle.state != prev_state or (battle.state in ["levelup", "altar", "item_offer", "shop"] and not hud.levelup_panel.visible):
 		_refresh_offer()
 	if battle.state == "revive_offer" and prev_state != "revive_offer":
@@ -509,6 +530,18 @@ func _physics_process(dt: float) -> void:
 		hud.hide_evolution()
 	if (battle.state == "dead" or battle.state == "won") and not _result_shown:
 		_show_result()
+
+func _draw() -> void:
+	if battle == null or not battle.has_reach_objective() or _result_shown:
+		return
+	var target := Iso.to_screen(battle.objective_target())
+	var radius := float(battle.stage.completion.radius) * Iso.TILE_W * 0.5
+	var ring := Iso.ground_circle(target, radius, 48)
+	ring.append(ring[0])
+	var ready := battle.time >= float(battle.stage.duration)
+	draw_polyline(ring, Color("b8def1") if ready else Color("99897c"), 3.0)
+	draw_line(target + Vector2(-8, 0), target + Vector2(8, 0), Color("e3d8bb"), 2.0)
+	draw_line(target + Vector2(0, -5), target + Vector2(0, 5), Color("e3d8bb"), 2.0)
 
 func _process(dt: float) -> void:
 	if battle != null and not _result_shown and battle.run_time >= _stats_checkpoint_at:
@@ -537,7 +570,10 @@ func _sync() -> void:
 	for e in enemy_nodes.keys():
 		var n: Node2D = enemy_nodes[e]
 		if e.dead or not battle.enemies.has(e):
-			n.play_death()
+			if battle.has_reach_objective() and battle.stage_cleared and not e.dead:
+				n.queue_free()
+			else:
+				n.play_death()
 			enemy_nodes.erase(e)
 		else:
 			n.sync_visual(Iso.to_screen(e.pos))
@@ -551,12 +587,22 @@ func _show_result() -> void:
 	var outcome := "abandoned" if battle.death_reason == "abandoned" else "extracted" if battle.extracted else "won" if res.won else "dead"
 	battle.run_record.checkpoint(battle, "finish")
 	Playtest.record_run(battle, outcome, true)
+	if battle.has_reach_objective() and Game.qa_sandbox:
+		Sfx.stop_ambience()
+		hud.show_result(res, {"earned": 0, "coins": Game.profile.coins(), "reward_rate": 1.0, "achievements": []})
+		if battle.is_dagruve_encounter() and res.won:
+			hud.result_title.text = "Encenação concluída — desfecho narrativo pendente"
+		return # No profile rewards/milestones or HQs before campaign integration.
 	Game.finish_run(res)
 	Sfx.stop_ambience()
 	var new_achievements: Array = Game.last_summary.get("achievements", [])
 	for hq_id in HQCatalog.newly_earned_ids(new_achievements):
 		await _present_hq(hq_id)
+	if battle.stage_id == "domwieck" and Game.profile.data.campaign_progress.milestones.has("chapter1_closed"):
+		hud.toast("Capítulo 1 concluído")
 	hud.show_result(res, Game.last_summary)
+	if battle.stage_id == "domwieck" and Game.profile.data.campaign_progress.milestones.has("chapter1_closed"):
+		hud.result_title.text = "Capítulo 1 concluído"
 	Sfx.play("result.victory" if res.won else "result.defeat", -4.0)
 	Sfx.start_music("victory" if res.won else "defeat")
 
@@ -568,6 +614,8 @@ func _record_stage_reached(stage_id: String) -> void:
 	await _present_hqs(hq_ids)
 
 func _process_hq_milestones() -> void:
+	if battle.has_reach_objective() and Game.qa_sandbox:
+		return
 	if battle.final_victory and not _final_victory_event_seen:
 		_final_victory_event_seen = true
 		await _record_stage_cleared(battle.stage_id, "final_victory")
@@ -577,40 +625,47 @@ func _process_hq_milestones() -> void:
 
 func _record_stage_cleared(stage_id: String, event_type: String) -> void:
 	battle.run_record.checkpoint(battle, "stage_cleared", {"event": event_type})
-	var hq_ids := HQCatalog.newly_triggered_ids(Game.profile.data, event_type, stage_id)
-	var changed := Game.profile.mark_stage_reached(stage_id)
-	changed = Game.profile.mark_stage_cleared(stage_id) or changed
-	if changed:
-		Game.save()
-	await _present_hqs(hq_ids)
+	Game.profile.mark_stage_reached(stage_id)
+	Game.profile.mark_stage_cleared(stage_id)
+	ChapterFlow.clear_stage(Game.profile.data, stage_id)
+	Game.save()
+	await _drain_campaign_hqs()
+
+func _drain_campaign_hqs() -> void:
+	if Game.qa_sandbox or _hq_draining: return
+	_hq_draining = true
+	while not Game.profile.data.campaign_progress.pending_hqs.is_empty():
+		var row: Dictionary = Game.profile.data.campaign_progress.pending_hqs[0]
+		await _present_hq(String(row.id), int(row.panel_index), true)
+	_hq_draining = false
 
 func _present_hqs(hq_ids: Array[String]) -> void:
-	for hq_id in hq_ids:
-		await _present_hq(hq_id)
+	if Game.qa_sandbox: return
+	ChapterFlow.enqueue(Game.profile.data, hq_ids)
+	Game.save()
+	await _drain_campaign_hqs()
 
-func _present_hq(hq_id: String) -> void:
+func _present_hq(hq_id: String, resume_index: int = 0, campaign: bool = false) -> void:
 	var hq: Dictionary = Data.table("hqs").get(hq_id, {})
-	if hq.is_empty():
-		return
+	if hq.is_empty(): return
 	var screen = HQ_SCREEN.instantiate()
 	screen.process_mode = Node.PROCESS_MODE_ALWAYS
 	hud.add_child(screen)
+	var prior_pause := get_tree().paused
 	get_tree().paused = true
-	screen.call_deferred("start_hq", hq)
+	if campaign:
+		screen.panel_changed.connect(func(index):
+			ChapterFlow.cursor(Game.profile.data, hq_id, index)
+			Game.save())
+	screen.call_deferred("start_hq", hq, resume_index)
 	while not bool(screen.get("is_closed")):
 		await get_tree().process_frame
 	var completed := bool(screen.get("completed"))
-	get_tree().paused = false
+	get_tree().paused = prior_pause
 	screen.queue_free()
-	if completed:
-		var already_seen: bool = Game.profile.data.hqs_seen.has(hq_id)
-		var newly_earned: Array = Game.profile.mark_hq_seen(hq_id)
-		if not already_seen:
-			Game.save()
-		for achievement_id in newly_earned:
-			for achievement in Data.table("achievements").achievements:
-				if achievement.id == achievement_id:
-					hud.toast("Conquista: %s (+%d moedas)" % [achievement.name, int(achievement.reward.get("coins", 0))], Color(0.95, 0.8, 0.42))
+	if completed: Game.profile.mark_hq_seen(hq_id)
+	if campaign: ChapterFlow.resolve(Game.profile.data, hq_id, completed)
+	Game.save()
 
 # ------------------------------------------------------------------ efeitos
 

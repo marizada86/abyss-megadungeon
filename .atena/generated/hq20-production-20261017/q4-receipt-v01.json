@@ -1,0 +1,43 @@
+{
+  "id": "HQ20-Q4-CANDIDATE-20261017",
+  "version": "v01",
+  "status": "DRAFT_AWAITING_OWNER_APPROVAL",
+  "panel": 4,
+  "tool": "built-in image_gen",
+  "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-7edc3b29-5412-4467-8af6-3bb79f014adc.png",
+  "local_path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q4_maelor_alone_v01.png",
+  "sha256": "cd4a2c6424a9587747b7055c57bfdb41a18b219c4e2fdd2fc81d87aed3b4ce01",
+  "dimensions": [
+    1672,
+    940
+  ],
+  "prompt_path": ".atena/generated/hq20-production-20261017/q4-prompt-v01.txt",
+  "references": [
+    {
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png",
+      "sha256": "527e6f1b1f2dd2df5c44f78e6368aba2fe900a660fb706edb06ee0db3a8831bd"
+    },
+    {
+      "path": "assets/portraits/maelor.png",
+      "sha256": "182e62852551f8514ad3a358a4d56c2115b90518ed8c959fc402a44a36457f3b"
+    }
+  ],
+  "review": {
+    "viewed": true,
+    "one_traveler_only": true,
+    "maelor_back_view_and_outfit_continuity": true,
+    "facial_identity_not_exposed_by_back_view": true,
+    "ordinary_stride_on_broad_root": true,
+    "cosmic_void_and_thick_wood_side_visible": true,
+    "wood_material_matches_q1": true,
+    "no_portal_nidhogg_other_characters_or_attack": true,
+    "no_text_or_ui": true
+  },
+  "owner_acceptance": "PENDING",
+  "accepted_references": 2,
+  "total_reference_panels": 3,
+  "runtime_unchanged": true,
+  "generated_this_step": [
+    4
+  ]
+}

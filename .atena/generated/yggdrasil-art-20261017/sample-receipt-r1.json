@@ -1,0 +1,101 @@
+{
+  "id": "YGGDRASIL-ART-SAMPLES-20261017",
+  "revision": "r1",
+  "status": "TWO_SAMPLES_AWAITING_OWNER_ACCEPTANCE",
+  "tool": "built-in image_gen",
+  "samples": [
+    {
+      "id": "A",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-3b53ea3e-600b-4b4c-8028-19dd5ebda94a.png",
+      "path": ".atena/generated/yggdrasil-art-20261017/samples-r1/sample_a_branch_junction_edge_v01.png",
+      "prompt": ".atena/generated/yggdrasil-art-20261017/samples-r1/sample-a-prompt-v01.txt",
+      "role": "Wood surface, junction, edge and deep side",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "c3439eb3653d6218913f0116cc001ce33cee8c181bbb8096c74545772f3e6048",
+      "version": "v01",
+      "status": "DRAFT_AWAITING_OWNER_APPROVAL",
+      "inspected": true
+    },
+    {
+      "id": "B",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-630af1a2-2d22-4926-a564-3cd3f7a2b1a0.png",
+      "path": ".atena/generated/yggdrasil-art-20261017/samples-r1/sample_b_trunk_universe_passage_v01.png",
+      "prompt": ".atena/generated/yggdrasil-art-20261017/samples-r1/sample-b-prompt-v01.txt",
+      "role": "Monumental trunk, cosmic depth, branching routes and violet passage",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "3dddfba845ba7e0bec396a71fd289c765d3d6840f37c049aa29a24455ff9d78b",
+      "version": "v01",
+      "status": "DRAFT_AWAITING_OWNER_APPROVAL",
+      "inspected": true
+    }
+  ],
+  "references": [
+    {
+      "panel": 1,
+      "version": "v03",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png",
+      "sha256": "527e6f1b1f2dd2df5c44f78e6368aba2fe900a660fb706edb06ee0db3a8831bd",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q1-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Wood material, monumental cosmic tree, overall scale",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    },
+    {
+      "panel": 3,
+      "version": "v01",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v01.png",
+      "sha256": "312ab4ff2575f484e68474aae73cdcea2e2f5f2702748f7283a7952966db2fc0",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q3-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Passage violet light and transition from root to target",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    },
+    {
+      "panel": 4,
+      "version": "v01",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q4_maelor_alone_v01.png",
+      "sha256": "cd4a2c6424a9587747b7055c57bfdb41a18b219c4e2fdd2fc81d87aed3b4ce01",
+      "dimensions": [
+        1672,
+        940
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q4-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Root side, thickness, cosmic void and visual depth",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    }
+  ],
+  "review": {
+    "no_characters_or_text": true,
+    "wood_and_cosmic_continuity": true,
+    "clear_thick_root_sides": true,
+    "violet_passage_confined_to_sample_b": true,
+    "raw_backgrounds_opaque": true,
+    "not_runtime_ready": true,
+    "geometry_r3_unchanged": true,
+    "limitations": [
+      "Aesthetic studies only, not actual collider/footprint validation",
+      "Generated projection must be normalized to the exact game 2:1 camera in asset production/integration",
+      "Fine grain and cosmic detail may need reduction for combat readability",
+      "Sample A vertical trunk is a composition study, not authorization for a new blocking prop",
+      "Future top masks must strictly follow accepted geometry; neither image defines new walkable paths"
+    ]
+  },
+  "runtime_hashes_unchanged": true,
+  "owner_acceptance": "PENDING",
+  "implementation_executed": false
+}

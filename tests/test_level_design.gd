@@ -16,7 +16,11 @@ func run() -> Array:
 		var start := map_size * 0.5
 		TerrainLayout.scale = map_size.x / 40.0
 		var props := SceneryLayoutRef.expanded_props(stage_id, start, map_size)
-		if props.is_empty():
+		if String(stage_id) == "raiz_yggdrasil":
+			var prototype: Dictionary = Data.table("prototype_stages").get(stage_id, {})
+			if not bool(prototype.get("qa_only", false)) or not design[stage_id].get("props", []).is_empty() or not props.is_empty():
+				out.append("raiz_yggdrasil: protótipo QA deve permanecer sem props")
+		elif props.is_empty():
 			out.append("%s: level_design sem props" % stage_id)
 		if props != SceneryLayoutRef.expanded_props(stage_id, start, map_size):
 			out.append("%s: layout de props não é determinístico" % stage_id)

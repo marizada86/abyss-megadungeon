@@ -1,0 +1,179 @@
+{
+  "status": "COMPLETE_VISUAL_PRODUCTION_INDIVIDUALLY_APPROVED",
+  "screenplay": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+  "panels": [
+    {
+      "panel": 1,
+      "segment": "before_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q1_aila_freed_v01.png",
+      "sha256": "09e77df412052d24e3c3725697ffac924e5a72f656b04702cd6f279014df5673",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q1-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q1_aila_freed_v01.png"
+    },
+    {
+      "panel": 2,
+      "segment": "before_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q2_bromnor_legacy_v01.png",
+      "sha256": "1ce28d932623d4999e3cb585b4a165710d2314c45e21158678e8b846b6603a22",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q2-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q2_bromnor_legacy_v01.png"
+    },
+    {
+      "panel": 3,
+      "segment": "before_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q3_aila_awakens_v01.png",
+      "sha256": "df62ed7c37b0fd76898ee7121523e42ff69a2230da5a557cb3aada30e9287430",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q3-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q3_aila_awakens_v01.png"
+    },
+    {
+      "panel": 4,
+      "segment": "before_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q4_sendrinah_prayer_v01.png",
+      "sha256": "860c697980a74c11b2436cd00e473894682f58f9d59eeb2540bc1284cb4f71a5",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q4-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q4_sendrinah_prayer_v01.png"
+    },
+    {
+      "panel": 5,
+      "segment": "after_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q5_thalion_command_v01.png",
+      "sha256": "d3617c33de6a31a4dc923805c1bc4442eae1d9724be9dfc2e36340214d9b6115",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q5-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q5_thalion_command_v01.png"
+    },
+    {
+      "panel": 6,
+      "segment": "after_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q6_roots_abduction_v01.png",
+      "sha256": "6c35f667b8b0c86022f7d3487886451bddd3009f1862c2d6995bcc1905297470",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q6-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q6_roots_abduction_v01.png"
+    },
+    {
+      "panel": 7,
+      "segment": "after_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q7_separate_escapes_v01.png",
+      "sha256": "77f121f3ad58226f4111385e5b6a29d1997a5b94ff8df1271af74d62dbbfb837",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q7-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q7_separate_escapes_v01.png"
+    },
+    {
+      "panel": 8,
+      "segment": "after_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q8_roots_decay_v01.png",
+      "sha256": "8d666ee4002735be32c79df5c348d96a8683a178dee049995599e07eaf42335d",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q8-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q8_roots_decay_v01.png"
+    },
+    {
+      "panel": 9,
+      "segment": "after_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q9_surrender_v01.png",
+      "sha256": "9639eb2e7896af0889b981c0deb9fb7d53c1b65ff0be3b6743522fced96cb566",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q9-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q9_surrender_v01.png"
+    },
+    {
+      "panel": 10,
+      "segment": "after_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q10_interrogation_v01.png",
+      "sha256": "ebab6e913641dc90b3db26fed34ac22ca44d43fe6f3aca7193011cf6238401b0",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q10-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q10_interrogation_v01.png"
+    },
+    {
+      "panel": 11,
+      "segment": "after_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q11_maelor_sent_v01.png",
+      "sha256": "ab926c2540c8d7f4e44eed3d1704ef8a2c538bf24cf4703c93ae27a10e2029fe",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q11-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q11_maelor_sent_v01.png"
+    },
+    {
+      "panel": 12,
+      "segment": "after_dagruve",
+      "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q12_aila_retained_v01.png",
+      "sha256": "fd6f14c41495df7405b8f612f47810b94890ae6a618a309a7d450116d4109d78",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q12-20261017-r1.md",
+      "runtime_admitted": true,
+      "admitted_asset": "assets/hq/chapter2_r1/hq_n19_q12_aila_retained_v01.png"
+    }
+  ],
+  "approved_panels": 12,
+  "total_panels": 12,
+  "sequence_preview": ".atena/generated/hq19-production-20261017/hq19-approved-sequence-r1.jpg",
+  "runtime_authorized": false,
+  "visual_sequence_inspection": "PASS_ATENA_CONTACT_SHEET",
+  "sequence_checks": {
+    "ordered_12_panels": true,
+    "before_after_dagruve_split": true,
+    "aila_wingless": true,
+    "brook_receives_hammer": true,
+    "kayron_white": true,
+    "roots_fail_before_later_maelor_transfer": true,
+    "thalion_survives_aila_retained": true
+  },
+  "runtime_verified": false,
+  "runtime_admitted": true,
+  "campaign_automatic_triggers": false
+}

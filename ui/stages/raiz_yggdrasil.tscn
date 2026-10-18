@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/ground.gd" id="1_ground"]
+[ext_resource type="PackedScene" path="res://ui/hero_view.tscn" id="2_hero"]
+[ext_resource type="Script" path="res://ui/yggdrasil_art.gd" id="3_art"]
+
+[node name="Stage" type="Node2D"]
+
+[node name="Ground" type="Node2D" parent="."]
+z_index = -100
+script = ExtResource("1_ground")
+map_size = Vector2i(60, 60)
+terrain_layout_id = "raiz_yggdrasil"
+stage_visual_id = "raiz_yggdrasil"
+use_stage_texture = false
+visual_seed = 83
+
+[node name="Sorted" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Hero" parent="Sorted" instance=ExtResource("2_hero")]
+position = Vector2(-576, 1248)
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="YggdrasilArt" type="Node2D" parent="."]
+script = ExtResource("3_art")

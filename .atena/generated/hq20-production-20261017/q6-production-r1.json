@@ -1,0 +1,34 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P20-Q06",
+  "authorization": "Q5 aprovada (2026-10-17), próxima candidata autorizada",
+  "tool": "built-in image_gen",
+  "tool_prompt": "q6-prompt-v01.txt",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq20-production-20261017/candidates/hq_n20_q5_nidhogg_misses_v01.png",
+      "sha256": "81b8fe39fe8bd22a8a515bc23fe0b4056ebffb8785b9a16959f48ae4d4bb8f7a"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v02.png",
+      "sha256": "3cf1279324cc03b68d882d37bd977d6de380ba52ddf1bae6917878f6b1c5ebd8"
+    }
+  ],
+  "runtime_admitted": false,
+  "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q6_maelor_escape_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-920297fa-e4e1-4987-8623-5f93c5c8d676.png",
+  "sha256": "860fd6c4bbfe175d3ca1c48bd4aad29e6d9efa1755bb45fa2230be375b9bad09",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "owner_approval": "aprovado (2026-10-17), aceite Q6 v01",
+  "inspection": {
+    "maelor_running_toward_purple_portal": true,
+    "nidhogg_alive_behind": true,
+    "clear_separation_no_wound": true,
+    "wood_cosmic_continuity": true,
+    "no_other_people_or_text": true
+  },
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q6-20261017-r1.md"
+}

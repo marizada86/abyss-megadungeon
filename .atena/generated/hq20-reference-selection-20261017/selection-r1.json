@@ -1,0 +1,34 @@
+{
+  "id": "HQ20-REFERENCE-SELECTION-20261017",
+  "revision": "r1",
+  "status": "DRAFT_AWAITING_OWNER_SELECTION_APPROVAL",
+  "scope": [
+    1,
+    3,
+    4
+  ],
+  "full_screenplay_panels": 7,
+  "direct_reuse": 0,
+  "new_compositions": 3,
+  "production_order": [
+    1,
+    3,
+    4
+  ],
+  "identities": [
+    "leoric",
+    "korrak",
+    "maelor"
+  ],
+  "marciela_portrayal": "Indirect backlit back view pending owner acceptance; no canonical face invented",
+  "blocking_for_selection": [],
+  "resolvable_on_approval": [
+    "compositions and initial environmental palette",
+    "Marciela indirect portrayal"
+  ],
+  "conditional_blocking_for_q3": "If detailed facial appearance requested, missing Marciela portrait must be resolved first",
+  "generation_authorized": false,
+  "runtime_authorized": false,
+  "spec": ".atena/specs/SPEC-NOTTGARD-HQ20-REFERENCE-SELECTION-20261017/selection-r1.md",
+  "audit": ".atena/generated/hq20-reference-selection-20261017/audit-r1.json"
+}

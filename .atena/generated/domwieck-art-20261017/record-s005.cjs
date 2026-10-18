@@ -1,0 +1,14 @@
+const fs=require('fs');
+const base='.atena/generated/domwieck-art-20261017/',read=p=>fs.readFileSync(p,'utf8').replace(/^\uFEFF/,'');
+const report=JSON.parse(read(base+'s005-launch.json'));
+if(!report.isolated||report.errors.length||!report.windows.some(w=>w.window_handle&&w.responding))throw Error('Launch not verified');
+const evidence='.atena/evidence/EVID-NOTTGARD-DOMWIECK-ART-PLAYTEST-LAUNCH-20261017-r1.md';
+fs.writeFileSync(evidence,`# S-DART-005 — playtest visual aberto\n\nPlano r1, etapa 5/5 em avaliação, quatro etapas concluídas e uma aberta. Autorização: “autorizado”, após pergunta explícita sobre S-DART-005 e abertura do playtest isolado. Não constitui aceite visual final.\n\nOnze arquivos da build reconferidos por hash contra a validação S-DART-004 antes da abertura. Launcher existente abriu Domwieck com APPDATA/LOCALAPPDATA e perfil sintéticos; sonda sem autoload confirmou user_dir dentro da sessão. Janela respondendo, PID ${report.windows[0].pid}; nenhum erro de carregamento nos registros conferidos.\n\nSessão: ${report.session}\n\n[Registro de abertura](../generated/domwieck-art-20261017/s005-launch.json). Testes e auditorias técnicas anteriores permanecem válidos; não foram repetidos sem alteração de build. Nenhum save real carregado.\n\nOrientação fornecida antes da abertura: avaliar continuidade com HQs, escala de Ailalore, clareza do jardim/alvo e visibilidade no combate. WASD/setas ou mouse para andar, Q/botão direito para habilidade e Esc para pausa. Observar transparência de prédios/árvores ao passar atrás, brilho da estrela e sinais de ataque.\n\nPróximo resultado: retorno do usuário aprovando o visual ou identificando ajustes; S-DART-005 permanece aberta até essa avaliação.\n`);
+const p='.atena/state/plan.yaml',s=read(p),end=s.indexOf('\nroot_art_plan:');let block=s.slice(0,end);
+if(end<0||!block.includes('status: S_DART_005_ACTIVE_AWAITING_OWNER_FEEDBACK'))throw Error('Unexpected state');
+block=block.replace('visual_playtest: AUTHORIZED_AWAITING_LAUNCH','visual_playtest: OPEN_AWAITING_OWNER_FEEDBACK');
+block+=`  visual_playtest_evidence: EVID-NOTTGARD-DOMWIECK-ART-PLAYTEST-LAUNCH-20261017-r1\n  visual_playtest_launch: ${base}s005-launch.json\n`;
+fs.writeFileSync(p,block+s.slice(end));
+if(read(p).slice(read(p).indexOf('\nroot_art_plan:'))!==s.slice(end))throw Error('Other plans changed');
+fs.appendFileSync('.atena/specs/SPEC-NOTTGARD-DOMWIECK-ART-20261017/plan-r1.md','\n\n## S-DART-005 — playtest visual aberto em 2026-10-17\n\nAbertura explicitamente autorizada. Build conferida por hash; janela de Domwieck respondendo com perfil sintético e isolamento confirmado. [Evidência](../../evidence/EVID-NOTTGARD-DOMWIECK-ART-PLAYTEST-LAUNCH-20261017-r1.md). Etapa 5/5 ativa, quatro concluídas; aceite visual humano pendente. Nenhuma conclusão subjetiva inferida da abertura técnica.\n');
+console.log('Playtest open; evidence saved; 4/5 complete, owner feedback pending.');

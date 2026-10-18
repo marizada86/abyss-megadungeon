@@ -1,0 +1,7 @@
+# HQ02 Q5 — correção localizada v02 DRAFT
+
+IN_PLAN, PLAN-NOTTGARD-HQ-REVIEW-20261015 r1, S-HQ-003, etapa 3/16 (2 concluídas; 14 abertas). Dono pediu explicitamente “retire a névoa de dentro da Tarn”. V01 não aceita; retirada dos resíduos internos agora autorizada, superando a permissão anterior de mantê-los nesta candidata. Não acrescentar explicação ou regra temporal de dissipação ao lore.
+
+Base v01 inspecionada: domo azul íntegro, porém há resíduos verdes sobre docas/água e profundidade ambígua na direita. Correção: interior completamente limpo; névoa verde somente além do domo, preservando cidade, docas, luz e composição. Identidade N/A, cena ambiental; contexto e bíblia anteriormente aprovados continuam válidos. Sem gaps BLOCKING. Prompt salvo antes da geração. Saída v02 versionada e recibo, inspeção de resíduos/profundidade, hash/dimensões e diff. Runtime PC/Web inalterado; aguardar aceite visual antes da sequência.
+
+Resultado: v02 produzida com ImageGen integrado. Inspeção confirma retirada dos resíduos verdes nas docas, cantos, barris e água; superfície azul contínua e composição preservadas. Banco verde distante permanece, sujeito à validação do dono quanto à leitura da profundidade externa. Cópia `candidates/hq_n02_q5_sealed_dome_v02.png`, recibo `q5-v02-candidate-receipt.json` com hash e dimensões. Original preservado; sem promoção antecipada de candidata a CANON. Narração inalterada.

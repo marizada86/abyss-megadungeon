@@ -1,0 +1,74 @@
+{
+  "step": "S-DART-002",
+  "authorized_reference_scope": [
+    {
+      "asset": "assets/hq/chapter1_r1/hq_n18_q3_domwieck_invasion_v01.png",
+      "sha256": "919a1e8fa5c07e87fe2add11df7ec9c543d4a9d2c306e2db92d9cac5e1153e82",
+      "role": "Architecture, paving, active blue Tarn; exclude abyss/portal/troops"
+    },
+    {
+      "asset": "assets/hq/chapter1_r1/hq_n03_q1_garden_v03.png",
+      "sha256": "af234f301b8f720feb8586c9b088d4a82be73bb0331ce510cc6c1b633ca57adf",
+      "role": "Circular forest, red garden, intact star and beam"
+    },
+    {
+      "asset": "assets/hq/chapter1_r1/hq_n03_q2_adam_strike_v03.png",
+      "sha256": "724313bad05dfb24e9237a7d5a795b3173f26bff27c4ff8c435dab73342e5427",
+      "role": "Only Ailalore material, larger scale and light blue; exclude Adam, strike and collapse"
+    }
+  ],
+  "entries": [
+    {
+      "id": "street-v01",
+      "file": "domwieck-street-sample-v01.png",
+      "source": "exec-e51e88fb-80a5-4099-83d9-9db7219eec65.png",
+      "prompt": "street-sample-v01-prompt.txt",
+      "review_selection": true,
+      "path": ".atena/generated/domwieck-art-20261017/candidates/domwieck-street-sample-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-e51e88fb-80a5-4099-83d9-9db7219eec65.png",
+      "sha256": "62184e8ce312dae2feb2c5294a1609f9736c8c00c91c5e16b475cc9d81f2ee79",
+      "width": 1672,
+      "height": 941,
+      "status": "OWNER_APPROVED_VISUAL_SAMPLE",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background_requested": false,
+      "original_bytes_preserved": true
+    },
+    {
+      "id": "garden-v01",
+      "file": "domwieck-garden-sample-v01.png",
+      "source": "exec-de2b65cb-b916-4df9-87f5-c84cb87e5029.png",
+      "prompt": "garden-sample-v01-prompt.txt",
+      "review_selection": false,
+      "note": "Preserved; superseded for review by v02 due to frontal cinematic camera",
+      "path": ".atena/generated/domwieck-art-20261017/candidates/domwieck-garden-sample-v01.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-de2b65cb-b916-4df9-87f5-c84cb87e5029.png",
+      "sha256": "7ac5f2d56370e8e2b146b963e6596cb94be6e1da3154aa651c642d72bccfdcf3",
+      "width": 1670,
+      "height": 942,
+      "status": "DRAFT_OWNER_ACCEPTANCE_PENDING",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background_requested": false,
+      "original_bytes_preserved": true
+    },
+    {
+      "id": "garden-v02",
+      "file": "domwieck-garden-sample-v02.png",
+      "source": "exec-f64d0e16-9870-4ffe-8dad-948ae7951737.png",
+      "prompt": "garden-sample-v01-prompt.txt + garden-sample-v02-correction.txt",
+      "review_selection": true,
+      "path": ".atena/generated/domwieck-art-20261017/candidates/domwieck-garden-sample-v02.png",
+      "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-f64d0e16-9870-4ffe-8dad-948ae7951737.png",
+      "sha256": "1386df85cf0a2a0d21d7951042028c90f2281e13cc65a1760d0103cac3bd6378",
+      "width": 1536,
+      "height": 1024,
+      "status": "OWNER_APPROVED_VISUAL_SAMPLE",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background_requested": false,
+      "original_bytes_preserved": true
+    }
+  ],
+  "owner_acceptance": "APPROVED_OWNER_STREET_V01_GARDEN_V02",
+  "integration": false,
+  "acceptance_evidence": ".atena/evidence/EVID-NOTTGARD-DOMWIECK-ART-SAMPLES-ACCEPTANCE-20261017-r1.md"
+}

@@ -1,0 +1,143 @@
+{
+  "status": "PASS_TECHNICAL_OWNER_VISUAL_PENDING",
+  "step": "S-RART-004",
+  "completed_steps": 4,
+  "total_steps": 5,
+  "next_checkpoint": "CP-RART-005",
+  "changed_sources": [
+    {
+      "path": "assets/tiles/reino_abissal_roots_r1/surface.png",
+      "sha256": "03ecc1cd713b0055d5625390fd25d0d51b3368bc3e3206fa015b4d1fbdbb1da6"
+    },
+    {
+      "path": "assets/tiles/reino_abissal_roots_r1/junctions.png",
+      "sha256": "c7d55ffe8017f128e99d523fe0b4ff01ce72462b6dec38ac9a27c5b20c37666e"
+    },
+    {
+      "path": "assets/tiles/reino_abissal_roots_r1/sides.png",
+      "sha256": "b62f243461c90087fef04c73222c51d8e2588dea6547b366bcef0da1ae1bea64"
+    },
+    {
+      "path": "assets/tiles/reino_abissal_roots_r1/depth.png",
+      "sha256": "bed12ff3bab524a36dc82c2a195520765524e80f33ea69f08eeb739b37061485"
+    },
+    {
+      "path": "data/root_art.json",
+      "sha256": "14c15255c9a6089be0b2517600ab1d329daf76c24b4139b96d3c322f43a6df9b"
+    },
+    {
+      "path": "ui/ground.gd",
+      "sha256": "ff20ca3ba0fe4893aecfc05ae60f64fbe610ea0c4b1c6c23260d2983e1439657"
+    },
+    {
+      "path": "ui/shaders/abyss_roots.gdshader",
+      "sha256": "20000863f0230a68e56f0a771bf113e3ca6b52b1d1d3a0e48d2e4b656bd53079"
+    },
+    {
+      "path": "tests/test_root_art.gd",
+      "sha256": "11fe3ed3919d28d6f8006805e0238f050dc2bf6ad2757a3607fe293631f7c685"
+    }
+  ],
+  "guarded_sources_unchanged": true,
+  "approved_png_bytes_preserved": true,
+  "imported_rgba8_budget_bytes": 14680064,
+  "tests": [
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017\\validation-20261017-193939-719\\test_root_art.log",
+      "test": "test_root_art"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017\\validation-20261017-193337-027\\test_root_navigation.log",
+      "test": "test_root_navigation"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017\\validation-20261017-193337-027\\test_map_objectives.log",
+      "test": "test_map_objectives"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017\\validation-20261017-193337-027\\test_level_design.log",
+      "test": "test_level_design"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017\\validation-20261017-193337-027\\test_terrain.log",
+      "test": "test_terrain"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017\\validation-20261017-193337-027\\test_chapter_flow.log",
+      "test": "test_chapter_flow"
+    },
+    {
+      "passed": true,
+      "exit_code": 0,
+      "log": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017\\validation-20261017-193337-027\\test_scripts_compile.log",
+      "test": "test_scripts_compile"
+    }
+  ],
+  "smoke_session": "validation-20261017-193929-368",
+  "captures": 29,
+  "source_profile_preserved": true,
+  "render_audit_session": "validation-20261017-193740-356",
+  "render_audit": {
+    "baseline": {
+      "art_enabled": false,
+      "dt": 0.0166666666666667,
+      "frame_loop": {
+        "max_ms": 25.032,
+        "median_ms": 20.808,
+        "p95_ms": 23.064
+      },
+      "frames": 600,
+      "population": 50,
+      "seed": 7204,
+      "simulation": {
+        "max_ms": 12.17,
+        "median_ms": 8.935,
+        "p95_ms": 10.866
+      }
+    },
+    "candidate": {
+      "art_enabled": true,
+      "dt": 0.0166666666666667,
+      "frame_loop": {
+        "max_ms": 18.864,
+        "median_ms": 12.873,
+        "p95_ms": 15.13
+      },
+      "frames": 600,
+      "population": 50,
+      "seed": 7204,
+      "simulation": {
+        "max_ms": 12.56,
+        "median_ms": 8.96,
+        "p95_ms": 10.8
+      }
+    },
+    "failures": [],
+    "frame_median_ratio": 0.618656286043829,
+    "mask": {
+      "domwieck_toggle_pixel_identical": true,
+      "escaped_art_probes": 0,
+      "probes": 8157,
+      "support_mismatches": 0
+    },
+    "measurement": "Offscreen OpenGL frame loop with vsync disabled; includes simulation, UI sync, scheduling and render dispatch; not GPU timestamps or a certified gameplay FPS",
+    "user_data_dir": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/root-art-20261017/validation-20261017-193740-356/appdata/Godot/app_userdata/Nottgard Survivors"
+  },
+  "portage": {
+    "pc": "implemented_tested",
+    "web": "outside_approved_scope"
+  },
+  "human_visual_acceptance": "PENDING"
+}

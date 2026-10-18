@@ -16,6 +16,7 @@ var radius := 0.3
 var color := Color.WHITE
 var scale := 1.0
 var move := "chase"
+var mobility := "ground" # Explicit; appearance and enemy name never grant flight.
 var keep := 5.0
 var abilities: Array = []
 var resist := {}

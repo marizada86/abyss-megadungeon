@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "stage_id": "domwieck",
+  "native_size": 1254,
+  "import_max_size": 1024,
+  "textures": {
+    "ground": "res://assets/tiles/domwieck_r1/ground.png",
+    "architecture": "res://assets/tiles/domwieck_r1/architecture.png",
+    "vegetation": "res://assets/tiles/domwieck_r1/vegetation.png",
+    "garden": "res://assets/tiles/domwieck_r1/garden.png",
+    "ailalore": "res://assets/tiles/domwieck_r1/ailalore.png",
+    "ambient": "res://assets/tiles/domwieck_r1/ambient.png"
+  },
+  "approved_hashes": {
+    "ground": "3acea8c06624e18c970c201af083ccc2a2b69d29f847c40f1e1de1526643e0a3",
+    "architecture": "66e6ecea484751120beee730bdc8f5067ed1dd41562a894f22241e3f8e040f50",
+    "vegetation": "5cdfce7984e59b844032e067024d7ee11c595880a0b61b8b6955ef136f77116c",
+    "garden": "42197f9b6f48cb07987a0fed9bdcba52618f99ff49ad8c41c268416069b05e5a",
+    "ailalore": "320b27f6a7d39ca354b01c32e3d0dcfb6774e82b2bdd9b66b78e619acb036dd4",
+    "ambient": "f1adb4009128586237ef33122e60a5321f21cc041f7d422f91ed7275a9d40f9b"
+  },
+  "building_anchors": [
+    [
+      7,
+      20
+    ],
+    [
+      23,
+      22
+    ],
+    [
+      37,
+      38
+    ],
+    [
+      53,
+      40
+    ],
+    [
+      7,
+      39
+    ],
+    [
+      53,
+      21
+    ]
+  ],
+  "burning_indices": [
+    0,
+    1,
+    4
+  ],
+  "building_heights": [
+    124,
+    144,
+    120,
+    124,
+    120,
+    124
+  ],
+  "garden_center": [
+    30,
+    7
+  ],
+  "flower_radius": 4,
+  "tree_radius": 5.6,
+  "tree_count": 28,
+  "tree_height": 62,
+  "star_height": 104,
+  "star_base_offset": [
+    0,
+    -3
+  ],
+  "ground_tint": "737c89",
+  "canopy_fade": 0.32,
+  "excluded_garden_variants": [
+    3
+  ],
+  "rects": {
+    "ground": [
+      [
+        0,
+        0,
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0,
+        0.5,
+        0.5
+      ],
+      [
+        0,
+        0.5,
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    ],
+    "architecture": [
+      [
+        0,
+        0,
+        0.52,
+        0.52
+      ],
+      [
+        0.52,
+        0,
+        0.48,
+        0.52
+      ],
+      [
+        0,
+        0.52,
+        0.52,
+        0.48
+      ],
+      [
+        0.52,
+        0.52,
+        0.48,
+        0.48
+      ]
+    ],
+    "vegetation": [
+      [
+        0,
+        0,
+        0.53,
+        0.52
+      ],
+      [
+        0.53,
+        0,
+        0.47,
+        0.52
+      ],
+      [
+        0,
+        0.52,
+        0.565,
+        0.48
+      ],
+      [
+        0.565,
+        0.52,
+        0.435,
+        0.48
+      ]
+    ],
+    "garden": [
+      [
+        0,
+        0,
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0,
+        0.5,
+        0.5
+      ],
+      [
+        0,
+        0.5,
+        0.5,
+        0.5
+      ]
+    ],
+    "ailalore": [
+      [
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "ambient": [
+      [
+        0,
+        0,
+        0.56,
+        0.5
+      ],
+      [
+        0.56,
+        0,
+        0.44,
+        0.5
+      ],
+      [
+        0,
+        0.5,
+        0.52,
+        0.5
+      ],
+      [
+        0.52,
+        0.5,
+        0.48,
+        0.5
+      ]
+    ]
+  }
+}

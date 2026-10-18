@@ -30,7 +30,34 @@ func run() -> Array:
 	if not Playtest.qa_run_destinations().any(func(entry): return entry[1] == "prop_grounding"):
 		failures.append("Navegador QA deveria expor cenário de contato visual de props")
 	_assert_end_qa_sandbox_clears_leak(failures)
+	_assert_dagruve_request_isolation(failures)
 	return failures
+
+func _assert_dagruve_request_isolation(failures: Array) -> void:
+	var valid: Dictionary={"stage_id":"dagruve","encounter_id":"dagruve_thalion_r1","target_state":"running"}
+	if not GameScript.qa_encounter_request_valid(valid):
+		failures.append("Approved encounter request rejected")
+	for patch in [{"stage_id":"docas"},{"encounter_id":"../../other"},{"scene":"res://ui/title.tscn"},{"overlay":{"boss":"thalion"}},{"target_state":"victory"}]:
+		var invalid:=valid.duplicate(true)
+		invalid.merge(patch,true)
+		var game:=GameScript.new()
+		game.profile=ProfileScript.new({"coins":77})
+		var snapshot: Dictionary=game.profile.data.duplicate(true)
+		if game.start_qa_run(invalid) or game.qa_sandbox or game.profile.data!=snapshot:
+			failures.append("Invalid encounter opened sandbox or changed profile")
+		game.controls.free()
+		game.free()
+	var context_game:=GameScript.new()
+	context_game.profile=ProfileScript.new({"coins":77})
+	context_game.qa_launch=valid.duplicate(true)
+	if context_game.battle_ctx().has("encounter_id"):
+		failures.append("Encounter leaked outside active sandbox")
+	context_game.qa_sandbox=true
+	var ctx:=context_game.battle_ctx()
+	if ctx.get("encounter_id","")!="dagruve_thalion_r1" or not ctx.meta_mods.is_empty() or ctx.difficulty!=1.0 or not ctx.abyss_marks.is_empty():
+		failures.append("QA reference context not neutral")
+	context_game.controls.free()
+	context_game.free()
 
 func _assert_end_qa_sandbox_clears_leak(failures: Array) -> void:
 	# SPEC-074: sair de uma run QA pelo HUD (ui/run.gd:_return_to_menu) chama
@@ -53,3 +80,7 @@ func _assert_end_qa_sandbox_clears_leak(failures: Array) -> void:
 	var already_clear := GameScript.new()
 	if not already_clear.end_qa_sandbox():
 		failures.append("end_qa_sandbox sem sandbox ativo deveria ser um no-op que reporta 'inalterado'")
+	leaked.controls.free()
+	leaked.free()
+	already_clear.controls.free()
+	already_clear.free()

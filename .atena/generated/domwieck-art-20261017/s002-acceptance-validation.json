@@ -1,0 +1,11 @@
+{
+  "status": "PASS_OWNER_ACCEPTANCE",
+  "selected_samples": 2,
+  "hashes_valid": true,
+  "document_links_valid": true,
+  "shared_state_preserved": true,
+  "completed_steps": 2,
+  "total_steps": 5,
+  "next_checkpoint": "CP-DART-003",
+  "kit_production_authorized": false
+}

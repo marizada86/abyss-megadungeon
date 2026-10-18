@@ -1,0 +1,24 @@
+---
+id: EVID-NOTTGARD-MAP003-PROTOTYPE-20261017-r1
+status: IMPLEMENTED_VALIDATION_PARTIAL_AWAITING_SCOPE_ADJUSTMENT
+step: S-MAP-003
+date: 2026-10-17
+---
+
+# Reino Abissal — protótipo e pendência de catálogo
+
+Autorização: aceite explícito do dossiê r1 e S-MAP-003 pelo dono. Alterados 12 arquivos de jogo/teste dentro da lista de 13: data/stages.json, data/level_design.json, core/battle.gd, core/terrain_layout.gd, ui/ground.gd, ui/run.gd, ui/hud.gd, ui/stage_progress.gd, ui/menu.gd, ui/stages/reino_abissal.tscn, tests/test_data.gd e tests/test_map_objectives.gd. tests/test_battle.gd não precisou ser editado.
+
+Preflight: todos os 13 caminhos iguais à baseline do dossiê; arquivos existentes copiados antes das alterações em [s003-before/manifest.json](../generated/missing-maps-20261017/s003-before/manifest.json). Mudanças anteriores de HQ/menu/project.godot preservadas, sem reset/commit. Estado compartilhado de HQ14 continuou avançando em outro trabalho; retorno mais recente foi mantido.
+
+Implementado: cena 60×60, chegada (30,45), alvo (30,15), piso de feixes de raízes geométricas sem bitmap novo, seis cargas locais conferidas fora das reservas de passagem. Objetivo de 360 s + presença de 3 s em raio 2; relógio regressivo, seta e anel do alvo. Ondas/elites cessam aos 360 s, sobreviventes ficam até presença. Limpeza não chama _kill, não gera XP/ouro/baú/estatística de chefe, nem anima morte dos sobreviventes removidos. Conclusão comum idempotente; Docas conserva chefe/baús/portal/Maré; Pilares conserva chefes repetidos. QA de chefe vazio retorna mensagem; menu normal oculta protótipo e entrada direta de run bloqueia fora de QA. Fluxo/HQs/recompensas de perfil novos não integrados; QA apresenta resultado isolado sem liquidar perfil.
+
+Testes focados: [sessão com oito grupos aprovados](../generated/missing-maps-20261017/s003-validation-20261017-162614-141/results.json). Inclui test_map_objectives, test_data, test_battle, test_stage_progress, test_terrain, test_map_scale, test_level_design e test_qa_sandbox. Após ampliar cobertura para simulação integral de ondas + objetivo, [teste novo aprovado novamente](../generated/missing-maps-20261017/s003-validation-20261017-162935-901/results.json). Geometria usa props expandidos e grade de alcance de produção; checa entrada/alvo/laterais, material de raízes, spawns nas bordas, presença antes/exatamente/depois do tempo, dano, pausa, saída/reentrada, morte/abandono, callback repetido, limpeza e ausência de reforços/chefe.
+
+Smoke OpenGL: [relatório final](../generated/missing-maps-20261017/s003-validation-20261017-162952-395/smoke-result.json), zero falhas/erros e cinco PNGs. Entrada/ritual em 1280×720 e 1920×1080, resultado e perfil sintético intacto. Capturas inspecionadas: indicador legível, anel visível e chão contínuo esquemático. Acabamento final não foi aprovado nem declarado pronto. [Prévia](../generated/missing-maps-20261017/s003-validation-20261017-162952-395/reino-abissal-1280x720-ritual.png). Um primeiro smoke expôs seleção -1 no menu após retorno do QA; corrigida com seleção válida e smoke repetido sem erro. Uma primeira compilação do teste tinha inferência de float inválida, corrigida antes dos passes.
+
+Todas as execuções de projeto foram precedidas por sonda de projeto mínimo sem autoload, confirmando user_data_dir sob a pasta sintética da sessão, APPDATA/LOCALAPPDATA de processo e --controller-profile sintético. O executável GUI não esperava corretamente via chamada direta PowerShell; execução por RTK resolveu a espera. O wrapper console instalado não encontrou seu binário nominal; não foi instalado/renomeado nada. Godot usado: D:/Godot/godot.exe, 4.7.2. Nenhum save real carregado ou copiado. Smoke é verificação técnica, não playtest humano nem prova de diversão/dificuldade. Controles físicos não foram avaliados por uma pessoa.
+
+**Regressões pendentes confirmadas:** [sessão de catálogo](../generated/missing-maps-20261017/s003-validation-20261017-163124-537/results.json): test_stage_story, test_stage_structures e test_game_design falharam por exigirem conteúdo final para a entrada QA recém-cadastrada. Outros quatro consumidores globais identificados estaticamente estão descritos na [proposta de ajuste](../specs/SPEC-NOTTGARD-MISSING-MAPS-20261017/s003-catalog-scope-adjustment-r1.md). Não alegar que a suíte inteira passou ou encerrar S-MAP-003.
+
+Próximo checkpoint CP-MAP-003A: aprovar catálogo separado data/prototype_stages.json, adaptando somente consumidores já autorizados e preservando teto 13 por troca de caminho não usado. Proposta ainda não executada por exigência expressa de revisão da lista no dossiê §8. Estado continua 2/7 concluídas, cinco restantes. Domwieck/S-MAP-004 e integração/S-MAP-005 não iniciadas. Sem Web, serviços externos, arte gerada, dependências, commits ou publicação.

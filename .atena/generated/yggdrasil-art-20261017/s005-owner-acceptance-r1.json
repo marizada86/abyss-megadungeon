@@ -1,0 +1,18 @@
+{
+  "id": "YGGDRASIL-ART-PLAYTEST-OWNER-ACCEPTANCE-R1",
+  "user_response": "aprovado",
+  "scope": "Owner acceptance of visual playtest of Yggdrasil art r1 over geometry r3",
+  "feedback_detail": "General approval in response to visual playtest; no separate scores, timings or verbatim detailed observations supplied",
+  "session": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\map-playtest-sessions\\20261018-001702-103-777f09f2",
+  "art_revision": "r1",
+  "geometry_revision": "r3",
+  "validated_build_unchanged": true,
+  "admission": ".atena/generated/yggdrasil-art-20261017/s004-admission.json",
+  "technical_evidence": ".atena/generated/yggdrasil-art-20261017/s004-final-validation.json",
+  "completed_step": "S-YART-005",
+  "completed_steps": 5,
+  "total_steps": 5,
+  "remaining_steps": 0,
+  "canon": ".atena/vault/canon/DEC-YGGDRASIL-ART-PLAYTEST-ACCEPTED-20261017-r1.md",
+  "evidence": ".atena/evidence/EVID-NOTTGARD-YGGDRASIL-ART-PLAYTEST-ACCEPTANCE-20261017-r1.md"
+}

@@ -1,0 +1,82 @@
+{
+	"baseline": {
+		"dt": 0.0166666666666667,
+		"enabled": false,
+		"frame_loop": {
+			"max_ms": 16.662,
+			"median_ms": 8.711,
+			"p95_ms": 10.281
+		},
+		"frames": 600,
+		"population": 40,
+		"seed": 7504,
+		"simulation": {
+			"max_ms": 5.652,
+			"median_ms": 3.63,
+			"p95_ms": 4.472
+		},
+		"warmup": 30
+	},
+	"candidate": {
+		"dt": 0.0166666666666667,
+		"enabled": true,
+		"frame_loop": {
+			"max_ms": 10.328,
+			"median_ms": 7.27,
+			"p95_ms": 8.258
+		},
+		"frames": 600,
+		"population": 40,
+		"seed": 7504,
+		"simulation": {
+			"max_ms": 5.503,
+			"median_ms": 3.601,
+			"p95_ms": 4.502
+		},
+		"warmup": 30
+	},
+	"captures": [
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1280x720-arrival.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1280x720-center.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1280x720-west.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1280x720-east.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1280x720-edge.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1280x720-edge-gray.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1280x720-target.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1280x720-combat.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1280x720-combat-gray.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1920x1080-arrival.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1920x1080-center.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1920x1080-west.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1920x1080-east.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1920x1080-edge.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1920x1080-edge-gray.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1920x1080-target.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1920x1080-combat.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-1920x1080-combat-gray.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-overview.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/yggdrasil-overview-fallback.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/perf-art-false.png",
+		"D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000928/perf-art-true.png"
+	],
+	"failures": [],
+	"mask": {
+		"boundary_exclusion_ground_units": 0.18,
+		"escaped": 0,
+		"mismatches": 0,
+		"probes": 9666
+	},
+	"measurement": "Offscreen OpenGL loop including CPU/sync/scheduling/dispatch; not GPU timestamps or certified gameplay FPS",
+	"median_ratio": 0.834576971645046,
+	"p95_ratio": 0.803229257854294,
+	"profile_unchanged": true,
+	"regression": {
+		"domwieck": {
+			"ground_pixels_identical": true
+		},
+		"reino_abissal": {
+			"ground_pixels_identical": true
+		}
+	},
+	"user_dir": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/yggdrasil-art-20261017/s004-20261018-000928/a/Godot/app_userdata/Nottgard Survivors"
+}

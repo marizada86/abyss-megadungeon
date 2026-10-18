@@ -12,6 +12,9 @@ func run() -> Array:
 			out.append("missing structure configuration: %s" % stage_key)
 			continue
 		var profile: Dictionary = profiles[stage_key]
+		if bool(profile.get("disabled", false)):
+			if stage_key not in ["reino_abissal", "domwieck"]: out.append("estrutura antiga desabilitada")
+			continue
 		var kind := String(profile.get("kind", ""))
 		var texture_path := "res://assets/props/%s.png" % kind
 		if not FileAccess.file_exists(texture_path):

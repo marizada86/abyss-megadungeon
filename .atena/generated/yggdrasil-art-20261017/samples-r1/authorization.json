@@ -1,0 +1,104 @@
+{
+  "authorization": "autorizado",
+  "scope": "S-YART-002, only two study PNGs with imagegen, only approved HQ20 Q1 v03/Q3 v01/Q4 v01",
+  "references": [
+    {
+      "panel": 1,
+      "version": "v03",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png",
+      "sha256": "527e6f1b1f2dd2df5c44f78e6368aba2fe900a660fb706edb06ee0db3a8831bd",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q1-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Wood material, monumental cosmic tree, overall scale",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    },
+    {
+      "panel": 3,
+      "version": "v01",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q3_passage_v01.png",
+      "sha256": "312ab4ff2575f484e68474aae73cdcea2e2f5f2702748f7283a7952966db2fc0",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q3-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Passage violet light and transition from root to target",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    },
+    {
+      "panel": 4,
+      "version": "v01",
+      "path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q4_maelor_alone_v01.png",
+      "sha256": "cd4a2c6424a9587747b7055c57bfdb41a18b219c4e2fdd2fc81d87aed3b4ce01",
+      "dimensions": [
+        1672,
+        940
+      ],
+      "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q4-20261017-r1.md",
+      "status": "CANON_OWNER_ASSET_APPROVAL",
+      "role": "Root side, thickness, cosmic void and visual depth",
+      "limitations": "Reference only; exclude characters from map art; no new geometry, named planes, combat or functional portals"
+    }
+  ],
+  "runtime_baseline": [
+    {
+      "path": "data/root_navigation.json",
+      "sha256": "cc47f080affa033edfc0f9d5b5bf676e9f6a1d7c15523a20084c3a0616f7189d"
+    },
+    {
+      "path": "data/prototype_stages.json",
+      "sha256": "78db74fa17cd54f3956bb65b901bc9e62d2f21fe840f25c64f8b48dd5f12aac9"
+    },
+    {
+      "path": "data/level_design.json",
+      "sha256": "9bf228a7f08956f66d2685b9f55cbe32b9a6dc086c1b284fa60352b4ea0dd4e0"
+    },
+    {
+      "path": "core/terrain_layout.gd",
+      "sha256": "8d9f77d3ee0d363fb7138abf3ba95afe93e8fd47e14206749e2c0d8fb7a949de"
+    },
+    {
+      "path": "core/hero.gd",
+      "sha256": "e318f49f877625c9d1f05bda517a0cd6ae3b6312ab09b339b12c10bfbf26ea62"
+    },
+    {
+      "path": "core/battle.gd",
+      "sha256": "6cfec3d358562895c0da7b1d225b324526b47c70baaf9c03b8974060f129589a"
+    },
+    {
+      "path": "ui/ground.gd",
+      "sha256": "2482c7e00f82bbd3db98a486f991eb04f44e913eb54769f946fab0f8b5ef2a3d"
+    },
+    {
+      "path": "ui/stages/raiz_yggdrasil.tscn",
+      "sha256": "ba7cb037acc42b26f8ea3bb1af42660babc025f3c148de08f213cf1fbf92b3e1"
+    },
+    {
+      "path": "ui/domwieck_art.gd",
+      "sha256": "421dfa6546c4f5bbbc817a61bde01c7aa151518576ff09f0b5551dfa27467708"
+    },
+    {
+      "path": "data/root_art.json",
+      "sha256": "14c15255c9a6089be0b2517600ab1d329daf76c24b4139b96d3c322f43a6df9b"
+    },
+    {
+      "path": "data/domwieck_art.json",
+      "sha256": "ddbcdf1e731ee70ca7ec2b1b49f198b7135092bee6723e2d7fdf6644415458c8"
+    },
+    {
+      "path": "data/hqs.json",
+      "sha256": "dd87e6397259339a4917edfab336545ab161b8a80d677d95ff2a1c66c40ee32d"
+    },
+    {
+      "path": "data/chapter_flow.json",
+      "sha256": "8e602943e96570d10007c52e34286e6a6a457f58a757b051344521fbe009d66b"
+    }
+  ],
+  "generation_authorized": true,
+  "runtime_authorized": false
+}

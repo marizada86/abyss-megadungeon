@@ -1,0 +1,8 @@
+{
+  "authorization": "autorizado",
+  "stage": "S-YART-005",
+  "scope": "Open synthetic visual playtest of approved art r1 on accepted geometry r3; owner feedback required",
+  "admission": ".atena/generated/yggdrasil-art-20261017/s004-admission.json",
+  "validated_files_unchanged": true,
+  "owner_feedback": "PENDING"
+}

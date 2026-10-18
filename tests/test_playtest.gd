@@ -56,10 +56,10 @@ func run() -> Array:
 	var shedaklah_comics := PlaytestScript.qa_comic_ids_for_stage(hqs, "shedaklah")
 	if docas_comics[0] != "hqn_02":
 		failures.append("HQ da fase selecionada deveria vir primeiro para Docas")
-	if shedaklah_comics[0] != "hqn_03" or shedaklah_comics[1] != "hqn_04":
-		failures.append("Shedaklah deveria priorizar HQN-03 e HQN-04 na ordem de campanha")
-	if shedaklah_comics.size() != 14 or not shedaklah_comics.has("hqn_01") or not shedaklah_comics.has("hqn_14"):
-		failures.append("todas as HQN-01 a HQN-14 deveriam continuar acessíveis na lista QA")
+	if shedaklah_comics[0] != "hqn_04":
+		failures.append("Shedaklah deveria priorizar HQN-04; HQN-03 agora pertence a Domwieck")
+	if shedaklah_comics.size() != 18 or not shedaklah_comics.has("hqn_01") or not shedaklah_comics.has("hqn_18"):
+		failures.append("todas as 18 HQs preservadas devem continuar acessíveis em QA")
 	var evidence_dir := PlaytestScript.evidence_directory_for_executable("C:/playtest/NottgardSurvivors.exe")
 	if evidence_dir != "C:/playtest/evidencias":
 		failures.append("evidencias deveria ficar ao lado do executavel, recebeu %s" % evidence_dir)

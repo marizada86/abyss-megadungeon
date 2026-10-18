@@ -937,8 +937,8 @@ func run() -> Array:
 			out.append("portal não levou a docas (%s)" % bs.stage_id)
 		else:
 			bs.enter_next_stage()
-			if bs.stage_id != "shedaklah":
-				out.append("portal de docas não levou a shedaklah (%s)" % bs.stage_id)
+			if bs.stage_id != "reino_abissal":
+				out.append("portal de docas não levou ao reino abissal (%s)" % bs.stage_id)
 
 	# 12) todas as fases carregam e o diretor spawna sem quebrar
 	for sid in Data.table("stages"):

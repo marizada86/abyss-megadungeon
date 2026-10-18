@@ -4,7 +4,7 @@ const HQCatalog := preload("res://core/hq_catalog.gd")
 const EXPECTED := {
 	"hqn_01": {"type": "first_run"},
 	"hqn_02": {"type": "stage_cleared", "stage": "docas"},
-	"hqn_03": {"type": "stage_reached", "stage": "shedaklah"},
+	"hqn_03": {"type": "stage_cleared", "stage": "domwieck"},
 	"hqn_04": {"type": "stage_cleared", "stage": "shedaklah"},
 	"hqn_05": {"type": "stage_cleared", "stage": "molor"},
 	"hqn_06": {"type": "stage_cleared", "stage": "durao"},
@@ -15,14 +15,20 @@ const EXPECTED := {
 	"hqn_11": {"achievement": "cacador_de_chefes"},
 	"hqn_12": {"achievement": "aluris"},
 	"hqn_13": {"achievement": "mestre_de_camadas"},
-	"hqn_14": {"achievement": "pilares_ativos"}
+	"hqn_14": {"achievement": "pilares_ativos"},
+	"hqn_15": {"type": "stage_cleared", "stage": "docas"},
+	"hqn_16": {"type": "stage_cleared", "stage": "docas"},
+	"hqn_17": {"type": "stage_cleared", "stage": "docas"},
+	"hqn_18": {"type": "stage_cleared", "stage": "reino_abissal"},
+	"hqn_19": {"type": "chapter2_content", "milestone": "dagruve_resolution"},
+	"hqn_20": {"type": "chapter2_content", "milestone": "yggdrasil_traversed"}
 }
 
 func run() -> Array:
 	var out: Array[String] = []
 	var hqs: Dictionary = Data.table("hqs")
 	if hqs.size() != EXPECTED.size():
-		out.append("catálogo deveria conter as 14 HQs aprovadas")
+		out.append("catálogo deveria conter as %d HQs previstas" % EXPECTED.size())
 	for hq_id in EXPECTED:
 		if not hqs.has(hq_id):
 			out.append("catálogo sem %s" % hq_id)
@@ -36,8 +42,9 @@ func run() -> Array:
 			if hq.get("trigger", {}) != expected:
 				out.append("gatilho incorreto para %s: %s" % [hq_id, str(hq.get("trigger", {}))])
 		var panels: Array = hq.get("panels", [])
-		if panels.size() != 4:
-			out.append("%s deveria ter quatro quadros" % hq_id)
+		var expected_panel_count := int({"hqn_01":8,"hqn_02":5,"hqn_03":6,"hqn_14":5,"hqn_15":5,"hqn_16":5,"hqn_17":4,"hqn_18":8,"hqn_19":12,"hqn_20":7}.get(hq_id,4))
+		if panels.size() != expected_panel_count:
+			out.append("%s deveria ter %d quadros" % [hq_id, expected_panel_count])
 		for panel in panels:
 			var path := String(panel.get("image", ""))
 			if not ResourceLoader.exists(path):
@@ -64,25 +71,12 @@ func run() -> Array:
 		out.append("save antigo com moedas mas sem estatísticas não deveria reproduzir HQN-01 retroativamente")
 	if not HQCatalog.is_unlocked(legacy.data, "hqn_01") or not HQCatalog.is_unlocked(legacy.data, "hqn_02") or not HQCatalog.is_unlocked(legacy.data, "hqn_03"):
 		out.append("progresso antigo deveria liberar HQs correspondentes no Diário")
-	var milestone_cases := [
-		["stage_cleared", "docas", "hqn_02"],
-		["stage_reached", "shedaklah", "hqn_03"],
-		["stage_cleared", "shedaklah", "hqn_04"],
-		["stage_cleared", "molor", "hqn_05"],
-		["stage_cleared", "durao", "hqn_06"],
-		["stage_cleared", "feng_tu", "hqn_07"],
-		["stage_cleared", "shendilavri", "hqn_08"],
-		["stage_cleared", "goranthis", "hqn_09"],
-		["final_victory", "pilares", "hqn_10"]
-	]
-	for milestone in milestone_cases:
-		var triggered := HQCatalog.newly_triggered_ids(fresh.data, String(milestone[0]), String(milestone[1]))
-		if triggered != [String(milestone[2])]:
-			out.append("marco %s/%s deveria acionar %s, veio %s" % [milestone[0], milestone[1], milestone[2], str(triggered)])
-	if HQCatalog.newly_earned_ids(["pilares_ativos"]) != ["hqn_14"]:
-		out.append("conquista nova deveria apresentar somente HQN-14")
+	if HQCatalog.newly_triggered_ids(fresh.data, "stage_cleared", "docas") != ["hqn_02", "hqn_15", "hqn_16", "hqn_17"]:
+		out.append("Docas deve acionar fila ordenada")
+	if not HQCatalog.newly_earned_ids(["aluris", "pilares_ativos"]).is_empty():
+		out.append("conquistas novas não reativam seleção histórica")
 	var old_achievement_unlocks := Profile.new({"achievements": {"aluris": true, "pilares_ativos": true}})
-	if HQCatalog.unlocked_ids(old_achievement_unlocks.data).filter(func(id): return id in ["hqn_12", "hqn_14"]) != ["hqn_12", "hqn_14"]:
+	if not HQCatalog.is_unlocked(old_achievement_unlocks.data, "hqn_12") or not HQCatalog.is_unlocked(old_achievement_unlocks.data, "hqn_14"):
 		out.append("conquistas existentes deveriam continuar liberando HQN-12 e HQN-14")
 
 	var scene := load("res://ui/hq_screen.tscn") as PackedScene
@@ -93,7 +87,7 @@ func run() -> Array:
 	var screen = scene.instantiate()
 	screen.process_mode = Node.PROCESS_MODE_ALWAYS
 	tree.root.add_child(screen)
-	screen.call("start_hq", hqs["hqn_11"])
+	screen.call("start_hq", hqs["hqn_01"])
 	var panel_image: TextureRect = screen.get_node("%PanelImage")
 	if panel_image.texture == null:
 		out.append("reader did not load first panel texture")
@@ -105,17 +99,53 @@ func run() -> Array:
 		var drawn_size: Vector2 = Vector2(panel_image.texture.get_size()) * scale_factor
 		if drawn_size.x > available.x + 0.01 or drawn_size.y > available.y + 0.01:
 			out.append("imagem seria cortada em %dx%d" % [int(viewport_size.x), int(viewport_size.y)])
-	if String(screen.get_node("%PanelCounter").text) != "Quadro 1 de 4":
-		out.append("leitor não iniciou no primeiro quadro")
-	screen.call("advance")
-	screen.call("advance")
-	screen.call("advance")
-	if String(screen.get_node("%PanelCounter").text) != "Quadro 4 de 4":
-		out.append("leitor não chegou ao quarto quadro")
-	screen.call("advance")
+	for panel_index in range(8):
+		if bool(screen.get("is_closed")) or bool(screen.get("completed")):
+			out.append("HQ01 não deve concluir antes do avanço após o oitavo quadro")
+		if String(screen.get_node("%PanelCounter").text) != "Quadro %d de 8" % (panel_index + 1):
+			out.append("contador incorreto na HQ01, quadro %d" % (panel_index + 1))
+		var expected_panel: Dictionary = hqs["hqn_01"]["panels"][panel_index]
+		if String(screen.get_node("%Caption").text) != String(expected_panel.text):
+			out.append("legenda incorreta na HQ01, quadro %d" % (panel_index + 1))
+		var right_caption: Label = screen.get_node("%CaptionRight")
+		if panel_index == 1:
+			if not right_caption.visible or right_caption.text != "Helion: Procure Gilly.":
+				out.append("fala de Helion deve aparecer na metade direita do quadro 2")
+			if String(screen.get_node("%Caption").text) != "Zynara: Investigue as docas.":
+				out.append("fala de Zynara deve permanecer na metade esquerda do quadro 2")
+			if screen.get_node("%Caption").anchor_right >= 0.5 or right_caption.anchor_left <= 0.5:
+				out.append("as duas falas devem ocupar metades separadas do quadro 2")
+		elif right_caption.visible or not right_caption.text.is_empty() or not is_equal_approx(screen.get_node("%Caption").anchor_right, 0.945):
+			out.append("quadros sem fala à direita devem restaurar a legenda única")
+		if panel_image.texture == null or panel_image.texture.resource_path != String(expected_panel.image):
+			out.append("imagem incorreta na HQ01, quadro %d" % (panel_index + 1))
+		screen.call("advance")
 	if not bool(screen.get("is_closed")) or not bool(screen.get("completed")):
-		out.append("leitor deve registrar conclusão ao avançar do último quadro")
+		out.append("leitor deve registrar conclusão após o oitavo quadro da HQ01")
+
 	screen.free()
+
+	var hq02_screen = scene.instantiate()
+	hq02_screen.process_mode = Node.PROCESS_MODE_ALWAYS
+	tree.root.add_child(hq02_screen)
+	hq02_screen.call("start_hq", hqs["hqn_02"])
+	for panel_index in range(5):
+		if bool(hq02_screen.get("is_closed")) or bool(hq02_screen.get("completed")):
+			out.append("HQ02 concluiu antes do quinto quadro")
+		var expected_hq02: Dictionary = hqs["hqn_02"]["panels"][panel_index]
+		if String(hq02_screen.get_node("%PanelCounter").text) != "Quadro %d de 5" % (panel_index + 1):
+			out.append("contador incorreto na HQ02")
+		if String(hq02_screen.get_node("%Caption").text) != String(expected_hq02.text):
+			out.append("legenda incorreta na HQ02")
+		var hq02_image: TextureRect = hq02_screen.get_node("%PanelImage")
+		if hq02_image.texture == null or hq02_image.texture.resource_path != String(expected_hq02.image):
+			out.append("imagem incorreta na HQ02")
+		if hq02_screen.get_node("%CaptionRight").visible:
+			out.append("HQ02 deve usar legenda única")
+		hq02_screen.call("advance")
+	if not bool(hq02_screen.get("is_closed")) or not bool(hq02_screen.get("completed")):
+		out.append("HQ02 deve concluir após quinto quadro")
+	hq02_screen.free()
 
 	var skip_screen = scene.instantiate()
 	skip_screen.process_mode = Node.PROCESS_MODE_ALWAYS

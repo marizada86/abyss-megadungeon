@@ -1,0 +1,40 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P19-Q11",
+  "authorization": "Q10 aprovada (2026-10-17), continuidade explicitamente autorizada",
+  "authorization_canon": ".atena/vault/canon/DEC-HQ-CANDIDATE-APPROVAL-CONTINUATION-20261017-r1.md",
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq19-production-20261017/candidates/hq_n19_q10_interrogation_v01.png",
+      "sha256": "ebab6e913641dc90b3db26fed34ac22ca44d43fe6f3aca7193011cf6238401b0"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq19-production-20261017/candidates/hq_n19_q6_roots_abduction_v01.png",
+      "sha256": "6c35f667b8b0c86022f7d3487886451bddd3009f1862c2d6995bcc1905297470"
+    }
+  ],
+  "tool_prompt": "q11-tool-prompt-v01.txt",
+  "screenplay": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+  "runtime_authorized": false,
+  "candidate": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q11_maelor_sent_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-a19fe86d-0ecf-4bd0-8e18-ca54aec34518.png",
+  "sha256": "ab926c2540c8d7f4e44eed3d1704ef8a2c538bf24cf4703c93ae27a10e2029fe",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "owner_approval": "aprovado (2026-10-17), aceite individual Q11 v01",
+  "runtime_admitted": false,
+  "inspection": {
+    "image_valid": true,
+    "landscape_16_9": true,
+    "maelor_handcuffed_root_abduction": true,
+    "purple_portal": true,
+    "aila_wingless_material_side_guarded": true,
+    "thalion_alive_reference_costume": true,
+    "temple_stone_floor": true,
+    "no_embedded_caption": true
+  },
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q11-20261017-r1.md"
+}

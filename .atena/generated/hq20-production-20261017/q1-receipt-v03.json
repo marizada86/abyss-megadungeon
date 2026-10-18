@@ -1,0 +1,31 @@
+{
+  "id": "HQ20-Q1-CANDIDATE-20261017",
+  "version": "v03",
+  "status": "DRAFT_AWAITING_OWNER_APPROVAL",
+  "panel": 1,
+  "tool": "built-in image_gen edit",
+  "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-8b5101cb-ba83-47ab-9f6c-32e1ef0bff61.png",
+  "local_path": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png",
+  "sha256": "527e6f1b1f2dd2df5c44f78e6368aba2fe900a660fb706edb06ee0db3a8831bd",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "prompt_path": ".atena/generated/hq20-production-20261017/q1-prompt-v03.txt",
+  "edit_target": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_cosmic_tree_v02.png",
+  "owner_feedback": "A árvore deve ser mais \"amadeirada\", demosntrar ser mais resistente",
+  "review": {
+    "viewed": true,
+    "wood_grain_and_organic_knots_clearer": true,
+    "warm_brown_wood_replaces_stony_gold_speckled_surface": true,
+    "thick_coherent_bark_and_heavy_junctions": true,
+    "cosmic_scene_and_two_travelers_preserved": true,
+    "korrak_without_axe": true,
+    "no_added_text_or_extra_figures": true,
+    "appearance_only_not_mechanical_indestructibility": true
+  },
+  "previous_candidates_preserved": true,
+  "runtime_unchanged": true,
+  "owner_acceptance": "PENDING",
+  "other_panels_generated": false
+}

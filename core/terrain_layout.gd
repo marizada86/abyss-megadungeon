@@ -3,6 +3,9 @@ extends RefCounted
 ## Layouts determinísticos de macroterreno. Não consomem a RNG da batalha.
 
 const MATERIAL_PLATEAU := &"plateau"
+const MATERIAL_ABYSS_ROOT := &"abyss_root"
+const MATERIAL_YGGDRASIL_ROOT := &"yggdrasil_root"
+const MATERIAL_DOMWIECK_STONE := &"domwieck_stone"
 const MATERIAL_ASH := &"ash"
 const MATERIAL_SLOPE := &"slope"
 const MATERIAL_BANK := &"bank"
@@ -113,6 +116,12 @@ static func goranthis_styxfall_offset(p: Vector2) -> float:
 	return absf(p.x - goranthis_styxfall_center_x(p.y))
 
 static func _material_local(stage_id: String, p: Vector2) -> StringName:
+	if stage_id == "raiz_yggdrasil":
+		return MATERIAL_YGGDRASIL_ROOT
+	if stage_id == "reino_abissal":
+		return MATERIAL_ABYSS_ROOT
+	if stage_id == "domwieck":
+		return MATERIAL_DOMWIECK_STONE
 	var generic_styx := _generic_styx_material(stage_id, p)
 	if generic_styx != &"":
 		return generic_styx
@@ -282,7 +291,68 @@ static func material_at(stage_id: String, p: Vector2) -> StringName:
 	return _material_local(stage_id, p / scale)
 
 static func is_blocked(stage_id: String, p: Vector2) -> bool:
+	if has_roots(stage_id):
+		return not root_supports(p, 0.0, stage_id)
 	return _is_blocked_local(stage_id, p / scale)
+
+## Coordinates are the approved 60x60 floor plan, independent of legacy scale.
+static var _root_data: Dictionary = {}
+
+static func root_definition(stage_id: String = "reino_abissal") -> Dictionary:
+	if _root_data.is_empty():
+		_root_data = JSON.parse_string(FileAccess.get_file_as_string("res://data/root_navigation.json"))
+	return _root_data.get(stage_id, {})
+
+static func has_roots(stage_id: String) -> bool:
+	return stage_id == "reino_abissal" or stage_id == "raiz_yggdrasil"
+
+static func root_edge_width(definition: Dictionary, edge: Array) -> float:
+	return float(edge[2]) if edge.size() > 2 else float(definition.width)
+
+static func root_point(raw: Array) -> Vector2:
+	return Vector2(float(raw[0]), float(raw[1]))
+
+## A complete disk must fit in one supporting primitive. This conservative
+## erosion never admits a footprint into void at a concave junction.
+static func root_supports(p: Vector2, radius: float = 0.0, stage_id: String = "reino_abissal") -> bool:
+	var d := root_definition(stage_id)
+	if d.is_empty():
+		return false
+	for node: Array in d.nodes.values():
+		if p.distance_to(root_point(node)) <= float(node[2]) - radius:
+			return true
+	var default_half_width := float(d.width) * 0.5 - radius
+	for edge: Array in d.edges:
+		var half_width := float(edge[2]) * 0.5 - radius if edge.size() > 2 else default_half_width
+		if half_width < 0.0:
+			continue
+		var a := root_point(d.nodes[edge[0]])
+		var b := root_point(d.nodes[edge[1]])
+		if p.distance_to(Geometry2D.get_closest_point_to_segment(p, a, b)) <= half_width:
+			return true
+	return false
+
+static func root_nearest(p: Vector2, radius: float, stage_id: String = "reino_abissal") -> Vector2:
+	var d := root_definition(stage_id)
+	if d.is_empty():
+		return Vector2.INF
+	var best := Vector2.INF
+	var distance := INF
+	for node: Array in d.nodes.values():
+		var center := root_point(node)
+		var q := center + (p - center).limit_length(maxf(0.0, float(node[2]) - radius - 0.001))
+		if q.distance_squared_to(p) < distance:
+			best = q
+			distance = q.distance_squared_to(p)
+	for edge: Array in d.edges:
+		var a := root_point(d.nodes[edge[0]])
+		var b := root_point(d.nodes[edge[1]])
+		var center := Geometry2D.get_closest_point_to_segment(p, a, b)
+		var q := center + (p - center).limit_length(maxf(0.0, root_edge_width(d, edge) * 0.5 - radius - 0.001))
+		if q.distance_squared_to(p) < distance:
+			best = q
+			distance = q.distance_squared_to(p)
+	return best
 
 static func distance_to_styx(stage_id: String, p: Vector2) -> float:
 	return _distance_to_styx_local(stage_id, p / scale) * scale
@@ -294,6 +364,12 @@ static func styx_sample(stage_id: String, material: StringName = MATERIAL_CURREN
 	return _styx_sample_local(stage_id, material) * scale
 
 static func color_for(material: StringName) -> Color:
+	if material == MATERIAL_YGGDRASIL_ROOT:
+		return Color("3e342f")
+	if material == MATERIAL_ABYSS_ROOT:
+		return Color("302321")
+	if material == MATERIAL_DOMWIECK_STONE:
+		return Color("343e49")
 	match material:
 		MATERIAL_ASH: return Color("5a4038")
 		MATERIAL_SLOPE: return Color("342a2d")

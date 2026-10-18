@@ -1,0 +1,11 @@
+{
+  "hq01_hq02_unchanged": true,
+  "baseline_preserved": {
+    "core/terrain_layout.gd": true,
+    "ui/ground.gd": true,
+    "data/level_design.json": true,
+    "ui/stages/reino_abissal.tscn": true,
+    "ui/stages/domwieck.tscn": true,
+    "data/prototype_stages.json": true
+  }
+}

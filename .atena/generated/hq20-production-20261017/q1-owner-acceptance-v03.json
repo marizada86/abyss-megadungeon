@@ -1,0 +1,13 @@
+{
+  "status": "APPROVED_OWNER_V03",
+  "owner_statement": "aprovado",
+  "date": "2026-10-17",
+  "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q1_wood_strength_v03.png",
+  "sha256": "527e6f1b1f2dd2df5c44f78e6368aba2fe900a660fb706edb06ee0db3a8831bd",
+  "canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q1-20261017-r1.md",
+  "evidence": ".atena/evidence/EVID-NOTTGARD-HQ20-Q1-ACCEPTANCE-20261017-r1.md",
+  "completed_steps": 1,
+  "total_steps": 3,
+  "next_step": "S-P20-Q03",
+  "next_step_authorization": "PENDING"
+}

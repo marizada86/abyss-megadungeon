@@ -2,8 +2,8 @@ extends RefCounted
 ## Resolve acesso, marcos e apresentação inicial das HQs.
 
 const ORDER := [
-	"hqn_01", "hqn_02", "hqn_03", "hqn_04", "hqn_05", "hqn_06", "hqn_07",
-	"hqn_08", "hqn_09", "hqn_10", "hqn_11", "hqn_12", "hqn_13", "hqn_14"
+	"hqn_01", "hqn_02", "hqn_15", "hqn_16", "hqn_17", "hqn_18", "hqn_03", "hqn_14",
+	"hqn_19", "hqn_20", "hqn_04", "hqn_05", "hqn_06", "hqn_07", "hqn_08", "hqn_09", "hqn_10", "hqn_11", "hqn_12", "hqn_13"
 ]
 
 static func unlocked_ids(profile_data: Dictionary) -> Array[String]:
@@ -16,6 +16,21 @@ static func unlocked_ids(profile_data: Dictionary) -> Array[String]:
 static func is_unlocked(profile_data: Dictionary, hq_id: String) -> bool:
 	var hq: Dictionary = Data.table("hqs").get(hq_id, {})
 	if hq.is_empty():
+		return false
+	# Chapter 2 artwork is admitted; campaign scheduling has a separate contract.
+	if String(hq.get("trigger", {}).get("type", "")) == "chapter2_content":
+		if Game.qa_sandbox:
+			return true
+		return bool(profile_data.get("campaign_progress", {}).get("milestones", {}).get(String(hq.trigger.milestone), false))
+	if profile_data.has("campaign_progress"):
+		var cp: Dictionary = profile_data.campaign_progress
+		if cp.legacy_hq_access.has(hq_id) or Dictionary(profile_data.get("hqs_seen", {})).has(hq_id): return true
+		if hq_id in ["hqn_11", "hqn_12", "hqn_13"]: return false
+		if cp.presentation_done.has(hq_id) or cp.pending_hqs.any(func(row): return row.id == hq_id): return true
+		if hq_id == "hqn_14": return cp.milestones.has("docas_cleared")
+		if hq_id in ["hqn_02", "hqn_15", "hqn_16", "hqn_17"]: return cp.milestones.has("docas_cleared")
+		if hq_id == "hqn_18": return cp.milestones.has("reino_abissal_cleared")
+		if hq_id == "hqn_03": return cp.milestones.has("domwieck_cleared")
 		return false
 	var achievements: Dictionary = profile_data.get("achievements", {})
 	var achievement_id := String(hq.get("achievement", ""))
@@ -39,6 +54,12 @@ static func is_unlocked(profile_data: Dictionary, hq_id: String) -> bool:
 
 static func newly_triggered_ids(profile_data: Dictionary, event_type: String, stage_id: String = "") -> Array[String]:
 	var out: Array[String] = []
+	if profile_data.has("campaign_progress"):
+		for event in Data.table("chapter_flow").events:
+			if (event.event == event_type or (event.event == "campaign_first_start" and event_type == "first_run")) and (event_type == "first_run" or event.stage == stage_id):
+				for id in event.get("queue", []):
+					if not profile_data.campaign_progress.presentation_done.has(id) and not profile_data.get("hqs_seen", {}).has(id): out.append(id)
+		return out
 	var hqs: Dictionary = Data.table("hqs")
 	for hq_id in ORDER:
 		var hq: Dictionary = hqs.get(hq_id, {})
@@ -54,12 +75,7 @@ static func newly_triggered_ids(profile_data: Dictionary, event_type: String, st
 
 static func newly_earned_ids(achievement_ids: Array) -> Array[String]:
 	var out: Array[String] = []
-	var hqs: Dictionary = Data.table("hqs")
-	for hq_id in ORDER:
-		var hq: Dictionary = hqs.get(hq_id, {})
-		var achievement_id := String(hq.get("achievement", ""))
-		if achievement_id != "" and achievement_ids.has(achievement_id):
-			out.append(hq_id)
+	# Historical achievement grants are frozen on migration, never reactivated.
 	return out
 
 static func _has_campaign_progress(profile_data: Dictionary) -> bool:

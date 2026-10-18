@@ -1,0 +1,3 @@
+# HQ19 Q11 — aceite individual v01
+
+CANON_OWNER_ASSET_APPROVAL. 2026-10-17. O dono respondeu “aprovado” à Q11 v01. S-P19-Q11 concluída. Arquivo: `.atena/generated/hq19-production-20261017/candidates/hq_n19_q11_maelor_sent_v01.png`. SHA-256: `ab926c2540c8d7f4e44eed3d1704ef8a2c538bf24cf4703c93ae27a10e2029fe`. Dimensões: 1672×941. Aprovado envio de Maelor algemado por raízes negras pelo portal roxo, com Aila sem asas retida no lado material e Thalion vivo. Glifo permanece ilustrativo. Onze de 12 aceitas. Sem admissão no runtime. Aceite autoriza próxima candidata conforme regra explícita de continuidade.

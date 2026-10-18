@@ -1,0 +1,23 @@
+{
+  "reino_abissal": {
+    "revision": "r1",
+    "accepted_kit": "ASSET-APPROVAL-ROOT-ART-KIT-R1-20261017-r1",
+    "geometry": "root_navigation/reino_abissal",
+    "shader": "res://ui/shaders/abyss_roots.gdshader",
+    "textures": {
+      "surface": "res://assets/tiles/reino_abissal_roots_r1/surface.png",
+      "junctions": "res://assets/tiles/reino_abissal_roots_r1/junctions.png",
+      "sides": "res://assets/tiles/reino_abissal_roots_r1/sides.png",
+      "depth": "res://assets/tiles/reino_abissal_roots_r1/depth.png"
+    },
+    "import_sizes": {"surface":[1024,1024],"junctions":[1024,1024],"sides":[1024,512],"depth":[1024,1024]},
+    "atlas_inset": 0.008,
+    "side_height_px": 32,
+    "depth_height_px": 76,
+    "side_repeat_px": 320,
+    "depth_repeat_px": 192,
+    "depth_opacity": 0.28,
+    "top_brightness": 0.90,
+    "side_rows": [0.0,0.25028,0.50056,0.74972,1.0]
+  }
+}

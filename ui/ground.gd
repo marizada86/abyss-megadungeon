@@ -27,6 +27,68 @@ var _texture: Texture2D
 var _texture_path := ""
 var _baked: Texture2D
 var _baked_path := ""
+## Owner-approved root kit; reversible fallback for QA and missing resources.
+@export var use_root_art := true: set = _set_root_art
+@export var use_domwieck_art := true
+@export var use_yggdrasil_art := true
+var _root_art_material: ShaderMaterial
+var _root_art_rect := Rect2()
+
+func _set_root_art(v: bool) -> void:
+	use_root_art = v
+	queue_redraw()
+
+func root_art_config() -> Dictionary:
+	if not FileAccess.file_exists("res://data/root_art.json"):
+		return {}
+	var raw: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://data/root_art.json"))
+	return raw.get("reino_abissal", {}) if raw is Dictionary else {}
+
+func _prepare_root_art() -> bool:
+	if _root_art_material != null:
+		return true
+	var config := root_art_config()
+	if config.is_empty():
+		return false
+	if not ResourceLoader.exists(String(config.shader)):
+		return false
+	var shader_resource = load(String(config.shader))
+	if not shader_resource is Shader:
+		return false
+	var mat := ShaderMaterial.new()
+	mat.shader = shader_resource
+	for id in config.textures:
+		var path := String(config.textures[id])
+		if not ResourceLoader.exists(path):
+			return false
+		var texture = load(path)
+		if not texture is Texture2D:
+			return false
+		mat.set_shader_parameter({"surface":"surface_art","junctions":"junction_art","sides":"side_art","depth":"depth_art"}[id],texture)
+	var d := TerrainLayout.root_definition()
+	var nodes := PackedVector3Array()
+	var edges := PackedVector4Array()
+	var bounds := Rect2(Iso.to_screen(TerrainLayout.root_point(d.arrival)),Vector2.ZERO)
+	for node: Array in d.nodes.values():
+		nodes.append(Vector3(float(node[0]),float(node[1]),float(node[2])))
+		for i in 96:
+			bounds = bounds.expand(Iso.to_screen(TerrainLayout.root_point(node)+Vector2.from_angle(TAU*float(i)/96.0)*float(node[2])))
+	for edge: Array in d.edges:
+		var a := TerrainLayout.root_point(d.nodes[edge[0]])
+		var b := TerrainLayout.root_point(d.nodes[edge[1]])
+		edges.append(Vector4(a.x,a.y,b.x,b.y))
+	if nodes.size()!=9 or edges.size()!=12:
+		return false
+	mat.set_shader_parameter("root_nodes",nodes)
+	mat.set_shader_parameter("root_edges",edges)
+	mat.set_shader_parameter("half_width",float(d.width)*0.5)
+	for key in ["atlas_inset","side_height_px","depth_height_px","side_repeat_px","depth_repeat_px","depth_opacity","top_brightness"]:
+		mat.set_shader_parameter(key,float(config[key]))
+	mat.set_shader_parameter("side_rows",PackedFloat32Array(config.side_rows))
+	bounds.size.y += float(config.depth_height_px)
+	_root_art_rect = bounds.grow(2.0)
+	_root_art_material = mat
+	return true
 
 func _set_size(v: Vector2i) -> void:
 	map_size = v
@@ -151,6 +213,28 @@ func _atlas_uvs(texture: Texture2D, variant: int) -> PackedVector2Array:
 	])
 
 func _draw() -> void:
+	if material == _root_art_material and (terrain_layout_id != "reino_abissal" or not use_root_art):
+		material = null
+	if terrain_layout_id == "raiz_yggdrasil":
+		var art := get_parent().get_node_or_null("YggdrasilArt") if get_parent() != null else null
+		if art != null and art.has_method("is_active") and art.is_active():
+			return
+		_draw_yggdrasil_prototype()
+		return
+	if terrain_layout_id == "domwieck":
+		var art := get_parent().get_node_or_null("DomwieckArt") if get_parent() != null else null
+		if art != null and art.has_method("is_active") and art.is_active():
+			return
+		_draw_domwieck_prototype()
+		return
+	if terrain_layout_id == "reino_abissal":
+		if use_root_art and _prepare_root_art():
+			if material != _root_art_material:
+				material = _root_art_material
+			draw_rect(_root_art_rect,Color.WHITE)
+			return
+		_draw_root_prototype()
+		return
 	var baked := _baked_texture()
 	if baked != null:
 		var span := float(map_size.x + map_size.y)
@@ -175,6 +259,177 @@ func _draw() -> void:
 				draw_polygon(points, PackedColorArray([tint, tint, tint, tint]), _atlas_uvs(texture, variant), texture)
 			else:
 				draw_colored_polygon(points, color_a if (x + y) % 2 == 0 else color_b)
+
+func _draw_yggdrasil_prototype() -> void:
+	# Geometric QA study only; no approved final appearance is implied.
+	var d := TerrainLayout.root_definition("raiz_yggdrasil")
+	# Low-contrast vertical silhouette, separated from every supporting surface.
+	draw_colored_polygon(PackedVector2Array([Vector2(930,-1400),Vector2(1160,-1400),Vector2(1110,365),Vector2(978,420)]),Color("11151e"))
+	for i in 6:
+		var x := 985.0+float(i)*22.0
+		draw_line(Vector2(x,-1400),Vector2(x-12.0,355),Color("181b24"),3.0)
+	var shapes: Array[PackedVector2Array] = []
+	for edge: Array in d.edges:
+		var a := TerrainLayout.root_point(d.nodes[edge[0]])
+		var b := TerrainLayout.root_point(d.nodes[edge[1]])
+		var angle := (b-a).angle()
+		var half := TerrainLayout.root_edge_width(d,edge)*0.5
+		var points := PackedVector2Array()
+		for i in 33:
+			points.append(Iso.to_screen(b+Vector2.from_angle(angle-PI*0.5+PI*float(i)/32.0)*half))
+		for i in 33:
+			points.append(Iso.to_screen(a+Vector2.from_angle(angle+PI*0.5+PI*float(i)/32.0)*half))
+		shapes.append(points)
+	for node: Array in d.nodes.values():
+		var points := PackedVector2Array()
+		for i in 96:
+			points.append(Iso.to_screen(TerrainLayout.root_point(node)+Vector2.from_angle(TAU*float(i)/96.0)*float(node[2])))
+		shapes.append(points)
+	for shape in shapes:
+		var side := PackedVector2Array()
+		for p in shape:
+			side.append(p+Vector2(0,28))
+		draw_colored_polygon(side,Color("171820"))
+	for shape in shapes:
+		draw_colored_polygon(shape,Color("3e342f"))
+	for edge: Array in d.edges:
+		var a := TerrainLayout.root_point(d.nodes[edge[0]])
+		var b := TerrainLayout.root_point(d.nodes[edge[1]])
+		var normal := (b-a).normalized().orthogonal()
+		var half := TerrainLayout.root_edge_width(d,edge)*0.5
+		for strand in range(-6,7):
+			var points := PackedVector2Array()
+			for i in 33:
+				var t := float(i)/32.0
+				var offset := float(strand)*half/8.0+sin(t*12.0+float(strand))*0.06
+				points.append(Iso.to_screen(a.lerp(b,t)+normal*offset))
+			draw_polyline(points,Color("59483b") if strand%3==0 else Color("29282a"),2.0,true)
+	# A thin geometric passage mark; HUD owns availability and presence feedback.
+	var goal := Iso.to_screen(TerrainLayout.root_point(d.nodes.G))
+	draw_arc(goal+Vector2(0,-20),18.0,PI,TAU,28,Color("a380c1"),3.0,true)
+
+func _draw_root_prototype() -> void:
+	# HQ17 Q3 v02: dark braided bark, suspended bridges and purple depth.
+	# Geometry comes from the same capsules/disks as supporting collisions.
+	var d := TerrainLayout.root_definition()
+	var shapes: Array[PackedVector2Array] = []
+	for edge: Array in d.edges:
+		var a := TerrainLayout.root_point(d.nodes[edge[0]])
+		var b := TerrainLayout.root_point(d.nodes[edge[1]])
+		var path := PackedVector2Array()
+		var angle := (b - a).angle()
+		for i in 33:
+			path.append(Iso.to_screen(b + Vector2.from_angle(angle - PI * 0.5 + PI * float(i) / 32.0) * float(d.width) * 0.5))
+		for i in 33:
+			path.append(Iso.to_screen(a + Vector2.from_angle(angle + PI * 0.5 + PI * float(i) / 32.0) * float(d.width) * 0.5))
+		shapes.append(path)
+	for node: Array in d.nodes.values():
+		var path := PackedVector2Array()
+		for i in 96:
+			path.append(Iso.to_screen(TerrainLayout.root_point(node) + Vector2.from_angle(TAU * float(i) / 96.0) * float(node[2])))
+		shapes.append(path)
+	for shape in shapes:
+		var shadow := PackedVector2Array()
+		for point in shape:
+			shadow.append(point + Vector2(0,18))
+		draw_colored_polygon(shadow, Color("090810"))
+	# Draw edge thickness before ALL tops so connected roots have no false seam.
+	for shape in shapes:
+		var outline := shape.duplicate()
+		outline.append(shape[0])
+		draw_polyline(outline, Color("665048"), 3.0, true)
+	for shape in shapes:
+		draw_colored_polygon(shape, Color("251d24"))
+	# Fine wood strands remain well inside the supporting six-unit capsules.
+	for edge: Array in d.edges:
+		var a := TerrainLayout.root_point(d.nodes[edge[0]])
+		var b := TerrainLayout.root_point(d.nodes[edge[1]])
+		var normal := (b - a).normalized().orthogonal()
+		for strand in range(-9,10):
+			var path := PackedVector2Array()
+			for i in 61:
+				var t := float(i) / 60.0
+				var offset := float(strand) * 0.27 + sin(t * 17.0 + float(strand)) * 0.10
+				path.append(Iso.to_screen(a.lerp(b,t) + normal * offset))
+			draw_polyline(path, Color("4c3935") if strand % 3 == 0 else Color("15131c"), 2.5, true)
+			if strand % 5 == 0:
+				draw_line(path[19],path[21],Color("703c36"),1.5,true)
+	for node: Array in d.nodes.values():
+		var center := TerrainLayout.root_point(node)
+		var radius := float(node[2]) - 0.12
+		for axis in 2:
+			var direction := Vector2.from_angle(float(axis) * PI * 0.5 + 0.23)
+			var normal := direction.orthogonal()
+			for strand in range(-int(radius * 3.0),int(radius * 3.0)+1):
+				var offset := float(strand) / 3.0
+				if absf(offset) >= radius:
+					continue
+				var half_length := sqrt(radius * radius - offset * offset)
+				var path := PackedVector2Array()
+				for i in 41:
+					var t := float(i) / 20.0 - 1.0
+					var braid := sin(t * 12.0 + float(strand) * 1.7) * 0.05 * (1.0-t*t)
+					path.append(Iso.to_screen(center + direction * half_length * t + normal * (offset+braid)))
+				draw_polyline(path,Color("49353a") if strand % 3 == 0 else Color("15131b"),2.0,true)
+
+func _draw_domwieck_prototype() -> void:
+	# Provisional stone streets, architecture and garden; all scenery is visual.
+	for x in map_size.x:
+		for y in map_size.y:
+			var cell := Vector2(x, y)
+			var tile := PackedVector2Array([Iso.to_screen(cell), Iso.to_screen(cell + Vector2(1,0)), Iso.to_screen(cell + Vector2(1,1)), Iso.to_screen(cell + Vector2(0,1))])
+			var shade := 0.012 * float(posmod(x * 7 + y * 3, 4))
+			draw_colored_polygon(tile, Color(0.18 + shade, 0.22 + shade, 0.27 + shade))
+			if (x + y) % 2 == 0:
+				draw_line(tile[0], tile[1], Color("35404a"), 1.0)
+	for anchor in [Vector2(7,20),Vector2(23,22),Vector2(37,38),Vector2(53,40),Vector2(7,39),Vector2(53,21)]:
+		_draw_domwieck_building(anchor, anchor.x < 30.0)
+	_draw_ailalore_garden()
+
+func _draw_domwieck_building(at: Vector2, burning: bool) -> void:
+	var p := Iso.to_screen(at)
+	var roof := p + Vector2(0,-62)
+	draw_colored_polygon(PackedVector2Array([p + Vector2(-42,-8), p + Vector2(0,14), p + Vector2(42,-8), roof + Vector2(42,-8), roof + Vector2(-42,-8)]), Color("4c5963"))
+	draw_colored_polygon(PackedVector2Array([roof + Vector2(-44,-8),roof + Vector2(0,-40),roof + Vector2(44,-8),roof + Vector2(0,13)]), Color("283c4a"))
+	for side in [-1,1]:
+		var spire := roof + Vector2(float(side) * 33.0,-8)
+		draw_line(p + Vector2(float(side) * 33.0,-3), spire + Vector2(0,-27), Color("8498a4"), 4.0)
+		draw_colored_polygon(PackedVector2Array([spire + Vector2(-7,-20),spire + Vector2(0,-39),spire + Vector2(7,-20)]), Color("a3b3bd"))
+	draw_colored_polygon(PackedVector2Array([p + Vector2(-9,-3),p + Vector2(-9,-26),p + Vector2(0,-39),p + Vector2(9,-26),p + Vector2(9,-3)]), Color("192832"))
+	if burning:
+		var fire := p + Vector2(-36,1)
+		draw_colored_polygon(PackedVector2Array([fire + Vector2(-10,0),fire + Vector2(-7,-18),fire + Vector2(0,-31),fire + Vector2(3,-13),fire + Vector2(12,-21),fire + Vector2(10,0)]), Color("c66b2b"))
+		draw_colored_polygon(PackedVector2Array([fire + Vector2(-4,0),fire + Vector2(0,-18),fire + Vector2(6,0)]), Color("efbd61"))
+
+func _draw_ailalore_garden() -> void:
+	var center := Vector2(30,7)
+	var garden := Iso.to_screen(center)
+	draw_colored_polygon(Iso.ground_circle(garden, 4.0 * Iso.TILE_W * 0.5, 48), Color("233c35"))
+	for x in range(-7,8):
+		for y in range(-7,8):
+			var offset := Vector2(float(x) * 0.5,float(y) * 0.5)
+			if offset.length() > 3.6 or offset.length() < 1.0:
+				continue
+			var flower := Iso.to_screen(center + offset)
+			draw_circle(flower, 3.0, Color("8f293b") if (x + y) % 2 == 0 else Color("ba3848"))
+	for i in 28:
+		var angle := float(i) * TAU / 28.0
+		var point := Iso.to_screen(center + Vector2.from_angle(angle) * 5.6)
+		draw_line(point, point + Vector2(0,-24), Color("50605b"), 4.0)
+		draw_colored_polygon(PackedVector2Array([point + Vector2(-13,-14),point + Vector2(-10,-29),point + Vector2(0,-43),point + Vector2(12,-28),point + Vector2(14,-14)]), Color("193330"))
+		draw_line(point + Vector2(0,-37),point + Vector2(0,-15),Color("2b4840"),2.0)
+	# Ailalore is the intact light-blue fallen star, without health or interaction.
+	var star := garden + Vector2(0,-12)
+	draw_colored_polygon(PackedVector2Array([star + Vector2(0,-25),star + Vector2(8,-8),star + Vector2(30,-4),star + Vector2(12,5),star + Vector2(16,21),star + Vector2(0,11),star + Vector2(-16,21),star + Vector2(-12,5),star + Vector2(-30,-4),star + Vector2(-8,-8)]),Color("92d8f7"))
+	draw_colored_polygon(PackedVector2Array([star + Vector2(0,-22),star + Vector2(7,0),star + Vector2(0,10),star + Vector2(-7,0)]),Color("d1efff"))
+	var dome := PackedVector2Array()
+	for i in 81:
+		var angle := PI + float(i) * PI / 80.0
+		dome.append(garden + Vector2(cos(angle) * 1700.0, 15.0 + sin(angle) * 185.0))
+	draw_polyline(dome,Color(0.25,0.56,0.91,0.3),13.0)
+	draw_polyline(dome,Color(0.46,0.76,1.0,0.65),2.0)
+	draw_line(star,garden + Vector2(0,-170),Color(0.35,0.69,1.0,0.18),14.0)
+	draw_line(star,garden + Vector2(0,-170),Color("a9e4ff"),3.0)
 
 func _draw_layout_cell(center: Vector2, points: PackedVector2Array, x: int, y: int, texture: Texture2D, available_variants: int) -> void:
 	var material := TerrainLayout.material_at(terrain_layout_id, Vector2(x + 0.5, y + 0.5))

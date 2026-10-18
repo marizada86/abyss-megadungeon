@@ -1,0 +1,133 @@
+{
+  "id": "YGGDRASIL-ART-REFERENCE-AUDIT-20261017",
+  "revision": "r1",
+  "status": "PLANNING_COMPLETE_SPECIFIC_HQ20_IMAGES_PENDING",
+  "sources": [
+    {
+      "path": ".atena/vault/canon/HQ20-SCREENPLAY-APPROVED-20261017-r1.md",
+      "status": "CANON_TEXT",
+      "role": "primary environment and narrative, Q1/Q3/Q4 proposed visual dependency",
+      "sha256": "fc562d3e176885de33433f49a6eb72e441535b4850964e8c1505c58101f92e3a"
+    },
+    {
+      "path": ".atena/vault/canon/HQ19-SCREENPLAY-APPROVED-20261017-r2.md",
+      "status": "CANON_TEXT",
+      "role": "arrival continuity only",
+      "sha256": "0f548dc92d0179e4a0351db38e20f7b0a2d6246e44526c4efd2e2e6e17c44a6d"
+    },
+    {
+      "path": ".atena/vault/canon/HQ21-SCREENPLAY-APPROVED-20261017-r1.md",
+      "status": "CANON_TEXT",
+      "role": "passage continuity, no simultaneous-arrival inference",
+      "sha256": "60b063bb70aae3d3b4bc09482b921fdfce6374fb37e42d6296a31bb50e40e118"
+    },
+    {
+      "path": ".atena/vault/canon/ASSET-APPROVAL-HQ19-Q6-20261017-r1.md",
+      "status": "CANON_ASSET_ACCEPTANCE",
+      "role": "authority of inspected Q6 v01",
+      "sha256": "af124034c09a89c85dd9fd35cdd2beb0e2b05a1525c73f63952d55c833ca0b8f"
+    },
+    {
+      "path": ".atena/generated/hq19-production-20261017/candidates/hq_n19_q6_roots_abduction_v01.png",
+      "status": "APPROVED_IMAGE_INSPECTED",
+      "role": "violet passage and dark magic roots; not the material identity of Yggdrasil",
+      "sha256": "6c35f667b8b0c86022f7d3487886451bddd3009f1862c2d6995bcc1905297470"
+    },
+    {
+      "path": "assets/hq/chapter1_r1/hq_n17_q3_abyss_legion_v02.png",
+      "status": "APPROVED_OTHER_ENVIRONMENT_INSPECTED",
+      "role": "Reino Abissal comparison only; excluded as Yggdrasil generation input",
+      "sha256": "5440f4c64b056f3f40f23e4ffc3e971632a64311e38b144fbae022618df650c0"
+    },
+    {
+      "path": ".atena/vault/drafts/HQ-REVIEW-VISUAL-BIBLE-r1-20261015.md",
+      "status": "DRAFT_INTERNAL_R2",
+      "role": "style continuity only, no blanket promotion",
+      "sha256": "d052a89d3e629ad2f537aea4097461dd20fd40ae65ca02ccfd40275d11db1f73"
+    },
+    {
+      "path": ".atena/vault/canon/DEC-YGGDRASIL-PROTOTYPE-PLAYTEST-ACCEPTED-20261017-r3.md",
+      "status": "CANON_OWNER_ACCEPTANCE",
+      "role": "fixed gameplay geometry",
+      "sha256": "b987771428e4320dcc3859f984b066325a318c3e4b642f483fafd0ea637efc55"
+    },
+    {
+      "path": "data/root_navigation.json",
+      "status": "RUNTIME_ACCEPTED_R3",
+      "role": "baseline roots widths and geometry",
+      "sha256": "cc47f080affa033edfc0f9d5b5bf676e9f6a1d7c15523a20084c3a0616f7189d"
+    },
+    {
+      "path": "D:/dev/nottgard/vault/04_Locais/Yggdrasil.md",
+      "status": "LOCAL_SOURCE_CANON_AT_ORIGIN",
+      "role": "interplanar tree and apparently infinite trunk; read only",
+      "sha256": "a3175fd256b97623c0f8d29f9a146fc8b773c69a0f6fadb6237f35df3569acf6"
+    }
+  ],
+  "search_scope": [
+    "assets/hq filenames",
+    "local .atena/vault canon/specs and .atena/generated immediate directory names",
+    "D:/dev/nottgard/vault filenames and output/hq",
+    "D:/dev/nottgard/games/godot/nottgard-survivors/assets/hq filenames"
+  ],
+  "specific_hq20_approved_images_located": false,
+  "owner_reference_route": "Preparar e aprovar primeiro os quadros pertinentes da HQ20 (recomendado).",
+  "reference_images_for_future_generation": "PENDING_SELECTION_AND_OWNER_ACCEPTANCE",
+  "game_baseline": [
+    {
+      "path": "data/root_navigation.json",
+      "sha256": "cc47f080affa033edfc0f9d5b5bf676e9f6a1d7c15523a20084c3a0616f7189d"
+    },
+    {
+      "path": "data/prototype_stages.json",
+      "sha256": "78db74fa17cd54f3956bb65b901bc9e62d2f21fe840f25c64f8b48dd5f12aac9"
+    },
+    {
+      "path": "data/level_design.json",
+      "sha256": "9bf228a7f08956f66d2685b9f55cbe32b9a6dc086c1b284fa60352b4ea0dd4e0"
+    },
+    {
+      "path": "core/terrain_layout.gd",
+      "sha256": "8d9f77d3ee0d363fb7138abf3ba95afe93e8fd47e14206749e2c0d8fb7a949de"
+    },
+    {
+      "path": "core/hero.gd",
+      "sha256": "e318f49f877625c9d1f05bda517a0cd6ae3b6312ab09b339b12c10bfbf26ea62"
+    },
+    {
+      "path": "core/battle.gd",
+      "sha256": "6cfec3d358562895c0da7b1d225b324526b47c70baaf9c03b8974060f129589a"
+    },
+    {
+      "path": "ui/ground.gd",
+      "sha256": "2482c7e00f82bbd3db98a486f991eb04f44e913eb54769f946fab0f8b5ef2a3d"
+    },
+    {
+      "path": "ui/stages/raiz_yggdrasil.tscn",
+      "sha256": "ba7cb037acc42b26f8ea3bb1af42660babc025f3c148de08f213cf1fbf92b3e1"
+    },
+    {
+      "path": "ui/domwieck_art.gd",
+      "sha256": "421dfa6546c4f5bbbc817a61bde01c7aa151518576ff09f0b5551dfa27467708"
+    },
+    {
+      "path": "data/root_art.json",
+      "sha256": "14c15255c9a6089be0b2517600ab1d329daf76c24b4139b96d3c322f43a6df9b"
+    },
+    {
+      "path": "data/domwieck_art.json",
+      "sha256": "ddbcdf1e731ee70ca7ec2b1b49f198b7135092bee6723e2d7fdf6644415458c8"
+    },
+    {
+      "path": "data/hqs.json",
+      "sha256": "dd87e6397259339a4917edfab336545ab161b8a80d677d95ff2a1c66c40ee32d"
+    },
+    {
+      "path": "data/chapter_flow.json",
+      "sha256": "8e602943e96570d10007c52e34286e6a6a457f58a757b051344521fbe009d66b"
+    }
+  ],
+  "external_source_edited": false,
+  "generation_executed": false,
+  "runtime_edited": false
+}

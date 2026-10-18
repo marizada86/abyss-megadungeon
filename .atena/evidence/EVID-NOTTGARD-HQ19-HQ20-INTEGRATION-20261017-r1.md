@@ -1,0 +1,11 @@
+# Integração HQ19/HQ20 e consolidação PC — r1
+
+Autorização explícita do dono em 2026-10-17: “vamos integrar tudo que temos par afazer um commit e push”. S-I20-001/S-I20-002 concluídas. Spec planejada antes da admissão. Dezenove PNGs aprovados admitidos por hash em assets/hq/chapter2_r1, HQ19 com 12 e HQ20 com sete quadros, legendas dos roteiros CANON. HQ19 conserva uma entrada e metadados de segmentos antes/depois de Dagruve.
+
+Catálogo/leitor integrados: QA permite prévia completa, acesso normal depende de marcos próprios do capítulo 2, que não são fabricados nos eventos do capítulo 1. Sem alterar progressão ou saves de capítulo 1, sem ativar protótipo Dagruve na campanha. Roteiros posteriores não recebem arte inventada. Implementações locais de capítulo 1 e mapas aceitos são consolidadas, protótipo Dagruve permanece QA aguardando avaliação humana no outro plano.
+
+Validação: 21 testes distintos PASS, incluindo 19 quadros no leitor, legendas/contadores/retomada/fechamento, gating normal e QA, campanha, perfil/save, dados/scripts/plataforma, objetivos/terreno, mapas/artes/navegação e encontro Dagruve QA. Recuperação de saves apresentou recursos retidos por fixtures Nodes órfãos no executor antigo; corrigida limpeza limitada aos novos órfãos do teste e repetidos save, HQ2 e batalha: PASS, sem erros de encerramento. Não alterada lógica do save para silenciar erro.
+
+Doze capturas automatizadas em 1280×720 e 1920×1080; amostras finais inspecionadas com legenda e composição legíveis. Primeira captura foi invalidada por guia inicial sobreposto; capturador sintético corrigido e repetido. Sonda de isolamento comprovou APPDATA/LOCALAPPDATA e perfil sintéticos antes de Godot. Nenhum save real carregado ou playtest humano alegado.
+
+Manifestos: .atena/generated/hq-integration-20261017/admission-r1.json e validation-r1.json. Portagem PC específica, sem Web/origem modificada. Publicação autorizada em origin/main; revisão de payload exclui sessões/caches, material rejeitado e documentos de organização externa ao projeto. Recibo operacional de commit/push será salvo localmente em .atena/generated/hq-integration-20261017/publication.json, depois da operação, sem fabricar hash ou sucesso antecipados.

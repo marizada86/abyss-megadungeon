@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE_OWNER_APPROVED_R1",
+  "stage": "S-DART-005",
+  "completed_steps": 5,
+  "total_steps": 5,
+  "remaining_steps": 0,
+  "completed_checkpoint": "CP-DART-005",
+  "owner_acceptance": "aprovado",
+  "evidence": ".atena/evidence/EVID-NOTTGARD-DOMWIECK-ART-PLAYTEST-ACCEPTANCE-20261017-r1.md",
+  "canon": ".atena/vault/canon/ASSET-APPROVAL-DOMWIECK-ART-INTEGRATED-R1-20261017-r1.md",
+  "technical_validation": ".atena/generated/domwieck-art-20261017/s004-final-validation.json",
+  "game_source_hashes_verified": 11,
+  "prior_checks_reused": true,
+  "shared_state_preserved": true,
+  "document_links_valid": true,
+  "game_sources_changed_this_step": false,
+  "recorded_utc": "2026-10-17T22:01:40.269Z"
+}

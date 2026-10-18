@@ -1,0 +1,48 @@
+{
+  "status": "OWNER_APPROVED_VISUAL_SAMPLE_V02",
+  "version": "v02",
+  "tool": "image_gen built-in",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-b4cdc4f9-3a64-4472-9880-09436cde9468.png",
+  "file": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\root-art-20261017/candidates/reino-abissal-roots-sample-v02.png",
+  "sha256": "557ec234b2cdf9e684c3c152a6a649607aab561a71199bc31b39a478e6957a4f",
+  "width": 1774,
+  "height": 887,
+  "prompt": ".atena/generated/root-art-20261017/sample-prompt-v02.txt",
+  "reference_scope": [
+    {
+      "hq": "hqn_17",
+      "panel": 3,
+      "path": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\hq17-production-20261016\\candidates\\hq_n17_q3_abyss_legion_v02.png",
+      "sha256": "5440f4c64b056f3f40f23e4ffc3e971632a64311e38b144fbae022618df650c0",
+      "approval": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\vault\\canon\\ASSET-APPROVAL-HQ17-Q3-20261016-r1.md",
+      "authority": "CANON_APPROVED_REFERENCE",
+      "visually_inspected": true
+    },
+    {
+      "hq": "hqn_17",
+      "panel": 4,
+      "path": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\hq17-production-20261016\\candidates\\hq_n17_q4_voice_v01.png",
+      "sha256": "18f55eee9e96731c9764937502d428a06071975a946af51441f83ba2f19e48fd",
+      "approval": "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\vault\\canon\\ASSET-APPROVAL-HQ17-Q4-20261016-r1.md",
+      "authority": "CANON_APPROVED_REFERENCE",
+      "visually_inspected": true
+    }
+  ],
+  "gameplay_unchanged": true,
+  "not_admitted_to_assets": true,
+  "limitations": [
+    "Concept review sheet; not a runtime collision proof",
+    "Generated scale annotations not engineering measurements",
+    "Combat readability and atlas projection must be checked during later authorized production/integration"
+  ],
+  "owner_approval": {
+    "date": "2026-10-17",
+    "reply": "aprovado",
+    "criteria": [
+      "material",
+      "intertwining",
+      "edge_appearance"
+    ],
+    "canon": ".atena/vault/canon/ASSET-APPROVAL-ROOT-ART-SAMPLE-V02-20261017-r1.md"
+  }
+}

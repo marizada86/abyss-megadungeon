@@ -1,0 +1,18 @@
+{
+  "status": "PASS_TECHNICAL_INTEGRATION_HUMAN_PLAYTEST_PENDING",
+  "files": 10,
+  "tests": 11,
+  "mask_probes": 9666,
+  "mask_mismatches": 0,
+  "escaped_art": 0,
+  "other_maps_pixels_identical": true,
+  "guarded_runtime_unchanged": true,
+  "approved_source_bytes_preserved": true,
+  "shared_state_preserved": true,
+  "document_references_valid": true,
+  "completed_steps": 4,
+  "total_steps": 5,
+  "next_checkpoint": "CP-YART-005",
+  "human_playtest_authorized": false,
+  "render_report": ".atena/generated/yggdrasil-art-20261017/s004-20261018-001045/render-result.json"
+}

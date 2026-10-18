@@ -1,0 +1,50 @@
+﻿{
+    "user_data_dir":  "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/yggdrasil-art-20261017/s004-20261018-000748/a/Godot/app_userdata/Nottgard Survivors",
+    "profile":  "D:\\dev\\nottgard\\games\\launcher-pc\\nottgard-abyss-megadungeon\\.atena\\generated\\yggdrasil-art-20261017\\s004-20261018-000748\\synthetic-profile.json",
+    "results":  [
+                    {
+                        "test":  "test_yggdrasil_art",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_yggdrasil_navigation",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_yggdrasil_map",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_root_navigation",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_root_art",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_domwieck_art",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_map_objectives",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_level_design",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_terrain",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_chapter_flow",
+                        "passed":  true
+                    },
+                    {
+                        "test":  "test_scripts_compile",
+                        "passed":  true
+                    }
+                ]
+}

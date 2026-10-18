@@ -1,0 +1,37 @@
+{
+  "status": "APPROVED_V01",
+  "step": "S-P20-Q05",
+  "authorization": "Próxima candidata autorizada e definição explícita Nidhogg cobra gigante guardiã, 2026-10-17",
+  "identity_decision": ".atena/vault/canon/DEC-NIDHOGG-GIANT-SNAKE-20261017-r1.md",
+  "tool": "built-in image_gen",
+  "tool_prompt": "q5-prompt-v01.txt",
+  "references": [
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/.atena/generated/hq20-production-20261017/candidates/hq_n20_q4_maelor_alone_v01.png",
+      "sha256": "cd4a2c6424a9587747b7055c57bfdb41a18b219c4e2fdd2fc81d87aed3b4ce01"
+    },
+    {
+      "path": "D:/dev/nottgard/games/launcher-pc/nottgard-abyss-megadungeon/assets/portraits/maelor.png",
+      "sha256": "182e62852551f8514ad3a358a4d56c2115b90518ed8c959fc402a44a36457f3b"
+    }
+  ],
+  "runtime_admitted": false,
+  "candidate": ".atena/generated/hq20-production-20261017/candidates/hq_n20_q5_nidhogg_misses_v01.png",
+  "source": "C:/Users/gui-m/.codex/generated_images/01a14512-f318-7471-b2d2-ab2faaf3127c/exec-e8310df2-585d-4a07-9eb2-306cfb7cabae.png",
+  "sha256": "81b8fe39fe8bd22a8a515bc23fe0b4056ebffb8785b9a16959f48ae4d4bb8f7a",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "owner_approval": "aprovado (2026-10-17), aceite Q5 v01",
+  "inspection": {
+    "giant_legless_snake": true,
+    "maelor_outside_mouth_unharmed": true,
+    "no_contact_with_teeth": true,
+    "wood_cosmic_continuity": true,
+    "no_counterattack_or_dead_snake": true,
+    "no_text": true
+  },
+  "inspection_note": "Mandíbulas ainda abertas no instante da esquiva; falha representada pela distância clara, não por boca totalmente fechada.",
+  "approval_canon": ".atena/vault/canon/ASSET-APPROVAL-HQ20-Q5-20261017-r1.md"
+}

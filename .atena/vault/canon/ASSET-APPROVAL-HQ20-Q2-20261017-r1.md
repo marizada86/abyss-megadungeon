@@ -1,0 +1,3 @@
+# HQ20 Q2 — aceite v02
+
+CANON_OWNER_ASSET_APPROVAL. Data 2026-10-17. O dono respondeu “aprovado” à Q2 v02 com visual de Marciela atualizado pelo pacote CHAR-038 aprovado. Arquivo `.atena/generated/hq20-production-20261017/candidates/hq_n20_q2_marciela_meeting_v02.png`, SHA-256 `399e277cd6a1431ff214bc698f429deac8336fed069616ff9b9f28a177645309`, 1672×941. Q2 concluída; Q1/Q3/Q4 já tinham aceites próprios. V01 genérica preservada como superada. Aceite autoriza candidata seguinte pela regra de continuidade; reconciliar Q3 com mesma personagem sem alterar roteiro. Sem integração ou promoção integral do pacote DRAFT externo.

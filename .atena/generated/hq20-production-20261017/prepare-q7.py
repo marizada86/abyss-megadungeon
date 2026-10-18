@@ -1,0 +1,41 @@
+from pathlib import Path
+import json,hashlib,re,yaml
+r=Path.cwd(); base=r/'.atena/generated/hq20-production-20261017'
+p=base/'q6-production-r1.json'; prior=json.loads(p.read_text(encoding='utf-8'))
+assert prior['owner_approval']=='PENDING_V01'
+assert hashlib.sha256((r/prior['candidate']).read_bytes()).hexdigest()==prior['sha256']
+approval='.atena/vault/canon/ASSET-APPROVAL-HQ20-Q6-20261017-r1.md'
+spec='.atena/specs/SPEC-NOTTGARD-HQ20-COMPLETION-20261017/q7-r1.md'
+assert not (r/approval).exists() and not (base/'q7-production-r1.json').exists()
+(r/approval).write_text(f'''# HQ20 Q6 — aceite v01
+
+CANON_OWNER_ASSET_APPROVAL. 2026-10-17. O dono respondeu “aprovado” à Q6 v01. Arquivo `{prior['candidate']}`, SHA-256 `{prior['sha256']}`, 1672×941. Aprovada fuga de Maelor em direção ao portal roxo, Nidhogg vivo e intacto atrás; sem golpe ou ferimento. Seis de sete quadros aceitos. Próxima candidata autorizada pela regra de continuidade; sem admissão no runtime.
+''',encoding='utf-8')
+(r/spec).write_text('''# HQ20 Q7 — produção r1
+
+AUTHORIZED. IN_PLAN. S-P20-Q07, etapa 5/5 complementar; 4 concluídas e uma restante. Uma candidata PC, aceite individual; autorizada pelo aceite Q6 e regra de continuidade.
+
+Cena CANON: do outro lado da passagem, Marciela e Maelor se reconhecem no reencontro; relação de mãe/filho já aprovada. Plano médio dos dois com rostos legíveis, surpresa e alívio contidos, sem acrescentar fala, beijo, promessa ou combate. Não incluir Aila ou os outros integrantes neste recorte. Marciela pelo pacote CHAR-038 aprovado e Q2 v02 aceita: capuz erguido, cabelo castanho solto, rosto maduro, roupa escura rasgada em camadas, tiras/cintos, mãos vazias. Maelor pelo retrato e Q5/Q6 aceitos, sem ferimento ou feitiço.
+
+Ambiente: lado abissal, recorte fúngico de Shedaklah conforme Q3/Q6, névoa e cogumelos em segundo plano; primeiro plano de solo de raízes como direção anterior do dono para o Abismo, sem solo mineral vermelho. Não confundir com raiz cósmica de Yggdrasil nem definir mapa completo; portal pode ficar fora de quadro. Sem Nidhogg ou ataque através da passagem. Não converter percepção de anos em duração objetiva. Legenda CANON externa: “Do outro lado, Maelor reencontrou sua mãe.” Arte pixel art denso, horizontal aproximadamente 16:9, sem texto/UI/marca. Checks: identidades e roupas, reconhecimento legível, local depois da travessia, ausência de Aila e eventos extras, PNG/dimensões/hash. Zero BLOCKING. Integração/conferência final da HQ posteriores.
+''',encoding='utf-8')
+prompt='''Use case: illustration-story. Create ONE new cinematic landscape approximately 16:9 ideally 1672x941 dark fantasy PIXEL ART comic illustration for Nottgard HQ20 FINAL panel 7.
+REFERENCE 1 is MARCIELA APPROVED FACIAL IDENTITY: mature adult woman, light warm weathered skin, BROWN eyes, strong dark eyebrows, long loose wavy BROWN hair, hood UP, serious recognizable face with fine facial lines. Preserve this specific face, not a pale blonde girl or a different woman. Clothing: dark charcoal/brown worn layered tunic/coat, muted olive-brown ragged hood/shoulder mantle, crossed brown leather straps, two broad waist belts with rectangular buckles, leather bracers, dark trousers and boots, hands EMPTY. Reference 2 is MAELOR IDENTITY/CLOTHES: adult man, brown side-swept hair, short beard/moustache, tan high leather collar, layered grey cloak, blue/gold garment, brown straps and small blue vials. Ignore blue magic in his hand; hands empty, no spell. Reference 3 is accepted in-scene appearance/costume/pixel-art continuity of Marciela and reference 4 provides ONLY FUNGAL LANDSCAPE BEYOND THE PORTAL, not cosmic tree, snake or running pose.
+NARRATIVE: On the OTHER SIDE of the passage, in Shedaklah, Maelor recognizes his MOTHER Marciela and she recognizes him. A quiet emotional mother-and-adult-son reunion, with surprise and relief. Medium shot/medium-wide at eye level, Maelor left and Marciela right, facing one another in readable three-quarter views, both faces visible and looking into each other's eyes. Maelor has just stopped, shoulders easing, slightly open mouth with astonishment, hands low/open in a restrained tentative greeting; Marciela's familiar strong face softens into restrained recognition and relief, one hand slightly reaching toward him but not a dramatic hug or battle stance. Maintain distinct faces and natural anatomy, adult mother/son relationship, NO romantic gaze, kiss or invented dialogue. No tears required, no exaggerated expression. Both standing, fully clothed and uninjured, neither imprisoned. Hood stays up on Marciela, loose hair framing face, not braided. No weapon or magical effect.
+LOCATION: clearly the ABYSSAL DESTINATION rather than cosmic Yggdrasil. Foreground ground is a dense solid interwoven mat of organic ROOTS with small fungal growths, not red dirt or paved stone. Behind them, softly focused enormous mushroom forms, muted violet/grey fungal landscape and layered low mist consistent with the view through the accepted purple passage. Avoid establishing detailed new map, buildings, symbols, palaces or deity imagery. Restrained cool violet ambience and soft warm reflected light on their faces for clarity. No star-filled cosmic sky or giant Yggdrasil trunk in this destination. Portal can remain entirely OUTSIDE THE FRAME; do not bring snake across it. No threat, attack, chase, blood or fresh injuries.
+Exactly TWO figures, Maelor and Marciela. NO Aila, Leoric, Korrak, Kayron, Brook, Thalion, Nidhogg or anonymous crowd. Do not imply others arrived at same time or that years objectively passed. Lower strip quieter roots for narration added separately by game. STYLE: sophisticated dense crisp PIXEL ART, controlled dithering and rich face/cloth/root textures matching reference 3/4, realistic adult proportions rendered as pixel illustration. Do not copy flat grey character sheet background, smooth 3D or photorealism. Absolutely NO words, letters, captions, speech balloons, UI, logo, watermark, frame or panel subdivisions. ONE complete full-frame illustration.'''
+(base/'q7-prompt-v01.txt').write_text(prompt,encoding='utf-8')
+refs=[Path('D:/dev/nottgard/vault/output/referencias-personagens/CHAR-038/S17-S18-manto-pantano/r01/marciela-portrait-three-quarter-v01-hq.png'),r/'assets/portraits/maelor.png',base/'candidates/hq_n20_q2_marciela_meeting_v02.png',base/'candidates/hq_n20_q6_maelor_escape_v01.png']
+(base/'q7-production-r1.json').write_text(json.dumps(dict(status='AUTHORIZED_IN_PROGRESS',step='S-P20-Q07',authorization='Q6 aprovada (2026-10-17), próxima candidata autorizada',tool='built-in image_gen',tool_prompt='q7-prompt-v01.txt',references=[dict(path=p.as_posix(),sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in refs],runtime_admitted=False),ensure_ascii=False,indent=2),encoding='utf-8')
+state=r/'.atena/state/plan.yaml'; t=state.read_text(encoding='utf-8'); pattern=r'(?ms)^hq20_completion_production_plan:\n.*?(?=^[A-Za-z_][A-Za-z_0-9]*:|\Z)'; m=re.search(pattern,t); assert m
+block=m.group()
+for old,new in [('status: Q6_CANDIDATE_V01_AWAITING_OWNER_APPROVAL','status: Q7_AUTHORIZED_IN_PROGRESS'),('current_step: S-P20-Q06','current_step: S-P20-Q07'),('completed_steps: 3','completed_steps: 4'),('q6_approval: PENDING_V01',"q6_approval: 'APPROVED_V01: aprovado (2026-10-17)'"),('next_activity: Aceite Q6; aprovação autoriza Q7 reencontro de Maelor e Marciela','next_activity: Produzir Q7, reencontro com Marciela no lado abissal')]:
+    assert old in block,old
+    block=block.replace(old,new,1)
+block+=f'  q6_asset_approval: {approval}\n  q7_spec: {spec}\n  q7_record: .atena/generated/hq20-production-20261017/q7-production-r1.json\n'
+t=t[:m.start()]+block+t[m.end():]; yaml.safe_load(t)
+prior.update(status='APPROVED_V01',owner_approval='aprovado (2026-10-17), aceite Q6 v01',approval_canon=approval)
+p.write_text(json.dumps(prior,ensure_ascii=False,indent=2),encoding='utf-8'); state.write_text(t,encoding='utf-8')
+with (r/'.atena/evidence/EVID-NOTTGARD-HQ20-Q6-CANDIDATE-20261017-v01.md').open('a',encoding='utf-8') as f:
+    f.write('\n## Aceite\n\nQ6 v01 aprovada: “aprovado”. Hash reconferido, aceite canônico registrado. Seis de sete aceitas, Q7 preparada/autorizada. Sem integração.\n')
+print('PASS: Q6 aprovada, hash conferido; Q7 preparada e autorizada, estado válido.')

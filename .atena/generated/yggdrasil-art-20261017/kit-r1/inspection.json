@@ -1,0 +1,250 @@
+[
+  {
+    "id": "ground",
+    "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/ground-v01.png",
+    "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-4a4957ed-a285-4293-a317-b75d3e1d2007.png",
+    "sha256": "c1c07b7fe28141fa16b8afc32f8ce6cbfee2e25adcc7d74207040c9fddbd6509",
+    "width": 1254,
+    "height": 1254,
+    "channels": 3,
+    "alpha": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 1572516,
+      "transparent_fraction": 0,
+      "outer_visible_pixels": 5012,
+      "pale_partial_pixels": 0,
+      "saturated_red_visible_pixels": 0
+    },
+    "components": [],
+    "occupied_row_bands": [
+      [
+        0,
+        1253
+      ]
+    ],
+    "native_rgba8_bytes": 6290064
+  },
+  {
+    "id": "edge",
+    "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/edge-v01.png",
+    "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-88ec8531-3c5f-4aa7-a924-febece0d7c71.png",
+    "sha256": "e037e1b723a5a75cf62f1fdb22be1dc0024339acbcd001ebd94600ea2efa5885",
+    "width": 1254,
+    "height": 1254,
+    "channels": 4,
+    "alpha": {
+      "transparent": 615670,
+      "partial": 955339,
+      "opaque": 1507,
+      "transparent_fraction": 0.39151906880438736,
+      "outer_visible_pixels": 1518,
+      "pale_partial_pixels": 0,
+      "saturated_red_visible_pixels": 0
+    },
+    "components": [
+      {
+        "pixels": 240967,
+        "rect": [
+          0,
+          408,
+          1254,
+          231
+        ]
+      },
+      {
+        "pixels": 236203,
+        "rect": [
+          0,
+          104,
+          1254,
+          228
+        ]
+      },
+      {
+        "pixels": 235077,
+        "rect": [
+          0,
+          697,
+          1254,
+          245
+        ]
+      },
+      {
+        "pixels": 203111,
+        "rect": [
+          0,
+          994,
+          1254,
+          200
+        ]
+      }
+    ],
+    "occupied_row_bands": [
+      [
+        118,
+        321
+      ],
+      [
+        416,
+        627
+      ],
+      [
+        721,
+        927
+      ],
+      [
+        1010,
+        1186
+      ]
+    ],
+    "native_rgba8_bytes": 6290064
+  },
+  {
+    "id": "detail",
+    "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/detail-v02.png",
+    "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-9ab68c2a-9bb1-4ffe-b53a-b139adfef586.png",
+    "sha256": "1a5f3baaaca70865f0ded3b8e37ea594f2ce0fbef42f94ee19cd4152edd636e4",
+    "width": 1254,
+    "height": 1254,
+    "channels": 4,
+    "alpha": {
+      "transparent": 830266,
+      "partial": 742250,
+      "opaque": 0,
+      "transparent_fraction": 0.5279857247875379,
+      "outer_visible_pixels": 0,
+      "pale_partial_pixels": 0,
+      "saturated_red_visible_pixels": 0
+    },
+    "components": [
+      {
+        "pixels": 110214,
+        "rect": [
+          28,
+          227,
+          586,
+          299
+        ]
+      },
+      {
+        "pixels": 100892,
+        "rect": [
+          647,
+          240,
+          586,
+          268
+        ]
+      },
+      {
+        "pixels": 88856,
+        "rect": [
+          42,
+          766,
+          557,
+          341
+        ]
+      },
+      {
+        "pixels": 71495,
+        "rect": [
+          694,
+          841,
+          520,
+          240
+        ]
+      },
+      {
+        "pixels": 433,
+        "rect": [
+          1138,
+          480,
+          52,
+          16
+        ]
+      },
+      {
+        "pixels": 351,
+        "rect": [
+          768,
+          271,
+          56,
+          13
+        ]
+      },
+      {
+        "pixels": 313,
+        "rect": [
+          255,
+          1022,
+          48,
+          16
+        ]
+      },
+      {
+        "pixels": 304,
+        "rect": [
+          912,
+          243,
+          55,
+          25
+        ]
+      },
+      {
+        "pixels": 283,
+        "rect": [
+          303,
+          847,
+          43,
+          20
+        ]
+      },
+      {
+        "pixels": 240,
+        "rect": [
+          912,
+          1068,
+          42,
+          13
+        ]
+      }
+    ],
+    "occupied_row_bands": [
+      [
+        247,
+        501
+      ],
+      [
+        853,
+        1075
+      ]
+    ],
+    "native_rgba8_bytes": 6290064
+  },
+  {
+    "id": "trunk",
+    "path": ".atena/generated/yggdrasil-art-20261017/kit-r1/trunk-v01.png",
+    "source_path": "C:/Users/gui-m/.codex/generated_images/01a14a9f-7cd5-7bf1-930d-4351996a8ad1/exec-02df0a77-74a2-46d5-b7f5-90234b189a01.png",
+    "sha256": "0578924ad14d13a4ecc14ea31f45c6d95afb4dad3358473a3daf74faeaa59f8a",
+    "width": 1254,
+    "height": 1254,
+    "channels": 3,
+    "alpha": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 1572516,
+      "transparent_fraction": 0,
+      "outer_visible_pixels": 5012,
+      "pale_partial_pixels": 0,
+      "saturated_red_visible_pixels": 0
+    },
+    "components": [],
+    "occupied_row_bands": [
+      [
+        0,
+        1253
+      ]
+    ],
+    "native_rgba8_bytes": 6290064
+  }
+]

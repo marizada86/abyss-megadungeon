@@ -14,3 +14,9 @@ data/build_info.json
 evidencias/
 .atena/generated/*.log
 .atena/generated/**/*.log
+
+# Sessões sintéticas, caches e capturas locais não integram o código publicado.
+.atena/generated/map-playtest-sessions/
+.atena/generated/**/appdata/
+.atena/generated/**/localappdata/
+.atena/generated/**/validation-*/
