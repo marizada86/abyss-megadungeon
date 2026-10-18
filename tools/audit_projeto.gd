@@ -93,7 +93,8 @@ func _init() -> void:
 	var order_seen := {}
 	var prev: Dictionary = {}
 	var ordered: Array = stages.keys()
-	ordered.sort_custom(func(a, b): return int(stages[a].order) < int(stages[b].order))
+	var combat_orders: Dictionary = _t("difficulty").get("boss_mech", {}).get("combat_orders", {})   # a curva compara na ordem de combate das fases de origem
+	ordered.sort_custom(func(a, b): return int(combat_orders.get(a, 100 + int(stages[a].order))) < int(combat_orders.get(b, 100 + int(stages[b].order))))
 	for k in ordered:
 		var s: Dictionary = stages[k]
 		if order_seen.has(int(s.order)):
@@ -101,7 +102,7 @@ func _init() -> void:
 		order_seen[int(s.order)] = true
 		if s.has("next") and String(s.next) != "" and not stages.has(String(s.next)):
 			_e("stages", "%s: next inexistente %s" % [k, s.next])
-		if not enemies.has(String(s.get("boss", "x"))) and not s.get("endless", false):
+		if not enemies.has(String(s.get("boss", "x"))) and not s.get("endless", false) and String(s.get("completion", {}).get("kind", "boss")) != "timed_reach":
 			_e("stages", "%s: chefe inexistente %s" % [k, s.get("boss", "")])
 		for w in s.get("waves", []):
 			if not enemies.has(String(w.id)):
@@ -118,11 +119,11 @@ func _init() -> void:
 		for t in ["stage_story", "chronicles", "stage_rules", "stage_events"]:
 			if not _t(t).has(k):
 				_w(t, "fase %s sem entrada" % k)
-		if not prev.is_empty():
+		if not prev.is_empty() and combat_orders.has(k):
 			for f in ["hp_mult", "dmg_mult", "coin_mult", "tier"]:
 				if float(s.get(f, 0)) < float(prev.get(f, 0)):
 					_w("curva", "%s.%s=%s menor que a fase anterior (%s)" % [k, f, s.get(f), prev.get(f)])
-		prev = s
+		prev = s if combat_orders.has(k) else {}   # mapas de objetivo do capítulo 1 não entram na curva legada
 	# eventos de fase
 	for k in _t("stage_events"):
 		if String(k).begins_with("_") or not (_t("stage_events")[k] is Array):

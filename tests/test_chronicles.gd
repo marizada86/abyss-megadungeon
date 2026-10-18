@@ -1,6 +1,7 @@
 extends RefCounted
 ## SPEC-117 H4 e H6: crônicas por fase e rumor de Adam.
 
+const StageContracts := preload("res://tests/stage_contracts.gd")
 const MAX_CHRONICLE := 420
 const MAX_RUMOR := 140
 
@@ -9,6 +10,8 @@ func run() -> Array:
 	var chronicles: Dictionary = Data.table("chronicles")
 	var stories: Dictionary = Data.table("stage_story")
 	for stage_id in Data.table("stages"):
+		if not chronicles.has(stage_id) and StageContracts.deferred(stage_id, "chronicle"):
+			continue   # adiado de forma explícita (tests/stage_contracts.gd)
 		if not chronicles.has(stage_id):
 			out.append("fase %s sem crônica" % stage_id)
 			continue

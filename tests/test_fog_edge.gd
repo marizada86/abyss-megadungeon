@@ -155,6 +155,8 @@ func _run_base() -> Array:
 		var st: Dictionary = stages[id]
 		var f := _bat(String(id), _scene_size(String(id)))
 		f.interactions.clear()
+		if String(st.get("boss", "")) == "":
+			continue   # mapas de objetivo cronometrado não têm chefe nem Maré pós-chefe (postboss_fog: false no contrato)
 		var boss_id := String(st.boss)
 		var boss_e := f.spawn_for_test(boss_id, Vector2(30, 30))
 		f._on_boss_dead(boss_e)
@@ -189,6 +191,8 @@ func _run_base() -> Array:
 		for it in h.interactions:
 			if h.in_edge_band(it.pos):
 				out.append("%s: %s nasceu na faixa da névoa em %s" % [id, String(it.kind), str(it.pos)])
+		if String(stages[id].get("boss", "")) == "":
+			continue
 		var corner := _bat(String(id), size)
 		corner.interactions.clear()
 		var boss_c := corner.spawn_for_test(String(stages[id].boss), Vector2(1.5, 1.5))

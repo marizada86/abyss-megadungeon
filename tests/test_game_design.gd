@@ -46,8 +46,10 @@ func run() -> Array:
 	if descent.stage_id != "docas" or descent.descent_depth != 1:
 		out.append("descida não levou a Docas com profundidade 1")
 	descent.enter_next_stage()
-	if descent.stage_id != "shedaklah" or descent.descent_depth != 2:
-		out.append("segunda descida não levou a Shedaklah com profundidade 2")
+	# Docas segue para o próximo mapa da campanha (contrato do capítulo 1: Reino Abissal), não mais para Shedaklah.
+	var after_docas := String(Data.table("stages").docas.get("next", ""))
+	if descent.stage_id != after_docas or after_docas != "reino_abissal" or descent.descent_depth != 2:
+		out.append("segunda descida não levou ao destino de Docas (%s) com profundidade 2" % after_docas)
 	if absf(descent.reward_multiplier() - 1.55) > 0.001 or int(descent.hero.passives.get("forca", 0)) != 2:
 		out.append("descida não preservou build/multiplicador")
 

@@ -29,6 +29,8 @@ func _count(b: Battle) -> int:
 			n += 1
 	return n
 
+const StageContracts := preload("res://tests/stage_contracts.gd")
+
 func run() -> Array:
 	var out: Array = []
 	var cfg_all: Dictionary = Data.table("random_events").events
@@ -43,7 +45,7 @@ func run() -> Array:
 			out.append("%s: faltam nome, intro ou cor" % kind)
 	var stages: Dictionary = Data.table("stages")
 	for sid in stages:
-		if String(sid).begins_with("_"):
+		if String(sid).begins_with("_") or StageContracts.deferred(sid, "random_events"):
 			continue
 		for kind in RandomEvents.KINDS:
 			if float(stages[sid].get("interactions", {}).get(kind, 0.0)) <= 0.0:

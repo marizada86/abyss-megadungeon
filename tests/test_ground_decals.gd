@@ -1,6 +1,7 @@
 extends RefCounted
 
 const GroundDecals := preload("res://ui/ground_decals.gd")
+const StageContracts := preload("res://tests/stage_contracts.gd")
 
 func run() -> Array:
 	var out: Array = []
@@ -10,7 +11,7 @@ func run() -> Array:
 		var stable := GroundDecals.placements(stage_id, 701)
 		if stable != GroundDecals.placements(stage_id, 701):
 			out.append("%s: posições dos decais não são determinísticas" % stage_id)
-		var expected_count := 0 if stage_id in GroundDecals.PREVIEW_DISABLED_STAGES else 2
+		var expected_count := 0 if stage_id in GroundDecals.PREVIEW_DISABLED_STAGES or StageContracts.deferred(stage_id, "decals") else 2
 		if stable.size() != expected_count:
 			out.append("%s: esperado remendo e trilha" % stage_id)
 		var kinds := []

@@ -75,3 +75,12 @@ bash .atena/generated/balance-bots-20261018/launch.sh
 powershell -File .atena/generated/balance-bots-20261018/aggregate-chain.ps1 -Prefix chainD-
 ```
 `BOT_ROOT=<pasta>` aponta para outro checkout (usei um worktree de `2bc4d24`) para a comparação antes/depois.
+
+## 6. Correções aplicadas depois do relatório (B1–B3) — suíte: 0 falhas, 0 erros de script
+
+Causa real das 30 falhas: (a) 22 vinham de Reino Abissal/Domwieck estarem em `stages.json` sem conteúdo ainda não produzido; (b) 8 vinham de **a ordem local (`order`) ter mudado** quando os mapas do capítulo 1 entraram antes de Dagruve, mas regras de combate ainda liam `order`.
+
+- **Regra de combate (runtime, `core/battle.gd` `_stage_order`)**: afixos de elite, horda e chefe afixado agora seguem `boss_mech.combat_orders` (já usado pelo orçamento das mecânicas de chefe), com queda para `order` nos mapas novos. Efeito: Dagruve volta a não ter horda nem afixos novos; os chefes de Shedaklah e Molor deixam de receber afixo (só a partir de Durao, como no SPEC-120). Reino Abissal/Domwieck mantêm o comportamento atual. Mudança específica do PC (a origem tem outra numeração): sem portagem.
+- **Adiamentos explícitos, sem inventar conteúdo**: `tests/stage_contracts.gd` registra música, ambiência, crônica, decais e pesos de eventos aleatórios de Reino Abissal/Domwieck como adiados (dossiê dos mapas: não necessários ao protótipo; falta já é tolerada em runtime). `tests/test_stage_deferrals.gd` falha se o conteúdo passar a existir (remover o adiamento) ou se um mapa com chefe pedir adiamento.
+- **Contratos obsoletos atualizados**: descida de Docas leva ao `next` aprovado (Reino Abissal); QA lista o catálogo de HQs inteiro (21, incluindo as 18 preservadas); `test_fog_edge` ignora mapas sem chefe (`postboss_fog: false`).
+- **`tools/audit_projeto.gd`**: não acusa "chefe inexistente" em mapas de objetivo e compara a curva só entre as fases legadas, pela ordem de combate. Erros 0, avisos 13 → 9 (restam: 7 chefes sem `boss_presentations` e 2 crônicas dos mapas novos, ambos já listados acima).

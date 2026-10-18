@@ -3458,8 +3458,12 @@ func _spawn_elite(id: String, at: Vector2) -> Enemy:
 	events.append({"type": "toast", "text": "Elite: %s" % e.name})
 	return e
 
+## Ordem de combate (afixos, hordas, chefe afixado): segue as fases de origem em boss_mech.combat_orders, como o orçamento
+## das mecânicas de chefe. O `order` local é de campanha/desbloqueio e mudou quando os mapas do capítulo 1 entraram antes
+## de Dagruve; sem a entrada (mapas novos), cai nele.
 func _stage_order() -> int:
-	return int(stage.get("order", 0))
+	var orders: Dictionary = Data.table("difficulty").get("boss_mech", {}).get("combat_orders", {})
+	return int(orders.get(stage_id, stage.get("order", 0)))
 
 ## SPEC-120: quantos afixos um elite recebe: fases 3 e 4 = 1; 5 e 6 = 1 ou 2; da 7 em diante = 2.
 func _elite_affix_count() -> int:

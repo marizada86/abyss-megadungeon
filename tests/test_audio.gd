@@ -2,6 +2,8 @@ extends RefCounted
 ## Integridade do manifesto e cobertura do catálogo de áudio.
 
 
+const StageContracts := preload("res://tests/stage_contracts.gd")
+
 func run() -> Array:
 	var out: Array = []
 	var path := "res://data/audio_manifest.json"
@@ -25,11 +27,15 @@ func run() -> Array:
 	var music: Dictionary = manifest.get("music", {})
 	var ambience: Dictionary = manifest.get("ambience", {})
 	for stage_id in Data.table("stages"):
-		if not music.has(stage_id):
+		if not music.has(stage_id) and StageContracts.deferred(stage_id, "music"):
+			pass   # adiado de forma explícita (tests/stage_contracts.gd)
+		elif not music.has(stage_id):
 			out.append("fase %s sem música" % stage_id)
 		elif not FileAccess.file_exists(String(music[stage_id])):
 			out.append("arquivo de música ausente para %s" % stage_id)
-		if not ambience.has(stage_id):
+		if not ambience.has(stage_id) and StageContracts.deferred(stage_id, "ambience"):
+			pass
+		elif not ambience.has(stage_id):
 			out.append("fase %s sem ambiência" % stage_id)
 		elif not FileAccess.file_exists(String(ambience[stage_id])):
 			out.append("arquivo de ambiência ausente para %s" % stage_id)
