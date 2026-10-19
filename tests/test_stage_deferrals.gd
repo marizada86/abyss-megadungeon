@@ -36,4 +36,10 @@ func run() -> Array:
 		var battle := Battle.new(3, "durvall", stage_id)
 		if battle.stage_id != stage_id or battle.hero == null:
 			out.append("%s: a fase deveria iniciar mesmo sem o conteúdo adiado" % stage_id)
+	# B4 (0.5.0): áudio reutilizado dos mapas novos, incluindo a Raiz (QA-only, fora de stages.json)
+	for sid in ["reino_abissal", "domwieck", "raiz_yggdrasil"]:
+		for kind in ["music", "ambience"]:
+			var path := String(manifest.get(kind, {}).get(sid, ""))
+			if path == "" or not FileAccess.file_exists(path):
+				out.append("%s: %s reutilizada ausente ou inexistente (%s)" % [sid, kind, path])
 	return out

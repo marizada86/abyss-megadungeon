@@ -245,7 +245,7 @@ func _refresh_all() -> void:
 		var d: Dictionary = Data.table("stages")[id]
 		var thumb_path := "res://assets/stages/%s_thumb.png" % id
 		var thumb: Texture2D = load(thumb_path) if ResourceLoader.exists(thumb_path) else null
-		stage_list.add_item(("%d. %s" if p.stage_unlocked(id) else "🔒 %d. %s") % [int(d.order) + 1, d.name], thumb)
+		stage_list.add_item(("%d. %s" if Game.stage_available(id) else "🔒 %d. %s") % [int(d.order) + 1, d.name], thumb)
 	hero_list.select(sel_h[0] if not sel_h.is_empty() else heroes.find(Game.run_hero))
 	stage_list.select(clampi(sel_s[0] if not sel_s.is_empty() else stages.find(Game.run_stage), 0, stages.size() - 1))
 	_refresh_hero()
@@ -303,7 +303,7 @@ func _refresh_stage() -> void:
 		d.name, d.sub, boss.get("name", "Objetivo de chegada"), int(d.duration) / 60, int(d.duration) % 60, " (infinito)" if d.get("endless", false) else "", _ambient_text(d.ambient), float(d.coin_mult)]
 	if bt > 0.0:
 		txt += "\nMelhor tempo: %d:%02d" % [int(bt) / 60, int(bt) % 60]
-	if not Game.profile.stage_unlocked(id):
+	if not Game.stage_available(id):
 		txt += "\n\n[color=#e0a040]Bloqueada: avance pela campanha até %s.[/color]" % Data.table("stages").get(d.unlock, {}).get("name", "avanço da campanha")
 	txt += "\n\n" + AbyssPanel.summary_line(id)
 	stage_info.text = txt
@@ -319,7 +319,7 @@ func _ambient_text(amb: Array) -> String:
 	return ", ".join(amb.map(func(a): return names.get(a, a)))
 
 func _update_play() -> void:
-	var ok: bool = Data.table("stages").has(Game.run_stage) and Game.profile.hero_unlocked(Game.run_hero) and Game.profile.stage_unlocked(Game.run_stage)
+	var ok: bool = Data.table("stages").has(Game.run_stage) and Game.profile.hero_unlocked(Game.run_hero) and Game.stage_available(Game.run_stage)
 	play_btn.disabled = not ok
 	play_btn.text = "JOGAR" if ok else "Bloqueado"
 	play_btn.icon = Game.controls.glyph("ui_accept")

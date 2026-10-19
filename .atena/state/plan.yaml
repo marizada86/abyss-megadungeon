@@ -2074,7 +2074,7 @@ release_0_5_0_plan:
   revision: r1
   classification: PLAN_CHANGE_REQUEST
   mode: per-batch
-  status: BATCH_1_COMPLETE_AWAITING_BATCH_2_DECISIONS
+  status: BATCH_2_DECIDED_IMPLEMENTED_AWAITING_BATCH_3
   spec: .atena/specs/SPEC-NOTTGARD-RELEASE-0-5-0-20261018/plan-r1.md
   authorization: 'Aprovado o Lote 1 (A1–A5, A8), sem commit até o dono pedir (2026-10-18)'
   batch_1:
@@ -2089,7 +2089,18 @@ release_0_5_0_plan:
     not_in_repository: 228
     list: .atena/generated/release-0-5-0-20261018/missing-state-references.txt
     note: 'Referências de evidência/geração (21 evidence, 186 generated, 21 specs) que nunca entraram no Git deste repositório; provavelmente restritas ao ambiente de origem. Não recriadas nem inventadas.'
-  gates: {G1_suite: PASS, G2_audit: PASS_0_ERRORS, G3_bots: NOT_RUN_NO_BALANCE_CHANGE, G4_builds: PENDING_A6, G5_save_upgrade: PASS_SYNTHETIC, G6_playtest: PENDING_HUMAN, G7_decisions: PENDING_B1_B9}
-  next_activity: Lote 2 — dono responde B1–B9 (pode ser "adiar")
+  gates: {G1_suite: PASS, G2_audit: PASS_0_ERRORS, G3_bots: NOT_RUN_NO_BALANCE_CHANGE, G4_builds: PENDING_A6, G5_save_upgrade: PASS_SYNTHETIC, G6_playtest: PENDING_HUMAN, G7_decisions: DONE}
+  batch_2_decisions_20261019:
+    B1: "ideia de mapas bônus por quest registrada (SPEC-NOTTGARD-BONUS-MAPS-20261019/idea-r1.md); campanha mantida"
+    B2: "observar no playtest"
+    B3: "sem cartaz até o Vault; aceito"
+    B4: "Reino=Pilares, Domwieck=Goranthis, Raiz=Pilares (manifest)"
+    B5: "rascunho de crônicas em .atena/vault/drafts/CHRONICLES-NEW-MAPS-DRAFT-r1.md; aguarda aceite"
+    B6: "Raiz permanece QA-only"
+    B7: "HQ05–HQ10 fora da 0.5.0"
+    B8: "Shedaklah–Pilares abertas nos builds de playtest/QA"
+    B9: "eventos aleatórios dos mapas novos adiados"
+  gate_G7_decisions: DONE
+  next_activity: Lote 3 — candidata e builds (A6); aprovação própria; aceite do rascunho de crônicas pendente
   commit: NOT_AUTHORIZED_YET
   publish: NOT_AUTHORIZED

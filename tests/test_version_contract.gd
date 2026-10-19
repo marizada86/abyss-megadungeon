@@ -16,6 +16,11 @@ func run() -> Array:
 				seen += 1
 				if line.strip_edges() != '%s="%s"' % [key, expected]:
 					out.append("preset diverge de %s: %s" % [expected, line.strip_edges()])
+	# B8: só os builds de playtest (público/QA) abrem todas as fases
+	if Version.playtest_open_stages_for_profile(Version.BuildProfile.PRODUCTION):
+		out.append("a build de produção não deve abrir todas as fases")
+	if not Version.playtest_open_stages_for_profile(Version.BuildProfile.PUBLIC_PLAYTEST) or not Version.playtest_open_stages_for_profile(Version.BuildProfile.QA_INTERNAL):
+		out.append("os builds de playtest deveriam abrir todas as fases")
 	if seen != 6:
 		out.append("esperava 6 campos de versão (3 presets × 2), achei %d" % seen)
 	return out

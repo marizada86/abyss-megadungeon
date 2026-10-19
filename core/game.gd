@@ -477,6 +477,10 @@ func set_aim(mode: int) -> void:
 	profile.data.settings.aim = "mouse" if mode == Battle.Aim.MOUSE else "auto"
 	save()
 
+## B8 (0.5.0): os builds de playtest (público e QA) abrem todas as fases; a produção segue a trilha narrativa (Profile/ChapterFlow).
+func stage_available(id: String) -> bool:
+	return (Version.playtest_opens_all_stages() and Data.table("stages").has(id)) or profile.stage_unlocked(id)
+
 func difficulty() -> float:
 	return 1.0 + 0.25 * int(profile.data.settings.difficulty)
 
@@ -502,7 +506,7 @@ func set_abyss_marks(marks: Dictionary) -> void:
 func start_run(hero_id: String, stage_id: String) -> void:
 	if not Data.table("heroes").has(hero_id) or not Data.table("stages").has(stage_id):
 		return
-	if not qa_sandbox and (not profile.hero_unlocked(hero_id) or not profile.stage_unlocked(stage_id)):
+	if not qa_sandbox and (not profile.hero_unlocked(hero_id) or not stage_available(stage_id)):
 		return
 	if not qa_sandbox:
 		ChapterFlow.prepare_start(profile.data, stage_id)

@@ -93,3 +93,19 @@ Gates de saída da 0.5.0-playtest: **G1** suíte 0 falhas e 0 SCRIPT ERROR; **G2
 | A8 | Bots e relatório entram no checklist como etapa opcional (G3 só roda se houver mudança de balanceamento). |
 
 Gates agora: G1 PASS · G2 PASS (0 erros, 9 avisos conhecidos) · G5 PASS (fixture sintética) · G3 não executado (sem mudança de balanceamento) · G4/G6/G7 pendentes.
+
+## 6. Decisões do Lote 2 (entrevista de 2026-10-19) e execução
+
+| ID | Decisão do dono | Execução |
+| --- | --- | --- |
+| B1 | Ideia nova: mapas **bônus** desbloqueados por quest, para farmar recurso. Para a 0.5.0: **registrar a ideia e manter a campanha** | `SPEC-NOTTGARD-BONUS-MAPS-20261019/idea-r1.md` (DRAFT, sem código) |
+| B2 | Só observar Docas e os heróis no playtest | Nenhuma mudança; fica no roteiro do playtest |
+| B3 | Os 7 cartazes de chefe aguardam o Vault (em atualização, servirá de referência); **aceitar sem cartaz** | Nenhuma mudança; prompts seguem DRAFT |
+| B4 | Reutilizar trilhas: Reino Abissal = Pilares, Domwieck = Goranthis, Raiz = Pilares | `data/audio_manifest.json` (música e ambiência, 3 entradas cada); adiamento de áudio removido de `tests/stage_contracts.gd`; teste confere arquivos |
+| B5 | O assistente redige rascunho de crônicas a partir do Vault | `.atena/vault/drafts/CHRONICLES-NEW-MAPS-DRAFT-r1.md` (nada gravado em `chronicles.json` até o aceite) |
+| B6 | (decorrente de B1) Raiz segue **QA-only** | — |
+| B7 | HQ05–HQ10 **fora da 0.5.0** | Seleção visual HQ05 segue aguardando aceite |
+| B8 | **Liberar** Shedaklah–Pilares nos builds de playtest | `Game.stage_available` (usado pelo menu e por `start_run`) abre todas as fases quando o perfil de build é Playtest Público ou QA (`Version.playtest_opens_all_stages`); `Profile.stage_unlocked`/ChapterFlow seguem puros e produção segue a trilha; política testada em `test_version_contract` |
+| B9 | Sem veto: eventos aleatórios dos mapas novos seguem **adiados** (padrão do plano) | Nenhuma mudança |
+
+Vault: a cópia local (`F:\dev\nottgard-vault`, commit `8472f7a`, 2026-10-17) traz pacotes de referência visual de personagens (CHAR-002…066, Illithar), cronologia e evidências; **não** traz referências de chefes nem novas notas de Reino Abissal, Domwieck ou Yggdrasil. Não executei `git fetch/pull` no Vault (somente leitura; peço aprovação antes de baixar). Gate G7 satisfeito (todas as decisões registradas).

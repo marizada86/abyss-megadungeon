@@ -52,3 +52,11 @@ static func build_id() -> String:
 		return "dev"
 	var commit := str((parsed as Dictionary).get("commit", "")).strip_edges()
 	return commit if commit != "" else "dev"
+
+## B8 (0.5.0): os builds de playtest (público e QA) abrem todas as fases para testar o jogo inteiro; a build de produção
+## continua seguindo a trilha narrativa da campanha (ChapterFlow). Não altera marcos nem o progresso gravado.
+static func playtest_open_stages_for_profile(profile: int) -> bool:
+	return playtest_tools_enabled_for_profile(profile)
+
+static func playtest_opens_all_stages() -> bool:
+	return playtest_open_stages_for_profile(build_profile())

@@ -3084,6 +3084,9 @@
     "shendilavri": "res://assets/audio/music/shendilavri.wav",
     "goranthis": "res://assets/audio/music/goranthis.wav",
     "pilares": "res://assets/audio/music/pilares.wav",
+    "reino_abissal": "res://assets/audio/music/pilares.wav",
+    "domwieck": "res://assets/audio/music/goranthis.wav",
+    "raiz_yggdrasil": "res://assets/audio/music/pilares.wav",
     "boss": "res://assets/audio/music/boss.wav",
     "victory": "res://assets/audio/music/victory.wav",
     "defeat": "res://assets/audio/music/defeat.wav"
@@ -3097,6 +3100,9 @@
     "feng_tu": "res://assets/audio/ambience/feng_tu.wav",
     "shendilavri": "res://assets/audio/ambience/shendilavri.wav",
     "goranthis": "res://assets/audio/ambience/goranthis.wav",
-    "pilares": "res://assets/audio/ambience/pilares.wav"
+    "pilares": "res://assets/audio/ambience/pilares.wav",
+    "reino_abissal": "res://assets/audio/ambience/pilares.wav",
+    "domwieck": "res://assets/audio/ambience/goranthis.wav",
+    "raiz_yggdrasil": "res://assets/audio/ambience/pilares.wav"
   }
 }
