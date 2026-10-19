@@ -109,3 +109,11 @@ Gates agora: G1 PASS · G2 PASS (0 erros, 9 avisos conhecidos) · G5 PASS (fixtu
 | B9 | Sem veto: eventos aleatórios dos mapas novos seguem **adiados** (padrão do plano) | Nenhuma mudança |
 
 Vault: a cópia local (`F:\dev\nottgard-vault`, commit `8472f7a`, 2026-10-17) traz pacotes de referência visual de personagens (CHAR-002…066, Illithar), cronologia e evidências; **não** traz referências de chefes nem novas notas de Reino Abissal, Domwieck ou Yggdrasil. Não executei `git fetch/pull` no Vault (somente leitura; peço aprovação antes de baixar). Gate G7 satisfeito (todas as decisões registradas).
+
+## 7. Resultado do Lote 3 — candidata e builds (2026-10-19; sem publicação)
+
+- **Builds:** `Windows Desktop`, `Playtest Público` e `QA Interno` exportados em `build/` (ignorada pelo Git), versão 0.5.0.0 confirmada nos metadados dos três. Manifesto com SHA-256 e tamanhos: `.atena/generated/release-0-5-0-20261018/build-manifest-r1.json`. Cada `.exe` tem ~640 MB (export `all_resources`, arte e áudio WAV): vale revisar antes de distribuir.
+- **Smoke:** os 3 abrem em modo headless com perfil e diretórios sintéticos, saem com código 0 e sem SCRIPT ERROR/Parse Error/falha de carga (só 2 avisos de encerramento ao fechar o título). Cobre o boot do pacote exportado; **não** cobre partida, áudio audível, controle físico nem desempenho.
+- **Atalhos de playtest:** `tools/playtest_maps.ps1` não achava o Godot (caminho `D:\Godot\godot.exe` fixo) e tratava ruído de encerramento do motor como falha; agora procura `NOTTGARD_GODOT`/exe local/caminho antigo e ignora só as mensagens de encerramento (GL/RIDs). Verificação de abertura **PASS** para Reino Abissal, Domwieck e Raiz de Yggdrasil. `Testar-PC.cmd` agora tem o build que ele espera.
+- **Roteiro e ficha:** `playtest-r1.md` (6 sessões, atalhos, foco derivado dos bots e das decisões B2/B3/B4/B8).
+- Gate **G4** (3 builds com smoke e versão 0.5.0): **PASS**. Faltam **G6** (playtest humano) e o aceite do rascunho de crônicas.

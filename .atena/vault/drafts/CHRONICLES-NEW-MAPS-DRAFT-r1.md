@@ -19,6 +19,8 @@ sem nenhum dos termos vetados pelo teste (`amuleto`, `durvall`, `se torna adam`,
 | Domwieck | A invasão por Domwieck | Domwieck, o distrito élfico construído ao redor de Ailalore, foi por onde o exército abissal entrou em Nottgard: um portal aberto ali espalhou a destruição até a Floresta de Ailalore. | 04_Locais/Domwieck (Sessão 12) |
 | Raiz de Yggdrasil (QA-only; hoje fora de `stages.json`, não aparece no Diário) | A raiz entre os planos | Puxados por um portal, Leoric e Korrak chegaram a uma raiz de Yggdrasil, a árvore interplanar. A raiz levava a um tronco aparentemente infinito e abria uma rota difícil entre os planos. | 04_Locais/Yggdrasil (Sessão 15) |
 
+Conferido em 2026-10-19 contra o registro atualizado das Sessões 11 (descida ao Reino Abissal pela passagem sob a Igreja das Sombras) e 12 (o exército abissal entrou por Domwieck e atacou Ailalore); o registro de sessão prevalece sobre a prosa derivada e confirma os fatos usados.
+
 ## Pontos que merecem sua atenção
 
 - A nota **Reino Abissal.md** do Vault é curta (duas sessões); o texto acima não vai além dela. Se o Vault atualizado tiver mais detalhe aprovado, prefira acrescentá-lo lá primeiro.

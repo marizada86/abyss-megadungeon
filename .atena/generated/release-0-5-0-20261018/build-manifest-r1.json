@@ -1,0 +1,22 @@
+{
+  "id": "BUILD-NOTTGARD-0.5.0-CANDIDATE-r1",
+  "date": "2026-10-19",
+  "source_commit": "e3d0d441e6b30c5a6b299b05aad1757b2d558655",
+  "working_tree_note": "inclui commits locais ainda não enviados ao remoto (push bloqueado até então)",
+  "godot": "4.7.2.stable (templates windows_release_x86_64)",
+  "platform": "windows-x86_64",
+  "published": false,
+  "output_dir": "build/ (ignorado pelo Git)",
+  "builds": [
+    {"preset": "Windows Desktop", "file": "build/NottgardSurvivors.exe", "features": "", "file_version": "0.5.0.0", "sha256": "23d291458700aa263e1c81593df4c72066a80eb4b32fd581141fb0061ebcc4d8", "bytes": 671257688},
+    {"preset": "Windows Playtest Publico", "file": "build/NottgardSurvivors-Playtest.exe", "features": "public_playtest", "file_version": "0.5.0.0", "sha256": "e5d4d04a6bb7633c5b02743e4494f3fef4347ada6142775217bfb1c321548a74", "bytes": 671257736},
+    {"preset": "Windows QA Interno", "file": "build/NottgardSurvivors-QA.exe", "features": "qa_internal", "file_version": "0.5.0.0", "sha256": "7adac7003b2295c64efd69f962788cf280d2ba34703cf18717945ed8e9b65215", "bytes": 671257720}
+  ],
+  "smoke": {
+    "method": "exe --headless --quit-after 900 com APPDATA/LOCALAPPDATA/USERPROFILE sintéticos e --controller-profile {}",
+    "result": "3/3 saíram com código 0; nenhum SCRIPT ERROR/Parse Error/Failed loading; apenas aviso de encerramento (2 ObjectDB, 1 recurso) ao fechar o título",
+    "covers": "boot até a tela de título (pacote exportado carrega recursos)",
+    "does_not_cover": "partida, mapas, HQs, controle físico, áudio audível, desempenho — são do playtest humano; a suíte e os gates rodam a partir do código-fonte"
+  },
+  "notes": ["Tamanho ~640 MB por build (export all_resources com arte e áudio WAV); considerar compressão/limpeza antes de distribuir", "data/build_info.json não existe: build_id = dev (tools/stamp_build.ps1 não está neste repositório)", "Builds gerados com templates copiados para um APPDATA isolado; nenhum save real foi tocado"]
+}

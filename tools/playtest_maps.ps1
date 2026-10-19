@@ -4,8 +4,11 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $projectRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
-$godotPath = 'D:\Godot\godot.exe'
-if (-not (Test-Path -LiteralPath $godotPath -PathType Leaf)) { throw 'Godot nao encontrado em D:\Godot\godot.exe.' }
+$godotPath = $null
+foreach ($candidate in @($env:NOTTGARD_GODOT, (Join-Path $projectRoot 'Godot_v4.7.2-stable_win64.exe'), 'D:\Godot\godot.exe')) {
+  if ($candidate -and (Test-Path -LiteralPath $candidate -PathType Leaf)) { $godotPath = $candidate; break }
+}
+if (-not $godotPath) { throw 'Godot nao encontrado: defina NOTTGARD_GODOT ou coloque Godot_v4.7.2-stable_win64.exe na raiz do projeto.' }
 if ($VerifyLaunch -and -not $Map) { throw 'A verificacao precisa indicar um mapa.' }
 $sessionRoot = Join-Path $projectRoot '.atena/generated/map-playtest-sessions'
 $null = New-Item -ItemType Directory -Force -Path $sessionRoot
@@ -53,7 +56,12 @@ if ($process.ExitCode -ne 0) { throw ('Falha ao abrir o teste. Registro: ' + (Jo
 if ($VerifyLaunch) {
  $reportPath = Join-Path $sessionPath 'launch-verification.json'
  $errors = @((Get-Content -Raw -LiteralPath (Join-Path $sessionPath 'playtest-errors.log')),(Get-Content -Raw -LiteralPath (Join-Path $sessionPath 'engine.log'))) -join "`n"
- if (-not (Test-Path -LiteralPath $reportPath) -or $errors -match 'SCRIPT ERROR:|ERROR:') { throw ('Verificacao falhou: ' + $sessionPath) }
+ # Mensagens de encerramento do motor (texturas GL/RIDs vazados ao fechar a janela) sao ruido registrado (DEBT-PORT-009), nunca erro de jogo.
+ $teardown = '(leaked|RenderingServer::get_singleton\(\)" is null|still in use at exit|^\s+at:)'
+ $relevant = @($errors -split "`r?`n" | Where-Object { $_ -notmatch $teardown }) -join "`n"
+ $ignored = @($errors -split "`r?`n" | Where-Object { $_ -match 'ERROR:' -and $_ -match $teardown }).Count
+ if ($ignored -gt 0) { Write-Output ('Aviso: ' + $ignored + ' mensagem(ns) de encerramento do motor ignorada(s).') }
+ if (-not (Test-Path -LiteralPath $reportPath) -or $relevant -match 'SCRIPT ERROR:|ERROR:') { throw ('Verificacao falhou: ' + $sessionPath) }
  $report = Get-Content -Raw -LiteralPath $reportPath | ConvertFrom-Json
  if ($report.failures.Count -gt 0) { throw ('Verificacao falhou: ' + ($report.failures -join ', ')) }
  Write-Output ('PASS ' + $Map + ' SESSION=' + $sessionPath)
