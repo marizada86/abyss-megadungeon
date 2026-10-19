@@ -1,8 +1,15 @@
 """Run Godot checks with a probed synthetic user directory; never use the real profile."""
 from pathlib import Path
-import os,sys,json,re,subprocess,datetime
+import os,sys,json,re,subprocess,datetime,shutil
 
 root=Path(__file__).resolve().parent.parent
+def _find_godot():
+    # NOTTGARD_GODOT tem prioridade; depois o executável 4.7.2 da própria pasta do projeto; por fim o caminho antigo.
+    for candidate in [os.environ.get('NOTTGARD_GODOT'),str(root/'Godot_v4.7.2-stable_win64.exe'),'D:/Godot/godot.exe']:
+        if candidate and Path(candidate).is_file(): return candidate
+    raise SystemExit('Godot não encontrado: defina NOTTGARD_GODOT ou coloque Godot_v4.7.2-stable_win64.exe na raiz do projeto.')
+GODOT=_find_godot()
+PREFIX=['rtk','proxy'] if shutil.which('rtk') else []   # rtk é opcional (RTK.md)
 session=root/'tmp'/('release-validation-'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d-%H%M%S'))
 session.mkdir(parents=True)
 env=os.environ.copy()
@@ -18,7 +25,7 @@ def invoke(name,args,timeout=180):
     startup=None
     if os.name=='nt' and name != 'human-preview':
         startup=subprocess.STARTUPINFO(); startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW; startup.wShowWindow=0
-    proc=subprocess.run(['rtk','proxy','D:/Godot/godot.exe',*args],cwd=root,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8',errors='replace',timeout=timeout,startupinfo=startup)
+    proc=subprocess.run([*PREFIX,GODOT,*args],cwd=root,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8',errors='replace',timeout=timeout,startupinfo=startup)
     (session/(name+'.log')).write_text(proc.stdout,encoding='utf-8')
     return proc
 check=invoke('probe',['--headless','--path',str(probe),'-s','probe.gd'])
@@ -45,7 +52,20 @@ if '--captures' in sys.argv or '--integrated-hq-captures' in sys.argv:
     (session/'capture-results.json').write_text(json.dumps(dict(passed=passed,user_data_dir=str(userdir),captures=[p.name for p in session.glob('*.png')]),indent=2),encoding='utf-8')
     print('SESSION='+str(session),flush=True)
     sys.exit(0 if passed else 1)
-tests=sys.argv[1:] or ['test_chapter2_hqs','test_hqs','test_chapter_flow','test_profile','test_save_resilience','test_data','test_scripts_compile','test_platform_contract','test_map_objectives','test_terrain','test_root_navigation','test_root_art','test_domwieck_art','test_yggdrasil_map','test_yggdrasil_navigation','test_yggdrasil_art','test_dagruve_encounter','test_qa_sandbox','test_stage_story','test_stage_structures']
+if '--full' in sys.argv:
+    # Gates G1/G2 da release: suíte inteira (0 falhas e 0 SCRIPT ERROR) e auditoria do projeto (0 erros).
+    suite=invoke('suite',['--headless','--path',str(root),'-s','tests/run_all.gd','--','--controller-profile',str(profile)],1800)
+    suite_ok=suite.returncode==0 and re.search(r'testes: 0 falha\(s\)',suite.stdout) is not None and re.search(r'SCRIPT ERROR:|Parse Error:|FALHA ',suite.stdout) is None
+    print('suite: '+('PASS' if suite_ok else 'FAIL'),flush=True)
+    if not suite_ok: print(suite.stdout[-5000:],flush=True)
+    audit=invoke('audit',['--headless','--path',str(root),'-s','tools/audit_projeto.gd'],600)
+    audit_ok=re.search(r'RESUMO;erros=0;',audit.stdout) is not None
+    print('audit_projeto: '+('PASS' if audit_ok else 'FAIL'),flush=True)
+    if not audit_ok: print(audit.stdout[-3000:],flush=True)
+    (session/'full-results.json').write_text(json.dumps(dict(session=str(session),user_data_dir=str(userdir),suite=suite_ok,audit=audit_ok),indent=2),encoding='utf-8')
+    print('SESSION='+str(session),flush=True)
+    sys.exit(0 if suite_ok and audit_ok else 1)
+tests=sys.argv[1:] or ['test_chapter2_hqs','test_hqs','test_chapter_flow','test_profile','test_save_resilience','test_data','test_scripts_compile','test_platform_contract','test_map_objectives','test_terrain','test_root_navigation','test_root_art','test_domwieck_art','test_yggdrasil_map','test_yggdrasil_navigation','test_yggdrasil_art','test_dagruve_encounter','test_qa_sandbox','test_stage_story','test_stage_structures','test_version_contract','test_stage_deferrals','test_save_upgrade_050']
 results=[]
 for test in tests:
     proc=invoke(test,['--headless','--quit-after','2400','--path',str(root),'-s','tools/run_one_test.gd','--','--controller-profile',str(profile),test])

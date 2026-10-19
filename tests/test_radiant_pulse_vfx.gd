@@ -22,7 +22,7 @@ func run() -> Array[String]:
 		failures.append("atlas do pulso inválido")
 		return failures
 	if frames.get_frame_count(&"default") != 6 or frames.get_animation_loop(&"default") or not is_equal_approx(6.0 / frames.get_animation_speed(&"default"), 0.35): failures.append("contagem/cadência/one-shot inválidos")
-	var image := Image.load_from_file(RadiantPulseVfx.TEXTURE_PATH)
+	var image := texture.get_image()   # textura importada: Image.load_from_file em res:// não funciona em build exportado
 	var visible := 0
 	for y in 256:
 		for x in 256:

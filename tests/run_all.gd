@@ -6,6 +6,7 @@ func _init() -> void:
 
 func _run() -> void:
 	var failures: Array = []
+	var previous_orphans := Node.get_orphan_node_ids()
 	var dir := DirAccess.open("res://tests")
 	for f in dir.get_files():
 		if f.begins_with("test_") and f.ends_with(".gd"):
@@ -15,6 +16,7 @@ func _run() -> void:
 				continue
 			var t = scr.new()
 			var res = t.run()
+			_free_new_orphans(previous_orphans)
 			if not (res is Array):
 				failures.append("%s: teste abortou por erro de script" % f)
 				continue
@@ -24,3 +26,13 @@ func _run() -> void:
 		printerr("FALHA ", m)
 	print("testes: %d falha(s)" % failures.size())
 	quit(1 if failures.size() > 0 else 0)
+
+## Fixtures de teste que criam Nodes soltos (painéis, rótulos) não os liberam; sem isto eles vazam RIDs ao encerrar.
+## Só libera órfãos NOVOS e sem pai, preservando autoloads e órfãos que já existiam (mesma regra de tools/run_one_test.gd).
+func _free_new_orphans(previous: Array) -> void:
+	for id in Node.get_orphan_node_ids():
+		if previous.has(id):
+			continue
+		var node := instance_from_id(id)
+		if node is Node and node.get_parent() == null:
+			node.free()

@@ -82,6 +82,17 @@ source_port_20261018_proposal:
   publication_evidence: .atena/evidence/EVID-NOTTGARD-SOURCE-PORT-PUBLISH-20261018-r1.md
   publication_result_receipt: .atena/generated/source-port-20261018/publication/result.json
   publication_content_gates: DRAFT_RETAINED_HUMAN_ACCEPTANCE_PENDING
+  debt_port_resolution_20261018:
+    note: "Reconciliação do Lote 1 da 0.5.0; evidência: suíte 0 falhas/0 SCRIPT ERROR (tools/validate_release.sh) e audit_projeto 0 erros."
+    DEBT-PORT-001: "RESOLVIDA: ordem de combate (_stage_order) passou a seguir boss_mech.combat_orders; sem renumerar fases (commit 8fc9263)"
+    DEBT-PORT-002: "DEFERRED explícita: música/ambiência dos mapas novos em tests/stage_contracts.gd, com teste de validade; decisão B4 do plano 0.5.0"
+    DEBT-PORT-003: "DEFERRED explícita: crônicas dos mapas novos (mesmo registro); exige texto canônico"
+    DEBT-PORT-004: "RESOLVIDA: teste da descida segue o next aprovado de Docas (Reino Abissal)"
+    DEBT-PORT-005: "RESOLVIDA tecnicamente: decais dos mapas novos adiados de forma explícita"
+    DEBT-PORT-006: "RESOLVIDA: QA lista o catálogo inteiro de HQs (21), incluindo as 18 preservadas"
+    DEBT-PORT-007: "RESOLVIDA tecnicamente: eventos aleatórios dos mapas novos adiados de forma explícita; nada ativado"
+    DEBT-PORT-008: "RESOLVIDA: test_fog_edge ignora mapas sem chefe; run_one_test falha em vez de travar se o teste não carrega"
+    DEBT-PORT-009: "REDUZIDA: run_all libera fixtures órfãs; saída da suíte sem WARNING/ERROR de encerramento. Capturas/smoke ainda emitem mensagens GL de limpeza"
 
 hq20_reference_production_plan:
   id: PLAN-NOTTGARD-HQ20-REFERENCE-PRODUCTION-20261017
@@ -1529,7 +1540,8 @@ resource_cleanup_proposal:
     human_acceptance: PENDING_PLAYTEST
 pc_push_request:
   id: DEV-NOTTGARD-PC-PUSH-20261012
-  status: READY_TO_COMMIT_AND_PUSH
+  status: COMPLETE_SUPERSEDED_20261018
+  reconciliation_20261018: "origin/main contém b106b0c e os commits posteriores; push efetivado antes de 2026-10-18 e novamente em f88f485"
   push_authorization: 'vamos fazer o push do pc (2026-10-12)'
   commit_authorization: 'autorizado (2026-10-12), commit do conjunto revisado e push para origin/main'
   remote: origin
@@ -2036,6 +2048,7 @@ hq_continuation_review_20261018:
   return_checkpoint: CP-V05-01
   next_activity: Aprovar seleção visual HQ05 r1; aceite autoriza candidata Q1
   shared_state_policy: Approved order; existing cursors and visual acceptance checkpoints preserved
+  reconciliation_20261018: "spec e evidência citadas neste bloco (SPEC-NOTTGARD-HQ-CONTINUATION-20261018, EVID-NOTTGARD-HQ-CONTINUATION-20261018-r1) não estão neste repositório; o audit-r1.json existe. Aceite visual da HQ05 segue pendente."
 
 hqs_presentation_20261018:
   classification: PLAN_DEVIATION
@@ -2055,3 +2068,28 @@ hqs_presentation_20261018:
   return_step: S-I18-003
   return_checkpoint: CP-I18-003_HUMAN_ACCEPTANCE_PENDING
   original_checkpoint_preserved: true
+
+release_0_5_0_plan:
+  id: PLAN-NOTTGARD-RELEASE-0-5-0-20261018
+  revision: r1
+  classification: PLAN_CHANGE_REQUEST
+  mode: per-batch
+  status: BATCH_1_COMPLETE_AWAITING_BATCH_2_DECISIONS
+  spec: .atena/specs/SPEC-NOTTGARD-RELEASE-0-5-0-20261018/plan-r1.md
+  authorization: 'Aprovado o Lote 1 (A1–A5, A8), sem commit até o dono pedir (2026-10-18)'
+  batch_1:
+    A1_version_0_5_0: DONE  # core/version.gd, 3 presets, tests/test_version_contract.gd
+    A2_validate_release: DONE  # validate_release.py (Godot configurável, --full) e validate_release.sh (verificado aqui, sem Python)
+    A3_teardown: DONE_REDUCED  # run_all libera órfãos; test_radiant_pulse_vfx sem load_from_file em res://
+    A4_save_upgrade: DONE  # tests/test_save_upgrade_050.gd com fixture sintética 0.4.0
+    A5_state_reconciliation: DONE_WITH_FINDING  # ver missing_references
+    A8_bots_in_checklist: DONE  # .atena/generated/balance-bots-20261018 documentado no plano
+  missing_references:
+    total_referenced: 575
+    not_in_repository: 228
+    list: .atena/generated/release-0-5-0-20261018/missing-state-references.txt
+    note: 'Referências de evidência/geração (21 evidence, 186 generated, 21 specs) que nunca entraram no Git deste repositório; provavelmente restritas ao ambiente de origem. Não recriadas nem inventadas.'
+  gates: {G1_suite: PASS, G2_audit: PASS_0_ERRORS, G3_bots: NOT_RUN_NO_BALANCE_CHANGE, G4_builds: PENDING_A6, G5_save_upgrade: PASS_SYNTHETIC, G6_playtest: PENDING_HUMAN, G7_decisions: PENDING_B1_B9}
+  next_activity: Lote 2 — dono responde B1–B9 (pode ser "adiar")
+  commit: NOT_AUTHORIZED_YET
+  publish: NOT_AUTHORIZED

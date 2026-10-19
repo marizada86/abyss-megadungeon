@@ -9,6 +9,11 @@ func _run() -> void:
 		name = a
 	var previous_orphans := Node.get_orphan_node_ids()
 	var scr = load("res://tests/%s.gd" % name)
+	if scr == null or not scr.can_instantiate():
+		printerr("FALHA %s: script não compila ou não existe" % name)
+		print("%s: 1 falha(s)" % name)
+		quit(1)
+		return
 	var res = scr.new().run()
 	# Standalone fixtures may allocate Nodes without adding them to the tree.
 	# Free only new orphan fixtures; preserve autoloads and prior orphan nodes.
