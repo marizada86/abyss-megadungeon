@@ -2187,5 +2187,12 @@ vault_sweep_20261021:
     tests: "run_all 0 falhas; audit 0 erros e 2 avisos (crônicas de Reino Abissal e Domwieck aguardam aceite do rascunho CHRONICLES-NEW-MAPS-DRAFT-r1); tests de pausa de chefe neutralizados em l5_b001 e l5_b003; test_secrets cobre as 3 fases novas"
     pending: "Equilíbrio dos mapas alterados (bots) e aceite visual; chefe Death Tyrant só depois da arte V02; relíquias usam arte de ruína emprestada (C12 pendente); crônicas aguardam aceite"
     chronicles_applied: "Crônicas de Reino Abissal e Domwieck aplicadas (2026-10-21), adiamento chronicle removido de tests/stage_contracts.gd"
-  batch_7_pending_owner_decisions: []
+  batch_8:
+    authorization: "Atena, vamos dar sequência às implementações com os novos assets (2026-10-21; produção em codex/asset-generation-20261021-r1 d4419fe0, DRAFT, aceite visual humano PENDENTE)"
+    status: DONE_LOCAL_NOT_COMMITTED_AWAITING_VISUAL_ACCEPTANCE
+    tool: "tools/asset_prep.gd + tools/asset_jobs/*.json (remoção de fundo, recorte, folhas, nove fatias, sprites a partir de poses); fontes brutas em assets_incoming/r1 (não versionadas)"
+    integrated: "U01-U08 (cartão 280x400 + compacto recomposto, placa, gemas, fitas, cabeçalhos, glifos, setas, botão de rerrolar) em ui/offer_card.gd e ui/hud.gd; V01-V09 como sprites e folhas (sintese, death_tyrant, receptaculo, gargula, crueldades, manifestacao, nidhogg animado, molydeus, ezro, shu); V10 retrato do Kayron; V11 intro do Sacerdote; C10 miniatura de Domwieck; C11 decais; C12 ruínas; C13-C15 ícones de armas, item e bênçãos; C16 vfx de Arlindo e Erik; Q01 ícones das abas, Q04 melhorias e Q06 marcas"
+    not_integrated: "U09-U21 (brilho, textura, molduras de HUD e modais), Q02/Q03/Q05 (cartões de herói e fase, pips), Q07-Q10 (medalhas, conquistas, códex, resultado), V10 sprite do Kayron, lote N (33 poses ainda não geradas)"
+    notes: "Quadros de animação dos sprites são trocas de pose com pequeno balanço (sem animação desenhada). V08/V09 têm uma única pose. Kayron sprite mantido (arte nova não combina com as folhas)."
+    checks: "run_all 0 falhas; audit 0 erros 0 avisos; controller_check igual ao baseline"
   commit: NOT_AUTHORIZED_YET

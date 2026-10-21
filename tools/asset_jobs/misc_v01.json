@@ -1,0 +1,5 @@
+[
+ {"src":"assets_incoming/r1/V10_portrait_v01.png","out":"assets/portraits/kayron.png","size":[640,427],"key":"none"},
+ {"src":"assets_incoming/r1/V11_v01.png","out":"assets/ui/boss-intros/sacerdote_mente_derretida.png","size":[960,540],"key":"none"},
+ {"src":"assets_incoming/r1/C10_v01.png","out":"assets/stages/domwieck_thumb.png","size":[480,320],"key":"none"}
+]

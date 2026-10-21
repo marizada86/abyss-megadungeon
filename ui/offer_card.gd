@@ -67,7 +67,7 @@ func setup(index: int, o: Dictionary, name_color: Color, icon_tex: Texture2D) ->
 ## Com 5 ofertas ou mais o HUD usa a versão compacta (264×196, ícone à esquerda) em duas fileiras.
 
 const CARD_SIZE := Vector2(264, 396)
-const COMPACT_SIZE := Vector2(264, 196)
+const COMPACT_SIZE := Vector2(264, 222)
 const ART_DIR := "res://assets/ui/oferta/"
 const GOLD := Color(0.93, 0.78, 0.4)
 const RARITY_GEM := {"comum": Color(0.62, 0.62, 0.66), "magico": Color(0.35, 0.6, 1.0), "incomum": Color(0.4, 0.85, 0.5), "raro": Color(1.0, 0.7, 0.25), "unico": Color(0.78, 0.45, 1.0)}
@@ -95,6 +95,25 @@ const KIND_STYLE := {
 	"pact": {"ribbon": "PACTO", "ribbon_col": Color(0.5, 0.25, 0.4), "accent": Color(0.9, 0.6, 0.75), "cat": "Pacto"},
 	"ev_choice": {"ribbon": "", "ribbon_col": Color(0.4, 0.3, 0.6), "accent": Color(0.8, 0.75, 1.0), "cat": "Evento"},
 }
+## Fita de arte por texto da fita; glifo de categoria por tipo de oferta (lote U, assets/ui/oferta).
+const RIBBON_ART := {"NOVA": "fita_nova", "EQUIPAR": "fita_nova", "EVOLUI": "fita_evolui", "FORJA": "fita_evolui", "SINERGIA": "fita_sinergia", "MANTER": "fita_sinergia",
+	"DOAR": "fita_maldicao", "APOSTA": "fita_maldicao", "CURA": "fita_maldicao", "PACTO": "fita_maldicao", "BÊNÇÃO": "fita_bencao"}
+const GLYPH_ART := {"weapon_new": "glifo_arma", "weapon_up": "glifo_arma", "shop_weapon_up": "glifo_arma", "passive": "glifo_passiva", "evolve": "glifo_evolucao",
+	"synergy_activate": "glifo_sinergia", "boon": "glifo_bencao", "shop_item": "glifo_equipamento", "shop_item_up": "glifo_equipamento", "item_swap": "glifo_equipamento",
+	"donate": "glifo_maldicao", "gamble": "glifo_dado", "gold": "glifo_moeda", "shop_heal": "glifo_bencao", "heal": "glifo_bencao", "pact": "glifo_maldicao"}
+const GEM_ART := {"comum": "gema_comum", "magico": "gema_magico", "incomum": "gema_incomum", "raro": "gema_raro", "unico": "gema_unico"}
+
+## Cache obrigatório: o draw do cartão só enfileira o RID, e uma textura sem dono seria liberada antes de desenhar (quadrado branco).
+static var _art_cache := {}
+
+static func art(name: String) -> Texture2D:
+	if _art_cache.has(name):
+		return _art_cache[name]
+	var path := ART_DIR + name + ".png"
+	var tex: Texture2D = load(path) as Texture2D if ResourceLoader.exists(path) else null
+	_art_cache[name] = tex
+	return tex
+
 const NAME_PREFIXES := ["NOVA: ", "★ EVOLUÇÃO: ", "SINERGIA: "]
 
 var index := 0
@@ -169,9 +188,9 @@ func setup_card(i: int, o: Dictionary, name_color: Color, icon_tex: Texture2D, w
 	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for side in ["left", "right"]:
-		margin.add_theme_constant_override("margin_" + side, 12 if compact else 14)
-	margin.add_theme_constant_override("margin_top", 14 if compact else 18)
-	margin.add_theme_constant_override("margin_bottom", 10 if compact else 12)
+		margin.add_theme_constant_override("margin_" + side, 26 if compact else 30)
+	margin.add_theme_constant_override("margin_top", 22 if compact else 20)
+	margin.add_theme_constant_override("margin_bottom", 26 if compact else 30)
 	add_child(margin)
 	var col := VBoxContainer.new()
 	col.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -237,6 +256,26 @@ func setup_card(i: int, o: Dictionary, name_color: Color, icon_tex: Texture2D, w
 func _pill(text: String, col: Color) -> PanelContainer:
 	var pill := PanelContainer.new()
 	pill.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var ribbon_tex := art(String(RIBBON_ART.get(text, "")))
+	if ribbon_tex != null:
+		var tex_style := StyleBoxTexture.new()
+		tex_style.texture = ribbon_tex
+		tex_style.texture_margin_left = 44
+		tex_style.texture_margin_right = 44
+		tex_style.texture_margin_top = 0
+		tex_style.texture_margin_bottom = 0
+		tex_style.content_margin_left = 40
+		tex_style.content_margin_right = 40
+		tex_style.content_margin_top = 2
+		tex_style.content_margin_bottom = 2
+		pill.add_theme_stylebox_override("panel", tex_style)
+		pill.custom_minimum_size = Vector2(0, 32)
+		var ribbon_label := _label(text, 13, Color(1, 1, 1))
+		ribbon_label.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.85))
+		ribbon_label.add_theme_constant_override("outline_size", 3)
+		ribbon_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		pill.add_child(ribbon_label)
+		return pill
 	var pill_style := StyleBoxFlat.new()
 	pill_style.bg_color = col
 	pill_style.border_color = col.lightened(0.35)
@@ -303,7 +342,7 @@ func _chips_row(badge: Control, level_chip: String, price: String, price_col: Co
 func _build_full(col: VBoxContainer, title: String, category: String, ribbon: String, style: Dictionary, name_color: Color, icon_tex: Texture2D, glyph_text: String, badge: Control, level_chip: String, price: String, price_col: Color, i: int, brief_text: String) -> void:
 	# fita (a linha é sempre reservada, para os cartões alinharem)
 	var ribbon_row := CenterContainer.new()
-	ribbon_row.custom_minimum_size = Vector2(0, 22)
+	ribbon_row.custom_minimum_size = Vector2(0, 32)
 	ribbon_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	col.add_child(ribbon_row)
 	if ribbon != "":
@@ -320,7 +359,23 @@ func _build_full(col: VBoxContainer, title: String, category: String, ribbon: St
 	col.add_child(name_label)
 	var cat_label := _label(category, 14, Color(_accent.r, _accent.g, _accent.b, 0.85))
 	cat_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	col.add_child(cat_label)
+	var glyph_tex := art(String(GLYPH_ART.get(String(offer.get("t", "")), "")))
+	if glyph_tex != null and category != "":
+		var cat_row := HBoxContainer.new()
+		cat_row.alignment = BoxContainer.ALIGNMENT_CENTER
+		cat_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		cat_row.add_theme_constant_override("separation", 6)
+		var glyph_icon := TextureRect.new()
+		glyph_icon.texture = glyph_tex
+		glyph_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		glyph_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		glyph_icon.custom_minimum_size = Vector2(22, 22)
+		glyph_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		cat_row.add_child(glyph_icon)
+		cat_row.add_child(cat_label)
+		col.add_child(cat_row)
+	else:
+		col.add_child(cat_label)
 	var rule := ColorRect.new()
 	rule.color = Color(_accent.r, _accent.g, _accent.b, 0.35)
 	rule.custom_minimum_size = Vector2(0, 1)
@@ -358,12 +413,12 @@ func _build_compact(col: VBoxContainer, title: String, category: String, ribbon:
 	text_col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	text_col.add_theme_constant_override("separation", 2)
 	top.add_child(text_col)
-	var name_label := _label(title, 18, name_color if _rarity == "" else _accent)
+	var name_label := _label(title, 17, name_color if _rarity == "" else _accent)
 	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	name_label.max_lines_visible = 2
 	text_col.add_child(name_label)
 	text_col.add_child(_label(category, 13, Color(_accent.r, _accent.g, _accent.b, 0.85)))
-	var brief := _label(brief_text, 14, Color(0.9, 0.9, 0.9))
+	var brief := _label(brief_text, 13, Color(0.9, 0.9, 0.9))
 	brief.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	brief.max_lines_visible = 3
 	brief.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
@@ -381,12 +436,12 @@ func _build_compact(col: VBoxContainer, title: String, category: String, ribbon:
 	col.add_child(base)
 
 func _frame_style(state: String) -> StyleBox:
-	var art := ART_DIR + "oferta_cartao.png"
-	if ResourceLoader.exists(art):
+	var frame_tex := art("oferta_cartao_compacto" if compact else "oferta_cartao")
+	if frame_tex != null:
 		var tex_style := StyleBoxTexture.new()
-		tex_style.texture = load(art)
+		tex_style.texture = frame_tex
 		for edge in [SIDE_LEFT, SIDE_RIGHT, SIDE_TOP, SIDE_BOTTOM]:
-			tex_style.set_texture_margin(edge, 28)
+			tex_style.set_texture_margin(edge, 36 if compact else 40)
 		tex_style.modulate_color = {"normal": Color(1, 1, 1), "hover": Color(1.15, 1.12, 1.05), "pressed": Color(0.8, 0.8, 0.8), "focus": Color(1.2, 1.15, 1.0), "disabled": Color(0.55, 0.55, 0.55)}[state]
 		return tex_style
 	var bg: Color = {"normal": Color(0.085, 0.07, 0.105), "hover": Color(0.12, 0.1, 0.145), "pressed": Color(0.06, 0.05, 0.08), "focus": Color(0.115, 0.095, 0.14), "disabled": Color(0.07, 0.065, 0.08)}[state]
@@ -406,13 +461,20 @@ func _frame_style(state: String) -> StyleBox:
 	return box
 
 func _plate_style() -> StyleBox:
-	var art := ART_DIR + "oferta_placa_icone.png"
-	if ResourceLoader.exists(art):
-		var tex_style := StyleBoxTexture.new()
-		tex_style.texture = load(art)
+	var plate_tex := art("oferta_placa_icone")
+	if plate_tex != null and art("oferta_cartao") != null and not compact:
+		var window_style := StyleBoxEmpty.new()   # o cartão já tem a janela do ícone no desenho
 		for edge in [SIDE_LEFT, SIDE_RIGHT, SIDE_TOP, SIDE_BOTTOM]:
-			tex_style.set_texture_margin(edge, 16)
-			tex_style.set_content_margin(edge, 10)
+			window_style.set_content_margin(edge, 6)
+		return window_style
+	if plate_tex != null:
+		var tex_style := StyleBoxTexture.new()
+		tex_style.texture = plate_tex
+		for edge in [SIDE_LEFT, SIDE_RIGHT, SIDE_TOP, SIDE_BOTTOM]:
+			tex_style.set_texture_margin(edge, 22)
+			tex_style.set_content_margin(edge, 9 if compact else 12)
+		if _rarity != "":
+			tex_style.modulate_color = Color.WHITE.lerp(_accent, 0.55)   # a moldura dourada pega a cor da raridade
 		return tex_style
 	var plate_bg := Color(0.035, 0.03, 0.055)
 	if _rarity != "":
@@ -438,11 +500,17 @@ func _draw_ornaments(g: Control) -> void:
 		g.draw_colored_polygon(pts, tone)
 	# gema de raridade no topo (ou losango do destaque)
 	var gem_col: Color = RARITY_GEM.get(_rarity, _accent)
+	var gem_tex := art(String(GEM_ART.get(_rarity, ""))) if _rarity != "" else null
+	if gem_tex != null:
+		var gh := 46.0 if _rarity == "unico" else 40.0
+		var gw := gh * 0.75
+		g.draw_texture_rect(gem_tex, Rect2(r.size.x * 0.5 - gw * 0.5, -gh * 0.32, gw, gh), false)
 	var top := Vector2(r.size.x * 0.5, 4.0)
 	var gem_h := 1.5 if _rarity in ["raro", "unico"] else 1.0
 	var gem := PackedVector2Array([top + Vector2(0, -5 * gem_h), top + Vector2(6 * gem_h, 2), top + Vector2(0, 9 * gem_h), top + Vector2(-6 * gem_h, 2)])
-	g.draw_colored_polygon(gem, gem_col)
-	g.draw_polyline(PackedVector2Array([gem[0], gem[1], gem[2], gem[3], gem[0]]), Color(0, 0, 0, 0.6), 1.0)
+	if gem_tex == null:
+		g.draw_colored_polygon(gem, gem_col)
+		g.draw_polyline(PackedVector2Array([gem[0], gem[1], gem[2], gem[3], gem[0]]), Color(0, 0, 0, 0.6), 1.0)
 	# raro e único: moldura externa luminosa
 	if _rarity in ["raro", "unico"]:
 		var aura := r.grow(2.0)
@@ -480,10 +548,29 @@ func _badge(b: Variant) -> Control:
 		box.add_child(_label("=", 20, COLOR_NEUTRAL))
 		return box
 	if up > 0:
-		box.add_child(_label("▲ %d" % up, 20, COLOR_UP))
+		box.add_child(_arrow("seta_cima", "▲", up, COLOR_UP))
 	if down > 0:
-		box.add_child(_label("▼ %d" % down, 20, COLOR_DOWN))
+		box.add_child(_arrow("seta_baixo", "▼", down, COLOR_DOWN))
 	return box
+
+## Seta de arte (quando existe) + número; sem a arte, o triângulo de texto de antes.
+func _arrow(art_name: String, fallback: String, count: int, col: Color) -> Control:
+	var tex := art(art_name)
+	if tex == null:
+		return _label("%s %d" % [fallback, count], 20, col)
+	var row := HBoxContainer.new()
+	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_theme_constant_override("separation", 3)
+	var icon := TextureRect.new()
+	icon.texture = tex
+	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	icon.custom_minimum_size = Vector2(20, 20)
+	icon.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(icon)
+	row.add_child(_label(str(count), 20, col))
+	return row
 
 ## Tooltip com a tabela de comparação (ou o texto antigo, quando a oferta não tem detalhe).
 func _make_custom_tooltip(_for_text: String) -> Object:

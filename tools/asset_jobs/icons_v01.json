@@ -1,0 +1,205 @@
+[
+ {
+  "src": "assets_incoming/r1/C13_a_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/weapons",
+  "names": [
+   "maca_demolidora",
+   "raio_da_ruina",
+   "dominio_coletivo",
+   "martelo_da_luz"
+  ],
+  "fit": [
+   128,
+   128
+  ],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ },
+ {
+  "src": "assets_incoming/r1/C13_b_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/weapons",
+  "names": [
+   "constelacao_de_silva",
+   "memoria_alterada",
+   "tocha_do_incendiario"
+  ],
+  "fit": [
+   128,
+   128
+  ],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ },
+ {
+  "src": "assets_incoming/r1/C14_v01.png",
+  "key": "gray",
+  "out": "assets/icons/items/espelho_das_almas_desejantes.png",
+  "fit": [
+   128,
+   128
+  ],
+  "pad": 6
+ },
+ {
+  "src": "assets_incoming/r1/C15_a_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/boons",
+  "names": [
+   "mask_faca_sombra",
+   "mask_fechaduras",
+   "lliira_passo_leve",
+   "shar_pacto_perda",
+   "shar_veu_noite",
+   "selune_prata"
+  ],
+  "fit": [
+   128,
+   128
+  ],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ },
+ {
+  "src": "assets_incoming/r1/C15_b_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/boons",
+  "names": [
+   "ghaunadaur_massa",
+   "helion_tarn",
+   "lu_yueh_praga",
+   "zuggtmoy_esporos"
+  ],
+  "fit": [
+   128,
+   128
+  ],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ },
+ {
+  "src": "assets_incoming/r1/C15_c_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/boons",
+  "names": [
+   "zuggtmoy_guarnicao",
+   "juiblex_gelatina",
+   "juiblex_colmeia"
+  ],
+  "fit": [
+   128,
+   128
+  ],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ },
+ {
+  "src": "assets_incoming/r1/C12_reino_abissal_v01.png",
+  "key": "gray",
+  "out": "assets/interactions/ruina_reino_abissal.png",
+  "fit": [
+   256,
+   256
+  ],
+  "pad": 4,
+  "anchor": "bottom"
+ },
+ {
+  "src": "assets_incoming/r1/C12_domwieck_v01.png",
+  "key": "gray",
+  "out": "assets/interactions/ruina_domwieck.png",
+  "fit": [
+   256,
+   256
+  ],
+  "pad": 4,
+  "anchor": "bottom"
+ },
+ {
+  "src": "assets_incoming/r1/C12_pilares_v01.png",
+  "key": "gray",
+  "out": "assets/interactions/ruina_pilares.png",
+  "fit": [
+   256,
+   256
+  ],
+  "pad": 4,
+  "anchor": "bottom"
+ },
+ {
+  "src": "assets_incoming/r1/C11_reino_remendo_v01.png",
+  "key": "gray",
+  "out": "assets/decals/reino_abissal_remendo_01.png",
+  "fit": [
+   256,
+   128
+  ],
+  "pad": 10
+ },
+ {
+  "src": "assets_incoming/r1/C11_reino_trilha_v01.png",
+  "key": "gray",
+  "out": "assets/decals/reino_abissal_trilha_01.png",
+  "fit": [
+   256,
+   128
+  ],
+  "pad": 10
+ },
+ {
+  "src": "assets_incoming/r1/C11_domwieck_remendo_v01.png",
+  "key": "gray",
+  "out": "assets/decals/domwieck_remendo_01.png",
+  "fit": [
+   256,
+   128
+  ],
+  "pad": 10
+ },
+ {
+  "src": "assets_incoming/r1/C11_domwieck_trilha_v01.png",
+  "key": "gray",
+  "out": "assets/decals/domwieck_trilha_01.png",
+  "fit": [
+   256,
+   128
+  ],
+  "pad": 10
+ },
+ {
+  "src": "assets_incoming/r1/C16_arlindo_v01.png",
+  "key": "black",
+  "out": "assets/vfx/habilidade_arlindo.png",
+  "size": [
+   1536,
+   256
+  ],
+  "crop": false
+ },
+ {
+  "src": "assets_incoming/r1/C16_erik_v01.png",
+  "key": "black",
+  "out": "assets/vfx/habilidade_erik.png",
+  "size": [
+   1536,
+   256
+  ],
+  "crop": false
+ }
+]

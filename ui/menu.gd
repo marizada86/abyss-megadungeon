@@ -111,6 +111,7 @@ func _ready() -> void:
 	abyss_panel.changed.connect(_refresh_stage)
 	# SPEC-166: moldura e abas no padrão da ficha C (só estilo; estrutura e nomes inalterados)
 	UiKit.style_tab_container(%Tabs)
+	_tab_icons()
 	for list in [hero_list, stage_list, codex_list, hq_list]:
 		UiKit.style_list(list)
 	for text in [hero_info, stage_info, codex_text, hq_info]:
@@ -331,6 +332,17 @@ func _play() -> void:
 
 # ------------------------------------------------------------------ melhorias
 
+## Ícones de arte nas abas do Quartel (lote Q); sem os arquivos, as abas ficam só com o texto.
+func _tab_icons() -> void:
+	var by_title := {"Jogar": "aba_jogar", "Marcas": "aba_marcas", "Melhorias": "aba_melhorias", "Conquistas": "aba_conquistas", "Códex": "aba_codex", "Opções": "aba_opcoes", "Diário": "aba_diario", "Ranking": "aba_ranking"}
+	for i in %Tabs.get_tab_count():
+		var key: String = String(by_title.get(%Tabs.get_tab_title(i), ""))
+		var tex: Texture2D = UiKit.icon_texture("res://assets/icons/quartel/%s.png" % key) if key != "" else null
+		if tex != null:
+			%Tabs.set_tab_icon(i, tex)
+	for node in [%Tabs, %Tabs.get_tab_bar()]:
+		node.add_theme_constant_override("icon_max_width", 30)
+
 func _fill_upgrades() -> void:
 	# BUG-043: as linhas são refeitas a cada compra; sem isto o botão focado morria junto e o controle ficava sem foco.
 	var focus_id := _focused_upgrade_id()
@@ -342,10 +354,14 @@ func _fill_upgrades() -> void:
 	var p: Profile = Game.profile
 	for u in p.upgrade_defs():
 		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 10)
+		var up_icon := UiKit.icon_rect("res://assets/icons/melhorias/%s.png" % String(u.id), 56.0)
+		if up_icon != null:
+			row.add_child(up_icon)
 		var lab := Label.new()
 		var lv := p.upgrade_level(u.id)
 		lab.text = "%s   [%d/%d]\n%s" % [u.name, lv, u.costs.size(), u.desc]
-		lab.custom_minimum_size = Vector2(620, 0)
+		lab.custom_minimum_size = Vector2(620 if up_icon == null else 560, 0)
 		row.add_child(lab)
 		var btn := Button.new()
 		var cost := p.upgrade_cost(u.id)

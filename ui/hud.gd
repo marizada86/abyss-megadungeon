@@ -569,6 +569,7 @@ func show_offer(b: Battle) -> void:
 	else:
 		lv_title.text = "Altar — escolha uma bênção (e sua maldição) ou recuse"
 	var grid := _offer_grid_mode(b)
+	_offer_kind_now = b.offer_kind
 	_apply_offer_layout(grid, b.offer.size())
 	for i in b.offer.size():
 		var o: Dictionary = b.offer[i]
@@ -706,14 +707,21 @@ func _apply_offer_layout(grid: bool, count: int) -> void:
 		levelup_panel.add_theme_stylebox_override("panel", stage_box)
 		lv_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		lv_title.add_theme_font_size_override("font_size", 30)
+		_style_offer_header()
 		reroll_btn.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		reroll_btn.custom_minimum_size = Vector2(340, 40)
+		_style_reroll_button()
 	else:
 		levelup_panel.remove_theme_stylebox_override("panel")
 		lv_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 		lv_title.add_theme_font_size_override("font_size", 26)
+		lv_title.remove_theme_stylebox_override("normal")
+		lv_title.custom_minimum_size = Vector2.ZERO
 		reroll_btn.size_flags_horizontal = Control.SIZE_FILL
 		reroll_btn.custom_minimum_size = Vector2.ZERO
+		for state in ["normal", "hover", "pressed", "focus", "disabled"]:
+			reroll_btn.remove_theme_stylebox_override(state)
+		reroll_btn.icon = null
 	if vbox != null and _detail_host != null:
 		_detail_host.visible = grid
 
@@ -728,6 +736,58 @@ func _recenter_offer_panel() -> void:
 	levelup_panel.offset_bottom = sz.y / 2.0 + shift
 
 var _detail_host: VBoxContainer
+var _offer_kind_now := ""
+
+## Plaqueta de arte atrás do título (lote U): nível, altar ou loja. Sem a arte, o título fica como antes.
+func _style_offer_header() -> void:
+	var kind := _offer_kind_now
+	var art_name := "cabecalho_nivel" if kind == "levelup" else ("cabecalho_altar" if kind in ["altar", "pact"] else "cabecalho_loja")
+	var tex := OfferCard.art(art_name)
+	if tex == null:
+		return
+	var box := StyleBoxTexture.new()
+	box.texture = tex
+	box.texture_margin_left = 60
+	box.texture_margin_right = 60
+	box.texture_margin_top = 0
+	box.texture_margin_bottom = 0
+	box.content_margin_left = 72
+	box.content_margin_right = 72
+	box.content_margin_top = 6
+	box.content_margin_bottom = 10
+	lv_title.add_theme_stylebox_override("normal", box)
+	lv_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	lv_title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	lv_title.custom_minimum_size = Vector2(720, 84)
+
+## Botão de rerrolar com a moldura de arte e o dado; apagado quando acabam as rerrolagens.
+func _style_reroll_button() -> void:
+	var normal_tex := OfferCard.art("botao_rerrolar")
+	if normal_tex == null:
+		return
+	var dim_tex := OfferCard.art("botao_rerrolar_apagado")
+	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
+		var box := StyleBoxTexture.new()
+		box.texture = dim_tex if (state == "disabled" and dim_tex != null) else normal_tex
+		box.texture_margin_left = 44
+		box.texture_margin_right = 44
+		box.texture_margin_top = 16
+		box.texture_margin_bottom = 16
+		box.content_margin_left = 54
+		box.content_margin_right = 54
+		box.content_margin_top = 8
+		box.content_margin_bottom = 10
+		if state == "hover" or state == "focus":
+			box.modulate_color = Color(1.25, 1.2, 1.05)
+		elif state == "pressed":
+			box.modulate_color = Color(0.8, 0.8, 0.8)
+		reroll_btn.add_theme_stylebox_override(state, box)
+	var die := OfferCard.art("dado_rerrolar")
+	if die != null:
+		reroll_btn.icon = die
+		reroll_btn.expand_icon = false
+		reroll_btn.add_theme_constant_override("icon_max_width", 28)
+	reroll_btn.custom_minimum_size = Vector2(380, 58)
 
 func _offer_detail_host() -> VBoxContainer:
 	if _detail_host == null or not is_instance_valid(_detail_host):

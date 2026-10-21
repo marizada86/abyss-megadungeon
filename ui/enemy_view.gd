@@ -12,6 +12,7 @@ const ANIMATED := {
 	"manifestacao_de_juiblex": {"cell": Vector2i(512, 320), "body_height": 266.1, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6, "special": 6}, "flip_h_for_move": true},
 	"mimico": {"cell": Vector2i(384, 352), "body_height": 403.4, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6}, "flip_h_for_move": true},
 	"totem_de_chefe": {"cell": Vector2i(384, 352), "body_height": 515.4, "states": {"idle": 4}},
+	"nidhogg": {"cell": Vector2i(256, 384), "body_height": 330.0, "states": {"idle": 4, "attack": 4, "death": 6}},
 	"sintese_abissal": {"cell": Vector2i(256, 384), "body_height": 218.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6, "special": 6}, "flip_h_for_move": true},
 	"socothbenoth": {"cell": Vector2i(256, 384), "body_height": 188.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6, "special": 6}, "flip_h_for_move": true},
 	"death_tyrant": {"cell": Vector2i(256, 384), "body_height": 176.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6}, "flip_h_for_move": true},
@@ -65,6 +66,7 @@ const ANIMATED := {
 const FEET_Y := {
 	"manifestacao_de_juiblex": 292.0, "mimico": 324.0, "totem_de_chefe": 324.0,
 	"sintese_abissal": 356.0,
+	"nidhogg": 356.0,
 	"socothbenoth": 356.0,
 	"death_tyrant": 356.0,
 	"ilusao_de_socothbenoth": 356.0,

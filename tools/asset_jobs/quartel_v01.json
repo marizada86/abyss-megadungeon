@@ -1,0 +1,7 @@
+[
+ {"src":"assets_incoming/r1/Q01_v01.png","key":"gray","split":"components","out_dir":"assets/icons/quartel","names":["aba_jogar","aba_marcas","aba_melhorias","aba_conquistas","aba_codex","aba_opcoes","aba_diario","aba_ranking"],"fit":[64,64],"pad":2,"min_area":1500,"gap":12,"row_tol":120},
+ {"src":"assets_incoming/r1/Q04_a_v01.png","key":"gray","split":"components","out_dir":"assets/icons/melhorias","names":["forca_bruta","vitalidade","mao_cheia","rerrolagem","sorte","bolso_fundo"],"fit":[96,96],"pad":4,"min_area":1500,"gap":12,"row_tol":150},
+ {"src":"assets_incoming/r1/Q04_b_v01.png","key":"gray","split":"components","out_dir":"assets/icons/melhorias","names":["ganancia","ima","armadura_extra","pes_ligeiros","segunda_chance","teimosia_do_azarado"],"fit":[96,96],"pad":4,"min_area":1500,"gap":12,"row_tol":150},
+ {"src":"assets_incoming/r1/Q04_c_v01.png","key":"gray","split":"components","out_dir":"assets/icons/melhorias","names":["ressonancia","corpo_de_ferro","mente_aguda","braco_forte","presenca","regeneracao_meta"],"fit":[96,96],"pad":4,"min_area":1500,"gap":12,"row_tol":150},
+ {"src":"assets_incoming/r1/Q06_v01.png","key":"gray","split":"components","out_dir":"assets/icons/marcas","names":["carapaca","pressa","horda","elites","furia","vivo","fome","chefe","tregua"],"fit":[128,128],"pad":6,"min_area":1500,"gap":12,"row_tol":150}
+]

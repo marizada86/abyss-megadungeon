@@ -20,6 +20,8 @@ const SPECS := {
 	"dominacao": {"path": "res://assets/vfx/habilidade_nyrelia.png", "kind": "sigil", "ref_px": 101.0, "radius": 1.2, "duration": 1.4},
 	"suspensao_temporal": {"path": "res://assets/vfx/habilidade_zynara.png", "kind": "pulse", "ref_px": 121.0, "duration": 0.8},
 	"concordia": {"path": "res://assets/vfx/habilidade_bromnor.png", "kind": "pulse", "ref_px": 122.0, "duration": 0.5},
+	"modify_memory": {"path": "res://assets/vfx/habilidade_arlindo.png", "kind": "pulse", "ref_px": 112.0, "duration": 0.8},
+	"navios_em_chamas": {"path": "res://assets/vfx/habilidade_erik.png", "kind": "arc", "ref_px": 112.0, "duration": 0.5},
 }
 ## Abilities whose own `nova` event already draws the plain ring; the sprite on `active` replaces it.
 const NOVA_WEAPONS := ["impacto_de_xargath", "concordia"]

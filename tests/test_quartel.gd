@@ -89,7 +89,7 @@ func run() -> Array:
 	menu._refresh_all()
 	var buy_buttons: Array = []
 	for row in menu.upgrade_box.get_children():
-		var b := row.get_child(1) as Button
+		var b := row.get_child(row.get_child_count() - 1) as Button
 		if b != null and not b.disabled:
 			buy_buttons.append(b)
 	if buy_buttons.size() < 2:

@@ -239,6 +239,26 @@ static func style_tab_container(tabs: TabContainer) -> void:
 	panel.set_content_margin_all(14)
 	tabs.add_theme_stylebox_override("panel", panel)
 
+## Ícone de arte com cache (null sem o arquivo): evita recarregar a cada refresh e a textura sem dono ser liberada.
+static var _icon_cache := {}
+
+static func icon_texture(path: String) -> Texture2D:
+	if not _icon_cache.has(path):
+		_icon_cache[path] = load(path) as Texture2D if ResourceLoader.exists(path) else null
+	return _icon_cache[path]
+
+static func icon_rect(path: String, size: float) -> TextureRect:
+	var tex := icon_texture(path)
+	if tex == null:
+		return null
+	var rect := TextureRect.new()
+	rect.texture = tex
+	rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	rect.custom_minimum_size = Vector2(size, size)
+	rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return rect
+
 ## Lista (`ItemList`) no padrão: fundo escuro, borda de ouro apagado e seleção dourada.
 static func style_list(list: ItemList) -> void:
 	list.add_theme_stylebox_override("panel", box(Color(0.06, 0.05, 0.08, 0.88), GOLD_DIM, 1, 4))

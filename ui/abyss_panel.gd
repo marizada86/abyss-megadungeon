@@ -54,9 +54,12 @@ func _add_row(id: String) -> void:
 	var line := HBoxContainer.new()
 	line.add_theme_constant_override("separation", 10)
 	row.add_child(line)
+	var mark_icon := UiKit.icon_rect("res://assets/icons/marcas/%s.png" % id, 44.0)
+	if mark_icon != null:
+		line.add_child(mark_icon)
 	var label := Label.new()
 	label.text = String(def.name)
-	label.custom_minimum_size.x = 190
+	label.custom_minimum_size.x = 190 if mark_icon == null else 140
 	label.add_theme_font_size_override("font_size", 20)
 	line.add_child(label)
 	var minus := Button.new()

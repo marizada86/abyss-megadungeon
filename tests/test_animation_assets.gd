@@ -1,6 +1,9 @@
 extends RefCounted
 
 const ASSETS := {
+	"res://assets/animations/enemies/nidhogg/idle.png": Vector2i(1024, 384),
+	"res://assets/animations/enemies/nidhogg/attack.png": Vector2i(1024, 384),
+	"res://assets/animations/enemies/nidhogg/death.png": Vector2i(1536, 384),
 	"res://assets/animations/enemies/sintese_abissal/idle.png": Vector2i(1024, 384),
 	"res://assets/animations/enemies/sintese_abissal/move.png": Vector2i(1536, 384),
 	"res://assets/animations/enemies/sintese_abissal/attack.png": Vector2i(1024, 384),
@@ -313,6 +316,7 @@ const WAVE_ONE_ENEMY_ANIMATIONS := {
 	"criatura_corrompida": {"cell": Vector2i(256, 384), "states": {&"idle": 4, &"move": 6, &"attack": 4, &"death": 6}},
 	"arch_hag": {"cell": Vector2i(256, 384), "states": {&"idle": 4, &"move": 6, &"attack": 4, &"death": 6}},
 	"tentaculo_kraken": {"cell": Vector2i(256, 384), "states": {&"idle": 4, &"attack": 4, &"death": 6}},
+	"nidhogg": {"cell": Vector2i(256, 384), "states": {&"idle": 4, &"attack": 4, &"death": 6}},
 	"guardiao_verdadeiro": {"cell": Vector2i(320, 480), "states": {&"idle": 4, &"move": 6, &"attack": 4, &"special": 6, &"death": 6}},
 	"guardiao_copia": {"cell": Vector2i(320, 480), "states": {&"idle": 4, &"move": 6, &"attack": 4, &"special": 6, &"death": 6}},
 }

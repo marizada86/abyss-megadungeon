@@ -1,0 +1,147 @@
+[
+ {
+  "src": "assets_incoming/r1/U01_v01.png",
+  "out": "assets/ui/oferta/oferta_cartao.png",
+  "key": "magenta",
+  "size": [
+   280,
+   400
+  ]
+ },
+ {
+  "src": "assets_incoming/r1/U02_v01.png",
+  "out": "assets/ui/oferta/oferta_placa_icone.png",
+  "key": "magenta",
+  "size": [
+   128,
+   128
+  ]
+ },
+ {
+  "src": "assets_incoming/r1/U03_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/ui/oferta",
+  "names": [
+   "gema_comum",
+   "gema_magico",
+   "gema_incomum",
+   "gema_raro",
+   "gema_unico"
+  ],
+  "min_area": 900,
+  "gap": 10,
+  "scale_h": 96
+ },
+ {
+  "src": "assets_incoming/r1/U04_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/ui/oferta",
+  "names": [
+   "fita_nova",
+   "fita_evolui",
+   "fita_sinergia",
+   "fita_maldicao",
+   "fita_bencao"
+  ],
+  "min_area": 900,
+  "gap": 10,
+  "row_tol": 30,
+  "scale_w": 256
+ },
+ {
+  "src": "assets_incoming/r1/U05_v01.png",
+  "key": "magenta",
+  "split": "components",
+  "out_dir": "assets/ui/oferta",
+  "names": [
+   "cabecalho_nivel",
+   "cabecalho_altar",
+   "cabecalho_loja"
+  ],
+  "min_area": 900,
+  "gap": 10,
+  "row_tol": 30,
+  "scale_w": 800
+ },
+ {
+  "src": "assets_incoming/r1/U06_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/ui/oferta",
+  "names": [
+   "glifo_arma",
+   "glifo_passiva",
+   "glifo_equipamento",
+   "glifo_bencao",
+   "glifo_maldicao",
+   "glifo_evolucao",
+   "glifo_sinergia",
+   "glifo_moeda",
+   "glifo_dado"
+  ],
+  "fit": [
+   64,
+   64
+  ],
+  "min_area": 900,
+  "gap": 10,
+  "row_tol": 80
+ },
+ {
+  "src": "assets_incoming/r1/U07_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/ui/oferta",
+  "names": [
+   "seta_cima",
+   "seta_baixo",
+   "losango",
+   "estrela"
+  ],
+  "fit": [
+   32,
+   32
+  ],
+  "min_area": 300,
+  "gap": 8
+ },
+ {
+  "src": "assets_incoming/r1/U08_v01.png",
+  "key": "magenta",
+  "split": "components",
+  "out_dir": "assets/ui/oferta",
+  "names": [
+   "botao_rerrolar",
+   "botao_rerrolar_apagado",
+   "dado_rerrolar"
+  ],
+  "min_area": 900,
+  "gap": 10,
+  "row_tol": 40,
+  "fits": {
+   "dado_rerrolar": [
+    48,
+    48
+   ]
+  },
+  "scale_w": 378
+ },
+ {
+  "mode": "nine_compose",
+  "src": "assets/ui/oferta/oferta_cartao.png",
+  "out": "assets/ui/oferta/oferta_cartao_compacto.png",
+  "size": [
+   280,
+   196
+  ],
+  "margin": 36,
+  "center_from": [
+   0,
+   0.5,
+   1,
+   0.9
+  ]
+ }
+]
