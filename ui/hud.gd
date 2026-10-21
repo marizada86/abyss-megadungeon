@@ -400,6 +400,7 @@ func _unhandled_input(ev: InputEvent) -> void:
 ## MEC-027: segurar Shift abre o detalhe de todas as opções, para quem joga sem mouse.
 var _detail_nodes: Array = []
 var _detail_on := false
+var modal_overlay := false   # introdução de chefe: esconde a habilidade e os marcadores de fase
 
 func _process(_delta: float) -> void:
 	if hero_panel != null:   # SPEC-177 F-12: a pausa é translúcida; a ficha de status e os avisos não aparecem por trás do título
@@ -407,12 +408,12 @@ func _process(_delta: float) -> void:
 	toast_box.visible = not pause_panel.visible
 	if event_pointer != null:
 		event_pointer.battle = _battle
-		event_pointer.visible = _battle != null and _battle.state == "running" and not (items_panel.visible or levelup_panel.visible or pause_panel.visible or result_panel.visible or revive_panel.visible)
+		event_pointer.visible = _battle != null and _battle.state == "running" and not (modal_overlay or items_panel.visible or levelup_panel.visible or pause_panel.visible or result_panel.visible or revive_panel.visible)
 	if stage_progress != null:
 		stage_progress.battle = _battle
-		stage_progress.visible = _battle != null and _battle.state == "running" and not (items_panel.visible or levelup_panel.visible or pause_panel.visible or result_panel.visible or revive_panel.visible)
+		stage_progress.visible = _battle != null and _battle.state == "running" and not (modal_overlay or items_panel.visible or levelup_panel.visible or pause_panel.visible or result_panel.visible or revive_panel.visible)
 	if _ability_slot != null:
-		_ability_slot.visible = true and not (items_panel.visible or levelup_panel.visible or pause_panel.visible or result_panel.visible or revive_panel.visible)
+		_ability_slot.visible = true and not (modal_overlay or items_panel.visible or levelup_panel.visible or pause_panel.visible or result_panel.visible or revive_panel.visible)
 	if not levelup_panel.visible:
 		return
 	var grid_cards := _offer_grid_active

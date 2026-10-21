@@ -339,7 +339,7 @@ func _setup_encounter_overlays() -> void:
 	_boss_intro_art.offset_left = 72.0
 	_boss_intro_art.offset_right = -72.0
 	_boss_intro_art.offset_top = 42.0
-	_boss_intro_art.offset_bottom = -128.0
+	_boss_intro_art.offset_bottom = -172.0   # deixa espaço para a placa de 96 px (as margens de nove fatias somam 72)
 	_boss_intro_art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	_boss_intro_art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	_boss_intro_panel.add_child(_boss_intro_art)
@@ -355,8 +355,8 @@ func _setup_encounter_overlays() -> void:
 	_boss_intro_title.add_theme_constant_override("outline_size", 8)
 	_boss_intro_panel.add_child(_boss_intro_title)
 	Lettering.decorate_label(_boss_intro_title, "placa_chefe", 28)
-	_boss_intro_title.offset_top = -136.0
-	_boss_intro_title.offset_bottom = -64.0
+	_boss_intro_title.offset_top = -160.0
+	_boss_intro_title.offset_bottom = -64.0   # 96 px: com 72 as bordas da placa se juntavam no meio e riscavam o texto
 	_boss_intro_subtitle = Label.new()
 	_boss_intro_subtitle.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 	_boss_intro_subtitle.offset_left = -460.0
@@ -378,12 +378,15 @@ func _show_boss_intro(ev: Dictionary) -> void:
 	_boss_intro_subtitle.add_theme_font_size_override("font_size", 18 if _boss_intro_subtitle.text.length() <= 90 else 14)
 	_boss_intro_panel.modulate.a = 0.0
 	_boss_intro_panel.visible = true
+	hud.modal_overlay = true   # esconde o botão da habilidade (Q/RMB) e os marcadores, que apareciam por trás do véu
 	var duration := clampf(float(presentation.get("overlay_seconds", 1.8)), 1.5, 2.0)
 	var tween := create_tween()
 	tween.tween_property(_boss_intro_panel, "modulate:a", 1.0, 0.16)
 	tween.tween_interval(maxf(0.1, duration - 0.46))
 	tween.tween_property(_boss_intro_panel, "modulate:a", 0.0, 0.30)
-	tween.tween_callback(func(): _boss_intro_panel.visible = false)
+	tween.tween_callback(func():
+		_boss_intro_panel.visible = false
+		hud.modal_overlay = false)
 
 func _update_fog_overlay() -> void:
 	if battle == null or fog_state_is_inactive():
