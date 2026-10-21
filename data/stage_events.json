@@ -877,5 +877,25 @@
     }
   ],
   "reino_abissal": [],
+  "raiz_yggdrasil": [
+    {
+      "id": "nidhogg_mordida",
+      "at": 100,
+      "warning": 4,
+      "kind": "invasion",
+      "enemy_id": "nidhogg",
+      "deadline": 75,
+      "title": "Nidhogg",
+      "warning_text": "Algo enorme se move sob as raízes.",
+      "result_text": "Nidhogg ergue a cabeça entre as raízes.",
+      "objective_text": "derrote Nidhogg antes que ele recue",
+      "leave_text": "Nidhogg recua para o fundo da raiz.",
+      "success_text": "Nidhogg tomba entre as raízes; a passagem segue livre.",
+      "reward": {
+        "gold": 80
+      },
+      "fonte_vault": "Sessão 15 (criatura enorme numa raiz de Yggdrasil; Maelor sofre mordida grave). Nome Nidhogg: decisão do dono, 2026-10-21"
+    }
+  ],
   "domwieck": []
 }

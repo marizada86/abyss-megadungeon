@@ -38,7 +38,10 @@ const TOAST_LONG_CHARS := 60
 @onready var prompt_label: Label = %PromptLabel
 @onready var levelup_panel: PanelContainer = %LevelUpPanel
 @onready var lv_title: Label = %LvTitle
-@onready var offer_box: VBoxContainer = %OfferBox
+@onready var offer_box: Container = %OfferBox   # lista vertical ou, nos cartões, a fileira com quebra (_offer_grid)
+@onready var _offer_list: VBoxContainer = %OfferBox
+var _offer_grid: HFlowContainer
+var _offer_grid_active := false
 @onready var reroll_btn: Button = %RerollBtn
 @onready var pause_panel: PanelContainer = %PausePanel
 @onready var aim_btn: Button = %AimBtn
@@ -410,13 +413,20 @@ func _process(_delta: float) -> void:
 		stage_progress.visible = _battle != null and _battle.state == "running" and not (items_panel.visible or levelup_panel.visible or pause_panel.visible or result_panel.visible or revive_panel.visible)
 	if _ability_slot != null:
 		_ability_slot.visible = true and not (items_panel.visible or levelup_panel.visible or pause_panel.visible or result_panel.visible or revive_panel.visible)
-	if not levelup_panel.visible or _detail_nodes.is_empty():
+	if not levelup_panel.visible:
+		return
+	var grid_cards := _offer_grid_active
+	if _detail_nodes.is_empty() and not grid_cards:
 		return
 	var on := _controller_detail_on if Game.controls.is_controller() else Input.is_action_pressed(Game.ACTION_OFFER_DETAILS)
 	if on != _detail_on:
 		_detail_on = on
 		for n in _detail_nodes:
 			n.visible = on
+		if grid_cards:
+			for c in offer_box.get_children():
+				if c is OfferCard:
+					(c as OfferCard).show_detail(on)
 
 func update_stats(b: Battle) -> void:
 	_battle = b
@@ -531,9 +541,16 @@ func show_offer(b: Battle) -> void:
 	_offer_buttons.clear()
 	if _offer_confirm != null:
 		_offer_confirm.disabled = true
-	for c in offer_box.get_children():
-		offer_box.remove_child(c)
-		c.queue_free()
+	for box in [_offer_list, _offer_grid]:
+		if box == null:
+			continue
+		for c in box.get_children():
+			box.remove_child(c)
+			c.queue_free()
+	if _detail_host != null and is_instance_valid(_detail_host):
+		for c in _detail_host.get_children():
+			_detail_host.remove_child(c)
+			c.queue_free()
 	_detail_nodes.clear()
 	_detail_on = false
 	_offer_hint = null
@@ -550,8 +567,13 @@ func show_offer(b: Battle) -> void:
 		lv_title.text = String(shop_titles[b.offer_kind])
 	else:
 		lv_title.text = "Altar — escolha uma bênção (e sua maldição) ou recuse"
+	var grid := _offer_grid_mode(b)
+	_apply_offer_layout(grid, b.offer.size())
 	for i in b.offer.size():
 		var o: Dictionary = b.offer[i]
+		if grid and not o.has("brief"):
+			o = o.duplicate()   # só para exibir: "Recusar a bênção" vira cartão com o texto como destaque
+			o["brief"] = String(o.get("desc", ""))
 		var is_card := o.has("brief")
 		var btn: Button = OfferCard.new() if is_card else Button.new()
 		if not is_card:
@@ -575,7 +597,9 @@ func show_offer(b: Battle) -> void:
 			"shop_item_up": btn.add_theme_color_override("font_color", Items.rarity_color(String(o.get("rarity", "comum"))))
 			"shop_weapon_up", "shop_heal": btn.add_theme_color_override("font_color", Color(1.0, 0.9, 0.5))
 			"shop_leave", "boon_skip": btn.add_theme_color_override("font_color", Color(0.6, 0.6, 0.6))
-		if is_card:
+		if is_card and grid:
+			(btn as OfferCard).setup_card(i, o, btn.get_theme_color("font_color"), icon_tex, _offer_card_width(b.offer.size()), _offer_compact(b.offer.size()))
+		elif is_card:
 			(btn as OfferCard).setup(i, o, btn.get_theme_color("font_color"), icon_tex)
 		else:
 			var tip := String(o.get("tooltip", ""))
@@ -589,7 +613,7 @@ func show_offer(b: Battle) -> void:
 		offer_box.add_child(btn)
 		if i == (b.offer_focus if b.offer_kind == "item" else 0):
 			btn.grab_focus()
-		if is_card:
+		if is_card and not grid:   # nos cartões verticais o detalhe é do próprio cartão (Shift troca o destaque pela tabela)
 			var detail := (btn as OfferCard).build_detail(true)
 			if detail != null:
 				var wrap := MarginContainer.new()
@@ -607,7 +631,13 @@ func show_offer(b: Battle) -> void:
 		hint.add_theme_font_size_override("font_size", 14)
 		hint.add_theme_color_override("font_color", Color(0.72, 0.72, 0.72))
 		hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		offer_box.add_child(hint)
+		if grid:
+			_offer_detail_host().add_child(hint)
+		else:
+			offer_box.add_child(hint)
+	if _offer_grid_active:
+		_offer_grid.queue_sort()
+		call_deferred("_recenter_offer_panel")   # a fileira com quebra só acerta a altura depois de montada
 	reroll_btn.visible = b.offer_kind == "levelup"
 	reroll_btn.text = "Rerrolar (%s) — %d restantes" % [Game.controls.prompt("run_reroll", "R"), b.rerolls]
 	reroll_btn.disabled = b.rerolls <= 0
@@ -626,6 +656,87 @@ func show_offer(b: Battle) -> void:
 
 func hide_offer() -> void:
 	levelup_panel.visible = false
+
+# ------------------------------------------------------------------ cartões verticais (nível e altar)
+
+const OFFER_GRID_KINDS := ["levelup", "altar", "item", "pact"]   # e todas as lojas ("shop_*")
+const OFFER_GRID_WIDTH := 1160.0
+const OFFER_GRID_GAP := 18
+const OFFER_COMPACT_FROM := 6   # a partir daqui o cartão vira a versão baixa, em duas fileiras
+
+func _offer_grid_mode(b: Battle) -> bool:
+	return (b.offer_kind in OFFER_GRID_KINDS or b.offer_kind.begins_with("shop_")) and not b.offer.is_empty()
+
+func _offer_compact(count: int) -> bool:
+	return count >= OFFER_COMPACT_FROM
+
+func _offer_card_width(count: int) -> float:
+	if _offer_compact(count):
+		return OfferCard.COMPACT_SIZE.x
+	return clampf((OFFER_GRID_WIDTH - OFFER_GRID_GAP * float(maxi(count - 1, 0))) / float(maxi(count, 1)), 190.0, OfferCard.CARD_SIZE.x)
+
+## Fileira horizontal com quebra, centrada, sobre fundo translúcido (cartões) ou a lista antiga (pactos e afins).
+func _apply_offer_layout(grid: bool, count: int) -> void:
+	_offer_grid_active = grid
+	if grid and _offer_grid == null:
+		_offer_grid = HFlowContainer.new()
+		_offer_grid.name = "OfferGrid"
+		_offer_grid.alignment = FlowContainer.ALIGNMENT_CENTER
+		_offer_grid.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+		_offer_grid.add_theme_constant_override("h_separation", OFFER_GRID_GAP)
+		_offer_grid.add_theme_constant_override("v_separation", OFFER_GRID_GAP)
+		_offer_list.get_parent().add_child(_offer_grid)
+		_offer_list.get_parent().move_child(_offer_grid, _offer_list.get_index() + 1)
+	offer_box = _offer_grid if grid else _offer_list
+	_offer_list.visible = not grid
+	if _offer_grid != null:
+		_offer_grid.visible = grid
+	if grid:
+		var per_row := count if not _offer_compact(count) else int(ceil(float(count) / 2.0))
+		var w := _offer_card_width(count)
+		_offer_grid.custom_minimum_size.x = per_row * w + (per_row - 1) * OFFER_GRID_GAP
+	var vbox := _offer_list.get_parent() as VBoxContainer
+	if grid:
+		var stage_box := UiKit.box(Color(0.03, 0.025, 0.05, 0.8), Color(0.62, 0.5, 0.28, 0.9), 2, 12)
+		stage_box.content_margin_left = 24
+		stage_box.content_margin_right = 24
+		stage_box.content_margin_top = 14
+		stage_box.content_margin_bottom = 16
+		levelup_panel.add_theme_stylebox_override("panel", stage_box)
+		lv_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		lv_title.add_theme_font_size_override("font_size", 30)
+		reroll_btn.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+		reroll_btn.custom_minimum_size = Vector2(340, 40)
+	else:
+		levelup_panel.remove_theme_stylebox_override("panel")
+		lv_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		lv_title.add_theme_font_size_override("font_size", 26)
+		reroll_btn.size_flags_horizontal = Control.SIZE_FILL
+		reroll_btn.custom_minimum_size = Vector2.ZERO
+	if vbox != null and _detail_host != null:
+		_detail_host.visible = grid
+
+## Recentra o painel do tamanho mínimo; nos cartões desce um pouco para não cobrir a ficha do herói.
+func _recenter_offer_panel() -> void:
+	levelup_panel.reset_size()
+	var sz := levelup_panel.get_combined_minimum_size()
+	var shift := get_viewport().get_visible_rect().size.y * 0.05 if _offer_grid_active else 0.0
+	levelup_panel.offset_left = -sz.x / 2.0
+	levelup_panel.offset_right = sz.x / 2.0
+	levelup_panel.offset_top = -sz.y / 2.0 + shift
+	levelup_panel.offset_bottom = sz.y / 2.0 + shift
+
+var _detail_host: VBoxContainer
+
+func _offer_detail_host() -> VBoxContainer:
+	if _detail_host == null or not is_instance_valid(_detail_host):
+		_detail_host = VBoxContainer.new()
+		_detail_host.name = "OfferDetailHost"
+		_detail_host.alignment = BoxContainer.ALIGNMENT_CENTER
+		var vbox := _offer_list.get_parent()
+		vbox.add_child(_detail_host)
+		vbox.move_child(_detail_host, (_offer_grid.get_index() if _offer_grid != null else _offer_list.get_index()) + 1)
+	return _detail_host
 
 # ------------------------------------------------------------------ MEC-009: mini-cinemática de evolução
 

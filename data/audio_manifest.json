@@ -2164,6 +2164,27 @@
       "cooldown_ms": 65,
       "priority": 1
     },
+    "enemy.nidhogg.action": {
+      "files": [
+        "res://assets/audio/sfx/enemy/enemy.molydeus_chefe.action_01.wav"
+      ],
+      "bus": "Enemies",
+      "volume_db": -14,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 180,
+      "priority": 1
+    },
+    "enemy.nidhogg.death": {
+      "files": [
+        "res://assets/audio/sfx/enemy/enemy.molydeus_chefe.death_01.wav",
+        "res://assets/audio/sfx/enemy/enemy.molydeus_chefe.death_02.wav"
+      ],
+      "bus": "Enemies",
+      "volume_db": -15,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 65,
+      "priority": 1
+    },
     "enemy.larva_de_lu_yueh.action": {
       "files": [
         "res://assets/audio/sfx/enemy/enemy.larva_de_lu_yueh.action_01.wav"

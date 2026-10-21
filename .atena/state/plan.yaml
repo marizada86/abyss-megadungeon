@@ -2128,3 +2128,54 @@ release_0_5_0_plan:
   next_activity: Entrega do pacote à onda 1 de testers (decisão do dono); aceite do rascunho de crônicas e ficha G6 por sessão; Lote 5 (fechamento) depois
   commit: NOT_AUTHORIZED_YET
   publish: NOT_AUTHORIZED
+vault_sweep_20261021:
+  id: PLAN-NOTTGARD-VAULT-SWEEP-20261021
+  revision: r1
+  classification: IN_PLAN_READ_ONLY_THEN_APPROVED_BATCH
+  mode: per-batch
+  report: .atena/vault/drafts/VAULT-SWEEP-20261021-r1.md
+  batch_1:
+    authorization: 'Atena, aprovado o lote 1 (2026-10-21)'
+    status: DONE_LOCAL_NOT_COMMITTED
+    applied: [A1_sylas_malafaia, A2_guardioes_retirado, A6_stage_story_fonte_guardiao, A7_olho_fundido_no_colar_dos_tentaculos, A8_crueldades]
+    skipped: [A5_nidhogg_aguarda_decisao_do_dono]
+    files: [data/heroes.json, data/achievements.json, data/hero_bios.json, data/items.json, data/enemies.json, data/stage_story.json]
+    checks: 'tests data/catalog/new_content/pause_menu/secrets/rarity/donate_icons/l1/battle 0 falhas; audit_projeto 0 erros'
+    leftover: 'assets/icons/items/olho_de_ghaunadaur.png(.import) ficou órfão; remoção só com aprovação'
+    source_port_parity: PENDING_SOURCE_PROJECT_NOT_ACCESSIBLE_FROM_THIS_SESSION  # D:/dev/nottgard/games/godot/nottgard-survivors
+  batch_2:
+    authorization: "Atena, vamos ao lote 2 pelo sprite da Síntese; Nidhogg: nomear, criar evento nas raízes, trocar para mordida grave, o Vault é prioridade (2026-10-21)"
+    status: DONE_LOCAL_NOT_COMMITTED_PARTIAL
+    applied:
+      A9_sintese: "sprite estático e 5 sheets (idle/move/attack/death/special) derivados da referência CANON roxa DEC-SINTESE-PURPLE (fundo removido, quadros procedurais). Placeholder derivado, não arte final: sem ferramenta de geração nesta sessão."
+      A5_nidhogg: "hqn_20 passa a dizer que a mordida foi grave; inimigo nidhogg (imóvel, elite de acontecimento, arte estática da referência DRAFT CNCR-r02, áudio reaproveitado do Molydeus); acontecimento nidhogg_mordida na Raiz de Yggdrasil (QA-only, B6); tests/test_nidhogg_event.gd"
+    checks: "run_all 0 falhas; audit_projeto 0 erros; import ok"
+    pending: "Aceite visual humano de Síntese e Nidhogg; arte final animada da Síntese; arte da HQ20 mostra a tentativa de mordida; Raiz segue QA-only"
+  batch_3:
+    authorization: "Atena, ocultar o termo Receptáculo; checkup de assets gerais; nova lista de assets para gerar ou regerar no ChatGPT, incluindo UI de escolha de itens/aprimoramentos/habilidades; pode demorar horas (2026-10-21)"
+    status: DONE_LOCAL_NOT_COMMITTED
+    applied:
+      A10_receptaculo: "título 'Drow · Armadura Negra'; bio sem o termo; nomes de exibição 'Espada da Armadura Negra' e 'Muralha Negra' (ids espada_do_receptaculo preservados); test_playtest_fixes ajustado"
+      pilares_toast: "core/battle.gd PILLAR_RULE_LABELS: o toast mostrava ids crus (puddles)"
+    deliverables:
+      checkup: .atena/vault/drafts/ASSET-CHECKUP-20261021-r1.md
+      generation_list: .atena/vault/drafts/ASSET-GENERATION-LIST-20261021-r1.md
+      evidence: .atena/generated/asset-checkup-20261021/
+      incoming_dir: assets_incoming/ (com .gdignore; vazio)
+    checks: "run_all 0 falhas"
+    pending: "Você gerar os assets (P0 e UI primeiro) e aceitar visualmente; depois a Atena integra. Decisões B1-B11 do relatório de varredura seguem abertas."
+  batch_4:
+    authorization: "Atena, sim, implemente o cartão de oferta com placeholders (2026-10-21)"
+    status: DONE_LOCAL_NOT_COMMITTED_AWAITING_VISUAL_ACCEPTANCE
+    applied: "ui/offer_card.gd setup_card (cartão vertical 264x372: fita, placa do ícone, nome, categoria, destaque, chips, tecla, gema de raridade, brilho de foco); ui/hud.gd fileira horizontal para levelup e altar (OfferBox virou BoxContainer em hud.tscn), detalhe por foco abaixo da fileira; lojas, baús e trocas seguem na lista vertical; gancho para res://assets/ui/oferta/ (cartao 280x400, placa 96x96); tests/test_offer_cards.gd"
+    checks: "run_all 0 falhas; audit 0 erros; controller_check igual ao baseline (2 FAIL e 1 timeout já existiam sem estas mudanças)"
+    pending: "Aceite visual humano; ofertas de loja/baú/pacto ainda na lista; gemas/fitas/glifos finais dependem dos assets U03-U09"
+  batch_5:
+    authorization: "Atena, aprovado, migre a loja e o baú; ferreiro e item encontrado mais estéticos; prints (2026-10-21)"
+    status: DONE_LOCAL_NOT_COMMITTED_AWAITING_VISUAL_ACCEPTANCE
+    applied: "cartões para loja, ferreiro, arcanista, curandeiro, doação, aposta, eventos aleatórios (ev_choice), item do baú e troca de item; versão compacta (264x196, ícone à esquerda) em duas fileiras a partir de 6 ofertas; raridade tinge borda, placa e nome, raro e único ganham aura e respiração; fitas FORJA/CURA/DOAR/EQUIPAR/MANTER; chip de preço fica vermelho sem moedas; hud usa HFlowContainer para cartões e a lista vertical só em pactos; recentro do painel; tests/test_offer_cards.gd ampliado"
+    checks: "run_all 0 falhas; audit 0 erros"
+    pending: "Arte final U01-U11"
+    pactos: "migrados em seguida (aprovado): offer_kind pact vira cartão com a fita PACTO"
+  batch_6_pending_owner_decisions: [B1_B11_design]
+  commit: NOT_AUTHORIZED_YET

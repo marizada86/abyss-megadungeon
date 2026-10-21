@@ -32,7 +32,7 @@
     }
   },
   "espada_do_receptaculo": {
-    "name": "Espada do Receptáculo",
+    "name": "Espada da Armadura Negra",
     "src": "Evolução",
     "kind": "melee",
     "dtype": "fisico",
@@ -47,7 +47,7 @@
     "desc": "Arco enorme que rasga a armadura.",
     "synergy": {
       "item_base": "cota",
-      "name": "Muralha do Receptáculo",
+      "name": "Muralha Negra",
       "bonus_per_depth": {
         "ca": 1
       }

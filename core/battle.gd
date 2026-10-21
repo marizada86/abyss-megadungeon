@@ -3748,6 +3748,9 @@ func _stage_has_rule(kind: String) -> bool:
 		return String(rules[idx]) == kind
 	return false
 
+## Rótulos em português das regras que o rodízio dos Pilares sorteia (antes o toast mostrava o id cru, ex.: "puddles").
+const PILLAR_RULE_LABELS := {"puddles": "poças de limo", "current": "correnteza", "strikes": "golpes do alto", "illusions": "ilusões"}
+
 func _stage_rule_step(dt: float) -> void:
 	# O Estige é uma camada ambiental comum: a regra principal do andar continua
 	# em paralelo, sem uma cópia de timers ou RNG por mapa.
@@ -3761,7 +3764,7 @@ func _stage_rule_step(dt: float) -> void:
 		var idx := int(time / float(stage_rule.interval)) % rules.size()
 		if idx != _rule_index:
 			_rule_index = idx
-			events.append({"type": "toast", "text": "Os Pilares despertam: %s" % String(rules[idx])})
+			events.append({"type": "toast", "text": "Os Pilares despertam: %s" % String(PILLAR_RULE_LABELS.get(String(rules[idx]), String(rules[idx])))})
 		kind = String(rules[idx])
 	_apply_rule_kind(kind, dt)
 

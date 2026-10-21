@@ -60,6 +60,398 @@ func setup(index: int, o: Dictionary, name_color: Color, icon_tex: Texture2D) ->
 	if _has_detail(o) or String(o.get("tooltip", "")) != "":
 		tooltip_text = " "
 
+# ------------------------------------------------------------------ modo cartão vertical (placeholder em código)
+## Cartão vertical para nível, altar, lojas e item de baú. O visual é desenhado em código (StyleBoxFlat + ornamentos) e
+## troca por arte quando existirem os arquivos de res://assets/ui/oferta/ (ver ASSET-GENERATION-LIST, lote U):
+## `oferta_cartao.png` (280×400, nove fatias com margem 28) e `oferta_placa_icone.png` (96×96). Sem eles, valem os placeholders.
+## Com 5 ofertas ou mais o HUD usa a versão compacta (264×196, ícone à esquerda) em duas fileiras.
+
+const CARD_SIZE := Vector2(264, 396)
+const COMPACT_SIZE := Vector2(264, 196)
+const ART_DIR := "res://assets/ui/oferta/"
+const GOLD := Color(0.93, 0.78, 0.4)
+const RARITY_GEM := {"comum": Color(0.62, 0.62, 0.66), "magico": Color(0.35, 0.6, 1.0), "incomum": Color(0.4, 0.85, 0.5), "raro": Color(1.0, 0.7, 0.25), "unico": Color(0.78, 0.45, 1.0)}
+const SLOT_LABELS := {"arma": "Arma", "armadura": "Armadura", "amuleto": "Amuleto", "anel": "Anel"}
+## Por tipo de oferta: fita (vazia = sem fita), cor da fita, cor de destaque, categoria e glifo de reserva (sem ícone).
+const KIND_STYLE := {
+	"weapon_new": {"ribbon": "NOVA", "ribbon_col": Color(0.26, 0.58, 0.32), "accent": Color(0.55, 0.9, 0.55), "cat": "Arma"},
+	"weapon_up": {"ribbon": "", "ribbon_col": Color(0.3, 0.45, 0.7), "accent": Color(0.6, 0.78, 1.0), "cat": "Arma"},
+	"evolve": {"ribbon": "EVOLUI", "ribbon_col": Color(0.78, 0.56, 0.14), "accent": Color(1.0, 0.85, 0.3), "cat": "Evolução"},
+	"synergy_activate": {"ribbon": "SINERGIA", "ribbon_col": Color(0.22, 0.42, 0.8), "accent": Color(0.5, 0.75, 1.0), "cat": "Sinergia"},
+	"passive": {"ribbon": "", "ribbon_col": Color(0.26, 0.58, 0.32), "accent": Color(0.88, 0.76, 0.5), "cat": "Passiva"},
+	"boon": {"ribbon": "BÊNÇÃO", "ribbon_col": Color(0.5, 0.28, 0.7), "accent": Color(0.85, 0.6, 1.0), "cat": "Bênção"},
+	"boon_skip": {"ribbon": "", "ribbon_col": Color(0.3, 0.3, 0.3), "accent": Color(0.6, 0.6, 0.6), "cat": "Recusar", "glyph": "✕"},
+	"heal": {"ribbon": "", "ribbon_col": Color(0.6, 0.25, 0.25), "accent": Color(1.0, 0.55, 0.5), "cat": "Recurso"},
+	"gold": {"ribbon": "", "ribbon_col": Color(0.6, 0.5, 0.2), "accent": Color(1.0, 0.9, 0.5), "cat": "Recurso"},
+	"shop_item": {"ribbon": "", "ribbon_col": Color(0.6, 0.5, 0.2), "accent": Color(0.88, 0.76, 0.5), "cat": "Equipamento"},
+	"shop_item_up": {"ribbon": "FORJA", "ribbon_col": Color(0.74, 0.4, 0.14), "accent": Color(1.0, 0.65, 0.3), "cat": "Forja"},
+	"shop_weapon_up": {"ribbon": "FORJA", "ribbon_col": Color(0.74, 0.4, 0.14), "accent": Color(0.6, 0.78, 1.0), "cat": "Arma"},
+	"shop_heal": {"ribbon": "CURA", "ribbon_col": Color(0.6, 0.25, 0.25), "accent": Color(1.0, 0.55, 0.5), "cat": "Curandeiro"},
+	"shop_leave": {"ribbon": "", "ribbon_col": Color(0.3, 0.3, 0.3), "accent": Color(0.6, 0.6, 0.64), "cat": "Sair", "glyph": "↩"},
+	"shop_info": {"ribbon": "", "ribbon_col": Color(0.3, 0.3, 0.3), "accent": Color(0.6, 0.6, 0.64), "cat": "Aviso", "glyph": "…"},
+	"item_swap": {"ribbon": "", "ribbon_col": Color(0.26, 0.58, 0.32), "accent": Color(0.88, 0.76, 0.5), "cat": "Equipamento"},
+	"donate": {"ribbon": "DOAR", "ribbon_col": Color(0.55, 0.25, 0.4), "accent": Color(0.9, 0.55, 0.7), "cat": "Doação"},
+	"gamble": {"ribbon": "APOSTA", "ribbon_col": Color(0.6, 0.5, 0.2), "accent": Color(1.0, 0.9, 0.5), "cat": "Aposta"},
+	"pact": {"ribbon": "PACTO", "ribbon_col": Color(0.5, 0.25, 0.4), "accent": Color(0.9, 0.6, 0.75), "cat": "Pacto"},
+	"ev_choice": {"ribbon": "", "ribbon_col": Color(0.4, 0.3, 0.6), "accent": Color(0.8, 0.75, 1.0), "cat": "Evento"},
+}
+const NAME_PREFIXES := ["NOVA: ", "★ EVOLUÇÃO: ", "SINERGIA: "]
+
+var index := 0
+var compact := false
+var _accent := GOLD
+var _rarity := ""
+var _glow: Control
+var _brief: Label
+var _detail_view: Control
+
+## Shift: troca o destaque pela tabela de comparação (só nos cartões que têm detalhe).
+func show_detail(on: bool) -> void:
+	if _detail_view == null or _brief == null:
+		return
+	_detail_view.visible = on
+	_brief.visible = not on
+
+func _ready() -> void:
+	# raro e único respiram um brilho (placeholder do efeito que a arte final traz)
+	if _glow != null and (_rarity == "raro" or _rarity == "unico") and not Game.reduced_impact():
+		var tw := _glow.create_tween().set_loops()
+		tw.tween_property(_glow, "modulate:a", 0.55, 1.1).set_trans(Tween.TRANS_SINE)
+		tw.tween_property(_glow, "modulate:a", 1.0, 1.1).set_trans(Tween.TRANS_SINE)
+
+## Raridade da oferta (item novo, mantido ou comprado); "" quando não há item.
+static func rarity_of(o: Dictionary) -> String:
+	for source in [o, o.get("item", {}), o.get("keep", {})]:
+		if source is Dictionary and String(source.get("rarity", "")) != "":
+			return String(source.rarity)
+	return ""
+
+static func slot_of(o: Dictionary) -> String:
+	for source in [o, o.get("item", {}), o.get("keep", {})]:
+		if source is Dictionary and String(source.get("slot", "")) != "":
+			return String(source.slot)
+	return ""
+
+## "Equipar Colar dos Tentáculos [Único]" vira "Colar dos Tentáculos"; devolve também a fita (EQUIPAR/MANTER).
+static func _clean_item_title(title: String) -> Array:
+	var ribbon := ""
+	if title.begins_with("Equipar "):
+		title = title.substr(8)
+		ribbon = "EQUIPAR"
+	elif title.begins_with("Manter "):
+		title = title.substr(7)
+		ribbon = "MANTER"
+	elif title.begins_with("Doar "):
+		title = title.substr(5)
+	var br := title.rfind(" [")
+	if br > 0 and title.ends_with("]"):
+		title = title.substr(0, br)
+	return [title, ribbon]
+
+func setup_card(i: int, o: Dictionary, name_color: Color, icon_tex: Texture2D, width: float = CARD_SIZE.x, compact_mode := false) -> void:
+	offer = o
+	index = i
+	compact = compact_mode
+	var kind := String(o.get("t", ""))
+	var style: Dictionary = KIND_STYLE.get(kind, {"ribbon": "", "ribbon_col": Color(0.4, 0.4, 0.4), "accent": name_color, "cat": ""})
+	_accent = Color(style.accent)
+	_rarity = rarity_of(o)
+	if kind == "ev_choice" and RandomEvents.is_kind(String(o.get("ev", ""))):
+		_accent = RandomEvents.color(String(o.ev))
+	elif _rarity != "" and kind in ["shop_item", "shop_item_up", "item_swap", "donate"]:
+		_accent = Items.rarity_color(_rarity)
+	custom_minimum_size = Vector2(width, COMPACT_SIZE.y if compact else CARD_SIZE.y)
+	size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	focus_mode = Control.FOCUS_ALL
+	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
+		add_theme_stylebox_override(state, _frame_style(state))
+	var margin := MarginContainer.new()
+	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
+	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for side in ["left", "right"]:
+		margin.add_theme_constant_override("margin_" + side, 12 if compact else 14)
+	margin.add_theme_constant_override("margin_top", 14 if compact else 18)
+	margin.add_theme_constant_override("margin_bottom", 10 if compact else 12)
+	add_child(margin)
+	var col := VBoxContainer.new()
+	col.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	col.add_theme_constant_override("separation", 4 if compact else 6)
+	margin.add_child(col)
+	# nome sem os prefixos que viram fita; bênção "Deus: Nome" vira categoria + nome
+	var title := String(o.name)
+	if String(o.get("price_text", "")) != "" and title.find(" — ") >= 0:
+		title = title.substr(0, title.rfind(" — "))
+	var ribbon := String(style.ribbon)
+	for prefix in NAME_PREFIXES:
+		if title.begins_with(prefix):
+			title = title.substr(prefix.length())
+			if ribbon == "":
+				ribbon = "NOVA"
+	var category := String(style.cat)
+	if kind == "boon" and title.find(": ") > 0:
+		category = title.substr(0, title.find(": "))
+		title = title.substr(title.find(": ") + 2)
+	if kind in ["shop_item", "shop_item_up", "item_swap", "donate"]:
+		var cleaned := _clean_item_title(title)
+		title = String(cleaned[0])
+		if String(cleaned[1]) != "":
+			ribbon = String(cleaned[1])
+		var slot_label := String(SLOT_LABELS.get(slot_of(o), ""))
+		var rarity_name := Items.rarity_label(_rarity) if _rarity != "" else ""
+		category = " · ".join([slot_label, rarity_name].filter(func(t): return t != "")) if (slot_label != "" or rarity_name != "") else category
+	if category == title:
+		category = ""   # "Sair" não precisa repetir o nome na categoria
+	var arrow := title.find(" → Nv ")
+	var level_chip := ""
+	if arrow > 0:
+		level_chip = "Nv %s" % title.substr(arrow + 6)
+		title = title.substr(0, arrow)
+	var glyph_text := String(style.get("glyph", "✦"))
+	var badge := _badge(o.get("badge", null))
+	if badge != null:
+		(badge as HBoxContainer).alignment = BoxContainer.ALIGNMENT_CENTER
+	var price := String(o.get("price_text", ""))
+	var price_col := COLOR_DOWN if (bool(o.get("locked", false)) and int(o.get("price", 0)) > 0) else COLOR_PRICE
+	if compact:
+		_build_compact(col, title, category, ribbon, style, name_color, icon_tex, glyph_text, badge, level_chip, price, price_col, i, String(o.get("brief", "")))
+	else:
+		_build_full(col, title, category, ribbon, style, name_color, icon_tex, glyph_text, badge, level_chip, price, price_col, i, String(o.get("brief", "")))
+	if _has_detail(o):
+		_detail_view = build_detail(true, true)
+		_detail_view.visible = false
+		_detail_view.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		_detail_view.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_brief.get_parent().add_child(_detail_view)
+		_brief.get_parent().move_child(_detail_view, _brief.get_index() + 1)
+	if _has_detail(o) or String(o.get("tooltip", "")) != "":
+		tooltip_text = " "
+	# ornamentos, gema e brilho de seleção por cima de tudo
+	_glow = Control.new()
+	_glow.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_glow.draw.connect(func(): _draw_ornaments(_glow))
+	add_child(_glow)
+	for sig in [focus_entered, focus_exited, mouse_entered, mouse_exited]:
+		sig.connect(_glow.queue_redraw)
+
+func _pill(text: String, col: Color) -> PanelContainer:
+	var pill := PanelContainer.new()
+	pill.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var pill_style := StyleBoxFlat.new()
+	pill_style.bg_color = col
+	pill_style.border_color = col.lightened(0.35)
+	pill_style.set_border_width_all(1)
+	pill_style.corner_radius_top_left = 3
+	pill_style.corner_radius_bottom_right = 3
+	pill_style.content_margin_left = 12
+	pill_style.content_margin_right = 12
+	pill_style.content_margin_top = 1
+	pill_style.content_margin_bottom = 1
+	pill.add_theme_stylebox_override("panel", pill_style)
+	pill.add_child(_label(text, 13, Color(1, 1, 1)))
+	return pill
+
+func _plate(icon_tex: Texture2D, plate_size: float, icon_size: float, glyph_text: String) -> PanelContainer:
+	var plate := PanelContainer.new()
+	plate.custom_minimum_size = Vector2(plate_size, plate_size)
+	plate.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	plate.add_theme_stylebox_override("panel", _plate_style())
+	if icon_tex != null:
+		var icon := TextureRect.new()
+		icon.texture = icon_tex
+		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		icon.custom_minimum_size = Vector2(icon_size, icon_size)
+		icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		plate.add_child(icon)
+	else:
+		var glyph := _label(glyph_text, int(icon_size * 0.5), _accent)
+		glyph.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		glyph.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		plate.add_child(glyph)
+	return plate
+
+func _key_chip(i: int) -> CenterContainer:
+	var key_row := CenterContainer.new()
+	key_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var key := PanelContainer.new()
+	key.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var key_style := UiKit.box(Color(0.05, 0.04, 0.07), Color(_accent.r, _accent.g, _accent.b, 0.7), 1, 4)
+	key_style.content_margin_left = 12
+	key_style.content_margin_right = 12
+	key_style.content_margin_top = 1
+	key_style.content_margin_bottom = 1
+	key.add_theme_stylebox_override("panel", key_style)
+	key.add_child(_label(str(i + 1), 15, GOLD))
+	key_row.add_child(key)
+	return key_row
+
+func _chips_row(badge: Control, level_chip: String, price: String, price_col: Color) -> HBoxContainer:
+	var chips := HBoxContainer.new()
+	chips.alignment = BoxContainer.ALIGNMENT_CENTER
+	chips.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	chips.add_theme_constant_override("separation", 10)
+	chips.custom_minimum_size = Vector2(0, 26)
+	if badge != null:
+		chips.add_child(badge)
+	elif level_chip != "":
+		chips.add_child(_label(level_chip, 18, COLOR_UP))
+	if price != "":
+		chips.add_child(_label(price, 16, price_col))
+	return chips
+
+func _build_full(col: VBoxContainer, title: String, category: String, ribbon: String, style: Dictionary, name_color: Color, icon_tex: Texture2D, glyph_text: String, badge: Control, level_chip: String, price: String, price_col: Color, i: int, brief_text: String) -> void:
+	# fita (a linha é sempre reservada, para os cartões alinharem)
+	var ribbon_row := CenterContainer.new()
+	ribbon_row.custom_minimum_size = Vector2(0, 22)
+	ribbon_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	col.add_child(ribbon_row)
+	if ribbon != "":
+		ribbon_row.add_child(_pill(ribbon, Color(style.ribbon_col)))
+	var plate_row := CenterContainer.new()
+	plate_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	col.add_child(plate_row)
+	plate_row.add_child(_plate(icon_tex, 112.0, 92.0, glyph_text))
+	var name_label := _label(title, 20, name_color if _rarity == "" else _accent)
+	name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	name_label.custom_minimum_size = Vector2(0, 46)
+	name_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	col.add_child(name_label)
+	var cat_label := _label(category, 14, Color(_accent.r, _accent.g, _accent.b, 0.85))
+	cat_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	col.add_child(cat_label)
+	var rule := ColorRect.new()
+	rule.color = Color(_accent.r, _accent.g, _accent.b, 0.35)
+	rule.custom_minimum_size = Vector2(0, 1)
+	rule.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	col.add_child(rule)
+	var brief := _label(brief_text, 16, Color(0.9, 0.9, 0.9))
+	brief.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	brief.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	brief.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	brief.max_lines_visible = 5
+	brief.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	col.add_child(brief)
+	_brief = brief
+	col.add_child(_chips_row(badge, level_chip, price, price_col))
+	col.add_child(_key_chip(i))
+
+## Versão baixa (5+ ofertas): ícone à esquerda, texto à direita, números e tecla na base.
+func _build_compact(col: VBoxContainer, title: String, category: String, ribbon: String, style: Dictionary, name_color: Color, icon_tex: Texture2D, glyph_text: String, badge: Control, level_chip: String, price: String, price_col: Color, i: int, brief_text: String) -> void:
+	var top := HBoxContainer.new()
+	top.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	top.add_theme_constant_override("separation", 10)
+	top.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	col.add_child(top)
+	var plate_col := VBoxContainer.new()
+	plate_col.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	plate_col.add_child(_plate(icon_tex, 76.0, 60.0, glyph_text))
+	if ribbon != "":
+		var rb := CenterContainer.new()
+		rb.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		rb.add_child(_pill(ribbon, Color(style.ribbon_col)))
+		plate_col.add_child(rb)
+	top.add_child(plate_col)
+	var text_col := VBoxContainer.new()
+	text_col.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	text_col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	text_col.add_theme_constant_override("separation", 2)
+	top.add_child(text_col)
+	var name_label := _label(title, 18, name_color if _rarity == "" else _accent)
+	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	name_label.max_lines_visible = 2
+	text_col.add_child(name_label)
+	text_col.add_child(_label(category, 13, Color(_accent.r, _accent.g, _accent.b, 0.85)))
+	var brief := _label(brief_text, 14, Color(0.9, 0.9, 0.9))
+	brief.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	brief.max_lines_visible = 3
+	brief.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	brief.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	text_col.add_child(brief)
+	_brief = brief
+	var base := HBoxContainer.new()
+	base.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	base.add_theme_constant_override("separation", 8)
+	var chips := _chips_row(badge, level_chip, price, price_col)
+	chips.alignment = BoxContainer.ALIGNMENT_BEGIN
+	chips.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	base.add_child(chips)
+	base.add_child(_key_chip(i))
+	col.add_child(base)
+
+func _frame_style(state: String) -> StyleBox:
+	var art := ART_DIR + "oferta_cartao.png"
+	if ResourceLoader.exists(art):
+		var tex_style := StyleBoxTexture.new()
+		tex_style.texture = load(art)
+		for edge in [SIDE_LEFT, SIDE_RIGHT, SIDE_TOP, SIDE_BOTTOM]:
+			tex_style.set_texture_margin(edge, 28)
+		tex_style.modulate_color = {"normal": Color(1, 1, 1), "hover": Color(1.15, 1.12, 1.05), "pressed": Color(0.8, 0.8, 0.8), "focus": Color(1.2, 1.15, 1.0), "disabled": Color(0.55, 0.55, 0.55)}[state]
+		return tex_style
+	var bg: Color = {"normal": Color(0.085, 0.07, 0.105), "hover": Color(0.12, 0.1, 0.145), "pressed": Color(0.06, 0.05, 0.08), "focus": Color(0.115, 0.095, 0.14), "disabled": Color(0.07, 0.065, 0.08)}[state]
+	var border := _accent.darkened(0.45 if _rarity == "" else 0.2)
+	var width := 3
+	if state == "hover" or state == "focus":
+		border = GOLD
+		width = 4
+	if state == "disabled":
+		border = Color(0.3, 0.3, 0.33)
+	var box := UiKit.box(bg, border, width, 8)
+	box.shadow_color = Color(0, 0, 0, 0.55)
+	box.shadow_size = 8
+	if _rarity in ["raro", "unico"] and state != "disabled":
+		box.shadow_color = Color(_accent.r, _accent.g, _accent.b, 0.45)   # aura de raridade
+		box.shadow_size = 12
+	return box
+
+func _plate_style() -> StyleBox:
+	var art := ART_DIR + "oferta_placa_icone.png"
+	if ResourceLoader.exists(art):
+		var tex_style := StyleBoxTexture.new()
+		tex_style.texture = load(art)
+		for edge in [SIDE_LEFT, SIDE_RIGHT, SIDE_TOP, SIDE_BOTTOM]:
+			tex_style.set_texture_margin(edge, 16)
+			tex_style.set_content_margin(edge, 10)
+		return tex_style
+	var plate_bg := Color(0.035, 0.03, 0.055)
+	if _rarity != "":
+		plate_bg = plate_bg.lerp(_accent, 0.12)   # fundo da placa tingido pela raridade
+	var box := UiKit.box(plate_bg, _accent.darkened(0.2) if _rarity == "" else _accent, 2 if _rarity == "" else 3, 6)
+	var pad := 6 if compact else 8
+	box.content_margin_left = pad
+	box.content_margin_right = pad
+	box.content_margin_top = pad
+	box.content_margin_bottom = pad
+	return box
+
+func _draw_ornaments(g: Control) -> void:
+	var r := Rect2(Vector2.ZERO, g.size)
+	var lit := has_focus() or is_hovered()
+	var tone := GOLD if lit else _accent.darkened(0.15)
+	# filete interno
+	var inner := r.grow(-7.0)
+	g.draw_polyline(PackedVector2Array([inner.position, Vector2(inner.end.x, inner.position.y), inner.end, Vector2(inner.position.x, inner.end.y), inner.position]), Color(tone.r, tone.g, tone.b, 0.45), 1.0)
+	# estrelas de quatro pontas nos cantos
+	for c in [r.position + Vector2(8, 8), Vector2(r.end.x - 8, r.position.y + 8), Vector2(r.position.x + 8, r.end.y - 8), r.end - Vector2(8, 8)]:
+		var pts := PackedVector2Array([c + Vector2(0, -7), c + Vector2(2, -2), c + Vector2(7, 0), c + Vector2(2, 2), c + Vector2(0, 7), c + Vector2(-2, 2), c + Vector2(-7, 0), c + Vector2(-2, -2)])
+		g.draw_colored_polygon(pts, tone)
+	# gema de raridade no topo (ou losango do destaque)
+	var gem_col: Color = RARITY_GEM.get(_rarity, _accent)
+	var top := Vector2(r.size.x * 0.5, 4.0)
+	var gem_h := 1.5 if _rarity in ["raro", "unico"] else 1.0
+	var gem := PackedVector2Array([top + Vector2(0, -5 * gem_h), top + Vector2(6 * gem_h, 2), top + Vector2(0, 9 * gem_h), top + Vector2(-6 * gem_h, 2)])
+	g.draw_colored_polygon(gem, gem_col)
+	g.draw_polyline(PackedVector2Array([gem[0], gem[1], gem[2], gem[3], gem[0]]), Color(0, 0, 0, 0.6), 1.0)
+	# raro e único: moldura externa luminosa
+	if _rarity in ["raro", "unico"]:
+		var aura := r.grow(2.0)
+		g.draw_polyline(PackedVector2Array([aura.position, Vector2(aura.end.x, aura.position.y), aura.end, Vector2(aura.position.x, aura.end.y), aura.position]), Color(gem_col.r, gem_col.g, gem_col.b, 0.5), 2.0)
+	# brilho de seleção
+	if lit:
+		var halo := r.grow(3.0)
+		g.draw_polyline(PackedVector2Array([halo.position, Vector2(halo.end.x, halo.position.y), halo.end, Vector2(halo.position.x, halo.end.y), halo.position]), Color(GOLD.r, GOLD.g, GOLD.b, 0.35), 3.0)
+
 static func _has_detail(o: Dictionary) -> bool:
 	var d: Dictionary = o.get("detail", {})
 	return not d.is_empty() and (not d.get("rows", []).is_empty() or not d.get("footer", []).is_empty())
@@ -100,7 +492,7 @@ func _make_custom_tooltip(_for_text: String) -> Object:
 	return build_detail()
 
 ## Tabela de detalhe da oferta; inline_only=true devolve null quando não há detalhe (modo Shift do HUD).
-func build_detail(inline_only := false) -> Control:
+func build_detail(inline_only := false, compact := false) -> Control:
 	if inline_only and not _has_detail(offer):
 		return null
 	var margin := MarginContainer.new()
@@ -113,24 +505,25 @@ func build_detail(inline_only := false) -> Control:
 		var cols: Array = d.get("columns", [])
 		var grid := GridContainer.new()
 		grid.columns = 4
-		grid.add_theme_constant_override("h_separation", 18)
+		grid.add_theme_constant_override("h_separation", 8 if compact else 18)
 		grid.add_theme_constant_override("v_separation", 2)
 		box.add_child(grid)
-		grid.add_child(_label("", 16, COLOR_NEUTRAL))
+		var fs := 13 if compact else 16
+		grid.add_child(_label("", fs, COLOR_NEUTRAL))
 		for c in cols:
-			grid.add_child(_label(String(c), 16, Color(0.95, 0.85, 0.55)))
+			grid.add_child(_label(String(c), fs, Color(0.95, 0.85, 0.55)))
 		for r in rows:
 			var sign := int(r.sign)
-			grid.add_child(_label(String(r.label), 17, Color(0.9, 0.9, 0.9)))
+			grid.add_child(_label(String(r.label), fs + 1, Color(0.9, 0.9, 0.9)))
 			for v in r.cols:
-				grid.add_child(_label(String(v), 17, Color(0.95, 0.95, 0.95)))
-			grid.add_child(_label(String(r.delta), 17, COLOR_UP if sign > 0 else (COLOR_DOWN if sign < 0 else COLOR_NEUTRAL)))
+				grid.add_child(_label(String(v), fs + 1, Color(0.95, 0.95, 0.95)))
+			grid.add_child(_label(String(r.delta), fs + 1, COLOR_UP if sign > 0 else (COLOR_DOWN if sign < 0 else COLOR_NEUTRAL)))
 	var footer: Array = d.get("footer", [])
 	if rows.is_empty() and footer.is_empty():
 		footer = [String(offer.get("tooltip", ""))]
 	for line in footer:
-		var fl := _label(String(line), 16, Color(0.8, 0.8, 0.7))
+		var fl := _label(String(line), 13 if compact else 16, Color(0.8, 0.8, 0.7))
 		fl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		fl.custom_minimum_size = Vector2(420, 0)
+		fl.custom_minimum_size = Vector2(0 if compact else 420, 0)
 		box.add_child(fl)
 	return margin

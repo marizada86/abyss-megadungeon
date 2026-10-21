@@ -379,7 +379,7 @@ func _ficha() -> Array:
 	# arma que evolui: próximo nível + evolução; no nível máximo, sem "próximo nível"
 	var w := Weapon.make("espada_sombria")
 	var d: String = sheet._weapon_entry(w).detail
-	if d.find("Próximo nível (Nv 2)") < 0 or d.find("Evolução:") < 0 or d.find("Espada do Receptáculo") < 0:
+	if d.find("Próximo nível (Nv 2)") < 0 or d.find("Evolução:") < 0 or d.find("Espada da Armadura Negra") < 0:
 		out.append("arma Nv1 que evolui: faltou 'Próximo nível (Nv 2)' ou a evolução na ficha")
 	w.level = w.max_level()
 	d = sheet._weapon_entry(w).detail
