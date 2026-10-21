@@ -2291,7 +2291,7 @@ func _drop(kind: String, at: Vector2, value: float, src: String = "") -> void:
 func _collect(kind: String, value: float, src: String = "") -> void:
 	events.append({"type": "pickup", "kind": kind, "pos": hero.pos})
 	match kind:
-		"xp": _add_xp(value * float(Data.table("difficulty").get("xp", {}).get("kill_mult", 1.0)) * (1.0 + hero.m("xp_pct") + tide_xp_bonus()))
+		"xp": _add_xp(value * float(Data.table("difficulty").get("xp", {}).get("kill_mult", 1.0)) * float(stage.get("xp_mult", 1.0)) * (1.0 + hero.m("xp_pct") + tide_xp_bonus()))
 		"gold": _add_gold(value, src)
 		"potion":
 			_heal_hero(hero.max_hp * value)

@@ -40,7 +40,7 @@
         "kind": "boss",
         "boss_id": "guardiao_verdadeiro"
       },
-      "balance": "preserve_current"
+      "balance": "rescaled_180s_xp_mult_1.5_hp_mult_1.5_vs_bots_2026-10-21"
     },
     "reino_abissal": {
       "existing": false,

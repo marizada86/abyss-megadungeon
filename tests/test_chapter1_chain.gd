@@ -11,6 +11,7 @@ func run() -> Array[String]:
 	_durations(out)
 	_permissions(out)
 	_victory(out)
+	_docas_compensation(out)
 	return out
 
 func _chain(out: Array[String]) -> void:
@@ -114,3 +115,20 @@ func _victory(out: Array[String]) -> void:
 	x.extract()
 	if not x.extracted or x.state != "won":
 		out.append("extrair (X) depois da vitória deveria fechar a run como vitória")
+
+## Docas em 180 s chega ao chefe com ~3 níveis a menos: o plano compensa com XP e vida do mapa (bots: 18/24 -> 24/24).
+func _docas_compensation(out: Array[String]) -> void:
+	var stages: Dictionary = Data.table("stages")
+	if not is_equal_approx(float(stages.docas.get("xp_mult", 1.0)), 1.5) or not is_equal_approx(float(stages.docas.hp_mult), 1.5):
+		out.append("Docas deveria ter xp_mult 1,5 e hp_mult 1,5 (compensação dos 180 s)")
+	for sid in stages:
+		if sid != "docas" and stages[sid].has("xp_mult"):
+			out.append("%s: xp_mult é exclusivo de Docas neste plano (Reino e Domwieck aguardam o playtest)" % sid)
+	var plain := Battle.new(4330, "durvall", "dagruve")
+	var boosted := Battle.new(4330, "durvall", "docas")
+	plain.hero.xp = 0.0
+	boosted.hero.xp = 0.0
+	plain._collect("xp", 1.0)
+	boosted._collect("xp", 1.0)
+	if plain.hero.xp <= 0.0 or not is_equal_approx(boosted.hero.xp / plain.hero.xp, 1.5):
+		out.append("o xp_mult do mapa deveria multiplicar o XP coletado (%s vs %s)" % [boosted.hero.xp, plain.hero.xp])

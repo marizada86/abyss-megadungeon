@@ -137,7 +137,8 @@
     "cap": 48,
     "tier": 1,
     "coin_mult": 1.35,
-    "hp_mult": 1.7,
+    "xp_mult": 1.5,
+    "hp_mult": 1.5,
     "dmg_mult": 1.7,
     "ambient": [
       "puddles"
