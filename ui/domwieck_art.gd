@@ -119,17 +119,30 @@ func _build_scenery() -> void:
 		var at := Vector2(float(anchor[0]), float(anchor[1]))
 		_sprite("architecture", i%4, at, float(config.building_heights[i]), Color("b9c0cb"), true)
 		if PackedInt32Array(config.burning_indices).has(i):
-			var fire := _sprite("ambient", i%2, at + Vector2(-0.35,0.35), 39.0, Color(1.0,0.85,0.65,0.8))
+			var fire := _sprite("ambient", i%2, at + Vector2(-0.35,0.35), float(config.fire_height), Color(1.0,0.85,0.65,0.8))
 			fire.z_index = 1
 	var center := Vector2(float(config.garden_center[0]), float(config.garden_center[1]))
 	for i in int(config.tree_count):
-		var angle := float(i)*TAU/float(config.tree_count)
-		_sprite("vegetation", i%4, center + Vector2.from_angle(angle)*float(config.tree_radius), float(config.tree_height), Color("a3afb0"), true)
+		_sprite("vegetation", i%4, center + tree_offset(i), float(config.tree_height), Color("a3afb0"), true)
 	_sprite("ailalore",0,center,float(config.star_height),Color(0.87,0.94,1.0),true)
-	var aura := _sprite("ambient",2,center,95.0,Color(0.7,0.85,1.0,0.14))
+	var aura := _sprite("ambient",2,center,float(config.aura_height),Color(0.7,0.85,1.0,0.14))
 	aura.z_index = -1
 	aura.offset.y = -aura.region_rect.size.y*0.55
 	aura.scale.y *= 0.5
+
+## Anel aberto para o sul (de onde o grupo chega), com raio e ângulo levemente irregulares e determinísticos.
+func tree_offset(i: int) -> Vector2:
+	var count := int(config.tree_count)
+	var gap := deg_to_rad(float(config.tree_entrance_gap))
+	var arc := TAU - gap
+	var step := arc / float(count)
+	var angle := deg_to_rad(float(config.tree_entrance_angle)) + gap * 0.5 + (float(i) + 0.5) * step
+	angle += _jitter(i, 1.7) * step * float(config.tree_angle_jitter)
+	var radius := float(config.tree_radius) + _jitter(i, 4.3) * float(config.tree_radial_jitter)
+	return Vector2.from_angle(angle) * radius
+
+func _jitter(i: int, salt: float) -> float:
+	return fposmod(sin(float(i) * 12.9898 + salt * 78.233) * 43758.5453, 1.0) * 2.0 - 1.0
 
 func _quad(canvas: Node2D, at: Vector2, size: Vector2, id: String, variant: int, tint: Color) -> void:
 	var points := PackedVector2Array([Iso.to_screen(at),Iso.to_screen(at+Vector2(size.x,0)),Iso.to_screen(at+size),Iso.to_screen(at+Vector2(0,size.y))])
@@ -157,15 +170,18 @@ func draw_floor(canvas: Node2D) -> void:
 			var variant := 3 if x in range(26,34) else 0
 			_quad(canvas,Vector2(x,y),Vector2(2,2),"ground",variant,Color(config.ground_tint))
 	var center := Vector2(float(config.garden_center[0]),float(config.garden_center[1]))
-	canvas.draw_colored_polygon(Iso.ground_circle(Iso.to_screen(center),float(config.flower_radius)*32.0,64),Color("172b28"))
-	for x in range(-3,4):
-		for y in range(-3,4):
-			var offset := Vector2(x,y)*0.95
-			if offset.length()>3.05:
+	canvas.draw_colored_polygon(Iso.ground_circle(Iso.to_screen(center),float(config.flower_radius)*Iso.TILE_W*0.5*sqrt(2.0),64),Color("172b28"))
+	var flower_step := 0.7
+	var flower_limit := float(config.flower_radius) - flower_step
+	var flower_span := ceili(flower_limit / flower_step)
+	for x in range(-flower_span,flower_span + 1):
+		for y in range(-flower_span,flower_span + 1):
+			var offset := Vector2(x,y)*flower_step
+			if offset.length()>flower_limit:
 				continue
 			_flower_disk(canvas,center+offset,0.8,0 if posmod(x+y,3) else 1)
 	var origin := Iso.to_screen(center)+Vector2(0,-float(config.star_height)*0.55)
-	var end := Iso.to_screen(center)+Vector2(0,-177)
+	var end := Iso.to_screen(center)+Vector2(0,-float(config.beam_top))
 	canvas.draw_line(origin,end,Color(0.35,0.69,1.0,0.12),11.0)
 	canvas.draw_line(origin,end,Color(0.65,0.87,1.0,0.72),2.0)
 	var dome := PackedVector2Array()

@@ -51,22 +51,29 @@
     4
   ],
   "building_heights": [
-    124,
-    144,
-    120,
-    124,
-    120,
-    124
+    250,
+    290,
+    240,
+    250,
+    240,
+    250
   ],
   "garden_center": [
-    30,
-    7
+    32,
+    11
   ],
-  "flower_radius": 4,
-  "tree_radius": 5.6,
+  "flower_radius": 6.5,
+  "tree_radius": 9.2,
+  "tree_radial_jitter": 0.6,
+  "tree_angle_jitter": 0.25,
+  "tree_entrance_angle": 90,
+  "tree_entrance_gap": 40,
   "tree_count": 28,
-  "tree_height": 62,
-  "star_height": 104,
+  "tree_height": 130,
+  "star_height": 250,
+  "fire_height": 78,
+  "aura_height": 230,
+  "beam_top": 400,
   "star_base_offset": [
     0,
     -3
