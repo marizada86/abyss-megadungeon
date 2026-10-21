@@ -86,4 +86,12 @@ Build carimbada com o hash do commit, gerada de commit limpo, G1/G2/G4/G5 verdes
 
 O código do jogo no pacote é idêntico ao que o dono jogou (entre `e3d0d44` e `b89c866` só mudaram docs e o atalho `tools/playtest_maps.ps1`); a diferença é o carimbo de build.
 
-**Pendência de decisão (descoberta ao fechar o lote):** as edições de Domwieck foram commitadas depois do export, em `8d71af2` ("Domwieck: scale up scenery and enlarge the Ailalore garden"). O pacote é do `b89c8667` e **não inclui** esse commit. Se o dono quiser a escala nova de Domwieck na 0.5.0, é preciso reexportar do `8d71af2`, repetir G1/G2/G4/G5 e regerar hashes (≈10 min); a mudança é visual e foi feita em outra frente, ainda sem validação por mim.
+**Pendência de decisão (RESOLVIDA em 2026-10-20, ver §8) — descoberta ao fechar o lote:** as edições de Domwieck foram commitadas depois do export, em `8d71af2` ("Domwieck: scale up scenery and enlarge the Ailalore garden"). O pacote é do `b89c8667` e **não inclui** esse commit. Se o dono quiser a escala nova de Domwieck na 0.5.0, é preciso reexportar do `8d71af2`, repetir G1/G2/G4/G5 e regerar hashes (≈10 min); a mudança é visual e foi feita em outra frente, ainda sem validação por mim.
+
+## 8. Reexportação com a escala de Domwieck (pedido do dono, 2026-10-20; sem publicação)
+
+- Pacote substituído: **build `5a6f1494`** (inclui `8d71af2`). `build/dist-0.5.0/Nottgard-Playtest-0.5.0.zip`, 668 MB, SHA-256 do zip `1bfa5d3406b9fd0b1b02ce0bf819af2f85e2363120376005e8fb6c9faf447f1d`, do exe `8fdcbff54b150dd903ba792db87015c1c806bc4ae683a0cb024fc7c0ea608280`. **Os hashes do §7 não valem mais.**
+- Origem: `git archive HEAD` (árvore limpa); `domwieck_art.json` e `domwieck_art.gd` do export idênticos ao `HEAD`; carimbo e `beam_top` presentes no exe.
+- Gates em cópia separada do `HEAD`: G1 PASS (0 falhas, 0 SCRIPT ERROR), G2 PASS (0 erros, 9 avisos), G5 PASS; G4 PASS (smoke do exe do pacote; só os 2 avisos de encerramento conhecidos). G3 não rodou.
+- **Incidente de processo:** a 1ª tentativa rodou importação do export e gates em paralelo; a importação travou (código 139) e o export seguinte não era confiável. Encerrei esse processo, descartei a saída e refiz em sequência (import 0, export 0, depois gates). **Não rode duas instâncias do Godot ao mesmo tempo nesta máquina.**
+- **Não validado por mim:** o visual de Domwieck com a nova escala (só carga, testes e smoke). Vale conferir em `Testar-Mapas.cmd` antes de enviar; o `build/NottgardSurvivors-Playtest.exe` antigo continua sendo o do `e3d0d44`, sem a escala.

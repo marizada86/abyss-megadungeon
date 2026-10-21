@@ -1,31 +1,31 @@
 {
   "id": "DIST-NOTTGARD-0.5.0-PLAYTEST-r1",
   "date": "2026-10-20",
-  "source_commit": "b89c86677334298763f2a0b811450901604291cb",
-  "build_id": "b89c8667",
-  "source": "git archive HEAD extraído em tmp/dist-src (árvore limpa; edições locais de Domwieck não incluídas)",
+  "source_commit": "5a6f149473717f7c933e1828aaafada146e181cc",
+  "build_id": "5a6f1494",
+  "source": "git archive HEAD extraído em tmp/dist-src (árvore limpa; inclui a escala de Domwieck de 8d71af2)",
   "godot": "4.7.2.stable (template windows_release_x86_64)",
   "preset": "Windows Playtest Publico (public_playtest)",
   "published": false,
   "package": {
     "zip": "build/dist-0.5.0/Nottgard-Playtest-0.5.0.zip",
-    "zip_bytes": 667975680,
-    "zip_sha256": "f39ed12ad593ed06a6ecbbf3814b79a943fc84770efe1784105616f6b7a465fd",
+    "zip_bytes": 667985920,
+    "zip_sha256": "1bfa5d3406b9fd0b1b02ce0bf819af2f85e2363120376005e8fb6c9faf447f1d",
     "contents": ["NottgardSurvivors-Playtest.exe", "LEIA-ME.txt", "NOTAS-DA-VERSAO.txt"],
-    "exe_bytes": 667967152,
-    "exe_sha256": "c6cd0fc8bbf015d4a063982917aa81ad8fb7cbcfbd68f291edc8b13e662500b4",
+    "exe_bytes": 667968000,
+    "exe_sha256": "8fdcbff54b150dd903ba792db87015c1c806bc4ae683a0cb024fc7c0ea608280",
     "signed": false,
     "compression_note": "zip do mesmo tamanho do exe: PCK não comprime; reduzir peso exigiria mudar arte/áudio (decisão do dono)"
   },
   "gates": {
-    "G1_suite": "PASS (tools/validate_release.sh, HEAD b89c866, 0 falhas, 0 SCRIPT ERROR)",
+    "G1_suite": "PASS (tools/validate_release.sh, HEAD 5a6f149 em cópia git archive, 0 falhas, 0 SCRIPT ERROR)",
     "G2_audit": "PASS (erros=0, avisos=9)",
     "G4_smoke": "PASS (exe do pacote, headless, perfil sintético, saída 0, 0 SCRIPT ERROR/Parse Error/Failed loading; 2 avisos de encerramento conhecidos)",
     "G5_save_upgrade": "PASS (test_save_upgrade_050 na mesma execução)",
     "G3_bots": "NOT_RUN_NO_BALANCE_CHANGE"
   },
-  "verified_in_exe": {"build_info_b89c8667": true, "domwieck_uncommitted_edits_present": false, "fonts_embedded": true},
-  "discarded_export": "primeira exportação (20:59–21:02) descartada: incluiu edições locais não commitadas de data/domwieck_art.json e ui/domwieck_art.gd gravadas durante o export",
+  "verified_in_exe": {"build_info_5a6f1494": true, "domwieck_scale_8d71af2_present": true, "domwieck_files_equal_head": true, "fonts_embedded": true},
+  "discarded_exports": ["1ª (b89c8667): continha edições locais não commitadas de Domwieck gravadas durante o export", "2ª (b89c8667, sem Domwieck): substituída por pedido do dono para incluir a escala de Domwieck (8d71af2)"],
   "zip_integrity": "extração em pasta limpa com SHA-256 do exe idêntico",
   "does_not_cover": "partida, áudio audível, controle físico e desempenho em outras máquinas (onda 1)"
 }

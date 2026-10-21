@@ -2113,9 +2113,9 @@ release_0_5_0_plan:
     lote_a: "COMPLETE_LOCAL_NOT_PUBLISHED (2026-10-20, aprovado pelo dono; Ranking mantido)"
     package: build/dist-0.5.0/Nottgard-Playtest-0.5.0.zip
     manifest: .atena/generated/release-0-5-0-20261018/dist-manifest-r1.json
-    build_id: b89c8667
+    build_id: 5a6f1494
     gates: {G1: PASS, G2: PASS, G4: PASS_SMOKE, G5: PASS, G3: NOT_RUN_NO_BALANCE_CHANGE}
-    note: "1ª exportação descartada: continha edições locais não commitadas de Domwieck (escala do cenário); reexportada de git archive HEAD"
+    note: "Reexportado de git archive HEAD (5a6f1494) incluindo a escala de Domwieck (8d71af2) a pedido do dono em 2026-10-20; exportações anteriores descartadas; visual de Domwieck não validado pela Atena"
     next: "Dono decide entrega/testers da onda 1 (Lote B); envio, tag e commit só com pedido explícito"
   next_activity: Entrega do pacote à onda 1 de testers (decisão do dono); aceite do rascunho de crônicas e ficha G6 por sessão; Lote 5 (fechamento) depois
   commit: NOT_AUTHORIZED_YET
