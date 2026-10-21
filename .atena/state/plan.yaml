@@ -2106,6 +2106,17 @@ release_0_5_0_plan:
     playtest_script: .atena/specs/SPEC-NOTTGARD-RELEASE-0-5-0-20261018/playtest-r1.md
     launcher_fix: tools/playtest_maps.ps1
     published: false
-  next_activity: Playtest humano (G6, sessões P1–P6) e aceite do rascunho de crônicas; Lote 5 (fechamento) depois
+  g6_owner_report_20261020: "Dono jogou a candidata e informou que está funcionando bem (relato geral; ficha por sessão P1–P6 ainda não preenchida)"
+  distribution_plan:
+    id: PLAN-NOTTGARD-PLAYTEST-DISTRIBUTION-20261020
+    spec: .atena/specs/SPEC-NOTTGARD-RELEASE-0-5-0-20261018/distribution-plan-r1.md
+    lote_a: "COMPLETE_LOCAL_NOT_PUBLISHED (2026-10-20, aprovado pelo dono; Ranking mantido)"
+    package: build/dist-0.5.0/Nottgard-Playtest-0.5.0.zip
+    manifest: .atena/generated/release-0-5-0-20261018/dist-manifest-r1.json
+    build_id: b89c8667
+    gates: {G1: PASS, G2: PASS, G4: PASS_SMOKE, G5: PASS, G3: NOT_RUN_NO_BALANCE_CHANGE}
+    note: "1ª exportação descartada: continha edições locais não commitadas de Domwieck (escala do cenário); reexportada de git archive HEAD"
+    next: "Dono decide entrega/testers da onda 1 (Lote B); envio, tag e commit só com pedido explícito"
+  next_activity: Entrega do pacote à onda 1 de testers (decisão do dono); aceite do rascunho de crônicas e ficha G6 por sessão; Lote 5 (fechamento) depois
   commit: NOT_AUTHORIZED_YET
   publish: NOT_AUTHORIZED

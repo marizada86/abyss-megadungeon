@@ -1,0 +1,33 @@
+NOTTGARD - ABYSS MEGADUNGEON  |  NOTAS DO PLAYTEST 0.5.0
+=======================================================
+
+O QUE HA DE NOVO DESDE A 0.4.0
+- Capitulo 1 completo: Docas > Reino Abissal > Domwieck, com marcos de campanha e quadrinhos (HQ15 a HQ18 e HQ03).
+- Capitulo 2: quadrinhos HQ19, HQ20, HQ21 e HQ04 integrados; Dagruve com rotas e area marcada.
+- Herois Arlindo e Erik, animacoes novas, mecanicas novas de chefe, progressao e interface renovadas,
+  opcoes de fonte, filtro visual e atmosfera.
+- Todas as fases abertas neste build (Shedaklah ate Pilares), para testar o jogo inteiro.
+
+O QUE TESTAR (em ordem de interesse)
+1. O primeiro minuto dos mapas novos (Reino Abissal e Domwieck): comeca justo, injusto ou facil demais?
+2. Docas e os herois Durvall, Arlindo e Nyrelia: dao a sensacao de poder? Algum parece fraco ou punido demais?
+3. Fases profundas (Shedaklah, Durao, Goranthis) e chefes: mecanicas claras? Dificuldade?
+4. Desempenho: o jogo trava com muitos inimigos? Em qual fase e heroi?
+5. Interface em 1280x720 e 1920x1080: textos legiveis, menus faceis, pausa, volumes, tela de resultado.
+6. Controle fisico, se voce tiver.
+7. Musica e ambiencia: combinam com as fases novas ou incomodam?
+
+JA SABEMOS (nao precisa reportar)
+- Os 7 chefes ainda nao tem cartaz de apresentacao.
+- Musica e ambiencia do Reino Abissal, Domwieck e Pilares sao reaproveitadas de outras fases.
+- Quadrinhos HQ05 a HQ10 estao nas versoes antigas; os novos virao depois.
+- Cronicas dos mapas novos ainda nao estao no jogo.
+- Eventos aleatorios dos mapas novos estao desligados.
+- A Raiz de Yggdrasil nao esta disponivel neste build.
+- Arte e textos novos sao rascunho: podem mudar.
+- Controle fisico nunca foi testado em hardware.
+- No primeiro minuto, os mapas novos podem dar um pouco mais de dano que os antigos (medido por robos; queremos sua opiniao).
+
+COMO REPORTAR
+Por item: Funcionou? | Dificuldade (facil / ok / dificil) | Diversao (1 a 5) | Bug (o que fazia, fase, heroi) | Print (F6).
+F5 para a nota, F7 para o ZIP. Detalhes no LEIA-ME.txt.

@@ -1,0 +1,53 @@
+NOTTGARD - ABYSS MEGADUNGEON  |  PLAYTEST 0.5.0  (Windows 64 bits)
+====================================================================
+
+Obrigado por testar. Esta versao esta em construcao e ainda nao foi lancada.
+O que voce reportar muda o jogo de verdade.
+
+1. REQUISITOS
+   - Windows 10 ou 11, 64 bits.
+   - Placa de video com suporte a OpenGL 3.3 ou superior (o jogo usa o modo de compatibilidade).
+   - Cerca de 700 MB livres (mais o espaco do seu progresso e dos relatos).
+
+2. INSTALAR
+   - Extraia o ZIP INTEIRO para uma pasta sua, por exemplo Documentos\Nottgard.
+     Nao execute de dentro do ZIP e nao use "Arquivos de Programas" (o jogo precisa
+     gravar a pasta "evidencias" ao lado do executavel).
+   - Opcional: confira o SHA-256 do ZIP com o valor que o organizador enviou:
+       certutil -hashfile Nottgard-Playtest-0.5.0.zip SHA256
+
+3. AVISO DO WINDOWS / ANTIVIRUS
+   O executavel NAO e assinado digitalmente, entao o SmartScreen pode avisar
+   "O Windows protegeu seu computador". Clique em "Mais informacoes" e depois em
+   "Executar assim mesmo". Se o antivirus apagar ou bloquear o arquivo, avise o
+   organizador; nao desative a protecao do seu computador por causa disso.
+
+4. JOGAR
+   - Abra NottgardSurvivors-Playtest.exe. Na primeira vez aparece o guia de playtest (F1 reabre).
+   - Esta versao abre TODAS as fases de proposito, para testar o jogo inteiro.
+     Se quiser seguir a campanha na ordem: Docas > Reino Abissal > Domwieck.
+   - Jogue o que foi pedido a voce (uma fase, um heroi, um chefe). Nao precisa jogar tudo.
+
+   Teclas:  WASD/setas ou mouse = mover | Q ou botao direito = habilidade | E = interagir
+            C = ficha | Esc = pausa | F11 = tela cheia
+   Teste:   F1 guia | F5 nota (escreva o que estranhou ou gostou) | F6 print
+            F7 ZIP das evidencias | F12 diagnostico
+   Controle: nunca foi testado em controle fisico. Se tiver um, tente e conte como foi.
+
+5. ENVIAR O RELATO
+   - F5 salva a nota; F6 tira prints nos momentos certos.
+   - F7 junta relato, log e prints num ZIP ao lado do executavel (pasta "evidencias").
+   - Envie esse ZIP no canal combinado com o organizador.
+   - Diga tambem: placa de video, processador, memoria, resolucao e se usou controle.
+
+6. PRIVACIDADE
+   - O jogo NAO envia nada automaticamente. Relatos, prints e logs ficam na pasta
+     "evidencias" e so saem se voce enviar o ZIP.
+   - Os logs trocam seu nome de usuario do Windows e os caminhos das pastas por
+     marcadores antes de gravar. Mesmo assim, confira os prints antes de enviar.
+   - A aba "Ranking" do menu apenas CONSULTA o site marizverso.com para mostrar o
+     ranking de playtest; nao envia dados seus.
+
+7. SEU PROGRESSO
+   Fica gravado no perfil local do Windows (pasta de dados do jogo no seu usuario).
+   Versoes futuras do playtest podem exigir recomecar; avisaremos antes.
