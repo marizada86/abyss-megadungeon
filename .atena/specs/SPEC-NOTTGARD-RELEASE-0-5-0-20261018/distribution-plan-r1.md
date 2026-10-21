@@ -95,3 +95,16 @@ O código do jogo no pacote é idêntico ao que o dono jogou (entre `e3d0d44` e 
 - Gates em cópia separada do `HEAD`: G1 PASS (0 falhas, 0 SCRIPT ERROR), G2 PASS (0 erros, 9 avisos), G5 PASS; G4 PASS (smoke do exe do pacote; só os 2 avisos de encerramento conhecidos). G3 não rodou.
 - **Incidente de processo:** a 1ª tentativa rodou importação do export e gates em paralelo; a importação travou (código 139) e o export seguinte não era confiável. Encerrei esse processo, descartei a saída e refiz em sequência (import 0, export 0, depois gates). **Não rode duas instâncias do Godot ao mesmo tempo nesta máquina.**
 - **Não validado por mim:** o visual de Domwieck com a nova escala (só carga, testes e smoke). Vale conferir em `Testar-Mapas.cmd` antes de enviar; o `build/NottgardSurvivors-Playtest.exe` antigo continua sendo o do `e3d0d44`, sem a escala.
+
+## 9. Conferência visual de Domwieck com a escala nova (2026-10-20, Atena)
+
+Método: janela real do Godot (não headless), perfil/APPDATA sintéticos, `HEAD` com a escala `8d71af2`, mapa aberto pelo QA (`tools/playtest_maps.ps1 -Map domwieck -VerifyLaunch`: PASS) e `tools/capture_domwieck.gd` (novo), que leva o herói a 4 pontos. Capturas em `.atena/generated/release-0-5-0-20261018/domwieck-scale-check/` (1280×720).
+
+**O que as capturas mostram:** o prédio fica grande e legível sem cobrir o HUD; a aproximação, a entrada (abertura no anel de árvores) e o interior do jardim leem bem; o cristal de Ailalore domina a cena como pretendido; as 28 árvores formam anel contínuo com a abertura voltada para o herói; o objetivo "Alcance o jardim de Ailalore" continua legível.
+
+**Ressalvas (observações minhas, não são veredito de arte):**
+1. O cristal ocupa muita altura da tela e, no interior do jardim, passa **por trás do texto de objetivo**; nas capturas esse texto está parado (física desligada para capturar), em jogo ele some em segundos, então o contraste só importa no início.
+2. As árvores (130 px) são bem mais altas que o herói; a captura da entrada não mostra o herói **atrás** de uma árvore. Vale olhar ao andar pelo anel se alguma árvore esconde o herói ou os inimigos.
+3. Um prédio na captura da aproximação aparece translúcido (desvanece para não esconder o herói); parece o comportamento esperado, mas é a coisa que mais mereceria uma olhada humana.
+
+**Não coberto:** desempenho com 40 inimigos e as 28 árvores maiores, 1920×1080 real (a captura usa o viewport lógico 1280×720 com esticamento, então o enquadramento é o mesmo), o estado "jardim aberto" depois do chefe (a frente de Domwieck guarda capturas dele em `.atena/generated/domwieck-scale-20261020/`, que não foram commitadas por mim).

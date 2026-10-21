@@ -2116,7 +2116,10 @@ release_0_5_0_plan:
     build_id: 5a6f1494
     gates: {G1: PASS, G2: PASS, G4: PASS_SMOKE, G5: PASS, G3: NOT_RUN_NO_BALANCE_CHANGE}
     note: "Reexportado de git archive HEAD (5a6f1494) incluindo a escala de Domwieck (8d71af2) a pedido do dono em 2026-10-20; exportações anteriores descartadas; visual de Domwieck não validado pela Atena"
-    next: "Dono decide entrega/testers da onda 1 (Lote B); envio, tag e commit só com pedido explícito"
+    triage: .atena/specs/SPEC-NOTTGARD-RELEASE-0-5-0-20261018/triage-r1.md
+    domwieck_visual_check: .atena/generated/release-0-5-0-20261018/domwieck-scale-check
+    package_sent: "Dono informou em 2026-10-20 que a versão nova foi enviada (testers/canal não registrados)"
+    next: "Aguardar feedback da onda 1; triagem pelo triage-r1.md; envio, tag e commit só com pedido explícito"
   next_activity: Entrega do pacote à onda 1 de testers (decisão do dono); aceite do rascunho de crônicas e ficha G6 por sessão; Lote 5 (fechamento) depois
   commit: NOT_AUTHORIZED_YET
   publish: NOT_AUTHORIZED
