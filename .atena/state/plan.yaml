@@ -1970,25 +1970,30 @@ hq05_visual_production_plan:
   classification: IN_PLAN
   mode: per-step
   approval_policy: APPROVAL_ALSO_AUTHORIZES_NEXT_CANDIDATE
-  status: SELECTION_R1_AWAITING_OWNER_APPROVAL
-  current_step: S-V05-001
+  status: SELECTION_R1_APPROVED_Q1_AUTHORIZED_GENERATION_BLOCKED_NO_IMAGE_TOOL
+  current_step: S-P05-Q01
   ordered_steps: [S-V05-001, S-P05-Q01, S-P05-Q02, S-P05-Q03, S-P05-Q04, S-P05-Q05]
-  completed_steps: 0
+  completed_steps: 1
   total_steps: 6
   approved_visual_panels: 0
   total_visual_panels: 5
-  checkpoint: CP-V05-01
+  checkpoint: CP-P05-Q01
   authorization: vamos lá
   spec: .atena/specs/SPEC-NOTTGARD-HQ05-VISUAL-20261018/selection-r1.md
   reference_audit: .atena/generated/hq05-selection-20261018/audit-r1.json
   evidence: .atena/evidence/EVID-NOTTGARD-HQ05-VISUAL-SELECTION-20261018-r1.md
-  generation_authorized: false
+  generation_authorized: Q1_ONLY_BY_OWNER_SELECTION_APPROVAL_20261020
   runtime_authorized: false
-  next_activity: Aprovar seleção r1 incluindo proposta Blogbog e núcleo; aceite autoriza candidata Q1
+  next_activity: "Gerar Q1 (briefing pronto em q1-r1.md) onde houver imagegen; sem ferramenta nesta sessão. Aditivo do Vault: Blogbog agora tem referência CANON e substitui a proposta r1 em Q2/Q3"
+  selection_approval: "Atena, aprovada a seleção visual da HQ05, lembrando que o vault está atualizado e uma nova variedade de HQs estão disponíveis (2026-10-20)"
+  selection_vault_amendment: .atena/specs/SPEC-NOTTGARD-HQ05-VISUAL-20261018/selection-r1-vault-update-20261020.md
+  q1_brief: .atena/specs/SPEC-NOTTGARD-HQ05-VISUAL-20261018/q1-r1.md
+  q1_status: BLOCKED_NO_IMAGE_GENERATION_TOOL_NOT_GENERATED
+  blogbog_reference: "Vault 50008c9 output/referencias-personagens/BBB-r01/blogbog (CANON 2026-10-19, DEC-FALT00502-TRES-20261019-r1) substitui a proposta r1"
 
   returned_from: PLAN-NOTTGARD-HQ-INTEGRATION-20261018
   return_authorization: 'Playtest aprovado; continuar com seleção visual HQ05 (2026-10-18)'
-  preserved_checkpoint_approval: SELECTION_R1_AWAITING_OWNER_APPROVAL
+  preserved_checkpoint_approval: SELECTION_R1_APPROVED_OWNER_20261020
   suspension_for_source_port: COMPLETED_RETURNED_20261018
   suspension_authorization: Fazer agora e depois retornar a HQ05 aprovado em 2026-10-18
   suspension_return_cursor: S-V05-001_CP-V05-01_SELECTION_R1_AWAITING_OWNER_APPROVAL  source_port_returned_from: PLAN-NOTTGARD-SOURCE-PORT-20261018
