@@ -1,7 +1,7 @@
 {
   "_fonte": "Paráfrases curtas do que o Vault de Nottgard registra (SPEC-117). Sem lore nova. Dagruve e Docas têm a etiqueta conteudo-nao-revelado: só entra o que está em 'Base canônica' e nas consolidações aprovadas.",
   "dagruve": {
-    "epigrafe": "O distrito que Nottgard esqueceu. A névoa entra por uma fratura no cemitério, e os cultistas esperam um messias: Adam.",
+    "epigrafe": "De volta a Dagruve, o distrito esquecido: a névoa entra por uma fratura no cemitério e os cultistas esperam um messias: Adam.",
     "fonte_vault": "04_Locais/Dagruve (Base canônica; Sessões 07 e 08); 03_NPCs/Adam (Sessão 03: tratado em Dagruve como libertador ou messias)",
     "chefe": "Sacerdote de A Mente Derretida, culto de Ghaunadaur.",
     "fonte_chefe": "05_Organizações/A Mente Derretida (S3-47)",
@@ -57,7 +57,7 @@
     "fonte_chefe": "04_Locais/Camadas do Plano Abissal (Arco 01)"
   },
   "pilares": {
-    "epigrafe": "Pilares no horizonte: a parede do mundo abissal. Querem puxar o céu para cá.",
+    "epigrafe": "No Morro Zapomoni, depois da queda, pilares no horizonte: a parede do mundo abissal quer puxar o céu para cá.",
     "fonte_vault": "12_Lore/Pilares Ativos e Plano Abissal (Sessão 24)",
     "chefe": "Adam caiu no Castelo da Fome. Depois dele veio uma monstruosidade abissal, e só então os pilares surgiram.",
     "fonte_chefe": "03_NPCs/Adam (Sessões 23 e 24); 07_Criaturas/A Síntese Abissal; revelação sobre Durvall mantida em segredo (decisão do dono)"

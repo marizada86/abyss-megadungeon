@@ -1,5 +1,15 @@
 {
-  "_fonte": "Crônicas de campanha (SPEC-117 H4), aprovadas pelo dono em 2026-10-01. Paráfrases curtas do Vault; sem lore nova. Segredos preservados: colar/amuleto e Adam, fusão de Durvall com Astherion.",
+  "_fonte": "Crônicas de campanha (SPEC-117 H4), aprovadas pelo dono em 2026-10-01. Paráfrases curtas do Vault; sem lore nova. Segredos preservados: colar/amuleto e Adam, fusão de Durvall com Astherion. Reino Abissal e Domwieck: aprovados pelo dono em 2026-10-21 a partir do rascunho CHRONICLES-NEW-MAPS-DRAFT-r1 (sem a frase sobre a rota futura).",
+  "reino_abissal": {
+    "titulo": "A legião no reino",
+    "texto": "Por uma passagem sob a Igreja das Sombras, o grupo chegou ao Reino Abissal. A sessão terminou diante de uma legião de demônios, notívagos e cultistas.",
+    "fonte_vault": "04_Locais/Reino Abissal (Sessão 11)"
+  },
+  "domwieck": {
+    "titulo": "A invasão por Domwieck",
+    "texto": "Domwieck, o distrito élfico construído ao redor de Ailalore, foi por onde o exército abissal entrou em Nottgard: um portal aberto ali espalhou a destruição até a Floresta de Ailalore.",
+    "fonte_vault": "04_Locais/Domwieck (Sessão 12)"
+  },
   "dagruve": {
     "titulo": "A fratura no cemitério",
     "texto": "O distrito que Nottgard esqueceu guardava uma fratura entre as lápides, com quatro a cinco metros de altura. Por um portal próximo, a névoa vinha de outra dimensão, onde Astherion se dizia \"o cão de caça\" e chamava aquela névoa de \"seu pulmão\". Quando a dimensão caiu, Sylas realizou o ritual que fechou a Tarn, e a névoa acabou em Dagruve.",

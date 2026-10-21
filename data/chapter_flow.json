@@ -113,6 +113,22 @@
           "every": 8,
           "n": 1,
           "max": 6
+        },
+        {
+          "t0": 70,
+          "t1": 180,
+          "id": "aberracao_shu",
+          "every": 10,
+          "n": 1,
+          "max": 4
+        },
+        {
+          "t0": 100,
+          "t1": 180,
+          "id": "ezro",
+          "every": 16,
+          "n": 1,
+          "max": 2
         }
       ],
       "elites": [
@@ -123,6 +139,10 @@
         {
           "at": 120,
           "id": "cultista_cajado"
+        },
+        {
+          "at": 120,
+          "id": "death_tyrant"
         }
       ]
     },
@@ -325,9 +345,9 @@
       "duration": 300,
       "cap": 45,
       "tier": 0,
-      "coin_mult": 1.0,
-      "hp_mult": 1.0,
-      "dmg_mult": 1.0,
+      "coin_mult": 1,
+      "hp_mult": 1,
+      "dmg_mult": 1,
       "ambient": [],
       "ground": [
         [
@@ -369,7 +389,7 @@
           "t0": 12,
           "t1": 125,
           "id": "slime_corrosivo",
-          "every": 4.0,
+          "every": 4,
           "n": 1,
           "max": 6
         },
@@ -377,7 +397,7 @@
           "t0": 38,
           "t1": 188,
           "id": "cultista_adaga",
-          "every": 3.0,
+          "every": 3,
           "n": 2,
           "max": 12
         },
@@ -385,7 +405,7 @@
           "t0": 75,
           "t1": 225,
           "id": "cultista_arqueiro",
-          "every": 6.0,
+          "every": 6,
           "n": 1,
           "max": 5
         },
@@ -393,7 +413,7 @@
           "t0": 94,
           "t1": 262,
           "id": "notivago",
-          "every": 3.0,
+          "every": 3,
           "n": 3,
           "max": 14
         },
@@ -401,7 +421,7 @@
           "t0": 131,
           "t1": 300,
           "id": "cultista_cajado",
-          "every": 7.0,
+          "every": 7,
           "n": 1,
           "max": 4
         },
@@ -409,9 +429,17 @@
           "t0": 150,
           "t1": 300,
           "id": "criatura_corrompida",
-          "every": 6.0,
+          "every": 6,
           "n": 1,
           "max": 6
+        },
+        {
+          "t0": 150,
+          "t1": 300,
+          "id": "gargula",
+          "every": 12,
+          "n": 1,
+          "max": 3
         }
       ],
       "elites": [
@@ -422,6 +450,10 @@
         {
           "at": 188,
           "id": "cultista_cajado"
+        },
+        {
+          "at": 240,
+          "id": "gargula"
         }
       ],
       "boss": "sacerdote_mente_derretida",
@@ -509,7 +541,7 @@
           "t0": 50,
           "t1": 300,
           "id": "cultista_adaga",
-          "every": 4.0,
+          "every": 4,
           "n": 2,
           "max": 10
         },
@@ -517,7 +549,7 @@
           "t0": 120,
           "t1": 300,
           "id": "guardiao_copia",
-          "every": 8.0,
+          "every": 8,
           "n": 1,
           "max": 5
         },
@@ -614,7 +646,7 @@
           "t0": 0,
           "t1": 200,
           "id": "servo_de_zuggtmoy",
-          "every": 3.0,
+          "every": 3,
           "n": 2,
           "max": 14
         },
@@ -622,7 +654,7 @@
           "t0": 0,
           "t1": 240,
           "id": "cogumelo_fungico",
-          "every": 5.0,
+          "every": 5,
           "n": 1,
           "max": 7
         },
@@ -630,7 +662,7 @@
           "t0": 60,
           "t1": 400,
           "id": "esporo_voador",
-          "every": 5.0,
+          "every": 5,
           "n": 2,
           "max": 8
         },
@@ -638,7 +670,7 @@
           "t0": 120,
           "t1": 540,
           "id": "slime_de_juiblex",
-          "every": 4.0,
+          "every": 4,
           "n": 2,
           "max": 12
         },
@@ -646,27 +678,15 @@
           "t0": 240,
           "t1": 540,
           "id": "pudim_negro",
-          "every": 9.0,
+          "every": 9,
           "n": 1,
           "max": 4
-        },
-        {
-          "t0": 300,
-          "t1": 540,
-          "id": "gargula",
-          "every": 10.0,
-          "n": 1,
-          "max": 3
         }
       ],
       "elites": [
         {
           "at": 150,
           "id": "pudim_negro"
-        },
-        {
-          "at": 280,
-          "id": "gargula"
         },
         {
           "at": 400,
@@ -750,7 +770,7 @@
           "t0": 30,
           "t1": 400,
           "id": "slime_de_juiblex",
-          "every": 4.0,
+          "every": 4,
           "n": 2,
           "max": 12
         },
@@ -758,7 +778,7 @@
           "t0": 90,
           "t1": 570,
           "id": "cultista_thullgrime",
-          "every": 4.0,
+          "every": 4,
           "n": 2,
           "max": 10
         },
@@ -766,7 +786,7 @@
           "t0": 180,
           "t1": 570,
           "id": "pudim_negro",
-          "every": 8.0,
+          "every": 8,
           "n": 1,
           "max": 5
         },
@@ -774,7 +794,7 @@
           "t0": 300,
           "t1": 570,
           "id": "cogumelo_fungico",
-          "every": 7.0,
+          "every": 7,
           "n": 2,
           "max": 8
         }
@@ -870,7 +890,7 @@
           "t0": 30,
           "t1": 400,
           "id": "demonio_de_gehenna",
-          "every": 6.0,
+          "every": 6,
           "n": 1,
           "max": 6
         },
@@ -878,7 +898,7 @@
           "t0": 120,
           "t1": 600,
           "id": "carcereiro_de_pedra",
-          "every": 9.0,
+          "every": 9,
           "n": 1,
           "max": 5
         },
@@ -886,7 +906,7 @@
           "t0": 240,
           "t1": 600,
           "id": "aberracao_shu",
-          "every": 5.0,
+          "every": 5,
           "n": 2,
           "max": 8
         },
@@ -894,7 +914,7 @@
           "t0": 300,
           "t1": 600,
           "id": "ezro",
-          "every": 12.0,
+          "every": 12,
           "n": 1,
           "max": 3
         }
@@ -945,7 +965,7 @@
       "cap": 60,
       "tier": 5,
       "coin_mult": 2.7,
-      "hp_mult": 4.0,
+      "hp_mult": 4,
       "dmg_mult": 3.2,
       "ambient": [
         "strikes"
@@ -982,7 +1002,7 @@
           "t0": 0,
           "t1": 240,
           "id": "larva_de_lu_yueh",
-          "every": 2.0,
+          "every": 2,
           "n": 4,
           "max": 26
         },
@@ -990,7 +1010,7 @@
           "t0": 30,
           "t1": 420,
           "id": "cultista_de_feng_tu",
-          "every": 4.0,
+          "every": 4,
           "n": 2,
           "max": 10
         },
@@ -998,7 +1018,7 @@
           "t0": 150,
           "t1": 600,
           "id": "estatua_do_templo",
-          "every": 10.0,
+          "every": 10,
           "n": 1,
           "max": 5
         },
@@ -1006,7 +1026,7 @@
           "t0": 240,
           "t1": 600,
           "id": "cultista_ghaunadaur",
-          "every": 6.0,
+          "every": 6,
           "n": 2,
           "max": 8
         }
@@ -1057,7 +1077,7 @@
       "cap": 60,
       "tier": 6,
       "coin_mult": 3.2,
-      "hp_mult": 5.0,
+      "hp_mult": 5,
       "dmg_mult": 3.6,
       "ambient": [
         "illusions",
@@ -1095,7 +1115,7 @@
           "t0": 0,
           "t1": 240,
           "id": "escravo_de_rivenheart",
-          "every": 3.0,
+          "every": 3,
           "n": 3,
           "max": 18
         },
@@ -1103,7 +1123,7 @@
           "t0": 30,
           "t1": 500,
           "id": "sucubo",
-          "every": 4.0,
+          "every": 4,
           "n": 2,
           "max": 10
         },
@@ -1111,7 +1131,7 @@
           "t0": 30,
           "t1": 630,
           "id": "ilusao_de_sucubo",
-          "every": 3.0,
+          "every": 3,
           "n": 3,
           "max": 14
         },
@@ -1119,7 +1139,7 @@
           "t0": 200,
           "t1": 630,
           "id": "guarda_do_castelo",
-          "every": 9.0,
+          "every": 9,
           "n": 1,
           "max": 5
         },
@@ -1127,7 +1147,7 @@
           "t0": 300,
           "t1": 630,
           "id": "cultista_ghaunadaur",
-          "every": 6.0,
+          "every": 6,
           "n": 2,
           "max": 8
         }
@@ -1139,11 +1159,11 @@
         },
         {
           "at": 320,
-          "id": "master_of_cruelties"
+          "id": "sucubo"
         },
         {
           "at": 480,
-          "id": "master_of_cruelties"
+          "id": "sucubo"
         }
       ],
       "boss": "malcanthet",
@@ -1177,8 +1197,8 @@
       "duration": 660,
       "cap": 65,
       "tier": 7,
-      "coin_mult": 4.0,
-      "hp_mult": 6.0,
+      "coin_mult": 4,
+      "hp_mult": 6,
       "dmg_mult": 3.9,
       "ambient": [
         "illusions",
@@ -1225,7 +1245,7 @@
           "t0": 20,
           "t1": 660,
           "id": "guardiao_de_goranthis",
-          "every": 6.0,
+          "every": 6,
           "n": 1,
           "max": 8
         },
@@ -1233,7 +1253,7 @@
           "t0": 60,
           "t1": 660,
           "id": "cultista_de_socothbenoth",
-          "every": 5.0,
+          "every": 5,
           "n": 2,
           "max": 10
         },
@@ -1241,23 +1261,15 @@
           "t0": 240,
           "t1": 660,
           "id": "slime_de_juiblex",
-          "every": 4.0,
+          "every": 4,
           "n": 3,
           "max": 16
-        },
-        {
-          "t0": 330,
-          "t1": 660,
-          "id": "ezro",
-          "every": 10.0,
-          "n": 1,
-          "max": 4
         }
       ],
       "elites": [
         {
           "at": 180,
-          "id": "death_tyrant"
+          "id": "guardiao_de_goranthis"
         },
         {
           "at": 360,
@@ -1265,7 +1277,7 @@
         },
         {
           "at": 520,
-          "id": "death_tyrant"
+          "id": "guardiao_de_goranthis"
         }
       ],
       "boss": "socothbenoth",
@@ -1294,14 +1306,14 @@
     },
     "pilares": {
       "name": "Os Pilares",
-      "sub": "Modo infinito · o céu é puxado para cá",
+      "sub": "Morro Zapomoni · modo infinito: o céu é puxado para cá",
       "order": 8,
       "duration": 300,
       "endless": true,
       "cap": 70,
       "tier": 8,
-      "coin_mult": 5.0,
-      "hp_mult": 7.0,
+      "coin_mult": 5,
+      "hp_mult": 7,
       "dmg_mult": 4.2,
       "ambient": [
         "puddles",
@@ -1340,7 +1352,7 @@
           "t0": 0,
           "t1": 99999,
           "id": "cultista_ghaunadaur",
-          "every": 3.0,
+          "every": 3,
           "n": 3,
           "max": 20
         },
@@ -1348,7 +1360,7 @@
           "t0": 0,
           "t1": 99999,
           "id": "slime_de_juiblex",
-          "every": 4.0,
+          "every": 4,
           "n": 3,
           "max": 16
         },
@@ -1356,7 +1368,7 @@
           "t0": 30,
           "t1": 99999,
           "id": "guardiao_de_goranthis",
-          "every": 6.0,
+          "every": 6,
           "n": 1,
           "max": 8
         },
@@ -1364,7 +1376,7 @@
           "t0": 60,
           "t1": 99999,
           "id": "demonio_de_gehenna",
-          "every": 6.0,
+          "every": 6,
           "n": 1,
           "max": 8
         },
@@ -1372,23 +1384,15 @@
           "t0": 90,
           "t1": 99999,
           "id": "sucubo",
-          "every": 6.0,
+          "every": 6,
           "n": 2,
           "max": 8
-        },
-        {
-          "t0": 120,
-          "t1": 99999,
-          "id": "aberracao_shu",
-          "every": 4.0,
-          "n": 2,
-          "max": 10
         }
       ],
       "elites": [
         {
           "at": 120,
-          "id": "death_tyrant"
+          "id": "receptaculo_de_juiblex"
         },
         {
           "at": 240,

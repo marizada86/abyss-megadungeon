@@ -63,6 +63,9 @@
     {"id":"ecos_docas","name":"Ecos de Docas","desc":"Ache os 4 Ecos de Nottgard das Docas e abra a relíquia da fase (em qualquer run).","stat":"secrets_docas","value":1,"reward":{"coins":300,"text":"Desbloqueia Erik Blackthorn"}},
     {"id":"ecos_feng_tu","name":"Ecos de Feng-tu","desc":"Ache os 4 Ecos de Nottgard de Feng-tu e abra a relíquia da fase (em qualquer run).","stat":"secrets_feng_tu","value":1,"reward":{"coins":300}},
     {"id":"ecos_shendilavri","name":"Ecos de Shendilavri","desc":"Ache os 4 Ecos de Nottgard de Shendilavri e abra a relíquia da fase (em qualquer run).","stat":"secrets_shendilavri","value":1,"reward":{"coins":300}},
-    {"id":"ecos_goranthis","name":"Ecos de Goranthis","desc":"Ache os 4 Ecos de Nottgard de Goranthis e abra a relíquia da fase (em qualquer run).","stat":"secrets_goranthis","value":1,"reward":{"coins":300}}
+    {"id":"ecos_goranthis","name":"Ecos de Goranthis","desc":"Ache os 4 Ecos de Nottgard de Goranthis e abra a relíquia da fase (em qualquer run).","stat":"secrets_goranthis","value":1,"reward":{"coins":300}},
+    {"id":"ecos_reino_abissal","name":"Ecos do Reino Abissal","desc":"Ache os 4 Ecos de Nottgard do Reino Abissal e abra a relíquia da fase (em qualquer run).","stat":"secrets_reino_abissal","value":1,"reward":{"coins":300}},
+    {"id":"ecos_domwieck","name":"Ecos de Domwieck","desc":"Ache os 4 Ecos de Nottgard de Domwieck e abra a relíquia da fase (em qualquer run).","stat":"secrets_domwieck","value":1,"reward":{"coins":300}},
+    {"id":"ecos_pilares","name":"Ecos dos Pilares","desc":"Ache os 4 Ecos de Nottgard dos Pilares e abra a relíquia da fase (em qualquer run).","stat":"secrets_pilares","value":1,"reward":{"coins":300}}
   ]
 }

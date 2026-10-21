@@ -874,9 +874,52 @@
       "warning_text": "O castelo sobe de novo.",
       "result_text": "O chão desaba em volta!",
       "fonte_vault": "07_Criaturas/A Síntese Abissal"
+    },
+    {
+      "id": "linha_da_arvore",
+      "at": 60,
+      "warning": 5,
+      "kind": "wave",
+      "enemy_id": "demonio_de_gehenna",
+      "count": 3,
+      "title": "A linha da Árvore",
+      "warning_text": "Sombras se juntam diante da Árvore do Véu.",
+      "result_text": "Criaturas sombrias atacam a Árvore do Véu.",
+      "reward": {
+        "unlock_chamber": true
+      },
+      "fonte_vault": "Sessão 24 (a invasão contra a Árvore; os elfos seguram a linha)",
+      "chamber_hint": "derrote as criaturas sombrias que atacam a Árvore"
     }
   ],
-  "reino_abissal": [],
+  "reino_abissal": [
+    {
+      "id": "legiao_cerca",
+      "at": 40,
+      "warning": 5,
+      "kind": "wave",
+      "enemy_id": "notivago",
+      "count": 4,
+      "title": "A legião cerca as raízes",
+      "warning_text": "Passos e sussurros sobem das raízes.",
+      "result_text": "Notívagos avançam pelas raízes.",
+      "reward": {
+        "unlock_chamber": true
+      },
+      "fonte_vault": "Sessão 11 (legião de demônios, notívagos e cultistas)",
+      "chamber_hint": "derrote os notívagos que cercam as raízes"
+    },
+    {
+      "id": "pulso_das_raizes",
+      "at": 100,
+      "warning": 5,
+      "kind": "hazard",
+      "title": "Pulso das raízes",
+      "warning_text": "As raízes negras estremecem.",
+      "result_text": "Limo escorre das raízes.",
+      "fonte_vault": "Sessão 11 (raízes negras sob a Igreja das Sombras)"
+    }
+  ],
   "raiz_yggdrasil": [
     {
       "id": "nidhogg_mordida",
@@ -897,5 +940,32 @@
       "fonte_vault": "Sessão 15 (criatura enorme numa raiz de Yggdrasil; Maelor sofre mordida grave). Nome Nidhogg: decisão do dono, 2026-10-21"
     }
   ],
-  "domwieck": []
+  "domwieck": [
+    {
+      "id": "portal_do_jardim",
+      "at": 50,
+      "warning": 5,
+      "kind": "wave",
+      "enemy_id": "criatura_corrompida",
+      "count": 2,
+      "title": "O portal em Domwieck",
+      "warning_text": "O ar racha sobre o jardim de Ailalore.",
+      "result_text": "Criaturas atravessam o portal.",
+      "reward": {
+        "unlock_chamber": true
+      },
+      "fonte_vault": "Sessão 12 (portal aberto em Domwieck)",
+      "chamber_hint": "derrote as criaturas que atravessam o portal"
+    },
+    {
+      "id": "fuga_pelo_santuario",
+      "at": 115,
+      "warning": 5,
+      "kind": "hazard",
+      "title": "Brasas no santuário",
+      "warning_text": "Chamas acendem entre as rosas brancas.",
+      "result_text": "Brasas se espalham entre as rosas brancas.",
+      "fonte_vault": "Sessão 12 (massacre no santuário de rosas brancas)"
+    }
+  ]
 }

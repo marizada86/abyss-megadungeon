@@ -1946,7 +1946,7 @@ func _place_secrets() -> int:
 				interactions[-1].safe = true   # o baú da ruína nunca vira Mímico
 				interactions[-1].fixed = true
 				interactions[-1].name = String(poi.name)
-				interactions[-1].ruin_art = "ruina_" + stage_id  # Visual-only port metadata.
+				interactions[-1].ruin_art = String(poi.get("ruin_art", "ruina_" + stage_id))  # Visual-only port metadata.
 				placed += 1
 			"camara":
 				_add_interaction("camara", at)

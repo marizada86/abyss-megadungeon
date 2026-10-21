@@ -2177,5 +2177,15 @@ vault_sweep_20261021:
     checks: "run_all 0 falhas; audit 0 erros"
     pending: "Arte final U01-U11"
     pactos: "migrados em seguida (aprovado): offer_kind pact vira cartão com a fita PACTO"
-  batch_6_pending_owner_decisions: [B1_B11_design]
+  batch_6:
+    authorization: "Atena, aprovo todas as recomendações (B1-B11), integre os assets C01-C09, biografias como complemento da narrativa das HQs (2026-10-21)"
+    status: DONE_LOCAL_NOT_COMMITTED
+    commit_before: 9351270
+    assets: "C01-C08 viram assets/ui/boss-intros/<chefe>.png (960x540); C09 vira assets/stages/reino_abissal_thumb.png (480x320); 8 entradas em data/boss_presentations.json. C10 (miniatura de Domwieck) ficou em assets_incoming/ sem integrar."
+    decisions_applied: "B1 gárgula Shedaklah->Dagruve; B2 Ezro e Shu saem de Goranthis/Pilares e entram no Reino Abissal (Durao mantém); B3 Death Tyrant vira elite do Reino Abissal (chefe fica para depois da arte V02) e sai de Goranthis/Pilares; B4 Crueldades sai de Shendilavri; B5 mantido; B6 subtítulo/epígrafe dos Pilares (Morro Zapomoni); B7 epígrafe de Dagruve (De volta a Dagruve); B8 notas nas bios de Zynara; B9 Martelo da Luz (base e item) e Martelo da Glória (evolução), só nomes; B10 4 Ecos, câmara, covil, relíquia e 2 eventos em Reino Abissal, Domwieck e Pilares + 3 conquistas; B11 subtítulo do Quartel cita o QG de Aluris"
+    bios: "12 biografias reescritas no tom das HQs, sem cânone do mestre"
+    tests: "run_all 0 falhas; audit 0 erros e 2 avisos (crônicas de Reino Abissal e Domwieck aguardam aceite do rascunho CHRONICLES-NEW-MAPS-DRAFT-r1); tests de pausa de chefe neutralizados em l5_b001 e l5_b003; test_secrets cobre as 3 fases novas"
+    pending: "Equilíbrio dos mapas alterados (bots) e aceite visual; chefe Death Tyrant só depois da arte V02; relíquias usam arte de ruína emprestada (C12 pendente); crônicas aguardam aceite"
+    chronicles_applied: "Crônicas de Reino Abissal e Domwieck aplicadas (2026-10-21), adiamento chronicle removido de tests/stage_contracts.gd"
+  batch_7_pending_owner_decisions: []
   commit: NOT_AUTHORIZED_YET

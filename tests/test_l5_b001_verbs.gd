@@ -27,6 +27,7 @@ func _battle() -> Battle:
 	for e in b.enemies:
 		if e != b.boss:
 			b._kill(e)
+	b.boss_intro_remaining = 0.0   # todo chefe tem apresentação agora; estes testes medem as mecânicas, não a pausa
 	b.boss.abilities = []
 	b.boss.atk_dice = "1d1"
 	b.boss.atk_bonus = -20

@@ -699,8 +699,8 @@
     ]
   },
   "martelo_da_gloria": {
-    "name": "Martelo da Glória",
-    "src": "Item: Martelo da Glória",
+    "name": "Martelo da Luz",
+    "src": "Item: Martelo da Luz",
     "kind": "melee",
     "dtype": "radiante",
     "attr": "forca",
@@ -709,7 +709,7 @@
     "range": 2.0,
     "cone": 90,
     "knock": 2.0,
-    "desc": "O martelo de Bromnor: luz que empurra.",
+    "desc": "O martelo de Bromnor, forjado com uma lasca de Ailalore: luz que empurra. Vira Glória quando é herdado.",
     "levels": [
       {
         "knock": 0.5
@@ -734,7 +734,7 @@
     }
   },
   "martelo_da_luz": {
-    "name": "Martelo da Luz",
+    "name": "Martelo da Glória",
     "src": "Evolução",
     "icon_like": "martelo_da_gloria",
     "kind": "melee",
@@ -747,7 +747,7 @@
     "knock": 2.0,
     "stun": 1.0,
     "levels": [],
-    "desc": "A luz do martelo varre um arco largo e derruba."
+    "desc": "A luz do martelo, agora vermelha, varre um arco largo e derruba."
   },
   "machado_de_xargath": {
     "name": "Machado de Xar'gath",

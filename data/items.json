@@ -36,7 +36,7 @@
   ],
   "uniques": [
     {"id": "machado_de_xargath", "name": "Machado de Xar'gath", "slot": "arma", "tier": 3, "mods": {"forca": 2, "dmg_pct": 0.10}, "weapon": "machado_de_xargath", "note": "Guarda a alma do demônio Xar'gath."},
-    {"id": "martelo_da_gloria", "name": "Martelo da Glória", "slot": "arma", "tier": 2, "mods": {"forca": 1, "carisma": 1}, "weapon": "martelo_da_gloria", "note": "Forjado com uma lasca da estrela Ailalore."},
+    {"id": "martelo_da_gloria", "name": "Martelo da Luz", "slot": "arma", "tier": 2, "mods": {"forca": 1, "carisma": 1}, "weapon": "martelo_da_gloria", "note": "O martelo de Bromnor, forjado com uma lasca da estrela Ailalore. Ao ser entregue ao grupo, passa a se chamar Martelo da Glória."},
     {"id": "lamina_da_digestao", "name": "Lâmina da Digestão", "slot": "arma", "tier": 1, "mods": {"forca": 1}, "weapon": "lamina_da_digestao", "note": "Ácido que dissolve armadura."},
     {"id": "chicote_avarento", "name": "Chicote Avarento +1", "slot": "arma", "tier": 1, "mods": {"gold_pct": 0.20}, "weapon": "chicote_avarento", "note": "Revela o maior desejo do amarrado."},
     {"id": "cajado_dos_desejos", "name": "Cajado dos Desejos Sussurrantes", "slot": "arma", "tier": 4, "mods": {"carisma": 2, "hit": 1}, "weapon": "cajado_dos_desejos", "note": "Amaldiçoado: sussurra desejos."},

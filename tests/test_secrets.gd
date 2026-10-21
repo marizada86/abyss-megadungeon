@@ -1,8 +1,8 @@
 extends RefCounted
 ## SPEC-152 e SPEC-157 (MEC-039): pontos de interesse, covil e Ecos de Shedaklah, Molor e Durao (84x84) e de Dagruve e Docas (60x60).
 
-const STAGES := ["shedaklah", "molor", "durao", "dagruve", "docas", "feng_tu", "shendilavri", "goranthis"]
-const SMALL := ["dagruve", "docas"]
+const STAGES := ["shedaklah", "molor", "durao", "dagruve", "docas", "feng_tu", "shendilavri", "goranthis", "reino_abissal", "domwieck", "pilares"]
+const SMALL := ["dagruve", "docas", "reino_abissal", "domwieck", "pilares"]
 const FORBIDDEN := ["adam", "astherion", "vanimelda", "mystralia", "arco 02", "síntese", "fusão"]
 
 func side_of(stage: String) -> int:
@@ -229,7 +229,7 @@ func _chamber_bat(stage: String, seed_value := 7) -> Battle:
 	return b
 
 func _relics(out: Array) -> void:
-	var expected := {"shedaklah": ["manto_do_pantano"], "molor": ["lamina_da_digestao", "anel_resistencia_abissal"], "durao": ["machado_de_xargath"], "dagruve": ["broche_celestial"], "docas": ["colar_dos_tentaculos"], "feng_tu": ["sopro_de_estrela"], "shendilavri": ["cajado_dos_desejos"], "goranthis": ["espelho_das_almas_desejantes"]}
+	var expected := {"shedaklah": ["manto_do_pantano"], "molor": ["lamina_da_digestao", "anel_resistencia_abissal"], "durao": ["machado_de_xargath"], "dagruve": ["broche_celestial"], "docas": ["colar_dos_tentaculos"], "feng_tu": ["sopro_de_estrela"], "shendilavri": ["cajado_dos_desejos"], "goranthis": ["espelho_das_almas_desejantes"], "reino_abissal": ["anel_passagem_sombria"], "domwieck": ["lasca_de_ailalore"], "pilares": ["amuleto_da_luz"]}
 	for stage in STAGES:
 		var b := _chamber_bat(stage)
 		if b.interact() or not b.events.any(func(ev): return String(ev.type) == "toast" and String(ev.text).begins_with("A câmara está selada")):
@@ -279,7 +279,7 @@ func _relics(out: Array) -> void:
 
 func _keys(out: Array) -> void:
 	# o reward do acontecimento-chave abre a câmara; Durao sempre tem a arena
-	var keys := {"shedaklah": "portal_sem_vao", "molor": "ritual_de_estagnacao", "durao": "arena_do_testador", "dagruve": "ritual_da_nevoa", "docas": "cais_atacado", "feng_tu": "escolta_do_peregrino", "shendilavri": "vitimas_drenadas", "goranthis": "do_trono_ao_lodo"}
+	var keys := {"shedaklah": "portal_sem_vao", "molor": "ritual_de_estagnacao", "durao": "arena_do_testador", "dagruve": "ritual_da_nevoa", "docas": "cais_atacado", "feng_tu": "escolta_do_peregrino", "shendilavri": "vitimas_drenadas", "goranthis": "do_trono_ao_lodo", "reino_abissal": "legiao_cerca", "domwieck": "portal_do_jardim", "pilares": "linha_da_arvore"}
 	for stage in keys:
 		var def := {}
 		for ev in Data.table("stage_events")[stage]:
