@@ -126,14 +126,14 @@
       "eclipse_pedra": 0.6
     },
     "essence": "Essência da Névoa",
-    "next": "docas",
+    "next": "shedaklah",
     "unlock": "start"
   },
   "docas": {
     "name": "Docas",
     "sub": "M1 · cais, fenda e porão ritual",
     "order": 0,
-    "duration": 300,
+    "duration": 180,
     "cap": 48,
     "tier": 1,
     "coin_mult": 1.35,
@@ -172,39 +172,39 @@
     "waves": [
       {
         "t0": 0,
-        "t1": 130,
+        "t1": 78,
         "id": "criatura_corrompida",
         "every": 3.5,
         "n": 2,
         "max": 12
       },
       {
-        "t0": 15,
-        "t1": 210,
+        "t0": 9,
+        "t1": 126,
         "id": "slime_corrosivo",
         "every": 4.6,
         "n": 1,
         "max": 7
       },
       {
-        "t0": 50,
-        "t1": 300,
+        "t0": 30,
+        "t1": 180,
         "id": "cultista_adaga",
         "every": 4.0,
         "n": 2,
         "max": 10
       },
       {
-        "t0": 120,
-        "t1": 300,
+        "t0": 72,
+        "t1": 180,
         "id": "guardiao_copia",
         "every": 8.0,
         "n": 1,
         "max": 5
       },
       {
-        "t0": 170,
-        "t1": 300,
+        "t0": 102,
+        "t1": 180,
         "id": "cultista_cajado",
         "every": 7.5,
         "n": 1,
@@ -213,15 +213,15 @@
     ],
     "elites": [
       {
-        "at": 85,
+        "at": 51,
         "id": "tentaculo_kraken"
       },
       {
-        "at": 165,
+        "at": 99,
         "id": "arch_hag"
       },
       {
-        "at": 225,
+        "at": 135,
         "id": "guardiao_copia"
       }
     ],
@@ -1108,7 +1108,7 @@
     "name": "Reino Abissal",
     "sub": "Primeira incursão",
     "order": 1,
-    "duration": 360,
+    "duration": 180,
     "cap": 50,
     "tier": 2,
     "coin_mult": 1.45,
@@ -1155,39 +1155,39 @@
     "waves": [
       {
         "t0": 0,
-        "t1": 180,
+        "t1": 90,
         "id": "cultista_adaga",
         "every": 4,
         "n": 2,
         "max": 12
       },
       {
-        "t0": 30,
-        "t1": 240,
+        "t0": 15,
+        "t1": 120,
         "id": "notivago",
         "every": 4,
         "n": 2,
         "max": 12
       },
       {
-        "t0": 90,
-        "t1": 360,
+        "t0": 45,
+        "t1": 180,
         "id": "cultista_arqueiro",
         "every": 6,
         "n": 1,
         "max": 6
       },
       {
-        "t0": 150,
-        "t1": 360,
+        "t0": 75,
+        "t1": 180,
         "id": "cultista_cajado",
         "every": 8,
         "n": 1,
         "max": 5
       },
       {
-        "t0": 210,
-        "t1": 360,
+        "t0": 105,
+        "t1": 180,
         "id": "criatura_corrompida",
         "every": 8,
         "n": 1,
@@ -1196,11 +1196,11 @@
     ],
     "elites": [
       {
-        "at": 120,
+        "at": 60,
         "id": "criatura_corrompida"
       },
       {
-        "at": 240,
+        "at": 120,
         "id": "cultista_cajado"
       }
     ],
@@ -1209,10 +1209,20 @@
       "chest": 4,
       "fountain": 1.4,
       "altar": 2,
+      "ritual": 1,
       "loja": 1,
       "ferreiro": 1,
       "arcanista": 1,
-      "curandeiro": 1
+      "curandeiro": 1,
+      "ampulheta": 1,
+      "doacao": 0.7,
+      "aposta": 0.8,
+      "pacto_sangue": 0.7,
+      "relicario": 0.7,
+      "peregrino": 0.8,
+      "contador": 0.7,
+      "carroca": 0.8,
+      "eclipse_pedra": 0.6
     },
     "essence": "Primeira incursão",
     "next": "domwieck",
@@ -1222,7 +1232,7 @@
     "name": "Domwieck",
     "sub": "Invasão de Nottgard",
     "order": 2,
-    "duration": 420,
+    "duration": 180,
     "cap": 54,
     "tier": 3,
     "coin_mult": 1.6,
@@ -1270,39 +1280,39 @@
     "waves": [
       {
         "t0": 0,
-        "t1": 210,
+        "t1": 90,
         "id": "cultista_adaga",
         "every": 3.5,
         "n": 2,
         "max": 14
       },
       {
-        "t0": 30,
-        "t1": 300,
+        "t0": 13,
+        "t1": 129,
         "id": "notivago",
         "every": 4.5,
         "n": 3,
         "max": 15
       },
       {
-        "t0": 90,
-        "t1": 420,
+        "t0": 39,
+        "t1": 180,
         "id": "cultista_arqueiro",
         "every": 6,
         "n": 1,
         "max": 6
       },
       {
-        "t0": 150,
-        "t1": 420,
+        "t0": 64,
+        "t1": 180,
         "id": "criatura_corrompida",
         "every": 7,
         "n": 1,
         "max": 7
       },
       {
-        "t0": 210,
-        "t1": 420,
+        "t0": 90,
+        "t1": 180,
         "id": "cultista_cajado",
         "every": 8,
         "n": 1,
@@ -1311,11 +1321,11 @@
     ],
     "elites": [
       {
-        "at": 140,
+        "at": 60,
         "id": "criatura_corrompida"
       },
       {
-        "at": 280,
+        "at": 120,
         "id": "cultista_cajado"
       }
     ],
@@ -1324,13 +1334,23 @@
       "chest": 4,
       "fountain": 1.4,
       "altar": 2,
+      "ritual": 1,
       "loja": 1,
       "ferreiro": 1,
       "arcanista": 1,
-      "curandeiro": 1
+      "curandeiro": 1,
+      "ampulheta": 1,
+      "doacao": 0.7,
+      "aposta": 0.8,
+      "pacto_sangue": 0.7,
+      "relicario": 0.7,
+      "peregrino": 0.8,
+      "contador": 0.7,
+      "carroca": 0.8,
+      "eclipse_pedra": 0.6
     },
     "essence": "Resistência de Domwieck",
-    "next": "",
+    "next": "dagruve",
     "unlock": "docas"
   }
 }

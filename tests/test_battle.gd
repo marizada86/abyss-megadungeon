@@ -945,12 +945,13 @@ func run() -> Array:
 		bs.step(Vector2.ZERO, 0.66)
 		bs.hero.pos = bs.interactions.filter(func(i): return i.kind == "portal")[0].pos
 		bs.interact()
-		if bs.stage_id != "docas":
-			out.append("portal não levou a docas (%s)" % bs.stage_id)
+		# Contrato do capítulo 1 r2: Dagruve (depois de Domwieck) segue para Shedaklah.
+		if bs.stage_id != "shedaklah":
+			out.append("portal não levou a shedaklah (%s)" % bs.stage_id)
 		else:
 			bs.enter_next_stage()
-			if bs.stage_id != "reino_abissal":
-				out.append("portal de docas não levou ao reino abissal (%s)" % bs.stage_id)
+			if bs.stage_id != "molor":
+				out.append("portal de shedaklah não levou a molor (%s)" % bs.stage_id)
 
 	# 12) todas as fases carregam e o diretor spawna sem quebrar
 	for sid in Data.table("stages"):

@@ -13,7 +13,7 @@ func run() -> Array:
 	b.hero.pos = Vector2(30,54)
 	var d := b.root_layout
 	_check(out,d.nodes.size()==18 and d.edges.size()==23 and d.edges.size()-d.nodes.size()+1==6,"Spiral graph contract")
-	_check(out,b.objective_target()==Vector2(30,31) and int(b.stage.duration)==360 and int(b.stage.cap)==50,"Spiral objective/timing/cap changed")
+	_check(out,b.objective_target()==Vector2(30,31) and int(b.stage.duration)==180 and int(b.stage.cap)==50,"Spiral objective/timing/cap changed")
 	# Explicit IDs and per-battle fields cannot overwrite the accepted r2 mesh.
 	var other := Battle.new(7503,"durvall","raiz_yggdrasil")
 	other.hero.blockers.clear()

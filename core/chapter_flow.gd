@@ -44,13 +44,19 @@ static func _normalize(data: Dictionary) -> void:
 			found[id] = true
 			queue.append({"id": id, "panel_index": clampi(int(row.get("panel_index", 0)), 0, maxi(0, Data.table("hqs")[id].panels.size() - 1))})
 	cp.pending_hqs = queue
-	cp.next_stage = "docas" if not cp.milestones.has("docas_cleared") else "reino_abissal" if not cp.milestones.has("reino_abissal_cleared") else "domwieck"
+	cp.next_stage = "docas" if not cp.milestones.has("docas_cleared") else "reino_abissal" if not cp.milestones.has("reino_abissal_cleared") else "domwieck" if not cp.milestones.has("domwieck_cleared") else "dagruve"
 
 static func stage_allowed(data: Dictionary, id: String) -> bool:
 	if not Data.table("stages").has(id): return false
 	var cp: Dictionary = data.campaign_progress
 	if cp.legacy_stage_access.has(id): return true
-	return id == "docas" or (id == "reino_abissal" and cp.milestones.has("docas_cleared")) or (id == "domwieck" and cp.milestones.has("reino_abissal_cleared"))
+	if id == "docas" or (id == "reino_abissal" and cp.milestones.has("docas_cleared")) or (id == "domwieck" and cp.milestones.has("reino_abissal_cleared")):
+		return true
+	# Depois do capítulo 1 a cadeia antiga segue pelo campo `unlock`: Dagruve abre com Domwieck; o resto, com a fase anterior vencida.
+	if not cp.milestones.has("domwieck_cleared") or id in contract().campaign_stages:
+		return false
+	var req := String(Data.table("stages")[id].get("unlock", "start"))
+	return id == "dagruve" or data.cleared.has(req)
 
 static func enqueue(data: Dictionary, ids: Array) -> void:
 	var cp: Dictionary = data.campaign_progress

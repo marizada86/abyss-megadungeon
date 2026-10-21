@@ -819,7 +819,7 @@ func complete_stage(reason: String) -> bool:
 			state = "won"
 		else:
 			_add_interaction("portal", objective_target() + Vector2(0, 2))
-			events.append({"type": "toast", "text": "Retornar a Nottgard (E/oeste) ou extrair (X/norte)."})
+			events.append({"type": "toast", "text": "Continuar: %s (E/oeste) ou extrair (X/norte)." % String(Data.table("stages")[String(stage.next)].name)})
 	return true
 
 func _build_grid() -> void:

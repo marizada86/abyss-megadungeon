@@ -761,6 +761,8 @@ func _record_stage_cleared(stage_id: String, event_type: String) -> void:
 	ChapterFlow.clear_stage(Game.profile.data, stage_id)
 	Game.save()
 	await _drain_campaign_hqs()
+	if stage_id == "domwieck" and Game.profile.data.campaign_progress.milestones.has("chapter1_closed"):
+		hud.toast("Capítulo 1 concluído")   # a run segue para Dagruve: o aviso vem na limpeza, não só no resultado
 
 func _drain_campaign_hqs() -> void:
 	if Game.qa_sandbox or _hq_draining: return
@@ -1100,6 +1102,10 @@ func _swing(ev: Dictionary, theme: Dictionary) -> void:
 		if effect != null:
 			fx.add_child(effect)
 			return
+		var flames := FireSwingVfx.create_effect(ev)
+		if flames != null:
+			fx.add_child(flames)
+			return
 	var poly := Polygon2D.new()
 	var pts := PackedVector2Array([Iso.to_screen(ev.pos) + Vector2(0, -18)])
 	var cone: float = deg_to_rad(float(ev.cone))
@@ -1224,6 +1230,10 @@ func _nova_effect(event: Dictionary) -> void:
 	var pulse := RadiantPulseVfx.create_effect(event, color, Game.reduced_impact())
 	if pulse == null:
 		pulse = HourglassVfx.create_effect(event, color, Game.reduced_impact())
+	if pulse == null:
+		pulse = FireBurstVfx.create_effect(event, Game.reduced_impact())
+	if pulse == null and event.get("dtype", "") == "fogo":
+		color = _dcol("fogo")   # impacto reduzido: o anel simples ao menos lê como fogo
 	if pulse != null:
 		fx.add_child(pulse)
 	elif HeroAbilityVfx.covers_nova(String(event.get("weapon", ""))) and not Game.reduced_impact() and HeroAbilityVfx.frames_for(String(event.weapon)) != null:

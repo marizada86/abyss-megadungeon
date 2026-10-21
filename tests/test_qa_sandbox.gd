@@ -19,7 +19,7 @@ func run() -> Array:
 	qa_battle.qa_prepare({"event_id": "pulso_da_fenda", "prelude_seconds": 5.0, "level": 6, "weapons": ["raio_de_luz"], "passive_id": "alcance"})
 	if int(qa_battle.hero.level) != 6 or not qa_battle.hero.weapons.any(func(w): return w.id == "raio_de_luz") or int(qa_battle.hero.passives.get("alcance", 0)) != 1:
 		failures.append("Navegador QA não aplicou a build escolhida")
-	if absf(qa_battle.time - 245.0) > 0.001:
+	if absf(qa_battle.time - 145.0) > 0.001:
 		failures.append("cenário QA não iniciou cinco segundos antes do evento")
 	qa_battle.step(Vector2.ZERO, 0.1)
 	if not qa_battle.events.any(func(ev): return String(ev.get("type", "")) == "stage_event_warning"):

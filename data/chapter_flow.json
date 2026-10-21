@@ -1,6 +1,7 @@
 {
   "id": "CONTRACT-NOTTGARD-CHAPTER1-FLOW-20261016",
-  "revision": "r1",
+  "revision": "r2",
+  "revision_note": "r2 (2026-10-20, decisão do dono): Docas, Reino Abissal e Domwieck com 180 s exatos (cronogramas reescalados); Domwieck segue para Dagruve e a cadeia legada (Dagruve -> Shedaklah); o capítulo 1 ainda fecha na HQ03. Aprovação: PLAN-NOTTGARD-CHAPTER1-MAPS-STANDARD-20261020 r2, lotes A, B e C.",
   "status": "APPROVED_IMPLEMENTATION_R1",
   "implementation_authorized": true,
   "platform": "windows-x86_64",
@@ -34,7 +35,7 @@
       "campaign_order": 0,
       "unlock": "start",
       "next": "reino_abissal",
-      "duration": 300,
+      "duration": 180,
       "completion": {
         "kind": "boss",
         "boss_id": "guardiao_verdadeiro"
@@ -46,7 +47,7 @@
       "campaign_order": 1,
       "unlock": "docas",
       "next": "domwieck",
-      "duration": 360,
+      "duration": 180,
       "map_size": [
         60,
         60
@@ -75,39 +76,39 @@
       "waves": [
         {
           "t0": 0,
-          "t1": 180,
+          "t1": 90,
           "id": "cultista_adaga",
           "every": 4,
           "n": 2,
           "max": 12
         },
         {
-          "t0": 30,
-          "t1": 240,
+          "t0": 15,
+          "t1": 120,
           "id": "notivago",
           "every": 4,
           "n": 2,
           "max": 12
         },
         {
-          "t0": 90,
-          "t1": 360,
+          "t0": 45,
+          "t1": 180,
           "id": "cultista_arqueiro",
           "every": 6,
           "n": 1,
           "max": 6
         },
         {
-          "t0": 150,
-          "t1": 360,
+          "t0": 75,
+          "t1": 180,
           "id": "cultista_cajado",
           "every": 8,
           "n": 1,
           "max": 5
         },
         {
-          "t0": 210,
-          "t1": 360,
+          "t0": 105,
+          "t1": 180,
           "id": "criatura_corrompida",
           "every": 8,
           "n": 1,
@@ -116,11 +117,11 @@
       ],
       "elites": [
         {
-          "at": 120,
+          "at": 60,
           "id": "criatura_corrompida"
         },
         {
-          "at": 240,
+          "at": 120,
           "id": "cultista_cajado"
         }
       ]
@@ -129,8 +130,8 @@
       "existing": false,
       "campaign_order": 2,
       "unlock": "reino_abissal",
-      "next": "",
-      "duration": 420,
+      "next": "dagruve",
+      "duration": 180,
       "map_size": [
         60,
         60
@@ -159,39 +160,39 @@
       "waves": [
         {
           "t0": 0,
-          "t1": 210,
+          "t1": 90,
           "id": "cultista_adaga",
           "every": 3.5,
           "n": 2,
           "max": 14
         },
         {
-          "t0": 30,
-          "t1": 300,
+          "t0": 13,
+          "t1": 129,
           "id": "notivago",
           "every": 4.5,
           "n": 3,
           "max": 15
         },
         {
-          "t0": 90,
-          "t1": 420,
+          "t0": 39,
+          "t1": 180,
           "id": "cultista_arqueiro",
           "every": 6,
           "n": 1,
           "max": 6
         },
         {
-          "t0": 150,
-          "t1": 420,
+          "t0": 64,
+          "t1": 180,
           "id": "criatura_corrompida",
           "every": 7,
           "n": 1,
           "max": 7
         },
         {
-          "t0": 210,
-          "t1": 420,
+          "t0": 90,
+          "t1": 180,
           "id": "cultista_cajado",
           "every": 8,
           "n": 1,
@@ -200,11 +201,11 @@
       ],
       "elites": [
         {
-          "at": 140,
+          "at": 60,
           "id": "criatura_corrompida"
         },
         {
-          "at": 280,
+          "at": 120,
           "id": "cultista_cajado"
         }
       ]

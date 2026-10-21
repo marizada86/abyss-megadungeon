@@ -143,5 +143,25 @@
         {"kind": "carga", "off": [0, 0]}, {"kind": "barril", "off": [-4, 2]}, {"kind": "rede", "off": [5, 3]}
       ]}
     ]
-  }
+  },
+  "reino_abissal": {"destrutiveis": [
+      {"zone": "bolsao_raiz_0", "id": "arbusto_quebravel", "pos": [15, 12]},
+      {"zone": "bolsao_raiz_0", "id": "arbusto_quebravel", "pos": [12, 15]},
+      {"zone": "bolsao_raiz_1", "id": "arbusto_quebravel", "pos": [45, 12]},
+      {"zone": "bolsao_raiz_1", "id": "arbusto_quebravel", "pos": [48, 15]},
+      {"zone": "bolsao_raiz_2", "id": "arbusto_quebravel", "pos": [15, 48]},
+      {"zone": "bolsao_raiz_2", "id": "arbusto_quebravel", "pos": [12, 45]},
+      {"zone": "bolsao_raiz_3", "id": "arbusto_quebravel", "pos": [45, 48]},
+      {"zone": "bolsao_raiz_3", "id": "arbusto_quebravel", "pos": [48, 45]}
+    ]},
+  "domwieck": {"destrutiveis": [
+      {"zone": "ruina_oeste", "id": "arbusto_quebravel", "pos": [11, 22]},
+      {"zone": "ruina_oeste", "id": "arbusto_quebravel", "pos": [11, 27]},
+      {"zone": "ruina_leste", "id": "arbusto_quebravel", "pos": [49, 34]},
+      {"zone": "ruina_leste", "id": "arbusto_quebravel", "pos": [49, 39]},
+      {"zone": "quarteirao_oeste", "id": "arbusto_quebravel", "pos": [19, 36]},
+      {"zone": "quarteirao_oeste", "id": "arbusto_quebravel", "pos": [25, 40]},
+      {"zone": "quarteirao_leste", "id": "arbusto_quebravel", "pos": [35, 20]},
+      {"zone": "quarteirao_leste", "id": "arbusto_quebravel", "pos": [41, 24]}
+    ]}
 }

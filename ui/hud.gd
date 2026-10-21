@@ -507,7 +507,7 @@ func update_stats(b: Battle) -> void:
 	if pr == "" and (b.stage_cleared or b.final_victory):
 		pr = "[%s] Pausa → Extrair ×%.2f" % [Game.controls.prompt("run_pause", "Esc"), b.reward_multiplier()]
 		if b.stage.get("next", "") != "":
-			pr += "   [%s] %s ×%.2f" % [Game.controls.prompt("run_interact", "E"), "Retornar a Nottgard" if b.stage_id == "reino_abissal" else "Continuar" if b.stage_id == "docas" else "Descer", b.next_reward_multiplier()]
+			pr += "   [%s] %s ×%.2f" % [Game.controls.prompt("run_interact", "E"), "Continuar" if b.stage_id in ["docas", "reino_abissal", "domwieck"] else "Descer", b.next_reward_multiplier()]
 	prompt_label.text = pr
 	var quest_entries: Array = b.happenings.hud_entries(b)
 	var chamber_row: Dictionary = b.chamber_entry()   # SPEC-175: a câmara selada diz o que a abre

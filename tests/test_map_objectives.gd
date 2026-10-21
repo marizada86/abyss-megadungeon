@@ -54,7 +54,9 @@ func _full_run(out: Array, stage_key: String) -> void:
 		if b.time >= duration:
 			b.hero.pos = b.objective_target()
 		b.step(Vector2.ZERO, 0.1)
-		max_population = maxi(max_population, b._combat_count())
+		# Um elite com afixo Invocador (sorteado) invoca além do teto por desenho; o teto vale para o diretor de ondas.
+		if not b.enemies.any(func(e): return e.has_affix("invocador")):
+			max_population = maxi(max_population, b._combat_count())
 		b.events.clear()
 		if b.stage_cleared:
 			break

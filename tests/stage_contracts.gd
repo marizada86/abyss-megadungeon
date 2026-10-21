@@ -15,8 +15,8 @@ extends RefCounted
 const TOPICS := ["music", "ambience", "chronicle", "decals", "random_events"]
 
 const DEFERRED := {
-	"reino_abissal": ["chronicle", "decals", "random_events"],
-	"domwieck": ["chronicle", "decals", "random_events"],
+	"reino_abissal": ["chronicle", "decals"],
+	"domwieck": ["chronicle", "decals"],
 }
 
 static func deferred(stage_id: Variant, topic: String) -> bool:

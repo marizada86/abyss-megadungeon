@@ -5,13 +5,6 @@ func run() -> Array:
 	var out: Array = []
 	for sid in Data.table("stages"):
 		var p: Dictionary = Atmosphere.profile_for(String(sid))
-		if p.is_empty() and String(sid) in ["domwieck", "reino_abissal"]:
-			var local_map := Atmosphere.new()
-			local_map.setup(String(sid), {"atmosphere": "leve"})
-			if local_map.is_grading() or local_map.is_emitting():
-				out.append("mapa PC sem perfil deve manter apresentação original: %s" % sid)
-			local_map.free()
-			continue
 		if p.is_empty():
 			out.append("fase %s sem perfil de atmosfera" % sid)
 			continue

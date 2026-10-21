@@ -27,7 +27,7 @@
   "docas": [
     {
       "id": "cais_atacado",
-      "at": 90,
+      "at": 54,
       "warning": 5,
       "kind": "wave",
       "enemy_id": "criatura_corrompida",
@@ -43,7 +43,7 @@
     },
     {
       "id": "pulso_da_fenda",
-      "at": 250,
+      "at": 150,
       "warning": 5,
       "kind": "hazard",
       "title": "Pulso da Fenda",
@@ -52,7 +52,7 @@
     },
     {
       "id": "copias_do_guardiao",
-      "at": 225,
+      "at": 135,
       "warning": 5,
       "kind": "elite",
       "enemy_id": "guardiao_copia",
