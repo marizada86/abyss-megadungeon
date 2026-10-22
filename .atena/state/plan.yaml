@@ -2295,3 +2295,36 @@ hero_art_reset_20261021:
   runtime_modified: false
   commit: NOT_AUTHORIZED_YET
   next_activity: "Aguardar aprovação do R2: você gera as 33 imagens (Durvall, Korrak, Erik) no ChatGPT; a Atena monta e mede"
+asset_ui_quartel_integration_20261022:
+  revision: DRAFT/r2
+  classification: IN_PLAN_APPROVED_REVISED_SCOPE
+  authorization: 'atena. aprovado seguindo recomendações'
+  mode: per-plan
+  status: TECHNICAL_DELIVERY_COMPLETE_AWAITING_HUMAN_VISUAL_REVIEW
+  approval_status: APPROVED_OWNER_R2
+  proposal: .atena/generated/ui-quartel-reconciliation-20261022-r1/integration-proposal-r2.md
+  evidence_directory: .atena/generated/ui-quartel-integration-20261022-r2
+  superseded_runtime_plan: asset_integration_proposal_2026_10_21
+  preserved_prior_checkpoint: S-I01/INTEGRATION_SCOPE_APPROVAL_PENDING
+  ordered_steps: [S-UI01, S-UI02, S-UI03, S-UI04, S-UI05, S-UI06]
+  completed_steps: 6
+  total_steps: 6
+  checkpoint: S-UI06/TECHNICAL_DELIVERY_HUMAN_REVIEW_PENDING
+  baseline_capture_session: synthetic-20261022-041412
+  source_acceptance: PRESERVED_SELECTED_125_DRAFT
+  human_screen_acceptance: PENDING
+  runtime_modified: true
+  gallery: .atena/generated/ui-quartel-integration-20261022-r2/index.html
+  evidence: .atena/generated/ui-quartel-integration-20261022-r2/evidence.md
+  admission: .atena/generated/ui-quartel-integration-20261022-r2/admission.json
+  playtest: .atena/generated/ui-quartel-integration-20261022-r2/playtest.md
+  final_suite: ZERO_ASSERTION_FAILURES_ZERO_SCRIPT_ERRORS
+  project_audit: ZERO_CONTENT_ERRORS_ZERO_WARNINGS
+  interaction_checks: PASS_10_OF_10
+  controller_check: INHERITED_TWO_FAILURES_AND_TIMEOUT_PRESERVED
+  environment_debt: GODOT_WINDOWS_CERTIFICATE_STORE_AND_RENDER_CLEANUP_MESSAGES
+  next_activity: Owner reviews final screen gallery and synthetic playtest; record only explicit human feedback, retaining DRAFT and deferred assets.
+  local_commit: AUTHORIZED_OWNER_20261022
+  local_commit_authorization: 'atena commite e  tem algo para ser gerado?'
+  commit_receipt: .atena/generated/ui-quartel-integration-20261022-r2/commit-result.json
+  push: NOT_AUTHORIZED

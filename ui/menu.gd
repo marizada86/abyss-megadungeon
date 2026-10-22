@@ -56,7 +56,7 @@ func _ready() -> void:
 	Lettering.decorate_label($Tabs/Jogar/Right/StageTitle, "placa_titulo_secao", 18)
 	if Game.qa_sandbox:
 		%Tabs.current_tab = Game.qa_menu_tab
-	stage_list.fixed_icon_size = Vector2i(96, 54)
+	stage_list.fixed_icon_size = Vector2i(80, 88)
 	codex_list.fixed_icon_size = Vector2i(48, 48)
 	Sfx.stop_ambience()
 	Sfx.start_music("menu")
@@ -244,15 +244,21 @@ func _refresh_all() -> void:
 	hero_list.clear()
 	for id in heroes:
 		var d: Dictionary = Data.table("heroes")[id]
-		hero_list.add_item(("%s" if p.hero_unlocked(id) else "🔒 %s") % d.name)
+		var portrait_path := "res://assets/portraits/%s.png" % id
+		var portrait_icon: Texture2D = load(portrait_path) if ResourceLoader.exists(portrait_path) else null
+		hero_list.add_item(("%s" if p.hero_unlocked(id) else "🔒 %s") % d.name, portrait_icon)
 	stage_list.clear()
 	for id in stages:
 		var d: Dictionary = Data.table("stages")[id]
 		var thumb_path := "res://assets/stages/%s_thumb.png" % id
 		var thumb: Texture2D = load(thumb_path) if ResourceLoader.exists(thumb_path) else null
 		stage_list.add_item(("%d. %s" if Game.stage_available(id) else "🔒 %d. %s") % [int(d.order) + 1, d.name], thumb)
+	hero_list.refresh_card_art()
+	stage_list.refresh_card_art()
 	hero_list.select(sel_h[0] if not sel_h.is_empty() else heroes.find(Game.run_hero))
 	stage_list.select(clampi(sel_s[0] if not sel_s.is_empty() else stages.find(Game.run_stage), 0, stages.size() - 1))
+	hero_list.call_deferred("ensure_current_is_visible")
+	stage_list.call_deferred("ensure_current_is_visible")
 	_refresh_hero()
 	_refresh_stage()
 	_fill_upgrades()

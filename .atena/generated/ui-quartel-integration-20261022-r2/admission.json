@@ -1,0 +1,147 @@
+{
+  "revision": "DRAFT/r2",
+  "owner_authorization": "atena. aprovado seguindo recomendações",
+  "mode": "per-plan",
+  "technical_status": "COMPLETE_WITH_INHERITED_CONTROL_AND_ENVIRONMENT_DEBTS",
+  "runtime_files": [
+    {
+      "file": "ui/offer_card.gd",
+      "before_sha256": "1D7476E86DFF8A6FD7D5CC8E20DA0ADF3A0A4AF403E78DAC0F2794FC6728575E",
+      "after_sha256": "F74368CECE587DBA94B10E7526A3700CF9F3EB5D4A099BAB6A1DAAFB59C4C1E3",
+      "disposition": "MODIFIED"
+    },
+    {
+      "file": "ui/hud.gd",
+      "before_sha256": "BB1500B131A4D788D5A118B11AC0108CA1E85F274D44EDF22E74096EF3C893B6",
+      "after_sha256": "9920B30927053F692D810C6E12CAC623825407D1CD3FCD5A7B156AC8B949511D",
+      "disposition": "MODIFIED"
+    },
+    {
+      "file": "ui/hud_art.gd",
+      "before_sha256": "1FFEA3E3DEE2E4C7F4EAB1F2D654A498059DBDC5E3AC3B17E4F45C19A024AEB9",
+      "after_sha256": "0360CF2E51C8CFAECDCDF88F6FA8F38D5C36C16BA19ADC4C96757549A3391C77",
+      "disposition": "MODIFIED"
+    },
+    {
+      "file": "ui/hud.tscn",
+      "before_sha256": "A45031AC4AB2103CA444225A8EEA4BEDDC78D476F4AD9AD51ED030AAE4A38B37",
+      "after_sha256": "CB5FB7FEBAD8DC39E32001E1455F22A43DEE5E2DD91ADD2EA7D1D1D0D784CC39",
+      "disposition": "MODIFIED"
+    },
+    {
+      "file": "ui/menu.gd",
+      "before_sha256": "E7E7793AE66265108AD146ADF3130356854D5FAF2B0912A5079AEEF6D2284AE3",
+      "after_sha256": "8DEE1A91004B9CADD78569C1AACF369D81CF38D19EF92D80E081FEE65CC59FC6",
+      "disposition": "MODIFIED"
+    },
+    {
+      "file": "ui/menu.tscn",
+      "before_sha256": "15940B1A26B5BC4C4E52B83754E6AEE436AC3AF709148FEF7F73D5CCBE4D8807",
+      "after_sha256": "044BFFC4C45D6A29CCA41C43363D8F91CBE944CA4689591ACD6FE51D6D1D339F",
+      "disposition": "MODIFIED"
+    },
+    {
+      "file": "ui/quartel_card_list.gd",
+      "before_sha256": null,
+      "after_sha256": "7740976E58905039AED46153D027C15EA45253885B92EE5BD02DC83B1EEE8544",
+      "disposition": "NEW"
+    },
+    {
+      "file": "ui/quartel_card_list.gd.uid",
+      "before_sha256": null,
+      "after_sha256": "3263DC72961186E86AAC41E0D9C812C9538FB2DF230E3155E5DD6AADB0C30E6C",
+      "disposition": "NEW"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/ui/oferta/oferta_brilho.png",
+      "sha256": "04A6F4D293CD953DAE830B8352BE95439233F49FCDC508A7CD615635DF5E400B",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/ui/oferta/oferta_preco.png",
+      "sha256": "FE069C52973EE10E6DF9A0C4961A072B70D0AE1E496B6A07230F8E0FAB21D637",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/ui/hud/hud_cronometro.png",
+      "sha256": "415D34ED8A589C768F869896CD49F847BA72E7BF5B8EC774168C2FCE5565B7D8",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/ui/quartel/heroi_cartao.png",
+      "sha256": "25EBC2D9CD86A66C7CFFE13AE22DEC92C33DF4E6B3A128BE679DAC7AD778C062",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/ui/quartel/heroi_cartao_bloqueado.png",
+      "sha256": "B5D9A139EA3F31F5B7D67F60B2990BC88346668F70E03F6E5940DFA95584C4AB",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/ui/quartel/heroi_placa.png",
+      "sha256": "55EEBDC0A5DF557363D5E90B006786B8C05D8AEE315EC39DB8E44213340857C7",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/ui/quartel/fase_cartao.png",
+      "sha256": "DC7A41C6EB7FD618A142A299D874C98A0E65EADCF182343BE1E77F6F50D132AA",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/ui/quartel/fase_cartao_bloqueado.png",
+      "sha256": "78C3A4120519211508FF0DE1DC6D424D07DA8F84FEE16B685B85B4BA4C4CEBED",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/icons/resultado/tempo.png",
+      "sha256": "7EC0DA098543363EFA93C5854B632A029E9EFC6E105D72DA67CA08DB6DCCAB5D",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/icons/resultado/nivel.png",
+      "sha256": "A59E454B9858F0350B41EB8A90A06EEC1F60DF671D3C0F9D3A2A7B4CD9B0B33E",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/icons/resultado/abates.png",
+      "sha256": "4CC201B56E70B4F3E5DDF487675EAF08E475C3BD024AE949BD1BCC56F3846A91",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/icons/resultado/chefes.png",
+      "sha256": "0EB6BE839D7DAB1C50070502A50FB6FF56338C3F94424ED14BD3358F35710BD6",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/icons/resultado/moedas.png",
+      "sha256": "3CC855E9DB0BDA963094326895F2F3B7460749CA78ECED342E2C7BCAC9B13B02",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    },
+    {
+      "file": "assets/icons/resultado/profundidade.png",
+      "sha256": "44E6AB01E451F1B7FE5D95C750D67E254141394ECBC860A5B42FB5633E5821D4",
+      "disposition": "EXISTING_UNMODIFIED_NEW_CONSUMER_USE"
+    }
+  ],
+  "source_hash_checks": 125,
+  "prepared_hash_checks": 158,
+  "final_captures": "synthetic-20261022-042826",
+  "gallery_pairs": 14,
+  "image_links": 28,
+  "suite_assertion_failures": 0,
+  "project_audit_errors": 0,
+  "project_audit_warnings": 0,
+  "specific_interaction_checks_passed": 10,
+  "controller_passed_count": 92,
+  "controller_failed_count": 2,
+  "controller_timeout": true,
+  "inherited_environment_error": "Godot Windows root certificate store",
+  "inherited_renderer_cleanup": "Same three texture RIDs and resource cleanup messages in before and after captures",
+  "human_screen_acceptance": "PENDING",
+  "canonical_promotion": false,
+  "save_real_loaded": false,
+  "source_sync": false,
+  "commits_push_exports": "LOCAL_COMMIT_AUTHORIZED_OWNER_20261022_PUSH_EXPORT_NOT_AUTHORIZED"
+}

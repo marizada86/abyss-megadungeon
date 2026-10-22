@@ -121,6 +121,7 @@ var compact := false
 var _accent := GOLD
 var _rarity := ""
 var _glow: Control
+var _selection_art: TextureRect
 var _brief: Label
 var _detail_view: Control
 
@@ -133,10 +134,11 @@ func show_detail(on: bool) -> void:
 
 func _ready() -> void:
 	# raro e único respiram um brilho (placeholder do efeito que a arte final traz)
-	if _glow != null and (_rarity == "raro" or _rarity == "unico") and not Game.reduced_impact():
-		var tw := _glow.create_tween().set_loops()
-		tw.tween_property(_glow, "modulate:a", 0.55, 1.1).set_trans(Tween.TRANS_SINE)
-		tw.tween_property(_glow, "modulate:a", 1.0, 1.1).set_trans(Tween.TRANS_SINE)
+	var pulse: Control = _selection_art if _selection_art != null else _glow
+	if pulse != null and (_rarity == "raro" or _rarity == "unico") and not Game.reduced_impact():
+		var tw := pulse.create_tween().set_loops()
+		tw.tween_property(pulse, "modulate:a", 0.55, 1.1).set_trans(Tween.TRANS_SINE)
+		tw.tween_property(pulse, "modulate:a", 1.0, 1.1).set_trans(Tween.TRANS_SINE)
 
 ## Raridade da oferta (item novo, mantido ou comprado); "" quando não há item.
 static func rarity_of(o: Dictionary) -> String:
@@ -184,6 +186,22 @@ func setup_card(i: int, o: Dictionary, name_color: Color, icon_tex: Texture2D, w
 	focus_mode = Control.FOCUS_ALL
 	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
 		add_theme_stylebox_override(state, _frame_style(state))
+	# U09 tem fundo preto: adição remove o preto e fica abaixo do texto.
+	var glow_texture := art("oferta_brilho")
+	if glow_texture != null:
+		_selection_art = TextureRect.new()
+		_selection_art.name = "SelectionArt"
+		_selection_art.texture = glow_texture
+		_selection_art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		_selection_art.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var additive := CanvasItemMaterial.new()
+		additive.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
+		_selection_art.material = additive
+		add_child(_selection_art)
+		_selection_art.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		for sig in [focus_entered, focus_exited, mouse_entered, mouse_exited]:
+			sig.connect(_update_selection_art)
+		_update_selection_art()
 	var margin := MarginContainer.new()
 	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -260,12 +278,12 @@ func _pill(text: String, col: Color) -> PanelContainer:
 	if ribbon_tex != null:
 		var tex_style := StyleBoxTexture.new()
 		tex_style.texture = ribbon_tex
-		tex_style.texture_margin_left = 44
-		tex_style.texture_margin_right = 44
+		tex_style.texture_margin_left = 22 if compact else 44
+		tex_style.texture_margin_right = 22 if compact else 44
 		tex_style.texture_margin_top = 0
 		tex_style.texture_margin_bottom = 0
-		tex_style.content_margin_left = 40
-		tex_style.content_margin_right = 40
+		tex_style.content_margin_left = 12 if compact else 40
+		tex_style.content_margin_right = 12 if compact else 40
 		tex_style.content_margin_top = 2
 		tex_style.content_margin_bottom = 2
 		pill.add_theme_stylebox_override("panel", tex_style)
@@ -336,8 +354,26 @@ func _chips_row(badge: Control, level_chip: String, price: String, price_col: Co
 	elif level_chip != "":
 		chips.add_child(_label(level_chip, 18, COLOR_UP))
 	if price != "":
-		chips.add_child(_label(price, 16, price_col))
+		var price_label := _label(price, 16, price_col)
+		var price_style := HudArt.frame(art("oferta_preco"), [36, 16, 12, 12], [36, 12, 4, 4])
+		if price_style != null:
+			var plate := PanelContainer.new()
+			plate.name = "PricePlate"
+			plate.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			plate.custom_minimum_size = Vector2(120, 32)
+			plate.add_theme_stylebox_override("panel", price_style)
+			plate.add_child(price_label)
+			chips.add_child(plate)
+		else:
+			chips.add_child(price_label)
 	return chips
+
+func _update_selection_art() -> void:
+	if _selection_art == null:
+		return
+	var lit := has_focus() or is_hovered()
+	_selection_art.visible = not disabled and (lit or _rarity in ["raro", "unico"])
+	_selection_art.self_modulate = Color(1, 1, 1, 0.5 if lit else 0.18)
 
 func _build_full(col: VBoxContainer, title: String, category: String, ribbon: String, style: Dictionary, name_color: Color, icon_tex: Texture2D, glyph_text: String, badge: Control, level_chip: String, price: String, price_col: Color, i: int, brief_text: String) -> void:
 	# fita (a linha é sempre reservada, para os cartões alinharem)
@@ -416,8 +452,13 @@ func _build_compact(col: VBoxContainer, title: String, category: String, ribbon:
 	var name_label := _label(title, 17, name_color if _rarity == "" else _accent)
 	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	name_label.max_lines_visible = 2
+	name_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	text_col.add_child(name_label)
-	text_col.add_child(_label(category, 13, Color(_accent.r, _accent.g, _accent.b, 0.85)))
+	var category_label := _label(category, 13, Color(_accent.r, _accent.g, _accent.b, 0.85))
+	category_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	category_label.max_lines_visible = 2
+	category_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	text_col.add_child(category_label)
 	var brief := _label(brief_text, 13, Color(0.9, 0.9, 0.9))
 	brief.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	brief.max_lines_visible = 3

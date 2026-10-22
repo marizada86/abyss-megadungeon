@@ -35,10 +35,10 @@ static func frame(texture: Texture2D, margins: Array, content: Array = [], modul
 
 ## Cronômetro e botões de topo.
 static func style_timer(label: Label) -> void:
-	var sb := frame(hud("hud_cronometro"), [44, 44, 22, 22], [50, 50, 14, 14])
+	var sb := frame(hud("hud_cronometro"), [24, 24, 18, 18], [24, 24, 8, 8])
 	if sb != null:
 		label.add_theme_stylebox_override("normal", sb)
-		label.custom_minimum_size = Vector2(190, 62)
+		label.custom_minimum_size = Vector2(190, 60)
 		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 
 static func style_square_button(btn: Button, art_name: String) -> void:

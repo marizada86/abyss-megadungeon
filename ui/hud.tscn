@@ -311,9 +311,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 34
 theme_override_colors/font_color = Color(1, 0.9, 0.5, 1)
 
-[node name="ResultText" type="Label" parent="ResultPanel/VBox" unique_id=1826369404]
+[node name="ResultText" type="RichTextLabel" parent="ResultPanel/VBox" unique_id=1826369404]
 unique_name_in_owner = true
 layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+custom_minimum_size = Vector2(520, 0)
 
 [node name="Row" type="HBoxContainer" parent="ResultPanel/VBox" unique_id=1094964594]
 layout_mode = 2

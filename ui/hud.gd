@@ -17,9 +17,9 @@ signal extract_pressed
 signal pause_items_pressed
 
 const STATUS_MAX_LINES := 4
-const STACK_TOP := 90.0   # abaixo do relógio, do nome da fase e do ícone da regra
+const STACK_TOP := 116.0   # abaixo da moldura do relógio, progresso, fase e ícone da regra
 const STACK_WIDTH := 640.0   # a barra do chefe tem 580 px; 640 deixa a direita livre para o questlog (x >= 968)
-const QUESTLOG_TOP := 92.0        # abaixo dos botões 1x e ? (y 12 a 58), com folga
+const QUESTLOG_TOP := 116.0       # abaixo da fase (y 78 a 100), sem encostar no texto longo
 const QUESTLOG_MARGIN := 12.0
 const TOAST_MAX_COUNT := 4
 const TOAST_MAX_HEIGHT := 120.0   # cabe a epígrafe de 2 linhas e mais 3 avisos curtos; abaixo disso fica acima da fala do herói
@@ -48,7 +48,7 @@ var _offer_grid_active := false
 @onready var vol_slider: HSlider = %VolSlider
 @onready var result_panel: PanelContainer = %ResultPanel
 @onready var result_title: Label = %ResultTitle
-@onready var result_text: Label = %ResultText
+@onready var result_text: RichTextLabel = %ResultText
 @onready var result_background: TextureRect = %ResultBackground
 @onready var revive_panel: PanelContainer = %RevivePanel
 @onready var revive_text: Label = %ReviveText
@@ -179,8 +179,8 @@ func _ready() -> void:
 	stage_progress.set_anchors_preset(Control.PRESET_CENTER_TOP)
 	stage_progress.offset_left = -90.0
 	stage_progress.offset_right = 90.0
-	stage_progress.offset_top = 43.0
-	stage_progress.offset_bottom = 47.0
+	stage_progress.offset_top = 70.0
+	stage_progress.offset_bottom = 74.0
 	add_child(stage_progress)
 	event_pointer.avoid_nodes.append(stage_progress)
 	event_pointer.avoid_nodes.append(quest_panel)   # SPEC-168: a seta de evento não cobre o questlog
@@ -538,7 +538,14 @@ func update_stats(b: Battle) -> void:
 
 ## Arte do HUD (lote U): cronômetro, botões de topo, lista de armas e molduras de modal; sem arquivo, o visual anterior fica.
 func _apply_hud_art() -> void:
-	# cronômetro: a faixa de arte (180x60) invade o rótulo da fase logo abaixo; fica sem moldura até o layout do topo ser revisto
+	HudArt.style_timer(timer_label)
+	timer_label.offset_left = -95.0
+	timer_label.offset_right = 95.0
+	stage_label.offset_top = 78.0
+	stage_rule_icon.offset_top = 76.0
+	stage_rule_icon.offset_bottom = 108.0
+	stage_rule_icon.offset_left = -244.0
+	stage_rule_icon.offset_right = -212.0
 	HudArt.style_square_button(%HelpBtn, "hud_botao_ajuda")
 	HudArt.style_square_button(%SpeedBtn, "hud_botao_velocidade")
 	# lista de armas: a moldura de arte é uma faixa de 1 linha; a lista tem tamanho livre, então fica sem moldura por ora
@@ -1129,17 +1136,18 @@ func show_result(res: Dictionary, summary: Dictionary) -> void:
 	var background_path := "res://assets/ui/backgrounds/victory_background.png" if res.won else "res://assets/ui/backgrounds/defeat_background.png"
 	result_background.texture = load(background_path) if ResourceLoader.exists(background_path) else null
 	var t := int(res.time)
-	var txt := "%s · %s\nTempo %02d:%02d · Nível %d · Abates %d · Chefes %d\nModo: %s · Profundidade %d · Multiplicador ×%.2f\n\n+%d moedas%s (total %d)" % [
-		Data.table("heroes")[res.hero].name, Battle.stage_definition(String(res.stage)).name, t / 60, t % 60, res.level, res.kills, res.bosses,
-		"extraído" if res.extracted else ("derrota" if res.dead else "final"), int(res.get("descent_depth", 0)), float(res.get("reward_mult", 1.0)),
-		summary.earned, (" (%d%% da tentativa)" % int(round(float(summary.reward_rate) * 100.0))) if float(summary.reward_rate) < 1.0 else "", summary.coins]
+	var txt := "%s · %s\n%sTempo %02d:%02d · %sNível %d · %sAbates %d · %sChefes %d\nModo: %s · %sProfundidade %d · Multiplicador ×%.2f\n\n%s+%d moedas%s (total %d)" % [
+		String(Data.table("heroes")[res.hero].name).replace("[", "[lb]"), String(Battle.stage_definition(String(res.stage)).name).replace("[", "[lb]"),
+		_result_icon("tempo"), t / 60, t % 60, _result_icon("nivel"), res.level, _result_icon("abates"), res.kills, _result_icon("chefes"), res.bosses,
+		"extraído" if res.extracted else ("derrota" if res.dead else "final"), _result_icon("profundidade"), int(res.get("descent_depth", 0)), float(res.get("reward_mult", 1.0)),
+		_result_icon("moedas"), summary.earned, (" (%d%% da tentativa)" % int(round(float(summary.reward_rate) * 100.0))) if float(summary.reward_rate) < 1.0 else "", summary.coins]
 	if int(res.get("abyss_level", 0)) > 0:
 		txt += "\nMarcas do Abismo: nível %d (moedas +%d%%)%s" % [int(res.abyss_level), int(round(AbyssMarks.reward_bonus(res.abyss_marks) * 100.0)), "  ★ novo recorde" if bool(summary.get("abyss_record", false)) else ""]
 	var names: Array = []
 	for id in summary.achievements:
 		for a in Data.table("achievements").achievements:
 			if a.id == id:
-				names.append(achievement_line(a))
+				names.append(achievement_line(a).replace("[", "[lb]"))
 	if not names.is_empty():
 		txt += "\n\nConquistas:\n" + "\n".join(names)
 	result_text.text = txt
@@ -1149,6 +1157,11 @@ func show_result(res: Dictionary, summary: Dictionary) -> void:
 	if not result_was_open:
 		UiKit.fade_in(result_panel)
 	_focus_visible.call_deferred(%AgainBtn)
+
+## Q10: ícones apenas nos seis campos; nomes e conquistas permanecem texto literal.
+static func _result_icon(id: String) -> String:
+	var path := "res://assets/icons/resultado/%s.png" % id
+	return "[img=24x24]%s[/img] " % path if ResourceLoader.exists(path) else ""
 
 func _focus_visible(button: Control) -> void:
 	if is_instance_valid(button) and button.is_inside_tree() and button.is_visible_in_tree():

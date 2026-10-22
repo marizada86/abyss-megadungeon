@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+UI_CHECK keyboard_selects_next_hero: PASS
+UI_CHECK locked_hero_disables_play: PASS
+UI_CHECK refresh_preserves_selection: PASS
+UI_CHECK mouse_selects_last_scrolled_card: PASS
+UI_CHECK controller_right_moves_to_stages: PASS
+UI_CHECK controller_left_returns_to_heroes: PASS
+UI_CHECK qa_stages_excluded: PASS
+UI_CHECK result_values_and_partial_reward_preserved: PASS
+UI_CHECK result_has_six_icons: PASS
+UI_CHECK timer_does_not_overlap_stage: PASS
+UI_INTERACTION_FAILURES=0
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WARNING: 1 RID of type "CanvasItem" was leaked.
+   at: _free_rids (servers/rendering/renderer_canvas_cull.cpp:2733)
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
