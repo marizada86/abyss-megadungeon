@@ -2405,6 +2405,17 @@ vault_sweep_20261021:
     result: "Pilares, meta completa (Quartel máx. + conquistas), nível 40, 24 runs: chefe morre em 4/12 imortais (0/12 sem meta); mortal sobrevive 97 s (66 s sem meta); 3657 dano/min (−11%). Nenhum dado de jogo alterado."
     decision: "Manter Pilares como está até o playtest humano (dono, 2026-10-22); nenhuma variante será preparada agora"
   commit: NOT_AUTHORIZED_YET
+consistency_sweep_20261022:
+  authorization: "Atena, vamos fazer uma varredura de consistencia (2026-10-22)"
+  status: DONE_LOCAL_NOT_COMMITTED  # varredura somente leitura; C1/C2 corrigidos depois (fix_c1_c2)
+  report: .atena/vault/drafts/CONSISTENCY-SWEEP-20261022-r1.md
+  result: "run_all 0 falhas; audit 0 erros 0 avisos; xref de dados sem ids quebrados. Achados: C1 covil de Goranthis gera Death Tyrant (B3), C2 covil de Shedaklah gera gárgula (B1), C3 hqn_13 (A3/A4), C4 prompt_clique.png ausente"
+  fix_c1_c2:
+    authorization: "Sim, corrija C1 e C2 (covils de Goranthis e Shedaklah) e rode o bot nesses mapas para conferir (2026-10-22)"
+    status: DONE_LOCAL_NOT_COMMITTED
+    changed: "data/secrets.json: gor_covil elite death_tyrant -> guardiao_de_goranthis (nome 'Covil do guardião do paraíso'); she_covil elite gargula -> pudim_negro"
+    checks: "run_all 0 falhas; audit 0 erros 0 avisos; bot5 12+12 runs imortais e 12+12 mortais, neutro a mais leve"
+  commit: NOT_AUTHORIZED_YET
 hero_walk_fix_20261021:
   id: PLAN-NOTTGARD-HERO-WALK-FIX-20261021
   revision: r1
