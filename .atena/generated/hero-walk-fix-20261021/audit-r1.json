@@ -1,0 +1,3478 @@
+{
+  "arlindo": {
+    "idle": {
+      "base_max": 447,
+      "base_min": 447,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447
+      ],
+      "clipped_frames": 0,
+      "cx_max": 256.5,
+      "cx_min": 253.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 291,
+      "h_min": 289,
+      "h_per_frame": [
+        291,
+        289,
+        291,
+        289
+      ],
+      "px_max": 23726,
+      "px_min": 23361
+    },
+    "move_e": {
+      "base_max": 447,
+      "base_min": 447,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447,
+        447,
+        447
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 263.3,
+      "cx_min": 252.4,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 293,
+      "h_min": 282,
+      "h_per_frame": [
+        290,
+        293,
+        290,
+        282,
+        290,
+        289
+      ],
+      "height_matches": true,
+      "px_max": 23997,
+      "px_min": 21779,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 447,
+      "base_min": 447,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447,
+        447,
+        447
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 262.9,
+      "cx_min": 248.7,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 293,
+      "h_min": 280,
+      "h_per_frame": [
+        293,
+        287,
+        290,
+        290,
+        280,
+        292
+      ],
+      "height_matches": true,
+      "px_max": 24140,
+      "px_min": 21790,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 447,
+      "base_min": 447,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447,
+        447,
+        447
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 255.7,
+      "cx_min": 249.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 290,
+      "h_min": 286,
+      "h_per_frame": [
+        290,
+        289,
+        286,
+        290,
+        290,
+        290
+      ],
+      "height_matches": true,
+      "px_max": 21924,
+      "px_min": 20720,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "missing": true
+    },
+    "move_s": {
+      "base_max": 447,
+      "base_min": 447,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447,
+        447,
+        447
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 260.3,
+      "cx_min": 254.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 293,
+      "h_min": 287,
+      "h_per_frame": [
+        290,
+        287,
+        293,
+        290,
+        288,
+        293
+      ],
+      "height_matches": true,
+      "px_max": 22598,
+      "px_min": 21952,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 447,
+      "base_min": 446,
+      "base_per_frame": [
+        447,
+        446,
+        447,
+        447,
+        447,
+        447
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 255.0,
+      "cx_min": 251.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 296,
+      "h_min": 282,
+      "h_per_frame": [
+        296,
+        282,
+        290,
+        292,
+        290,
+        290
+      ],
+      "height_matches": true,
+      "px_max": 26282,
+      "px_min": 22942,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "missing": true
+    },
+    "move_w": {
+      "missing": true
+    }
+  },
+  "bromnor": {
+    "idle": {
+      "base_max": 365,
+      "base_min": 362,
+      "base_per_frame": [
+        363,
+        365,
+        362,
+        362
+      ],
+      "clipped_frames": 0,
+      "cx_max": 129.7,
+      "cx_min": 123.7,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 242,
+      "h_min": 240,
+      "h_per_frame": [
+        240,
+        240,
+        242,
+        241
+      ],
+      "px_max": 28284,
+      "px_min": 27977
+    },
+    "move_e": {
+      "base_max": 363,
+      "base_min": 363,
+      "base_per_frame": [
+        363,
+        363,
+        363,
+        363,
+        363,
+        363
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 131.9,
+      "cx_min": 128.7,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 241,
+      "h_min": 241,
+      "h_per_frame": [
+        241,
+        241,
+        241,
+        241,
+        241,
+        241
+      ],
+      "height_matches": true,
+      "px_max": 29584,
+      "px_min": 27502,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 363,
+      "base_min": 363,
+      "base_per_frame": [
+        363,
+        363,
+        363,
+        363,
+        363,
+        363
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 130.4,
+      "cx_min": 126.1,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 241,
+      "h_min": 241,
+      "h_per_frame": [
+        241,
+        241,
+        241,
+        241,
+        241,
+        241
+      ],
+      "height_matches": true,
+      "px_max": 32400,
+      "px_min": 30823,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 363,
+      "base_min": 363,
+      "base_per_frame": [
+        363,
+        363,
+        363,
+        363,
+        363,
+        363
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 129.0,
+      "cx_min": 122.0,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 241,
+      "h_min": 241,
+      "h_per_frame": [
+        241,
+        241,
+        241,
+        241,
+        241,
+        241
+      ],
+      "height_matches": true,
+      "px_max": 31155,
+      "px_min": 29208,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "missing": true
+    },
+    "move_s": {
+      "base_max": 363,
+      "base_min": 363,
+      "base_per_frame": [
+        363,
+        363,
+        363,
+        363,
+        363,
+        363
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 124.2,
+      "cx_min": 121.8,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 241,
+      "h_min": 241,
+      "h_per_frame": [
+        241,
+        241,
+        241,
+        241,
+        241,
+        241
+      ],
+      "height_matches": true,
+      "px_max": 26423,
+      "px_min": 25387,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 363,
+      "base_min": 363,
+      "base_per_frame": [
+        363,
+        363,
+        363,
+        363,
+        363,
+        363
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 126.3,
+      "cx_min": 122.7,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 241,
+      "h_min": 241,
+      "h_per_frame": [
+        241,
+        241,
+        241,
+        241,
+        241,
+        241
+      ],
+      "height_matches": true,
+      "px_max": 28738,
+      "px_min": 26613,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "missing": true
+    },
+    "move_w": {
+      "missing": true
+    }
+  },
+  "brook": {
+    "idle": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367
+      ],
+      "clipped_frames": 0,
+      "cx_max": 137.3,
+      "cx_min": 127.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 268,
+      "h_min": 251,
+      "h_per_frame": [
+        259,
+        258,
+        251,
+        268
+      ],
+      "px_max": 31673,
+      "px_min": 29636
+    },
+    "move_e": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 137.7,
+      "cx_min": 134.0,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 259,
+      "h_min": 255,
+      "h_per_frame": [
+        259,
+        255,
+        259,
+        255,
+        255,
+        259
+      ],
+      "height_matches": true,
+      "px_max": 32257,
+      "px_min": 29528,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 125.6,
+      "cx_min": 118.8,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 259,
+      "h_min": 259,
+      "h_per_frame": [
+        259,
+        259,
+        259,
+        259,
+        259,
+        259
+      ],
+      "height_matches": true,
+      "px_max": 28856,
+      "px_min": 27406,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 120.8,
+      "cx_min": 115.4,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 259,
+      "h_min": 259,
+      "h_per_frame": [
+        259,
+        259,
+        259,
+        259,
+        259,
+        259
+      ],
+      "height_matches": true,
+      "px_max": 27764,
+      "px_min": 24557,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "missing": true
+    },
+    "move_s": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 131.3,
+      "cx_min": 123.3,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 259,
+      "h_min": 249,
+      "h_per_frame": [
+        258,
+        249,
+        258,
+        259,
+        259,
+        259
+      ],
+      "height_matches": true,
+      "px_max": 25281,
+      "px_min": 23944,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 145.7,
+      "cx_min": 138.1,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 260,
+      "h_min": 249,
+      "h_per_frame": [
+        249,
+        260,
+        259,
+        252,
+        259,
+        257
+      ],
+      "height_matches": true,
+      "px_max": 30950,
+      "px_min": 29183,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "missing": true
+    },
+    "move_w": {
+      "missing": true
+    }
+  },
+  "durvall": {
+    "idle": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375
+      ],
+      "clipped_frames": 0,
+      "cx_max": 112.0,
+      "cx_min": 108.8,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 235,
+      "h_min": 226,
+      "h_per_frame": [
+        231,
+        229,
+        226,
+        235
+      ],
+      "px_max": 17911,
+      "px_min": 16575
+    },
+    "move_e": {
+      "base_max": 440,
+      "base_min": 434,
+      "base_per_frame": [
+        434,
+        434,
+        440,
+        436,
+        439,
+        440
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 256.1,
+      "cx_min": 252.1,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 237,
+      "h_min": 226,
+      "h_per_frame": [
+        231,
+        226,
+        237,
+        226,
+        226,
+        230
+      ],
+      "height_matches": true,
+      "px_max": 23672,
+      "px_min": 21894,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 440,
+      "base_min": 437,
+      "base_per_frame": [
+        440,
+        438,
+        437,
+        440,
+        439,
+        439
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 257.2,
+      "cx_min": 250.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 237,
+      "h_min": 226,
+      "h_per_frame": [
+        237,
+        227,
+        234,
+        231,
+        226,
+        230
+      ],
+      "height_matches": true,
+      "px_max": 20024,
+      "px_min": 18792,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 440,
+      "base_min": 424,
+      "base_per_frame": [
+        440,
+        426,
+        430,
+        440,
+        424,
+        439
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 243.8,
+      "cx_min": 240.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 235,
+      "h_min": 212,
+      "h_per_frame": [
+        235,
+        215,
+        222,
+        231,
+        212,
+        227
+      ],
+      "height_matches": true,
+      "px_max": 19133,
+      "px_min": 17174,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "base_max": 440,
+      "base_min": 418,
+      "base_per_frame": [
+        440,
+        438,
+        437,
+        440,
+        425,
+        418
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 265.9,
+      "cx_min": 260.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 235,
+      "h_min": 207,
+      "h_per_frame": [
+        235,
+        226,
+        235,
+        232,
+        210,
+        207
+      ],
+      "height_matches": true,
+      "px_max": 19227,
+      "px_min": 16398,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_s": {
+      "base_max": 440,
+      "base_min": 435,
+      "base_per_frame": [
+        440,
+        439,
+        435,
+        440,
+        435,
+        435
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 262.6,
+      "cx_min": 258.3,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 234,
+      "h_min": 224,
+      "h_per_frame": [
+        230,
+        229,
+        231,
+        234,
+        224,
+        232
+      ],
+      "height_matches": true,
+      "px_max": 19933,
+      "px_min": 17950,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 440,
+      "base_min": 437,
+      "base_per_frame": [
+        440,
+        437,
+        438,
+        439,
+        437,
+        440
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 258.5,
+      "cx_min": 253.7,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 239,
+      "h_min": 221,
+      "h_per_frame": [
+        239,
+        225,
+        234,
+        229,
+        221,
+        231
+      ],
+      "height_matches": true,
+      "px_max": 23399,
+      "px_min": 21715,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "base_max": 440,
+      "base_min": 430,
+      "base_per_frame": [
+        439,
+        440,
+        440,
+        434,
+        440,
+        430
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 263.8,
+      "cx_min": 256.2,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 242,
+      "h_min": 226,
+      "h_per_frame": [
+        227,
+        229,
+        226,
+        237,
+        242,
+        232
+      ],
+      "height_matches": true,
+      "px_max": 21909,
+      "px_min": 17700,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_w": {
+      "base_max": 440,
+      "base_min": 436,
+      "base_per_frame": [
+        440,
+        440,
+        436,
+        438,
+        440,
+        438
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 274.6,
+      "cx_min": 268.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 236,
+      "h_min": 229,
+      "h_per_frame": [
+        236,
+        231,
+        232,
+        229,
+        230,
+        229
+      ],
+      "height_matches": true,
+      "px_max": 22543,
+      "px_min": 21265,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    }
+  },
+  "erik": {
+    "idle": {
+      "base_max": 447,
+      "base_min": 447,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447
+      ],
+      "clipped_frames": 0,
+      "cx_max": 245.7,
+      "cx_min": 244.8,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 301,
+      "h_min": 300,
+      "h_per_frame": [
+        300,
+        300,
+        300,
+        301
+      ],
+      "px_max": 31251,
+      "px_min": 30656
+    },
+    "move_e": {
+      "base_max": 447,
+      "base_min": 446,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447,
+        447,
+        446,
+        447
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 251.2,
+      "cx_min": 245.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3584,
+      "frames": 7,
+      "h_max": 307,
+      "h_min": 296,
+      "h_per_frame": [
+        307,
+        296,
+        301,
+        296,
+        301,
+        301,
+        299
+      ],
+      "height_matches": true,
+      "px_max": 30734,
+      "px_min": 27026,
+      "sheet": [
+        3584,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 447,
+      "base_min": 447,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447,
+        447,
+        447
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 261.4,
+      "cx_min": 255.9,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 316,
+      "h_min": 302,
+      "h_per_frame": [
+        316,
+        308,
+        303,
+        316,
+        302,
+        309
+      ],
+      "height_matches": true,
+      "px_max": 26552,
+      "px_min": 25078,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 447,
+      "base_min": 447,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447,
+        447,
+        447
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 252.4,
+      "cx_min": 234.0,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 311,
+      "h_min": 297,
+      "h_per_frame": [
+        297,
+        297,
+        302,
+        302,
+        303,
+        311
+      ],
+      "height_matches": true,
+      "px_max": 30570,
+      "px_min": 26831,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "missing": true
+    },
+    "move_s": {
+      "base_max": 447,
+      "base_min": 447,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447,
+        447,
+        447
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 262.1,
+      "cx_min": 253.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 303,
+      "h_min": 293,
+      "h_per_frame": [
+        303,
+        301,
+        293,
+        302,
+        300,
+        293
+      ],
+      "height_matches": true,
+      "px_max": 27312,
+      "px_min": 25722,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 447,
+      "base_min": 447,
+      "base_per_frame": [
+        447,
+        447,
+        447,
+        447,
+        447,
+        447
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 259.6,
+      "cx_min": 251.2,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 305,
+      "h_min": 298,
+      "h_per_frame": [
+        304,
+        305,
+        305,
+        298,
+        304,
+        305
+      ],
+      "height_matches": true,
+      "px_max": 29396,
+      "px_min": 27330,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "missing": true
+    },
+    "move_w": {
+      "missing": true
+    }
+  },
+  "kayron": {
+    "idle": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375
+      ],
+      "clipped_frames": 0,
+      "cx_max": 136.8,
+      "cx_min": 128.3,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 317,
+      "h_min": 316,
+      "h_per_frame": [
+        316,
+        317,
+        316,
+        316
+      ],
+      "px_max": 33816,
+      "px_min": 32050
+    },
+    "move_e": {
+      "base_max": 378,
+      "base_min": 375,
+      "base_per_frame": [
+        378,
+        375,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 141.5,
+      "cx_min": 129.1,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 324,
+      "h_min": 313,
+      "h_per_frame": [
+        324,
+        316,
+        316,
+        316,
+        313,
+        316
+      ],
+      "height_matches": true,
+      "px_max": 34924,
+      "px_min": 32536,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 129.1,
+      "cx_min": 124.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 316,
+      "h_min": 316,
+      "h_per_frame": [
+        316,
+        316,
+        316,
+        316,
+        316,
+        316
+      ],
+      "height_matches": true,
+      "px_max": 34343,
+      "px_min": 32691,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 377,
+      "base_min": 371,
+      "base_per_frame": [
+        376,
+        377,
+        375,
+        375,
+        371,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 148.0,
+      "cx_min": 140.2,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 318,
+      "h_min": 312,
+      "h_per_frame": [
+        314,
+        315,
+        316,
+        317,
+        312,
+        318
+      ],
+      "height_matches": true,
+      "px_max": 32582,
+      "px_min": 31424,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "base_max": 372,
+      "base_min": 354,
+      "base_per_frame": [
+        367,
+        370,
+        372,
+        354,
+        357,
+        358
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 6,
+      "cx_max": 127.5,
+      "cx_min": 115.4,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 347,
+      "h_min": 340,
+      "h_per_frame": [
+        343,
+        346,
+        347,
+        340,
+        342,
+        344
+      ],
+      "height_matches": true,
+      "px_max": 45672,
+      "px_min": 43555,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_s": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 129.1,
+      "cx_min": 125.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 316,
+      "h_min": 316,
+      "h_per_frame": [
+        316,
+        316,
+        316,
+        316,
+        316,
+        316
+      ],
+      "height_matches": true,
+      "px_max": 34963,
+      "px_min": 32973,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 136.9,
+      "cx_min": 130.3,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 316,
+      "h_min": 316,
+      "h_per_frame": [
+        316,
+        316,
+        316,
+        316,
+        316,
+        316
+      ],
+      "height_matches": true,
+      "px_max": 32548,
+      "px_min": 30387,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "base_max": 368,
+      "base_min": 338,
+      "base_per_frame": [
+        358,
+        368,
+        368,
+        338,
+        352,
+        342
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 6,
+      "cx_max": 131.2,
+      "cx_min": 123.8,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 342,
+      "h_min": 323,
+      "h_per_frame": [
+        323,
+        332,
+        330,
+        328,
+        342,
+        331
+      ],
+      "height_matches": true,
+      "px_max": 47370,
+      "px_min": 44777,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_w": {
+      "base_max": 371,
+      "base_min": 346,
+      "base_per_frame": [
+        369,
+        370,
+        371,
+        346,
+        349,
+        346
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 6,
+      "cx_max": 135.9,
+      "cx_min": 113.1,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 341,
+      "h_min": 338,
+      "h_per_frame": [
+        338,
+        339,
+        340,
+        338,
+        341,
+        338
+      ],
+      "height_matches": true,
+      "px_max": 38630,
+      "px_min": 37663,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    }
+  },
+  "korrak": {
+    "idle": {
+      "base_max": 349,
+      "base_min": 349,
+      "base_per_frame": [
+        349,
+        349,
+        349,
+        349
+      ],
+      "clipped_frames": 0,
+      "cx_max": 121.5,
+      "cx_min": 120.2,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 270,
+      "h_min": 264,
+      "h_per_frame": [
+        267,
+        270,
+        264,
+        267
+      ],
+      "px_max": 34821,
+      "px_min": 34353
+    },
+    "move_e": {
+      "base_max": 349,
+      "base_min": 349,
+      "base_per_frame": [
+        349,
+        349,
+        349,
+        349,
+        349,
+        349
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 128.0,
+      "cx_min": 121.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 267,
+      "h_min": 267,
+      "h_per_frame": [
+        267,
+        267,
+        267,
+        267,
+        267,
+        267
+      ],
+      "height_matches": true,
+      "px_max": 35752,
+      "px_min": 34184,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 349,
+      "base_min": 349,
+      "base_per_frame": [
+        349,
+        349,
+        349,
+        349,
+        349,
+        349
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 126.9,
+      "cx_min": 120.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 269,
+      "h_min": 261,
+      "h_per_frame": [
+        263,
+        269,
+        261,
+        266,
+        269,
+        267
+      ],
+      "height_matches": true,
+      "px_max": 39690,
+      "px_min": 38016,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 349,
+      "base_min": 349,
+      "base_per_frame": [
+        349,
+        349,
+        349,
+        349,
+        349,
+        349
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 118.7,
+      "cx_min": 114.8,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 267,
+      "h_min": 267,
+      "h_per_frame": [
+        267,
+        267,
+        267,
+        267,
+        267,
+        267
+      ],
+      "height_matches": true,
+      "px_max": 29567,
+      "px_min": 27316,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "base_max": 374,
+      "base_min": 365,
+      "base_per_frame": [
+        374,
+        373,
+        373,
+        371,
+        365,
+        372
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 138.5,
+      "cx_min": 120.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 370,
+      "h_min": 361,
+      "h_per_frame": [
+        370,
+        365,
+        365,
+        368,
+        361,
+        370
+      ],
+      "height_matches": true,
+      "px_max": 43866,
+      "px_min": 38458,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_s": {
+      "base_max": 349,
+      "base_min": 349,
+      "base_per_frame": [
+        349,
+        349,
+        349,
+        349,
+        349,
+        349
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 117.1,
+      "cx_min": 115.4,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 267,
+      "h_min": 267,
+      "h_per_frame": [
+        267,
+        267,
+        267,
+        267,
+        267,
+        267
+      ],
+      "height_matches": true,
+      "px_max": 32580,
+      "px_min": 30597,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 349,
+      "base_min": 349,
+      "base_per_frame": [
+        349,
+        349,
+        349,
+        349,
+        349,
+        349
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 122.6,
+      "cx_min": 112.7,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 267,
+      "h_min": 267,
+      "h_per_frame": [
+        267,
+        267,
+        267,
+        267,
+        267,
+        267
+      ],
+      "height_matches": true,
+      "px_max": 35506,
+      "px_min": 33340,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "base_max": 376,
+      "base_min": 366,
+      "base_per_frame": [
+        372,
+        376,
+        376,
+        366,
+        366,
+        366
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 133.0,
+      "cx_min": 126.8,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 357,
+      "h_min": 353,
+      "h_per_frame": [
+        357,
+        357,
+        355,
+        353,
+        355,
+        354
+      ],
+      "height_matches": true,
+      "px_max": 43332,
+      "px_min": 41416,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_w": {
+      "base_max": 374,
+      "base_min": 358,
+      "base_per_frame": [
+        371,
+        372,
+        374,
+        361,
+        362,
+        358
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 2,
+      "cx_max": 146.3,
+      "cx_min": 128.3,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 354,
+      "h_min": 346,
+      "h_per_frame": [
+        353,
+        352,
+        354,
+        349,
+        350,
+        346
+      ],
+      "height_matches": true,
+      "px_max": 44189,
+      "px_min": 41413,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    }
+  },
+  "leoric": {
+    "idle": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367
+      ],
+      "clipped_frames": 0,
+      "cx_max": 136.2,
+      "cx_min": 119.4,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 225,
+      "h_min": 223,
+      "h_per_frame": [
+        223,
+        223,
+        225,
+        224
+      ],
+      "px_max": 25848,
+      "px_min": 25298
+    },
+    "move_e": {
+      "base_max": 367,
+      "base_min": 366,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        366,
+        366
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 125.4,
+      "cx_min": 116.2,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 228,
+      "h_min": 222,
+      "h_per_frame": [
+        228,
+        228,
+        224,
+        224,
+        222,
+        224
+      ],
+      "height_matches": true,
+      "px_max": 30245,
+      "px_min": 28808,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 432,
+      "base_min": 424,
+      "base_per_frame": [
+        432,
+        425,
+        427,
+        432,
+        424,
+        429
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 259.4,
+      "cx_min": 257.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 224,
+      "h_min": 216,
+      "h_per_frame": [
+        224,
+        220,
+        218,
+        224,
+        216,
+        222
+      ],
+      "height_matches": true,
+      "px_max": 24560,
+      "px_min": 22479,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 432,
+      "base_min": 426,
+      "base_per_frame": [
+        432,
+        428,
+        426,
+        431,
+        432,
+        431
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 254.9,
+      "cx_min": 250.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 226,
+      "h_min": 222,
+      "h_per_frame": [
+        226,
+        224,
+        222,
+        223,
+        224,
+        223
+      ],
+      "height_matches": true,
+      "px_max": 24964,
+      "px_min": 23711,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "missing": true
+    },
+    "move_s": {
+      "base_max": 367,
+      "base_min": 366,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        366
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 129.7,
+      "cx_min": 119.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 226,
+      "h_min": 223,
+      "h_per_frame": [
+        223,
+        224,
+        226,
+        223,
+        224,
+        225
+      ],
+      "height_matches": true,
+      "px_max": 28362,
+      "px_min": 27610,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 128.2,
+      "cx_min": 118.7,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 226,
+      "h_min": 222,
+      "h_per_frame": [
+        224,
+        223,
+        226,
+        223,
+        222,
+        226
+      ],
+      "height_matches": true,
+      "px_max": 29018,
+      "px_min": 27752,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "missing": true
+    },
+    "move_w": {
+      "missing": true
+    }
+  },
+  "maelor": {
+    "idle": {
+      "base_max": 363,
+      "base_min": 362,
+      "base_per_frame": [
+        363,
+        363,
+        362,
+        362
+      ],
+      "clipped_frames": 0,
+      "cx_max": 130.6,
+      "cx_min": 128.7,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 300,
+      "h_min": 298,
+      "h_per_frame": [
+        298,
+        298,
+        300,
+        299
+      ],
+      "px_max": 37397,
+      "px_min": 36670
+    },
+    "move_e": {
+      "base_max": 363,
+      "base_min": 363,
+      "base_per_frame": [
+        363,
+        363,
+        363,
+        363,
+        363,
+        363
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 135.7,
+      "cx_min": 130.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 299,
+      "h_min": 299,
+      "h_per_frame": [
+        299,
+        299,
+        299,
+        299,
+        299,
+        299
+      ],
+      "height_matches": true,
+      "px_max": 29176,
+      "px_min": 27142,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 363,
+      "base_min": 363,
+      "base_per_frame": [
+        363,
+        363,
+        363,
+        363,
+        363,
+        363
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 129.5,
+      "cx_min": 127.1,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 299,
+      "h_min": 299,
+      "h_per_frame": [
+        299,
+        299,
+        299,
+        299,
+        299,
+        299
+      ],
+      "height_matches": true,
+      "px_max": 30408,
+      "px_min": 29385,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 363,
+      "base_min": 363,
+      "base_per_frame": [
+        363,
+        363,
+        363,
+        363,
+        363,
+        363
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 129.6,
+      "cx_min": 127.0,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 299,
+      "h_min": 299,
+      "h_per_frame": [
+        299,
+        299,
+        299,
+        299,
+        299,
+        299
+      ],
+      "height_matches": true,
+      "px_max": 31122,
+      "px_min": 28879,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "base_max": 380,
+      "base_min": 342,
+      "base_per_frame": [
+        370,
+        377,
+        380,
+        369,
+        342,
+        369
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 6,
+      "cx_max": 134.6,
+      "cx_min": 121.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 359,
+      "h_min": 331,
+      "h_per_frame": [
+        351,
+        352,
+        359,
+        356,
+        331,
+        353
+      ],
+      "height_matches": true,
+      "px_max": 48185,
+      "px_min": 46528,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_s": {
+      "base_max": 363,
+      "base_min": 363,
+      "base_per_frame": [
+        363,
+        363,
+        363,
+        363,
+        363,
+        363
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 130.9,
+      "cx_min": 124.7,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 299,
+      "h_min": 299,
+      "h_per_frame": [
+        299,
+        299,
+        299,
+        299,
+        299,
+        299
+      ],
+      "height_matches": true,
+      "px_max": 35586,
+      "px_min": 33444,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 363,
+      "base_min": 363,
+      "base_per_frame": [
+        363,
+        363,
+        363,
+        363,
+        363,
+        363
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 131.1,
+      "cx_min": 127.4,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 299,
+      "h_min": 299,
+      "h_per_frame": [
+        299,
+        299,
+        299,
+        299,
+        299,
+        299
+      ],
+      "height_matches": true,
+      "px_max": 32111,
+      "px_min": 29465,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "base_max": 375,
+      "base_min": 352,
+      "base_per_frame": [
+        375,
+        372,
+        371,
+        353,
+        352,
+        354
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 6,
+      "cx_max": 135.6,
+      "cx_min": 117.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 326,
+      "h_min": 318,
+      "h_per_frame": [
+        326,
+        323,
+        322,
+        320,
+        318,
+        321
+      ],
+      "height_matches": true,
+      "px_max": 44638,
+      "px_min": 41679,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_w": {
+      "base_max": 377,
+      "base_min": 369,
+      "base_per_frame": [
+        373,
+        377,
+        377,
+        375,
+        369,
+        373
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 134.5,
+      "cx_min": 125.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 368,
+      "h_min": 360,
+      "h_per_frame": [
+        365,
+        366,
+        366,
+        368,
+        360,
+        366
+      ],
+      "height_matches": true,
+      "px_max": 41177,
+      "px_min": 36148,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    }
+  },
+  "nyrelia": {
+    "idle": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367
+      ],
+      "clipped_frames": 0,
+      "cx_max": 127.9,
+      "cx_min": 125.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 352,
+      "h_min": 352,
+      "h_per_frame": [
+        352,
+        352,
+        352,
+        352
+      ],
+      "px_max": 43704,
+      "px_min": 40798
+    },
+    "move_e": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 130.7,
+      "cx_min": 120.9,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 352,
+      "h_min": 352,
+      "h_per_frame": [
+        352,
+        352,
+        352,
+        352,
+        352,
+        352
+      ],
+      "height_matches": true,
+      "px_max": 35504,
+      "px_min": 33652,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 132.3,
+      "cx_min": 121.2,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 352,
+      "h_min": 319,
+      "h_per_frame": [
+        350,
+        352,
+        342,
+        341,
+        319,
+        341
+      ],
+      "height_matches": true,
+      "px_max": 46165,
+      "px_min": 40915,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 146.6,
+      "cx_min": 136.3,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 352,
+      "h_min": 352,
+      "h_per_frame": [
+        352,
+        352,
+        352,
+        352,
+        352,
+        352
+      ],
+      "height_matches": true,
+      "px_max": 38437,
+      "px_min": 34585,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "missing": true
+    },
+    "move_s": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 131.5,
+      "cx_min": 118.3,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 352,
+      "h_min": 352,
+      "h_per_frame": [
+        352,
+        352,
+        352,
+        352,
+        352,
+        352
+      ],
+      "height_matches": true,
+      "px_max": 41639,
+      "px_min": 37914,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 367,
+      "base_min": 367,
+      "base_per_frame": [
+        367,
+        367,
+        367,
+        367,
+        367,
+        367
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 135.0,
+      "cx_min": 130.0,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 352,
+      "h_min": 350,
+      "h_per_frame": [
+        352,
+        351,
+        350,
+        351,
+        352,
+        351
+      ],
+      "height_matches": true,
+      "px_max": 37918,
+      "px_min": 36694,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "missing": true
+    },
+    "move_w": {
+      "missing": true
+    }
+  },
+  "sylas": {
+    "idle": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375
+      ],
+      "clipped_frames": 0,
+      "cx_max": 135.7,
+      "cx_min": 118.9,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 305,
+      "h_min": 302,
+      "h_per_frame": [
+        304,
+        305,
+        303,
+        302
+      ],
+      "px_max": 33191,
+      "px_min": 31683
+    },
+    "move_e": {
+      "base_max": 378,
+      "base_min": 372,
+      "base_per_frame": [
+        378,
+        375,
+        377,
+        372,
+        372,
+        372
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 151.9,
+      "cx_min": 134.2,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 308,
+      "h_min": 302,
+      "h_per_frame": [
+        308,
+        304,
+        305,
+        304,
+        303,
+        302
+      ],
+      "height_matches": true,
+      "px_max": 38078,
+      "px_min": 35624,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 377,
+      "base_min": 375,
+      "base_per_frame": [
+        377,
+        377,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 139.4,
+      "cx_min": 120.2,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 306,
+      "h_min": 299,
+      "h_per_frame": [
+        306,
+        305,
+        304,
+        300,
+        299,
+        299
+      ],
+      "height_matches": true,
+      "px_max": 39109,
+      "px_min": 37917,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 131.5,
+      "cx_min": 126.2,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 304,
+      "h_min": 304,
+      "h_per_frame": [
+        304,
+        304,
+        304,
+        304,
+        304,
+        304
+      ],
+      "height_matches": true,
+      "px_max": 30437,
+      "px_min": 27643,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "base_max": 370,
+      "base_min": 342,
+      "base_per_frame": [
+        367,
+        370,
+        367,
+        342,
+        348,
+        342
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 5,
+      "cx_max": 130.8,
+      "cx_min": 114.8,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 354,
+      "h_min": 335,
+      "h_per_frame": [
+        351,
+        354,
+        349,
+        335,
+        349,
+        337
+      ],
+      "height_matches": true,
+      "px_max": 37165,
+      "px_min": 34276,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_s": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 129.6,
+      "cx_min": 126.5,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 304,
+      "h_min": 304,
+      "h_per_frame": [
+        304,
+        304,
+        304,
+        304,
+        304,
+        304
+      ],
+      "height_matches": true,
+      "px_max": 34465,
+      "px_min": 33867,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 151.1,
+      "cx_min": 125.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 304,
+      "h_min": 293,
+      "h_per_frame": [
+        304,
+        304,
+        303,
+        293,
+        304,
+        299
+      ],
+      "height_matches": true,
+      "px_max": 38121,
+      "px_min": 35590,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "base_max": 375,
+      "base_min": 355,
+      "base_per_frame": [
+        375,
+        375,
+        374,
+        357,
+        355,
+        355
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 6,
+      "cx_max": 134.3,
+      "cx_min": 123.4,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 340,
+      "h_min": 336,
+      "h_per_frame": [
+        339,
+        340,
+        338,
+        339,
+        337,
+        336
+      ],
+      "height_matches": true,
+      "px_max": 47706,
+      "px_min": 45788,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_w": {
+      "base_max": 358,
+      "base_min": 320,
+      "base_per_frame": [
+        358,
+        356,
+        357,
+        326,
+        320,
+        324
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 6,
+      "cx_max": 128.0,
+      "cx_min": 119.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 304,
+      "h_min": 299,
+      "h_per_frame": [
+        303,
+        302,
+        302,
+        304,
+        299,
+        303
+      ],
+      "height_matches": true,
+      "px_max": 38567,
+      "px_min": 37210,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    }
+  },
+  "zynara": {
+    "idle": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375
+      ],
+      "clipped_frames": 0,
+      "cx_max": 125.3,
+      "cx_min": 124.2,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "frames": 4,
+      "h_max": 368,
+      "h_min": 368,
+      "h_per_frame": [
+        368,
+        368,
+        368,
+        368
+      ],
+      "px_max": 35555,
+      "px_min": 35073
+    },
+    "move_e": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 132.1,
+      "cx_min": 115.8,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 368,
+      "h_min": 365,
+      "h_per_frame": [
+        368,
+        368,
+        367,
+        366,
+        368,
+        365
+      ],
+      "height_matches": true,
+      "px_max": 40640,
+      "px_min": 37640,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_n": {
+      "base_max": 440,
+      "base_min": 438,
+      "base_per_frame": [
+        439,
+        440,
+        439,
+        440,
+        440,
+        438
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 264.3,
+      "cx_min": 261.0,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 369,
+      "h_min": 366,
+      "h_per_frame": [
+        367,
+        369,
+        368,
+        368,
+        368,
+        366
+      ],
+      "height_matches": true,
+      "px_max": 39386,
+      "px_min": 37479,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_ne": {
+      "base_max": 440,
+      "base_min": 433,
+      "base_per_frame": [
+        440,
+        440,
+        436,
+        440,
+        440,
+        433
+      ],
+      "cell": [
+        512,
+        512
+      ],
+      "clipped_frames": 0,
+      "cx_max": 251.3,
+      "cx_min": 248.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 3072,
+      "frames": 6,
+      "h_max": 372,
+      "h_min": 359,
+      "h_per_frame": [
+        364,
+        364,
+        359,
+        372,
+        372,
+        365
+      ],
+      "height_matches": true,
+      "px_max": 35157,
+      "px_min": 33655,
+      "sheet": [
+        3072,
+        512
+      ],
+      "width_matches": true
+    },
+    "move_nw": {
+      "missing": true
+    },
+    "move_s": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 126.1,
+      "cx_min": 123.7,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 368,
+      "h_min": 367,
+      "h_per_frame": [
+        368,
+        368,
+        368,
+        368,
+        367,
+        367
+      ],
+      "height_matches": true,
+      "px_max": 33851,
+      "px_min": 32749,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_se": {
+      "base_max": 375,
+      "base_min": 375,
+      "base_per_frame": [
+        375,
+        375,
+        375,
+        375,
+        375,
+        375
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "clipped_frames": 0,
+      "cx_max": 130.5,
+      "cx_min": 126.6,
+      "duplicate_consecutive": 0,
+      "empty": 0,
+      "expected_w": 1536,
+      "frames": 6,
+      "h_max": 368,
+      "h_min": 368,
+      "h_per_frame": [
+        368,
+        368,
+        368,
+        368,
+        368,
+        368
+      ],
+      "height_matches": true,
+      "px_max": 39463,
+      "px_min": 38384,
+      "sheet": [
+        1536,
+        384
+      ],
+      "width_matches": true
+    },
+    "move_sw": {
+      "missing": true
+    },
+    "move_w": {
+      "missing": true
+    }
+  }
+}

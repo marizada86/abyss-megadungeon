@@ -2208,7 +2208,7 @@ hero_walk_fix_20261021:
   revision: r1
   classification: PLAN_CHANGE_REQUEST
   mode: per-batch
-  status: L1_AUDIT_COMPLETE_AWAITING_OWNER_DECISION_L2
+  status: L2_PROPOSAL_AWAITING_OWNER_APPROVAL
   content_state: DRAFT
   authorization: "Atena, pode fazer, seguindo suas recomendações (2026-10-21): abrir o plano e executar só o lote 1, somente leitura"
   spec: .atena/specs/SPEC-NOTTGARD-HERO-WALK-FIX-20261021/plan-r1.md
@@ -2219,9 +2219,79 @@ hero_walk_fix_20261021:
     result: .atena/generated/hero-walk-fix-20261021/audit-r1.json
     finding_summary: "Sem quadros vazios/duplicados e larguras corretas. P1 arte dormente: tiras de oeste de Korrak/Maelor/Sylas/Kayron (altura x1.08-1.39, base e recorte fora do idle; Korrak é outra figura) NÃO são carregadas pelo jogo (só Durvall tem REAL_WEST_WALK). P2 oscilação: Durvall nw/ne, Sylas se, Erik n/ne. P3 passada quase parada: Sylas s, Maelor n, Zynara se/s, Bromnor s. P4: 11 de 12 heróis viram oeste por espelho (suspeito do bug de identidade)."
     visual_confirmation: "Somente Korrak move_w x move_e; demais são suspeita medida"
-  l2_pending_decision: "Escolher por herói: manter espelho, oeste real novo ou reaproveitar arte dormente normalizada; e quais passadas de P2/P3 corrigir. Recomendação: folha de contato das 5 tiras em uso + oeste espelhado dos 11 heróis para o dono apontar o que incomoda."
+  l1b_contact_sheets:
+    status: DONE_READ_ONLY
+    date: 2026-10-21
+    output: .atena/generated/hero-walk-fix-20261021/contact-r1/   # 12 folhas por herói + overview-1/2 + korrak-n-fundo-claro
+    tools: [.atena/generated/hero-walk-fix-20261021/contact_sheet.gd, .atena/generated/hero-walk-fix-20261021/specks.gd]
+    specks: .atena/generated/hero-walk-fix-20261021/specks-r1.json
+    finding_summary: "Orientação correta em todas as viradas; espelho troca a mão do objeto (Brook, Zynara, Leoric, Maelor, Erik); Brook confere com o retrato; Korrak de costas tem cabeça; Zynara se/s estáticas confirmadas à vista; Kayron s e Brook s a verificar; pontos soltos: Erik 51 (provável brasa), Maelor 20, Sylas 7, Kayron 5, Leoric 4."
+    visual_coverage: "folhas individuais vistas: Brook, Zynara, Korrak, Kayron; demais só nas visões gerais"
+    runtime_modified: false
+  l2_proposal:
+    status: PROPOSED_AWAITING_OWNER_APPROVAL
+    date: 2026-10-21
+    authorization: "Atena, siga sua recomendação: manter o espelho onde a arma é simétrica e propor o resto por herói, sem alterar nada ainda (2026-10-21)"
+    keep_mirror: [arlindo, bromnor, brook, kayron, korrak, leoric, nyrelia, sylas]
+    real_west_kept: [durvall]
+    change_proposed: {erik: "B oeste real novo (geração de arte)", maelor: "C ligar oeste parado normalizado (sem geração) ou manter espelho", zynara: "B opcional baixa prioridade; refazer se/s (quase estáticas)"}
+    verify_in_game_first: "s: bromnor, brook, kayron, sylas; n: maelor; nw/ne: durvall; se/s: zynara"
+    cleanup_specks: [maelor, sylas, kayron, leoric]
+    parked_art: "korrak/kayron/sylas move_w,sw,nw sem uso; remoção só com aprovação"
+    visual_coverage: "individuais: brook, zynara, korrak, kayron, erik, maelor, sylas; arlindo, bromnor, leoric, nyrelia só nas visões gerais"
+    spec_section: "plan-r1.md · L2 · proposta por herói"
+    runtime_modified: false
+  l2_pending_decision: "Aprovar, ajustar ou recusar a proposta por herói; autorizar verificação em jogo e, separadamente, qualquer geração de arte."
   gates_unchanged: "G-D4, Durvall/M1, identidade/passada, H-PORT-002 e demais DRAFT/retenções"
   runtime_modified: false
   port_note: "Tiras de herói são dado comum: correção exige portagem registrada à origem e checks nos dois projetos"
   commit: NOT_AUTHORIZED_YET
-  next_activity: "Aguardar decisão do dono para L2 (ou pedido de gerar a folha de contato)"
+  next_activity: "Aguardar aprovação, ajuste ou recusa da proposta L2 por herói"
+hero_art_reset_20261021:
+  id: PLAN-NOTTGARD-HERO-ART-RESET-20261021
+  revision: r1
+  classification: PLAN_CHANGE_REQUEST
+  mode: per-batch
+  status: R2_READY_AWAITING_OWNER_GENERATION_GATE1
+  content_state: DRAFT
+  origin: "Dono, 2026-10-21: refazer os prompts dos personagens, desapegar das tiras piloto, animações a 5 fps, Vault atualizado e lições do projeto"
+  spec: .atena/specs/SPEC-NOTTGARD-HERO-ART-RESET-20261021/plan-r1.md
+  relation: "Substitui PLAN-NOTTGARD-HERO-WALK-FIX-20261021 para os heróis cuja arte for refeita; a auditoria L1/L1b vira linha de base e critério de aceite. O walk-fix não foi alterado."
+  ordered_batches: [R0_visual_sheets_from_vault, R1_animation_contract_and_prompt_pack, R2_validate_with_3_heroes, R3_remaining_9, R4_integration]
+  proposed_validation_heroes: [durvall, korrak, erik]
+  decisions_20261021: {fps: "autoria: 4 poses-chave por direção; jogo toca ~10-12 fps; idle 4 quadros a 5 fps", r2_scope: "3 heróis: durvall, korrak, erik", brook: "seguir a imagem CANON do Vault (cabelo e barba brancos, orelhas pontudas, capa vermelha)", r0: "aprovado: ficha visual por herói, sem gerar arte"}
+  decisions_applied_r1: {A1: "Kayron pelo CANON pós-S24 (roupão branco)", A2: "Erik raspado (sem cabelo e sem barba)", A3: "luz de Maelor dourada-branca, não desenhada", A4: "Leoric com a concha, sem cajado", A5: "Brook sem arma, mão livre", A6: "vistas CANON da Nyrelia antes do R3; pacote dela bloqueado"}
+  open_decisions: [A7_newer_vault]
+  r0:
+    status: DONE_READ_ONLY
+    date: 2026-10-21
+    deliverable: .atena/vault/drafts/HERO-VISUAL-SHEETS-20261021-r1.md
+    method: "montagem das referências CANON do Vault (frente, esquerda, costas, direita) por herói, vistas uma a uma, cruzadas com dossiês, heroes.json, weapons.json, abilities.json, hero_bios.json e as tiras atuais"
+    divergences: "D1 Kayron figurino (CANON roupão branco x jogo armadura escura); D2 Erik careca e sem barba (texto) x cabelo e barba (imagens); D3 Brook (prompt antigo errado, seguir CANON); D4 Leoric objeto de mão sem fonte no Vault; D5 Sylas adagas fora do Vault; D6 Maelor cor da luz; D7 Bromnor um martelo; D8 Durvall termo Receptáculo; D9 Brook arma visível"
+    blocker: "Nyrelia só tem frente CANON; faltam costas e perfil"
+    open_decisions_for_owner: [A1_kayron_costume, A2_erik_shaved, A3_maelor_light_color, A4_leoric_hand_item, A5_brook_visible_weapon, A6_nyrelia_canon_views, A7_newer_vault]
+    visual_coverage: "as 12 tiras CANON foram vistas; Nyrelia só a frente; nenhuma imagem do jogo foi alterada"
+  r1:
+    status: DONE_TEXT_ONLY
+    date: 2026-10-21
+    contract: .atena/specs/SPEC-NOTTGARD-HERO-ART-RESET-20261021/animation-contract-r1.md
+    prompt_pack: .atena/generated/hero-art-reset-20261021/prompts/   # index.md + 12 heróis + nyrelia-vistas.md
+    generator: .atena/generated/hero-art-reset-20261021/build_prompts.js
+    images: {total: 114, r2: 33, durvall: 12, korrak: 9, erik: 12, others_each: 9, nyrelia_views: 3}
+    checks: "gerador reproduz contagens do contrato; checagem automática das decisões A1-A5, chave de fundo por herói (Sylas cinza), override do Erik em todos os prompts, morte sem item, calibração com objeto: todas passaram"
+    hypotheses_to_validate_in_r2: "filas de 3 figuras consistentes no ChatGPT; magenta contra pele cinza (Durvall, Korrak); escala por figura de calibração; 17 fps de Leoric e Brook; fallback: uma pose por imagem"
+    code_needed_r4: "modo herói em tools/asset_prep.gd; contagens e tabelas em ui/hero_view.gd (4 quadros)"
+  vault_head_local: 50008c9
+  generation_authorized: "R2 apenas: Durvall, Korrak e Erik (33 imagens), gerados pelo dono no ChatGPT; autorizado em 2026-10-21 (Autorizo o R2)"  # R0 e R1 foram só texto
+  r2:
+    status: READY_NOT_STARTED
+    verifier_validated: "sintético: boa PASSA; defeituosa REPROVA (borda, escala 18,8%, pés 5,3%, ponto solto); passada estática REPROVA (diferença 2,6%)"
+    folders_created: [assets_incoming/hero-r2/durvall, assets_incoming/hero-r2/korrak, assets_incoming/hero-r2/erik]
+    gate_1: "Durvall idle + walk se; só segue se passar nos critérios 1-6 do contrato"
+    delivery_dir: assets_incoming/hero-r2/<herói>/
+    roteiro: .atena/specs/SPEC-NOTTGARD-HERO-ART-RESET-20261021/r2-roteiro-r1.md
+    verifier: .atena/generated/hero-art-reset-20261021/r2_check.gd
+    runtime_modified: false
+  runtime_modified: false
+  commit: NOT_AUTHORIZED_YET
+  next_activity: "Aguardar aprovação do R2: você gera as 33 imagens (Durvall, Korrak, Erik) no ChatGPT; a Atena monta e mede"
