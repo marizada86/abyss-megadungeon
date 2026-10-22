@@ -1490,8 +1490,8 @@
   },
   "death_tyrant": {
     "name": "Death Tyrant",
-    "hp": 500,
-    "atk": "2d10",
+    "hp": 300,
+    "atk": "2d8",
     "bonus": 8,
     "ca": 15,
     "cam": 14,

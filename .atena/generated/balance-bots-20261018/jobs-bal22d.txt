@@ -1,0 +1,12 @@
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v1 d-v1-durvall smart-god durvall reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v1 d-v1-brook smart-god brook reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v1 d-v1-maelor smart-god maelor reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v1 d-v1-sylas smart-god sylas reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v1 d-v1-kayron smart-god kayron reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v1 d-v1-korrak smart-god korrak reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v2 d-v2-durvall smart-god durvall reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v2 d-v2-brook smart-god brook reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v2 d-v2-maelor smart-god maelor reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v2 d-v2-sylas smart-god sylas reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v2 d-v2-kayron smart-god kayron reino_abissal 1,2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/var-v2 d-v2-korrak smart-god korrak reino_abissal 1,2

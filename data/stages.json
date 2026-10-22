@@ -1177,22 +1177,6 @@
         "every": 8,
         "n": 1,
         "max": 6
-      },
-      {
-        "t0": 70,
-        "t1": 180,
-        "id": "aberracao_shu",
-        "every": 10,
-        "n": 1,
-        "max": 4
-      },
-      {
-        "t0": 100,
-        "t1": 180,
-        "id": "ezro",
-        "every": 16,
-        "n": 1,
-        "max": 2
       }
     ],
     "elites": [
@@ -1205,7 +1189,7 @@
         "id": "cultista_cajado"
       },
       {
-        "at": 120,
+        "at": 140,
         "id": "death_tyrant"
       }
     ],

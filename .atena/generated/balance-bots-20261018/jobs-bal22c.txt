@@ -1,0 +1,16 @@
+BOT_ROOT= c3new-durvall-1 smart-god-chain durvall dagruve 1
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-9351270 c3base-durvall-1 smart-god-chain durvall dagruve 1
+BOT_ROOT= c3new-durvall-2 smart-god-chain durvall dagruve 2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-9351270 c3base-durvall-2 smart-god-chain durvall dagruve 2
+BOT_ROOT= c3new-brook-1 smart-god-chain brook dagruve 1
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-9351270 c3base-brook-1 smart-god-chain brook dagruve 1
+BOT_ROOT= c3new-brook-2 smart-god-chain brook dagruve 2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-9351270 c3base-brook-2 smart-god-chain brook dagruve 2
+BOT_ROOT= c3new-sylas-1 smart-god-chain sylas dagruve 1
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-9351270 c3base-sylas-1 smart-god-chain sylas dagruve 1
+BOT_ROOT= c3new-sylas-2 smart-god-chain sylas dagruve 2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-9351270 c3base-sylas-2 smart-god-chain sylas dagruve 2
+BOT_ROOT= c3new-kayron-1 smart-god-chain kayron dagruve 1
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-9351270 c3base-kayron-1 smart-god-chain kayron dagruve 1
+BOT_ROOT= c3new-kayron-2 smart-god-chain kayron dagruve 2
+BOT_ROOT=/f/dev/abyss-megadungeon/tmp/base-9351270 c3base-kayron-2 smart-god-chain kayron dagruve 2

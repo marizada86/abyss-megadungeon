@@ -1,0 +1,6 @@
+BOT_ROOT= g-final-durvall smart-god durvall reino_abissal 1,2,3
+BOT_ROOT= g-final-brook smart-god brook reino_abissal 1,2,3
+BOT_ROOT= g-final-maelor smart-god maelor reino_abissal 1,2,3
+BOT_ROOT= g-final-sylas smart-god sylas reino_abissal 1,2,3
+BOT_ROOT= g-final-kayron smart-god kayron reino_abissal 1,2,3
+BOT_ROOT= g-final-korrak smart-god korrak reino_abissal 1,2,3

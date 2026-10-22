@@ -1,4 +1,178 @@
 version: 2
+asset_workflow_transfer_20261022:
+  revision: r1
+  status: TRANSFERRED_AND_VERIFIED
+  classification: PLAN_CHANGE_REQUEST_APPROVED_TRANSFER_ONLY
+  mode: per-plan
+  owner_reply: 'todo o processo será transferido para o projeto de abyss-megadungeon que é o nome do jogo agora'
+  project_name: Abyss Megadungeon
+  authoritative_project: F:/dev/abyss-megadungeon
+  source_worktree: C:/Users/Higor Rossini/.codex/worktrees/3a88/nottgard-survivor
+  source_commits: [d4419fe0, e337f3de]
+  ordered_steps: [S-T01, S-T02, S-T03, S-T04]
+  current_step_position: 4
+  total_steps: 4
+  completed_steps: 4
+  remaining_steps_after_current: 0
+  checkpoint: S-T04/HANDOFF_READY_IN_TARGET
+  handoff: .atena/generated/asset-workflow-transfer-20261022-r1/handoff.md
+  source_acceptance: APPROVED_SELECTED_125_DRAFT
+  generated_pngs: 129
+  prepared_derivatives: 158
+  integration_approval: APPROVED_OWNER_UI_QUARTEL_R2_20261022
+  canonical_asset_promotion: false
+  runtime_modified_by_transfer: false
+  commit_push: NOT_AUTHORIZED_FOR_TRANSFER
+  next_objective: UI/Quartel r2 approved and technically delivered in asset_ui_quartel_integration_20261022; human screen review pending; source acceptance preserved.
+  copied_files_verified: 587
+  target_audit: PASS_158_OUTPUTS_ZERO_HOLDS_ZERO_SOURCE_CHANGES
+  chat_binding: STILL_LEGACY_WORKTREE_ADDITIONAL_PROJECT_SOURCE_NOT_CONFIRMED
+asset_preparation_2026_10_21:
+  revision: DRAFT/r1
+  classification: IN_PLAN_POST_ACCEPTANCE_PREPARATION
+  mode: per-plan
+  authorization: 'aprovado o aceite, continue'
+  specification: .atena/generated/asset-preparation-20261021-r1/plan.md
+  status: COMPLETE_ISOLATED_DERIVATIVES_DELIVERED
+  ordered_steps: [S-P01, S-P02, S-P03, S-P04, S-P05]
+  current_step_position: 5
+  total_steps: 5
+  completed_steps: 5
+  remaining_steps_after_current: 0
+  checkpoint: S-P05/INTEGRATION_PROPOSAL_PREPARED
+  content_state: DRAFT
+  source_visual_acceptance: APPROVED_SELECTED_125
+  pc_baseline_integration: dc4a917
+  runtime_modified: false
+  canonical_promotion: false
+  next_objective: Owner approves bounded PC integration proposal; then execute S-I01 baseline and consumer checks. No further source acceptance required.
+  derivative_count: 158
+  audit_holds: 0
+  source_changes: 0
+  gallery: .atena/generated/asset-preparation-20261021-r1/index.html
+  audit: .atena/generated/asset-preparation-20261021-r1/audit.json
+  delivery: .atena/generated/asset-preparation-20261021-r1/delivery.json
+  evidence: .atena/generated/asset-preparation-20261021-r1/evidence.md
+asset_integration_proposal_2026_10_21:
+  revision: DRAFT/r1
+  classification: PLAN_CHANGE_REQUEST
+  scope: PC_EXISTING_VISUAL_CONSUMERS_AND_N01_ONLY
+  mode: per-plan
+  status: SUPERSEDED_BY_APPROVED_UI_QUARTEL_R2
+  approval_status: APPROVED_REVISED_SCOPE_IN_SEPARATE_R2_PLAN
+  proposal: .atena/generated/asset-preparation-20261021-r1/integration-proposal.md
+  ordered_steps: [S-I01, S-I02, S-I03, S-I04, S-I05, S-I06]
+  current_step_position: 1
+  total_steps: 6
+  completed_steps: 0
+  remaining_steps_after_current: 5
+  checkpoint: S-I01/INTEGRATION_SCOPE_APPROVAL_PENDING
+  next_execution_authorized: false
+  excluded: [new_N_events_or_bosses, V10_hero_sprite_replacement, canonical_promotion, dependency_installation, source_port, build_export, commit_push]
+  next_objective: Historical r1 cursor preserved; execute asset_ui_quartel_integration_20261022 instead.
+  reconciliation_20261022:
+    status: COMPLETE_READ_ONLY_REVISED_SCOPE_PREPARED
+    authorization: 'seguir recomendações'
+    authorization_scope: RECONCILE_CURRENT_UI_HUD_QUARTEL_AND_DELIMIT_REMAINING_WORK
+    checkpoint: CP-UI-RECON-001/REVISED_SCOPE_READY
+    preserved_runtime_checkpoint: S-I01/INTEGRATION_SCOPE_APPROVAL_PENDING
+    inspected_head: 02f898552fc8bea7bff90b801274bef5283a9820
+    report: .atena/generated/ui-quartel-reconciliation-20261022-r1/reconciliation.md
+    audit: .atena/generated/ui-quartel-reconciliation-20261022-r1/audit.json
+    baseline: .atena/generated/ui-quartel-reconciliation-20261022-r1/baseline.json
+    revised_proposal: .atena/generated/ui-quartel-reconciliation-20261022-r1/integration-proposal-r2.md
+    remaining_scope: [U09, U11, U17, Q02, Q03, Q10]
+    retained: [U10, U12, U19, Q07, N02-N10, V10_sprite]
+    source_hash_checks: PASS_125_PRODUCTION_AND_INCOMING
+    derivative_hash_checks: PASS_158_PREPARED_62_UQ_RUNTIME_COPIES
+    targeted_tests: FOUR_ZERO_ASSERTION_FAILURES_WITH_GODOT_CERTIFICATE_STORE_ERROR
+    project_audit: ZERO_CONTENT_ERRORS_ZERO_WARNINGS_WITH_GODOT_CERTIFICATE_STORE_ERROR
+    human_screen_acceptance: PENDING
+    runtime_modified: false
+    revised_scope_approval: APPROVED_OWNER_20261022
+    next_activity: Execute approved r2 in asset_ui_quartel_integration_20261022; preserve this reconciliation receipt.
+asset_ui_quartel_integration_20261022:
+  revision: DRAFT/r2
+  classification: IN_PLAN_APPROVED_REVISED_SCOPE
+  authorization: 'atena. aprovado seguindo recomendações'
+  mode: per-plan
+  status: TECHNICAL_DELIVERY_COMPLETE_AWAITING_HUMAN_VISUAL_REVIEW
+  approval_status: APPROVED_OWNER_R2
+  proposal: .atena/generated/ui-quartel-reconciliation-20261022-r1/integration-proposal-r2.md
+  evidence_directory: .atena/generated/ui-quartel-integration-20261022-r2
+  superseded_runtime_plan: asset_integration_proposal_2026_10_21
+  preserved_prior_checkpoint: S-I01/INTEGRATION_SCOPE_APPROVAL_PENDING
+  ordered_steps: [S-UI01, S-UI02, S-UI03, S-UI04, S-UI05, S-UI06]
+  completed_steps: 6
+  total_steps: 6
+  checkpoint: S-UI06/TECHNICAL_DELIVERY_HUMAN_REVIEW_PENDING
+  baseline_capture_session: synthetic-20261022-041412
+  source_acceptance: PRESERVED_SELECTED_125_DRAFT
+  human_screen_acceptance: PENDING
+  runtime_modified: true
+  gallery: .atena/generated/ui-quartel-integration-20261022-r2/index.html
+  evidence: .atena/generated/ui-quartel-integration-20261022-r2/evidence.md
+  admission: .atena/generated/ui-quartel-integration-20261022-r2/admission.json
+  playtest: .atena/generated/ui-quartel-integration-20261022-r2/playtest.md
+  final_suite: ZERO_ASSERTION_FAILURES_ZERO_SCRIPT_ERRORS
+  project_audit: ZERO_CONTENT_ERRORS_ZERO_WARNINGS
+  interaction_checks: PASS_10_OF_10
+  controller_check: INHERITED_TWO_FAILURES_AND_TIMEOUT_PRESERVED
+  environment_debt: GODOT_WINDOWS_CERTIFICATE_STORE_AND_RENDER_CLEANUP_MESSAGES
+  next_activity: Owner reviews final screen gallery and synthetic playtest; record only explicit human feedback, retaining DRAFT and deferred assets.
+  local_commit: AUTHORIZED_OWNER_20261022
+  local_commit_authorization: 'atena commite e  tem algo para ser gerado?'
+  commit_receipt: .atena/generated/ui-quartel-integration-20261022-r2/commit-result.json
+  push: NOT_AUTHORIZED
+asset_production_proposal_2026_10_21:
+  parent_plan: PLAN-103
+  parent_milestone: M5/B-006
+  revision: DRAFT/r1
+  request_classification: PLAN_CHANGE_REQUEST
+  scope: PROPOSE_ASSET_PRODUCTION_FRONT_WITHOUT_REPLACING_PARENT_PLAN
+  proposal: .atena/vault/drafts/PROPOSTA-assets-20261021-r1.md
+  status: COMPLETE_SOURCES_VISUALLY_ACCEPTED_DRAFT
+  mode: per-plan
+  approval_status: APPROVED_EXPLICITLY
+  owner_generation_reply: 'aprovado, pode gerar'
+  owner_mode_reply: 'atena por plano'
+  last_request_classification: IN_PLAN
+  checkpoint: S-008/SOURCES_VISUALLY_ACCEPTED
+  ordered_steps: [S-001, S-002, S-003, S-004, S-005, S-006, S-007, S-008]
+  current_step_position: 8
+  completed_steps: 8
+  total_steps: 8
+  remaining_steps_after_current: 0
+  content_state: DRAFT
+  missing_documents: []
+  input_directory: F:/dev/abyss-megadungeon/.atena/vault/drafts
+  output_directory: .atena/generated/asset-production-20261021-r1
+  requested_delivery_directory: F:/dev/abyss-megadungeon/assets_incoming
+  generated_source_count: 129
+  selected_source_count: 125
+  source_manifest: .atena/generated/asset-production-20261021-r1/manifest.json
+  remaining_character_poses: 0
+  human_visual_acceptance: APPROVED_EXPLICITLY_SELECTED_125
+  next_execution_authorized: false
+  canonical_promotion: false
+  runtime_admission: false
+  local_commit: AUTHORIZED_EXPLICITLY_2026_10_21
+  owner_commit_reply: 'atena commite e push'
+  push: AUTHORIZED_EXPLICITLY_CURRENT_ASSET_BRANCH
+  push_remote: origin
+  push_branch: codex/asset-generation-20261021-r1
+  build_export: NOT_AUTHORIZED
+  parent_checkpoint_preserved: B-002/S-011_LOTE2_AWAITING_OWNER_GAME
+  next_objective: Continue isolated derivative preparation, preserving PC integration dc4a917 and deferred N consumer decisions.
+  visual_acceptance_receipt: .atena/generated/asset-production-20261021-r1/visual-acceptance.json
+  owner_visual_reply: 'aprovado o aceite, continue'
+  delivered_source_count: 129
+  delivery_audit: .atena/generated/asset-production-20261021-r1/delivery-audit.json
+  source_generation_complete: true
+  gallery_broken_links: 0
+  gallery: .atena/generated/asset-production-20261021-r1/index.html
+  completion_evidence: .atena/generated/asset-production-20261021-r1/completion.md
+  owner_continuation_reply: 'aprovado, pode seguir com a geração'
 source_port_20261018_proposal:
   id: PLAN-NOTTGARD-SOURCE-PORT-20261018
   revision: r1
@@ -1970,25 +2144,41 @@ hq05_visual_production_plan:
   classification: IN_PLAN
   mode: per-step
   approval_policy: APPROVAL_ALSO_AUTHORIZES_NEXT_CANDIDATE
-  status: SELECTION_R1_APPROVED_Q1_AUTHORIZED_GENERATION_BLOCKED_NO_IMAGE_TOOL
-  current_step: S-P05-Q01
+  status: PAUSED_BY_OWNER_Q2_V01_REJECTED_BROOK_AWAITING_NEW_PROMPTS
+  current_step: S-P05-Q02
   ordered_steps: [S-V05-001, S-P05-Q01, S-P05-Q02, S-P05-Q03, S-P05-Q04, S-P05-Q05]
-  completed_steps: 1
+  completed_steps: 2
   total_steps: 6
-  approved_visual_panels: 0
+  approved_visual_panels: 1
   total_visual_panels: 5
-  checkpoint: CP-P05-Q01
+  checkpoint: CP-P05-Q02
   authorization: vamos lá
   spec: .atena/specs/SPEC-NOTTGARD-HQ05-VISUAL-20261018/selection-r1.md
   reference_audit: .atena/generated/hq05-selection-20261018/audit-r1.json
   evidence: .atena/evidence/EVID-NOTTGARD-HQ05-VISUAL-SELECTION-20261018-r1.md
-  generation_authorized: Q1_ONLY_BY_OWNER_SELECTION_APPROVAL_20261020
+  generation_authorized: PAUSED_BY_OWNER_20261022_NO_NEW_GENERATION_UNTIL_RESUMED
   runtime_authorized: false
-  next_activity: "Gerar Q1 (briefing pronto em q1-r1.md) onde houver imagegen; sem ferramenta nesta sessão. Aditivo do Vault: Blogbog agora tem referência CANON e substitui a proposta r1 em Q2/Q3"
+  next_activity: "Aguardar novos prompts e retomada explícita do dono; Q2 v01 rejeitada pelo Brook; Q1 aceita preservada; implementações reservadas ao Claude."
   selection_approval: "Atena, aprovada a seleção visual da HQ05, lembrando que o vault está atualizado e uma nova variedade de HQs estão disponíveis (2026-10-20)"
   selection_vault_amendment: .atena/specs/SPEC-NOTTGARD-HQ05-VISUAL-20261018/selection-r1-vault-update-20261020.md
   q1_brief: .atena/specs/SPEC-NOTTGARD-HQ05-VISUAL-20261018/q1-r1.md
-  q1_status: BLOCKED_NO_IMAGE_GENERATION_TOOL_NOT_GENERATED
+  q1_status: APPROVED_OWNER_V01
+  continuation_authorization_20261022: 'atena continuar a geração de imagens seguindo as recomendações'
+  q1_candidate: .atena/generated/hq05-production-20261018/candidates/hq_n05_q1_cavern_bubbles_v01.png
+  q1_receipt: .atena/generated/hq05-production-20261018/q1-receipt-v01.json
+  q1_evidence: .atena/evidence/EVID-NOTTGARD-HQ05-Q1-CANDIDATE-20261022-v01.md
+  q1_human_visual_acceptance: APPROVED_OWNER_20261022
+  q1_asset_approval: .atena/vault/canon/ASSET-APPROVAL-HQ05-Q1-20261022-r1.md
+  owner_continuation_20261022: 'aprovado, continue a geração deixe as implementações para o claude'
+  implementation_owner: CLAUDE_BY_OWNER_EXPLICIT_INSTRUCTION
+  implementation_by_this_agent: NOT_AUTHORIZED_GENERATION_ONLY
+  q2_status: REJECTED_OWNER_BROOK_VISUAL_RESULT
+  q2_owner_feedback: 'não aprovo, o brook ficou ruim, vamos deixar isso para depois estou gerando mais prompts'
+  owner_pause_20261022: EXPLICIT_DEFER_WHILE_OWNER_PREPARES_MORE_PROMPTS
+  q2_candidate: .atena/generated/hq05-production-20261018/candidates/hq_n05_q2_blogbog_pressure_v01.png
+  q2_receipt: .atena/generated/hq05-production-20261018/q2-receipt-v01.json
+  q2_evidence: .atena/evidence/EVID-NOTTGARD-HQ05-Q2-CANDIDATE-20261022-v01.md
+  implementation_handoff: .atena/generated/hq05-production-20261018/LEIA-ME-CLAUDE.md
   blogbog_reference: "Vault 50008c9 output/referencias-personagens/BBB-r01/blogbog (CANON 2026-10-19, DEC-FALT00502-TRES-20261019-r1) substitui a proposta r1"
 
   returned_from: PLAN-NOTTGARD-HQ-INTEGRATION-20261018
@@ -2202,6 +2392,12 @@ vault_sweep_20261021:
     recommendations_followed: "integration-proposal.md do lado da produção: U13-U16, U18, U20, U21 integrados e U09-U12, U17, U19 retidos com motivo; Q05, emblemas Q08 e Q09 integrados; N01 no NPC do Reaper; import, testes e capturas"
     queue: .atena/vault/drafts/ASSET-QUEUE-20261021-r2.md
     checks: "run_all 0 falhas; audit 0 erros 0 avisos; controller_check igual ao baseline"
+  batch_10:
+    authorization: "Atena, seguir com o playtest de equilíbrio; aplique a variante escolhida e commite (2026-10-22)"
+    status: DONE_LOCAL_COMMITTED
+    report: .atena/vault/drafts/BALANCE-MAPS-20261022-r1.md
+    applied: "Reino Abissal v5: sem ondas de Ezro e Shu, Death Tyrant aos 140 s com 300 de vida e 2d8; 100% conclusão, 702 dano/min, 0 mortes (base 93%/649)"
+    not_measured: "Shendilavri, Goranthis e Pilares (bot sem progressão)"
   commit: NOT_AUTHORIZED_YET
 hero_walk_fix_20261021:
   id: PLAN-NOTTGARD-HERO-WALK-FIX-20261021
@@ -2252,7 +2448,7 @@ hero_art_reset_20261021:
   revision: r1
   classification: PLAN_CHANGE_REQUEST
   mode: per-batch
-  status: R2_READY_AWAITING_OWNER_GENERATION_GATE1
+  status: R2_GATE1_TECHNICAL_REVIEW_REQUIRED
   content_state: DRAFT
   origin: "Dono, 2026-10-21: refazer os prompts dos personagens, desapegar das tiras piloto, animações a 5 fps, Vault atualizado e lições do projeto"
   spec: .atena/specs/SPEC-NOTTGARD-HERO-ART-RESET-20261021/plan-r1.md
@@ -2284,7 +2480,20 @@ hero_art_reset_20261021:
   vault_head_local: 50008c9
   generation_authorized: "R2 apenas: Durvall, Korrak e Erik (33 imagens), gerados pelo dono no ChatGPT; autorizado em 2026-10-21 (Autorizo o R2)"  # R0 e R1 foram só texto
   r2:
-    status: READY_NOT_STARTED
+    status: GATE1_V01_V02_MEASURED_REJECTED
+    owner_visual_acceptance: "2026-10-22: aprovado, continue (v01 idle e walk se); não equivale a aceite visual das v02"
+    gate1_evidence: assets_incoming/hero-r2/durvall/gate1-review-v02.md
+    claude_handoff: .atena/generated/hero-r2-durvall-handoff-20261022/LEIA-ME-CLAUDE.md
+    claude_handoff_status: "READY_LOCAL_20261022; não enviado; gate técnico e aprovações preservados"
+    gate1_attempts: {idle_se: 2, walk_se: 2}
+    gate1_diagnosis_20261022:
+      doc: .atena/generated/hero-r2-durvall-gate1-diagnosis-20261022/DIAGNOSTICO.md
+      owner_complaint: "movimentação horrível (walk se)"
+      motion_cause_1a: "contato B saiu igual ao A nas duas tentativas (diferença de cor nas pernas A×B 39,5/42,4 contra ruído de mesma pose 36,7/31,6); v02 usou a walk v01 como referência"
+      motion_cause_1b: "ERRO DO CONTRATO (meu): A,P,B,P reusa um só desenho de passagem; em perfil e 3/4 a segunda passagem é da outra perna; precisa de 4 desenhos A,P1,B,P2"
+      verifier_findings: "halo (critério 2) era artefato: contava a faixa que o asset_prep já corrige; resíduo magenta pós-recorte concentrado no anel de 1 px (54-72% no anel, 7-16% a 2 px); pontos soltos eram fios de cabelo medidos na escala de geração; (correção 2026-10-22) o exit code do v1 já retorna 1 ao reprovar, a afirmação de que era sempre 0 não se confirmou"
+      proposed_fixes_awaiting_owner: "contrato r2 (4 desenhos, linguagem perna do lado da câmera/oposta, sem referência reprovada), r2_check v2 (halo pós-recorte, pontos na escala de produção, A×B e P1×P2 contra o ruído, exit 1), pacote regenerado; nova geração só após aprovação"
+      applied_changes: "nenhuma no contrato, verificador, pacote ou jogo"
     verifier_validated: "sintético: boa PASSA; defeituosa REPROVA (borda, escala 18,8%, pés 5,3%, ponto solto); passada estática REPROVA (diferença 2,6%)"
     folders_created: [assets_incoming/hero-r2/durvall, assets_incoming/hero-r2/korrak, assets_incoming/hero-r2/erik]
     gate_1: "Durvall idle + walk se; só segue se passar nos critérios 1-6 do contrato"
@@ -2294,37 +2503,4 @@ hero_art_reset_20261021:
     runtime_modified: false
   runtime_modified: false
   commit: NOT_AUTHORIZED_YET
-  next_activity: "Aguardar aprovação do R2: você gera as 33 imagens (Durvall, Korrak, Erik) no ChatGPT; a Atena monta e mede"
-asset_ui_quartel_integration_20261022:
-  revision: DRAFT/r2
-  classification: IN_PLAN_APPROVED_REVISED_SCOPE
-  authorization: 'atena. aprovado seguindo recomendações'
-  mode: per-plan
-  status: TECHNICAL_DELIVERY_COMPLETE_AWAITING_HUMAN_VISUAL_REVIEW
-  approval_status: APPROVED_OWNER_R2
-  proposal: .atena/generated/ui-quartel-reconciliation-20261022-r1/integration-proposal-r2.md
-  evidence_directory: .atena/generated/ui-quartel-integration-20261022-r2
-  superseded_runtime_plan: asset_integration_proposal_2026_10_21
-  preserved_prior_checkpoint: S-I01/INTEGRATION_SCOPE_APPROVAL_PENDING
-  ordered_steps: [S-UI01, S-UI02, S-UI03, S-UI04, S-UI05, S-UI06]
-  completed_steps: 6
-  total_steps: 6
-  checkpoint: S-UI06/TECHNICAL_DELIVERY_HUMAN_REVIEW_PENDING
-  baseline_capture_session: synthetic-20261022-041412
-  source_acceptance: PRESERVED_SELECTED_125_DRAFT
-  human_screen_acceptance: PENDING
-  runtime_modified: true
-  gallery: .atena/generated/ui-quartel-integration-20261022-r2/index.html
-  evidence: .atena/generated/ui-quartel-integration-20261022-r2/evidence.md
-  admission: .atena/generated/ui-quartel-integration-20261022-r2/admission.json
-  playtest: .atena/generated/ui-quartel-integration-20261022-r2/playtest.md
-  final_suite: ZERO_ASSERTION_FAILURES_ZERO_SCRIPT_ERRORS
-  project_audit: ZERO_CONTENT_ERRORS_ZERO_WARNINGS
-  interaction_checks: PASS_10_OF_10
-  controller_check: INHERITED_TWO_FAILURES_AND_TIMEOUT_PRESERVED
-  environment_debt: GODOT_WINDOWS_CERTIFICATE_STORE_AND_RENDER_CLEANUP_MESSAGES
-  next_activity: Owner reviews final screen gallery and synthetic playtest; record only explicit human feedback, retaining DRAFT and deferred assets.
-  local_commit: AUTHORIZED_OWNER_20261022
-  local_commit_authorization: 'atena commite e  tem algo para ser gerado?'
-  commit_receipt: .atena/generated/ui-quartel-integration-20261022-r2/commit-result.json
-  push: NOT_AUTHORIZED
+  next_activity: "Rever tratamento de borda/fundo do gate 1 antes de novas gerações: v01 e v02 reprovadas; preservar aceite visual v01, sem integração nem avanço às demais direções. Diagnóstico de 2026-10-22 concluído; aguardar aprovação das correções propostas (contrato r2, verificador v2, pacote) antes de nova geração"
