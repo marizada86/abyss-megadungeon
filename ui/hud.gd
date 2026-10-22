@@ -104,6 +104,7 @@ func _ready() -> void:
 		Game.profile.data.settings.volume = v
 		Game.apply_audio())
 	vol_slider.drag_ended.connect(func(_changed: bool): Game.save())  # BUG-044: grava ao soltar, não a cada passo
+	_apply_hud_art()
 	# SPEC-131: painel do herói no padrão da ficha C, acima das linhas do Estige
 	_outline_world_labels()
 	hero_panel = HeroPanel.new()
@@ -534,6 +535,29 @@ func update_stats(b: Battle) -> void:
 	objective_label.text = "
 ".join(status_lines)
 	objective_label.visible = objective_label.text != ""
+
+## Arte do HUD (lote U): cronômetro, botões de topo, lista de armas e molduras de modal; sem arquivo, o visual anterior fica.
+func _apply_hud_art() -> void:
+	# cronômetro: a faixa de arte (180x60) invade o rótulo da fase logo abaixo; fica sem moldura até o layout do topo ser revisto
+	HudArt.style_square_button(%HelpBtn, "hud_botao_ajuda")
+	HudArt.style_square_button(%SpeedBtn, "hud_botao_velocidade")
+	# lista de armas: a moldura de arte é uma faixa de 1 linha; a lista tem tamanho livre, então fica sem moldura por ora
+	for panel in [result_panel, revive_panel]:
+		var modal := HudArt.modal_style()
+		if modal != null:
+			panel.add_theme_stylebox_override("panel", modal)
+			if panel == revive_panel and not panel.has_node("ModalFill"):
+				var fill := ColorRect.new()   # o interior da moldura é vazado: sem isto o texto fica sobre o mapa
+				fill.name = "ModalFill"
+				fill.color = Color(0.035, 0.03, 0.055, 0.95)
+				fill.mouse_filter = Control.MOUSE_FILTER_IGNORE
+				fill.show_behind_parent = true
+				panel.add_child(fill)
+				fill.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+				fill.offset_left = 22.0
+				fill.offset_right = -22.0
+				fill.offset_top = 22.0
+				fill.offset_bottom = -22.0
 
 func show_offer(b: Battle) -> void:
 	Game.controls.transition()

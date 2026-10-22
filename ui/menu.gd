@@ -94,7 +94,11 @@ func _ready() -> void:
 	codex_cat.item_selected.connect(func(_i): _fill_codex())
 	codex_list.item_selected.connect(_show_codex)
 	for cat in Catalog.CATEGORIES:
-		codex_cat.add_item(String(Catalog.LABELS[cat]))   # SPEC-166: os mesmos nomes do catalogo da pausa
+		var cat_art := UiKit.icon_texture("res://assets/icons/codex/%s.png" % {"enemies": "inimigos", "weapons": "armas", "items": "itens"}.get(cat, ""))
+		if cat_art != null:
+			codex_cat.add_icon_item(cat_art, String(Catalog.LABELS[cat]))
+		else:
+			codex_cat.add_item(String(Catalog.LABELS[cat]))   # SPEC-166: os mesmos nomes do catalogo da pausa
 	for i in 4:
 		diff_opt.add_item("Maldição %d  (inimigos +%d%%, moedas +%d%%)" % [i, i * 25, i * 25])
 	diff_opt.item_selected.connect(func(i):
@@ -370,6 +374,19 @@ func _fill_upgrades() -> void:
 			lab.text += "\nBloqueado. Conquista: %s" % _ach_name(locked_by)
 			lab.modulate = Color(1, 1, 1, 0.7)
 		btn.text = "Bloqueado" if locked_by != "" else ("Comprar (%d)" % cost if cost >= 0 else "Máximo")
+		_style_buy_button(btn, "bloqueado" if locked_by != "" else ("comprar" if cost >= 0 else "maximo"))
+		var pips := _upgrade_pips(lv, u.costs.size(), locked_by != "")
+		if pips != null:
+			lab.text = lab.text.replace("   [%d/%d]" % [lv, u.costs.size()], "")
+			lab.add_theme_constant_override("line_spacing", 0)
+			var holder := VBoxContainer.new()
+			holder.add_theme_constant_override("separation", 0)
+			holder.custom_minimum_size = Vector2(560 if up_icon != null else 620, 0)
+			row.remove_child(lab)
+			lab.custom_minimum_size = Vector2(0, 0)
+			holder.add_child(pips)
+			holder.add_child(lab)
+			row.add_child(holder)
 		btn.disabled = locked_by != "" or cost < 0 or cost > p.coins()
 		btn.custom_minimum_size = Vector2(160, 44)
 		btn.set_meta("upgrade_id", String(u.id))
@@ -382,6 +399,49 @@ func _fill_upgrades() -> void:
 		upgrade_box.add_child(row)
 	if focus_id != "":
 		_restore_upgrade_focus.call_deferred(focus_id, scroll_at)
+
+## Botão de compra com a moldura de arte do estado (comprar, máximo, bloqueado); sem arquivo, o botão padrão.
+func _style_buy_button(btn: Button, state: String) -> void:
+	var tex := UiKit.icon_texture("res://assets/ui/quartel/botao_%s.png" % state)
+	if tex == null:
+		return
+	for s in ["normal", "hover", "pressed", "focus", "disabled"]:
+		var sb := StyleBoxTexture.new()
+		sb.texture = tex
+		sb.texture_margin_left = 28.0
+		sb.texture_margin_right = 28.0
+		sb.texture_margin_top = 14.0
+		sb.texture_margin_bottom = 14.0
+		sb.content_margin_left = 30.0
+		sb.content_margin_right = 30.0
+		sb.content_margin_top = 6.0
+		sb.content_margin_bottom = 8.0
+		if s == "hover" or s == "focus":
+			sb.modulate_color = Color(1.2, 1.15, 1.0)
+		elif s == "pressed":
+			sb.modulate_color = Color(0.8, 0.8, 0.8)
+		btn.add_theme_stylebox_override(s, sb)
+	btn.custom_minimum_size = Vector2(190, 48)
+
+## Fileira de pips de nível (cheio, vazio, máximo, bloqueado); null sem a arte.
+func _upgrade_pips(level: int, total: int, locked: bool) -> Control:
+	var full := UiKit.icon_texture("res://assets/ui/quartel/pip_cheio.png")
+	var empty := UiKit.icon_texture("res://assets/ui/quartel/pip_vazio.png")
+	if full == null or empty == null or total <= 0 or total > 12:
+		return null
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 2)
+	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var at_max := level >= total
+	for i in total:
+		var pip := TextureRect.new()
+		pip.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		pip.custom_minimum_size = Vector2(18, 18)
+		pip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var tex: Texture2D = UiKit.icon_texture("res://assets/ui/quartel/pip_bloqueado.png") if locked else (UiKit.icon_texture("res://assets/ui/quartel/pip_maximo.png") if at_max else (full if i < level else empty))
+		pip.texture = tex if tex != null else empty
+		row.add_child(pip)
+	return row
 
 func _upgrade_scroll() -> ScrollContainer:
 	return upgrade_box.get_parent() as ScrollContainer
@@ -435,7 +495,33 @@ func _fill_achievements() -> void:
 		var done: bool = p.data.achievements.has(a.id)
 		lab.text = "%s %s   [%s]\n     %s   →  %s" % ["★" if done else "☆", a.name, p.achievement_progress(a), a.desc, a.reward.get("text", "%d moedas" % int(a.reward.get("coins", 0)))]
 		lab.modulate = Color(1, 0.9, 0.5) if done else Color(0.8, 0.8, 0.8)
-		ach_box.add_child(lab)
+		var cat_icon := UiKit.icon_rect("res://assets/icons/conquistas/%s.png" % _ach_category(String(a.stat)), 44.0)
+		if cat_icon == null:
+			ach_box.add_child(lab)
+			continue
+		# lote Q: emblema da categoria, apagado até a conquista sair
+		cat_icon.modulate = Color(1, 1, 1, 1) if done else Color(0.45, 0.45, 0.5, 0.75)
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 10)
+		row.add_child(cat_icon)
+		row.add_child(lab)
+		ach_box.add_child(row)
+
+## Categoria de emblema (assets/icons/conquistas) a partir do stat da conquista.
+static func _ach_category(stat: String) -> String:
+	if stat.begins_with("kills_"): return "abates"
+	if stat == "run_clean_streak": return "sem_dano"
+	if stat in ["run_level", "abyss_best_level"]: return "nivel"
+	if stat in ["gold_total", "bets_won_total"]: return "moedas"
+	if stat == "chests_total": return "baus"
+	if stat.begins_with("boss_") or stat in ["bosses_total", "run_bosses"]: return "chefes"
+	if stat == "elites_total": return "elites"
+	if stat == "rituals_total": return "rituais"
+	if stat.begins_with("secrets_"): return "ecos"
+	if stat == "hqs_seen": return "hqs"
+	if stat.begins_with("hero_cleared_") or stat == "heroes_played": return "biografias"
+	if stat in ["run_time", "run_still", "stages_cleared", "reached_pilares"]: return "sobrevivencia"
+	return "abates"
 
 # ------------------------------------------------------------------ códex
 

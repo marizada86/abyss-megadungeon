@@ -2195,4 +2195,33 @@ vault_sweep_20261021:
     not_integrated: "U09-U21 (brilho, textura, molduras de HUD e modais), Q02/Q03/Q05 (cartões de herói e fase, pips), Q07-Q10 (medalhas, conquistas, códex, resultado), V10 sprite do Kayron, lote N (33 poses ainda não geradas)"
     notes: "Quadros de animação dos sprites são trocas de pose com pequeno balanço (sem animação desenhada). V08/V09 têm uma única pose. Kayron sprite mantido (arte nova não combina com as folhas)."
     checks: "run_all 0 falhas; audit 0 erros 0 avisos; controller_check igual ao baseline"
+  batch_9:
+    authorization: "Atena, os assets foram gerados, fazer uma verificação, seguir as recomendações e atualizar a fila de assets (2026-10-21)"
+    status: DONE_LOCAL_NOT_COMMITTED_AWAITING_VISUAL_ACCEPTANCE
+    verification: "125/125 fontes aceitas conferidas por SHA-256 em assets_incoming (e r1); 0 ausentes, 0 divergentes"
+    recommendations_followed: "integration-proposal.md do lado da produção: U13-U16, U18, U20, U21 integrados e U09-U12, U17, U19 retidos com motivo; Q05, emblemas Q08 e Q09 integrados; N01 no NPC do Reaper; import, testes e capturas"
+    queue: .atena/vault/drafts/ASSET-QUEUE-20261021-r2.md
+    checks: "run_all 0 falhas; audit 0 erros 0 avisos; controller_check igual ao baseline"
   commit: NOT_AUTHORIZED_YET
+hero_walk_fix_20261021:
+  id: PLAN-NOTTGARD-HERO-WALK-FIX-20261021
+  revision: r1
+  classification: PLAN_CHANGE_REQUEST
+  mode: per-batch
+  status: L1_AUDIT_COMPLETE_AWAITING_OWNER_DECISION_L2
+  content_state: DRAFT
+  authorization: "Atena, pode fazer, seguindo suas recomendações (2026-10-21): abrir o plano e executar só o lote 1, somente leitura"
+  spec: .atena/specs/SPEC-NOTTGARD-HERO-WALK-FIX-20261021/plan-r1.md
+  ordered_batches: [L1_audit_read_only, L2_decide_route, L3_execute_fix, L4_tests_and_human_check]
+  l1:
+    status: DONE_READ_ONLY
+    tool: .atena/generated/hero-walk-fix-20261021/audit_walk.gd   # Godot headless fora do projeto; nenhum arquivo do jogo escrito
+    result: .atena/generated/hero-walk-fix-20261021/audit-r1.json
+    finding_summary: "Sem quadros vazios/duplicados e larguras corretas. P1 arte dormente: tiras de oeste de Korrak/Maelor/Sylas/Kayron (altura x1.08-1.39, base e recorte fora do idle; Korrak é outra figura) NÃO são carregadas pelo jogo (só Durvall tem REAL_WEST_WALK). P2 oscilação: Durvall nw/ne, Sylas se, Erik n/ne. P3 passada quase parada: Sylas s, Maelor n, Zynara se/s, Bromnor s. P4: 11 de 12 heróis viram oeste por espelho (suspeito do bug de identidade)."
+    visual_confirmation: "Somente Korrak move_w x move_e; demais são suspeita medida"
+  l2_pending_decision: "Escolher por herói: manter espelho, oeste real novo ou reaproveitar arte dormente normalizada; e quais passadas de P2/P3 corrigir. Recomendação: folha de contato das 5 tiras em uso + oeste espelhado dos 11 heróis para o dono apontar o que incomoda."
+  gates_unchanged: "G-D4, Durvall/M1, identidade/passada, H-PORT-002 e demais DRAFT/retenções"
+  runtime_modified: false
+  port_note: "Tiras de herói são dado comum: correção exige portagem registrada à origem e checks nos dois projetos"
+  commit: NOT_AUTHORIZED_YET
+  next_activity: "Aguardar decisão do dono para L2 (ou pedido de gerar a folha de contato)"

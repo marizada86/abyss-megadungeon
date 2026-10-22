@@ -19,7 +19,7 @@ var key_icon: Texture2D
 func _init() -> void:
 	custom_minimum_size = SIZE
 	size = SIZE
-	clip_contents = true
+	clip_contents = false
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	modulate.a = OPACITY
 
@@ -51,6 +51,7 @@ func _draw() -> void:
 	# disco suave e translúcido, sem bordas; a tecla fica logo abaixo (pedido do dono: menos "grotesco")
 	var center := Vector2(SIZE.x * 0.5, SIZE.y * 0.5 - 4.0)
 	var radius := SIZE.x * 0.5 - 4.0
+	var ring := HudArt.hud("hud_habilidade_anel")
 	draw_circle(center, radius, Color(0.12, 0.1, 0.16, 0.55))
 	var cooling := _cd > 0.0
 	var isize := radius * 1.6
@@ -72,6 +73,9 @@ func _draw() -> void:
 		var txt := cooldown_text(_cd)
 		draw_string_outline(font2, Vector2(0, center.y + 8.0), txt, HORIZONTAL_ALIGNMENT_CENTER, SIZE.x, 22, 5, Color(0, 0, 0, 0.9))
 		draw_string(font2, Vector2(0, center.y + 8.0), txt, HORIZONTAL_ALIGNMENT_CENTER, SIZE.x, 22, Color(1, 1, 1))
+	if ring != null:
+		var rsize := radius * 2.0 + 14.0
+		draw_texture_rect(ring, Rect2(center - Vector2(rsize, rsize) * 0.5, Vector2(rsize, rsize)), false)
 	if _guard:
 		draw_circle(center, radius, Color(0.45, 0.75, 1.0, 0.28))
 	if _flash > 0.0:

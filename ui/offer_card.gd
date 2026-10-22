@@ -576,7 +576,14 @@ func _arrow(art_name: String, fallback: String, count: int, col: Color) -> Contr
 func _make_custom_tooltip(_for_text: String) -> Object:
 	if not _has_detail(offer) and String(offer.get("tooltip", "")) == "":
 		return null
-	return build_detail()
+	var detail := build_detail()
+	var frame := HudArt.modal_style(true)
+	if frame == null:
+		return detail
+	var panel := PanelContainer.new()
+	panel.add_theme_stylebox_override("panel", frame)
+	panel.add_child(detail)
+	return panel
 
 ## Tabela de detalhe da oferta; inline_only=true devolve null quando não há detalhe (modo Shift do HUD).
 func build_detail(inline_only := false, compact := false) -> Control:

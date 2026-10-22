@@ -43,11 +43,19 @@ var _sheet_seen := false
 func _ready() -> void:
 	custom_minimum_size = Vector2(WIDTH, 0)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_theme_stylebox_override("panel", _box(Color(0.045, 0.04, 0.06, PANEL_ALPHA), Color(GOLD_DIM, 0.55), 1, 3))
-	draw.connect(_draw_corners)
+	# hud_painel_heroi é um molde fixo (janela do retrato + duas faixas), não uma moldura de nove fatias; fica de fora até haver layout próprio.
+	var art_panel: StyleBoxTexture = null
+	if art_panel != null:
+		add_theme_stylebox_override("panel", art_panel)   # a arte traz o caixilho; as marcas de canto saem
+	else:
+		add_theme_stylebox_override("panel", _box(Color(0.045, 0.04, 0.06, PANEL_ALPHA), Color(GOLD_DIM, 0.55), 1, 3))
+		draw.connect(_draw_corners)
 	var margin := MarginContainer.new()
 	for side in ["left", "right", "top", "bottom"]:
-		margin.add_theme_constant_override("margin_" + side, 8)
+		margin.add_theme_constant_override("margin_" + side, 8 if art_panel == null else 26)
+	if art_panel != null:
+		margin.add_theme_constant_override("margin_top", 22)
+		margin.add_theme_constant_override("margin_bottom", 22)
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(margin)
 	var root := VBoxContainer.new()
@@ -139,6 +147,7 @@ func _build_main_column() -> Control:
 	hp_bar.add_theme_stylebox_override("fill", _box(Color(0.75, 0.14, 0.14), Color(0, 0, 0, 0), 0, 2))
 	hp_bar.add_theme_stylebox_override("background", _box(Color(0.12, 0.05, 0.05, 0.5), Color(0.4, 0.2, 0.2, 0.7), 1, 2))
 	col.add_child(hp_bar)
+	HudArt.style_bar(hp_bar, "hud_barra_pv", "hud_barra_pv_fill", [20, 20, 6, 6])
 	barrier_bar = ProgressBar.new()
 	barrier_bar.show_percentage = false
 	barrier_bar.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
@@ -167,6 +176,9 @@ func _build_main_column() -> Control:
 	xp_bar.add_theme_stylebox_override("fill", _box(Color(0.25, 0.6, 0.9), Color(0, 0, 0, 0), 0, 2))
 	xp_bar.add_theme_stylebox_override("background", _box(Color(0.05, 0.08, 0.12, 0.5), Color(0.18, 0.28, 0.4, 0.7), 1, 2))
 	col.add_child(xp_bar)
+	if HudArt.hud("hud_barra_xp") != null:
+		xp_bar.custom_minimum_size = Vector2(0, 10)
+		HudArt.style_bar(xp_bar, "hud_barra_xp", "hud_barra_xp_fill", [16, 16, 4, 4])
 	var attrs := HBoxContainer.new()
 	attrs.add_theme_constant_override("separation", 10)
 	attrs.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -232,8 +244,16 @@ func _icon_rect(path: String, px: float) -> TextureRect:
 	return t
 
 func _build_chip_row() -> Control:
-	var row := HBoxContainer.new()
-	row.add_theme_constant_override("separation", 14)
+	var art_chips := HudArt.chip_style("coin") != null
+	var row: Container = HBoxContainer.new()
+	if art_chips:
+		var grid := GridContainer.new()
+		grid.columns = 2
+		grid.add_theme_constant_override("h_separation", 6)
+		grid.add_theme_constant_override("v_separation", 2)
+		row = grid
+	else:
+		row.add_theme_constant_override("separation", 14)
 	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	gold_label = _chip(row, "coin", "Moedas")
 	kills_label = _chip(row, "kill", "Abates")
@@ -246,7 +266,19 @@ func _build_chip_row() -> Control:
 	return row
 
 ## Chip de ícone e valor; o tooltip fica no próprio chip (PASS: não rouba cliques da arena).
-func _chip(row: HBoxContainer, icon: String, tip: String) -> Label:
+func _chip(row: Container, icon: String, tip: String) -> Label:
+	var chip_art := HudArt.chip_style(icon)
+	if chip_art != null:
+		var framed := PanelContainer.new()
+		framed.add_theme_stylebox_override("panel", chip_art)
+		framed.custom_minimum_size = Vector2(150, 34)
+		framed.mouse_filter = Control.MOUSE_FILTER_PASS
+		framed.tooltip_text = tip
+		var value := _outlined(_label("", 16))
+		framed.add_child(value)
+		row.add_child(framed)
+		_chips[icon] = framed
+		return value
 	var chip := HBoxContainer.new()
 	chip.add_theme_constant_override("separation", 4)
 	chip.mouse_filter = Control.MOUSE_FILTER_PASS
