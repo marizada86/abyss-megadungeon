@@ -365,7 +365,8 @@ func _fill_upgrades() -> void:
 		var lab := Label.new()
 		var lv := p.upgrade_level(u.id)
 		lab.text = "%s   [%d/%d]\n%s" % [u.name, lv, u.costs.size(), u.desc]
-		lab.custom_minimum_size = Vector2(620 if up_icon == null else 560, 0)
+		lab.custom_minimum_size = Vector2(590 if up_icon == null else 530, 0)
+		lab.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART   # texto de conquista longo não empurra o botão
 		row.add_child(lab)
 		var btn := Button.new()
 		var cost := p.upgrade_cost(u.id)
@@ -381,14 +382,15 @@ func _fill_upgrades() -> void:
 			lab.add_theme_constant_override("line_spacing", 0)
 			var holder := VBoxContainer.new()
 			holder.add_theme_constant_override("separation", 0)
-			holder.custom_minimum_size = Vector2(560 if up_icon != null else 620, 0)
+			holder.custom_minimum_size = Vector2(530 if up_icon != null else 590, 0)
 			row.remove_child(lab)
 			lab.custom_minimum_size = Vector2(0, 0)
 			holder.add_child(pips)
 			holder.add_child(lab)
 			row.add_child(holder)
 		btn.disabled = locked_by != "" or cost < 0 or cost > p.coins()
-		btn.custom_minimum_size = Vector2(160, 44)
+		btn.custom_minimum_size = Vector2(190, 48)   # proporção da arte (240x48); menos que isso espreme o cadeado
+		btn.size_flags_vertical = Control.SIZE_SHRINK_CENTER   # sem isto a linha de 3 textos estica o botão (e o cadeado)
 		btn.set_meta("upgrade_id", String(u.id))
 		btn.pressed.connect(func():
 			if p.buy_upgrade(u.id):
@@ -408,11 +410,13 @@ func _style_buy_button(btn: Button, state: String) -> void:
 	for s in ["normal", "hover", "pressed", "focus", "disabled"]:
 		var sb := StyleBoxTexture.new()
 		sb.texture = tex
-		sb.texture_margin_left = 28.0
+		# O medalhão do cadeado ocupa ~36px à esquerda; margem menor que isso o esticaria.
+		var left := 40.0 if state == "bloqueado" else 28.0
+		sb.texture_margin_left = left
 		sb.texture_margin_right = 28.0
 		sb.texture_margin_top = 14.0
 		sb.texture_margin_bottom = 14.0
-		sb.content_margin_left = 30.0
+		sb.content_margin_left = left + 2.0
 		sb.content_margin_right = 30.0
 		sb.content_margin_top = 6.0
 		sb.content_margin_bottom = 8.0
