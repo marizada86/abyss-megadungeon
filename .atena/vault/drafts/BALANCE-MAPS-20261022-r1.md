@@ -38,3 +38,31 @@ O dano só caiu quando Ezro e Shu saíram das ondas; tirar o Death Tyrant não m
 ## Pendências
 - Shendilavri, Goranthis e Pilares seguem sem medição; as trocas de elenco ali (Crueldades → súcubo, Death Tyrant → Guardião de Goranthis e Receptáculo) põem inimigos de 130–200 de vida no lugar dos de 420–500 e devem aliviar. Medir exige bot com progressão (campanha completa ou nível/build inicial).
 - Playtest humano do Reino Abissal e de Dagruve.
+
+## Adendo — build inicial sintética (bot4), Shendilavri, Goranthis e Pilares
+`bot4.gd`: sobe o herói até o nível 36, 38 e 40 (por mapa) escolhendo ofertas com a política do bot, equipa 3 itens raros e começa a fase. No modo imortal, um golpe acima do PV máximo conta como "golpe letal" e a partida segue. 144 runs (6 heróis × 2 sementes × imortal/mortal × base `9351270`/atual). Build resultante: 5 armas evoluídas e PV máximo ~85 (sem meta).
+
+| Mapa | Conclui (imortal) | Dano/min | Golpes letais/min | Pico de inimigos | Mortal sobrevive |
+|---|---|---|---|---|---|
+| Shendilavri | 67 → 67% | 2851 → 2800 | 3,06 → 2,50 | 59 → 62 | 121 → 121 s |
+| Goranthis | 42 → 50% | 3373 → 3163 | 3,87 → 4,13 | 100 → 73 | 135 → 157 s |
+| Pilares | 0 → 0% (chefe nunca morre, 0/12) | 4356 → 4108 | 4,82 → 3,18 | 99 → 96 | 65 → 66 s |
+
+Leitura: as trocas de elenco (B3/B4) ficaram neutras ou um pouco mais leves, como esperado; nada a reverter. A rampa de pressão entre os três mapas é +13% e +30% (2,8 mil → 3,2 mil → 4,1 mil por minuto). Limite: o bot sem meta tem ~85 de PV, então o piso mortal (1 a 3 minutos) não representa um jogador com Quartel e equipamento; só vale a comparação base × novo.
+Ponto aberto: a Síntese Abissal não morreu em nenhuma das 12 runs de Pilares (45 timeouts no total); precisa de playtest humano ou de rodada com meta completa.
+
+## Adendo 2 — Pilares com meta completa (bot5)
+`bot5.gd` = bot4 + `--meta full`: todas as melhorias do Quartel no nível máximo e todas as recompensas de conquista (sem ler o save; PV máx. 75 → 98, 5 slots de arma), nível 40, 3 itens raros, estado atual (`a792cca`). 24 runs: 6 heróis × 2 sementes × imortal/mortal. Sem marcas do Abismo, sem equipamento do Quartel além dos 3 itens e dificuldade 1,0.
+
+| | Sem meta (adendo 1) | Meta completa |
+|---|---|---|
+| Chefe morto (imortal, 660 s) | 0/12 | **4/12** (Durvall, Kayron, Maelor, Sylas, seed 2; aos 396–557 s) |
+| Dano/min (imortal) | 4108 | 3657 (−11%) |
+| Golpes letais/min (imortal) | 3,18 | 2,26 |
+| Pico de inimigos | 96 | 28–82 |
+| Mortal sobrevive | 66 s | 97 s (46–275 s; Korrak seed 2 foi o máximo) |
+
+Leitura: a meta completa move o chefe de "nunca morre" para "morre em 1/3 das runs imortais", mas a fase continua letal para o bot (nenhuma run mortal passou de 5 min, 0/12 chefe) e ainda exige ~2 golpes letais por minuto mesmo no modo imortal. O ganho de sobrevivência (+31 s) é pequeno diante dos 300 s de duração. Isto aponta Pilares como o pico de dificuldade do jogo, em linha com a rampa já vista (+13% e +30% sobre Shendilavri/Goranthis), mas o bot não esquiva, não usa terreno/fontes nem marcas, então não prova que um humano com Quartel cheio falhe. Nenhum dado de jogo foi alterado.
+
+Decisão (dono, 2026-10-22): manter Pilares como está até o playtest humano; sem variante agora.
+Arquivos: `.atena/generated/balance-bots-20261018/{bot5.gd,run-bot5.sh,launch-bal22i.sh,results/i-meta-*.jsonl}`.

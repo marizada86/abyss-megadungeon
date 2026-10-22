@@ -2398,6 +2398,12 @@ vault_sweep_20261021:
     report: .atena/vault/drafts/BALANCE-MAPS-20261022-r1.md
     applied: "Reino Abissal v5: sem ondas de Ezro e Shu, Death Tyrant aos 140 s com 300 de vida e 2d8; 100% conclusão, 702 dano/min, 0 mortes (base 93%/649)"
     not_measured: "Shendilavri, Goranthis e Pilares (bot sem progressão)"
+  batch_11:
+    authorization: "Atena, sim, rode a versão com meta completa nos Pilares (2026-10-22)"
+    status: DONE_LOCAL_COMMITTED
+    report: .atena/vault/drafts/BALANCE-MAPS-20261022-r1.md  # Adendo 2
+    result: "Pilares, meta completa (Quartel máx. + conquistas), nível 40, 24 runs: chefe morre em 4/12 imortais (0/12 sem meta); mortal sobrevive 97 s (66 s sem meta); 3657 dano/min (−11%). Nenhum dado de jogo alterado."
+    decision: "Manter Pilares como está até o playtest humano (dono, 2026-10-22); nenhuma variante será preparada agora"
   commit: NOT_AUTHORIZED_YET
 hero_walk_fix_20261021:
   id: PLAN-NOTTGARD-HERO-WALK-FIX-20261021
