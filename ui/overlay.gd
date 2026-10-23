@@ -503,6 +503,8 @@ func _draw_over() -> void:
 			var h := base_h
 			var frame := int(Time.get_ticks_msec() / (ALTAR_FRAME_MS if animation_id == "altar_active" else 100)) % animation_count
 			var w := h
+			if animation_id == "fountain_active":
+				_draw_fountain_plinth(draw_p, h)
 			draw_texture_rect_region(animation_texture, Rect2(draw_p.x - w * 0.5, draw_p.y - h, w, h), Rect2(frame * 192, 0, 192, 192))
 		elif texture != null:
 			var h := base_h
@@ -569,6 +571,24 @@ func _draw_over() -> void:
 			var sb := Iso.to_screen(e.pos + e.shoot_dir * float(e.shoot_ab.get("range", 8.0))) + Vector2(0, -16)
 			var fade := clampf(1.0 - e.shoot_wind / 0.4, 0.0, 1.0)
 			draw_line(sa, sb, Color(1.0, 0.35, 0.25, 0.25 + fade * 0.55), 1.5 + fade)
+
+## A arte da fonte tem a base só em contorno (o miolo é transparente): sobre tábuas, calçada ou estrada o desenho do chão
+## atravessava a moldura e serrilhava tudo. Um piso de pedra opaco por baixo da arte isola a fonte do cenário.
+func _draw_fountain_plinth(foot: Vector2, sprite_h: float) -> void:
+	var center := foot + Vector2(0, -sprite_h * 0.17)
+	var rx := sprite_h * 0.4
+	var ry := rx * 0.5
+	var ring := PackedVector2Array()
+	for i in 28:
+		var a := TAU * float(i) / 28.0
+		ring.append(center + Vector2(cos(a) * rx, sin(a) * ry))
+	draw_colored_polygon(ring, Color(0.17, 0.165, 0.185))
+	var inner := PackedVector2Array()
+	for point in ring:
+		inner.append(center + (point - center) * 0.82)
+	draw_colored_polygon(inner, Color(0.12, 0.12, 0.14))
+	ring.append(ring[0])
+	draw_polyline(ring, Color(0.36, 0.34, 0.3, 0.9), 2.0)
 
 ## SPEC-129: estrela do Caminho de Tou Um (arte provisória: losango dourado). A seta de fora da tela é da HUD (SPEC-159).
 func _draw_star_path() -> void:
