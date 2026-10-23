@@ -247,12 +247,14 @@ func _refresh_all() -> void:
 		var portrait_path := "res://assets/portraits/%s.png" % id
 		var portrait_icon: Texture2D = load(portrait_path) if ResourceLoader.exists(portrait_path) else null
 		hero_list.add_item(("%s" if p.hero_unlocked(id) else "🔒 %s") % d.name, portrait_icon)
+		hero_list.set_item_metadata(hero_list.item_count - 1, id)
 	stage_list.clear()
 	for id in stages:
 		var d: Dictionary = Data.table("stages")[id]
 		var thumb_path := "res://assets/stages/%s_thumb.png" % id
 		var thumb: Texture2D = load(thumb_path) if ResourceLoader.exists(thumb_path) else null
 		stage_list.add_item(("%d. %s" if Game.stage_available(id) else "🔒 %d. %s") % [int(d.order) + 1, d.name], thumb)
+		stage_list.set_item_metadata(stage_list.item_count - 1, id)
 	hero_list.refresh_card_art()
 	stage_list.refresh_card_art()
 	hero_list.select(sel_h[0] if not sel_h.is_empty() else heroes.find(Game.run_hero))
