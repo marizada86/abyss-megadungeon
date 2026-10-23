@@ -8,10 +8,12 @@ const THUMB_DIR := "res://assets/ui/quartel/thumbs/%s_%s.png"
 # e margens do nine-patch (esquerda/direita) que preservam janela e ornamentos sem distorcer.
 const CARD_HEIGHT := {"heroi": 72, "fase": 88}
 const WINDOW := {"heroi": Rect2(15, 15, 47, 43), "fase": Rect2(13, 23, 64, 44)}
-const TEXT_BOX := {"heroi": Rect2(78, 16, 0, 40), "fase": Rect2(122, 22, 0, 44)}
-const PATCH := {"heroi": [100, 80], "fase": [124, 80]}
-const MEDAL_CENTER := Vector2(97, 44)   # oval do cartão de fase
-const MEDAL_SIZE := 34.0
+const TEXT_BOX := {"heroi": Rect2(78, 16, 0, 40), "fase": Rect2(128, 22, 0, 44)}
+const PATCH := {"heroi": [100, 80], "fase": [128, 80]}
+const CARD_ART := {"heroi": "heroi_cartao", "fase": "fase_cartao_medalha"}   # sem o oval: a medalha tem encaixe próprio
+const MEDAL_CENTER := Vector2(97, 44)
+const MEDAL_SIZE := 48.0   # quadrado da textura; o desenho útil (71x92 de 96) fica com ~46 px de altura
+const SOCKET_RADIUS := 19.0
 const NAME_SIZES := [16, 14, 12]
 const LABEL_SIZE := 11
 
@@ -49,7 +51,7 @@ func refresh_card_art() -> void:
 
 func _card_style() -> StyleBox:
 	if not _styles.has("card"):
-		var texture := HudArt.tex("res://assets/ui/quartel/%s_cartao.png" % card_kind)
+		var texture := HudArt.tex("res://assets/ui/quartel/%s.png" % CARD_ART[card_kind])
 		if texture == null:
 			_styles["card"] = null
 		else:
@@ -107,14 +109,16 @@ func _draw_cards() -> void:
 			_art_layer.draw_rect(r.grow(-3), Color(1, 0.84, 0.4) if has_focus() else Color(0.7, 0.6, 0.4), false, 2.0 if has_focus() else 1.0)
 		_draw_label(font, r, get_item_text(i).trim_prefix("🔒 "), locked)
 
-## Medalha de progresso da fase no oval do cartão: a maior conquistada, "especial" para a run sem dano.
+## Medalha de progresso da fase no encaixe do cartão: a maior conquistada, "especial" para a run sem dano.
+## Sem medalha ainda, um aro apagado marca o lugar.
 func _draw_medal(r: Rect2, i: int, locked: bool) -> void:
 	var medal := "bloqueada" if locked else Game.profile.stage_medal(String(get_item_metadata(i)))
-	if medal == "":
+	var center := r.position + MEDAL_CENTER
+	var texture := HudArt.tex("res://assets/ui/quartel/medalhas/%s.png" % medal) if medal != "" else null
+	if texture == null:
+		_art_layer.draw_arc(center, SOCKET_RADIUS, 0.0, TAU, 40, Color(0.55, 0.43, 0.22, 0.55), 1.5, true)
 		return
-	var texture := HudArt.tex("res://assets/ui/quartel/medalhas/%s.png" % medal)
-	if texture != null:
-		_art_layer.draw_texture_rect(texture, Rect2(r.position + MEDAL_CENTER - Vector2.ONE * MEDAL_SIZE * 0.5, Vector2.ONE * MEDAL_SIZE), false)
+	_art_layer.draw_texture_rect(texture, Rect2(center - Vector2.ONE * MEDAL_SIZE * 0.5, Vector2.ONE * MEDAL_SIZE), false)
 
 func _draw_label(font: Font, r: Rect2, name_text: String, locked: bool) -> void:
 	var box: Rect2 = TEXT_BOX[card_kind]
