@@ -6,7 +6,7 @@ const Campaign := preload("res://core/chapter_flow.gd")
 var data := {}
 
 static func fresh() -> Dictionary:
-	return {"name": "", "coins": 0, "upgrades": {}, "achievements": {}, "cleared": {}, "hqs_seen": {}, "ecos": {}, "relics": {}, "welcome_seen": false,
+	return {"name": "", "coins": 0, "upgrades": {}, "achievements": {}, "cleared": {}, "medals": {}, "hqs_seen": {}, "ecos": {}, "relics": {}, "welcome_seen": false,
 		"stats": {"kills_total": 0, "gold_total": 0, "chests_total": 0, "bosses_total": 0, "elites_total": 0, "boss_kills": {}, "heroes_played": {}, "reached": {}, "runs": 0, "deaths": 0, "best_time": {}},
 		"codex": {"enemies": {}, "items": {}, "weapons": {}},
 		"settings": {"aim": "auto", "volume": 0.7, "music_volume": 0.8, "sfx_volume": 0.9, "ambience_volume": 0.75,
@@ -236,6 +236,7 @@ func apply_run(result: Dictionary) -> Dictionary:
 		st.reached[sid] = true
 	for sid in result.cleared_ids:
 		data.cleared[sid] = true
+	var new_medals := apply_medals(result.get("stage_medals", {}))
 	var new_abyss_record := record_abyss(result)
 	var bt: float = float(st.best_time.get(result.stage, 0.0))
 	if bool(result.won) and (bt <= 0.0 or float(result.time) < bt):
@@ -245,7 +246,89 @@ func apply_run(result: Dictionary) -> Dictionary:
 		for k in codex[cat]:
 			data.codex[cat][k] = true
 	var new_ach := check_achievements(result)
-	return {"earned": earned, "coins": coins(), "achievements": new_ach, "reward_rate": reward_rate, "abyss_record": new_abyss_record}
+	return {"earned": earned, "coins": coins(), "achievements": new_ach, "reward_rate": reward_rate, "abyss_record": new_abyss_record, "medals": new_medals}
+
+# ------------------------------------------------------------------ medalhas
+
+const MEDAL_TIERS := ["bronze", "prata", "ouro"]
+const MEDAL_METRICS := {"kills": "Abates", "multi": "Abates simultâneos", "seconds": "Tempo"}
+
+## Guarda o melhor de cada métrica por fase (os limiares ficam em data/medals.json e podem ser reajustados).
+## Devolve as medalhas ganhas agora: [{stage, metric, tier}] e {stage, metric: "intact"}.
+func apply_medals(stage_medals: Dictionary) -> Array:
+	var gained: Array = []
+	for sid in stage_medals:
+		var run: Dictionary = stage_medals[sid]
+		var before := {}
+		for metric in medal_metrics(sid):
+			before[metric] = medal_tier(sid, metric)
+		var had_intact: bool = bool(data.medals.get(sid, {}).get("intact", false))
+		if not data.medals.has(sid):
+			data.medals[sid] = {}
+		var best: Dictionary = data.medals[sid]
+		best["kills"] = maxi(int(best.get("kills", 0)), int(run.get("kills", 0)))
+		best["multi"] = maxi(int(best.get("multi", 0)), int(run.get("multi", 0)))
+		best["seconds"] = minf(float(best.get("seconds", 99999.0)), float(run.get("seconds", 99999.0)))
+		best["intact"] = had_intact or bool(run.get("intact", false))
+		for metric in medal_metrics(sid):
+			var now := medal_tier(sid, metric)
+			if now > int(before[metric]):
+				gained.append({"stage": sid, "metric": metric, "tier": now})
+		if best.intact and not had_intact:
+			gained.append({"stage": sid, "metric": "intact", "tier": 4})
+	return gained
+
+## Métricas com medalha na fase: o tempo só existe onde há chefe (fases por objetivo não o têm).
+func medal_metrics(stage_id: String) -> Array:
+	return MEDAL_METRICS.keys().filter(func(metric): return medal_thresholds(stage_id).has(metric))
+
+func medal_thresholds(stage_id: String) -> Dictionary:
+	var table: Dictionary = Data.table("medals")
+	var kind := "boss" if String(Data.table("stages").get(stage_id, {}).get("boss", "")) != "" else "objective"
+	var out: Dictionary = table.defaults[kind].duplicate(true)
+	out.merge(table.stages.get(stage_id, {}), true)
+	return out
+
+## 0 = sem medalha; 1..3 = bronze, prata, ouro. Tempo vale menos = melhor.
+func medal_tier(stage_id: String, metric: String) -> int:
+	var best: Dictionary = data.medals.get(stage_id, {})
+	if not best.has(metric) or not medal_thresholds(stage_id).has(metric):
+		return 0
+	var value := float(best[metric])
+	var limits: Array = medal_thresholds(stage_id)[metric]
+	var tier := 0
+	for i in limits.size():
+		if (value <= float(limits[i]) if metric == "seconds" else value >= float(limits[i])):
+			tier = i + 1
+	return tier
+
+## Medalha do cartão da fase: "especial" (nenhum dano), senão a maior entre as três; "" sem registro.
+func stage_medal(stage_id: String) -> String:
+	if bool(data.medals.get(stage_id, {}).get("intact", false)):
+		return "especial"
+	var top := 0
+	for metric in medal_metrics(stage_id):
+		top = maxi(top, medal_tier(stage_id, metric))
+	return MEDAL_TIERS[top - 1] if top > 0 else ""
+
+## Linhas para o painel da fase: cada medalha com o recorde atual e o próximo limiar.
+func medal_lines(stage_id: String) -> Array:
+	var best: Dictionary = data.medals.get(stage_id, {})
+	var limits := medal_thresholds(stage_id)
+	var out: Array = []
+	for metric in medal_metrics(stage_id):
+		var tier := medal_tier(stage_id, metric)
+		var current := "—"
+		if best.has(metric):
+			current = "%d:%02d" % [int(best[metric]) / 60, int(best[metric]) % 60] if metric == "seconds" else str(int(best[metric]))
+		var nxt := ""
+		if tier < 3:
+			var goal := float(limits[metric][tier])
+			nxt = " · próxima: %s" % ("%d:%02d" % [int(goal) / 60, int(goal) % 60] if metric == "seconds" else "%d" % int(goal))
+		var label: String = "Tempo para derrotar o chefe" if metric == "seconds" else MEDAL_METRICS[metric]
+		out.append("%s: %s (%s)%s" % [label, MEDAL_TIERS[tier - 1] if tier > 0 else "sem medalha", current, nxt])
+	out.append("Sem dano: %s" % ("conquistada" if bool(best.get("intact", false)) else "não conquistada"))
+	return out
 
 func stat_value(stat: String, run: Dictionary) -> float:
 	var st: Dictionary = data.stats

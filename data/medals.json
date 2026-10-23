@@ -1,0 +1,21 @@
+{
+  "_nota": "Limiares provisórios: calibrados com bots god (nível 8, 3 itens) e margem para jogo humano; revisar no playtest humano. kills/multi: maior é melhor; seconds: menor é melhor (segundos após o cronômetro até derrotar o chefe). Fases por objetivo não têm medalha de tempo (segurar o objetivo leva sempre ~3 s).",
+  "multi_window": 1.0,
+  "defaults": {
+    "boss": {"kills": [300, 500, 700], "multi": [6, 10, 15], "seconds": [400, 250, 150]},
+    "objective": {"kills": [60, 95, 130], "multi": [5, 8, 12]}
+  },
+  "stages": {
+    "docas": {"kills": [120, 190, 260], "multi": [5, 8, 12], "seconds": [210, 130, 80]},
+    "dagruve": {"kills": [260, 410, 550], "multi": [5, 8, 12], "seconds": [75, 45, 28]},
+    "shedaklah": {"kills": [400, 650, 880], "multi": [5, 9, 13], "seconds": [280, 170, 100]},
+    "molor": {"kills": [700, 1100, 1500], "multi": [8, 14, 22], "seconds": [400, 250, 150]},
+    "durao": {"kills": [300, 480, 640], "multi": [6, 10, 15], "seconds": [480, 300, 180]},
+    "feng_tu": {"kills": [330, 520, 700], "multi": [6, 10, 15], "seconds": [440, 270, 160]},
+    "shendilavri": {"kills": [600, 950, 1250], "multi": [8, 14, 22], "seconds": [900, 500, 320]},
+    "goranthis": {"kills": [1400, 2200, 3000], "multi": [10, 18, 28], "seconds": [800, 450, 280]},
+    "pilares": {"kills": [400, 700, 1000], "multi": [8, 14, 22], "seconds": [600, 400, 250]},
+    "reino_abissal": {"kills": [60, 95, 130], "multi": [5, 8, 12]},
+    "domwieck": {"kills": [80, 130, 175], "multi": [5, 8, 12]}
+  }
+}

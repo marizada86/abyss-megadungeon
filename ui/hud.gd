@@ -1176,6 +1176,13 @@ func show_result(res: Dictionary, summary: Dictionary) -> void:
 				names.append(achievement_line(a).replace("[", "[lb]"))
 	if not names.is_empty():
 		txt += "\n\nConquistas:\n" + "\n".join(names)
+	var medal_lines: Array = []
+	for gain in summary.get("medals", []):
+		var stage_name := String(Data.table("stages").get(String(gain.stage), {}).get("name", gain.stage)).replace("[", "[lb]")
+		var what: String = "Sem dano: medalha especial" if gain.metric == "intact" else "%s: %s" % [Profile.MEDAL_METRICS[gain.metric], Profile.MEDAL_TIERS[int(gain.tier) - 1]]
+		medal_lines.append("%s · %s" % [stage_name, what])
+	if not medal_lines.is_empty():
+		txt += "\n\nMedalhas:\n" + "\n".join(medal_lines)
 	result_text.text = "[center]%s[/center]" % txt   # centrado sob o banner, com os botões também centralizados
 	_fit_result_scroll()
 	var result_was_open := result_panel.visible

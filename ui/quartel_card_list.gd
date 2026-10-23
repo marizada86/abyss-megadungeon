@@ -10,6 +10,8 @@ const CARD_HEIGHT := {"heroi": 72, "fase": 88}
 const WINDOW := {"heroi": Rect2(15, 15, 47, 43), "fase": Rect2(13, 23, 64, 44)}
 const TEXT_BOX := {"heroi": Rect2(78, 16, 0, 40), "fase": Rect2(122, 22, 0, 44)}
 const PATCH := {"heroi": [100, 80], "fase": [124, 80]}
+const MEDAL_CENTER := Vector2(97, 44)   # oval do cartão de fase
+const MEDAL_SIZE := 34.0
 const NAME_SIZES := [16, 14, 12]
 const LABEL_SIZE := 11
 
@@ -96,12 +98,23 @@ func _draw_cards() -> void:
 			_art_layer.draw_style_box(style, r)
 		else:
 			_art_layer.draw_rect(r, Color(0.06, 0.05, 0.08, 0.98))
+		if card_kind == "fase":
+			_draw_medal(r, i, locked)
 		if locked:
 			_art_layer.draw_rect(r.grow(-4), Color(0, 0, 0, 0.3))
 		if is_selected(i):
 			_art_layer.draw_rect(r.grow(-3), Color(1, 0.82, 0.36, 0.14))
 			_art_layer.draw_rect(r.grow(-3), Color(1, 0.84, 0.4) if has_focus() else Color(0.7, 0.6, 0.4), false, 2.0 if has_focus() else 1.0)
 		_draw_label(font, r, get_item_text(i).trim_prefix("🔒 "), locked)
+
+## Medalha de progresso da fase no oval do cartão: a maior conquistada, "especial" para a run sem dano.
+func _draw_medal(r: Rect2, i: int, locked: bool) -> void:
+	var medal := "bloqueada" if locked else Game.profile.stage_medal(String(get_item_metadata(i)))
+	if medal == "":
+		return
+	var texture := HudArt.tex("res://assets/ui/quartel/medalhas/%s.png" % medal)
+	if texture != null:
+		_art_layer.draw_texture_rect(texture, Rect2(r.position + MEDAL_CENTER - Vector2.ONE * MEDAL_SIZE * 0.5, Vector2.ONE * MEDAL_SIZE), false)
 
 func _draw_label(font: Font, r: Rect2, name_text: String, locked: bool) -> void:
 	var box: Rect2 = TEXT_BOX[card_kind]

@@ -316,6 +316,8 @@ func _refresh_stage() -> void:
 		d.name, d.sub, boss.get("name", "Objetivo de chegada"), int(d.duration) / 60, int(d.duration) % 60, " (infinito)" if d.get("endless", false) else "", _ambient_text(d.ambient), float(d.coin_mult)]
 	if bt > 0.0:
 		txt += "\nMelhor tempo: %d:%02d" % [int(bt) / 60, int(bt) % 60]
+	if Game.stage_available(id):
+		txt += "\n\n[b]Medalhas[/b]\n" + "\n".join(Game.profile.medal_lines(id))
 	if not Game.stage_available(id):
 		txt += "\n\n[color=#e0a040]Bloqueada: avance pela campanha até %s.[/color]" % Data.table("stages").get(d.unlock, {}).get("name", "avanço da campanha")
 	txt += "\n\n" + AbyssPanel.summary_line(id)

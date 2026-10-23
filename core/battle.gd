@@ -135,6 +135,12 @@ var death_reward_rate := 0.5
 var death_reason := ""
 var invuln := 0.0
 var stats := {"boons_declined": 0, "kills": 0, "crits": 0, "ones": 0, "elites": 0, "bosses": 0, "chests": 0, "gold": 0.0, "gold_src": {}, "gold_extra": {}, "damage_taken": 0.0, "clean_kills": 0, "clean_streak_best": 0, "still_best": 0.0, "stages_cleared": 0, "rituals": 0, "bets_won": 0, "loyalty": 0, "boss_ids": [], "stage_ids": [], "cleared_ids": [], "ecos": []}
+## Medalhas do Quartel: métricas da fase atual (zeradas em load_stage) e o registro das fases concluídas na run.
+var medal_log := {}
+var _medal_kills := 0
+var _medal_multi := 0
+var _medal_burst: Array = []
+var _medal_hurt := false
 var codex := {"enemies": {}, "items": {}, "weapons": {}}
 var _acc := {}
 var _elites_done := {}
@@ -347,6 +353,10 @@ func load_stage(stage_key: String) -> void:
 	_chamber_key_lost = false
 	relic_taken = false
 	time = 0.0
+	_medal_kills = 0
+	_medal_multi = 0
+	_medal_burst.clear()
+	_medal_hurt = false
 	boss = null
 	boss_spawned = false
 	boss_mech = null
@@ -814,6 +824,7 @@ func complete_stage(reason: String) -> bool:
 	stats.stages_cleared += 1
 	if not stats.cleared_ids.has(stage_id):
 		stats.cleared_ids.append(stage_id)
+	_record_medal_stats()
 	if reason == "objective":
 		if bool(stage.get("qa_only", false)) or String(stage.get("next", "")) == "":
 			state = "won"
@@ -821,6 +832,21 @@ func complete_stage(reason: String) -> bool:
 			_add_interaction("portal", objective_target() + Vector2(0, 2))
 			events.append({"type": "toast", "text": "Continuar: %s (E/oeste) ou extrair (X/norte)." % String(Data.table("stages")[String(stage.next)].name)})
 	return true
+
+## Congela as métricas da fase no instante da conclusão. Segundos = tempo após o cronômetro: chefe (se houver) ou objetivo.
+func _record_medal_stats() -> void:
+	if bool(stage.get("qa_only", false)):
+		return
+	medal_log[stage_id] = {"kills": _medal_kills, "multi": _medal_multi, "seconds": snappedf(maxf(0.0, time - float(stage.duration)), 0.1), "intact": not _medal_hurt}
+
+## Abates simultâneos = maior número de abates dentro da janela curta de `data/medals.json`.
+func _medal_count_kill() -> void:
+	_medal_kills += 1
+	_medal_burst.append(run_time)
+	var window := float(Data.table("medals").get("multi_window", 1.0))
+	while run_time - float(_medal_burst[0]) > window:
+		_medal_burst.pop_front()
+	_medal_multi = maxi(_medal_multi, _medal_burst.size())
 
 func _build_grid() -> void:
 	_grid.clear()
@@ -1740,6 +1766,7 @@ func _hurt_hero(dmg: float, src: String, bypass_generic_defenses: bool = false) 
 	if not bypass_generic_defenses:
 		invuln = maxf(invuln, HIT_INVULN)
 	stats.damage_taken += dmg
+	_medal_hurt = true
 	stats.clean_kills = 0
 	kinds.on_hit(self, src)
 	if CONTINUOUS_HURT_SOURCES.has(src):
@@ -1825,6 +1852,8 @@ func _kill(e: Enemy) -> void:
 	e.dead = true
 	codex.enemies[e.id] = true
 	stats.kills += 1
+	if not e.has_flag("quebravel"):
+		_medal_count_kill()
 	_tide_kill()
 	stats.clean_kills += 1
 	stats.clean_streak_best = maxi(int(stats.clean_streak_best), int(stats.clean_kills))
@@ -2151,6 +2180,7 @@ func _on_boss_dead(e: Enemy) -> void:
 		if not final_victory:
 			final_victory = true
 			stats.cleared_ids.append(stage_id)
+			_record_medal_stats()
 			events.append({"type": "toast", "text": "Vitória final! Continue nos Pilares ou extraia (X/norte)."})
 		boss_repeat += 1
 		boss_spawned = false
@@ -3906,7 +3936,7 @@ func result() -> Dictionary:
 		"gold": int(round(stats.gold * reward_multiplier())), "raw_gold": int(stats.gold), "gold_src": stats.gold_src.duplicate(), "gold_extra": stats.gold_extra.duplicate(), "reward_mult": reward_multiplier(), "descent_depth": descent_depth,
 		"abyss_level": abyss_level, "abyss_marks": abyss_marks.duplicate(), "abyss_start_stage": abyss_start_stage,
 		"clean_streak": stats.clean_streak_best, "level": hero.level, "stage": stage_id, "hero": hero.id, "bosses": stats.bosses, "boss_ids": stats.boss_ids, "elites": stats.elites, "crits": stats.crits,
-		"ones": stats.ones, "still": stats.still_best, "rituals": stats.rituals, "bets_won": stats.bets_won, "loyalty": stats.loyalty, "chests": stats.chests, "stages_cleared": stats.stages_cleared, "stage_ids": stats.stage_ids, "cleared_ids": stats.cleared_ids, "final_victory": final_victory, "weapons": hero.weapons.map(func(w): return w.id), "codex": codex,
+		"ones": stats.ones, "still": stats.still_best, "rituals": stats.rituals, "bets_won": stats.bets_won, "loyalty": stats.loyalty, "chests": stats.chests, "stages_cleared": stats.stages_cleared, "stage_ids": stats.stage_ids, "cleared_ids": stats.cleared_ids, "stage_medals": medal_log.duplicate(true), "final_victory": final_victory, "weapons": hero.weapons.map(func(w): return w.id), "codex": codex,
 		"reward_rate": death_reward_rate if state == "dead" else 1.0, "death_reason": death_reason}
 
 ## L1 (IN-095): passivas que faltam para evoluir uma arma que já está no nível máximo.
