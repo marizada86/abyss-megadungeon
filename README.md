@@ -1,6 +1,6 @@
 # Nottgard - Abyss Megadungeon PC
 
-Projeto Godot independente para Windows x86_64, derivado da base b83f188a. Godot 4.7.2 e GL Compatibility; mobile fica para um plano futuro. O editor exibe Nottgard - Abyss Megadungeon. Diretório legado, IDs e schema de saves preservados por configuração explícita de user://.
+Abyss Megadungeon é o mesmo jogo que nottgard-survivor, apenas com o nome novo; o repositório antigo é histórico. Projeto Godot independente para Windows x86_64, derivado da base b83f188a. Godot 4.7.2 e GL Compatibility; mobile fica para um plano futuro. O editor exibe Nottgard - Abyss Megadungeon. Diretório legado, IDs e schema de saves preservados por configuração explícita de user://.
 
 ## Desenvolvimento
 

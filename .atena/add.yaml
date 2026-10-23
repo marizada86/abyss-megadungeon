@@ -1,7 +1,7 @@
 add_version: '0.2'
 project:
   id: PRJ-NOTTGARD-PC
-  name: Nottgard - Abyss Megadungeon
+  name: Abyss Megadungeon
 interaction:
   default_mode: direct
   atena:

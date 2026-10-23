@@ -1,5 +1,14 @@
 {
 	"achievements": {},
+	"campaign_progress": {
+		"legacy_hq_access": {},
+		"legacy_stage_access": {},
+		"milestones": {},
+		"next_stage": "docas",
+		"pending_hqs": [],
+		"presentation_done": {},
+		"version": 1
+	},
 	"cleared": {},
 	"codex": {
 		"enemies": {},
@@ -16,6 +25,7 @@
 		"aim": "auto",
 		"ambience_muted": false,
 		"ambience_volume": 0.75,
+		"atmosphere": "leve",
 		"controller": {
 			"bindings": {
 				"hero_active": 7
@@ -24,11 +34,15 @@
 		},
 		"difficulty": 0,
 		"fullscreen": false,
+		"hints": "on",
+		"hints_seen": {},
 		"music_muted": false,
 		"music_volume": 0.8,
 		"resolution": "1280x720",
 		"sfx_muted": false,
 		"sfx_volume": 0.9,
+		"ui_font": "fell",
+		"visual_filter": "off",
 		"volume": 0.7,
 		"window_mode": "windowed"
 	},

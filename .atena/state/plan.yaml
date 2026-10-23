@@ -2465,7 +2465,7 @@ hero_art_reset_20261021:
   revision: r1
   classification: PLAN_CHANGE_REQUEST
   mode: per-batch
-  status: R2_GATE1_TECHNICAL_REVIEW_REQUIRED
+  status: R2_SCOPE_CHANGED_WALK_PAUSED_ACTIONS_AND_CUTOUT_STUDY_PREPARED
   content_state: DRAFT
   origin: "Dono, 2026-10-21: refazer os prompts dos personagens, desapegar das tiras piloto, animações a 5 fps, Vault atualizado e lições do projeto"
   spec: .atena/specs/SPEC-NOTTGARD-HERO-ART-RESET-20261021/plan-r1.md
@@ -2497,12 +2497,191 @@ hero_art_reset_20261021:
   vault_head_local: 50008c9
   generation_authorized: "R2 apenas: Durvall, Korrak e Erik (33 imagens), gerados pelo dono no ChatGPT; autorizado em 2026-10-21 (Autorizo o R2)"  # R0 e R1 foram só texto
   r2:
-    status: GATE1_V01_V02_MEASURED_REJECTED
+    status: WALK_SE_R2_3_ATTEMPTS_USED_NO_ACCEPTANCE
     owner_visual_acceptance: "2026-10-22: aprovado, continue (v01 idle e walk se); não equivale a aceite visual das v02"
     gate1_evidence: assets_incoming/hero-r2/durvall/gate1-review-v02.md
-    claude_handoff: .atena/generated/hero-r2-durvall-handoff-20261022/LEIA-ME-CLAUDE.md
-    claude_handoff_status: "READY_LOCAL_20261022; não enviado; gate técnico e aprovações preservados"
+    claude_handoff: .atena/generated/hero-r2-durvall-walk-se-r2-20261022/RETORNO-CLAUDE.md
+    claude_handoff_previous: .atena/generated/hero-r2-durvall-handoff-20261022/LEIA-ME-CLAUDE.md
+    claude_handoff_status: "RETURN_READY_LOCAL_20261022; não enviado; r2 v01/v02 reprovadas pelo dono, v03 sem aceite e com ressalva visual; três tentativas usadas; sem novas gerações"
     gate1_attempts: {idle_se: 2, walk_se: 2}
+    fixes_applied_20261022:
+      authorization: "Aprovo as correções: contrato r2 com 4 desenhos na caminhada, linguagem de perna do lado da câmera, verificador v2 e pacote de prompts regenerado. Não gere nada ainda (2026-10-22)"
+      contract_r2: .atena/specs/SPEC-NOTTGARD-HERO-ART-RESET-20261021/animation-contract-r2.md   # r1 preservado como histórico
+      verifier_v2: .atena/generated/hero-art-reset-20261021/r2_check_v2.gd   # v1 preservado; tipos idle, walk4, walk2, walk3 (legado), grid; estados PASSA/FALHA/INCERTO; saída 0/3/1/2; --noise-from e --crops
+      verifier_v2_validation: "reavaliou v01 e v02 do Durvall: idle v01 REPROVA (1 ponto solto, halo INCERTO), idle v02 PASSA, walk v01 e v02 PASSA_COM_ITENS_A_VISTA (5b INCERTO, razão 1,24 e 1,27, recorte das pernas mostra A e B iguais); sintéticos: walk4 bom PASSA_COM_ITENS_A_VISTA, walk4 com cópia REPROVA (5c)"
+      verifier_v2_limits: "limites PROVISÓRIOS (halo 5/10 pontos, 5b 1,6, 5c 2,0/1,3) calibrados na primeira imagem aceita pelo dono; 5b nunca reprova sozinho; nenhum limite foi ajustado para aprovar imagem"
+      prompt_pack_r2: .atena/generated/hero-art-reset-20261021/prompts-r2/   # r1 em prompts/ preservado; gerador build_prompts_r2.js; 114 imagens; validação automática passou
+      roteiro_r2: .atena/specs/SPEC-NOTTGARD-HERO-ART-RESET-20261021/r2-roteiro-r2.md
+      walk_file_naming: "caminhadas do formato novo levam sufixo _r2 (durvall_walk_se_r2_v01.png) para não sobrescrever a v01 aprovada"
+      new_format_attempts_walk_se: 3
+      correction_to_diagnosis: "exit code do v1 já retornava 1; afirmação anterior de 0 sempre não se confirmou"
+      generation: "3 PNGs novos _r2_v01/v02/v03, ferramenta integrada image_gen; somente 4 CANON + idle v01 como arquivos de referência; PNGs preservados sem edição; v01/v02 reprovadas pelo dono; v03 sem aceite, alternância ainda suspeita à vista; sem medição v2 nesta rodada"
+    walk_se_r2_return_20261022:
+      authorization: "Dono: executar plano do Claude; pode gerar; última tentativa com movimento simples; atena preparar para retornar para o claude"
+      attempts_used: 3
+      attempts_remaining: 0
+      checkpoint: WALK_SE_R2_EXHAUSTED_AWAITING_CLAUDE_DIAGNOSIS_AND_OWNER_NEXT_SCOPE
+      owner_feedback: "a passada continua estranha só uma perna se movimenta e no ultimo quadro a outra perna se movimenta"
+      acceptance: {v01: REJECTED_BY_OWNER, v02: REJECTED_BY_OWNER, v03: NO_OWNER_ACCEPTANCE_VISUAL_CONCERN}
+      evidence: .atena/generated/hero-r2-durvall-walk-se-r2-20261022/
+      automated_verifier_run: false
+      runtime_modified: false
+    walk_se_r2_diagnosis_20261022:
+      doc: .atena/generated/hero-r2-durvall-walk-se-r2-diagnosis-20261022/DIAGNOSTICO-E-PROPOSTA.md
+      request: "Dono: analisar as evidências e propor a próxima abordagem (plano B de uma pose por imagem previsto); proposta concreta antes de autorizar novas gerações; não gerar nem integrar"
+      generation_authorized: NONE
+      applied_changes: "nenhuma no contrato r2, verificador v2 oficial, pacote prompts-r2, PNGs ou jogo; só derivados e scripts de análise na pasta do diagnóstico"
+      findings:
+        - "v01/v02/v03 bem formadas (4 figuras, escala, fundo); o 'achei 2 figuras' do verificador v2 é defeito do agrupamento por vizinhança (funde fileira de cima com a de baixo); corrigir agrupando por quadrante (proposto, não aplicado)"
+        - "pés apoiados (faixa dos 6% mais baixos): v01 e v02 alternam o apoio (direita em P1, esquerda em P2); v03 não alterna (apoio sempre à direita, P1 com dois pés no chão); formato antigo sempre direita"
+        - "A e B têm os mesmos pés (±0,22) em silhueta: normal em caminhada real; o defeito é de continuidade: o pé levantado não passa ao lado da perna de apoio (sobe atrás em P1, à frente em P2 e volta ao mesmo lugar): marcha no lugar, uma perna de cada vez"
+        - "v03 piorou: quatro quadros quase iguais; simplificar o prompt apagou o movimento da v01/v02"
+        - "a espada cruza as pernas e esconde a perna do lado da câmera; contamina medidas de perna"
+        - "5c do v2 deu PASSA na v03 (razão 2,11): falso positivo; 5a/5b/5c não separam as tentativas como a tira e os pés apoiados"
+      proposal: "pose em coordenadas de tela + guia de pose (boneco colorido) como referência; 3 desenhos A, P1, P2 tocando A, P1, A, P2; E1 uma imagem (fila de 3) e E2 até 3 imagens (editar o idle só nas pernas); teto de 4 gerações; fallback F: tiras piloto do Durvall como caminhada provisória; espada no ombro na caminhada é opcional (decisão do dono)"
+      pending_owner_decisions: [aprovar_E1_com_guia_e_teto_4, tres_desenhos_A_P1_P2_aceitavel, espada_na_caminhada, aprovar_preparar_contrato_r3_verificador_v3_guia_e_prompt_E1]
+      tool_note: "r2_check_v2.gd oficial não foi alterado; cópia de análise com dilatação 1 está na pasta do diagnóstico"
+    r3_preparation_20261022:
+      authorization: "Autorizo preparar o contrato r3, o verificador v3, o guia de pose do se e o prompt do E1, sem gerar nada. Três desenhos A, P1, P2 tocando A, P1, A, P2 é aceitável; espada: mantenha para baixo na caminhada por enquanto; teto de 4 gerações (2026-10-22)"
+      generation_authorized: "E1 e, se necessário, E2: teto de 4 gerações no total para o Durvall walk SE; E2 só com prompt preparado e autorização do dono; nenhuma geração feita"
+      contract_r3: .atena/specs/SPEC-NOTTGARD-HERO-ART-RESET-20261021/animation-contract-r3.md   # só a caminhada; r1 e r2 preservados; hipótese a validar no E1
+      roteiro_r3: .atena/specs/SPEC-NOTTGARD-HERO-ART-RESET-20261021/r2-roteiro-r3.md
+      verifier_v3: .atena/generated/hero-art-reset-20261021/r2_check_v3.gd   # v2 preservado; tipos walk3p, walk2, idle, grid e legados walk4/walk3; figuras por espaço; 5a, 5d, 5c a olho; pontos 3 estados; --crops; saída 0/3/1/2
+      verifier_v3_validation: "reavaliou as 3 tentativas r2 (4 figuras em todas, sem a fusão do v2): v01 e v02 PASSA_COM_ITENS_A_VISTA (5a e 5d passam, 5c a olho), v03 REPROVA (5a e 5d); idle v01 aprovado PASSA_COM_ITENS_A_VISTA; sintéticos: guia recolorido (walk3p) PASSA_COM_ITENS_A_VISTA, com 2 pés em P1 REPROVA"
+      verifier_v3_limits: "PROVISÓRIOS: halo 5/10 pontos, passada larga >= 0,30 da altura, pontos soltos 1-6 INCERTO; walk nunca PASSA (passagem a olho); nenhum limite ajustado para aprovar imagem"
+      pose_guide_se: assets_incoming/hero-r2/guides/pose_guide_walk_se_A_P1_P2_r3.png   # cópia versionada em .atena/generated/hero-art-reset-20261021/guides/; gerador make_pose_guides.gd; só se; demais direções só depois do E1 aceito
+      prompt_e1: .atena/generated/hero-art-reset-20261021/prompts-r3/durvall_walk_se_E1.md   # 5 anexos: CANON frente/esquerda/costas, idle aprovado, guia; nome de saída durvall_walk_se_r3_E1_v01.png
+      preview_tool: ".atena/generated/hero-art-reset-20261021/make_walk_preview.ps1 (+ walk_preview_frames.gd, assemble_gif.cjs): GIF com 3 painéis (alinhado pela caixa, pelo tronco, tamanho de jogo 64 px x4); prévias das tentativas r2 em hero-r2-durvall-walk-se-r2-diagnosis-20261022/previas/"
+      finding_anchor: "alinhar pela caixa faz o corpo tremer 4-5 px a 64 px entre os quadros da v01/v02 r2 (v03 0,3 px); contrato r3 exige âncora pelo tronco (centróide 15-50% da altura)"
+      sword_decision: "espada para baixo na caminhada por enquanto; risco registrado (a lâmina cruza as pernas); revisitar depois do E1"
+      attempts_budget: {total: 4, used: 1}
+      e1_delivery_20261022: {file: assets_incoming/hero-r2/durvall/durvall_walk_se_r3_E1_v01.png, tool: imagegen, prompt: user_attachment_verbatim, references: five_in_owner_order, post_edit: false, acceptance: REJECTED_OWNER, measurement: NOT_REQUESTED}
+      e1_owner_feedback_20261022: "atena não aprovo, ficou a movimentação das pernas piorou"
+      e1_followup: "E1 reprovada; preservar PNG e histórico. E2 depende de prompt preparado e autorização explícita do dono; 3 gerações restantes."
+      e1_result_20261022:
+        doc: .atena/generated/hero-r2-durvall-walk-se-r3-E1-20261022/E1-RESULTADO.md
+        measurement: "feita depois do aviso do dono (o dono reprovou antes de pedir a medição): verificador v3 REPROVA formal só por A tocar o limite do terço (x 68-511 de 512); 3, 4, 2, 5a (0,36) e 5d passam; 5c a olho; tremor 0,8 px; derivados: v3-E1_v01.json, pernas_A_P1_P2.png, PREVIA_E1_A_P1_A_P2.gif"
+        visual: "A e P2 seguem o guia; P1 com o pé levantado atrás da perna de apoio, não ao lado"
+        correction_to_r3_hypothesis: "(erro de raciocínio meu) A,P1,A,P2 não resolve por construção: neste estilo as pernas são distinguíveis (joelheira da perna do lado da câmera); com B=A cada perna oscila no lugar (marcha no lugar), o que explica o 'piorou' do dono. Contato B com pernas trocadas é necessário e falhou 5 vezes só com texto; com guia nunca testado"
+        also: "ciclo alterna passada larga e pernas juntas a cada 90 ms (efeito tesoura); tiras piloto aceitas têm baixa amplitude"
+        options_pending_owner: [1_parar_caminhada_quadro_a_quadro_e_usar_piloto_do_Durvall_levando_geracao_a_idle_ataque_ativa_morte, 2_uma_tentativa_de_B_por_edicao_de_A_com_guia_de_cores_trocadas_mais_P1, 3_estudo_de_recortes_paper_doll_com_uma_geracao_de_kit_de_partes]
+        recommendation: "opcao 1 agora e opcao 3 como estudo de uma geração em paralelo; E2 de uma pose por imagem só com B de pernas trocadas, não com A,P1,A,P2"
+        generation_authorized_now: NONE
+      preserved: "idle v01 aprovado, tentativas anteriores, PNGs, contrato r1/r2, verificador v1/v2, prompts r1/r2, demais planos"
+      applied_changes: "nenhuma no jogo; arquivos novos de contrato, verificador, guia, prompt e prévia; arquivos antigos intactos"
+    durvall_death_v03_inspection_20261022:
+      doc: .atena/generated/hero-r2-durvall-actions-v02-20261022/death-v03-INSPECAO.md
+      reproduced: "verificador v3 (grid) reproduz as medições anteriores: attack v02 e active v02 PASSA_COM_ITENS_A_VISTA; death v03 REPROVA (4_pes 18,8% e 7 pontos)"
+      specks: "6 dos 7 pontos são pontas de fios de cabelo com tinta rosada de magenta (visíveis só a 3x) e 1 é uma marca clara minúscula sobre a calça; recortes em death-v03-pontos-soltos-recortes.png"
+      feet: "fileira 1 (em pé, recuo) 442/440 (0,7%); fileira 2 (de joelhos 873, caído 831) dá 18,8% porque a base de uma figura deitada não é linha de pés e a de joelhos é a ponta da espada; o critério 4 não se aplica à morte como definido"
+      r4_note: "âncora vertical dos quadros de morte pelo contato do corpo com o chão, não pela ponta da espada (senão o quadro de joelhos paira ~3,6 px a 64 px); remover componentes soltos na escala de produção"
+      options_pending_owner: RESOLVED_OPTION_A
+      recommendation: A
+      decision_20261022: "Opção A: registre a morte v03 como aceita à vista com as duas exceções documentadas, sem mudar o verificador; a montagem trata a âncora e os pontos no R4 (dono, 2026-10-22)"
+      exception_record: .atena/generated/hero-r2-durvall-actions-v02-20261022/EXCECAO-MORTE-V03.md
+      exception_scope: "somente durvall_death_se_v03.png (SHA-256 0860C7FB048DA31BE9EEB9DAC83F8B4218D696D706969ED713F8FE83D8E1A6D8, conferido); não é precedente; verificador v3 segue dando REPROVA para ela (4_pes e 6)"
+      exceptions: [criterio_4_pes_nao_se_aplica_a_figura_deitada, criterio_6_sete_pontos_sao_seis_fios_de_cabelo_e_uma_marca_minuscula]
+      r4_obligations: [ancora_vertical_da_morte_pelo_contato_do_corpo, remover_componentes_soltos_e_despill_do_rosa_na_escala_de_producao, registrar_a_excecao_no_relatorio_do_R4]
+      verifier_changed: false
+      generation: NONE
+      durvall_actions_status: "attack v02, active v02 (PASSA_COM_ITENS_A_VISTA) e death v03 (exceção documentada) com aceite visual do dono; DRAFT; nada integrado; concluídas as 3 ações do Durvall do R2 r4"
+      note_scope: "nenhum arquivo do Korrak ou do Erik existe ainda em assets_incoming/hero-r2; o próximo passo de produção segue sendo o Korrak idle SE, a cargo do dono"
+    korrak_idle_measurement_20261022:
+      doc: .atena/generated/hero-r2-korrak-idle-measurement-20261022/RESULTADO.md
+      file: assets_incoming/hero-r2/korrak/korrak_idle_se_v01.png
+      sha256: 1EBB6780349A26A13B47284536D07928BF0DD79487CD1A9AF2260914813426C2   # conferido contra o recibo; sem pós-edição
+      visual_acceptance: APPROVED_OWNER_20261022   # recibo idle-generation-receipt-v01.json
+      attempts_used: 1
+      verifier_v3: "REPROVA só pelo critério 1 (figura toca o limite do terço de 512 px); 3 escala 0,6%, 4 pés 0,0%, 2 fundo 0,2 ponto passam; 6: 3 pontos INCERTO"
+      measured_gaps: "colunas vazias entre as figuras: 18 px e 20 px; margens da imagem 19 px e 8 px; pontas do machado passam das linhas dos terços (512, 1024) por 1-3 px; asset_prep separa com gap padrão de 6 px"
+      three_specks: "artefatos do corte do verificador, exatamente nas linhas x=512 e x=1024 (pontas do machado), não são pontos soltos da imagem"
+      verifier_limitation: "agrupamento por vizinhança (dilatação ~20 px) une figuras separadas por menos de 40 px; as caixas por figura do v3 não valem nesse caso; critério 1 por terços não comporta machado largo"
+      visual: "assimetrias do CANON corretas (pauldron de aço no ombro esquerdo do personagem, pele no direito), machado nas duas mãos com rachaduras de lava pintadas, sem efeitos; estilo próximo do jogo"
+      options_pending_owner: RESOLVED_OPTION_A_B_LEFT_AS_SEPARATE_PROPOSAL
+      recommendation: "A agora e B como proposta separada"
+      decision_20261022: "Opção A: registre o idle do Korrak como aceito à vista com a exceção do critério 1 e dos 3 artefatos, sem mudar o verificador, e deixe a correção do critério (B) como proposta separada (dono, 2026-10-22)"
+      exception_record: .atena/generated/hero-r2-korrak-idle-measurement-20261022/EXCECAO-IDLE-V01.md
+      exception_scope: "somente korrak_idle_se_v01.png (SHA-256 1EBB6780349A26A13B47284536D07928BF0DD79487CD1A9AF2260914813426C2, conferido); não é precedente; não dispensa o critério 1 para ataque, habilidade ou morte do Korrak; verificador v3 segue dando REPROVA para ela (1)"
+      exceptions: [criterio_1_figura_toca_limite_do_terco_com_18_e_20_px_de_fundo_entre_figuras, criterio_6_tres_pontos_sao_artefatos_do_corte_nas_linhas_x512_e_x1024]
+      r4_obligations: [separar_por_componentes_e_conferir_3_figuras, alinhar_e_conferir_que_o_machado_nao_foi_cortado, registrar_a_excecao_no_relatorio_do_R4]
+      proposal_B: ".atena/generated/hero-r2-korrak-idle-measurement-20261022/PROPOSTA-CRITERIO-1-SEPARACAO.md  # NÃO APLICADA; criaria r2_check_v4.gd; v3 intacto"
+      proposal_B_test: "sep_check.gd em 12 imagens existentes: todas separáveis (inclusive Korrak idle e E1, que o critério atual reprova); só remove falsos reprovados; o caso que o critério deve reprovar (figuras fundidas) NÃO foi exercitado com imagem real; margem de 4 px é chute (menor medida: 8 px)"
+      proposal_B_pending_owner: aprovar_ajustar_ou_recusar_a_criacao_do_r2_check_v4
+      korrak_idle_status: "idle SE v01 aceito à vista com exceção documentada; DRAFT; nada integrado"
+      verifier_changed: false
+      generation: NONE
+    korrak_actions_measurement_20261022:
+      doc: .atena/generated/hero-r2-korrak-actions-measurement-20261022/RESULTADO.md
+      requested: "mede o ataque do Korrak (habilidade e morte medidas junto, para não gastar outra rodada)"
+      hashes_verified: "attack F22F0112868BE1AC513DD1AC7C933CE4F4A556FED08C1128AF8B139EFB09F8F8; active F316D1F345535E2CFED19F69904951498E40B7E7CC4B82C79A9FE217C4314DAC; death 27F9C1B7AE091BFECE766AFAAF467C312CDD721F1FE916284E4832671C3321E4; conferem com actions-generation-receipt-v01.json; sem pós-edição"
+      visual_acceptance: PENDING_OWNER   # nas três
+      attempts_used: {attack: 1, active: 1, death: 1}
+      verifier_v3: {attack: PASSA_COM_ITENS_A_VISTA, active: "REPROVA (1 figuras: figura toca o limite do espaço)", death: "REPROVA (1 figuras e 4 pés 11,2%)"}
+      attack: "sem falha automática; margens boas, 0 pontos, 5e mínima 36,7%; à vista: preparo com o machado sobre a cabeça (não atrás do ombro direito) e golpe em estocada horizontal; a decidir pelo dono"
+      active_death_visual: "olhadas: poses distintas e legíveis, identidade e assimetrias corretas; enquadramento real: pomo do machado a 5 px do topo na habilidade fig 2; pés das figuras 1 (e 2 na morte) na linha y=511 entre fileiras; morte 4 pés 11,2% é o mesmo caso figura caída sem linha de pés"
+      separability: "sep_check: as 4 figuras de cada uma das 3 imagens são componentes separados (folga 6 px); menor margem da imagem: attack 20 px, active 5 px, death 41 px"
+      exception_not_extended: "a exceção do idle do Korrak NÃO vale para estas imagens"
+      pattern_note: "critério 1 por espaços fixos já reprovou nesta sessão idle Korrak, E1 Durvall, active e death Korrak, todos separáveis pela definição alternativa; proposta B segue NÃO aplicada, sem decisão"
+      options_pending_owner: "aceitar o ataque à vista; habilidade e morte: aceitar à vista com exceções escritas, aprovar a proposta B (r2_check_v4) ou refazer com figuras menores (restam 2 tentativas em cada)"
+      verifier_changed: false
+      generation: NONE
+    korrak_attack_v01_owner_rejection_20261022:
+      doc: .atena/generated/hero-r2-korrak-actions-measurement-20261022/REPROVACAO-ATAQUE-V01.md
+      owner_words: "nessa imagem a mão desaparece e o machado se perde no movimento não posso aprovar isso (recorte sem nome de arquivo)"
+      identified_as: "figura 2 (preparo) de korrak_attack_se_v01.png (CONFIRMADO pelo dono em 2026-10-22)"
+      owner_choice_20261022: "2ª tentativa com balanço horizontal e duas mãos visíveis; salvar como korrak_attack_se_v02.png (v01 preservado); prompt entregue ao dono para colar; geração a cargo do dono"
+      visual_acceptance: REJECTED_OWNER   # korrak_attack_se_v01.png; habilidade e morte sem decisão
+      verifier_unchanged: "PASSA_COM_ITENS_A_VISTA; 5e e 5f não pegam falha de gesto"
+      diagnosis: "a segunda mão some atrás da cabeça e do ombro no preparo; o machado muda de plano (vertical no preparo, horizontal no golpe) e de lado sem quadro intermediário, a 12 fps o machado se perde; o golpe lê como estocada"
+      attempts: {attack: "1 de 3 usada, 2 restantes"}
+      proposed_fix: "2ª tentativa do zero com as 5 referências: balanço num único plano horizontal (preparo à esquerda na altura do quadril, golpe em arco horizontal à direita, seguimento baixo à direita), duas mãos visíveis em todas as poses, cabeça do machado inteira visível; alternativa (muda o contrato, só com aprovação): ataque com 4 desenhos"
+      generation: NONE
+    scope_change_20261022:
+      authorization: "Sigo a recomendação: use as tiras piloto do Durvall como caminhada provisória, leve a geração nova para idle, ataque, habilidade e morte, e prepare o estudo de recortes (opção 3) com uma geração. Nada gerado sem eu autorizar (2026-10-22)"
+      generation_authorized_now: NONE
+      walk: "Durvall usa as tiras piloto já ativas no jogo (assets/animations/heroes/durvall/move_*.png: 8 direções, 6 quadros, oeste real); nada a mudar; geração de caminhada pelo ChatGPT suspensa para todos os heróis (6 tentativas: 2 r1, 3 r2, 1 E1 r3); contrato r3 em espera"
+      r2_resumed_scope: "11 imagens: Durvall attack/active/death (idle v01 aprovado); Korrak idle/attack/active/death; Erik idle/attack/active/death (raspado); prompts em prompts-r2; 3 tentativas por imagem (contrato r2)"
+      durvall_actions_delivery_20261022:
+        authorization: "atena siga essas instruções — anexo com três prompts simplificados de ataque, habilidade e morte"
+        status: ACTIONS_SE_VISUALLY_APPROVED_DEATH_TECHNICAL_HOLD
+        receipt: assets_incoming/hero-r2/durvall/actions-generation-receipt-v01.md
+        files: [durvall_attack_se_v01.png, durvall_active_se_v01.png, durvall_death_se_v01.png]
+        tool: image_gen
+        prompts: OWNER_ATTACHMENT_VERBATIM
+        references: FOUR_CANON_VIEWS_AND_APPROVED_IDLE_V01_IN_OWNER_ORDER
+        attempts_used: {attack_se: 2, active_se: 2, death_se: 3}
+        attempts_remaining: {attack_se: 1, active_se: 1, death_se: 0}
+        delivery_integrity: SHA256_IDENTICAL_TO_GENERATED_ORIGINALS_1536x1024
+        post_edit: false
+        measurement: V3_REPROVA_ALL_THREE_FRAMING
+        measurement_authorization: "atena continue (2026-10-22)"
+        measurement_report: .atena/generated/hero-r2-durvall-actions-measurement-20261022/RESULTADO.md
+        measurement_limits: DEATH_FEET_COMPARISON_AND_SPECKS_REQUIRE_VISUAL_REVIEW
+        visual_acceptance: APPROVED_OWNER_ATTACK_V02_ACTIVE_V02_DEATH_V03
+        owner_visual_reply: "atena aprovado, qual o proximo passo?"
+        visual_acceptance_receipt: .atena/generated/hero-r2-durvall-actions-v02-20261022/ACEITE-VISUAL.md
+        correction_authorization: "eu gostei, mas faça o que achar que é certo"
+        correction_report: .atena/generated/hero-r2-durvall-actions-v02-20261022/RESULTADO.md
+        corrected_candidates: [durvall_attack_se_v02.png, durvall_active_se_v02.png, durvall_death_se_v03.png]
+        corrected_minimum_margins_px: {attack_se: 70, active_se: 62, death_se: 69}
+        corrected_verdicts: {attack_se: PASSA_COM_ITENS_A_VISTA, active_se: PASSA_COM_ITENS_A_VISTA, death_se: REPROVA_FEET_AND_SEVEN_SPECKS}
+        correction_mode: IMAGEGEN_EDIT_PREVIOUS_ACTION_AS_TARGET
+        originals_preserved: SHA256_VERIFIED
+        death_next_activity: INSPECT_SEVEN_SPECKS_AND_DEATH_ALIGNMENT_CRITERION_NO_MORE_GENERATION_IN_CURRENT_BUDGET
+        runtime_modified: false
+      roteiro_r4: .atena/specs/SPEC-NOTTGARD-HERO-ART-RESET-20261021/r2-roteiro-r4.md
+      verifier_v3_change: "grade de ação: 5e poses diferentes (PASSA >= 20%, FALHA < 6%, INCERTO entre; PROVISÓRIO; a v03 do walk teria passado a 6%, por isso 3 estados) e 5f gesto a olho; veredito de grade nunca PASSA; recolocada _sil_xor; walk3p e demais tipos inalterados"
+      risk_style_mix: "caminhada piloto do Durvall (espada de cristal azul, arte antiga) vs idle/ataque/habilidade/morte novos (aço simples); decisão do dono no R4; nada integrado"
+      cutout_study:
+        dir: .atena/generated/hero-cutout-study-20261022/
+        doc: .atena/generated/hero-cutout-study-20261022/ESTUDO-RECORTES.md
+        rig_tool: "rig_walk_preview.gd + rig_synthetic_kit.gd + make_rig_preview.ps1: montador de recortes validado com kit sintético (troca de pernas por construção: perna clara à frente em A, apoio em P1, atrás em B, passa levantada em P2); GIFs DEMO_rig_sintetico_amplitude_100/060"
+        kit_prompt: .atena/generated/hero-cutout-study-20261022/prompt_kit_durvall_se_E3.md   # 5 anexos: CANON frente/esquerda/costas, idle aprovado, kit_layout_guide_5x2.png; saída durvall_kit_se_E3_v01.png; NÃO executado
+        kit_layout_guide: assets_incoming/hero-r2/guides/kit_layout_guide_5x2.png
+        generation_budget: "caminhada: total 4, usadas 1, restantes 3; o E3 usaria 1 (restariam 2)"
+        validated: "mecânica; não a arte (formas simples)"
+        open_risks: [modelo_nao_segue_layout_ou_costura_partes, rotacao_de_pecas_3_4_pode_parecer_chapada, partes_escondidas_da_perna_de_tras, engenharia_no_motor_R4, um_kit_por_direcao]
+        pending_owner: autorizar_a_geracao_do_E3_quando_quiser
     gate1_diagnosis_20261022:
       doc: .atena/generated/hero-r2-durvall-gate1-diagnosis-20261022/DIAGNOSTICO.md
       owner_complaint: "movimentação horrível (walk se)"
@@ -2520,4 +2699,115 @@ hero_art_reset_20261021:
     runtime_modified: false
   runtime_modified: false
   commit: NOT_AUTHORIZED_YET
-  next_activity: "Rever tratamento de borda/fundo do gate 1 antes de novas gerações: v01 e v02 reprovadas; preservar aceite visual v01, sem integração nem avanço às demais direções. Diagnóstico de 2026-10-22 concluído; aguardar aprovação das correções propostas (contrato r2, verificador v2, pacote) antes de nova geração"
+  next_activity_previous: "Retorno ao Claude preparado localmente: analisar 3 tentativas r2 e propor próximo escopo (plano B de uma pose por imagem é hipótese); aguardar aprovação para novas gerações; sem integração nem avanço às demais direções/heróis"
+  next_activity_previous_scope: "E1 Durvall walk SE reprovada pelo dono: movimentação das pernas piorou. Próximo passo proposto: preparar E2 de uma pose por imagem, partindo do idle e alterando só as pernas; gerar somente após prompt preparado e autorização explícita. Orçamento usado 1/4; preservar PNGs, demais planos e retenção de integração/outras direções/heróis."
+  next_activity_previous_exception: "Aceite visual explícito registrado para Durvall attack v02, active v02 e death v03. Próximo passo de produção: Korrak idle SE, depois medição e aceite visual antes das demais ações; geração ainda não disparada pelo pedido de orientação. Reter morte Durvall para revisão técnica dos sete pontos e linha inferior antes de integração, sem repetir aceite visual. Caminhada suspensa (Durvall usa piloto); Erik pendente; E3 preparado sem execução; nada integrado."
+  korrak_idle_delivery_20261022:
+    status: DRAFT_VISUALLY_APPROVED_AWAITING_MEASUREMENT
+    authorization: "atena Anexos, nesta ordem — Salvar como korrak_idle_se_v01.png, sem editar"
+    file: assets_incoming/hero-r2/korrak/korrak_idle_se_v01.png
+    receipt: assets_incoming/hero-r2/korrak/idle-generation-receipt-v01.json
+    tool: image_gen
+    prompt_source: .atena/generated/hero-art-reset-20261021/prompts-r2/korrak.md
+    references: FOUR_CANON_VIEWS_AND_ZUGGTMOY_IN_OWNER_ORDER
+    attempts_used: 1
+    post_edit: false
+    delivery_integrity: SHA256_IDENTICAL_TO_GENERATED_ORIGINAL
+    visual_acceptance: APPROVED_OWNER_20261022
+    owner_visual_reply: "aprovado, proximo passo?"
+    measurement: PENDING
+    runtime_modified: false
+  next_activity_previous_korrak_idle: "Korrak idle SE v01 com aceite visual explícito registrado e hash conferido; medição pendente. Depois: ataque, habilidade e morte, usando as quatro vistas CANON e o idle aprovado como quinto anexo; depois Erik raspado. Durvall concluído no R2 com exceção documentada da morte. Estudo E3 preparado sem execução. Nada integrado; demais gerações aguardam autorização."
+  korrak_actions_delivery_20261022:
+    authorization: "atena siga as instruções — anexo com três prompts simplificados do Korrak"
+    status: DRAFT_DELIVERED_AWAITING_MEASUREMENT_AND_VISUAL_ACCEPTANCE
+    receipt: assets_incoming/hero-r2/korrak/actions-generation-receipt-v01.json
+    files: [korrak_attack_se_v01.png, korrak_active_se_v01.png, korrak_death_se_v01.png]
+    tool: image_gen
+    prompts: OWNER_ATTACHMENT_VERBATIM
+    references: FOUR_CANON_VIEWS_AND_APPROVED_IDLE_V01_IN_OWNER_ORDER
+    attempts_used: {attack_se: 1, active_se: 1, death_se: 1}
+    attempts_remaining: {attack_se: 2, active_se: 2, death_se: 2}
+    post_edit: false
+    delivery_integrity: SHA256_IDENTICAL_TO_GENERATED_ORIGINALS
+    measurement: NOT_REQUESTED
+    visual_acceptance: PENDING
+    visual_observation: "Poses distintas; margens de 80 px visualmente não atendidas em várias poses, especialmente machados elevados; aguardar medição, sem aplicar exceção do idle."
+    runtime_modified: false
+  next_activity_previous_korrak_actions: "Korrak ataque, habilidade e morte v01 gerados com prompts do anexo e salvos sem edição; medição por imagem e aceite visual pendentes. Idle aceito com exceção documentada, não extensível às ações. Depois Erik raspado. Proposta B (r2_check_v4) aguarda decisão; E3 não executado. Nada integrado; novas gerações somente com autorização."
+  next_activity_previous_attack_rejection: "Korrak ataque, habilidade e morte v01 medidos (ataque PASSA_COM_ITENS_A_VISTA; habilidade e morte REPROVAM só por enquadramento/pés, figuras separáveis); aceite visual pendente do dono; exceção do idle não estendida; proposta B (r2_check_v4) aguarda decisão. Depois: Erik raspado (idle primeiro). Sem geração sem autorização"
+  korrak_attack_v02_delivery_20261022:
+    authorization: "atena, siga novamente as instruções de correções do claude — prompt da segunda tentativa, balanço horizontal e duas mãos visíveis"
+    status: DRAFT_DELIVERED_VISUAL_HAND_HOLD
+    file: assets_incoming/hero-r2/korrak/korrak_attack_se_v02.png
+    receipt: assets_incoming/hero-r2/korrak/attack-generation-receipt-v02.json
+    prompt: assets_incoming/hero-r2/korrak/attack-generation-prompt-v02.txt
+    tool: image_gen
+    references: FOUR_CANON_VIEWS_AND_APPROVED_IDLE_V01_IN_OWNER_ORDER
+    attempts_used: 2
+    attempts_remaining: 1
+    post_edit: false
+    v01_preserved: SHA256_VERIFIED
+    delivery_integrity: SHA256_IDENTICAL_TO_GENERATED_ORIGINAL
+    measurement: DONE_20261022
+    measurement_doc: .atena/generated/hero-r2-korrak-attack-v02-measurement-20261022/RESULTADO.md
+    measurement_request: "mede o ataque v02 do Korrak (colado do ChatGPT, 2026-10-22)"
+    sha256_verified: "B3462FBDAC2D4F4A17618E8B4C630023AA5039522E23E4FE1D39606D7D690A16; confere com attack-generation-receipt-v02.json"
+    verifier_v3: "PASSA_COM_ITENS_A_VISTA (1 figuras, 4 pés 1,6%, 2 fundo 0,1 ponto, 6 pontos 0, 5e menor 46,9% passam; 5f à vista); v01 era PASSA_COM_ITENS_A_VISTA"
+    separability: "sep_check: 4 componentes separados; menor margem da imagem 42 px (v01: 20 px)"
+    prompt_compliance: "balanço num plano horizontal e cabeça do machado inteira: atendidos; duas mãos: figuras 1-3 sim, figura 4 só uma mão (confirmado em recorte-fig4-maos.png); altura 428-457 px contra 300 pedidos e margem 42 px contra 80 pedidos: não atendidos (iguais ao v01)"
+    visual_acceptance: PENDING
+    visual_observation: "Uma mão não visível na figura 4 (seguimento); figura 3 ainda lê um pouco como estocada, menos que no v01."
+    options_pending_owner: "aceitar à vista com exceção escrita da figura 4; 3ª e última tentativa com segunda mão visível na figura 4; ataque com 4 desenhos (muda o contrato)"
+    verifier_changed: false
+    generation: NONE
+    runtime_modified: false
+  korrak_attack_v02b_composite_20261022:
+    authorization: "atena, é só utilizar a posição 4 da imagem anterior (imagem colada = figura 4 do korrak_attack_se_v01.png)"
+    status: DRAFT_COMPOSITE_VISUALLY_APPROVED
+    visual_acceptance: APPROVED_OWNER_20261022
+    owner_visual_reply: "Aceito o ataque v02b à vista; registre o aceite visual."
+    acceptance_scope: "somente korrak_attack_se_v02b.png (SHA-256 1DA5647F850A1B7B78F26507F40754B303D1241AA5A4C0A431A0ED9945F1D218); aceite à vista, com as ressalvas de escala da figura 4 (~7% menor, a normalizar no R4), altura/margem acima do pedido e transição 3-4 de composto; não é precedente; não se estende a habilidade e morte do Korrak"
+    r4_obligations_v02b: [normalizar_escala_da_figura_4_por_tronco, alinhar_pelo_tronco_tremor_0_109, conferir_a_emenda_do_composto_e_o_halo_na_escala_de_producao]
+    file: assets_incoming/hero-r2/korrak/korrak_attack_se_v02b.png
+    sha256: 1DA5647F850A1B7B78F26507F40754B303D1241AA5A4C0A431A0ED9945F1D218
+    receipt: assets_incoming/hero-r2/korrak/attack-composite-receipt-v02b.json
+    measurement_doc: .atena/generated/hero-r2-korrak-attack-v02-measurement-20261022/RESULTADO-V02B.md
+    method: "composição local sem geração: figuras 1-3 do v02 + figura 4 do v01 colada 1:1, +14 px em y para alinhar pés; sem escala, sem retoque"
+    verifier_v3: "PASSA_COM_ITENS_A_VISTA (pés 1,1%, fundo 0,1, pontos 0, 5e menor 42,5%)"
+    separability: "4 componentes, menor margem 42 px"
+    hands: "duas mãos visíveis nas 4 figuras"
+    caveats: "figura 4 ~7% menor (408 vs 437 px) e vinda do prompt do v01; altura 428-457 e margem 42 px acima do pedido; R4 deve normalizar escala por tronco"
+    originals_preserved: "v01 e v02 conferidos por SHA-256"
+    attempts_used: 2
+    attempts_remaining: 1
+    generation: NONE
+    runtime_modified: false
+  korrak_active_death_acceptance_20261022:
+    status: ACTIVE_AND_DEATH_V01_VISUALLY_APPROVED_WITH_EXCEPTIONS
+    decision_20261022: "Aceito habilidade (active v01) e morte (death v01) do Korrak à vista com as exceções escritas; registre, sem mudar o verificador (dono, 2026-10-22)"
+    visual_acceptance: APPROVED_OWNER_20261022   # korrak_active_se_v01.png e korrak_death_se_v01.png
+    exception_record: .atena/generated/hero-r2-korrak-actions-measurement-20261022/EXCECAO-HABILIDADE-MORTE-V01.md
+    files_sha256: {active: "F316D1F345535E2CFED19F69904951498E40B7E7CC4B82C79A9FE217C4314DAC", death: "27F9C1B7AE091BFECE766AFAAF467C312CDD721F1FE916284E4832671C3321E4"}   # conferidos
+    exceptions: {active: [criterio_1_pomo_a_5px_do_topo_e_pes_da_fig1_na_linha_y511], death: [criterio_1_pes_das_figuras_1_e_2_passam_de_y511, criterio_4_figura_deitada_sem_linha_de_pes]}
+    exception_scope: "somente estes dois arquivos; não é precedente; verificador v3 segue dando REPROVA para ambos; proposta B continua não aplicada"
+    r4_obligations: [separar_por_componentes_e_conferir_4_figuras, conferir_pomo_da_habilidade_sem_corte, ancorar_morte_pelo_contato_do_corpo_com_o_chao, remover_componentes_soltos_e_despill_do_magenta_na_escala_de_producao, alinhar_pelo_tronco_e_normalizar_escala, registrar_as_excecoes_no_relatorio_do_R4]
+    attempts: {active: "1 de 3 usada", death: "1 de 3 usada"}
+    verifier_changed: false
+    generation: NONE
+    runtime_modified: false
+    korrak_status: "idle v01 (exceção), ataque v02b (aceito à vista, composto), habilidade v01 e morte v01 (exceções) com aceite visual; DRAFT; nada integrado; 4 ações do Korrak do R2 r4 concluídas"
+  erik_idle_prompt_prepared_20261022:
+    status: PROMPT_READY_NOT_GENERATED
+    request: "Próximo: Erik raspado, idle primeiro. Prepare o prompt para eu colar, sem gerar. (dono, 2026-10-22)"
+    prompt_file: assets_incoming/hero-r2/erik/idle-generation-prompt-v01.txt
+    prompt_source: ".atena/generated/hero-art-reset-20261021/prompts-r2/erik.md#1 (texto idêntico, sem edição; só tirei as cercas de código)"
+    save_as: assets_incoming/hero-r2/erik/erik_idle_se_v01.png
+    references_in_order: [EEEE-r01/fronts/erik-front-v01.png, EEEE-r01/views/erik-left-v01.png, EEEE-r01/views/erik-back-v01.png, B-FALT-005-04/r01/erik-right-candidate-v01.png, "abyss-megadungeon/assets/enemies/zuggtmoy.png"]   # raiz: F:/dev/nottgard-vault/output/referencias-personagens/; existência conferida
+    decision_a2: "cabeça raspada e sem barba (as referências mostram cabelo e barba; o prompt manda ignorar)"
+    attempts_used: 0
+    attempts_remaining: 3
+    generation: NONE   # a geração fica a cargo do dono
+    measurement: NOT_YET
+    runtime_modified: false
+  next_activity: "Korrak completo no R2 (idle, ataque v02b, habilidade e morte) com aceite visual e exceções documentadas; DRAFT, nada integrado. Erik idle SE: prompt pronto em assets_incoming/hero-r2/erik/idle-generation-prompt-v01.txt, aguardando o dono gerar e entregar (3 tentativas). Pendentes: proposta B (r2_check_v4) sem decisão; ataque/habilidade/morte do Erik só depois do idle aprovado; E3 não executado; caminhada suspensa (Durvall usa piloto). Sem nova geração sem autorização."

@@ -25,6 +25,9 @@ O QUE MUDOU NA 0.5.1 (em relacao a 0.5.0)
   Nidhogg novo, com evento da Raiz de Yggdrasil; icones novos de armas, espelho e bencaos.
 - Biografias dos 12 herois reescritas; nomes e textos alinhados ao Vault (ex.: Martelo da Gloria, Sylas Malafaia).
 - Efeitos de fogo novos (Bola de Fogo, Tormenta de Fogo, Tocha do Incendiario).
+- Quartel: listas de heroi e de fase refeitas, com miniaturas novas, texto dentro do cartao e sem sobreposicao.
+- Medalhas por fase: abates, abates simultaneos, tempo para derrotar o chefe e passar a fase sem tomar dano (medalha especial).
+  O oval do cartao mostra a maior; o painel da fase lista seus recordes e o proximo limiar; a tela de resultado avisa as novas.
 
 O QUE TESTAR (em ordem de interesse)
 1. O primeiro minuto dos mapas novos (Reino Abissal e Domwieck): comeca justo, injusto ou facil demais? E 180 s e o tamanho certo?
@@ -34,6 +37,7 @@ O QUE TESTAR (em ordem de interesse)
    Pilares e o mais dificil: robos so derrotam o chefe com o Quartel no maximo. Diga se esta dificil demais ou na medida.
 5. Desempenho: o jogo trava com muitos inimigos? Em qual fase e heroi?
 6. Interface em 1280x720 e 1920x1080: cartas de oferta, HUD, Quartel, tela de resultado; textos legiveis?
+   Medalhas: os limiares (abates, abates simultaneos, tempo do chefe) estao faceis, ok ou impossiveis? A medalha sem dano e viavel?
 7. Controle fisico, se voce tiver.
 8. Musica e ambiencia: combinam com as fases novas ou incomodam?
 
@@ -42,6 +46,7 @@ JA SABEMOS (nao precisa reportar)
 - Quadrinhos HQ05 a HQ10 estao nas versoes antigas; os novos virao depois.
 - A Raiz de Yggdrasil nao esta disponivel como fase neste build.
 - Os herois ainda usam a arte e as animacoes de caminhada antigas (algumas estranhas); a arte nova esta em producao.
+- Os limiares das medalhas sao provisorios (calibrados com robos); mapas por objetivo (Reino Abissal e Domwieck) nao tem medalha de tempo.
 - Arte e textos novos sao rascunho: podem mudar. Cartaz de chefe, cartas de oferta, HUD e Quartel ainda nao foram aceitos.
 - Controle fisico nunca foi testado em hardware.
 
