@@ -63,7 +63,8 @@ static func detail(category: String, id: String, known: bool) -> String:
 			var w: Dictionary = Data.table("weapons").get(id, {})
 			if w.is_empty():
 				return UNKNOWN_DETAIL
-			return "[b]%s[/b]\nOrigem: %s\nTipo: %s · dano %s (%s, atributo %s) · recarga %.1fs\n\n%s" % [w.name, w.src, w.kind, w.dice if w.dice != "" else "—", w.dtype, w.attr, float(w.cd), w.desc]
+			var school := Weapon.school(w)
+			return "[b]%s[/b]  [color=#%s][b]%s[/b][/color]\nOrigem: %s\nTipo: %s · dano %s · recarga %.1fs\n%s\n\n%s" % [w.name, Color(school.color).lightened(0.2).to_html(false), school.tag, w.src, w.kind, w.dice if w.dice != "" else "—", float(w.cd), Weapon.school_hint(w), w.desc]
 		"items":
 			for u in Data.table("items").uniques:
 				if String(u.id) == id:

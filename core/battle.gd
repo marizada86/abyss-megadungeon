@@ -3154,13 +3154,14 @@ func weapon_damage_range(p: Dictionary) -> Vector2i:
 	var pct := maxf(0.2, 1.0 + hero.m("dmg_pct"))
 	return Vector2i(maxi(1, int(round(float(b.x + flat) * pct))), maxi(1, int(round(float(b.y + flat) * pct))))
 
-func weapon_damage_text(p: Dictionary) -> String:
+func weapon_damage_text(p: Dictionary, with_school := true) -> String:
 	var r := weapon_damage_range(p)
 	if r == Vector2i.ZERO:
 		return ""
-	var attrs := {"forca": "FOR", "inteligencia": "INT", "carisma": "CAR", "constituicao": "CON"}
-	var types := {"fisico": "físico", "magico": "mágico", "radiante": "radiante", "fogo": "fogo"}
-	return "Dano %d–%d (%s, escala com %s)" % [r.x, r.y, types.get(String(p.get("dtype", "fisico")), String(p.get("dtype", "fisico"))), attrs.get(String(p.get("attr", "forca")), "FOR")]
+	if not with_school:
+		return "Dano %d–%d" % [r.x, r.y]
+	var s := Weapon.school(p)
+	return "Dano %d–%d (%s, escala com %s)" % [r.x, r.y, String(s.label), String(s.attr_name)]
 
 ## MEC-008: como evoluir a arma (nível máximo + passiva) e o que ainda falta.
 func evolve_hint(w: Weapon) -> String:

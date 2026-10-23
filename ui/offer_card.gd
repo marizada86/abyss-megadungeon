@@ -133,6 +133,7 @@ var _glow: Control
 var _selection_art: TextureRect
 var _brief: Label
 var _detail_view: Control
+var _school := {}   # Weapon.school() da arma da oferta; vazio quando a oferta não traz arma
 
 ## Shift: troca o destaque pela tabela de comparação (só nos cartões que têm detalhe).
 func show_detail(on: bool) -> void:
@@ -155,6 +156,40 @@ static func rarity_of(o: Dictionary) -> String:
 		if source is Dictionary and String(source.get("rarity", "")) != "":
 			return String(source.rarity)
 	return ""
+
+## Definição da arma que a oferta traz (nova, melhoria, evolução, forja ou equipamento que concede arma); {} quando não há arma.
+static func weapon_def_of(o: Dictionary) -> Dictionary:
+	var id := ""
+	match String(o.get("t", "")):
+		"weapon_new", "weapon_up":
+			id = String(o.get("id", ""))
+		"evolve":
+			id = String(o.get("into", ""))
+		"shop_weapon_up":
+			id = String(o.get("weapon_id", ""))
+		"shop_item", "shop_item_up", "item_swap":
+			for source in [o.get("item", {}), o.get("keep", {})]:
+				if source is Dictionary and String(source.get("weapon", "")) != "":
+					id = String(source.weapon)
+					break
+	return Data.table("weapons").get(id, {}) if id != "" else {}
+
+## Etiqueta da escola da arma ("Física · Força"), na cor do atributo: é o que diz ao jogador com o que a arma escala.
+func _school_chip(s: Dictionary) -> PanelContainer:
+	var col: Color = s.color
+	var chip := PanelContainer.new()
+	chip.name = "SchoolChip"
+	chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var chip_style := UiKit.box(col.darkened(0.7), col.darkened(0.1), 1, 4)
+	chip_style.content_margin_left = 10
+	chip_style.content_margin_right = 10
+	chip_style.content_margin_top = 1
+	chip_style.content_margin_bottom = 1
+	chip.add_theme_stylebox_override("panel", chip_style)
+	var text := _label(String(s.tag_short if compact else s.tag), 12 if compact else 13, col.lightened(0.45))   # o compacto só tem ~100 px de largura
+	text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	chip.add_child(text)
+	return chip
 
 static func slot_of(o: Dictionary) -> String:
 	for source in [o, o.get("item", {}), o.get("keep", {})]:
@@ -186,6 +221,8 @@ func setup_card(i: int, o: Dictionary, name_color: Color, icon_tex: Texture2D, w
 	var style: Dictionary = KIND_STYLE.get(kind, {"ribbon": "", "ribbon_col": Color(0.4, 0.4, 0.4), "accent": name_color, "cat": ""})
 	_accent = Color(style.accent)
 	_rarity = rarity_of(o)
+	var weapon_def := weapon_def_of(o)
+	_school = Weapon.school(weapon_def) if not weapon_def.is_empty() else {}
 	if kind == "ev_choice" and RandomEvents.is_kind(String(o.get("ev", ""))):
 		_accent = RandomEvents.color(String(o.ev))
 	elif _rarity != "" and kind in ["shop_item", "shop_item_up", "item_swap", "donate"]:
@@ -269,7 +306,7 @@ func setup_card(i: int, o: Dictionary, name_color: Color, icon_tex: Texture2D, w
 		_detail_view.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		_brief.get_parent().add_child(_detail_view)
 		_brief.get_parent().move_child(_detail_view, _brief.get_index() + 1)
-	if _has_detail(o) or String(o.get("tooltip", "")) != "":
+	if _has_detail(o) or String(o.get("tooltip", "")) != "" or not _school.is_empty():
 		tooltip_text = " "
 	# ornamentos, gema e brilho de seleção por cima de tudo
 	_glow = Control.new()
@@ -472,6 +509,11 @@ func _build_full(col: VBoxContainer, title: String, category: String, ribbon: St
 		col.add_child(cat_row)
 	else:
 		col.add_child(cat_label)
+	if not _school.is_empty():
+		var chip_row := CenterContainer.new()
+		chip_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		chip_row.add_child(_school_chip(_school))
+		col.add_child(chip_row)
 	var rule := ColorRect.new()
 	rule.color = Color(_accent.r, _accent.g, _accent.b, 0.35)
 	rule.custom_minimum_size = Vector2(0, 1)
@@ -525,6 +567,11 @@ func _build_compact(col: VBoxContainer, title: String, category: String, ribbon:
 	category_label.max_lines_visible = 2
 	category_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	text_col.add_child(category_label)
+	if not _school.is_empty():
+		var chip_row := HBoxContainer.new()
+		chip_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		chip_row.add_child(_school_chip(_school))
+		text_col.add_child(chip_row)
 	var brief := _label(brief_text, 13, Color(0.9, 0.9, 0.9))
 	brief.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	brief.max_lines_visible = 3
@@ -681,7 +728,7 @@ func _arrow(art_name: String, fallback: String, count: int, col: Color) -> Contr
 
 ## Tooltip com a tabela de comparação (ou o texto antigo, quando a oferta não tem detalhe).
 func _make_custom_tooltip(_for_text: String) -> Object:
-	if not _has_detail(offer) and String(offer.get("tooltip", "")) == "":
+	if not _has_detail(offer) and String(offer.get("tooltip", "")) == "" and _school.is_empty():
 		return null
 	var detail := build_detail()
 	var frame := HudArt.modal_style(true)
@@ -721,10 +768,15 @@ func build_detail(inline_only := false, compact := false) -> Control:
 			grid.add_child(_label(String(r.delta), fs + 1, COLOR_UP if sign > 0 else (COLOR_DOWN if sign < 0 else COLOR_NEUTRAL)))
 	var footer: Array = d.get("footer", [])
 	if rows.is_empty() and footer.is_empty():
-		footer = [String(offer.get("tooltip", ""))]
+		footer = [String(offer.get("tooltip", ""))] if String(offer.get("tooltip", "")) != "" else []
 	for line in footer:
 		var fl := _label(String(line), 13 if compact else 16, Color(0.8, 0.8, 0.7))
 		fl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		fl.custom_minimum_size = Vector2(0 if compact else 420, 0)
 		box.add_child(fl)
+	if not _school.is_empty():   # o que a etiqueta da escola quer dizer, na cor do atributo
+		var hint := _label(Weapon.school_hint(weapon_def_of(offer)), 13 if compact else 16, Color(_school.color).lightened(0.35))
+		hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		hint.custom_minimum_size = Vector2(0 if compact else 420, 0)
+		box.add_child(hint)
 	return margin

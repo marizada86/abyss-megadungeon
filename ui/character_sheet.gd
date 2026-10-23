@@ -15,7 +15,7 @@ const IRON := UiKit.IRON
 const BOON_BORDER := Color(0.72, 0.5, 0.92)
 const GRANTED_BORDER := Color(0.45, 0.8, 0.5)
 const MUTED := UiKit.MUTED
-const ATTR_COLORS := {"forca": Color(0.92, 0.42, 0.38), "inteligencia": Color(0.96, 0.86, 0.42), "constituicao": Color(0.45, 0.66, 0.96), "carisma": Color(0.78, 0.56, 0.96)}
+const ATTR_COLORS := Weapon.ATTR_COLORS
 const SLOT_NAMES := {"arma": "Arma", "armadura": "Armadura", "amuleto": "Amuleto", "anel": "Anel"}
 const BONUS_GROUPS := [
 	{"title": "Ofensivo", "keys": ["dmg_pct", "dmg_flat", "crit_overflow_bonus", "crit_overflow_step", "cd_pct", "area_pct", "hit", "low_hp_dmg", "forca", "inteligencia"]},
@@ -427,9 +427,11 @@ func _weapon_entry(w: Weapon) -> Dictionary:
 	var tag := "  [color=#99cc99](concedida por item)[/color]" if w.granted else ""
 	var evolve_ready := w.can_evolve() and w.missing_attrs(_b.hero).is_empty()   # SPEC-174: atributo mínimo, quando a evolução o pede
 	var status := "  [color=#ffd966]▲ pronta para evoluir[/color]" if evolve_ready else ""
-	var dmg_line := _b.weapon_damage_text(w.params())
+	var dmg_line := _b.weapon_damage_text(w.params(), false)   # a escola já está na linha de cima
 	var hint := _b.evolve_hint(w)
-	var detail := "[font_size=22][b]%s[/b][/font_size]%s%s\n%s%s%s" % [w.display_name(), tag, status, String(w.def.get("desc", "")),
+	var school := Weapon.school(w.def)
+	var school_line := "\n[color=#%s][b]%s[/b][/color]  [color=#9a9aa6]%s[/color]" % [Color(school.color).lightened(0.2).to_html(false), school.tag, Weapon.school_hint(w.def)]
+	var detail := "[font_size=22][b]%s[/b][/font_size]%s%s%s\n%s%s%s" % [w.display_name(), tag, status, school_line, String(w.def.get("desc", "")),
 		("\n[color=#e6c76e]%s[/color]" % dmg_line) if dmg_line != "" else "", ("\n[color=#9fb4d8]%s[/color]" % hint) if hint != "" else ""]
 	# SPEC-147 (IN-059): o que o próximo nível muda e no que a arma evolui
 	var next_text := _b.next_level_text(w)

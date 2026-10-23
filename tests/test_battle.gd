@@ -119,7 +119,7 @@ func run() -> Array:
 	var expect_min: int = 1 + dm.hero.attr_mod("forca")
 	if rng_dm.x < 1 or rng_dm.y <= rng_dm.x or absf(float(rng_dm.x) - maxf(1.0, float(expect_min) * (1.0 + dm.hero.m("dmg_pct")))) > 1.0:
 		out.append("faixa de dano da espada deveria refletir 1d8 + FOR: %s" % str(rng_dm))
-	if dm.weapon_damage_text(sw.params()).find("FOR") < 0:
+	if dm.weapon_damage_text(sw.params()).find("Força") < 0:
 		out.append("texto de dano deveria citar o atributo que escala")
 	if Dice.bounds("2d6") != Vector2i(2, 12):
 		out.append("Dice.bounds de 2d6 deveria ser 2 a 12")
