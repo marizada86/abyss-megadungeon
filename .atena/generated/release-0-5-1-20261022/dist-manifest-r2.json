@@ -1,0 +1,24 @@
+{
+  "version": "0.5.1",
+  "revision": "r2",
+  "supersedes": "dist-manifest-r1.json",
+  "build_id": "e91bb2ce",
+  "source": "git archive HEAD (e91bb2ce), arvore limpa em tmp/dist-src-051 (sem .atena e assets_incoming, ja excluidos do export)",
+  "preset": "Windows Playtest Publico",
+  "zip": "build/dist-0.5.1/Nottgard-Playtest-0.5.1.zip",
+  "zip_bytes": 604079061,
+  "zip_sha256": "F13D56D77258A0987215EB697E2E7C926C308AF5C28BAA1383718B530D7D5083",
+  "exe_bytes": 678216192,
+  "exe_sha256": "C2CD3CAC69F6FFACBDCF68A7DE5596DCAF9A2D82BB135CBFBBE61A532CB324E1",
+  "exe_file_product_version": "0.5.1.0",
+  "contents": ["NottgardSurvivors-Playtest.exe", "LEIA-ME.txt", "NOTAS-DA-VERSAO.txt"],
+  "changes_since_r1": ["listas de heroi e fase do Quartel refeitas com miniaturas novas", "medalhas por fase (abates, abates simultaneos, tempo do chefe, sem dano)", "cartas de oferta: faixa de preco centralizada com texto longo", "HUD, modais e janelas ajustados as molduras", "NOTAS-DA-VERSAO atualizadas"],
+  "gates": {
+    "G1_suite": "PASS (tools/validate_release.sh em e91bb2ce; a primeira execucao teve 1 falha instavel em test_l5_boss_mechanics, 3 reexecucoes isoladas e a suite completa seguinte passaram)",
+    "G2_audit": "PASS (0 erros, 0 avisos)",
+    "G4_smoke": "PASS (exe headless, perfil sintetico isolado, saida 0, 0 SCRIPT ERROR/Parse Error/Failed loading; 2 avisos de encerramento conhecidos)",
+    "G5_save_upgrade": "PASS (test_save_upgrade_050); o perfil ganhou a chave medals (mesclada com o padrao, sem mudanca de esquema incompativel)",
+    "G3_bots": "nao rodou nesta revisao"
+  },
+  "notes": "Nada publicado, sem tag. Importacao dupla do arquivo limpo: 0 erros; export 0 erros."
+}
