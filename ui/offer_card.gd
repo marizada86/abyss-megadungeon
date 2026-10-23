@@ -355,12 +355,17 @@ func _chips_row(badge: Control, level_chip: String, price: String, price_col: Co
 		chips.add_child(_label(level_chip, 18, COLOR_UP))
 	if price != "":
 		var price_label := _label(price, 16, price_col)
-		var price_style := HudArt.frame(art("oferta_preco"), [36, 16, 12, 12], [36, 12, 4, 4])
+		# A arte (160×48) tem 8 linhas transparentes em cima e embaixo e a tampa direita acaba em x=156: recorta o desenho
+		# (região 157×32), senão a faixa escura fica espremida e o texto cai sobre as bordas douradas.
+		var price_style := HudArt.frame(art("oferta_preco"), [24, 6, 6, 7], [28, 10, 5, 6])
 		if price_style != null:
+			price_style.region_rect = Rect2(0, 8, 157, 32)
+			price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			price_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 			var plate := PanelContainer.new()
 			plate.name = "PricePlate"
 			plate.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			plate.custom_minimum_size = Vector2(120, 32)
+			plate.custom_minimum_size = Vector2(120, 36)
 			plate.add_theme_stylebox_override("panel", price_style)
 			plate.add_child(price_label)
 			chips.add_child(plate)
