@@ -60,15 +60,17 @@ static func style_weapon_list(label: Label) -> void:
 		label.add_theme_stylebox_override("normal", sb)
 
 ## Barra com caixilho: o ProgressBar ganha o preenchimento de arte e um quadro por cima (NinePatchRect filho).
-static func style_bar(bar: ProgressBar, frame_name: String, fill_name: String, frame_margins: Array, overshoot := 0.0) -> void:
+static func style_bar(bar: ProgressBar, frame_name: String, fill_name: String, frame_margins: Array, overshoot := 0.0, inset := Vector2.ZERO) -> void:
 	var frame_tex := hud(frame_name)
 	var fill_tex := hud(fill_name)
 	if frame_tex == null or fill_tex == null:
 		return
 	var fill := frame(fill_tex, [6, 6, 0, 0])
+	_inset(fill, inset)
 	bar.add_theme_stylebox_override("fill", fill)
 	var back := StyleBoxFlat.new()
 	back.bg_color = Color(0.07, 0.03, 0.04, 0.8)
+	_inset(back, inset)
 	bar.add_theme_stylebox_override("background", back)
 	if bar.has_node("ArtFrame"):
 		return
@@ -85,6 +87,13 @@ static func style_bar(bar: ProgressBar, frame_name: String, fill_name: String, f
 	rect.offset_left = -overshoot
 	rect.offset_right = overshoot
 
+## Recolhe preenchimento e fundo para dentro da abertura do caixilho (x = laterais, y = topo e base), sem vazar sobre a moldura.
+static func _inset(sb: StyleBox, inset: Vector2) -> void:
+	sb.set("expand_margin_left", -inset.x)
+	sb.set("expand_margin_right", -inset.x)
+	sb.set("expand_margin_top", -inset.y)
+	sb.set("expand_margin_bottom", -inset.y)
+
 ## Chip de valor com o ícone embutido na arte (moedas, abates, CA, CAM).
 static func chip_style(kind: String) -> StyleBoxTexture:
 	var name := {"coin": "hud_chip_moedas", "kill": "hud_chip_abates", "ca": "hud_chip_ca", "cam": "hud_chip_cam"}.get(kind, "") as String
@@ -98,4 +107,5 @@ static func modal_style(tooltip := false) -> StyleBoxTexture:
 	if t == null:
 		return null
 	var m := 30 if tooltip else 46
-	return frame(t, [m, m, m, m], [m + 8, m + 8, m, m], Color(1, 1, 1, 0.97))
+	var pad := Vector2(8, 0) if tooltip else Vector2(22, 14)   # o modal precisa de folga: a faixa da arte tem ~50 px e o texto encostava na borda interna
+	return frame(t, [m, m, m, m], [m + pad.x, m + pad.x, m + pad.y, m + pad.y], Color(1, 1, 1, 0.97))

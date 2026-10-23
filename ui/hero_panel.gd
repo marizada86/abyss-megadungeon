@@ -16,6 +16,9 @@ const ATTR_FULL := {"forca": "Força", "inteligencia": "Inteligência", "constit
 const ATTR_COLORS := {"forca": Color(0.92, 0.42, 0.38), "inteligencia": Color(0.96, 0.86, 0.42), "constituicao": Color(0.45, 0.66, 0.96), "carisma": Color(0.78, 0.56, 0.96)}
 const BOON_ICON := 28.0
 const PANEL_ALPHA := 0.35  ## fundo bem translúcido: o jogador enxerga a arena por trás (pedido do dono)
+const CHIP_SIZE := Vector2(112, 28)  ## chips de moedas/abates/CA/CAM: compactos para não ocupar a arena (pedido do dono)
+const BAR_INSET := Vector2(19, 11)  ## recuo do preenchimento de PV para a abertura da moldura (a arte tem 5 px transparentes acima e 4 abaixo)
+const XP_INSET := Vector2(23, 5)
 const HINT_PULSE_UNTIL := 90.0  ## o selo da tecla C pulsa até a ficha ser aberta ou até esse tempo de run
 
 var xp_bar: ProgressBar
@@ -142,16 +145,19 @@ func _build_main_column() -> Control:
 	col.add_child(name_row)
 	hp_bar = ProgressBar.new()
 	hp_bar.show_percentage = false
-	hp_bar.custom_minimum_size = Vector2(0, 22)
+	hp_bar.custom_minimum_size = Vector2(0, 30)
 	hp_bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	hp_bar.add_theme_stylebox_override("fill", _box(Color(0.75, 0.14, 0.14), Color(0, 0, 0, 0), 0, 2))
 	hp_bar.add_theme_stylebox_override("background", _box(Color(0.12, 0.05, 0.05, 0.5), Color(0.4, 0.2, 0.2, 0.7), 1, 2))
 	col.add_child(hp_bar)
-	HudArt.style_bar(hp_bar, "hud_barra_pv", "hud_barra_pv_fill", [20, 20, 6, 6])
+	HudArt.style_bar(hp_bar, "hud_barra_pv", "hud_barra_pv_fill", [20, 20, 11, 11], 0.0, BAR_INSET)
 	barrier_bar = ProgressBar.new()
 	barrier_bar.show_percentage = false
 	barrier_bar.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
-	barrier_bar.offset_top = -5.0
+	barrier_bar.offset_top = -(BAR_INSET.y + 4.0)   # faixa fina no fundo do canal da moldura, não por cima da borda
+	barrier_bar.offset_bottom = -BAR_INSET.y
+	barrier_bar.offset_left = BAR_INSET.x
+	barrier_bar.offset_right = -BAR_INSET.x
 	barrier_bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	barrier_bar.add_theme_stylebox_override("fill", _box(BARRIER_COLOR, Color(0, 0, 0, 0), 0, 1))
 	barrier_bar.add_theme_stylebox_override("background", StyleBoxEmpty.new())
@@ -177,8 +183,8 @@ func _build_main_column() -> Control:
 	xp_bar.add_theme_stylebox_override("background", _box(Color(0.05, 0.08, 0.12, 0.5), Color(0.18, 0.28, 0.4, 0.7), 1, 2))
 	col.add_child(xp_bar)
 	if HudArt.hud("hud_barra_xp") != null:
-		xp_bar.custom_minimum_size = Vector2(0, 10)
-		HudArt.style_bar(xp_bar, "hud_barra_xp", "hud_barra_xp_fill", [16, 16, 4, 4])
+		xp_bar.custom_minimum_size = Vector2(0, 12)
+		HudArt.style_bar(xp_bar, "hud_barra_xp", "hud_barra_xp_fill", [23, 23, 5, 5], 0.0, XP_INSET)
 	var attrs := HBoxContainer.new()
 	attrs.add_theme_constant_override("separation", 10)
 	attrs.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -249,8 +255,8 @@ func _build_chip_row() -> Control:
 	if art_chips:
 		var grid := GridContainer.new()
 		grid.columns = 2
-		grid.add_theme_constant_override("h_separation", 6)
-		grid.add_theme_constant_override("v_separation", 2)
+		grid.add_theme_constant_override("h_separation", 4)
+		grid.add_theme_constant_override("v_separation", 0)
 		row = grid
 	else:
 		row.add_theme_constant_override("separation", 14)
@@ -271,10 +277,10 @@ func _chip(row: Container, icon: String, tip: String) -> Label:
 	if chip_art != null:
 		var framed := PanelContainer.new()
 		framed.add_theme_stylebox_override("panel", chip_art)
-		framed.custom_minimum_size = Vector2(150, 34)
+		framed.custom_minimum_size = CHIP_SIZE
 		framed.mouse_filter = Control.MOUSE_FILTER_PASS
 		framed.tooltip_text = tip
-		var value := _outlined(_label("", 16))
+		var value := _outlined(_label("", 14))
 		framed.add_child(value)
 		row.add_child(framed)
 		_chips[icon] = framed

@@ -66,7 +66,7 @@ func _ready() -> void:
 	add_child(center)
 	_panel = UiKit.window(PANEL_SIZE)
 	center.add_child(_panel)
-	var margin := UiKit.margin(40)
+	var margin := UiKit.window_margin()
 	_panel.add_child(margin)
 	var root := VBoxContainer.new()
 	root.add_theme_constant_override("separation", 10)

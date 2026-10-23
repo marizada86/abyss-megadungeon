@@ -19,6 +19,7 @@ signal pause_items_pressed
 const STATUS_MAX_LINES := 4
 const STACK_TOP := 116.0   # abaixo da moldura do relógio, progresso, fase e ícone da regra
 const STACK_WIDTH := 640.0   # a barra do chefe tem 580 px; 640 deixa a direita livre para o questlog (x >= 968)
+const PAUSE_MARGIN := Vector2(80, 72)   # recuo do conteúdo da pausa (laterais, topo/base) dentro da moldura da ficha
 const QUESTLOG_TOP := 116.0       # abaixo da fase (y 78 a 100), sem encostar no texto longo
 const QUESTLOG_MARGIN := 12.0
 const TOAST_MAX_COUNT := 4
@@ -553,18 +554,43 @@ func _apply_hud_art() -> void:
 		var modal := HudArt.modal_style()
 		if modal != null:
 			panel.add_theme_stylebox_override("panel", modal)
-			if panel == revive_panel and not panel.has_node("ModalFill"):
-				var fill := ColorRect.new()   # o interior da moldura é vazado: sem isto o texto fica sobre o mapa
-				fill.name = "ModalFill"
-				fill.color = Color(0.035, 0.03, 0.055, 0.95)
-				fill.mouse_filter = Control.MOUSE_FILTER_IGNORE
-				fill.show_behind_parent = true
-				panel.add_child(fill)
-				fill.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-				fill.offset_left = 22.0
-				fill.offset_right = -22.0
-				fill.offset_top = 22.0
-				fill.offset_bottom = -22.0
+			_add_modal_fill(panel, 22.0, result_background if panel == result_panel else null)
+			var buttons := panel.get_node_or_null("VBox/Row") as HBoxContainer
+			if buttons != null:
+				buttons.alignment = BoxContainer.ALIGNMENT_CENTER
+				buttons.add_theme_constant_override("separation", 14)
+			(panel.get_node("VBox") as VBoxContainer).add_theme_constant_override("separation", 14)
+			if panel == revive_panel:
+				for label_path in ["VBox/ReviveTitle", "VBox/ReviveText"]:
+					(panel.get_node(label_path) as Label).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
+## O interior da moldura é vazado: sem fundo o texto fica sobre o mapa. O fundo é irmão do painel (atrás dele),
+## porque um PanelContainer encolhe qualquer filho para a área de conteúdo e o fundo não alcançaria a faixa da moldura.
+func _add_modal_fill(panel: PanelContainer, inset := 22.0, art: TextureRect = null) -> void:
+	if panel.get_parent().has_node(NodePath(String(panel.name) + "Fill")):
+		return
+	var fill := ColorRect.new()
+	fill.name = String(panel.name) + "Fill"
+	fill.color = Color(0.035, 0.03, 0.055, 0.95)
+	fill.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	panel.get_parent().add_child(fill)
+	panel.get_parent().move_child(fill, panel.get_index())
+	if art != null:   # a arte de fundo (resultado) cobre o interior inteiro da moldura, não só a área do texto
+		art.get_parent().remove_child(art)
+		panel.get_parent().add_child(art)
+		panel.get_parent().move_child(art, panel.get_index())
+		art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	var sync := func():
+		for node: Control in [fill, art]:
+			if node == null:
+				continue
+			node.position = panel.position + Vector2(inset, inset)
+			node.size = panel.size - Vector2(inset, inset) * 2.0
+			node.visible = panel.visible
+	panel.item_rect_changed.connect(sync)
+	panel.visibility_changed.connect(sync)
+	sync.call()
 
 func show_offer(b: Battle) -> void:
 	Game.controls.transition()
@@ -1150,7 +1176,7 @@ func show_result(res: Dictionary, summary: Dictionary) -> void:
 				names.append(achievement_line(a).replace("[", "[lb]"))
 	if not names.is_empty():
 		txt += "\n\nConquistas:\n" + "\n".join(names)
-	result_text.text = txt
+	result_text.text = "[center]%s[/center]" % txt   # centrado sob o banner, com os botões também centralizados
 	_fit_result_scroll()
 	var result_was_open := result_panel.visible
 	result_panel.visible = true
@@ -1181,7 +1207,7 @@ func pulse_xp() -> void:
 ## Os botões antigos são reaproveitados dentro da aba Jogo e a linha de volume dentro de Configurações.
 func _build_pause_menu() -> void:
 	UiKit.apply_window(pause_panel, UiKit.WINDOW_SIZE_TOUCH if false else UiKit.WINDOW_SIZE)
-	var margin := UiKit.margin(40)
+	var margin := UiKit.window_margin(PAUSE_MARGIN)   # a pausa tem mais folga que a ficha: a aba Jogo é curta
 	pause_panel.add_child(margin)
 	pause_menu = PauseMenu.new()
 	pause_menu.name = "PauseMenu"

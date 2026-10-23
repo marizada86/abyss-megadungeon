@@ -11,6 +11,8 @@ const MUTED := Color(0.62, 0.62, 0.68)
 const TEXT := Color(0.92, 0.9, 0.86)
 const WINDOW_SIZE := Vector2(1088, 612)       # janela padrão (1280×720)
 const WINDOW_SIZE_TOUCH := Vector2(1088, 650) # no toque os botões pedem mais altura
+const WINDOW_BG_TRIM := Vector2(22, 24)       # o fundo não passa da borda externa da moldura (a arte 1280×720 tem 22×24 px transparentes)
+const WINDOW_MARGIN := Vector2(64, 56)        # recuo do conteúdo: a faixa interna da moldura termina a ~56 px das bordas
 const TAB_HEIGHT := 40.0
 const TAB_FONT := 14
 const HINT_SIZE := Vector2(52, 32)
@@ -110,6 +112,10 @@ static func apply_window(panel: PanelContainer, size: Vector2) -> void:
 	panel.custom_minimum_size = size
 	var background := SheetArt.background()
 	background.modulate_color = Color(1, 1, 1, WINDOW_ALPHA)
+	background.expand_margin_left = -WINDOW_BG_TRIM.x
+	background.expand_margin_right = -WINDOW_BG_TRIM.x
+	background.expand_margin_top = -WINDOW_BG_TRIM.y
+	background.expand_margin_bottom = -WINDOW_BG_TRIM.y
 	panel.add_theme_stylebox_override("panel", background)
 	panel.draw.connect(func(): panel.draw_texture_rect(SheetArt.PANEL, Rect2(Vector2.ZERO, panel.size), false))
 
@@ -118,6 +124,15 @@ static func detail_frame() -> PanelContainer:
 	var frame := PanelContainer.new()
 	frame.add_theme_stylebox_override("panel", SheetArt.detail())
 	return frame
+
+## Margem do conteúdo de uma janela com a moldura da ficha: laterais e topo/base separados (`inset` padrão = WINDOW_MARGIN).
+static func window_margin(inset := WINDOW_MARGIN) -> MarginContainer:
+	var m := MarginContainer.new()
+	m.add_theme_constant_override("margin_left", int(inset.x))
+	m.add_theme_constant_override("margin_right", int(inset.x))
+	m.add_theme_constant_override("margin_top", int(inset.y))
+	m.add_theme_constant_override("margin_bottom", int(inset.y))
+	return m
 
 static func margin(all := 40) -> MarginContainer:
 	var m := MarginContainer.new()
