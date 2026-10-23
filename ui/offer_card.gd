@@ -115,6 +115,15 @@ static func art(name: String) -> Texture2D:
 	return tex
 
 const NAME_PREFIXES := ["NOVA: ", "★ EVOLUÇÃO: ", "SINERGIA: "]
+## Fita: altura em tela e largura (px da arte) das pontas com os ornamentos, que não esticam.
+const RIBBON_HEIGHT := 34.0
+const RIBBON_HEIGHT_COMPACT := 24.0
+const RIBBON_CAP := 56.0
+## Janela do ícone no cartão vertical: a arte (`oferta_cartao`) tem a janela até ~y=190; o nome começa abaixo dela.
+const WINDOW_SPACER := 18.0
+## Tecla numérica do cartão vertical: altura e distância da borda de baixo (assenta sobre a moldura inferior da arte).
+const KEY_HEIGHT := 24.0
+const KEY_BOTTOM := 10.0
 
 var index := 0
 var compact := false
@@ -206,13 +215,13 @@ func setup_card(i: int, o: Dictionary, name_color: Color, icon_tex: Texture2D, w
 	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for side in ["left", "right"]:
-		margin.add_theme_constant_override("margin_" + side, 26 if compact else 30)
-	margin.add_theme_constant_override("margin_top", 22 if compact else 20)
-	margin.add_theme_constant_override("margin_bottom", 26 if compact else 30)
+		margin.add_theme_constant_override("margin_" + side, 36 if compact else 30)
+	margin.add_theme_constant_override("margin_top", 28 if compact else 20)
+	margin.add_theme_constant_override("margin_bottom", 30 if compact else 30)
 	add_child(margin)
 	var col := VBoxContainer.new()
 	col.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	col.add_theme_constant_override("separation", 4 if compact else 6)
+	col.add_theme_constant_override("separation", 4)
 	margin.add_child(col)
 	# nome sem os prefixos que viram fita; bênção "Deus: Nome" vira categoria + nome
 	var title := String(o.name)
@@ -276,23 +285,43 @@ func _pill(text: String, col: Color) -> PanelContainer:
 	pill.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var ribbon_tex := art(String(RIBBON_ART.get(text, "")))
 	if ribbon_tex != null:
-		var tex_style := StyleBoxTexture.new()
-		tex_style.texture = ribbon_tex
-		tex_style.texture_margin_left = 22 if compact else 44
-		tex_style.texture_margin_right = 22 if compact else 44
-		tex_style.texture_margin_top = 0
-		tex_style.texture_margin_bottom = 0
-		tex_style.content_margin_left = 12 if compact else 40
-		tex_style.content_margin_right = 12 if compact else 40
-		tex_style.content_margin_top = 2
-		tex_style.content_margin_bottom = 2
-		pill.add_theme_stylebox_override("panel", tex_style)
-		pill.custom_minimum_size = Vector2(0, 32)
-		var ribbon_label := _label(text, 13, Color(1, 1, 1))
+		# A fita (256×55) tem uma ponta de andorinha + dois ornamentos em cada extremidade. Em nove fatias com altura achatada
+		# os ornamentos eram espremidos e o texto caía sobre eles: aqui as pontas mantêm a proporção e só o miolo liso estica.
+		var ribbon_h := RIBBON_HEIGHT_COMPACT if compact else RIBBON_HEIGHT
+		var cap := RIBBON_CAP * ribbon_h / ribbon_tex.get_height()
+		pill.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
+		pill.custom_minimum_size = Vector2(0, ribbon_h)
+		var strip := HBoxContainer.new()
+		strip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		strip.add_theme_constant_override("separation", 0)
+		var width := float(ribbon_tex.get_width())
+		for part in [Rect2(0, 0, RIBBON_CAP, ribbon_tex.get_height()), Rect2(RIBBON_CAP, 0, width - 2.0 * RIBBON_CAP, ribbon_tex.get_height()), Rect2(width - RIBBON_CAP, 0, RIBBON_CAP, ribbon_tex.get_height())]:
+			var slice := AtlasTexture.new()
+			slice.atlas = ribbon_tex
+			slice.region = part
+			var piece := TextureRect.new()
+			piece.texture = slice
+			piece.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			piece.stretch_mode = TextureRect.STRETCH_SCALE
+			piece.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			if part.size.x == RIBBON_CAP:
+				piece.custom_minimum_size = Vector2(cap, ribbon_h)
+			else:
+				piece.custom_minimum_size = Vector2(0, ribbon_h)
+				piece.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			strip.add_child(piece)
+		pill.add_child(strip)
+		var text_box := MarginContainer.new()
+		text_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		text_box.add_theme_constant_override("margin_left", int(cap) + 4)
+		text_box.add_theme_constant_override("margin_right", int(cap) + 4)
+		var ribbon_label := _label(text, 12 if compact else 14, Color(1, 1, 1))
 		ribbon_label.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.85))
 		ribbon_label.add_theme_constant_override("outline_size", 3)
 		ribbon_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		pill.add_child(ribbon_label)
+		ribbon_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		text_box.add_child(ribbon_label)
+		pill.add_child(text_box)
 		return pill
 	var pill_style := StyleBoxFlat.new()
 	pill_style.bg_color = col
@@ -404,7 +433,7 @@ func _update_selection_art() -> void:
 func _build_full(col: VBoxContainer, title: String, category: String, ribbon: String, style: Dictionary, name_color: Color, icon_tex: Texture2D, glyph_text: String, badge: Control, level_chip: String, price: String, price_col: Color, i: int, brief_text: String) -> void:
 	# fita (a linha é sempre reservada, para os cartões alinharem)
 	var ribbon_row := CenterContainer.new()
-	ribbon_row.custom_minimum_size = Vector2(0, 32)
+	ribbon_row.custom_minimum_size = Vector2(0, RIBBON_HEIGHT)
 	ribbon_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	col.add_child(ribbon_row)
 	if ribbon != "":
@@ -412,7 +441,12 @@ func _build_full(col: VBoxContainer, title: String, category: String, ribbon: St
 	var plate_row := CenterContainer.new()
 	plate_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	col.add_child(plate_row)
-	plate_row.add_child(_plate(icon_tex, 112.0, 92.0, glyph_text))
+	plate_row.add_child(_plate(icon_tex, 104.0, 86.0, glyph_text))
+	if art("oferta_cartao") != null:
+		var below_window := Control.new()   # a janela da arte acaba abaixo da placa: o nome não pode invadir a moldura
+		below_window.custom_minimum_size = Vector2(0, WINDOW_SPACER)
+		below_window.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		col.add_child(below_window)
 	var name_label := _label(title, 20, name_color if _rarity == "" else _accent)
 	name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -447,12 +481,18 @@ func _build_full(col: VBoxContainer, title: String, category: String, ribbon: St
 	brief.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	brief.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	brief.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	brief.max_lines_visible = 5
+	brief.max_lines_visible = 3
+	brief.clip_text = true   # sem isto o texto longo empurra preço e tecla para fora do cartão
 	brief.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	col.add_child(brief)
 	_brief = brief
 	col.add_child(_chips_row(badge, level_chip, price, price_col))
-	col.add_child(_key_chip(i))
+	# A tecla fica presa à base do cartão, sobre a moldura de baixo: posição fixa em todos, sem depender do conteúdo.
+	var key := _key_chip(i)
+	add_child(key)
+	key.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
+	key.offset_top = -(KEY_BOTTOM + KEY_HEIGHT)
+	key.offset_bottom = -KEY_BOTTOM
 
 ## Versão baixa (5+ ofertas): ícone à esquerda, texto à direita, números e tecla na base.
 func _build_compact(col: VBoxContainer, title: String, category: String, ribbon: String, style: Dictionary, name_color: Color, icon_tex: Texture2D, glyph_text: String, badge: Control, level_chip: String, price: String, price_col: Color, i: int, brief_text: String) -> void:
