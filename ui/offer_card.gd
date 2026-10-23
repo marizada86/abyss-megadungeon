@@ -343,11 +343,14 @@ func _key_chip(i: int) -> CenterContainer:
 	key_row.add_child(key)
 	return key_row
 
-func _chips_row(badge: Control, level_chip: String, price: String, price_col: Color) -> HBoxContainer:
-	var chips := HBoxContainer.new()
-	chips.alignment = BoxContainer.ALIGNMENT_CENTER
+## Selo + faixa de preço. Quebra em duas linhas quando não cabe: o texto longo ("vende Anel ...: 20") alargava a coluna e empurrava
+## fita, ícone e preço para fora do centro da carta.
+func _chips_row(badge: Control, level_chip: String, price: String, price_col: Color) -> FlowContainer:
+	var chips := HFlowContainer.new()
+	chips.alignment = FlowContainer.ALIGNMENT_CENTER
 	chips.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	chips.add_theme_constant_override("separation", 10)
+	chips.add_theme_constant_override("h_separation", 10)
+	chips.add_theme_constant_override("v_separation", 2)
 	chips.custom_minimum_size = Vector2(0, 26)
 	if badge != null:
 		chips.add_child(badge)
@@ -367,7 +370,25 @@ func _chips_row(badge: Control, level_chip: String, price: String, price_col: Co
 			plate.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			plate.custom_minimum_size = Vector2(120, 36)
 			plate.add_theme_stylebox_override("panel", price_style)
-			plate.add_child(price_label)
+			var split := price.rfind(": ")
+			if split > 0:
+				# "vende Nome Longo: 20": só o nome cede (reticências); o valor fica sempre visível e a faixa tem largura fixa
+				plate.custom_minimum_size.x = 176.0
+				price_label.text = price.substr(split)
+				var name_label := _label(price.substr(0, split), 16, price_col)
+				name_label.clip_text = true
+				name_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+				name_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+				name_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+				var parts := HBoxContainer.new()
+				parts.mouse_filter = Control.MOUSE_FILTER_IGNORE
+				parts.add_theme_constant_override("separation", 0)
+				parts.add_child(name_label)
+				price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+				parts.add_child(price_label)
+				plate.add_child(parts)
+			else:
+				plate.add_child(price_label)
 			chips.add_child(plate)
 		else:
 			chips.add_child(price_label)
@@ -475,7 +496,7 @@ func _build_compact(col: VBoxContainer, title: String, category: String, ribbon:
 	base.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	base.add_theme_constant_override("separation", 8)
 	var chips := _chips_row(badge, level_chip, price, price_col)
-	chips.alignment = BoxContainer.ALIGNMENT_BEGIN
+	chips.alignment = FlowContainer.ALIGNMENT_BEGIN
 	chips.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	base.add_child(chips)
 	base.add_child(_key_chip(i))
