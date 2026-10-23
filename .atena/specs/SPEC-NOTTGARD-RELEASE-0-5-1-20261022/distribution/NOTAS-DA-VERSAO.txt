@@ -1,0 +1,50 @@
+NOTTGARD - ABYSS MEGADUNGEON  |  NOTAS DO PLAYTEST 0.5.1
+=======================================================
+
+A 0.5.1 substitui a 0.5.0. Se voce ainda nao jogou a 0.5.0, ignore-a e use esta.
+
+O QUE HA DE NOVO DESDE A 0.4.0
+- Capitulo 1 completo: Docas > Reino Abissal > Domwieck, com marcos de campanha e quadrinhos (HQ15 a HQ18 e HQ03).
+- Capitulo 2: quadrinhos HQ19, HQ20, HQ21 e HQ04 integrados; Dagruve com rotas e area marcada.
+- Herois Arlindo e Erik, animacoes novas, mecanicas novas de chefe, progressao e interface renovadas,
+  opcoes de fonte, filtro visual e atmosfera.
+- Todas as fases abertas neste build (Shedaklah ate Pilares), para testar o jogo inteiro.
+
+O QUE MUDOU NA 0.5.1 (em relacao a 0.5.0)
+- Campanha: Domwieck nao encerra mais a run; abre o portal e a campanha segue para Dagruve e as fases seguintes.
+- Docas, Reino Abissal e Domwieck duram 180 s. Docas ganhou mais XP e vida dos inimigos para compensar a duracao.
+- Reino Abissal reequilibrado: Shu e Ezro nas ondas foram retirados (Ezro segue como elite do covil) e o Death Tyrant entra aos 140 s.
+- Goranthis e Shedaklah: elites dos covis corrigidos.
+- Chefes: todos os chefes da campanha agora tem cartaz de apresentacao (titulo ajustado para nao cortar o texto).
+- Reino Abissal, Domwieck e Pilares ganharam Ecos, camara selada, covil, reliquia e conquista; eventos aleatorios dos
+  dois mapas novos ligados; cronicas do Reino Abissal e de Domwieck no jogo.
+- Cartas de oferta (nivel, altar, lojas, forja, bau, doacao, apostas, eventos, pactos) com layout vertical e arte nova.
+- Interface: barras de vida e XP, fichas de atributos, anel de habilidade, botoes, tela de resultado e dicas com arte nova;
+  Quartel com marcadores, botoes de compra, emblemas de conquistas e icones do codex novos; botao "Bloqueado" corrigido.
+- Inimigos redesenhados (Sintese, Death Tyrant, Receptaculo, Gargula, Crueldades, Manifestacao, Molydeus, Ezro, Shu);
+  Nidhogg novo, com evento da Raiz de Yggdrasil; icones novos de armas, espelho e bencaos.
+- Biografias dos 12 herois reescritas; nomes e textos alinhados ao Vault (ex.: Martelo da Gloria, Sylas Malafaia).
+- Efeitos de fogo novos (Bola de Fogo, Tormenta de Fogo, Tocha do Incendiario).
+
+O QUE TESTAR (em ordem de interesse)
+1. O primeiro minuto dos mapas novos (Reino Abissal e Domwieck): comeca justo, injusto ou facil demais? E 180 s e o tamanho certo?
+2. Docas e os herois Durvall, Arlindo e Nyrelia: dao a sensacao de poder? Algum parece fraco ou punido demais?
+3. Cadeia da campanha: Docas > Reino Abissal > Domwieck > Dagruve funciona e faz sentido?
+4. Fases profundas (Shedaklah, Durao, Goranthis, Shendilavri, Pilares) e chefes: mecanicas claras? Dificuldade?
+   Pilares e o mais dificil: robos so derrotam o chefe com o Quartel no maximo. Diga se esta dificil demais ou na medida.
+5. Desempenho: o jogo trava com muitos inimigos? Em qual fase e heroi?
+6. Interface em 1280x720 e 1920x1080: cartas de oferta, HUD, Quartel, tela de resultado; textos legiveis?
+7. Controle fisico, se voce tiver.
+8. Musica e ambiencia: combinam com as fases novas ou incomodam?
+
+JA SABEMOS (nao precisa reportar)
+- Musica e ambiencia do Reino Abissal, Domwieck e Pilares sao reaproveitadas de outras fases.
+- Quadrinhos HQ05 a HQ10 estao nas versoes antigas; os novos virao depois.
+- A Raiz de Yggdrasil nao esta disponivel como fase neste build.
+- Os herois ainda usam a arte e as animacoes de caminhada antigas (algumas estranhas); a arte nova esta em producao.
+- Arte e textos novos sao rascunho: podem mudar. Cartaz de chefe, cartas de oferta, HUD e Quartel ainda nao foram aceitos.
+- Controle fisico nunca foi testado em hardware.
+
+COMO REPORTAR
+Por item: Funcionou? | Dificuldade (facil / ok / dificil) | Diversao (1 a 5) | Bug (o que fazia, fase, heroi) | Print (F6).
+F5 para a nota, F7 para o ZIP. Detalhes no LEIA-ME.txt.
