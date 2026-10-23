@@ -1,0 +1,23 @@
+[
+  {
+    "arquivo": "korrak/korrak_attack_se_v01.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 20,
+    "separadas": true
+  },
+  {
+    "arquivo": "korrak/korrak_active_se_v01.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 5,
+    "separadas": true
+  },
+  {
+    "arquivo": "korrak/korrak_death_se_v01.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 41,
+    "separadas": true
+  }
+]

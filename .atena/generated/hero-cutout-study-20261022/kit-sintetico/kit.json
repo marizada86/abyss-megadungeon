@@ -1,0 +1,135 @@
+{
+  "H": 900,
+  "parts": {
+    "arm_far": {
+      "attach": [
+        95,
+        -225
+      ],
+      "file": "arm_far.png",
+      "parent": "torso",
+      "pivot": [
+        30,
+        20
+      ],
+      "z": 1
+    },
+    "arm_near": {
+      "attach": [
+        -95,
+        -225
+      ],
+      "file": "arm_near.png",
+      "parent": "torso",
+      "pivot": [
+        30,
+        20
+      ],
+      "z": 9
+    },
+    "hair_back": {
+      "attach": [
+        -20,
+        -235
+      ],
+      "file": "hair_back.png",
+      "parent": "torso",
+      "pivot": [
+        60,
+        10
+      ],
+      "z": 0
+    },
+    "head": {
+      "attach": [
+        8,
+        -232
+      ],
+      "file": "head.png",
+      "parent": "torso",
+      "pivot": [
+        55,
+        140
+      ],
+      "z": 8
+    },
+    "sash": {
+      "attach": [
+        20,
+        -28
+      ],
+      "file": "sash.png",
+      "parent": "torso",
+      "pivot": [
+        35,
+        10
+      ],
+      "z": 7
+    },
+    "shin_far": {
+      "attach": [
+        0,
+        205
+      ],
+      "file": "shin_far.png",
+      "parent": "thigh_far",
+      "pivot": [
+        40,
+        20
+      ],
+      "z": 3
+    },
+    "shin_near": {
+      "attach": [
+        0,
+        205
+      ],
+      "file": "shin_near.png",
+      "parent": "thigh_near",
+      "pivot": [
+        40,
+        20
+      ],
+      "z": 5
+    },
+    "thigh_far": {
+      "attach": [
+        22,
+        0
+      ],
+      "file": "thigh_far.png",
+      "parent": "root",
+      "pivot": [
+        45,
+        20
+      ],
+      "z": 2
+    },
+    "thigh_near": {
+      "attach": [
+        -22,
+        0
+      ],
+      "file": "thigh_near.png",
+      "parent": "root",
+      "pivot": [
+        45,
+        20
+      ],
+      "z": 4
+    },
+    "torso": {
+      "attach": [
+        0,
+        0
+      ],
+      "file": "torso.png",
+      "parent": "root",
+      "pivot": [
+        110,
+        250
+      ],
+      "z": 6
+    }
+  }
+}

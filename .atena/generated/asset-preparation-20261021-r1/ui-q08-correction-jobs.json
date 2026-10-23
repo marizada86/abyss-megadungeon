@@ -1,0 +1,206 @@
+[
+  {
+    "id": "Q08_abates",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/abates.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0,
+      0,
+      0.25,
+      0.33
+    ]
+  },
+  {
+    "id": "Q08_sem_dano",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/sem_dano.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.25,
+      0,
+      0.25,
+      0.33
+    ]
+  },
+  {
+    "id": "Q08_sobrevivencia",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/sobrevivencia.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.5,
+      0,
+      0.25,
+      0.33
+    ]
+  },
+  {
+    "id": "Q08_nivel",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/nivel.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.75,
+      0,
+      0.25,
+      0.33
+    ]
+  },
+  {
+    "id": "Q08_moedas",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/moedas.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0,
+      0.335,
+      0.25,
+      0.28
+    ]
+  },
+  {
+    "id": "Q08_baus",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/baus.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.25,
+      0.335,
+      0.25,
+      0.28
+    ]
+  },
+  {
+    "id": "Q08_elites",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/elites.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.5,
+      0.335,
+      0.25,
+      0.28
+    ]
+  },
+  {
+    "id": "Q08_chefes",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/chefes.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.75,
+      0.335,
+      0.25,
+      0.28
+    ]
+  },
+  {
+    "id": "Q08_rituais",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/rituais.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0,
+      0.615,
+      0.25,
+      0.385
+    ]
+  },
+  {
+    "id": "Q08_ecos",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/ecos.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.25,
+      0.615,
+      0.25,
+      0.385
+    ]
+  },
+  {
+    "id": "Q08_hqs",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/hqs.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.5,
+      0.615,
+      0.25,
+      0.385
+    ]
+  },
+  {
+    "id": "Q08_biografias",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/biografias.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.75,
+      0.615,
+      0.25,
+      0.385
+    ]
+  }
+]

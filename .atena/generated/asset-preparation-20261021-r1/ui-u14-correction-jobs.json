@@ -1,0 +1,18 @@
+[
+  {
+    "id": "U14_fill",
+    "src": "../asset-production-20261021-r1/U14_v01.png",
+    "out": "prepared/ui/hud/hud_barra_xp_fill.png",
+    "key": "none",
+    "size": [
+      300,
+      8
+    ],
+    "region": [
+      0.1,
+      0.603,
+      0.8,
+      0.03
+    ]
+  }
+]

@@ -1,0 +1,2388 @@
+{
+  "date": "2026-10-22",
+  "state": "TRANSFERRED_AND_VALIDATED",
+  "source": "C:\\Users\\Higor Rossini\\.codex\\worktrees\\3a88\\nottgard-survivor",
+  "target": "F:\\dev\\abyss-megadungeon",
+  "copied_files": 587,
+  "source_pngs": 129,
+  "accepted_sources": 125,
+  "prepared_derivatives": 158,
+  "relocated_reference_records": 2,
+  "copies": [
+    {
+      "sha256": "4501B85F866556B3BFE90ED4AC70812645A1BE4AB2C62EC3AD872F59A153B7CB",
+      "file": ".atena/generated/asset-production-20261021-r1/ASSET-CHECKUP-20261021-r1.md"
+    },
+    {
+      "sha256": "3E03FE36BC24C504BB1CD267D28DA197949E9D3A8B7E36E3EDA181B35A970B66",
+      "file": ".atena/generated/asset-production-20261021-r1/ASSET-GENERATION-LIST-20261021-r1.md"
+    },
+    {
+      "sha256": "8CBAFCF529E09CD92B1D5EB66182497CD918E546356A0D2A7548D4E691C90DFB",
+      "file": ".atena/generated/asset-production-20261021-r1/C01.json"
+    },
+    {
+      "sha256": "0C0AFB519728C6B517F5EBB068A094A4BB2B255D82CC2A38204522183BACCB84",
+      "file": ".atena/generated/asset-production-20261021-r1/C01_prompt.txt"
+    },
+    {
+      "sha256": "70046F391D2BB5D024A8C24569BDD982D180D26D552EAD9E681891D9639A095F",
+      "file": ".atena/generated/asset-production-20261021-r1/C01_v01.png"
+    },
+    {
+      "sha256": "298C032EA27F475BB7C7672569BFB72DC97EEA9FC90E07104E156DD88C236993",
+      "file": ".atena/generated/asset-production-20261021-r1/C02.json"
+    },
+    {
+      "sha256": "282463BD4124B2905491D7B9DC82DAC2B9486E37CD346491C8AD8AE59ED349A6",
+      "file": ".atena/generated/asset-production-20261021-r1/C02_prompt.txt"
+    },
+    {
+      "sha256": "FF1565B26712A128F4B3176096A44BC07565308F921029A3D853DF2516FA0E45",
+      "file": ".atena/generated/asset-production-20261021-r1/C02_v01.png"
+    },
+    {
+      "sha256": "1E416B5A2B4E4DAA9357DDC2C5071983551D144E8C453415497362F168ACD7BF",
+      "file": ".atena/generated/asset-production-20261021-r1/C03.json"
+    },
+    {
+      "sha256": "74A2E54285178E96D0C2EBC7D05C75707D76D4771DF93A81907035FF82C90923",
+      "file": ".atena/generated/asset-production-20261021-r1/C03_prompt.txt"
+    },
+    {
+      "sha256": "62F88BC1F2F6AD796CA48F124314AE19B679B6A65884CCDCEFCCFFE7645FB9D6",
+      "file": ".atena/generated/asset-production-20261021-r1/C03_v01.png"
+    },
+    {
+      "sha256": "B773715CF2EE7F0AB222A288BDD3AE52589A5ADD97EA1D1A698F41EA035C1ABA",
+      "file": ".atena/generated/asset-production-20261021-r1/C04.json"
+    },
+    {
+      "sha256": "C5E966E45298676FF71D71D5AF525A7814E319BD1B2388F2C3F09976A4CC2360",
+      "file": ".atena/generated/asset-production-20261021-r1/C04_prompt.txt"
+    },
+    {
+      "sha256": "F31E7890106CB52D9028C6A23C4C3E30B88F740BC768EE91F6BD8C8FA30B421D",
+      "file": ".atena/generated/asset-production-20261021-r1/C04_v01.png"
+    },
+    {
+      "sha256": "456995727198A1F0DE82AF17DCFC01A790838769A91740103A607C0E2F848A1E",
+      "file": ".atena/generated/asset-production-20261021-r1/C05.json"
+    },
+    {
+      "sha256": "8A47C3BF1FA2C4A3208343B486346D50F0CF97AF49EDA104F288697467E1CF79",
+      "file": ".atena/generated/asset-production-20261021-r1/C05_prompt.txt"
+    },
+    {
+      "sha256": "5BCE06F1454DD6500C645D42A3AF149EAF6FCA308C845C88340B0E719E72E722",
+      "file": ".atena/generated/asset-production-20261021-r1/C05_v01.png"
+    },
+    {
+      "sha256": "B81F72CA0A7AD0067B98F8FDDD1B806060597E1316DA72F169CE8515BFE29679",
+      "file": ".atena/generated/asset-production-20261021-r1/C06.json"
+    },
+    {
+      "sha256": "FAABE32BFD1648FBD9465B26A2107BA96D0898BEA8EC771D6037D3724D125280",
+      "file": ".atena/generated/asset-production-20261021-r1/C06_prompt.txt"
+    },
+    {
+      "sha256": "8DB09B97B78A78BE0F7D0C2B8C371A5453DAA12B9004065B52BFC2B2A209D564",
+      "file": ".atena/generated/asset-production-20261021-r1/C06_v01.png"
+    },
+    {
+      "sha256": "46FA15659250E44407801C1721743A380E096B2EEC4442DC50C24EED8124F58B",
+      "file": ".atena/generated/asset-production-20261021-r1/C07.json"
+    },
+    {
+      "sha256": "002A98A06DD86985A4B673ABF5364F9132CB8820B31B49C46FF8C5FB0BA54F12",
+      "file": ".atena/generated/asset-production-20261021-r1/C07_prompt.txt"
+    },
+    {
+      "sha256": "3331F651E2FD9F240E102DFCC06288F47BAFAB27E06B686DFCC9BF0C821A6D1E",
+      "file": ".atena/generated/asset-production-20261021-r1/C07_v01.png"
+    },
+    {
+      "sha256": "C99D206B5DF2558519B539A9FDAE4237E19719FE17F92E58A94AFA5EF02BE646",
+      "file": ".atena/generated/asset-production-20261021-r1/C08.json"
+    },
+    {
+      "sha256": "15F035D6574482E81513573DCB2ABEFEED0CDB11B3763995D11A3FDAF502A7BA",
+      "file": ".atena/generated/asset-production-20261021-r1/C08_prompt.txt"
+    },
+    {
+      "sha256": "062D24CA6D38FBDAE4C53AA5D50247E9628EA57A386E6E123B3981D005FE4A32",
+      "file": ".atena/generated/asset-production-20261021-r1/C08_v01.png"
+    },
+    {
+      "sha256": "CDEFAC9065435D4E652B9B77465E0701BDBE43AFCA189FE55C5FFAF5ACE92E36",
+      "file": ".atena/generated/asset-production-20261021-r1/C09.json"
+    },
+    {
+      "sha256": "E7E247214360416D5C32442B84C0200E3FFF1F7CAB0E4BE0BDEBCF352B56B45D",
+      "file": ".atena/generated/asset-production-20261021-r1/C09_prompt.txt"
+    },
+    {
+      "sha256": "77927C6C7CBB6CDBD58F1A34786C21FA8AB0BCBBAF003964EDF099509EC95E73",
+      "file": ".atena/generated/asset-production-20261021-r1/C09_v01.png"
+    },
+    {
+      "sha256": "69D76B19161CB4012ACA2E70D65D8FE588B4B977075026BBD542B42E0AFA5F8A",
+      "file": ".atena/generated/asset-production-20261021-r1/C10.json"
+    },
+    {
+      "sha256": "3B5CD4AC6675438565CB489ACA695CEAB9AC9D0FD23EBD5A933DD3FD5F872040",
+      "file": ".atena/generated/asset-production-20261021-r1/C10_prompt.txt"
+    },
+    {
+      "sha256": "9BB7ACE3208CC059E2F7DB391107A268CD2BE8D2AD6AB3E038C57F5F4A59113F",
+      "file": ".atena/generated/asset-production-20261021-r1/C10_v01.png"
+    },
+    {
+      "sha256": "733F7F82BF635A94D702C080BA707008648D734A006175D090CB673B5200B6BA",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_domwieck_remendo.json"
+    },
+    {
+      "sha256": "393BC339158C2BA9E76C87755411AB2679CD520F787381B1008FA5762B7735DB",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_domwieck_remendo_prompt.txt"
+    },
+    {
+      "sha256": "CE540C37BBCCA4F912FFA2D086DFC8405585F3E67E41C813EAA9BCC1CC2FE273",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_domwieck_remendo_v01.png"
+    },
+    {
+      "sha256": "41D779844A456AB8AABB1D810588BDCF18A4091D3806EBA3A5C36FA9A82A989D",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_domwieck_trilha.json"
+    },
+    {
+      "sha256": "64BDDA5EBD61AC32D199748E273F0E36F103525C930CDEC3A035139E450FB90E",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_domwieck_trilha_prompt.txt"
+    },
+    {
+      "sha256": "B1747B8CCA31B6521AC1DB684A51ACE10DE0A9020D8587C7BDD402EC0F6E056B",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_domwieck_trilha_v01.png"
+    },
+    {
+      "sha256": "887AC8721830C2A544293FF5722DB614B0511A057581E566DF360CFE5FD9FD87",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_reino_remendo.json"
+    },
+    {
+      "sha256": "DE871B4D36C403F4B8FC249BF084EBAAA1BEEAA5C37F8F2EEFF70DAB4BD06179",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_reino_remendo_prompt.txt"
+    },
+    {
+      "sha256": "E14B9E979F6A7A050C9CE33E986C526380CD62F73BB3CC57D33F7A96E6FC2614",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_reino_remendo_v01.png"
+    },
+    {
+      "sha256": "09B3BA41B565CD5B04724DB7F1FEAD601F0BC11E52628C8EFDC148C103D8A186",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_reino_trilha.json"
+    },
+    {
+      "sha256": "D45328D71E44D50843FC874D5360E8565A8DD8A66B166607C81F95238D0CF622",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_reino_trilha_prompt.txt"
+    },
+    {
+      "sha256": "D155AC4C3809ADB36FFC2CCD6DE6A085F3E744A3B1470287F1433BA96A7F7741",
+      "file": ".atena/generated/asset-production-20261021-r1/C11_reino_trilha_v01.png"
+    },
+    {
+      "sha256": "D218506C5C743EFBF3A01487DB34697986E81F77F5B117522277B62F467011BF",
+      "file": ".atena/generated/asset-production-20261021-r1/C12_domwieck.json"
+    },
+    {
+      "sha256": "24C443812F5EC4CB551EF48884262AE20D8C3CF2F43FB280C5CE4DE4BF47CC5F",
+      "file": ".atena/generated/asset-production-20261021-r1/C12_domwieck_prompt.txt"
+    },
+    {
+      "sha256": "1A927159DF7218E8BC737E0BA3F84961C48AA88CB5C9F907D6A7357795BFF7CA",
+      "file": ".atena/generated/asset-production-20261021-r1/C12_domwieck_v01.png"
+    },
+    {
+      "sha256": "7BF8DCB3AE77461EC9FF2A5BD5B1286B24E62FD17C12A0308187D824E865F702",
+      "file": ".atena/generated/asset-production-20261021-r1/C12_pilares.json"
+    },
+    {
+      "sha256": "6CE10838E1831868E48D76BACFB8E286C39987BCE1368C3A5BD0B1BD59E9F366",
+      "file": ".atena/generated/asset-production-20261021-r1/C12_pilares_prompt.txt"
+    },
+    {
+      "sha256": "EB39E033EE0E1CCA30186BDA3F19AF280E8A43F3A276D9FE7A722C0766D568BC",
+      "file": ".atena/generated/asset-production-20261021-r1/C12_pilares_v01.png"
+    },
+    {
+      "sha256": "0601F722C717E40E828B030B790C4A787724537096C307F78C1E75B74D14F378",
+      "file": ".atena/generated/asset-production-20261021-r1/C12_reino_abissal.json"
+    },
+    {
+      "sha256": "94A5AAC0FDA40819C1D2AEC5748CCB02B8D8D8A6D1FBDF4F1859D95D2C4D210A",
+      "file": ".atena/generated/asset-production-20261021-r1/C12_reino_abissal_prompt.txt"
+    },
+    {
+      "sha256": "F305BA768ABDB0E04CA1487C035A448FAAF0449A7836BF59CB696434BC07E7B1",
+      "file": ".atena/generated/asset-production-20261021-r1/C12_reino_abissal_v01.png"
+    },
+    {
+      "sha256": "8696FF1AEED8EB062EF80EF5C5EBD9479ED32C9FDD4530F95DCB353E1F7214C2",
+      "file": ".atena/generated/asset-production-20261021-r1/C13_a.json"
+    },
+    {
+      "sha256": "5FC33D4D00644D09D3FD3BA766D97A5A7DF2DA88E3D57DCBAC68F395FF8689D5",
+      "file": ".atena/generated/asset-production-20261021-r1/C13_a_prompt.txt"
+    },
+    {
+      "sha256": "8A3AFA7E191AE5B60B28AF7B1CA1F5B45685D852638FCF9A92AB99896CC96737",
+      "file": ".atena/generated/asset-production-20261021-r1/C13_a_v01.png"
+    },
+    {
+      "sha256": "0DA101D344AC784C11B4160BEC08734A83A0FBA189697DD1EFDD83CED8B3452C",
+      "file": ".atena/generated/asset-production-20261021-r1/C13_b.json"
+    },
+    {
+      "sha256": "B638023843478AF081D0A8F1852F42014C5CB42633A8FE6121C2228C85EA0BC1",
+      "file": ".atena/generated/asset-production-20261021-r1/C13_b_prompt.txt"
+    },
+    {
+      "sha256": "EA9FA2F82A1B17EA2C2AE9F44A54B25286FF7477958798021C143D3A842ED18C",
+      "file": ".atena/generated/asset-production-20261021-r1/C13_b_v01.png"
+    },
+    {
+      "sha256": "D629CC123709DA3FCC7599AC49F6BA0CF36E3D9CE8A6D90C5C0001799FCC3925",
+      "file": ".atena/generated/asset-production-20261021-r1/C14.json"
+    },
+    {
+      "sha256": "6F65F2CDBAD7708745CE148E03ED3EA0511B50A11423AA5BD3B8039FE8C38856",
+      "file": ".atena/generated/asset-production-20261021-r1/C14_prompt.txt"
+    },
+    {
+      "sha256": "991FACD6932FA4AF5E63313F8FCABC97356CFD033AFE803035789B094D022C6F",
+      "file": ".atena/generated/asset-production-20261021-r1/C14_v01.png"
+    },
+    {
+      "sha256": "79E23AF10AD984A759774023C45D299A5A93D1DE190E6BA9DDF7FAFE494D8D5D",
+      "file": ".atena/generated/asset-production-20261021-r1/C15_a.json"
+    },
+    {
+      "sha256": "F1B83BDA9C1BFC0C9BC44FCD6DAD3FC76FF5ADFC7E4BC1600386265E88A8F804",
+      "file": ".atena/generated/asset-production-20261021-r1/C15_a_prompt.txt"
+    },
+    {
+      "sha256": "245A954328C0CA46D3624018E414F45D8F627A25ADEE305882C90B1375ED5D09",
+      "file": ".atena/generated/asset-production-20261021-r1/C15_a_v01.png"
+    },
+    {
+      "sha256": "DDA3D3C00799BA998BA4B289053BEB382F744ECC553A597D160D5AA04AB49CD0",
+      "file": ".atena/generated/asset-production-20261021-r1/C15_b.json"
+    },
+    {
+      "sha256": "97EAB47DF4BCB8633E26B645AE510A2202AACDEC13FC6693BA085EB6D4F51E04",
+      "file": ".atena/generated/asset-production-20261021-r1/C15_b_prompt.txt"
+    },
+    {
+      "sha256": "F24259AD2160B2E6ACF3ADD0A6C3286F18DFED75FA498139231585707D344546",
+      "file": ".atena/generated/asset-production-20261021-r1/C15_b_v01.png"
+    },
+    {
+      "sha256": "5B5DF2097DD2AB2D808746641C59D81B1371635C0FB6848BCB40983FCE48A962",
+      "file": ".atena/generated/asset-production-20261021-r1/C15_c.json"
+    },
+    {
+      "sha256": "9213C8917CCC1E73DE4209E5648FD86C318A42B340F95A64DB0395BB5C306DE6",
+      "file": ".atena/generated/asset-production-20261021-r1/C15_c_prompt.txt"
+    },
+    {
+      "sha256": "32E5ED7A0240F33BF318352EE24DCEEB0284E199ED100111AB806A109042FC72",
+      "file": ".atena/generated/asset-production-20261021-r1/C15_c_v01.png"
+    },
+    {
+      "sha256": "8632E6E3D4AE8D30A1A762378FD086B666388EDBA2AB6ECAC095CB0003AE579F",
+      "file": ".atena/generated/asset-production-20261021-r1/C16_arlindo.json"
+    },
+    {
+      "sha256": "D30556640ED3AB1645BBAE2D7F5F5AAD97BA0BDDAD503777AD622571A445AF10",
+      "file": ".atena/generated/asset-production-20261021-r1/C16_arlindo_prompt.txt"
+    },
+    {
+      "sha256": "5E8E513D66AA68B90A4EFA6874F4B32DB1079873E101A4F31DBA47A4B1137B81",
+      "file": ".atena/generated/asset-production-20261021-r1/C16_arlindo_v01.png"
+    },
+    {
+      "sha256": "D1E5B3D897BAB15AF9AFF11EC94C5012B27D40B1BD2BE9CC0CC45608EF897C7D",
+      "file": ".atena/generated/asset-production-20261021-r1/C16_erik.json"
+    },
+    {
+      "sha256": "390B6193622EA6B02A3D631607BF817B62D8BE07B40EA609354CFB38F34586DB",
+      "file": ".atena/generated/asset-production-20261021-r1/C16_erik_prompt.txt"
+    },
+    {
+      "sha256": "A6E2ACFE6ABC50F2CCE10845602B85CD155CDDBDA020A53188E52B3A9DFB4278",
+      "file": ".atena/generated/asset-production-20261021-r1/C16_erik_v01.png"
+    },
+    {
+      "sha256": "D50D331FD9E525EB75676C44A2F256E083507826B3AA8AE18B1F0B26FE15DB91",
+      "file": ".atena/generated/asset-production-20261021-r1/checkpoint.md"
+    },
+    {
+      "sha256": "BFAE1B024359104140B4DAB136FB5BD4AF5AAE449080C86B6F4C93E9BF85FBE3",
+      "file": ".atena/generated/asset-production-20261021-r1/completion.md"
+    },
+    {
+      "sha256": "99A27293B8D410369F0720C03B4059ED303204FD50E583B3DFDFF325FC54E176",
+      "file": ".atena/generated/asset-production-20261021-r1/consolidate.ps1"
+    },
+    {
+      "sha256": "B3078F8ED7FD479EBBCBE8B15B602D71E8A7C55CC463E467EE92DDAC6FA40B7F",
+      "file": ".atena/generated/asset-production-20261021-r1/delivery-audit.json"
+    },
+    {
+      "sha256": "C87A930EC3E1A7F9B442FE76AB4039C2D2CA23AD7E3C70C308F84B925ECAE419",
+      "file": ".atena/generated/asset-production-20261021-r1/index.html"
+    },
+    {
+      "sha256": "4B842229CB74654281C03B971E5B5C8419A724C5BF1228C0FB8D7AF3D777052A",
+      "file": ".atena/generated/asset-production-20261021-r1/manifest.json"
+    },
+    {
+      "sha256": "9E3D7E149CD91E941708FA40ACA82B4C624D86B247C1D96FF156CA0B060A01A4",
+      "file": ".atena/generated/asset-production-20261021-r1/N01_attack.json"
+    },
+    {
+      "sha256": "F402F05DDB0E8366F4AA501432CC7C9762C265517644F1D8564D76EED125F214",
+      "file": ".atena/generated/asset-production-20261021-r1/N01_attack_prompt.txt"
+    },
+    {
+      "sha256": "E2552A4ABD590E959B6CD3F4A33195723F0C3F65BD0CEE9BC69EBB51181E61BD",
+      "file": ".atena/generated/asset-production-20261021-r1/N01_attack_v01.png"
+    },
+    {
+      "sha256": "800053C76795DE5E56763209EF317E8C89F5D0080D1CCC3355279DCB5E2632BE",
+      "file": ".atena/generated/asset-production-20261021-r1/N01_death.json"
+    },
+    {
+      "sha256": "6F84BA959ABE1711E8DD19D8569FAC2F8BE5558CEBB4B89A887EAEA52B3418AA",
+      "file": ".atena/generated/asset-production-20261021-r1/N01_death_prompt.txt"
+    },
+    {
+      "sha256": "958D8D46F192C294C3C80BE04028F21B28EA79132AAAAAB28E52CCEC2BC618A4",
+      "file": ".atena/generated/asset-production-20261021-r1/N01_death_v01.png"
+    },
+    {
+      "sha256": "C38F873F1A9D677D5A927A57592A20D1DBFAB2E42BFE3D26D42EEB119657B0A7",
+      "file": ".atena/generated/asset-production-20261021-r1/N01_idle.json"
+    },
+    {
+      "sha256": "A49BDD584064FFADAF2E34D97C4692F245DE536069D4916492E5AEB9A1775499",
+      "file": ".atena/generated/asset-production-20261021-r1/N01_idle_prompt.txt"
+    },
+    {
+      "sha256": "2A82A1D91B9B125EE69F2812079F068E9502ED60286915FFBC5737212B316AC4",
+      "file": ".atena/generated/asset-production-20261021-r1/N01_idle_v01.png"
+    },
+    {
+      "sha256": "26C5E60F99CC63517634DF732883120BC5CC88064D5BDA6958811645856D2DF3",
+      "file": ".atena/generated/asset-production-20261021-r1/N02_attack.json"
+    },
+    {
+      "sha256": "CEBE6FCC0DBD32FF0BB9C773191039427B3EF7EFF6ECDAE1924DF1E862C9349D",
+      "file": ".atena/generated/asset-production-20261021-r1/N02_attack_prompt.txt"
+    },
+    {
+      "sha256": "7CEB5B3B4D601E98463D45817A9CC305F607E45E8762C6A9BFB5D86A8576C8B5",
+      "file": ".atena/generated/asset-production-20261021-r1/N02_attack_v01.png"
+    },
+    {
+      "sha256": "99F2699F9FFEDF6135C3C0C69C5D621551DE2C94EF7EE649C616E7CA94224DAB",
+      "file": ".atena/generated/asset-production-20261021-r1/N02_death.json"
+    },
+    {
+      "sha256": "72C0574A6AF6AD65586B0FE4F401324F646EAA85D15B9316B041948F7A9BDF1A",
+      "file": ".atena/generated/asset-production-20261021-r1/N02_death_prompt.txt"
+    },
+    {
+      "sha256": "7E670721878ECC8674B6AA3581B11A439AD5246C0D8C7AA9D74EEBA9D590C54C",
+      "file": ".atena/generated/asset-production-20261021-r1/N02_death_v01.png"
+    },
+    {
+      "sha256": "AFE077EBABFDB9A474C5A676B95C8FF18E4715E9D8E5DD15F354922271AEBE78",
+      "file": ".atena/generated/asset-production-20261021-r1/N02_idle.json"
+    },
+    {
+      "sha256": "7DEEADA6C90CC5E8E0D1AC3CB3847A29DA502CB56BEB5E9A24E5A2124FFB9FC0",
+      "file": ".atena/generated/asset-production-20261021-r1/N02_idle_prompt.txt"
+    },
+    {
+      "sha256": "7B34A395E97DCFE4C27A42DA7994215D028161643B41170AA0DF8188D053C173",
+      "file": ".atena/generated/asset-production-20261021-r1/N02_idle_v01.png"
+    },
+    {
+      "sha256": "EAC03AEC1A34C985823182B5708BD60DAA3D6E6B477F212E2D5BB4E14E3F2D87",
+      "file": ".atena/generated/asset-production-20261021-r1/N03_attack.json"
+    },
+    {
+      "sha256": "ACB2C5A49DB1F23711BABDF92F37505B0A32C46860015495E6E3DD545AB23B76",
+      "file": ".atena/generated/asset-production-20261021-r1/N03_attack_prompt.txt"
+    },
+    {
+      "sha256": "99842C5FDC6A1F9F1422A6B0056AABAD7527A0EBCEB87935881C89C194374376",
+      "file": ".atena/generated/asset-production-20261021-r1/N03_attack_v01.png"
+    },
+    {
+      "sha256": "D316E2B7191A2C231D6FC6A57E92579AF02B70F16B666098BA144EE77D15E436",
+      "file": ".atena/generated/asset-production-20261021-r1/N03_death.json"
+    },
+    {
+      "sha256": "E09C3E86F155919302C603083E0439B49FC1B0C9FC389B1F34883C4709A237A8",
+      "file": ".atena/generated/asset-production-20261021-r1/N03_death_prompt.txt"
+    },
+    {
+      "sha256": "271EC3E26E24416D85824A1BCCD624C4587B005FBA838E8DB7F037EE68AA231F",
+      "file": ".atena/generated/asset-production-20261021-r1/N03_death_v01.png"
+    },
+    {
+      "sha256": "0EEEFBAF641E18ED735C3286B87CBC4943EAE8C42D1D96E763CBF4DDBAFFD5A4",
+      "file": ".atena/generated/asset-production-20261021-r1/N03_idle.json"
+    },
+    {
+      "sha256": "3EFED04D0B42D1B9529350033C4E5C12D3A9CDCF576A45AE90093616209BF25B",
+      "file": ".atena/generated/asset-production-20261021-r1/N03_idle_prompt.txt"
+    },
+    {
+      "sha256": "70C2228D905875C1B675AA53BEF55EAF58AF69F5B2785C3950EAAADC4B6D2051",
+      "file": ".atena/generated/asset-production-20261021-r1/N03_idle_v01.png"
+    },
+    {
+      "sha256": "4E45F936BF7C85BE01B06F9DCA774767A2EB997BA8AD89477DF1AE5CB8FB3265",
+      "file": ".atena/generated/asset-production-20261021-r1/N04_attack.json"
+    },
+    {
+      "sha256": "8F008D7167026222A5909593EF366A36AA092F0DF31A60B5A1CA9498B4A9508A",
+      "file": ".atena/generated/asset-production-20261021-r1/N04_attack_prompt.txt"
+    },
+    {
+      "sha256": "C52CC5A69E26C53BBFBA787811C051197C0BE4F7F367CF714CDFB4BBFB90EDCA",
+      "file": ".atena/generated/asset-production-20261021-r1/N04_attack_v01.png"
+    },
+    {
+      "sha256": "B503D75841CBF9A6E615318BDDB8FA698C2607600FB7D2B51DBD37374DDF5103",
+      "file": ".atena/generated/asset-production-20261021-r1/N04_death.json"
+    },
+    {
+      "sha256": "1E9886AECF991F6A10845522AE0D6D3B0EEC1562FA08A5B524F845260777B6D6",
+      "file": ".atena/generated/asset-production-20261021-r1/N04_death_prompt.txt"
+    },
+    {
+      "sha256": "2F7906689A025E6147F088B2D12531B3376D4220791B0A5FFCE4048F14B226C3",
+      "file": ".atena/generated/asset-production-20261021-r1/N04_death_v01.png"
+    },
+    {
+      "sha256": "02F5FDFD2DD656B3417CB09B7B4F4BA273448598945D2F12A540809F94D0A8AE",
+      "file": ".atena/generated/asset-production-20261021-r1/N04_idle.json"
+    },
+    {
+      "sha256": "5A9F76F1C4C7AB0784AF0282371A74AD9C5C3915F11DB248EF2EAE74B5F02D91",
+      "file": ".atena/generated/asset-production-20261021-r1/N04_idle_prompt.txt"
+    },
+    {
+      "sha256": "D96B29FFD6147F827D17CA225B85857CC3587A9732A60BDF5FF78459E655D00F",
+      "file": ".atena/generated/asset-production-20261021-r1/N04_idle_v01.png"
+    },
+    {
+      "sha256": "FF4F0E849C08F12E35EBC9B85824894B554820E68E5E102B4DF85C04D7198959",
+      "file": ".atena/generated/asset-production-20261021-r1/N05_attack.json"
+    },
+    {
+      "sha256": "A2CE51E16699339F03C930B25D973157E72F1ADA13A874C53689D6393BBB620E",
+      "file": ".atena/generated/asset-production-20261021-r1/N05_attack_prompt.txt"
+    },
+    {
+      "sha256": "40F5E2D323E000D8A1024F20BF0D30EDC696E7952A26BBDE4E55C158467E7DE7",
+      "file": ".atena/generated/asset-production-20261021-r1/N05_attack_v01.png"
+    },
+    {
+      "sha256": "21378CDB86D4D3EF9B29D42C528AB4C934601C0BA5074D7F55A53DBF07F0C167",
+      "file": ".atena/generated/asset-production-20261021-r1/N05_death.json"
+    },
+    {
+      "sha256": "9EB18287A5200FED392FAEEFBB1168AF9745BF18722310DEB0D040ED07C1ADCB",
+      "file": ".atena/generated/asset-production-20261021-r1/N05_death_prompt.txt"
+    },
+    {
+      "sha256": "4D3D116828A2C20493EA0D682EBD8C53676AC8352EBD34204FE42864A1BC8613",
+      "file": ".atena/generated/asset-production-20261021-r1/N05_death_v01.png"
+    },
+    {
+      "sha256": "A020A2C75B8E8B05A6DB124E6E1DCB75F1AB395351DDFDCCE1DAB7B9A66EFC1F",
+      "file": ".atena/generated/asset-production-20261021-r1/N05_idle.json"
+    },
+    {
+      "sha256": "06AFF121EEECD0598B022C67388A796B29FF35EAE50794DDA85A45D360A3B8A6",
+      "file": ".atena/generated/asset-production-20261021-r1/N05_idle_prompt.txt"
+    },
+    {
+      "sha256": "C6285611C04E2C54C7066D9835DA89DD0101AD3D5821D90A2CA525613D825EBF",
+      "file": ".atena/generated/asset-production-20261021-r1/N05_idle_v01.png"
+    },
+    {
+      "sha256": "CE7973DE10325EC08CB6A31AF2BA9ACD49AB9EEEE24F3EB1C47B41D56DF38247",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_atendente_attack.json"
+    },
+    {
+      "sha256": "CA2794E556995318A11EAEE870BEBE854451312D6AA3F048D7760CA17A799F0A",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_atendente_attack_prompt.txt"
+    },
+    {
+      "sha256": "E11DD4092697D275248943ED450B1FAE5E9427A1326FD64E810A78410B0B4F26",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_atendente_attack_v01.png"
+    },
+    {
+      "sha256": "0E71CE4F206D9B3F247B0E81E2873FB2C2FFC8EEC885076A299D129A7B515604",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_atendente_death.json"
+    },
+    {
+      "sha256": "EC41A3037FD55EA778FFE0DE6F8A137CF95C22F637184FBEFF20DD44B556503D",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_atendente_death_prompt.txt"
+    },
+    {
+      "sha256": "3BBD2E9C5658E08260D19E915C7283D85DA86633FB9643B2DD53220B795A2E6C",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_atendente_death_v01.png"
+    },
+    {
+      "sha256": "20C8EABE78D0C6E143E853AFCECF52AD02DDB628F0DCAFEDB20C1EE0C6A767BA",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_atendente_idle.json"
+    },
+    {
+      "sha256": "1A1DF345125AA857262FBCA98E108F008730F43B6F0C436CEA60D7656E735289",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_atendente_idle_prompt.txt"
+    },
+    {
+      "sha256": "6867777D95D9931076AF5BA0F8D3EAE4A809A7426F4D34920C0E17CA6FEE5330",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_atendente_idle_v01.png"
+    },
+    {
+      "sha256": "89EB6EC9747248E39E32FCAF60CFE6DDE6B356068B0B2DE231D906E61B788069",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_taverneiro_attack.json"
+    },
+    {
+      "sha256": "2D2F552A64960DF8AA197A21D0B99A566FE248CE376ED3EBA0AB782625F869C6",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_taverneiro_attack_prompt.txt"
+    },
+    {
+      "sha256": "AF8D7CF98261BCF2C56274768F1E6E7A51EC8BA2D98BD7E00B0C7D0743A99625",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_taverneiro_attack_v01.png"
+    },
+    {
+      "sha256": "698E9C7FE110A7199F97BBD6B5E939929D74E1C2175D8606C74675E2DEB5C780",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_taverneiro_death.json"
+    },
+    {
+      "sha256": "45EF07BC35CB4ABB5DD36A6B33663B2BC2318E96C36B1E528E267D2D7DD5D829",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_taverneiro_death_prompt.txt"
+    },
+    {
+      "sha256": "C8AF52D404A090C3AB051CAA3B7C4931B7138163B53CA7E626A89ABC0057B9EA",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_taverneiro_death_v01.png"
+    },
+    {
+      "sha256": "31D9E98C9E462CD71DF6EE0ADEA7716FC991970ACC2AEB9C827E87F65A656659",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_taverneiro_idle.json"
+    },
+    {
+      "sha256": "B7CE99978F823F94DFADC1CECE07D02FAC10156B2F2E92E0ADA9EE060A266732",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_taverneiro_idle_prompt.txt"
+    },
+    {
+      "sha256": "639D3AFC0F7FAF80DD6058147D662C0A19BC3E798EB8CFFA1622AEA0E84D00CB",
+      "file": ".atena/generated/asset-production-20261021-r1/N06_taverneiro_idle_v01.png"
+    },
+    {
+      "sha256": "CD4786F1D9B67EDC32089F59214A328F7BCC5C5D6205FCA3EB63C63F3DC2CF8C",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_willie_attack.json"
+    },
+    {
+      "sha256": "4C9DE30F626A1E0D221EE1D1C796671E0B96AEE97EEC721331C86171F3A24B25",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_willie_attack_prompt.txt"
+    },
+    {
+      "sha256": "C830D03BCABBB3EE4A91BD89007B15A1AC35BF7D875B01A2193511FDEA9FC51D",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_willie_attack_v01.png"
+    },
+    {
+      "sha256": "66317C647838371E70550BEFF7FF092AD2B70FBC53DC80EE55BB2221FE57BE35",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_willie_death.json"
+    },
+    {
+      "sha256": "17FA54A5B5190AC448B49ABC51D42C198CFD842AFCA3606A875FA55E259F291F",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_willie_death_prompt.txt"
+    },
+    {
+      "sha256": "83BC6CFBD133458BEE334FFBE9BB431F1A018EE16D0AFC91D672F47BF71743AA",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_willie_death_v01.png"
+    },
+    {
+      "sha256": "00ADCFB4F5F36A2064C6B883869387B1A128AA2773DCDC63D6DB5BA657FCD4FA",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_willie_idle.json"
+    },
+    {
+      "sha256": "DCBBF0E033EB629ED46B7A715611EE05931DC43DD0541AC8A9DA1B506C488C8B",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_willie_idle_prompt.txt"
+    },
+    {
+      "sha256": "B3DB6F04B1B5A7E5642EB9C84BB3EA50A1524C3291A41F55BF5599CD74D9CE59",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_willie_idle_v01.png"
+    },
+    {
+      "sha256": "45AF3FB0F194B22435EA2E163411AAC0901B5FAA0030620918F98BC5BBC101E2",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_wonka_attack.json"
+    },
+    {
+      "sha256": "B67432DCFF35810AEF9BF6A7BE1509C4B6658E676369768E53F18F65BCF8D2B2",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_wonka_attack_prompt.txt"
+    },
+    {
+      "sha256": "2415E0FB289CBE9A1A84F41C78A5FC8E2E896DB407DFFAB57DFFA8BC73463DF9",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_wonka_attack_v01.png"
+    },
+    {
+      "sha256": "E73FFDD546EB08D311A177197E31E4E313C34746C85601E919037DAA9B826240",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_wonka_death.json"
+    },
+    {
+      "sha256": "A4F4DAA9391C941CFEC7D38826C682E3154A0A658DD44C28E9EA7F4212CB42DD",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_wonka_death_prompt.txt"
+    },
+    {
+      "sha256": "E46EB28F462EC444B2208CAE8A8F2A739B3E881D9A85BE5FA6A6054730E25EEF",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_wonka_death_v01.png"
+    },
+    {
+      "sha256": "8C151CF6A30FA68146179752767F92D9D71BE6EFCDC2743AEDD0719A35F04BF0",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_wonka_idle.json"
+    },
+    {
+      "sha256": "199FE50748A241A19263BFB0BFC0BF718824CE07DD98787A2E3746F379FBC9BA",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_wonka_idle_prompt.txt"
+    },
+    {
+      "sha256": "4C12A0B4E41A71F9CA19EA407A39B47A2474850A04B26485FCF053F129AC5B59",
+      "file": ".atena/generated/asset-production-20261021-r1/N07_wonka_idle_v01.png"
+    },
+    {
+      "sha256": "29EC468E1D967761C8EA3632A4ED79AF35CC7DA2D014267B67C6DBCB8E842368",
+      "file": ".atena/generated/asset-production-20261021-r1/N08_attack.json"
+    },
+    {
+      "sha256": "0644770BFD8C93DD4077460B39C594717971299E25E77D601A9511AA18373DD2",
+      "file": ".atena/generated/asset-production-20261021-r1/N08_attack_prompt.txt"
+    },
+    {
+      "sha256": "65A4A666FA7140D7A8EB61DD81887E77765829CB426E277BF2360EDE3BA5290A",
+      "file": ".atena/generated/asset-production-20261021-r1/N08_attack_v01.png"
+    },
+    {
+      "sha256": "5679EF4FD9F3DCD258D73468172F5D9E8B9AB206D038AFF9AD772DEC076F4532",
+      "file": ".atena/generated/asset-production-20261021-r1/N08_death.json"
+    },
+    {
+      "sha256": "BDD4133FDBDCD7D65559901E3CB8CB2B221C4FBEEC233A1BCD21A4222B9B54ED",
+      "file": ".atena/generated/asset-production-20261021-r1/N08_death_prompt.txt"
+    },
+    {
+      "sha256": "9651CA972AD452DF9A5CC8CD67F213FCC9CDE10A99BD7CE42BA7E80965F0E3AA",
+      "file": ".atena/generated/asset-production-20261021-r1/N08_death_v01.png"
+    },
+    {
+      "sha256": "5C8CB1149121DA962A99041BE182C8A4DBA2C3DA4DE1A59DAE20F60B85F90164",
+      "file": ".atena/generated/asset-production-20261021-r1/N08_idle.json"
+    },
+    {
+      "sha256": "8A882857CFCB3E23664D6BCE83320339B561649BF6FF721620884EE93C567197",
+      "file": ".atena/generated/asset-production-20261021-r1/N08_idle_prompt.txt"
+    },
+    {
+      "sha256": "9DE3ED78163AF083F8E2CC68F0004CCCA114218426EAF5132E845C0952D55CEE",
+      "file": ".atena/generated/asset-production-20261021-r1/N08_idle_v01.png"
+    },
+    {
+      "sha256": "3DB1D2BBCACF7A238477450E9DD2F238294D3DB6DF39295D8A9D86FBBAAA9D70",
+      "file": ".atena/generated/asset-production-20261021-r1/N09_attack.json"
+    },
+    {
+      "sha256": "F18CC4E801213A9A8BCECC0EDC487120F9CB0DD73A6C09C2FC44D5DFD072A144",
+      "file": ".atena/generated/asset-production-20261021-r1/N09_attack_prompt.txt"
+    },
+    {
+      "sha256": "B1700F5DD561079B38A4333C75624D94BD57C6FE244956DAA1AD28D186FFC41D",
+      "file": ".atena/generated/asset-production-20261021-r1/N09_attack_v01.png"
+    },
+    {
+      "sha256": "8500590BF8692A8F164A306C4B011345FE8BB0B29B349A1D77CF1B7B70650ED0",
+      "file": ".atena/generated/asset-production-20261021-r1/N09_death.json"
+    },
+    {
+      "sha256": "1317A7A694347CA34BA610B24563182DB64F5B8849899767C05384E5C84245F6",
+      "file": ".atena/generated/asset-production-20261021-r1/N09_death_prompt.txt"
+    },
+    {
+      "sha256": "5804494C15D79100ACCD665954E75028C998D19AB0A2C117E6C879816A3AA01B",
+      "file": ".atena/generated/asset-production-20261021-r1/N09_death_v01.png"
+    },
+    {
+      "sha256": "5B409DFE2F290990FB1F2BDB51BF23F10AAD9485DA9288FE7630B76BF0FC846D",
+      "file": ".atena/generated/asset-production-20261021-r1/N09_idle.json"
+    },
+    {
+      "sha256": "3290647679D8F26851D4784044AB28EF1E3F3838EFD88CE114B7EFA6B5468E7C",
+      "file": ".atena/generated/asset-production-20261021-r1/N09_idle_prompt.txt"
+    },
+    {
+      "sha256": "C48798E142E282FB8814BC64ECDCA5D247CF2E15704B758927C89EE465327396",
+      "file": ".atena/generated/asset-production-20261021-r1/N09_idle_v01.png"
+    },
+    {
+      "sha256": "BE993A3E78D7A2935FBC0BC52F05747506CB22BE23506C9C5016127EB3DE7E4F",
+      "file": ".atena/generated/asset-production-20261021-r1/N10_attack.json"
+    },
+    {
+      "sha256": "BCA8ECCCB996494433478DED963F6170C2BD5CFB8B7A654611B916C81DE34DE0",
+      "file": ".atena/generated/asset-production-20261021-r1/N10_attack_prompt.txt"
+    },
+    {
+      "sha256": "0FAC9380E135393FCAC3FF75C43BF6BC47B27A994B8CD6F66299F50537428444",
+      "file": ".atena/generated/asset-production-20261021-r1/N10_attack_v01.png"
+    },
+    {
+      "sha256": "6A33E5BF0A2DC70F49B875525A1EB5FC201493EA5474AD542092F9B5EE84F6F5",
+      "file": ".atena/generated/asset-production-20261021-r1/N10_death.json"
+    },
+    {
+      "sha256": "503A1975E0395AC32895CB9EA97025D9E8E2CAE52B8565DC2C5BE00AADFA7C0D",
+      "file": ".atena/generated/asset-production-20261021-r1/N10_death_prompt.txt"
+    },
+    {
+      "sha256": "089272412172BA96EEC2FA89CEBD0BBBACCF64828361C4F3406A800C61600F68",
+      "file": ".atena/generated/asset-production-20261021-r1/N10_death_v01.png"
+    },
+    {
+      "sha256": "3E3E4B7192E813C4444B170F7628A97A0D2CDBAF1DE36F275E12442851C2CD91",
+      "file": ".atena/generated/asset-production-20261021-r1/N10_idle.json"
+    },
+    {
+      "sha256": "C28311D0113583C4E9F0A1F1F359D463C3692BB7F063FC1B80BF65BFAE4A7CA3",
+      "file": ".atena/generated/asset-production-20261021-r1/N10_idle_prompt.txt"
+    },
+    {
+      "sha256": "2E7035CB4DFC105387ED3D625A729FF00FCC119A1FCF58A0AFEA6138D02F8EF3",
+      "file": ".atena/generated/asset-production-20261021-r1/N10_idle_v01.png"
+    },
+    {
+      "sha256": "BC9944EF3E7C53DC8461E817C0DE3C0DA134E2D9DC6CD71FD7B0B83EAFE84973",
+      "file": ".atena/generated/asset-production-20261021-r1/png-audit.json"
+    },
+    {
+      "sha256": "59CF58BD62BA3BCC8EC247AE2F5F42F324EF23294225BF5E9539D6F1BB2DC4AC",
+      "file": ".atena/generated/asset-production-20261021-r1/Q01.json"
+    },
+    {
+      "sha256": "23355F922EC65BF4258FAF93290500F9FB062B65A89326D26A74A0CA2CFD08D5",
+      "file": ".atena/generated/asset-production-20261021-r1/Q01_prompt.txt"
+    },
+    {
+      "sha256": "BFE242EAE9F48D20276546703D8C6B00EE983FAC8C5A3AB7FC5D25A1C9DDC348",
+      "file": ".atena/generated/asset-production-20261021-r1/Q01_v01.png"
+    },
+    {
+      "sha256": "64E7CB6FB4F419DF2C71F9A81C5976365208D22862329346EA13F0AA534AE2D3",
+      "file": ".atena/generated/asset-production-20261021-r1/Q02.json"
+    },
+    {
+      "sha256": "11181BD6DF47DA547360EF7A8B3798AA8340357A2299A6BA99286D7AE958FD60",
+      "file": ".atena/generated/asset-production-20261021-r1/Q02_prompt.txt"
+    },
+    {
+      "sha256": "301DB9A725F25E7AA1E5E8CA0267BBCAFBF70F514D65D0B14FE81F0605B2BA95",
+      "file": ".atena/generated/asset-production-20261021-r1/Q02_v01.png"
+    },
+    {
+      "sha256": "7732FBFB5AED7E9F0C7344A272DD9FD75B60D55C9CB4028A86DD322DF26CB8F0",
+      "file": ".atena/generated/asset-production-20261021-r1/Q03.json"
+    },
+    {
+      "sha256": "EE058F00D12CBFD7DCD0BD6C01E0F2AB574933A50039B4A5E826D06357A7799E",
+      "file": ".atena/generated/asset-production-20261021-r1/Q03_prompt.txt"
+    },
+    {
+      "sha256": "F8D910BB6937245A72529E1FD08F761424EFF3446BD1186B8AD98861463C305C",
+      "file": ".atena/generated/asset-production-20261021-r1/Q03_v01.png"
+    },
+    {
+      "sha256": "21C99449109252614378F9EC2A3A69F14E97501A7D7B35D098FA0532F44C0B52",
+      "file": ".atena/generated/asset-production-20261021-r1/Q04_a.json"
+    },
+    {
+      "sha256": "4A0A8C606DD20716F07EB044576AE9091E5EDDD256F84EEDA1583735BDFF5D9B",
+      "file": ".atena/generated/asset-production-20261021-r1/Q04_a_prompt.txt"
+    },
+    {
+      "sha256": "ECF69434A1512B63F34A7CCF91CC0F89270BE83349D8B4F99DFB1983131F7173",
+      "file": ".atena/generated/asset-production-20261021-r1/Q04_a_v01.png"
+    },
+    {
+      "sha256": "61250FCCA1FD92A21076C432114AB6A6FFBC6B9DAB5C1C1A598F5980B9819726",
+      "file": ".atena/generated/asset-production-20261021-r1/Q04_b.json"
+    },
+    {
+      "sha256": "CC5B9DFF0BAA08088D143FEFAAD327E481FEA064A9B4D8EB1DA1072B223E88D7",
+      "file": ".atena/generated/asset-production-20261021-r1/Q04_b_prompt.txt"
+    },
+    {
+      "sha256": "7AA9E571574C33C6337D8D6EF34E0C57FC0F0CAD2F2414C95F4F9444A0D5685E",
+      "file": ".atena/generated/asset-production-20261021-r1/Q04_b_v01.png"
+    },
+    {
+      "sha256": "6142A308E2A9BC6B7F50E661A0EDC5D1E6435DFA7246206173B7C56C46843C07",
+      "file": ".atena/generated/asset-production-20261021-r1/Q04_c.json"
+    },
+    {
+      "sha256": "8D62FDB49DAB8DCCA0E0EA2247EF61E37EB5F673807BF18A3CEF3DB559E427A9",
+      "file": ".atena/generated/asset-production-20261021-r1/Q04_c_prompt.txt"
+    },
+    {
+      "sha256": "A1EE5EF4779AFF08A61C1BFE428502F0CE14936C5D1688563FCB8DD9C4EB2261",
+      "file": ".atena/generated/asset-production-20261021-r1/Q04_c_v01.png"
+    },
+    {
+      "sha256": "5A7515C6EB9D96269CA0C97C9B9CA9671EFB74D149457E6F1886EB8FB34C592E",
+      "file": ".atena/generated/asset-production-20261021-r1/Q05.json"
+    },
+    {
+      "sha256": "D65065725CF65E7B5EE3FC4CDE60C2D99E1C6C6C2A9E04C0D892916F4E1361DA",
+      "file": ".atena/generated/asset-production-20261021-r1/Q05_prompt.txt"
+    },
+    {
+      "sha256": "74446379B7EE6CFFF3ED9DAF7DD8DC8E756F91461F7B56413B62971919AD286B",
+      "file": ".atena/generated/asset-production-20261021-r1/Q05_v01.png"
+    },
+    {
+      "sha256": "FAD502F64654A7411F58E6B7E7C45A1BFD4F384FDC8F56E199204245C7E2AD43",
+      "file": ".atena/generated/asset-production-20261021-r1/Q06.json"
+    },
+    {
+      "sha256": "06611F5439641BF213862321A08ADB280894781CC519E0596A60181D7EEA65BA",
+      "file": ".atena/generated/asset-production-20261021-r1/Q06_prompt.txt"
+    },
+    {
+      "sha256": "3672953D97D8B0362B31B1AD9DE685DB7B2D01D20C315046D60B7FCA400EF170",
+      "file": ".atena/generated/asset-production-20261021-r1/Q06_v01.png"
+    },
+    {
+      "sha256": "973564185AB0C9CA31EA53299BF795AD2667CA324A0A4CA2F22AA896B91A8520",
+      "file": ".atena/generated/asset-production-20261021-r1/Q07.json"
+    },
+    {
+      "sha256": "5FCA662179FA93EA593EC211434B9BB81FDBD90AD92972EC83A8B3E96D2A989D",
+      "file": ".atena/generated/asset-production-20261021-r1/Q07_prompt.txt"
+    },
+    {
+      "sha256": "2D1DD3C6374E311A0C1781F48220013D05FBEE1D3CCEB32B48CA973712503C6F",
+      "file": ".atena/generated/asset-production-20261021-r1/Q07_v01.png"
+    },
+    {
+      "sha256": "04D05E3D7DD629B00146EFF5C4A1CC4B081B2F68C1D66DB5E3DB2DDF49C3547F",
+      "file": ".atena/generated/asset-production-20261021-r1/Q08.json"
+    },
+    {
+      "sha256": "D4E78A3A5BBEBA90F18F8FF0F6FAA3DA42C0D641CB8886C6C63228196AADE421",
+      "file": ".atena/generated/asset-production-20261021-r1/Q08_prompt.txt"
+    },
+    {
+      "sha256": "05C9D0BE792DDDDA4E695ECCFCE08525C913BC114CBFB37130F3EA49DE67CFDA",
+      "file": ".atena/generated/asset-production-20261021-r1/Q08_v01.png"
+    },
+    {
+      "sha256": "1F6D7008DA5A81D5A51B883E4E24812911B04CF26B541C9B65BAF272A2279B00",
+      "file": ".atena/generated/asset-production-20261021-r1/Q09.json"
+    },
+    {
+      "sha256": "9DEC331BB484F2BDFBCB5DE6070C700878B06492BF8A214E93D0C772D82EA653",
+      "file": ".atena/generated/asset-production-20261021-r1/Q09_prompt.txt"
+    },
+    {
+      "sha256": "4EB65AA1D7B66A8AE9D7AC6E57A01C0E2ED9D64DD14DECF3AE072B747709143D",
+      "file": ".atena/generated/asset-production-20261021-r1/Q09_v01.png"
+    },
+    {
+      "sha256": "D0F79711C87AAEEAE8829517B00C85E8934F12164965CBFD876736B1B88AB6D5",
+      "file": ".atena/generated/asset-production-20261021-r1/Q10.json"
+    },
+    {
+      "sha256": "73843FA69141FB46292AD4E22AF0F3F4161C583354CFCA3F4540639C07955404",
+      "file": ".atena/generated/asset-production-20261021-r1/Q10_prompt.txt"
+    },
+    {
+      "sha256": "5B86610297F83F32C43897C9523F72C23826C214F04F12B73A931E1755F3DFF4",
+      "file": ".atena/generated/asset-production-20261021-r1/Q10_v01.png"
+    },
+    {
+      "sha256": "6E6CE49F36898E2177CDD5071D22FB64193A995A555D4F9FBD2C10BB8A259A25",
+      "file": ".atena/generated/asset-production-20261021-r1/remaining-c-jobs.json"
+    },
+    {
+      "sha256": "3F0121675D18BC03B9A9225A2EEE4A9E8F315570C9A10014E69A9C3E148791D5",
+      "file": ".atena/generated/asset-production-20261021-r1/remaining-n-jobs.json"
+    },
+    {
+      "sha256": "990ACA4F47A63493256C0682D5E0387756D89151D7CF9D752E382DED80D1049E",
+      "file": ".atena/generated/asset-production-20261021-r1/U01.json"
+    },
+    {
+      "sha256": "77C9870785D4191A4EED497FA77246207E28CC6084E7B84AEA1F2F1E3BBF6A8A",
+      "file": ".atena/generated/asset-production-20261021-r1/U01_prompt.txt"
+    },
+    {
+      "sha256": "2EE96A562EC835D1C13E6922171D301C8CA33383AE0C39969F9E569ECD9BE31C",
+      "file": ".atena/generated/asset-production-20261021-r1/U01_v01.png"
+    },
+    {
+      "sha256": "2C773665DDD18DBE93FD49C9745A31390039F0D0637A091CECE1BC83684822FB",
+      "file": ".atena/generated/asset-production-20261021-r1/U02.json"
+    },
+    {
+      "sha256": "CA494543A4F09D85411178C9EA3EB22181EFEA5F66C71EA7774DFB225C11D789",
+      "file": ".atena/generated/asset-production-20261021-r1/U02_prompt.txt"
+    },
+    {
+      "sha256": "E3C0C6070E38675E0BE34D7B5E9E919BB079124CE89CDAE8B36572A5F7D585DE",
+      "file": ".atena/generated/asset-production-20261021-r1/U02_v01.png"
+    },
+    {
+      "sha256": "B6551A52F101810B46AC324F68D8E97D63F534E23B413A03623A133C51DC8727",
+      "file": ".atena/generated/asset-production-20261021-r1/U03.json"
+    },
+    {
+      "sha256": "D7618D061062C86CAC7711E9A6B6992AAE421FD0E65C01C60AE9811455FFA293",
+      "file": ".atena/generated/asset-production-20261021-r1/U03_prompt.txt"
+    },
+    {
+      "sha256": "3CB88BB80286BB222A395493A7ED5D44B2AE442B7386A19011B50BDC5C81AC4F",
+      "file": ".atena/generated/asset-production-20261021-r1/U03_v01.png"
+    },
+    {
+      "sha256": "5A2C4FD352E117650D627B7079FA788BC57D34AC1A5B3D7439858970D003563A",
+      "file": ".atena/generated/asset-production-20261021-r1/U04.json"
+    },
+    {
+      "sha256": "D109E7136ADEA4EE28E1DA849164DE535E81CABCDFBBF4E497FF81EA0C80A5D2",
+      "file": ".atena/generated/asset-production-20261021-r1/U04_prompt.txt"
+    },
+    {
+      "sha256": "84091E6D719B8879F2D2D916850450A4D6A0297F076BE752922EE0CA11BD1FFA",
+      "file": ".atena/generated/asset-production-20261021-r1/U04_v01.png"
+    },
+    {
+      "sha256": "94FCC3E3AD6C34D8C795681951051F83337DA4815B4BC47D8C9D8BE26536EADC",
+      "file": ".atena/generated/asset-production-20261021-r1/U05.json"
+    },
+    {
+      "sha256": "EF6C67F2A745713EAE31BA6B40199C11E4304FB64CADA93588A086C0735CD789",
+      "file": ".atena/generated/asset-production-20261021-r1/U05_prompt.txt"
+    },
+    {
+      "sha256": "CE4C886A97720D3D58986955827910B6A0BA3269B7D003CB5C2662F08698B541",
+      "file": ".atena/generated/asset-production-20261021-r1/U05_v01.png"
+    },
+    {
+      "sha256": "08832487AC2ED26A42FC52FCCD679928852012FE35423CB2213DEB934B130F27",
+      "file": ".atena/generated/asset-production-20261021-r1/U06.json"
+    },
+    {
+      "sha256": "8F82ACE79DCBBE0167DAC9BDA829A972EEEF793EA3F66583D61FEB6067E9E200",
+      "file": ".atena/generated/asset-production-20261021-r1/U06_prompt.txt"
+    },
+    {
+      "sha256": "140F14EF647E242FA693F93A0CC2B068420E35ACF518680F658064A3294516AA",
+      "file": ".atena/generated/asset-production-20261021-r1/U06_v01.png"
+    },
+    {
+      "sha256": "9B49CB743B92D68731C103902E15C5DE63C4E8131C1992260F67998A37A8D737",
+      "file": ".atena/generated/asset-production-20261021-r1/U07.json"
+    },
+    {
+      "sha256": "2A74625FBF2B2982904BED730130BBEED8C4B7F54ECA7A2F5A2EDDC16354AA29",
+      "file": ".atena/generated/asset-production-20261021-r1/U07_prompt.txt"
+    },
+    {
+      "sha256": "320B6DC7248D600E160194728FCED75EC7A7076662EDB0DF5B56C2040A72BB8A",
+      "file": ".atena/generated/asset-production-20261021-r1/U07_v01.png"
+    },
+    {
+      "sha256": "52B63A1820F02E9281408C7FAC59FAECFE908037A6DC8536FCE35657F3703086",
+      "file": ".atena/generated/asset-production-20261021-r1/U08.json"
+    },
+    {
+      "sha256": "FAAE6B89816A753308588E9DB057AA836E3CB8CF33C9BE141D6812C3492DF24A",
+      "file": ".atena/generated/asset-production-20261021-r1/U08_prompt.txt"
+    },
+    {
+      "sha256": "657BE762157206433C150E11D44F70F6DF2922DAE7E3512FE3A6610646E8F657",
+      "file": ".atena/generated/asset-production-20261021-r1/U08_v01.png"
+    },
+    {
+      "sha256": "E77AF68D9EC2C7CB3E5731E9FEC79B33005B00416752297E36C3366EF35A3B97",
+      "file": ".atena/generated/asset-production-20261021-r1/U09.json"
+    },
+    {
+      "sha256": "6F1DD601087BB0082CFFBBF9D9D85F297238E2C7403AF4FD1F005115444A9EEE",
+      "file": ".atena/generated/asset-production-20261021-r1/U09_prompt.txt"
+    },
+    {
+      "sha256": "AF5F7077339093ACF35D79719FB18C3DF97A9D740F116C3E1A3E77F862E80821",
+      "file": ".atena/generated/asset-production-20261021-r1/U09_v01.png"
+    },
+    {
+      "sha256": "A22C02338F80F4B2DB0C407CA864C1BEB5B0ABF1F4F74DB4767B8EA9EC1E9A43",
+      "file": ".atena/generated/asset-production-20261021-r1/U09_v02.json"
+    },
+    {
+      "sha256": "67CAA968CD9A96292F5E4D1DA10D1908224C60A8263E62F881E7CBB55F49906A",
+      "file": ".atena/generated/asset-production-20261021-r1/U09_v02.png"
+    },
+    {
+      "sha256": "E517D53A695020C87FB307C51153B348928BA1BBF36CC962381FF931252584D1",
+      "file": ".atena/generated/asset-production-20261021-r1/U09_v02_prompt.txt"
+    },
+    {
+      "sha256": "F39D045747586EDD9E74E9B492E9218FAF609DED6F4F44EF21990E852FB40CA9",
+      "file": ".atena/generated/asset-production-20261021-r1/U10.json"
+    },
+    {
+      "sha256": "BE916D96B62EB67D7CA58DD4BB96904857631B7CF41D8D37600C6704320C501C",
+      "file": ".atena/generated/asset-production-20261021-r1/U10_prompt.txt"
+    },
+    {
+      "sha256": "45872759EB43A4223758EB93F0C799F2A2D38BF0EB7B68979A0F31FC009C2E8D",
+      "file": ".atena/generated/asset-production-20261021-r1/U10_v01.png"
+    },
+    {
+      "sha256": "03946E0BF3B94B1FAC536C8517624ECCA882AFBB5B7F170294D75C8ED4D32F73",
+      "file": ".atena/generated/asset-production-20261021-r1/U11.json"
+    },
+    {
+      "sha256": "D9AFFA2F17A58F52D5A7CC8129A03DF5311CED38EA57A8D2989A7D5DF4A085E2",
+      "file": ".atena/generated/asset-production-20261021-r1/U11_prompt.txt"
+    },
+    {
+      "sha256": "7EE6B0460489A4532B24D4BF5B04453A18FFBEC5F7FEBD7BA3909B73910A0B45",
+      "file": ".atena/generated/asset-production-20261021-r1/U11_v01.png"
+    },
+    {
+      "sha256": "BAB2A0E9616A76C767FB614F34D8957397418BB0A7A9431A0553BEA0930986EB",
+      "file": ".atena/generated/asset-production-20261021-r1/U12.json"
+    },
+    {
+      "sha256": "547E766D5F086E1DCE9111347BDD7FF18DAA572AE7919E401378FFDD9087037A",
+      "file": ".atena/generated/asset-production-20261021-r1/U12_prompt.txt"
+    },
+    {
+      "sha256": "DC5B49DB6EDE8D6E093A2EC114791CFD3CB18517FC5AACFC309C426C4706E4FA",
+      "file": ".atena/generated/asset-production-20261021-r1/U12_v01.png"
+    },
+    {
+      "sha256": "43081B44F8D12448F3294C6855718328FA7F72834E57E1B52EB4C433FE3F649E",
+      "file": ".atena/generated/asset-production-20261021-r1/U13_fill.json"
+    },
+    {
+      "sha256": "78D31BC68F0271A3A0661ADBC6A244B2477242E8EDDC83682D786A4392006C16",
+      "file": ".atena/generated/asset-production-20261021-r1/U13_fill_prompt.txt"
+    },
+    {
+      "sha256": "CDB3029737731F292823C675CEB2409FAB31F29EF9A0153F0A3D5D5295CA55DE",
+      "file": ".atena/generated/asset-production-20261021-r1/U13_fill_v01.png"
+    },
+    {
+      "sha256": "55F3DAD411D400F0B9F7D5DD97570E78FB0A17CF5026F7BAA1340A5211D321F5",
+      "file": ".atena/generated/asset-production-20261021-r1/U13_frame.json"
+    },
+    {
+      "sha256": "51B646F0505E5206AE9218928E9900326DCCA517C3861ABC57E85F905F75173F",
+      "file": ".atena/generated/asset-production-20261021-r1/U13_frame_prompt.txt"
+    },
+    {
+      "sha256": "4C87627F69FFE621D8C7ED4E618743BA9EEFD8A218286F0978D2F1C64B45E17C",
+      "file": ".atena/generated/asset-production-20261021-r1/U13_frame_v01.png"
+    },
+    {
+      "sha256": "D96BBD4DBF2185900DE99DD13605821B3646EE7AB479F43C13D49EF4DC96B959",
+      "file": ".atena/generated/asset-production-20261021-r1/U14.json"
+    },
+    {
+      "sha256": "F8F3537157E28D39417428466501E2EFFC60E6791E489F6A2FD1E3D7D9B0C15C",
+      "file": ".atena/generated/asset-production-20261021-r1/U14_prompt.txt"
+    },
+    {
+      "sha256": "4940EE2FD0D418DC591C5B6DBCD67D78260621E317177445B3CEC83AB495C0D5",
+      "file": ".atena/generated/asset-production-20261021-r1/U14_v01.png"
+    },
+    {
+      "sha256": "F38D63596BA2326354E05247F4B4C628B4FA4E88D59B5393F76995DDB819CBD8",
+      "file": ".atena/generated/asset-production-20261021-r1/U15.json"
+    },
+    {
+      "sha256": "1260913FCAEDA237B40B24E5447D673B84392DCCBAB2041004FDFE9716848FA1",
+      "file": ".atena/generated/asset-production-20261021-r1/U15_prompt.txt"
+    },
+    {
+      "sha256": "BEBC9167A5CB7F3B193D6A255F3AA6B9B4BCC82335C10522D1C6DB609A92BD52",
+      "file": ".atena/generated/asset-production-20261021-r1/U15_v01.png"
+    },
+    {
+      "sha256": "7AD98FFA6DC0A0F2FDD9189E29B71D07CF1FF49FE3086F97012952CE86BD4623",
+      "file": ".atena/generated/asset-production-20261021-r1/U16.json"
+    },
+    {
+      "sha256": "E8C99A5687BED35AA5E029C5A30F4F5F3377C8C49982EE50A85EF7E3CC1B026C",
+      "file": ".atena/generated/asset-production-20261021-r1/U16_prompt.txt"
+    },
+    {
+      "sha256": "BF9FED2E53B5B80F344AD07B40FA320C8611A7F685B4DD8FD9F14A79808F5B61",
+      "file": ".atena/generated/asset-production-20261021-r1/U16_v01.png"
+    },
+    {
+      "sha256": "E6B94715D69A29E220052053F889AD20F6EDD6F22268FE8C6D7D4D9AC04B623D",
+      "file": ".atena/generated/asset-production-20261021-r1/U17.json"
+    },
+    {
+      "sha256": "1157F82993AA0B65D4CC2B8AB549AD6010BB22E4BAF17EF6D34F3716AADCE843",
+      "file": ".atena/generated/asset-production-20261021-r1/U17_prompt.txt"
+    },
+    {
+      "sha256": "0EFEB4736CDF841D0DA6424FA5E6154B79A873D97D2B9711937F300BF44BB3C9",
+      "file": ".atena/generated/asset-production-20261021-r1/U17_v01.png"
+    },
+    {
+      "sha256": "59095DA53230D1C0BC9805324E7F738567580F9EE624EA20BA4C92F1F6B6A4C5",
+      "file": ".atena/generated/asset-production-20261021-r1/U18.json"
+    },
+    {
+      "sha256": "22C89AA0A717A5D1C75C9EBC15CE85E694226112750335D936EDC23C1311305A",
+      "file": ".atena/generated/asset-production-20261021-r1/U18_prompt.txt"
+    },
+    {
+      "sha256": "0E07EBB573465F44BE8A8C44F4F6F02A8D024EAE330100D5AD5986C0AFA04057",
+      "file": ".atena/generated/asset-production-20261021-r1/U18_v01.png"
+    },
+    {
+      "sha256": "B2D096FF5F4BDD24E5B0C0E5CF2460C807586D2659EE0FA91732139DF673CA87",
+      "file": ".atena/generated/asset-production-20261021-r1/U19.json"
+    },
+    {
+      "sha256": "1FFA71C596827B46BFBB40635C71EB556C204044267AA5CCFC474590A34B366C",
+      "file": ".atena/generated/asset-production-20261021-r1/U19_prompt.txt"
+    },
+    {
+      "sha256": "55A547B511EC6BD333DAF09D494D2038DCB18FF8CA3FC4D1488A572C7CA658CC",
+      "file": ".atena/generated/asset-production-20261021-r1/U19_v01.png"
+    },
+    {
+      "sha256": "F1142C0FE9040B29299BB00A6452CC6BA12E23A957E1EDA16FAEF058C3F6EFA8",
+      "file": ".atena/generated/asset-production-20261021-r1/U20.json"
+    },
+    {
+      "sha256": "384EBE3D3CDE348B5F63DED4E702068C96E9A864237176ACEE097E87D56FF3B2",
+      "file": ".atena/generated/asset-production-20261021-r1/U20_prompt.txt"
+    },
+    {
+      "sha256": "66B1820E7B81C785813B58FC71D8278E967054C8B89F2CAF1884767BEB8A916E",
+      "file": ".atena/generated/asset-production-20261021-r1/U20_v01.png"
+    },
+    {
+      "sha256": "CA879B7F460F7B9EE5690700BAD7C25CFDE02EB2EC3D3BDEBBC4778704E2C468",
+      "file": ".atena/generated/asset-production-20261021-r1/U21.json"
+    },
+    {
+      "sha256": "AB014958A76FAA0EACEA86D9F6A8F828F9B23075A9AC173EBAC3DF2AD68C242B",
+      "file": ".atena/generated/asset-production-20261021-r1/U21_prompt.txt"
+    },
+    {
+      "sha256": "EFB00460245B96BB6318FEDC444F431D02F02C1CD6B1CAE0D41ECFFE58DCCF6C",
+      "file": ".atena/generated/asset-production-20261021-r1/U21_v01.png"
+    },
+    {
+      "sha256": "E1458297900B961795EE662B9EBD79F382D217665051EF950FBAEA1671D279B6",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_attack.json"
+    },
+    {
+      "sha256": "5009D55A268E87DD3734AB3A08EAE584EEF0D6AAAF4EB4884300BE97F2744AA6",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_attack_prompt.txt"
+    },
+    {
+      "sha256": "06948DE501A43CE54CA369F82E00F46822CB54B9442D221E550587C8C3D9A9D4",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_attack_v01.png"
+    },
+    {
+      "sha256": "80665D05B6C02CF4FA40B1DE47E7997A785B5D2C7491FA2C40AA5BAB5B983732",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_death.json"
+    },
+    {
+      "sha256": "A520170A368C9B7CE1D7E24B4FC5F415039FE1D9237DCC5B9BF0422582F54A59",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_death_prompt.txt"
+    },
+    {
+      "sha256": "68C989A6394BB667EEA37C90880BF590096DF15C361C81C92DE14FBA89539000",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_death_v01.png"
+    },
+    {
+      "sha256": "0299E3F0E4676FAF4369859A36C9788C9B661854830B54575989AA29F52D1E4A",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_death_v02.json"
+    },
+    {
+      "sha256": "9E38457607ED03A9054C921B709A279866313923ED0FE67ABFBF48EFFEE18284",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_death_v02.png"
+    },
+    {
+      "sha256": "CA6194D1217F2660AEF5B184A1A74E1C5A2A3052190243CCFC2239B394B6EFB7",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_death_v02_prompt.txt"
+    },
+    {
+      "sha256": "D4A5A20C17FDD3B4015C22BE1D99CD15358F7C5B84B9778A5A97B8CE5B25CF4C",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_idle.json"
+    },
+    {
+      "sha256": "508FFA646D9AE0052D07B21625AA05D20C4A4E1069E297949675DAD157E1695E",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_idle_prompt.txt"
+    },
+    {
+      "sha256": "3651E8B483056EB60BAFED47D3A1A6A0C52AE9CDDA6A300AADDB3AA38D9DCDB3",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_idle_v01.png"
+    },
+    {
+      "sha256": "0F6B6FC37AFD96E44316F0B56889E9EE66FE4A6DF78F96042A5F852777EF826A",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_special.json"
+    },
+    {
+      "sha256": "8D665F201CFAB06F9DB2A7D86F5F2336A8625E3DE397E7AC17E4DC77FED827FB",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_special_prompt.txt"
+    },
+    {
+      "sha256": "D38B225BFC208A474A8DC5A6C47B590501DFE9D034A0011468CEF174E3038B98",
+      "file": ".atena/generated/asset-production-20261021-r1/V01_special_v01.png"
+    },
+    {
+      "sha256": "5E87349750CF69D72F660E038DDA5C488528026537B4A2755335CA69771686A6",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_attack.json"
+    },
+    {
+      "sha256": "B9446A9DA9CE9F872E53330187E6EF055FAC4AAD29C63980915EE13C7A226023",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_attack_prompt.txt"
+    },
+    {
+      "sha256": "DE5A8C8E9CA4F74FD16A3A1BC928841E0212D8E2EFFBC683C8150CD16337F17A",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_attack_v01.png"
+    },
+    {
+      "sha256": "91F86EFF869EFC79B472C80E4685459304E994331DD2ACB59BA5EEC7C9FD259D",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_attack_v02.json"
+    },
+    {
+      "sha256": "BD8187BD8797F94A98C0778EF1789C227B5953D7DA29079329A83D6C9A3FD5CB",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_attack_v02.png"
+    },
+    {
+      "sha256": "8A7F22BB840ED32F0B6ACA6973125535A7C3F325876175577FF47F3FB7203DE1",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_attack_v02_prompt.txt"
+    },
+    {
+      "sha256": "5B4DB84FEF77BC61481A7975E7E3813F7A5913C314BFFED6E93C8C18E7E0AFAB",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_death.json"
+    },
+    {
+      "sha256": "A35150534C53E9FAC3AE190642A364969DE24CAAFFF090729C9229BB04A64D73",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_death_prompt.txt"
+    },
+    {
+      "sha256": "792D79522C447CAB7C7CA7D121225DDE8213508AE0C5A758A5628E50592BF84F",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_death_v01.png"
+    },
+    {
+      "sha256": "A93CDD3258CFE24B4176B1C0D085F8F70DBE11D2A3DDBD4293307738DA41EEC3",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_idle.json"
+    },
+    {
+      "sha256": "5F5B27E714A72DEB5C2848741FC4278D226C6925C5E2ED6C7595F81814737A50",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_idle_prompt.txt"
+    },
+    {
+      "sha256": "11880EC39D184D8A4CFB85C83AE7CE29EE5A6B8503A53669FEEF1B6EDF042599",
+      "file": ".atena/generated/asset-production-20261021-r1/V02_idle_v01.png"
+    },
+    {
+      "sha256": "494AA2996774645AE402E8C3DA52DCDDA90C88250783823BA378C33B02E02183",
+      "file": ".atena/generated/asset-production-20261021-r1/V03_attack.json"
+    },
+    {
+      "sha256": "8274F384B41FCC027D5E0CB4583391C9AF26B1D5239AB54C065E94923988A3F0",
+      "file": ".atena/generated/asset-production-20261021-r1/V03_attack_prompt.txt"
+    },
+    {
+      "sha256": "5F01CCDADCC262F9A678A45821E53A26B98727933F3BECECC1FCE0C277069C21",
+      "file": ".atena/generated/asset-production-20261021-r1/V03_attack_v01.png"
+    },
+    {
+      "sha256": "F65610F67E615C6B2517CE5377A1FAAADDDB874EFA25F95886C4C8961D770DC9",
+      "file": ".atena/generated/asset-production-20261021-r1/V03_death.json"
+    },
+    {
+      "sha256": "F3FFE2DC16E8087CA4E8BC58FC3433DA42ABC9D3918125B649A07A7D28D43B48",
+      "file": ".atena/generated/asset-production-20261021-r1/V03_death_prompt.txt"
+    },
+    {
+      "sha256": "27EE3597851E8F9E9ACB8ED634ADBB0B9DEBE253CF609E2E816D6A4E9F4A0765",
+      "file": ".atena/generated/asset-production-20261021-r1/V03_death_v01.png"
+    },
+    {
+      "sha256": "4F419A984D4F9BB37CFA9CA0E86226152593DF037963F5248BC9DD14BE728573",
+      "file": ".atena/generated/asset-production-20261021-r1/V03_idle.json"
+    },
+    {
+      "sha256": "82033DA4CEFAEDE561EF1E5BD10D5DD3860915C85C2B1175BF26624863B47A2E",
+      "file": ".atena/generated/asset-production-20261021-r1/V03_idle_prompt.txt"
+    },
+    {
+      "sha256": "1446DB2772238A53C289F70A3FD8A12CDF0A966B54EB0A97AEA95D1E5C81E56E",
+      "file": ".atena/generated/asset-production-20261021-r1/V03_idle_v01.png"
+    },
+    {
+      "sha256": "7D2A97A986D84E7A6AE103D14735F00651178E357E9E41814C9C70077A13BDF0",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_attack.json"
+    },
+    {
+      "sha256": "EF02D54871BA0A6E6301DE92868B8CC3C09D912A1559639021C8344DAEA4B70A",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_attack_prompt.txt"
+    },
+    {
+      "sha256": "35348736DE541C92A0B0DB40354ACCBCED0AA23DA64CDA742789CFA8AE7E7D59",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_attack_v01.png"
+    },
+    {
+      "sha256": "58EB57D7EBA418D640D70FFF952D77522A3F98E5911DD6BE641B0BC9EBDC229A",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_death.json"
+    },
+    {
+      "sha256": "1EC965C12E64D4877F514FD9516B7B4BAD27F27EF70A4D0428EC0A17191C4A52",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_death_prompt.txt"
+    },
+    {
+      "sha256": "7904DEB77FF9A885F9E0CAB8FE126642DF176B1D668533ACA5A2679B6643DC10",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_death_v01.png"
+    },
+    {
+      "sha256": "A3401980AAF34D579EF8A97045B83B05B6725519C0916D4E6BF8046EEEFEFD1C",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_idle.json"
+    },
+    {
+      "sha256": "8CB386E554D173045207F9ED34BD6D6D0E2EBA625BDE04515CC7DE68BCF9F248",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_idle_prompt.txt"
+    },
+    {
+      "sha256": "EA032990808D43397BA47D2AC1D08B7F96CC8A91D41C5B5FDD145EE007183EA4",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_idle_v01.png"
+    },
+    {
+      "sha256": "4C6A3C895A6D8AA1E59176CE0C2D7EA4D550B731AD5C591987662C669491AABA",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_walk.json"
+    },
+    {
+      "sha256": "B3FEEB0EF04618B18B8FF7F1C573EFA078F3A5A5C8D1184CEADB6E903D579B25",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_walk_prompt.txt"
+    },
+    {
+      "sha256": "28437AB329B29FD5C242AFD0EAC20E03477F13346FC71A44D52E5958F25D987D",
+      "file": ".atena/generated/asset-production-20261021-r1/V04_walk_v01.png"
+    },
+    {
+      "sha256": "0E94097F70F1539105CC91DD21C0FCCCFA80FC92259C208A8F8E9FD2AB6AE670",
+      "file": ".atena/generated/asset-production-20261021-r1/V05_attack.json"
+    },
+    {
+      "sha256": "E8D2FDD82EFA035FAC5F8E2A0C608AD44349285128979E52D215E7C3FD1B23D6",
+      "file": ".atena/generated/asset-production-20261021-r1/V05_attack_prompt.txt"
+    },
+    {
+      "sha256": "4A1A0DD4B9C0193B2B584C79FB2C7C6D02F50F78CC890952049D1A521BE63A9A",
+      "file": ".atena/generated/asset-production-20261021-r1/V05_attack_v01.png"
+    },
+    {
+      "sha256": "F2C062D4E143642D61D68FEC3872DBA3396BAA86040027BC1B333C52B76B170E",
+      "file": ".atena/generated/asset-production-20261021-r1/V05_death.json"
+    },
+    {
+      "sha256": "C2007EF8B7DBB0DBDAC27A4A2DDF5D5B855A42591C5E8F05B5BEF4CD6940F273",
+      "file": ".atena/generated/asset-production-20261021-r1/V05_death_prompt.txt"
+    },
+    {
+      "sha256": "00D436D6951CFC5525ACDDF22B341F444D628A43312156D05D63B808137E89DB",
+      "file": ".atena/generated/asset-production-20261021-r1/V05_death_v01.png"
+    },
+    {
+      "sha256": "198242A6510641694B75296EB862CBBDB006065E689226790A5EA60F6A32C77C",
+      "file": ".atena/generated/asset-production-20261021-r1/V05_idle.json"
+    },
+    {
+      "sha256": "4EC4BF09C42393FDB58672D6B4E79207F1FCF99289500854D1E76A963CF9478D",
+      "file": ".atena/generated/asset-production-20261021-r1/V05_idle_prompt.txt"
+    },
+    {
+      "sha256": "729C44D75FCFE4519A93CBF2EE4A4B1F61AEABA45A2EA6EC719D0AFC08A75DE5",
+      "file": ".atena/generated/asset-production-20261021-r1/V05_idle_v01.png"
+    },
+    {
+      "sha256": "F7AF1D30EDBDAEFC922902AFED00167A6520CF020B056E80F3EFBC442ECE9C72",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_attack.json"
+    },
+    {
+      "sha256": "8305BF963CC8B09EDD7ACFC684F21DC24CD96F1719E89813200778D2467368A7",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_attack_prompt.txt"
+    },
+    {
+      "sha256": "47B1007B0B65B3060A4C24FC6AB8380110F4CB81E3F47B0FAE28A18A12D98973",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_attack_v01.png"
+    },
+    {
+      "sha256": "CAB244A08E9E7C8683A1F9F942917E000A275C46A0841A5F8EADEADBF298FDB1",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_death.json"
+    },
+    {
+      "sha256": "DB47F61483FECB6CA981F3901ABF3FA571C364A888284EE773856D4925D00A6E",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_death_prompt.txt"
+    },
+    {
+      "sha256": "72384881F4CE235FAD6533DCE91E2EC5B3B19ADB443B514408D64595069DD908",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_death_v01.png"
+    },
+    {
+      "sha256": "7DE3EC6CA930B3BCB4248583CAD89B3CF1D140BF5A5576810A774F160D3E5052",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_idle.json"
+    },
+    {
+      "sha256": "210B5C5388D1AE69CEA1D8E9D363030B060863AACD1296814184E736D3528C71",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_idle_prompt.txt"
+    },
+    {
+      "sha256": "FB78D5F9088A2EF7CF34F428F1AAA90397F9C8DF3F08EAB60ED8043A25D78C8D",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_idle_v01.png"
+    },
+    {
+      "sha256": "63642F626074FC8FBE810AC170ECEF531D747C618262C3F985D91E6E8AB0E104",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_special.json"
+    },
+    {
+      "sha256": "01281800C8BD054FC96F669B5A66DB1AF3371418A1652666CF666CB0C7516270",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_special_prompt.txt"
+    },
+    {
+      "sha256": "3AD38A7BF99B87105493856529A15196AEAF0987839E7479CF734BC97E9A8456",
+      "file": ".atena/generated/asset-production-20261021-r1/V06_special_v01.png"
+    },
+    {
+      "sha256": "1AE2A5A14DEC85BC19AFCFB1302B3345E957971A1A238EA11AAFE85CB6514907",
+      "file": ".atena/generated/asset-production-20261021-r1/V07_attack.json"
+    },
+    {
+      "sha256": "F9CABCDAA713D56118FEA4CF36A06C5FD1526A05708649BA636A6A79540B0467",
+      "file": ".atena/generated/asset-production-20261021-r1/V07_attack_prompt.txt"
+    },
+    {
+      "sha256": "A88A8EE3B0DEEEDC1C0A764F9DECE6A2D932C9FE9C6AA4A6B03590D0916F9AF6",
+      "file": ".atena/generated/asset-production-20261021-r1/V07_attack_v01.png"
+    },
+    {
+      "sha256": "3494F8474A6D5B66007E5DA74F05ED4EEBDED79FEF597EB7F0580D029B9A11F1",
+      "file": ".atena/generated/asset-production-20261021-r1/V07_death.json"
+    },
+    {
+      "sha256": "D09EE27068F63208FEFADEDDC530E89D949AE4D40CA2B028C0290D4FCDE5DBA1",
+      "file": ".atena/generated/asset-production-20261021-r1/V07_death_prompt.txt"
+    },
+    {
+      "sha256": "8083DDD44E5BBBC91EB9488435B1C3294E63D5545B43420C57A4DA64D3CCF0DF",
+      "file": ".atena/generated/asset-production-20261021-r1/V07_death_v01.png"
+    },
+    {
+      "sha256": "100627B867588F59FB2C8E6FB5D92F5ABF9A7BB2667E21F5A605BDA35A1931A5",
+      "file": ".atena/generated/asset-production-20261021-r1/V07_idle.json"
+    },
+    {
+      "sha256": "CC45E563054E7E6A9AD62EA76158091BA729B65E50F565FF4BCC13E88DE8D0EF",
+      "file": ".atena/generated/asset-production-20261021-r1/V07_idle_prompt.txt"
+    },
+    {
+      "sha256": "B6D8DCCE15FE19154E8F05374D186B9E2D5EAF9854918D316805535A7FEBA56D",
+      "file": ".atena/generated/asset-production-20261021-r1/V07_idle_v01.png"
+    },
+    {
+      "sha256": "E29AAD1F38FA0A6DDB16E70F17B36536371C3BEEFB76BEA96A9D2D5A3DF4D66B",
+      "file": ".atena/generated/asset-production-20261021-r1/V08_molydeus.json"
+    },
+    {
+      "sha256": "4DB54CA8A07F2660825DF93D4E959127D3A6DFE88F05EC8FCB6DE3A52C0C9B69",
+      "file": ".atena/generated/asset-production-20261021-r1/V08_molydeus_prompt.txt"
+    },
+    {
+      "sha256": "23F26539B229D59C34DDE03489F0F2C5C8F7F804022877BF148CF911E9C9EA14",
+      "file": ".atena/generated/asset-production-20261021-r1/V08_molydeus_v01.png"
+    },
+    {
+      "sha256": "FB43028AD4BC7A671684BA0E2608854A287879268E5C71DC1BDFBE1B1C113023",
+      "file": ".atena/generated/asset-production-20261021-r1/V09_ezro.json"
+    },
+    {
+      "sha256": "B3A16C4616D9213677E5A889B062DF22FF22A2F039EA3EBB6E086E0D87BCFDE3",
+      "file": ".atena/generated/asset-production-20261021-r1/V09_ezro_prompt.txt"
+    },
+    {
+      "sha256": "E47123DD8EE6E690522236458AEABD54C10D03F641892A35BB3A853875E2FFDF",
+      "file": ".atena/generated/asset-production-20261021-r1/V09_ezro_v01.png"
+    },
+    {
+      "sha256": "F2BE4DA21F7337F089B6B5B9C0E2D859057C10F8F6A61FBA480C2ED68B2C3B16",
+      "file": ".atena/generated/asset-production-20261021-r1/V09_shu.json"
+    },
+    {
+      "sha256": "E3FE3A34795A2BC482850A75C1786A227DB648211C81953C12B48E52BC4FDD64",
+      "file": ".atena/generated/asset-production-20261021-r1/V09_shu_prompt.txt"
+    },
+    {
+      "sha256": "6D5B609599BAA667FAA9F15D09F6F8D8E53B88B4808E5D70F07F9916127AE0B6",
+      "file": ".atena/generated/asset-production-20261021-r1/V09_shu_v01.png"
+    },
+    {
+      "sha256": "E6B1FDE5BB9618376F0815C0C937BD5CDF47BB94D48BC565AEB82579E57E09FA",
+      "file": ".atena/generated/asset-production-20261021-r1/V10_portrait.json"
+    },
+    {
+      "sha256": "0590DFFA5AF7B1313E8A5AFED42DF10E3FA180BD692FF48DD614D2EDA5DADBA1",
+      "file": ".atena/generated/asset-production-20261021-r1/V10_portrait_prompt.txt"
+    },
+    {
+      "sha256": "6D5710BA5B1B14BF69DF259A9AB607FC4A799558025D1E268A8644ABBFE02B10",
+      "file": ".atena/generated/asset-production-20261021-r1/V10_portrait_v01.png"
+    },
+    {
+      "sha256": "8D23E8B11B9E82CF4795AA4EC291396607B1B77FA4DD1F3A656C8CF647CB6721",
+      "file": ".atena/generated/asset-production-20261021-r1/V10_sprite.json"
+    },
+    {
+      "sha256": "1FCCC57BD16FD32EF84826DE36FF721076DF7F28BB631E3F9F3D4C3339F1CD3B",
+      "file": ".atena/generated/asset-production-20261021-r1/V10_sprite_prompt.txt"
+    },
+    {
+      "sha256": "DDE63C36FE0C0E9A3EF1D3CD91E7926288D4593E45A2579B5C942E87472D4D52",
+      "file": ".atena/generated/asset-production-20261021-r1/V10_sprite_v01.png"
+    },
+    {
+      "sha256": "D8E8B7608931FF03674F9DA785991C5F6CE71CB5154B0908246012446868A474",
+      "file": ".atena/generated/asset-production-20261021-r1/V10_sprite_v02.json"
+    },
+    {
+      "sha256": "CD8341D9B43D8F32B9013071DDFDB4AA22BF6F55692D91391C53F2A75CF8F3D0",
+      "file": ".atena/generated/asset-production-20261021-r1/V10_sprite_v02.png"
+    },
+    {
+      "sha256": "891E6A0EC5AFC1F2C6F372C75171AB5CD7800A422B3741496BDBF12764513C1E",
+      "file": ".atena/generated/asset-production-20261021-r1/V10_sprite_v02_prompt.txt"
+    },
+    {
+      "sha256": "F18873D990B2C442F02757707966BC0DC5EBA05CD7421EB7905F6A0F753C59BA",
+      "file": ".atena/generated/asset-production-20261021-r1/V11.json"
+    },
+    {
+      "sha256": "18D39EDC0E718B9632BC5E4909B55468FDEAB2856D830765B3380DA17B3AB233",
+      "file": ".atena/generated/asset-production-20261021-r1/V11_prompt.txt"
+    },
+    {
+      "sha256": "612875B3551990EA588413BE5406C349EFB72D59D290B688DBA7BF8F5ECEDCBD",
+      "file": ".atena/generated/asset-production-20261021-r1/V11_v01.png"
+    },
+    {
+      "sha256": "45ECB0374405A4E18FC3D525BB7B81F4FAE8F50F1C17312D46A134A31A2C85AB",
+      "file": ".atena/generated/asset-production-20261021-r1/visual-acceptance.json"
+    },
+    {
+      "sha256": "557CC982C8E12EB1C0D9E5D89BAFF5C8B89FEDF14DE6D06681AF548F651C61C0",
+      "file": ".atena/generated/asset-production-20261021-r1/visual-readiness.md"
+    },
+    {
+      "sha256": "6BBFD6A2B6CB03298C932EFD407BF07A0F9D4AA3EF820CB7EA26D85D5035012F",
+      "file": ".atena/generated/asset-preparation-20261021-r1/asset_prep.gd"
+    },
+    {
+      "sha256": "674C409AD2F7FD5190A9EAD3BB0EF5E452FB1B99C01FDBA769E0AA89911F82F6",
+      "file": ".atena/generated/asset-preparation-20261021-r1/audit.json"
+    },
+    {
+      "sha256": "0831B7A07FC71094B5C0CC043AEFC589C0204BCC59DE5515455D3E7FBFBB8007",
+      "file": ".atena/generated/asset-preparation-20261021-r1/audit.ps1"
+    },
+    {
+      "sha256": "24A8FCDE41DF80E2CB08AF18C91F093BD343D70AA3F434A57D452AF79411F5C5",
+      "file": ".atena/generated/asset-preparation-20261021-r1/deliver.ps1"
+    },
+    {
+      "sha256": "788C8BDB332C6623ACDE7C3803882AB899050875F89015DD95B6E4043BCC33D5",
+      "file": ".atena/generated/asset-preparation-20261021-r1/delivery.json"
+    },
+    {
+      "sha256": "C790D6681C4B7D093819F835483ABFD7A02539C96339596E3AB35B39DE48C893",
+      "file": ".atena/generated/asset-preparation-20261021-r1/evidence.md"
+    },
+    {
+      "sha256": "BE38D7C588CF900D6D50C97E40B9B4C4A81113D44536A865AEF61F8FC24E0343",
+      "file": ".atena/generated/asset-preparation-20261021-r1/gallery.ps1"
+    },
+    {
+      "sha256": "131E2352D542193DE6E0BF9389DFDD5800315703193C14A4C989AFA70881BDBB",
+      "file": ".atena/generated/asset-preparation-20261021-r1/index.html"
+    },
+    {
+      "sha256": "D79E5E4F295A495F9E6A55C1C258C1F0E8F2768DFDD9B385F5C3AC622B355B28",
+      "file": ".atena/generated/asset-preparation-20261021-r1/integration-proposal.md"
+    },
+    {
+      "sha256": "525388B1D2C9F3FADA1DD20EA599E583F9D5CB1245F0A791DF337A1664B5289A",
+      "file": ".atena/generated/asset-preparation-20261021-r1/n-jobs.json"
+    },
+    {
+      "sha256": "19423A71E4AEBB74350E16F868FF5CEC6520B83BE57A6FF30C9EE18D064D48CC",
+      "file": ".atena/generated/asset-preparation-20261021-r1/n-review-board.png"
+    },
+    {
+      "sha256": "C49254E3F96792E56B12810CC0EE8C0C812F9B778E6B53C2B5B9A234ADFA1193",
+      "file": ".atena/generated/asset-preparation-20261021-r1/plan.md"
+    },
+    {
+      "sha256": "08E760117DA3E8A1298736B1C5971BBBBC195D1DA48D66FF82BA1048E577A394",
+      "file": ".atena/generated/asset-preparation-20261021-r1/preparation-n.log"
+    },
+    {
+      "sha256": "527165A01B51FD1C3918F25F63D63DA6C0159E80E7B6C4A0DFF541B9FC6552F8",
+      "file": ".atena/generated/asset-preparation-20261021-r1/preparation-q08-correction.log"
+    },
+    {
+      "sha256": "50BA094C283191F90995F748778264612CEBD5D15C42EE98D5B0A43272E8B6FF",
+      "file": ".atena/generated/asset-preparation-20261021-r1/preparation-u14-correction.log"
+    },
+    {
+      "sha256": "E9DEF46FE5C2E3874E7EC428F95BE4FDA37C78E54307FA861499F363C33A43DE",
+      "file": ".atena/generated/asset-preparation-20261021-r1/preparation-ui-correction.log"
+    },
+    {
+      "sha256": "647CA37C15E3410BB945091697159899BD27138CF82B092F83AF3F6B96CA1C17",
+      "file": ".atena/generated/asset-preparation-20261021-r1/preparation-ui.log"
+    },
+    {
+      "sha256": "D3C2DD26F70228C460F2D3E92D6EAFB35D78D8B5A8BC1C8C7E68D3C3836EA67A",
+      "file": ".atena/generated/asset-preparation-20261021-r1/project.godot"
+    },
+    {
+      "sha256": "21919F73AF13EBEA6D65CCB1C86904DB27F05A1F0A758DADA28DEE337BED35BE",
+      "file": ".atena/generated/asset-preparation-20261021-r1/review-boards.ps1"
+    },
+    {
+      "sha256": "9F6344BA4B4D4B87A9B909070D3F366FB3AA106D87CA4526DB3096A2007F0421",
+      "file": ".atena/generated/asset-preparation-20261021-r1/ui-correction-jobs.json"
+    },
+    {
+      "sha256": "BDA5AB20B4B863E178A810350C05049F0BF290D320F1D30E98BA89A5188E063D",
+      "file": ".atena/generated/asset-preparation-20261021-r1/ui-jobs.json"
+    },
+    {
+      "sha256": "C2AB552AC68FDE3E2E7F14CB2D82EA76ED7F3F82EA885D102E897F7659B6CB48",
+      "file": ".atena/generated/asset-preparation-20261021-r1/ui-q08-correction-jobs.json"
+    },
+    {
+      "sha256": "9C65B023A86CC1CE020DC2A5C04722158674661D798ED2D9F13C2A5AE4DC411A",
+      "file": ".atena/generated/asset-preparation-20261021-r1/ui-review-board.png"
+    },
+    {
+      "sha256": "829AD571BFC71B2AD881E0AE67C38B36B69D8585E5A5FFB4F6CEF208FF8D7FDA",
+      "file": ".atena/generated/asset-preparation-20261021-r1/ui-u14-correction-jobs.json"
+    },
+    {
+      "sha256": "4B1B0B393C9B4A72F66F3BB83E4015FEB3924B26D8CD989F0E1A9FCA40D6C8D1",
+      "file": ".atena/generated/asset-preparation-20261021-r1/upstream-tool-hash.json"
+    },
+    {
+      "sha256": "CC8E56F900326F91095BF3A091AF290344BC15BE84EC9CE265EF34E119805897",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N01/attack.png"
+    },
+    {
+      "sha256": "143636F9A31F60F7971B126D495AAFBE1C8BD83ED27BDA5E545A0BDF02AD8FD6",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N01/death.png"
+    },
+    {
+      "sha256": "315E6019807180BEF33AB75879891F6AABB83A624AD5A6713B7E6CBA2DD77066",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N01/idle.png"
+    },
+    {
+      "sha256": "ECB6E34576F4269FFED538503DC43A3EEA6298CC8F3875A65A483529D8A4A111",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N01/move.png"
+    },
+    {
+      "sha256": "E7BD161064512F97FDD2437DE014EA996620A066E43E6364852B5F758A95EAD9",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N02/attack.png"
+    },
+    {
+      "sha256": "33D2777D3F6EF23EF707F0FD95D4F03CB787CE535EF90D1E6F85947C3EBD2FDC",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N02/death.png"
+    },
+    {
+      "sha256": "0F0D69D1F885BF335176EF0DAA8CC088016563715DFC6C4759C3329CAD71C6F7",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N02/idle.png"
+    },
+    {
+      "sha256": "80425A8334372F932F85ED1D4334CB090DCB53174BBAB693A705033192734B05",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N02/move.png"
+    },
+    {
+      "sha256": "509B7D057148031E9ED89B96644FC2DED39CBDA586B1A56A92DB7847F2B8F6E3",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N03/attack.png"
+    },
+    {
+      "sha256": "95240DEE00F2331FFD1A9EF9C3A7DA0B5B04C55A5861305AC10884C9D433AFD3",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N03/death.png"
+    },
+    {
+      "sha256": "33D4B60A2BC31CD5337EC17631CE062D94F43D24C424B73FEC2D3C7966F73541",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N03/idle.png"
+    },
+    {
+      "sha256": "66A7EDCB485DF5A2E6EB9557011B30DA72AA1ED43161562E25695F139E14DEE2",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N03/move.png"
+    },
+    {
+      "sha256": "9E8BFC83B5942C0568B5BE3201B99571AE22E3637555B70FF3A45D020A7CE102",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N04/attack.png"
+    },
+    {
+      "sha256": "B89820EDD963DC2959BD523E60E5E0BEE38FE8C9DA640CE901CFE282879960B7",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N04/death.png"
+    },
+    {
+      "sha256": "EDF9D319184DA4DE8BB488FF8A162D264E81E732508B5891675AFEBDCE04AA0E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N04/idle.png"
+    },
+    {
+      "sha256": "3EB4E7393244337EFA11AB8429A33CCD6C92E1F1B092A439A9FB9F2861EA595E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N04/move.png"
+    },
+    {
+      "sha256": "9322505814A365BEEF671039AC3F312C40F019FA9EC86B9759E91F9CE5D862CA",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N05/attack.png"
+    },
+    {
+      "sha256": "7140996734863809464983F24C8D77CBB88ED4AA24985F659ACEE1006590D5F4",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N05/death.png"
+    },
+    {
+      "sha256": "2E5AE963DBDC69477B2257DE5851C257F3A01A2E95175F5C32CDA2CF0EDA85A0",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N05/idle.png"
+    },
+    {
+      "sha256": "2D7D16331805920874F9092891A8BA2E1008BE05A6315CF08F8CB291A1F726FD",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N05/move.png"
+    },
+    {
+      "sha256": "8134AA228A702961C08EC2859AADC529E14038919970D0856DDDF65D49434902",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N06_atendente/attack.png"
+    },
+    {
+      "sha256": "881E71E4A7964BBAA8D62EAC9D75205DAD8DE50D494C8126AC5F656357D8FEE7",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N06_atendente/death.png"
+    },
+    {
+      "sha256": "88872B488DB1F049937A7B684F102B5266D4201CB56B1DCE13F9DC86D7122FCA",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N06_atendente/idle.png"
+    },
+    {
+      "sha256": "FE091B5B10FFC434540A9F9EE03D9F13482BD1C02211A3913602D4846E1ED491",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N06_atendente/move.png"
+    },
+    {
+      "sha256": "3D5CCEC6E7D8BA77EB6A603560DA3F4BA4412CD984910ABC43E02AE069426B8D",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N06_taverneiro/attack.png"
+    },
+    {
+      "sha256": "B74B91C1E483F42833A790E3A344A283A7686A00A77A4979386B6FFEB5AF0624",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N06_taverneiro/death.png"
+    },
+    {
+      "sha256": "9EC715A0319139194CC481B1BB29EFCA0CD34BB64388D01B1C16F02EBDD377D7",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N06_taverneiro/idle.png"
+    },
+    {
+      "sha256": "70CBEBB4F4A3D7D61478B6747DBF2A0F5633EEF7174C88F19B9B94477501D3EA",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N06_taverneiro/move.png"
+    },
+    {
+      "sha256": "8811772D6FA333BE0E8CA2CD54E7146EB71D393ED98DE26B7874FFB0BA5B16C2",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N07_willie/attack.png"
+    },
+    {
+      "sha256": "A04520F64CF12F5DC95F3F7A960A9E9C1B579655896D54BCD87D06E29A3AD184",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N07_willie/death.png"
+    },
+    {
+      "sha256": "FA5BF1BCF1575F2F3B1292E9B8FBBEED98F925453C99A1FC87B83C5E1ABE0455",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N07_willie/idle.png"
+    },
+    {
+      "sha256": "5ADECA1D139EE9DCCAD18F598CF7B366DC8D9BDC8B372FF71BEB0B42FB77FC84",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N07_willie/move.png"
+    },
+    {
+      "sha256": "BE307CA45D56505E973E0A63588CD622329B15CC6228DE9A56AB35032BF455FA",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N07_wonka/attack.png"
+    },
+    {
+      "sha256": "2CAAE6FA3865BEDBC3F688F6C1BDD6E85D1B5A65751AA47537975089E6F2F03F",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N07_wonka/death.png"
+    },
+    {
+      "sha256": "F7DD3B09619A805421896DFD38B4BEADA610952ABCEBE5B393D1797CE9AE5D25",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N07_wonka/idle.png"
+    },
+    {
+      "sha256": "E93F9D9C197EACB073A62E565FAB3E0199A309EA8C8AFEDE221BDCCFD09EBAD1",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N07_wonka/move.png"
+    },
+    {
+      "sha256": "5333A3FF7190B38C3B0BDD307842265B03F3E2A8DCD82C15C46041C319ACB455",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N08/attack.png"
+    },
+    {
+      "sha256": "0398922B5B1E96AA35E7322E847A30AF056435ACA619BF3C4FB03E0C622A3C97",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N08/death.png"
+    },
+    {
+      "sha256": "2BC1396C00921C0ECF99734B582ECF51E6B71EACCE4741B9E6A4ABA167D4E90E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N08/idle.png"
+    },
+    {
+      "sha256": "395A1D3F7A7B6B988ABFC2810A6CC93FD6299BC8A0559C77D6D01365A3AF6A5E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N08/move.png"
+    },
+    {
+      "sha256": "EA05BF16839C526FE90F07D6F1DABF9CE22FD8C03C6E8D64073BAFDE279BA54B",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N09/attack.png"
+    },
+    {
+      "sha256": "B2589AE58DBAA803754B0B6F823DDAECD290144C6B53AD5AF0B0E6C6A84C6BD5",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N09/death.png"
+    },
+    {
+      "sha256": "814F924C749D5538E2812399908A2D0EC343A703BB53AAA1917D447D05D95762",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N09/idle.png"
+    },
+    {
+      "sha256": "B27E096AE57ED8447C269F540DEFD28DCE18E44A23876DE8FC7328AFA8211DC2",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N09/move.png"
+    },
+    {
+      "sha256": "8925E55325C7B60D840D9ADC382171CB78F601752C33782C0EDE275DF7113F23",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N10/attack.png"
+    },
+    {
+      "sha256": "0B2895152146BFC8867579293FCF2DF43B8C4A608193F26511492FC04AF018E6",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N10/death.png"
+    },
+    {
+      "sha256": "5F6DA8A389E1565E14830EBEA2026EB192E416C33A214A046CA16D67C72E67E9",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N10/idle.png"
+    },
+    {
+      "sha256": "DD78CB04268B237DFA211A4D5F2E5FBC56645A3488AD704D6C8D218CDCE67104",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/animations/N10/move.png"
+    },
+    {
+      "sha256": "1CF18BDEB72F5DCC3DB72A9050CAB8D4F2821A0EFEE3CC51F52D6F28C30AA742",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N01.png"
+    },
+    {
+      "sha256": "F94D0EC1146B5EDC0876F0A156CCE18F8B21B6FADBA3FE6D1F9DE9132865539D",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N02.png"
+    },
+    {
+      "sha256": "64CA9193760351559FD733450FE3ABE610B44F8D9EA0E5BD45C39D664B1770A1",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N03.png"
+    },
+    {
+      "sha256": "9C1157ACB5DD2AEFEC511453E892E1540E551F1B5164B992D0A6028F7924BB4E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N04.png"
+    },
+    {
+      "sha256": "33E3D02E4C1B7519C5127F3474825087A5BC91DF18B63944D0CD57277FAECD34",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N05.png"
+    },
+    {
+      "sha256": "76BD3DB9864F20613E65CCDD9DFF2A010B936939B6E6F51B45110532BCB83356",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N06_atendente.png"
+    },
+    {
+      "sha256": "C570030123B2C8054BAFF87F3082D7BD6982CA2DD9121364400E54A0C6A7D5BF",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N06_taverneiro.png"
+    },
+    {
+      "sha256": "37B3474748E0BD01EB2DA6FF85915C56A059FE5306AD388F8A59F6464B46F423",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N07_willie.png"
+    },
+    {
+      "sha256": "7770F31983D8034DF71D8EF5888CF102892C0307073424C6828404DB532BB7FC",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N07_wonka.png"
+    },
+    {
+      "sha256": "2712F68C52EB40EF9DA10D70F8AFA7EB282AF2BAA10ABE8FC72339E2ACE57105",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N08.png"
+    },
+    {
+      "sha256": "675E50049C0AB1B73ACD449C256BF0BAC1C72FA2C22F4B0B2977A6BC37EB6BC9",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N09.png"
+    },
+    {
+      "sha256": "081F91540FB1F6051067FC23C75508925B5501A5FB213C3292D6F580A46F899B",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/characters/N10.png"
+    },
+    {
+      "sha256": "8C0D644DC0A31452C7E086F39222E14B31D72961D70D01C6FE117F5EDCCF80D2",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/codex/armas.png"
+    },
+    {
+      "sha256": "DAA00AEB474A8132C7E6D15413A8ED5B3DAD62FB767EF4E6A8A56BA144128DF7",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/codex/bencaos.png"
+    },
+    {
+      "sha256": "E195381A6E06503BDC11521611CAE045DD16DBBF5B22D4C3083459E21A8C72B0",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/codex/herois.png"
+    },
+    {
+      "sha256": "AE9667779CF7A7B7DF34A4F730F068CC096393B1F838F426556EA19DA8FC94DB",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/codex/inimigos.png"
+    },
+    {
+      "sha256": "ED854422EF3258A74D8B159D0956CF095255AE4E298B1F6895C1E22D6628A9EC",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/codex/itens.png"
+    },
+    {
+      "sha256": "434A12C9BE9AF236F0812794EB450548841009BC9E48DD92A95F94BCC1862F86",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/codex/passivas.png"
+    },
+    {
+      "sha256": "544FF5D8632B0BAE4099429E9E9D9F5B451C3BBAC84068E6D5CE0316FBAA86F7",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/abates.png"
+    },
+    {
+      "sha256": "13CB109C223E0E82254875971B5299D67FDB102B0A10616767CAA974739F3319",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/baus.png"
+    },
+    {
+      "sha256": "0980171B59C591BAA4400C813BF41D27568B6E647C3CD2E2CEF0D9FD5DC0E1A7",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/biografias.png"
+    },
+    {
+      "sha256": "69DBFC46D26FAEFCA84DECFD2B42B72AD53C5B7FA74B856B7770F239D4ED0621",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/chefes.png"
+    },
+    {
+      "sha256": "261FA8BA00FA92E1F8F53BE692367FAA51B50489A226288563E9DB5754150838",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/ecos.png"
+    },
+    {
+      "sha256": "5A08C53AD9FC4F9CD0257E358783269DF41E7F9EF8D91454AC984DBA5EDDE9A7",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/elites.png"
+    },
+    {
+      "sha256": "994E651E68F62F35FF2F44C20444C3565B63F764D6F6B3EF6CFA312C0CFA54DA",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/hqs.png"
+    },
+    {
+      "sha256": "DE9E50AB840BF8B9B486B80DA5EA3105D8BADF8092094EACDAF561715291C8FB",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/moedas.png"
+    },
+    {
+      "sha256": "D2D947BD51D3BE923BC2838AC6AACD3E1297196B8BC5701F8082FDD71F83BDBF",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/nivel.png"
+    },
+    {
+      "sha256": "47F4DA36F5FF94CF675792EE881361AAB1C8BA5AC9EED61C31F1437EC5FBD502",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/rituais.png"
+    },
+    {
+      "sha256": "0798EBEB840A5195359D84A50C9C4AC4050483FCCDBDB5B5929385311F13D3C2",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/sem_dano.png"
+    },
+    {
+      "sha256": "8A1B487C39646856B7AEAE674906171E74FEE46FA18E016C46FF069339896DDB",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/conquistas/sobrevivencia.png"
+    },
+    {
+      "sha256": "4CC201B56E70B4F3E5DDF487675EAF08E475C3BD024AE949BD1BCC56F3846A91",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/resultado/abates.png"
+    },
+    {
+      "sha256": "0EB6BE839D7DAB1C50070502A50FB6FF56338C3F94424ED14BD3358F35710BD6",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/resultado/chefes.png"
+    },
+    {
+      "sha256": "3CC855E9DB0BDA963094326895F2F3B7460749CA78ECED342E2C7BCAC9B13B02",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/resultado/moedas.png"
+    },
+    {
+      "sha256": "A59E454B9858F0350B41EB8A90A06EEC1F60DF671D3C0F9D3A2A7B4CD9B0B33E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/resultado/nivel.png"
+    },
+    {
+      "sha256": "44E6AB01E451F1B7FE5D95C750D67E254141394ECBC860A5B42FB5633E5821D4",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/resultado/profundidade.png"
+    },
+    {
+      "sha256": "7EC0DA098543363EFA93C5854B632A029E9EFC6E105D72DA67CA08DB6DCCAB5D",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/icons/resultado/tempo.png"
+    },
+    {
+      "sha256": "9917DAE367387BAF3E7079D94E89AE166F3447DFA8C3E76E11AC1E2FC1C19B39",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N01/attack.png"
+    },
+    {
+      "sha256": "6F3FE6197D8E8CECECE51E7DB080AC416EA90E70B635132AAD7980314A07F8EC",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N01/death.png"
+    },
+    {
+      "sha256": "BDC410D9A85D400A9513474ECF9D4B21431053A0C3E8A9F5D123DBC60E095EED",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N01/idle.png"
+    },
+    {
+      "sha256": "A7E5914320AD283EB9385ABE3E4E509587A9332D617D253376F3D0482CB16BE6",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N02/attack.png"
+    },
+    {
+      "sha256": "CA4BDE78380D000614419DF34D4D58D305966632B86305C6B383C641519BE06E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N02/death.png"
+    },
+    {
+      "sha256": "D72773F738EEE997BAB007DEDE1A67FE5F9573EA2DAF51B3AE725F88CE3FBF3A",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N02/idle.png"
+    },
+    {
+      "sha256": "5A6C4357D2F574AF7D5EF17471E7E10821863A26BC0425776B4B9472D457B12B",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N03/attack.png"
+    },
+    {
+      "sha256": "71F08C6CB843F6FA96CF2965BE49612F2DF936D7FB1CBA4E3D7C0B06D68008B9",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N03/death.png"
+    },
+    {
+      "sha256": "908AFAE7DD01C8E01A0AC955055CA497AA4564DAA637F789CA8EE8CDEBF090CF",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N03/idle.png"
+    },
+    {
+      "sha256": "9ABE01CCE2F5B23982312DEDB54919929DF826D57755FDDCC83948A723091B95",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N04/attack.png"
+    },
+    {
+      "sha256": "8DFCCCB71DDF1379B82371920C03C3B4290379D35EBB42D119FFD31231D3DE9E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N04/death.png"
+    },
+    {
+      "sha256": "ED6858B93BE644A1F53FE70A2EA4D855B9BE61A8C91FEAF8E96A970FC1734C7C",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N04/idle.png"
+    },
+    {
+      "sha256": "FA687911D5979D3D871A6506299558117A28B85061B77EAF1B1B189409BE3B58",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N05/attack.png"
+    },
+    {
+      "sha256": "91BA67ADCAF181FE60660B6381B9627AA8E93DE3E17867EE4FAF8DEF0B0C2232",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N05/death.png"
+    },
+    {
+      "sha256": "9C059598E4ADFDAD0FEAD6D365A8118C0A110B4478A56C345BDD66600935CCDB",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N05/idle.png"
+    },
+    {
+      "sha256": "6106936C994D75C69E085C227058F7B87884EA63AE1BD23DCA65EA34E9851229",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N06_atendente/attack.png"
+    },
+    {
+      "sha256": "1038E1F670E9EB6FDA6E95F68707CFFBD87F29B4BE946E37A13CC109A46A2683",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N06_atendente/death.png"
+    },
+    {
+      "sha256": "862B09BF7AE2D6B2AE2FF3221ECB0C05B66D17386CB55947E55FBBD01A21315E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N06_atendente/idle.png"
+    },
+    {
+      "sha256": "A311948D108D24E46192CA84D7A01F0C7CB7DFBA7852924F3B90F14FA87EA3D6",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N06_taverneiro/attack.png"
+    },
+    {
+      "sha256": "BD0DADD29D27C4C7278A8F9A09D829AAEC95FF7B49099DD6E18C891925A4FCE3",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N06_taverneiro/death.png"
+    },
+    {
+      "sha256": "58015FF8C5B954437E3B71AD448A503D4216F57A233609F1348E8251853C3D6E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N06_taverneiro/idle.png"
+    },
+    {
+      "sha256": "3931CC3C7922D33902F2ED6F50F117382394D27AF98ACA00EDC6311268DFC18E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N07_willie/attack.png"
+    },
+    {
+      "sha256": "56E045AC5B4D22F6F2E506AE0C3BFC1B8513B84FC4CA666BD9587038EEBBA4FB",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N07_willie/death.png"
+    },
+    {
+      "sha256": "71D58390A7A50FF76077374672032BCD5831FDC087AB2E0D096BC61E007CCD15",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N07_willie/idle.png"
+    },
+    {
+      "sha256": "2CA32E1D5786163AB402EFB60FFA896701B95D29158A28CDAC953EDB261994E0",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N07_wonka/attack.png"
+    },
+    {
+      "sha256": "33B72F144C17B069E8A88717C08CCA488281F2BC937732CE000AD1ED2B4516D5",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N07_wonka/death.png"
+    },
+    {
+      "sha256": "28C241AD53D4877131D4CBF0580E2BE35CC6045A8F8C587633A63EAE051AEB01",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N07_wonka/idle.png"
+    },
+    {
+      "sha256": "239F8ACB0D43DCAE3B4D6368421474E9670EBA6B9FAEA7D694C51E4563E69A36",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N08/attack.png"
+    },
+    {
+      "sha256": "73AF678504A299588C42A8E77B419CD9D2DF9F4AFE9BD7C68DADCDBDE4F1454F",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N08/death.png"
+    },
+    {
+      "sha256": "0281656639C35475080A8F38FFC915B6CADEA7BBF5EC595BC499EFFDC9A0F45D",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N08/idle.png"
+    },
+    {
+      "sha256": "A8E53ECA323D7E9E4F3F03195EDA50A7AD59067885FBCB66005F8652EDD536F1",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N09/attack.png"
+    },
+    {
+      "sha256": "52BD8385EA99E7A0005C41B91859B8C405879E0C621482CEDD54FD68F085400A",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N09/death.png"
+    },
+    {
+      "sha256": "709658F6D61EF1A2B84849E15DD78D69E171B3D115C8265EA926F0ABFD4FF948",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N09/idle.png"
+    },
+    {
+      "sha256": "C77BE6A5D93704B1512AFF050007889621D8989601FA60843906653028A1D7E4",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N10/attack.png"
+    },
+    {
+      "sha256": "F186F71B1E912CE596C3CAA2B074BF8D84687912610389DE363450C3EB1496C2",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N10/death.png"
+    },
+    {
+      "sha256": "1697B076A946E65943B95A399E401B81439AAA078EE02884302E5881244AA53E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/poses/N10/idle.png"
+    },
+    {
+      "sha256": "53A591194DD4DF30144639927E2BF5E4EB38487A59E6375D3BC2E3C67006A80A",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_barra_pv.png"
+    },
+    {
+      "sha256": "29F16778205A340AD49B6F7746CA545E8477EDCF54CECFD8129E4C6A7B8BE030",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_barra_pv_fill.png"
+    },
+    {
+      "sha256": "7DEEBC2768021B32CD4A712B0FFFBD3A1FA9DA08E79D9E66D6CDF9A72E29B37A",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_barra_xp.png"
+    },
+    {
+      "sha256": "05018B90F88C727D1CEA2155A65C3B86593BA7267D197CECF046ABBCACF8A431",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_barra_xp_fill.png"
+    },
+    {
+      "sha256": "2D71DB2138EE287C8E896E9DB9CD4B899D9D6B7BC368F0E947FE26E403D089B1",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_botao_ajuda.png"
+    },
+    {
+      "sha256": "DAAFB05F090F4893236D8DBBD8EB07CC4CC48608A1641DBE36072B28B40D17A9",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_botao_pausa.png"
+    },
+    {
+      "sha256": "C0D4D0433F36E141855697D120DFF3395310F150CAD8A7D5EDFB814D9D9E4299",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_botao_velocidade.png"
+    },
+    {
+      "sha256": "53C7296C8F64490EEE12861F6B8B250939019A6129F87C7EC5A731D5A8C935E6",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_chip_abates.png"
+    },
+    {
+      "sha256": "20791A2217CA61DDE2F443B97B2B420E3A59E74EC0CEF7183A32DB540FE3DE7B",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_chip_ca.png"
+    },
+    {
+      "sha256": "308B351071B208C651A26D3080AD68F9FB2479B784301DBD85D4369E733984AA",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_chip_cam.png"
+    },
+    {
+      "sha256": "AAEEBB6DAE38FA3DEA5BA9D1125365B5DED75FC68F1D743523EB0029A687E91C",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_chip_moedas.png"
+    },
+    {
+      "sha256": "415D34ED8A589C768F869896CD49F847BA72E7BF5B8EC774168C2FCE5565B7D8",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_cronometro.png"
+    },
+    {
+      "sha256": "7399F81928738277D15FD01D0E9EA562AD4BC854FE93F21D90FC63BE52212382",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_habilidade_anel.png"
+    },
+    {
+      "sha256": "0095395C5C3BD3946D31E127D3CCB135FA62C8F77AB9A2EDC227356DE5B56D6C",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_lista_armas.png"
+    },
+    {
+      "sha256": "0446603E6BB3DB14E610A1150182C173FC1177101535B7DC7F47B4973738FA79",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/hud/hud_painel_heroi.png"
+    },
+    {
+      "sha256": "0FD24A8DD812539AE25441982A8C10ECEB8B01BB51E3F772D6440AE2D8468B7E",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/modal/modal_moldura.png"
+    },
+    {
+      "sha256": "B3D9556374347B3F3FCF5908D2707CD96B917940915FD9BE040F51AFD8652DD5",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/modal/tooltip_moldura.png"
+    },
+    {
+      "sha256": "04A6F4D293CD953DAE830B8352BE95439233F49FCDC508A7CD615635DF5E400B",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/oferta/oferta_brilho.png"
+    },
+    {
+      "sha256": "1EEBE8C5523DF4554438853DA26A7FA46FE5174FD0F171803A6CB65D792A92C7",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/oferta/oferta_fundo_textura.png"
+    },
+    {
+      "sha256": "FE069C52973EE10E6DF9A0C4961A072B70D0AE1E496B6A07230F8E0FAB21D637",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/oferta/oferta_preco.png"
+    },
+    {
+      "sha256": "98D8817DE828439D5367264CA1997FC9D2AFF41FA1A0E285D53D57895345DA27",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/botao_bloqueado.png"
+    },
+    {
+      "sha256": "E3E5C09788547BBC7D019F9A611383408FA9862BE5C23B272FC64EDBB06B6648",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/botao_comprar.png"
+    },
+    {
+      "sha256": "C4EABBE78D13CEDD3406F12D052989A1B6D35CEF5BC4D0BFFFA2CCD40F9C25E5",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/botao_maximo.png"
+    },
+    {
+      "sha256": "FE8B8ED87569C64A7D0FDE5B4D195081FC4070285997E7165E9984608DA8698F",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/codex_oculto.png"
+    },
+    {
+      "sha256": "DC7A41C6EB7FD618A142A299D874C98A0E65EADCF182343BE1E77F6F50D132AA",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/fase_cartao.png"
+    },
+    {
+      "sha256": "78C3A4120519211508FF0DE1DC6D424D07DA8F84FEE16B685B85B4BA4C4CEBED",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/fase_cartao_bloqueado.png"
+    },
+    {
+      "sha256": "25EBC2D9CD86A66C7CFFE13AE22DEC92C33DF4E6B3A128BE679DAC7AD778C062",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/heroi_cartao.png"
+    },
+    {
+      "sha256": "B5D9A139EA3F31F5B7D67F60B2990BC88346668F70E03F6E5940DFA95584C4AB",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/heroi_cartao_bloqueado.png"
+    },
+    {
+      "sha256": "55EEBDC0A5DF557363D5E90B006786B8C05D8AEE315EC39DB8E44213340857C7",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/heroi_placa.png"
+    },
+    {
+      "sha256": "76E80AA273FE9594E3FE185E8EBF4D6577176D4541F99B9F59B9B3E7469577D0",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/pip_bloqueado.png"
+    },
+    {
+      "sha256": "8D8F76E6AF7736771A145F9993FEAD4422EC6DDE7F126A4D00A0BE8BACDBE109",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/pip_cheio.png"
+    },
+    {
+      "sha256": "0E43665D623ACAF2F8B03EECFBE2FC76960062D838743FDC7537F43FC836C7CB",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/pip_maximo.png"
+    },
+    {
+      "sha256": "4DEE0E74F29129E4985384B23E993E41DCF734BC126C1F760E1EA1706AB77349",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/pip_vazio.png"
+    },
+    {
+      "sha256": "C25EFFDFEBBFB48EA680CC00EB23CC76CA785A78B4B0266AE184775F4998CE90",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/medalhas/bloqueada.png"
+    },
+    {
+      "sha256": "3954656C358E285616279CD5CFFA984DE81272E686BC7A626FBB91D818DE59B4",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/medalhas/bronze.png"
+    },
+    {
+      "sha256": "57D455773E7341DD955FA08C645B4DD42D7674968971283E5FBCCF03E8B5DE71",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/medalhas/especial.png"
+    },
+    {
+      "sha256": "E645066D4784778C3F6C9D6D34F39B8F7E9ADAD2416CF973B5FEAAF5E54BCF90",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/medalhas/ouro.png"
+    },
+    {
+      "sha256": "E6DB8E9937409E72375C2ED757A3FCD867EB53B215C06CB7F648013B0AB48677",
+      "file": ".atena/generated/asset-preparation-20261021-r1/prepared/ui/quartel/medalhas/prata.png"
+    },
+    {
+      "sha256": "9A4358E479C72DE436BBEE1F1272F6E396E2CF18CBD3438E7F463BD06E597ED9",
+      "file": ".atena/generated/asset-preparation-20261021-r1/superseded/hud_barra_xp_full.png"
+    },
+    {
+      "sha256": "1DD4CE3BFCA2696FEE2D200B70757332ABBD542160C0736FE02CC05C4E000123",
+      "file": ".atena/generated/asset-workflow-transfer-20261022-r1/plan.md"
+    },
+    {
+      "sha256": "00AA42AC25853B974271CF306328CABD4362DB297EEF11B233796B532C055EAA",
+      "file": ".atena/generated/asset-workflow-transfer-20261022-r1/transfer.ps1"
+    },
+    {
+      "sha256": "4DF25EDDD34E53AF0F2D1F01055A344904CA9E4FCF62239FEC347584981D9A23",
+      "file": ".atena/vault/drafts/PROPOSTA-assets-20261021-r1.md"
+    }
+  ],
+  "relocations": [
+    {
+      "resolved_references": [
+        "F:\\dev\\abyss-megadungeon\\.atena\\generated\\asset-production-20261021-r1\\U01_v01.png"
+      ],
+      "original_references": [
+        "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a15eb1-4659-7141-b54a-e87fe1739b1f\\exec-b42aa781-b5c6-4bab-9996-2314a3720221.png"
+      ],
+      "id": "U09_v02"
+    },
+    {
+      "resolved_references": [
+        "F:\\dev\\abyss-megadungeon\\.atena\\generated\\asset-production-20261021-r1\\V02_attack_v01.png"
+      ],
+      "original_references": [
+        "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a15eb1-4659-7141-b54a-e87fe1739b1f\\exec-f8963f09-8480-4c25-98b8-32eadef7deba.png"
+      ],
+      "id": "V02_attack_v02"
+    }
+  ],
+  "source_preserved": true,
+  "runtime_modified": false,
+  "target_derivative_audit": "PASS_158_OUTPUTS_ZERO_HOLDS_ZERO_SOURCE_CHANGES",
+  "gallery_links": "PASS_BOTH_GALLERIES",
+  "preexisting_target_plans": "PRESERVED_WITH_CONCURRENT_HERO_HANDOFF_ADDITION",
+  "chat_binding": "NOT_MOVED_TOOL_REQUIRES_ADDING_LEGACY_REPOSITORY_TO_TARGET_PROJECT",
+  "portability_adjustments": "Two reference records relocated; transfer text encoded correctly; packaged PowerShell scripts saved with UTF8 BOM for Windows PowerShell."
+}

@@ -1,0 +1,33 @@
+{
+  "revision": "DRAFT/v01",
+  "plan": "PLAN-NOTTGARD-HQ05-VISUAL-20261018",
+  "step": "S-P05-Q02",
+  "checkpoint": "CP-P05-Q02",
+  "tool": "built-in image_gen",
+  "intent": "Reference-based transformation of approved Q1 into next narrative moment",
+  "generated_source": "C:/Users/Higor Rossini/.codex/generated_images/01a161bc-59c1-73d1-a280-8ec88db7d29f/exec-6792358b-7432-4c1e-9d52-b6ac7bd6e089.png",
+  "candidate": "candidates/hq_n05_q2_blogbog_pressure_v01.png",
+  "width": 1672,
+  "height": 941,
+  "aspect_ratio": 1.7768331562167907,
+  "sha256": "ABA15AF00A7333FD75406299D96681FEBEF27B712FB6DAA1633918872E5583A7",
+  "prompt": "q2-prompt-v01.txt",
+  "prompt_sha256": "F7D3B11787FFDED68DB4891A1D95593C0D6EE59C1C870C2AFEA4770DE8181C49",
+  "reference_manifest": "q2-request-v01.json",
+  "inspection": {
+    "closed_cavern_ceiling_roots_slime": "PASS",
+    "blogbog_rust_cap_root_mycelium_limbs_chest_core": "PASS",
+    "three_companions_adult_relative_stature": "PASS",
+    "brook_rectangular_solar_hammer_red_glow": "PASS",
+    "korrak_no_axe_empty_hands": "PASS",
+    "erik_empty_hands_no_spell": "PASS",
+    "ground_acid_and_slimes_without_injury": "PASS",
+    "no_victory_portal_necklace_river_sky_text_ui": "PASS",
+    "human_style_identity_and_framing_acceptance": "PENDING"
+  },
+  "human_visual_acceptance": "PENDING",
+  "runtime_modified": false,
+  "implementation_owner": "Claude",
+  "canonical_promotion": false,
+  "next_generation": "Q3_ONLY_AFTER_Q2_ACCEPTANCE"
+}

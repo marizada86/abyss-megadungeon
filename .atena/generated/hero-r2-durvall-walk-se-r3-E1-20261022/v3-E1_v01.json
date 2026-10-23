@@ -1,0 +1,115 @@
+{
+  "arquivo": "F:/dev/abyss-megadungeon/assets_incoming/hero-r2/durvall/durvall_walk_se_r3_E1_v01.png",
+  "chave": "magenta",
+  "checagens": {
+    "1_figuras": "FALHA",
+    "2_fundo": "PASSA",
+    "3_escala": "PASSA",
+    "4_pes": "PASSA",
+    "5a_contato_A_passada_larga": "PASSA",
+    "5c_passagem_a_vista": "INCERTO",
+    "5d_passagens_um_pe_no_chao": "PASSA",
+    "6_pontos_soltos": "INCERTO"
+  },
+  "esperadas": 3,
+  "figuras": [
+    {
+      "feet_y": 941,
+      "h": 878,
+      "i": 1,
+      "touches_edge": false,
+      "touches_slot": true,
+      "w": 444,
+      "x": 68,
+      "y": 64
+    },
+    {
+      "feet_y": 947,
+      "h": 884,
+      "i": 2,
+      "touches_edge": false,
+      "touches_slot": false,
+      "w": 350,
+      "x": 597,
+      "y": 64
+    },
+    {
+      "feet_y": 937,
+      "h": 874,
+      "i": 3,
+      "touches_edge": false,
+      "touches_slot": false,
+      "w": 370,
+      "x": 1074,
+      "y": 64
+    }
+  ],
+  "halo": {
+    "base": 0.00212589270885235,
+    "excess_pp": 2.9,
+    "mid": 0.0314880650076181,
+    "por_profundidade_pct": {
+      "1": 65.7,
+      "10": 0.1,
+      "2": 9.1,
+      "3": 3.7,
+      "4": 2.5,
+      "5": 1.7,
+      "6": 0.7,
+      "7": 0.4,
+      "8": 0.3,
+      "9": 0.2
+    }
+  },
+  "identidade_e_estilo": "decisão do dono (critérios 7 a 9)",
+  "movimento": {
+    "pes_apoiados": [
+      {
+        "count": 2,
+        "x": [
+          -0.17,
+          0.19
+        ]
+      },
+      {
+        "count": 1,
+        "x": [
+          0.04
+        ]
+      },
+      {
+        "count": 1,
+        "x": [
+          0.05
+        ]
+      }
+    ],
+    "tremor_horizontal": {
+      "amplitude": 0.012,
+      "por_quadro": [
+        -0.013,
+        -0.003,
+        -0.002
+      ],
+      "px_a_64": 0.8
+    }
+  },
+  "notas": [
+    "1_figuras: há figura encostando na borda da imagem ou no limite do seu espaço (o prompt pede margem de 60 px)",
+    "3_escala: pior diferença de altura contra a calibração = 1.1% (limite 6%; o vaivém do corpo na caminhada é esperado)",
+    "4_pes: variação da linha dos pés = 1.1% da altura (limite 3%)",
+    "2_fundo: resíduo magenta a 3-4 px depois do recorte de produção = 3.1%, linha de base = 0.2%, excesso = 2.9 pontos (PASSA <= 5, FALHA > 10, entre os dois INCERTO)",
+    "6_pontos_soltos: 1 na escala de produção (figura a 400 px; 3 a 60 px²); posições: fig 1 (506,510); fios de cabelo e o pomo da espada são tolerados à vista",
+    "5a: A tem 2 pé(s) no chão em [-0.17, 0.19] (exige 2, afastados >= 0.30 da altura)",
+    "5d: P1 tem 1 pé(s) no chão em [0.04]; P2 tem 1 pé(s) em [0.05] (exige exatamente 1 em cada passagem: o outro pé está levantado). Necessário, não suficiente",
+    "5c: DECISÃO À VISTA: em P1 e P2 o pé levantado fica ao lado da perna de apoio, na altura da canela, com o joelho à frente (não atrás nem longe à frente do corpo); use --crops e a prévia (make_walk_preview.ps1)",
+    "tremor: (centro da caixa - tronco)/altura por figura = [-0.013, -0.003, -0.002]; amplitude 0.012 = 0.8 px a 64 px de altura se a montagem alinhasse pela caixa (a montagem deve alinhar pelo tronco)"
+  ],
+  "tela": [
+    1536,
+    1024
+  ],
+  "tipo": "walk3p",
+  "verdict": "REPROVA",
+  "versao_verificador": "v3"
+}

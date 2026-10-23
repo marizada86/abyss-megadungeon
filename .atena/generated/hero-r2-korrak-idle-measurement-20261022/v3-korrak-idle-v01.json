@@ -1,0 +1,111 @@
+{
+  "arquivo": "F:/dev/abyss-megadungeon/assets_incoming/hero-r2/korrak/korrak_idle_se_v01.png",
+  "chave": "magenta",
+  "checagens": {
+    "1_figuras": "FALHA",
+    "2_fundo": "PASSA",
+    "3_escala": "PASSA",
+    "4_pes": "PASSA",
+    "6_pontos_soltos": "INCERTO"
+  },
+  "esperadas": 3,
+  "figuras": [
+    {
+      "feet_y": 924,
+      "h": 816,
+      "i": 1,
+      "touches_edge": false,
+      "touches_slot": true,
+      "w": 493,
+      "x": 19,
+      "y": 109
+    },
+    {
+      "feet_y": 924,
+      "h": 815,
+      "i": 2,
+      "touches_edge": false,
+      "touches_slot": true,
+      "w": 512,
+      "x": 512,
+      "y": 110
+    },
+    {
+      "feet_y": 924,
+      "h": 811,
+      "i": 3,
+      "touches_edge": false,
+      "touches_slot": true,
+      "w": 504,
+      "x": 1024,
+      "y": 114
+    }
+  ],
+  "halo": {
+    "base": 0.0,
+    "excess_pp": 0.2,
+    "mid": 0.00175003052378821,
+    "por_profundidade_pct": {
+      "1": 64.2,
+      "10": 0.0,
+      "2": 2.8,
+      "3": 0.3,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0,
+      "7": 0.0,
+      "8": 0.0,
+      "9": 0.0
+    }
+  },
+  "identidade_e_estilo": "decisão do dono (critérios 7 a 9)",
+  "movimento": {
+    "pes_apoiados": [
+      {
+        "count": 2,
+        "x": [
+          -0.19,
+          0.1
+        ]
+      },
+      {
+        "count": 2,
+        "x": [
+          -0.18,
+          0.12
+        ]
+      },
+      {
+        "count": 2,
+        "x": [
+          -0.18,
+          0.12
+        ]
+      }
+    ],
+    "tremor_horizontal": {
+      "amplitude": 0.015,
+      "por_quadro": [
+        0.029,
+        0.02,
+        0.014
+      ],
+      "px_a_64": 0.9
+    }
+  },
+  "notas": [
+    "1_figuras: há figura encostando na borda da imagem ou no limite do seu espaço (o prompt pede margem de 60 px)",
+    "3_escala: pior diferença de altura contra a calibração = 0.6% (limite 6%; o vaivém do corpo na caminhada é esperado)",
+    "4_pes: variação da linha dos pés = 0.0% da altura (limite 3%)",
+    "2_fundo: resíduo magenta a 3-4 px depois do recorte de produção = 0.2%, linha de base = 0.0%, excesso = 0.2 pontos (PASSA <= 5, FALHA > 10, entre os dois INCERTO)",
+    "6_pontos_soltos: 3 na escala de produção (figura a 400 px; 3 a 60 px²); posições: fig 2 (512,575), fig 2 (512,513), fig 3 (1024,575); fios de cabelo e o pomo da espada são tolerados à vista",
+    "tremor: (centro da caixa - tronco)/altura por figura = [0.029, 0.02, 0.014]; amplitude 0.015 = 0.9 px a 64 px de altura se a montagem alinhasse pela caixa (a montagem deve alinhar pelo tronco)"
+  ],
+  "tela": [
+    1536,
+    1024
+  ],
+  "tipo": "idle",
+  "verdict": "REPROVA",
+  "versao_verificador": "v3"
+}

@@ -1,0 +1,139 @@
+{
+  "arquivo": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\durvall_attack_se_v01.png",
+  "chave": "magenta",
+  "checagens": {
+    "1_figuras": "FALHA",
+    "2_fundo": "PASSA",
+    "4_pes": "PASSA",
+    "5e_poses_diferentes": "PASSA",
+    "5f_gesto_a_vista": "INCERTO",
+    "6_pontos_soltos": "INCERTO"
+  },
+  "esperadas": 4,
+  "figuras": [
+    {
+      "feet_y": 511,
+      "h": 491,
+      "i": 1,
+      "touches_edge": false,
+      "touches_slot": true,
+      "w": 255,
+      "x": 252,
+      "y": 21
+    },
+    {
+      "feet_y": 511,
+      "h": 497,
+      "i": 2,
+      "touches_edge": false,
+      "touches_slot": true,
+      "w": 349,
+      "x": 963,
+      "y": 15
+    },
+    {
+      "feet_y": 983,
+      "h": 446,
+      "i": 3,
+      "touches_edge": false,
+      "touches_slot": true,
+      "w": 606,
+      "x": 162,
+      "y": 538
+    },
+    {
+      "feet_y": 982,
+      "h": 455,
+      "i": 4,
+      "touches_edge": false,
+      "touches_slot": false,
+      "w": 531,
+      "x": 960,
+      "y": 528
+    }
+  ],
+  "halo": {
+    "base": 0.00442246612792988,
+    "excess_pp": 3.8,
+    "mid": 0.042128111987242,
+    "por_profundidade_pct": {
+      "1": 81.1,
+      "10": 0.4,
+      "2": 15.6,
+      "3": 5.3,
+      "4": 3.0,
+      "5": 2.0,
+      "6": 1.4,
+      "7": 0.8,
+      "8": 0.5,
+      "9": 0.4
+    }
+  },
+  "identidade_e_estilo": "decisão do dono (critérios 7 a 9)",
+  "movimento": {
+    "pes_apoiados": [
+      {
+        "count": 2,
+        "x": [
+          -0.12,
+          0.18
+        ]
+      },
+      {
+        "count": 2,
+        "x": [
+          -0.3,
+          0.3
+        ]
+      },
+      {
+        "count": 1,
+        "x": [
+          -0.62
+        ]
+      },
+      {
+        "count": 2,
+        "x": [
+          -0.54,
+          0.04
+        ]
+      }
+    ],
+    "poses_xor": [
+      "1-2: 49.1%",
+      "1-3: 60.6%",
+      "1-4: 58.2%",
+      "2-3: 60.3%",
+      "2-4: 54.7%",
+      "3-4: 49.9%"
+    ],
+    "tremor_horizontal": {
+      "amplitude": 0.145,
+      "por_quadro": [
+        0.001,
+        0.062,
+        0.123,
+        0.146
+      ],
+      "px_a_64": 9.3
+    }
+  },
+  "notas": [
+    "1_figuras: há figura encostando na borda da imagem ou no limite do seu espaço (o prompt pede margem de 60 px)",
+    "3_escala: não se aplica à grade de ação; a escala vem da calibração",
+    "4_pes: variação da linha dos pés = 0.2% da altura (limite 3%)",
+    "2_fundo: resíduo magenta a 3-4 px depois do recorte de produção = 4.2%, linha de base = 0.4%, excesso = 3.8 pontos (PASSA <= 5, FALHA > 10, entre os dois INCERTO)",
+    "6_pontos_soltos: 4 na escala de produção (figura a 400 px; 3 a 60 px²); posições: fig 1 (427,85), fig 1 (334,84), fig 2 (1042,210), fig 3 (457,572); fios de cabelo e o pomo da espada são tolerados à vista",
+    "5e: diferença de silhueta entre as figuras da grade, aos pares: 1-2: 49.1%, 1-3: 60.6%, 1-4: 58.2%, 2-3: 60.3%, 2-4: 54.7%, 3-4: 49.9%; a menor é 1-2 = 49.1% (PASSA >= 20%, FALHA < 6%, entre os dois INCERTO: olhar as poses; PROVISÓRIO, calibrar na primeira grade de ação aceita)",
+    "5f: DECISÃO À VISTA: o gesto de cada pose (preparo, golpe, seguimento; ou impacto, queda, caído) lê como descrito na ficha do herói",
+    "tremor: (centro da caixa - tronco)/altura por figura = [0.001, 0.062, 0.123, 0.146]; amplitude 0.145 = 9.3 px a 64 px de altura se a montagem alinhasse pela caixa (a montagem deve alinhar pelo tronco)"
+  ],
+  "tela": [
+    1536,
+    1024
+  ],
+  "tipo": "grid",
+  "verdict": "REPROVA",
+  "versao_verificador": "v3"
+}

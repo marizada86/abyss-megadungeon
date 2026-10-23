@@ -1,0 +1,813 @@
+[
+  {
+    "id": "U09",
+    "src": "../asset-production-20261021-r1/U09_v02.png",
+    "out": "prepared/ui/oferta/oferta_brilho.png",
+    "key": "none",
+    "size": [
+      560,
+      800
+    ]
+  },
+  {
+    "id": "U10",
+    "src": "../asset-production-20261021-r1/U10_v01.png",
+    "out": "prepared/ui/oferta/oferta_fundo_textura.png",
+    "key": "none",
+    "size": [
+      256,
+      256
+    ]
+  },
+  {
+    "id": "U11",
+    "src": "../asset-production-20261021-r1/U11_v01.png",
+    "out": "prepared/ui/oferta/oferta_preco.png",
+    "key": "magenta",
+    "size": [
+      160,
+      48
+    ]
+  },
+  {
+    "id": "U12",
+    "src": "../asset-production-20261021-r1/U12_v01.png",
+    "out": "prepared/ui/hud/hud_painel_heroi.png",
+    "key": "magenta",
+    "size": [
+      400,
+      150
+    ]
+  },
+  {
+    "id": "U13_frame",
+    "src": "../asset-production-20261021-r1/U13_frame_v01.png",
+    "out": "prepared/ui/hud/hud_barra_pv.png",
+    "key": "magenta",
+    "size": [
+      300,
+      28
+    ]
+  },
+  {
+    "id": "U13_fill",
+    "src": "../asset-production-20261021-r1/U13_fill_v01.png",
+    "out": "prepared/ui/hud/hud_barra_pv_fill.png",
+    "key": "magenta",
+    "size": [
+      300,
+      16
+    ]
+  },
+  {
+    "id": "U15",
+    "src": "../asset-production-20261021-r1/U15_v01.png",
+    "out": "prepared/ui/hud/hud_habilidade_anel.png",
+    "key": "magenta",
+    "size": [
+      96,
+      96
+    ]
+  },
+  {
+    "id": "U17",
+    "src": "../asset-production-20261021-r1/U17_v01.png",
+    "out": "prepared/ui/hud/hud_cronometro.png",
+    "key": "magenta",
+    "size": [
+      180,
+      60
+    ]
+  },
+  {
+    "id": "U20",
+    "src": "../asset-production-20261021-r1/U20_v01.png",
+    "out": "prepared/ui/modal/modal_moldura.png",
+    "key": "magenta",
+    "size": [
+      640,
+      360
+    ]
+  },
+  {
+    "id": "U21",
+    "src": "../asset-production-20261021-r1/U21_v01.png",
+    "out": "prepared/ui/modal/tooltip_moldura.png",
+    "key": "magenta",
+    "size": [
+      360,
+      220
+    ]
+  },
+  {
+    "id": "U14_frame",
+    "src": "../asset-production-20261021-r1/U14_v01.png",
+    "out": "prepared/ui/hud/hud_barra_xp.png",
+    "key": "magenta",
+    "size": [
+      300,
+      12
+    ],
+    "region": [
+      0,
+      0.2,
+      1,
+      0.28
+    ]
+  },
+  {
+    "id": "U14_fill",
+    "src": "../asset-production-20261021-r1/U14_v01.png",
+    "out": "prepared/ui/hud/hud_barra_xp_fill.png",
+    "key": "none",
+    "size": [
+      300,
+      8
+    ],
+    "region": [
+      0.1,
+      0.603,
+      0.8,
+      0.03
+    ]
+  },
+  {
+    "id": "U16_0",
+    "src": "../asset-production-20261021-r1/U16_v01.png",
+    "out": "prepared/ui/hud/hud_chip_moedas.png",
+    "key": "magenta",
+    "size": [
+      120,
+      36
+    ],
+    "region": [
+      0,
+      0,
+      0.5,
+      0.5
+    ]
+  },
+  {
+    "id": "U16_1",
+    "src": "../asset-production-20261021-r1/U16_v01.png",
+    "out": "prepared/ui/hud/hud_chip_abates.png",
+    "key": "magenta",
+    "size": [
+      120,
+      36
+    ],
+    "region": [
+      0.5,
+      0,
+      0.5,
+      0.5
+    ]
+  },
+  {
+    "id": "U16_2",
+    "src": "../asset-production-20261021-r1/U16_v01.png",
+    "out": "prepared/ui/hud/hud_chip_ca.png",
+    "key": "magenta",
+    "size": [
+      120,
+      36
+    ],
+    "region": [
+      0,
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  {
+    "id": "U16_3",
+    "src": "../asset-production-20261021-r1/U16_v01.png",
+    "out": "prepared/ui/hud/hud_chip_cam.png",
+    "key": "magenta",
+    "size": [
+      120,
+      36
+    ],
+    "region": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  {
+    "id": "U18_0",
+    "src": "../asset-production-20261021-r1/U18_v01.png",
+    "out": "prepared/ui/hud/hud_botao_pausa.png",
+    "key": "magenta",
+    "size": [
+      56,
+      56
+    ],
+    "region": [
+      0,
+      0,
+      0.3333333333333333,
+      1
+    ]
+  },
+  {
+    "id": "U18_1",
+    "src": "../asset-production-20261021-r1/U18_v01.png",
+    "out": "prepared/ui/hud/hud_botao_ajuda.png",
+    "key": "magenta",
+    "size": [
+      56,
+      56
+    ],
+    "region": [
+      0.3333333333333333,
+      0,
+      0.3333333333333333,
+      1
+    ]
+  },
+  {
+    "id": "U18_2",
+    "src": "../asset-production-20261021-r1/U18_v01.png",
+    "out": "prepared/ui/hud/hud_botao_velocidade.png",
+    "key": "magenta",
+    "size": [
+      56,
+      56
+    ],
+    "region": [
+      0.6666666666666666,
+      0,
+      0.3333333333333333,
+      1
+    ]
+  },
+  {
+    "id": "U19",
+    "src": "../asset-production-20261021-r1/U19_v01.png",
+    "out": "prepared/ui/hud/hud_lista_armas.png",
+    "key": "magenta",
+    "size": [
+      220,
+      40
+    ],
+    "region": [
+      0,
+      0,
+      1,
+      0.4
+    ]
+  },
+  {
+    "id": "Q02_0",
+    "src": "../asset-production-20261021-r1/Q02_v01.png",
+    "out": "prepared/ui/quartel/heroi_cartao.png",
+    "key": "magenta",
+    "size": [
+      360,
+      72
+    ],
+    "region": [
+      0,
+      0.04,
+      1,
+      0.32
+    ]
+  },
+  {
+    "id": "Q02_1",
+    "src": "../asset-production-20261021-r1/Q02_v01.png",
+    "out": "prepared/ui/quartel/heroi_cartao_bloqueado.png",
+    "key": "magenta",
+    "size": [
+      360,
+      72
+    ],
+    "region": [
+      0,
+      0.37,
+      1,
+      0.32
+    ]
+  },
+  {
+    "id": "Q02_plate",
+    "src": "../asset-production-20261021-r1/Q02_v01.png",
+    "out": "prepared/ui/quartel/heroi_placa.png",
+    "key": "magenta",
+    "size": [
+      96,
+      96
+    ],
+    "region": [
+      0.38,
+      0.68,
+      0.23,
+      0.29
+    ]
+  },
+  {
+    "id": "Q03_0",
+    "src": "../asset-production-20261021-r1/Q03_v01.png",
+    "out": "prepared/ui/quartel/fase_cartao.png",
+    "key": "magenta",
+    "size": [
+      360,
+      88
+    ],
+    "region": [
+      0,
+      0,
+      1,
+      0.5
+    ]
+  },
+  {
+    "id": "Q03_1",
+    "src": "../asset-production-20261021-r1/Q03_v01.png",
+    "out": "prepared/ui/quartel/fase_cartao_bloqueado.png",
+    "key": "magenta",
+    "size": [
+      360,
+      88
+    ],
+    "region": [
+      0,
+      0.5,
+      1,
+      0.5
+    ]
+  },
+  {
+    "id": "Q05_pip_0",
+    "src": "../asset-production-20261021-r1/Q05_v01.png",
+    "out": "prepared/ui/quartel/pip_vazio.png",
+    "key": "magenta",
+    "size": [
+      24,
+      24
+    ],
+    "region": [
+      0.075,
+      0.09,
+      0.17,
+      0.21
+    ]
+  },
+  {
+    "id": "Q05_pip_1",
+    "src": "../asset-production-20261021-r1/Q05_v01.png",
+    "out": "prepared/ui/quartel/pip_cheio.png",
+    "key": "magenta",
+    "size": [
+      24,
+      24
+    ],
+    "region": [
+      0.27999999999999997,
+      0.09,
+      0.17,
+      0.21
+    ]
+  },
+  {
+    "id": "Q05_pip_2",
+    "src": "../asset-production-20261021-r1/Q05_v01.png",
+    "out": "prepared/ui/quartel/pip_bloqueado.png",
+    "key": "magenta",
+    "size": [
+      24,
+      24
+    ],
+    "region": [
+      0.485,
+      0.09,
+      0.17,
+      0.21
+    ]
+  },
+  {
+    "id": "Q05_pip_3",
+    "src": "../asset-production-20261021-r1/Q05_v01.png",
+    "out": "prepared/ui/quartel/pip_maximo.png",
+    "key": "magenta",
+    "size": [
+      24,
+      24
+    ],
+    "region": [
+      0.69,
+      0.09,
+      0.17,
+      0.21
+    ]
+  },
+  {
+    "id": "Q05_button_0",
+    "src": "../asset-production-20261021-r1/Q05_v01.png",
+    "out": "prepared/ui/quartel/botao_comprar.png",
+    "key": "magenta",
+    "size": [
+      240,
+      48
+    ],
+    "region": [
+      0,
+      0.32,
+      1,
+      0.18
+    ]
+  },
+  {
+    "id": "Q05_button_1",
+    "src": "../asset-production-20261021-r1/Q05_v01.png",
+    "out": "prepared/ui/quartel/botao_maximo.png",
+    "key": "magenta",
+    "size": [
+      240,
+      48
+    ],
+    "region": [
+      0,
+      0.515,
+      1,
+      0.18
+    ]
+  },
+  {
+    "id": "Q05_button_2",
+    "src": "../asset-production-20261021-r1/Q05_v01.png",
+    "out": "prepared/ui/quartel/botao_bloqueado.png",
+    "key": "magenta",
+    "size": [
+      240,
+      48
+    ],
+    "region": [
+      0,
+      0.71,
+      1,
+      0.18
+    ]
+  },
+  {
+    "id": "Q07",
+    "src": "../asset-production-20261021-r1/Q07_v01.png",
+    "key": "gray",
+    "split": "grid",
+    "cols": 5,
+    "rows": 1,
+    "names": [
+      "bloqueada",
+      "bronze",
+      "prata",
+      "ouro",
+      "especial"
+    ],
+    "out_dir": "prepared/ui/quartel/medalhas",
+    "fit": [
+      96,
+      96
+    ],
+    "pad": 2
+  },
+  {
+    "id": "Q09_0",
+    "src": "../asset-production-20261021-r1/Q09_v01.png",
+    "out": "prepared/icons/codex/inimigos.png",
+    "key": "gray",
+    "size": [
+      48,
+      48
+    ],
+    "region": [
+      0.12,
+      0,
+      0.255,
+      0.35
+    ]
+  },
+  {
+    "id": "Q09_1",
+    "src": "../asset-production-20261021-r1/Q09_v01.png",
+    "out": "prepared/icons/codex/armas.png",
+    "key": "gray",
+    "size": [
+      48,
+      48
+    ],
+    "region": [
+      0.375,
+      0,
+      0.255,
+      0.35
+    ]
+  },
+  {
+    "id": "Q09_2",
+    "src": "../asset-production-20261021-r1/Q09_v01.png",
+    "out": "prepared/icons/codex/itens.png",
+    "key": "gray",
+    "size": [
+      48,
+      48
+    ],
+    "region": [
+      0.63,
+      0,
+      0.255,
+      0.35
+    ]
+  },
+  {
+    "id": "Q09_3",
+    "src": "../asset-production-20261021-r1/Q09_v01.png",
+    "out": "prepared/icons/codex/passivas.png",
+    "key": "gray",
+    "size": [
+      48,
+      48
+    ],
+    "region": [
+      0.12,
+      0.34,
+      0.255,
+      0.35
+    ]
+  },
+  {
+    "id": "Q09_4",
+    "src": "../asset-production-20261021-r1/Q09_v01.png",
+    "out": "prepared/icons/codex/bencaos.png",
+    "key": "gray",
+    "size": [
+      48,
+      48
+    ],
+    "region": [
+      0.375,
+      0.34,
+      0.255,
+      0.35
+    ]
+  },
+  {
+    "id": "Q09_5",
+    "src": "../asset-production-20261021-r1/Q09_v01.png",
+    "out": "prepared/icons/codex/herois.png",
+    "key": "gray",
+    "size": [
+      48,
+      48
+    ],
+    "region": [
+      0.63,
+      0.34,
+      0.255,
+      0.35
+    ]
+  },
+  {
+    "id": "Q09_hidden",
+    "src": "../asset-production-20261021-r1/Q09_v01.png",
+    "out": "prepared/ui/quartel/codex_oculto.png",
+    "key": "gray",
+    "size": [
+      96,
+      96
+    ],
+    "region": [
+      0.4,
+      0.69,
+      0.2,
+      0.27
+    ]
+  },
+  {
+    "id": "Q10",
+    "src": "../asset-production-20261021-r1/Q10_v01.png",
+    "key": "gray",
+    "split": "grid",
+    "cols": 3,
+    "rows": 2,
+    "names": [
+      "tempo",
+      "nivel",
+      "abates",
+      "chefes",
+      "moedas",
+      "profundidade"
+    ],
+    "out_dir": "prepared/icons/resultado",
+    "fit": [
+      48,
+      48
+    ],
+    "pad": 2
+  },
+  {
+    "id": "Q08_abates",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/abates.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0,
+      0,
+      0.25,
+      0.33
+    ]
+  },
+  {
+    "id": "Q08_sem_dano",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/sem_dano.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.25,
+      0,
+      0.25,
+      0.33
+    ]
+  },
+  {
+    "id": "Q08_sobrevivencia",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/sobrevivencia.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.5,
+      0,
+      0.25,
+      0.33
+    ]
+  },
+  {
+    "id": "Q08_nivel",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/nivel.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.75,
+      0,
+      0.25,
+      0.33
+    ]
+  },
+  {
+    "id": "Q08_moedas",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/moedas.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0,
+      0.335,
+      0.25,
+      0.28
+    ]
+  },
+  {
+    "id": "Q08_baus",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/baus.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.25,
+      0.335,
+      0.25,
+      0.28
+    ]
+  },
+  {
+    "id": "Q08_elites",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/elites.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.5,
+      0.335,
+      0.25,
+      0.28
+    ]
+  },
+  {
+    "id": "Q08_chefes",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/chefes.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.75,
+      0.335,
+      0.25,
+      0.28
+    ]
+  },
+  {
+    "id": "Q08_rituais",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/rituais.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0,
+      0.615,
+      0.25,
+      0.385
+    ]
+  },
+  {
+    "id": "Q08_ecos",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/ecos.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.25,
+      0.615,
+      0.25,
+      0.385
+    ]
+  },
+  {
+    "id": "Q08_hqs",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/hqs.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.5,
+      0.615,
+      0.25,
+      0.385
+    ]
+  },
+  {
+    "id": "Q08_biografias",
+    "src": "../asset-production-20261021-r1/Q08_v01.png",
+    "out": "prepared/icons/conquistas/biografias.png",
+    "key": "gray",
+    "fit": [
+      64,
+      64
+    ],
+    "pad": 2,
+    "region": [
+      0.75,
+      0.615,
+      0.25,
+      0.385
+    ]
+  }
+]

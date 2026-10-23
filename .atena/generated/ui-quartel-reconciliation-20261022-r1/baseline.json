@@ -1,0 +1,42 @@
+{
+  "session": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\ui-quartel-reconciliation-20261022-r1\\synthetic-20261022-035516",
+  "user_data_dir": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\ui-quartel-reconciliation-20261022-r1\\synthetic-20261022-035516\\appdata\\Godot\\app_userdata\\Nottgard Survivors",
+  "runtime_modified": false,
+  "results": [
+    {
+      "test": "test_offer_cards",
+      "passed": false,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "certificate_store_error": true
+    },
+    {
+      "test": "test_offer_keyboard",
+      "passed": false,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "certificate_store_error": true
+    },
+    {
+      "test": "test_ability_hud",
+      "passed": false,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "certificate_store_error": true
+    },
+    {
+      "test": "test_controller_experience",
+      "passed": false,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "certificate_store_error": true
+    },
+    {
+      "test": "audit_projeto",
+      "passed": false,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "certificate_store_error": true
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "prompt": "q2-prompt-v01.txt",
+  "human_acceptance": "PENDING",
+  "runtime_modified": false,
+  "checkpoint": "CP-P05-Q02",
+  "prompt_sha256": "F7D3B11787FFDED68DB4891A1D95593C0D6EE59C1C870C2AFEA4770DE8181C49",
+  "implementation_owner": "Claude",
+  "sent_to_tool_first_four_only": true,
+  "status": "READY_FOR_IMAGE_GEN",
+  "references": [
+    {
+      "sha256": "3B87BB83265D6A7284A288197D64098026EE81EA4FA993D41336DE4D099051B2",
+      "file": "F:/dev/abyss-megadungeon/.atena/generated/hq05-production-20261018/candidates/hq_n05_q1_cavern_bubbles_v01.png",
+      "inspected": true
+    },
+    {
+      "sha256": "4878CA79C586DDE38CFF6351A37701826133AA9ACEAE4F25AB2EF1C04233EFE9",
+      "file": "F:/dev/nottgard-vault/output/referencias-personagens/BBB-r01/blogbog/blogbog-front-candidate-v01.png",
+      "inspected": true
+    },
+    {
+      "sha256": "9A22F4EBFFFDFEF472530BFDC75F32E7940FDD15224E5D355EDD7B11CF897F25",
+      "file": "F:/dev/abyss-megadungeon/assets/hq/chapter2_r1/hq_n21_q7_shedaklah_reunion_v01.png",
+      "inspected": true
+    },
+    {
+      "sha256": "52343F257704351248EE9D1A6C58114E765A9CA5BB88B9FA257E18F13EAA073A",
+      "file": "F:/dev/abyss-megadungeon/assets/hq/chapter2_r1/hq_n04_q6_star_necklace_portal_v01.png",
+      "inspected": true
+    },
+    {
+      "sha256": "70084AA62E703D34C0963B4A9C78E0C02E4BD0BA807FA2141E9CE6516252F223",
+      "file": "F:/dev/nottgard-vault/output/referencias-personagens/BBB-r01/blogbog/blogbog-left-candidate-v01.png",
+      "inspected": true
+    },
+    {
+      "sha256": "30D5D1A125B5E1520D419C60E4BF6CA5648382A05A0362D1C28A197D285E40F1",
+      "file": "F:/dev/nottgard-vault/output/referencias-personagens/BBB-r01/blogbog/blogbog-back-candidate-v01.png",
+      "inspected": true
+    },
+    {
+      "sha256": "8D7AD58D79101E7224777B2D21AD49E3AEC63D0F8B1044B34221727A328514D4",
+      "file": "F:/dev/nottgard-vault/output/referencias-personagens/B-FALT-005-02/r01/blogbog-right-candidate-v01.png",
+      "inspected": true
+    }
+  ]
+}

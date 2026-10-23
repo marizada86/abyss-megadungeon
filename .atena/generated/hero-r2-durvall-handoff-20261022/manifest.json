@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-22",
+  "scope": "Durvall R2 gate 1",
+  "status": "TECHNICAL_REVIEW_REQUIRED",
+  "files": [
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\durvall_gate1_preview_v02.gif",
+      "bytes": 2992737,
+      "sha256": "043DEBA440EE02A1FD2C005B66643340B8D7727EAB3253AC20D0764234CC833B"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\durvall_idle_se_v01.png",
+      "bytes": 2428329,
+      "sha256": "A7CDA92608255BB14B363659EF5747AB89D15C7A4EF1EB1D5DBB8960E0DCBDA1"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\durvall_idle_se_v02.png",
+      "bytes": 2293974,
+      "sha256": "1F8BA0BFAD7B2B466D10A2F1B0EEE3102990D6AA68D29D9664B153A7D19D205A"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\durvall_walk_se_v01.png",
+      "bytes": 2323881,
+      "sha256": "49D3E32CA5C2AD6F59463CA70EE14B120A2EA059C3E5171D2DD82FB41CDFC19C"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\durvall_walk_se_v02.png",
+      "bytes": 2277943,
+      "sha256": "CD5AC7BE2D3CB78FB528C7B56D4D546B65F83FE7BBB2635A1D31AE568339B25F"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\gate1-generation-receipt-v01.md",
+      "bytes": 1346,
+      "sha256": "9F4BEB697E7ECA1FFDA294470AC533E74A809FD92ADDBF6C702B5A55772EAA71"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\gate1-idle-v01.json",
+      "bytes": 1322,
+      "sha256": "FABB4B193D078A42B092A6D44858A58D9D763B978B9CD902B964F82B34DE83B2"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\gate1-idle-v02.json",
+      "bytes": 1317,
+      "sha256": "BDC9AA74359B1575CC006545FCBE1ED55C8FF6F010607CDD3DD8DABE678F8CD9"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\gate1-review-v02.md",
+      "bytes": 2569,
+      "sha256": "F19B7F0CB020F5E2A404C5B9B2CC982BCC4E9035D5079A077626782ED07CD084"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\gate1-walk-v01.json",
+      "bytes": 1479,
+      "sha256": "1279D7792DB99F0C37884604890B77AE5AB69D378758D2E7679B3DF5680228C7"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\gate1-walk-v02.json",
+      "bytes": 1478,
+      "sha256": "9D5D08F2D9A5F9591874E2A1DED565805C218B04B1063B28DB39D39116E74C2F"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\specs\\SPEC-NOTTGARD-HERO-ART-RESET-20261021\\plan-r1.md",
+      "bytes": 7367,
+      "sha256": "F6F730B1F3C8F98FFCB05A6F738A51C7CBDBD849E4C85182843653285D064859"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\specs\\SPEC-NOTTGARD-HERO-ART-RESET-20261021\\animation-contract-r1.md",
+      "bytes": 10743,
+      "sha256": "8796033D53EE0C6F2B135798F6BAEBC0FC31BD3CC64D3E6FEB666989571803E5"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\specs\\SPEC-NOTTGARD-HERO-ART-RESET-20261021\\r2-roteiro-r1.md",
+      "bytes": 5783,
+      "sha256": "3194AED4B96504324EB4919A9AB2A3D289233C925A22FB6936129A3CA23B1827"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\hero-art-reset-20261021\\prompts\\durvall.md",
+      "bytes": 42803,
+      "sha256": "42CC570AF475CE90D47FD4C91D93ABAD4073628A2584D4BD0EFB0C76B40CC7EB"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\hero-art-reset-20261021\\r2_check.gd",
+      "bytes": 11763,
+      "sha256": "C6AF5F05425D10878867E06DCB46BD9D608FE5D39E4D74C201E5FAAB08B109A8"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\hero-r2-durvall-handoff-20261022\\preview-scripts\\assemble_preview.cjs",
+      "bytes": 1804,
+      "sha256": "C1E95597942C0507C1985F710D2E9DE52755603C1DE4A41A5FFECC5D16B79893"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\hero-r2-durvall-handoff-20261022\\preview-scripts\\make_preview.ps1",
+      "bytes": 2238,
+      "sha256": "EB9EEFAFA2316C189570187C55583886B212E74A081E97ED3420187811BF260C"
+    }
+  ]
+}

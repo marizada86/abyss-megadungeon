@@ -1,0 +1,666 @@
+{
+    "state":  "DRAFT",
+    "destination":  "F:\\dev\\abyss-megadungeon\\assets_incoming\\atena-prepared-20261021-r1",
+    "png_derivatives":  158,
+    "files":  164,
+    "runtime_modified":  false,
+    "verified":  true,
+    "artifacts":  [
+                      {
+                          "sha256":  "04A6F4D293CD953DAE830B8352BE95439233F49FCDC508A7CD615635DF5E400B",
+                          "file":  "prepared/ui/oferta/oferta_brilho.png"
+                      },
+                      {
+                          "sha256":  "1EEBE8C5523DF4554438853DA26A7FA46FE5174FD0F171803A6CB65D792A92C7",
+                          "file":  "prepared/ui/oferta/oferta_fundo_textura.png"
+                      },
+                      {
+                          "sha256":  "FE069C52973EE10E6DF9A0C4961A072B70D0AE1E496B6A07230F8E0FAB21D637",
+                          "file":  "prepared/ui/oferta/oferta_preco.png"
+                      },
+                      {
+                          "sha256":  "0446603E6BB3DB14E610A1150182C173FC1177101535B7DC7F47B4973738FA79",
+                          "file":  "prepared/ui/hud/hud_painel_heroi.png"
+                      },
+                      {
+                          "sha256":  "53A591194DD4DF30144639927E2BF5E4EB38487A59E6375D3BC2E3C67006A80A",
+                          "file":  "prepared/ui/hud/hud_barra_pv.png"
+                      },
+                      {
+                          "sha256":  "29F16778205A340AD49B6F7746CA545E8477EDCF54CECFD8129E4C6A7B8BE030",
+                          "file":  "prepared/ui/hud/hud_barra_pv_fill.png"
+                      },
+                      {
+                          "sha256":  "7399F81928738277D15FD01D0E9EA562AD4BC854FE93F21D90FC63BE52212382",
+                          "file":  "prepared/ui/hud/hud_habilidade_anel.png"
+                      },
+                      {
+                          "sha256":  "415D34ED8A589C768F869896CD49F847BA72E7BF5B8EC774168C2FCE5565B7D8",
+                          "file":  "prepared/ui/hud/hud_cronometro.png"
+                      },
+                      {
+                          "sha256":  "0FD24A8DD812539AE25441982A8C10ECEB8B01BB51E3F772D6440AE2D8468B7E",
+                          "file":  "prepared/ui/modal/modal_moldura.png"
+                      },
+                      {
+                          "sha256":  "B3D9556374347B3F3FCF5908D2707CD96B917940915FD9BE040F51AFD8652DD5",
+                          "file":  "prepared/ui/modal/tooltip_moldura.png"
+                      },
+                      {
+                          "sha256":  "7DEEBC2768021B32CD4A712B0FFFBD3A1FA9DA08E79D9E66D6CDF9A72E29B37A",
+                          "file":  "prepared/ui/hud/hud_barra_xp.png"
+                      },
+                      {
+                          "sha256":  "05018B90F88C727D1CEA2155A65C3B86593BA7267D197CECF046ABBCACF8A431",
+                          "file":  "prepared/ui/hud/hud_barra_xp_fill.png"
+                      },
+                      {
+                          "sha256":  "AAEEBB6DAE38FA3DEA5BA9D1125365B5DED75FC68F1D743523EB0029A687E91C",
+                          "file":  "prepared/ui/hud/hud_chip_moedas.png"
+                      },
+                      {
+                          "sha256":  "53C7296C8F64490EEE12861F6B8B250939019A6129F87C7EC5A731D5A8C935E6",
+                          "file":  "prepared/ui/hud/hud_chip_abates.png"
+                      },
+                      {
+                          "sha256":  "20791A2217CA61DDE2F443B97B2B420E3A59E74EC0CEF7183A32DB540FE3DE7B",
+                          "file":  "prepared/ui/hud/hud_chip_ca.png"
+                      },
+                      {
+                          "sha256":  "308B351071B208C651A26D3080AD68F9FB2479B784301DBD85D4369E733984AA",
+                          "file":  "prepared/ui/hud/hud_chip_cam.png"
+                      },
+                      {
+                          "sha256":  "DAAFB05F090F4893236D8DBBD8EB07CC4CC48608A1641DBE36072B28B40D17A9",
+                          "file":  "prepared/ui/hud/hud_botao_pausa.png"
+                      },
+                      {
+                          "sha256":  "2D71DB2138EE287C8E896E9DB9CD4B899D9D6B7BC368F0E947FE26E403D089B1",
+                          "file":  "prepared/ui/hud/hud_botao_ajuda.png"
+                      },
+                      {
+                          "sha256":  "C0D4D0433F36E141855697D120DFF3395310F150CAD8A7D5EDFB814D9D9E4299",
+                          "file":  "prepared/ui/hud/hud_botao_velocidade.png"
+                      },
+                      {
+                          "sha256":  "0095395C5C3BD3946D31E127D3CCB135FA62C8F77AB9A2EDC227356DE5B56D6C",
+                          "file":  "prepared/ui/hud/hud_lista_armas.png"
+                      },
+                      {
+                          "sha256":  "25EBC2D9CD86A66C7CFFE13AE22DEC92C33DF4E6B3A128BE679DAC7AD778C062",
+                          "file":  "prepared/ui/quartel/heroi_cartao.png"
+                      },
+                      {
+                          "sha256":  "B5D9A139EA3F31F5B7D67F60B2990BC88346668F70E03F6E5940DFA95584C4AB",
+                          "file":  "prepared/ui/quartel/heroi_cartao_bloqueado.png"
+                      },
+                      {
+                          "sha256":  "55EEBDC0A5DF557363D5E90B006786B8C05D8AEE315EC39DB8E44213340857C7",
+                          "file":  "prepared/ui/quartel/heroi_placa.png"
+                      },
+                      {
+                          "sha256":  "DC7A41C6EB7FD618A142A299D874C98A0E65EADCF182343BE1E77F6F50D132AA",
+                          "file":  "prepared/ui/quartel/fase_cartao.png"
+                      },
+                      {
+                          "sha256":  "78C3A4120519211508FF0DE1DC6D424D07DA8F84FEE16B685B85B4BA4C4CEBED",
+                          "file":  "prepared/ui/quartel/fase_cartao_bloqueado.png"
+                      },
+                      {
+                          "sha256":  "4DEE0E74F29129E4985384B23E993E41DCF734BC126C1F760E1EA1706AB77349",
+                          "file":  "prepared/ui/quartel/pip_vazio.png"
+                      },
+                      {
+                          "sha256":  "8D8F76E6AF7736771A145F9993FEAD4422EC6DDE7F126A4D00A0BE8BACDBE109",
+                          "file":  "prepared/ui/quartel/pip_cheio.png"
+                      },
+                      {
+                          "sha256":  "76E80AA273FE9594E3FE185E8EBF4D6577176D4541F99B9F59B9B3E7469577D0",
+                          "file":  "prepared/ui/quartel/pip_bloqueado.png"
+                      },
+                      {
+                          "sha256":  "0E43665D623ACAF2F8B03EECFBE2FC76960062D838743FDC7537F43FC836C7CB",
+                          "file":  "prepared/ui/quartel/pip_maximo.png"
+                      },
+                      {
+                          "sha256":  "E3E5C09788547BBC7D019F9A611383408FA9862BE5C23B272FC64EDBB06B6648",
+                          "file":  "prepared/ui/quartel/botao_comprar.png"
+                      },
+                      {
+                          "sha256":  "C4EABBE78D13CEDD3406F12D052989A1B6D35CEF5BC4D0BFFFA2CCD40F9C25E5",
+                          "file":  "prepared/ui/quartel/botao_maximo.png"
+                      },
+                      {
+                          "sha256":  "98D8817DE828439D5367264CA1997FC9D2AFF41FA1A0E285D53D57895345DA27",
+                          "file":  "prepared/ui/quartel/botao_bloqueado.png"
+                      },
+                      {
+                          "sha256":  "C25EFFDFEBBFB48EA680CC00EB23CC76CA785A78B4B0266AE184775F4998CE90",
+                          "file":  "prepared/ui/quartel/medalhas/bloqueada.png"
+                      },
+                      {
+                          "sha256":  "3954656C358E285616279CD5CFFA984DE81272E686BC7A626FBB91D818DE59B4",
+                          "file":  "prepared/ui/quartel/medalhas/bronze.png"
+                      },
+                      {
+                          "sha256":  "E6DB8E9937409E72375C2ED757A3FCD867EB53B215C06CB7F648013B0AB48677",
+                          "file":  "prepared/ui/quartel/medalhas/prata.png"
+                      },
+                      {
+                          "sha256":  "E645066D4784778C3F6C9D6D34F39B8F7E9ADAD2416CF973B5FEAAF5E54BCF90",
+                          "file":  "prepared/ui/quartel/medalhas/ouro.png"
+                      },
+                      {
+                          "sha256":  "57D455773E7341DD955FA08C645B4DD42D7674968971283E5FBCCF03E8B5DE71",
+                          "file":  "prepared/ui/quartel/medalhas/especial.png"
+                      },
+                      {
+                          "sha256":  "AE9667779CF7A7B7DF34A4F730F068CC096393B1F838F426556EA19DA8FC94DB",
+                          "file":  "prepared/icons/codex/inimigos.png"
+                      },
+                      {
+                          "sha256":  "8C0D644DC0A31452C7E086F39222E14B31D72961D70D01C6FE117F5EDCCF80D2",
+                          "file":  "prepared/icons/codex/armas.png"
+                      },
+                      {
+                          "sha256":  "ED854422EF3258A74D8B159D0956CF095255AE4E298B1F6895C1E22D6628A9EC",
+                          "file":  "prepared/icons/codex/itens.png"
+                      },
+                      {
+                          "sha256":  "434A12C9BE9AF236F0812794EB450548841009BC9E48DD92A95F94BCC1862F86",
+                          "file":  "prepared/icons/codex/passivas.png"
+                      },
+                      {
+                          "sha256":  "DAA00AEB474A8132C7E6D15413A8ED5B3DAD62FB767EF4E6A8A56BA144128DF7",
+                          "file":  "prepared/icons/codex/bencaos.png"
+                      },
+                      {
+                          "sha256":  "E195381A6E06503BDC11521611CAE045DD16DBBF5B22D4C3083459E21A8C72B0",
+                          "file":  "prepared/icons/codex/herois.png"
+                      },
+                      {
+                          "sha256":  "FE8B8ED87569C64A7D0FDE5B4D195081FC4070285997E7165E9984608DA8698F",
+                          "file":  "prepared/ui/quartel/codex_oculto.png"
+                      },
+                      {
+                          "sha256":  "7EC0DA098543363EFA93C5854B632A029E9EFC6E105D72DA67CA08DB6DCCAB5D",
+                          "file":  "prepared/icons/resultado/tempo.png"
+                      },
+                      {
+                          "sha256":  "A59E454B9858F0350B41EB8A90A06EEC1F60DF671D3C0F9D3A2A7B4CD9B0B33E",
+                          "file":  "prepared/icons/resultado/nivel.png"
+                      },
+                      {
+                          "sha256":  "4CC201B56E70B4F3E5DDF487675EAF08E475C3BD024AE949BD1BCC56F3846A91",
+                          "file":  "prepared/icons/resultado/abates.png"
+                      },
+                      {
+                          "sha256":  "0EB6BE839D7DAB1C50070502A50FB6FF56338C3F94424ED14BD3358F35710BD6",
+                          "file":  "prepared/icons/resultado/chefes.png"
+                      },
+                      {
+                          "sha256":  "3CC855E9DB0BDA963094326895F2F3B7460749CA78ECED342E2C7BCAC9B13B02",
+                          "file":  "prepared/icons/resultado/moedas.png"
+                      },
+                      {
+                          "sha256":  "44E6AB01E451F1B7FE5D95C750D67E254141394ECBC860A5B42FB5633E5821D4",
+                          "file":  "prepared/icons/resultado/profundidade.png"
+                      },
+                      {
+                          "sha256":  "544FF5D8632B0BAE4099429E9E9D9F5B451C3BBAC84068E6D5CE0316FBAA86F7",
+                          "file":  "prepared/icons/conquistas/abates.png"
+                      },
+                      {
+                          "sha256":  "0798EBEB840A5195359D84A50C9C4AC4050483FCCDBDB5B5929385311F13D3C2",
+                          "file":  "prepared/icons/conquistas/sem_dano.png"
+                      },
+                      {
+                          "sha256":  "8A1B487C39646856B7AEAE674906171E74FEE46FA18E016C46FF069339896DDB",
+                          "file":  "prepared/icons/conquistas/sobrevivencia.png"
+                      },
+                      {
+                          "sha256":  "D2D947BD51D3BE923BC2838AC6AACD3E1297196B8BC5701F8082FDD71F83BDBF",
+                          "file":  "prepared/icons/conquistas/nivel.png"
+                      },
+                      {
+                          "sha256":  "DE9E50AB840BF8B9B486B80DA5EA3105D8BADF8092094EACDAF561715291C8FB",
+                          "file":  "prepared/icons/conquistas/moedas.png"
+                      },
+                      {
+                          "sha256":  "13CB109C223E0E82254875971B5299D67FDB102B0A10616767CAA974739F3319",
+                          "file":  "prepared/icons/conquistas/baus.png"
+                      },
+                      {
+                          "sha256":  "5A08C53AD9FC4F9CD0257E358783269DF41E7F9EF8D91454AC984DBA5EDDE9A7",
+                          "file":  "prepared/icons/conquistas/elites.png"
+                      },
+                      {
+                          "sha256":  "69DBFC46D26FAEFCA84DECFD2B42B72AD53C5B7FA74B856B7770F239D4ED0621",
+                          "file":  "prepared/icons/conquistas/chefes.png"
+                      },
+                      {
+                          "sha256":  "47F4DA36F5FF94CF675792EE881361AAB1C8BA5AC9EED61C31F1437EC5FBD502",
+                          "file":  "prepared/icons/conquistas/rituais.png"
+                      },
+                      {
+                          "sha256":  "261FA8BA00FA92E1F8F53BE692367FAA51B50489A226288563E9DB5754150838",
+                          "file":  "prepared/icons/conquistas/ecos.png"
+                      },
+                      {
+                          "sha256":  "994E651E68F62F35FF2F44C20444C3565B63F764D6F6B3EF6CFA312C0CFA54DA",
+                          "file":  "prepared/icons/conquistas/hqs.png"
+                      },
+                      {
+                          "sha256":  "0980171B59C591BAA4400C813BF41D27568B6E647C3CD2E2CEF0D9FD5DC0E1A7",
+                          "file":  "prepared/icons/conquistas/biografias.png"
+                      },
+                      {
+                          "sha256":  "BDC410D9A85D400A9513474ECF9D4B21431053A0C3E8A9F5D123DBC60E095EED",
+                          "file":  "prepared/poses/N01/idle.png"
+                      },
+                      {
+                          "sha256":  "9917DAE367387BAF3E7079D94E89AE166F3447DFA8C3E76E11AC1E2FC1C19B39",
+                          "file":  "prepared/poses/N01/attack.png"
+                      },
+                      {
+                          "sha256":  "6F3FE6197D8E8CECECE51E7DB080AC416EA90E70B635132AAD7980314A07F8EC",
+                          "file":  "prepared/poses/N01/death.png"
+                      },
+                      {
+                          "sha256":  "315E6019807180BEF33AB75879891F6AABB83A624AD5A6713B7E6CBA2DD77066",
+                          "file":  "prepared/animations/N01/idle.png"
+                      },
+                      {
+                          "sha256":  "ECB6E34576F4269FFED538503DC43A3EEA6298CC8F3875A65A483529D8A4A111",
+                          "file":  "prepared/animations/N01/move.png"
+                      },
+                      {
+                          "sha256":  "CC8E56F900326F91095BF3A091AF290344BC15BE84EC9CE265EF34E119805897",
+                          "file":  "prepared/animations/N01/attack.png"
+                      },
+                      {
+                          "sha256":  "143636F9A31F60F7971B126D495AAFBE1C8BD83ED27BDA5E545A0BDF02AD8FD6",
+                          "file":  "prepared/animations/N01/death.png"
+                      },
+                      {
+                          "sha256":  "1CF18BDEB72F5DCC3DB72A9050CAB8D4F2821A0EFEE3CC51F52D6F28C30AA742",
+                          "file":  "prepared/characters/N01.png"
+                      },
+                      {
+                          "sha256":  "D72773F738EEE997BAB007DEDE1A67FE5F9573EA2DAF51B3AE725F88CE3FBF3A",
+                          "file":  "prepared/poses/N02/idle.png"
+                      },
+                      {
+                          "sha256":  "A7E5914320AD283EB9385ABE3E4E509587A9332D617D253376F3D0482CB16BE6",
+                          "file":  "prepared/poses/N02/attack.png"
+                      },
+                      {
+                          "sha256":  "CA4BDE78380D000614419DF34D4D58D305966632B86305C6B383C641519BE06E",
+                          "file":  "prepared/poses/N02/death.png"
+                      },
+                      {
+                          "sha256":  "0F0D69D1F885BF335176EF0DAA8CC088016563715DFC6C4759C3329CAD71C6F7",
+                          "file":  "prepared/animations/N02/idle.png"
+                      },
+                      {
+                          "sha256":  "80425A8334372F932F85ED1D4334CB090DCB53174BBAB693A705033192734B05",
+                          "file":  "prepared/animations/N02/move.png"
+                      },
+                      {
+                          "sha256":  "E7BD161064512F97FDD2437DE014EA996620A066E43E6364852B5F758A95EAD9",
+                          "file":  "prepared/animations/N02/attack.png"
+                      },
+                      {
+                          "sha256":  "33D2777D3F6EF23EF707F0FD95D4F03CB787CE535EF90D1E6F85947C3EBD2FDC",
+                          "file":  "prepared/animations/N02/death.png"
+                      },
+                      {
+                          "sha256":  "F94D0EC1146B5EDC0876F0A156CCE18F8B21B6FADBA3FE6D1F9DE9132865539D",
+                          "file":  "prepared/characters/N02.png"
+                      },
+                      {
+                          "sha256":  "908AFAE7DD01C8E01A0AC955055CA497AA4564DAA637F789CA8EE8CDEBF090CF",
+                          "file":  "prepared/poses/N03/idle.png"
+                      },
+                      {
+                          "sha256":  "5A6C4357D2F574AF7D5EF17471E7E10821863A26BC0425776B4B9472D457B12B",
+                          "file":  "prepared/poses/N03/attack.png"
+                      },
+                      {
+                          "sha256":  "71F08C6CB843F6FA96CF2965BE49612F2DF936D7FB1CBA4E3D7C0B06D68008B9",
+                          "file":  "prepared/poses/N03/death.png"
+                      },
+                      {
+                          "sha256":  "33D4B60A2BC31CD5337EC17631CE062D94F43D24C424B73FEC2D3C7966F73541",
+                          "file":  "prepared/animations/N03/idle.png"
+                      },
+                      {
+                          "sha256":  "66A7EDCB485DF5A2E6EB9557011B30DA72AA1ED43161562E25695F139E14DEE2",
+                          "file":  "prepared/animations/N03/move.png"
+                      },
+                      {
+                          "sha256":  "509B7D057148031E9ED89B96644FC2DED39CBDA586B1A56A92DB7847F2B8F6E3",
+                          "file":  "prepared/animations/N03/attack.png"
+                      },
+                      {
+                          "sha256":  "95240DEE00F2331FFD1A9EF9C3A7DA0B5B04C55A5861305AC10884C9D433AFD3",
+                          "file":  "prepared/animations/N03/death.png"
+                      },
+                      {
+                          "sha256":  "64CA9193760351559FD733450FE3ABE610B44F8D9EA0E5BD45C39D664B1770A1",
+                          "file":  "prepared/characters/N03.png"
+                      },
+                      {
+                          "sha256":  "ED6858B93BE644A1F53FE70A2EA4D855B9BE61A8C91FEAF8E96A970FC1734C7C",
+                          "file":  "prepared/poses/N04/idle.png"
+                      },
+                      {
+                          "sha256":  "9ABE01CCE2F5B23982312DEDB54919929DF826D57755FDDCC83948A723091B95",
+                          "file":  "prepared/poses/N04/attack.png"
+                      },
+                      {
+                          "sha256":  "8DFCCCB71DDF1379B82371920C03C3B4290379D35EBB42D119FFD31231D3DE9E",
+                          "file":  "prepared/poses/N04/death.png"
+                      },
+                      {
+                          "sha256":  "EDF9D319184DA4DE8BB488FF8A162D264E81E732508B5891675AFEBDCE04AA0E",
+                          "file":  "prepared/animations/N04/idle.png"
+                      },
+                      {
+                          "sha256":  "3EB4E7393244337EFA11AB8429A33CCD6C92E1F1B092A439A9FB9F2861EA595E",
+                          "file":  "prepared/animations/N04/move.png"
+                      },
+                      {
+                          "sha256":  "9E8BFC83B5942C0568B5BE3201B99571AE22E3637555B70FF3A45D020A7CE102",
+                          "file":  "prepared/animations/N04/attack.png"
+                      },
+                      {
+                          "sha256":  "B89820EDD963DC2959BD523E60E5E0BEE38FE8C9DA640CE901CFE282879960B7",
+                          "file":  "prepared/animations/N04/death.png"
+                      },
+                      {
+                          "sha256":  "9C1157ACB5DD2AEFEC511453E892E1540E551F1B5164B992D0A6028F7924BB4E",
+                          "file":  "prepared/characters/N04.png"
+                      },
+                      {
+                          "sha256":  "9C059598E4ADFDAD0FEAD6D365A8118C0A110B4478A56C345BDD66600935CCDB",
+                          "file":  "prepared/poses/N05/idle.png"
+                      },
+                      {
+                          "sha256":  "FA687911D5979D3D871A6506299558117A28B85061B77EAF1B1B189409BE3B58",
+                          "file":  "prepared/poses/N05/attack.png"
+                      },
+                      {
+                          "sha256":  "91BA67ADCAF181FE60660B6381B9627AA8E93DE3E17867EE4FAF8DEF0B0C2232",
+                          "file":  "prepared/poses/N05/death.png"
+                      },
+                      {
+                          "sha256":  "2E5AE963DBDC69477B2257DE5851C257F3A01A2E95175F5C32CDA2CF0EDA85A0",
+                          "file":  "prepared/animations/N05/idle.png"
+                      },
+                      {
+                          "sha256":  "2D7D16331805920874F9092891A8BA2E1008BE05A6315CF08F8CB291A1F726FD",
+                          "file":  "prepared/animations/N05/move.png"
+                      },
+                      {
+                          "sha256":  "9322505814A365BEEF671039AC3F312C40F019FA9EC86B9759E91F9CE5D862CA",
+                          "file":  "prepared/animations/N05/attack.png"
+                      },
+                      {
+                          "sha256":  "7140996734863809464983F24C8D77CBB88ED4AA24985F659ACEE1006590D5F4",
+                          "file":  "prepared/animations/N05/death.png"
+                      },
+                      {
+                          "sha256":  "33E3D02E4C1B7519C5127F3474825087A5BC91DF18B63944D0CD57277FAECD34",
+                          "file":  "prepared/characters/N05.png"
+                      },
+                      {
+                          "sha256":  "58015FF8C5B954437E3B71AD448A503D4216F57A233609F1348E8251853C3D6E",
+                          "file":  "prepared/poses/N06_taverneiro/idle.png"
+                      },
+                      {
+                          "sha256":  "A311948D108D24E46192CA84D7A01F0C7CB7DFBA7852924F3B90F14FA87EA3D6",
+                          "file":  "prepared/poses/N06_taverneiro/attack.png"
+                      },
+                      {
+                          "sha256":  "BD0DADD29D27C4C7278A8F9A09D829AAEC95FF7B49099DD6E18C891925A4FCE3",
+                          "file":  "prepared/poses/N06_taverneiro/death.png"
+                      },
+                      {
+                          "sha256":  "9EC715A0319139194CC481B1BB29EFCA0CD34BB64388D01B1C16F02EBDD377D7",
+                          "file":  "prepared/animations/N06_taverneiro/idle.png"
+                      },
+                      {
+                          "sha256":  "70CBEBB4F4A3D7D61478B6747DBF2A0F5633EEF7174C88F19B9B94477501D3EA",
+                          "file":  "prepared/animations/N06_taverneiro/move.png"
+                      },
+                      {
+                          "sha256":  "3D5CCEC6E7D8BA77EB6A603560DA3F4BA4412CD984910ABC43E02AE069426B8D",
+                          "file":  "prepared/animations/N06_taverneiro/attack.png"
+                      },
+                      {
+                          "sha256":  "B74B91C1E483F42833A790E3A344A283A7686A00A77A4979386B6FFEB5AF0624",
+                          "file":  "prepared/animations/N06_taverneiro/death.png"
+                      },
+                      {
+                          "sha256":  "C570030123B2C8054BAFF87F3082D7BD6982CA2DD9121364400E54A0C6A7D5BF",
+                          "file":  "prepared/characters/N06_taverneiro.png"
+                      },
+                      {
+                          "sha256":  "862B09BF7AE2D6B2AE2FF3221ECB0C05B66D17386CB55947E55FBBD01A21315E",
+                          "file":  "prepared/poses/N06_atendente/idle.png"
+                      },
+                      {
+                          "sha256":  "6106936C994D75C69E085C227058F7B87884EA63AE1BD23DCA65EA34E9851229",
+                          "file":  "prepared/poses/N06_atendente/attack.png"
+                      },
+                      {
+                          "sha256":  "1038E1F670E9EB6FDA6E95F68707CFFBD87F29B4BE946E37A13CC109A46A2683",
+                          "file":  "prepared/poses/N06_atendente/death.png"
+                      },
+                      {
+                          "sha256":  "88872B488DB1F049937A7B684F102B5266D4201CB56B1DCE13F9DC86D7122FCA",
+                          "file":  "prepared/animations/N06_atendente/idle.png"
+                      },
+                      {
+                          "sha256":  "FE091B5B10FFC434540A9F9EE03D9F13482BD1C02211A3913602D4846E1ED491",
+                          "file":  "prepared/animations/N06_atendente/move.png"
+                      },
+                      {
+                          "sha256":  "8134AA228A702961C08EC2859AADC529E14038919970D0856DDDF65D49434902",
+                          "file":  "prepared/animations/N06_atendente/attack.png"
+                      },
+                      {
+                          "sha256":  "881E71E4A7964BBAA8D62EAC9D75205DAD8DE50D494C8126AC5F656357D8FEE7",
+                          "file":  "prepared/animations/N06_atendente/death.png"
+                      },
+                      {
+                          "sha256":  "76BD3DB9864F20613E65CCDD9DFF2A010B936939B6E6F51B45110532BCB83356",
+                          "file":  "prepared/characters/N06_atendente.png"
+                      },
+                      {
+                          "sha256":  "28C241AD53D4877131D4CBF0580E2BE35CC6045A8F8C587633A63EAE051AEB01",
+                          "file":  "prepared/poses/N07_wonka/idle.png"
+                      },
+                      {
+                          "sha256":  "2CA32E1D5786163AB402EFB60FFA896701B95D29158A28CDAC953EDB261994E0",
+                          "file":  "prepared/poses/N07_wonka/attack.png"
+                      },
+                      {
+                          "sha256":  "33B72F144C17B069E8A88717C08CCA488281F2BC937732CE000AD1ED2B4516D5",
+                          "file":  "prepared/poses/N07_wonka/death.png"
+                      },
+                      {
+                          "sha256":  "F7DD3B09619A805421896DFD38B4BEADA610952ABCEBE5B393D1797CE9AE5D25",
+                          "file":  "prepared/animations/N07_wonka/idle.png"
+                      },
+                      {
+                          "sha256":  "E93F9D9C197EACB073A62E565FAB3E0199A309EA8C8AFEDE221BDCCFD09EBAD1",
+                          "file":  "prepared/animations/N07_wonka/move.png"
+                      },
+                      {
+                          "sha256":  "BE307CA45D56505E973E0A63588CD622329B15CC6228DE9A56AB35032BF455FA",
+                          "file":  "prepared/animations/N07_wonka/attack.png"
+                      },
+                      {
+                          "sha256":  "2CAAE6FA3865BEDBC3F688F6C1BDD6E85D1B5A65751AA47537975089E6F2F03F",
+                          "file":  "prepared/animations/N07_wonka/death.png"
+                      },
+                      {
+                          "sha256":  "7770F31983D8034DF71D8EF5888CF102892C0307073424C6828404DB532BB7FC",
+                          "file":  "prepared/characters/N07_wonka.png"
+                      },
+                      {
+                          "sha256":  "71D58390A7A50FF76077374672032BCD5831FDC087AB2E0D096BC61E007CCD15",
+                          "file":  "prepared/poses/N07_willie/idle.png"
+                      },
+                      {
+                          "sha256":  "3931CC3C7922D33902F2ED6F50F117382394D27AF98ACA00EDC6311268DFC18E",
+                          "file":  "prepared/poses/N07_willie/attack.png"
+                      },
+                      {
+                          "sha256":  "56E045AC5B4D22F6F2E506AE0C3BFC1B8513B84FC4CA666BD9587038EEBBA4FB",
+                          "file":  "prepared/poses/N07_willie/death.png"
+                      },
+                      {
+                          "sha256":  "FA5BF1BCF1575F2F3B1292E9B8FBBEED98F925453C99A1FC87B83C5E1ABE0455",
+                          "file":  "prepared/animations/N07_willie/idle.png"
+                      },
+                      {
+                          "sha256":  "5ADECA1D139EE9DCCAD18F598CF7B366DC8D9BDC8B372FF71BEB0B42FB77FC84",
+                          "file":  "prepared/animations/N07_willie/move.png"
+                      },
+                      {
+                          "sha256":  "8811772D6FA333BE0E8CA2CD54E7146EB71D393ED98DE26B7874FFB0BA5B16C2",
+                          "file":  "prepared/animations/N07_willie/attack.png"
+                      },
+                      {
+                          "sha256":  "A04520F64CF12F5DC95F3F7A960A9E9C1B579655896D54BCD87D06E29A3AD184",
+                          "file":  "prepared/animations/N07_willie/death.png"
+                      },
+                      {
+                          "sha256":  "37B3474748E0BD01EB2DA6FF85915C56A059FE5306AD388F8A59F6464B46F423",
+                          "file":  "prepared/characters/N07_willie.png"
+                      },
+                      {
+                          "sha256":  "0281656639C35475080A8F38FFC915B6CADEA7BBF5EC595BC499EFFDC9A0F45D",
+                          "file":  "prepared/poses/N08/idle.png"
+                      },
+                      {
+                          "sha256":  "239F8ACB0D43DCAE3B4D6368421474E9670EBA6B9FAEA7D694C51E4563E69A36",
+                          "file":  "prepared/poses/N08/attack.png"
+                      },
+                      {
+                          "sha256":  "73AF678504A299588C42A8E77B419CD9D2DF9F4AFE9BD7C68DADCDBDE4F1454F",
+                          "file":  "prepared/poses/N08/death.png"
+                      },
+                      {
+                          "sha256":  "2BC1396C00921C0ECF99734B582ECF51E6B71EACCE4741B9E6A4ABA167D4E90E",
+                          "file":  "prepared/animations/N08/idle.png"
+                      },
+                      {
+                          "sha256":  "395A1D3F7A7B6B988ABFC2810A6CC93FD6299BC8A0559C77D6D01365A3AF6A5E",
+                          "file":  "prepared/animations/N08/move.png"
+                      },
+                      {
+                          "sha256":  "5333A3FF7190B38C3B0BDD307842265B03F3E2A8DCD82C15C46041C319ACB455",
+                          "file":  "prepared/animations/N08/attack.png"
+                      },
+                      {
+                          "sha256":  "0398922B5B1E96AA35E7322E847A30AF056435ACA619BF3C4FB03E0C622A3C97",
+                          "file":  "prepared/animations/N08/death.png"
+                      },
+                      {
+                          "sha256":  "2712F68C52EB40EF9DA10D70F8AFA7EB282AF2BAA10ABE8FC72339E2ACE57105",
+                          "file":  "prepared/characters/N08.png"
+                      },
+                      {
+                          "sha256":  "709658F6D61EF1A2B84849E15DD78D69E171B3D115C8265EA926F0ABFD4FF948",
+                          "file":  "prepared/poses/N09/idle.png"
+                      },
+                      {
+                          "sha256":  "A8E53ECA323D7E9E4F3F03195EDA50A7AD59067885FBCB66005F8652EDD536F1",
+                          "file":  "prepared/poses/N09/attack.png"
+                      },
+                      {
+                          "sha256":  "52BD8385EA99E7A0005C41B91859B8C405879E0C621482CEDD54FD68F085400A",
+                          "file":  "prepared/poses/N09/death.png"
+                      },
+                      {
+                          "sha256":  "814F924C749D5538E2812399908A2D0EC343A703BB53AAA1917D447D05D95762",
+                          "file":  "prepared/animations/N09/idle.png"
+                      },
+                      {
+                          "sha256":  "B27E096AE57ED8447C269F540DEFD28DCE18E44A23876DE8FC7328AFA8211DC2",
+                          "file":  "prepared/animations/N09/move.png"
+                      },
+                      {
+                          "sha256":  "EA05BF16839C526FE90F07D6F1DABF9CE22FD8C03C6E8D64073BAFDE279BA54B",
+                          "file":  "prepared/animations/N09/attack.png"
+                      },
+                      {
+                          "sha256":  "B2589AE58DBAA803754B0B6F823DDAECD290144C6B53AD5AF0B0E6C6A84C6BD5",
+                          "file":  "prepared/animations/N09/death.png"
+                      },
+                      {
+                          "sha256":  "675E50049C0AB1B73ACD449C256BF0BAC1C72FA2C22F4B0B2977A6BC37EB6BC9",
+                          "file":  "prepared/characters/N09.png"
+                      },
+                      {
+                          "sha256":  "1697B076A946E65943B95A399E401B81439AAA078EE02884302E5881244AA53E",
+                          "file":  "prepared/poses/N10/idle.png"
+                      },
+                      {
+                          "sha256":  "C77BE6A5D93704B1512AFF050007889621D8989601FA60843906653028A1D7E4",
+                          "file":  "prepared/poses/N10/attack.png"
+                      },
+                      {
+                          "sha256":  "F186F71B1E912CE596C3CAA2B074BF8D84687912610389DE363450C3EB1496C2",
+                          "file":  "prepared/poses/N10/death.png"
+                      },
+                      {
+                          "sha256":  "5F6DA8A389E1565E14830EBEA2026EB192E416C33A214A046CA16D67C72E67E9",
+                          "file":  "prepared/animations/N10/idle.png"
+                      },
+                      {
+                          "sha256":  "DD78CB04268B237DFA211A4D5F2E5FBC56645A3488AD704D6C8D218CDCE67104",
+                          "file":  "prepared/animations/N10/move.png"
+                      },
+                      {
+                          "sha256":  "8925E55325C7B60D840D9ADC382171CB78F601752C33782C0EDE275DF7113F23",
+                          "file":  "prepared/animations/N10/attack.png"
+                      },
+                      {
+                          "sha256":  "0B2895152146BFC8867579293FCF2DF43B8C4A608193F26511492FC04AF018E6",
+                          "file":  "prepared/animations/N10/death.png"
+                      },
+                      {
+                          "sha256":  "081F91540FB1F6051067FC23C75508925B5501A5FB213C3292D6F580A46F899B",
+                          "file":  "prepared/characters/N10.png"
+                      },
+                      {
+                          "sha256":  "131E2352D542193DE6E0BF9389DFDD5800315703193C14A4C989AFA70881BDBB",
+                          "file":  "index.html"
+                      },
+                      {
+                          "sha256":  "674C409AD2F7FD5190A9EAD3BB0EF5E452FB1B99C01FDBA769E0AA89911F82F6",
+                          "file":  "audit.json"
+                      },
+                      {
+                          "sha256":  "C790D6681C4B7D093819F835483ABFD7A02539C96339596E3AB35B39DE48C893",
+                          "file":  "evidence.md"
+                      },
+                      {
+                          "sha256":  "9C65B023A86CC1CE020DC2A5C04722158674661D798ED2D9F13C2A5AE4DC411A",
+                          "file":  "ui-review-board.png"
+                      },
+                      {
+                          "sha256":  "19423A71E4AEBB74350E16F868FF5CEC6520B83BE57A6FF30C9EE18D064D48CC",
+                          "file":  "n-review-board.png"
+                      },
+                      {
+                          "sha256":  "D79E5E4F295A495F9E6A55C1C258C1F0E8F2768DFDD9B385F5C3AC622B355B28",
+                          "file":  "integration-proposal.md"
+                      }
+                  ]
+}

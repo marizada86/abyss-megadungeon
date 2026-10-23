@@ -1,0 +1,34 @@
+[
+  {
+    "id": "Q02_0",
+    "src": "../asset-production-20261021-r1/Q02_v01.png",
+    "out": "prepared/ui/quartel/heroi_cartao.png",
+    "key": "magenta",
+    "size": [
+      360,
+      72
+    ],
+    "region": [
+      0,
+      0.04,
+      1,
+      0.32
+    ]
+  },
+  {
+    "id": "Q02_1",
+    "src": "../asset-production-20261021-r1/Q02_v01.png",
+    "out": "prepared/ui/quartel/heroi_cartao_bloqueado.png",
+    "key": "magenta",
+    "size": [
+      360,
+      72
+    ],
+    "region": [
+      0,
+      0.37,
+      1,
+      0.32
+    ]
+  }
+]

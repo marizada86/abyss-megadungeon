@@ -1,0 +1,139 @@
+{
+  "arquivo": "F:/dev/abyss-megadungeon/assets_incoming/hero-r2/korrak/korrak_active_se_v01.png",
+  "chave": "magenta",
+  "checagens": {
+    "1_figuras": "FALHA",
+    "2_fundo": "PASSA",
+    "4_pes": "PASSA",
+    "5e_poses_diferentes": "PASSA",
+    "5f_gesto_a_vista": "INCERTO",
+    "6_pontos_soltos": "INCERTO"
+  },
+  "esperadas": 4,
+  "figuras": [
+    {
+      "feet_y": 511,
+      "h": 459,
+      "i": 1,
+      "touches_edge": false,
+      "touches_slot": true,
+      "w": 358,
+      "x": 236,
+      "y": 53
+    },
+    {
+      "feet_y": 500,
+      "h": 496,
+      "i": 2,
+      "touches_edge": false,
+      "touches_slot": false,
+      "w": 446,
+      "x": 848,
+      "y": 5
+    },
+    {
+      "feet_y": 981,
+      "h": 470,
+      "i": 3,
+      "touches_edge": false,
+      "touches_slot": true,
+      "w": 421,
+      "x": 216,
+      "y": 512
+    },
+    {
+      "feet_y": 976,
+      "h": 398,
+      "i": 4,
+      "touches_edge": false,
+      "touches_slot": false,
+      "w": 518,
+      "x": 868,
+      "y": 579
+    }
+  ],
+  "halo": {
+    "base": 0.000187596143023299,
+    "excess_pp": 0.2,
+    "mid": 0.00242969396195203,
+    "por_profundidade_pct": {
+      "1": 64.8,
+      "10": 0.0,
+      "2": 3.3,
+      "3": 0.4,
+      "4": 0.1,
+      "5": 0.0,
+      "6": 0.0,
+      "7": 0.0,
+      "8": 0.0,
+      "9": 0.0
+    }
+  },
+  "identidade_e_estilo": "decisão do dono (critérios 7 a 9)",
+  "movimento": {
+    "pes_apoiados": [
+      {
+        "count": 2,
+        "x": [
+          -0.29,
+          0.06
+        ]
+      },
+      {
+        "count": 2,
+        "x": [
+          -0.13,
+          0.36
+        ]
+      },
+      {
+        "count": 2,
+        "x": [
+          -0.38,
+          0.24
+        ]
+      },
+      {
+        "count": 1,
+        "x": [
+          0.53
+        ]
+      }
+    ],
+    "poses_xor": [
+      "1-2: 62.6%",
+      "1-3: 58.2%",
+      "1-4: 42.8%",
+      "2-3: 60.8%",
+      "2-4: 63.6%",
+      "3-4: 62.5%"
+    ],
+    "tremor_horizontal": {
+      "amplitude": 0.17,
+      "por_quadro": [
+        0.08,
+        0.024,
+        -0.077,
+        0.093
+      ],
+      "px_a_64": 10.9
+    }
+  },
+  "notas": [
+    "1_figuras: há figura encostando na borda da imagem ou no limite do seu espaço (o prompt pede margem de 60 px)",
+    "3_escala: não se aplica à grade de ação; a escala vem da calibração",
+    "4_pes: variação da linha dos pés = 2.2% da altura (limite 3%)",
+    "2_fundo: resíduo magenta a 3-4 px depois do recorte de produção = 0.2%, linha de base = 0.0%, excesso = 0.2 pontos (PASSA <= 5, FALHA > 10, entre os dois INCERTO)",
+    "6_pontos_soltos: 1 na escala de produção (figura a 400 px; 3 a 60 px²); posições: fig 1 (351,511); fios de cabelo e o pomo da espada são tolerados à vista",
+    "5e: diferença de silhueta entre as figuras da grade, aos pares: 1-2: 62.6%, 1-3: 58.2%, 1-4: 42.8%, 2-3: 60.8%, 2-4: 63.6%, 3-4: 62.5%; a menor é 1-4 = 42.8% (PASSA >= 20%, FALHA < 6%, entre os dois INCERTO: olhar as poses; PROVISÓRIO, calibrar na primeira grade de ação aceita)",
+    "5f: DECISÃO À VISTA: o gesto de cada pose (preparo, golpe, seguimento; ou impacto, queda, caído) lê como descrito na ficha do herói",
+    "tremor: (centro da caixa - tronco)/altura por figura = [0.08, 0.024, -0.077, 0.093]; amplitude 0.170 = 10.9 px a 64 px de altura se a montagem alinhasse pela caixa (a montagem deve alinhar pelo tronco)"
+  ],
+  "tela": [
+    1536,
+    1024
+  ],
+  "tipo": "grid",
+  "verdict": "REPROVA",
+  "versao_verificador": "v3"
+}

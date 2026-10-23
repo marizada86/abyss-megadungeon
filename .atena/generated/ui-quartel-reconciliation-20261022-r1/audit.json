@@ -1,0 +1,2283 @@
+{
+  "revision": "DRAFT/r1",
+  "head": "02f898552fc8bea7bff90b801274bef5283a9820",
+  "authorization": "seguir recomendações: reconcile current implementation and delimit remaining UI/HUD/Quartel scope",
+  "runtime_modified": false,
+  "human_visual_acceptance": "PENDING_FOR_GAME_SCREENS",
+  "source_acceptance": "PRESERVED_125_NO_REACCEPTANCE",
+  "sources": [
+    {
+      "id": "C01",
+      "file": "C01_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C02",
+      "file": "C02_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C03",
+      "file": "C03_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C04",
+      "file": "C04_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C05",
+      "file": "C05_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C06",
+      "file": "C06_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C07",
+      "file": "C07_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C08",
+      "file": "C08_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C09",
+      "file": "C09_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C10",
+      "file": "C10_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C11_domwieck_remendo",
+      "file": "C11_domwieck_remendo_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C11_domwieck_trilha",
+      "file": "C11_domwieck_trilha_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C11_reino_remendo",
+      "file": "C11_reino_remendo_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C11_reino_trilha",
+      "file": "C11_reino_trilha_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C12_domwieck",
+      "file": "C12_domwieck_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C12_pilares",
+      "file": "C12_pilares_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C12_reino_abissal",
+      "file": "C12_reino_abissal_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C13_a",
+      "file": "C13_a_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C13_b",
+      "file": "C13_b_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C14",
+      "file": "C14_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C15_a",
+      "file": "C15_a_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C15_b",
+      "file": "C15_b_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C15_c",
+      "file": "C15_c_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C16_arlindo",
+      "file": "C16_arlindo_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "C16_erik",
+      "file": "C16_erik_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N01_attack",
+      "file": "N01_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N01_death",
+      "file": "N01_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N01_idle",
+      "file": "N01_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N02_attack",
+      "file": "N02_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N02_death",
+      "file": "N02_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N02_idle",
+      "file": "N02_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N03_attack",
+      "file": "N03_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N03_death",
+      "file": "N03_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N03_idle",
+      "file": "N03_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N04_attack",
+      "file": "N04_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N04_death",
+      "file": "N04_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N04_idle",
+      "file": "N04_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N05_attack",
+      "file": "N05_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N05_death",
+      "file": "N05_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N05_idle",
+      "file": "N05_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N06_atendente_attack",
+      "file": "N06_atendente_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N06_atendente_death",
+      "file": "N06_atendente_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N06_atendente_idle",
+      "file": "N06_atendente_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N06_taverneiro_attack",
+      "file": "N06_taverneiro_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N06_taverneiro_death",
+      "file": "N06_taverneiro_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N06_taverneiro_idle",
+      "file": "N06_taverneiro_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N07_willie_attack",
+      "file": "N07_willie_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N07_willie_death",
+      "file": "N07_willie_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N07_willie_idle",
+      "file": "N07_willie_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N07_wonka_attack",
+      "file": "N07_wonka_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N07_wonka_death",
+      "file": "N07_wonka_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N07_wonka_idle",
+      "file": "N07_wonka_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N08_attack",
+      "file": "N08_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N08_death",
+      "file": "N08_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N08_idle",
+      "file": "N08_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N09_attack",
+      "file": "N09_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N09_death",
+      "file": "N09_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N09_idle",
+      "file": "N09_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N10_attack",
+      "file": "N10_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N10_death",
+      "file": "N10_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "N10_idle",
+      "file": "N10_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q01",
+      "file": "Q01_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q02",
+      "file": "Q02_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q03",
+      "file": "Q03_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q04_a",
+      "file": "Q04_a_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q04_b",
+      "file": "Q04_b_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q04_c",
+      "file": "Q04_c_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q05",
+      "file": "Q05_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q06",
+      "file": "Q06_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q07",
+      "file": "Q07_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q08",
+      "file": "Q08_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q09",
+      "file": "Q09_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "Q10",
+      "file": "Q10_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U01",
+      "file": "U01_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U02",
+      "file": "U02_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U03",
+      "file": "U03_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U04",
+      "file": "U04_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U05",
+      "file": "U05_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U06",
+      "file": "U06_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U07",
+      "file": "U07_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U08",
+      "file": "U08_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U09_v02",
+      "file": "U09_v02.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U10",
+      "file": "U10_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U11",
+      "file": "U11_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U12",
+      "file": "U12_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U13_fill",
+      "file": "U13_fill_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U13_frame",
+      "file": "U13_frame_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U14",
+      "file": "U14_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U15",
+      "file": "U15_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U16",
+      "file": "U16_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U17",
+      "file": "U17_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U18",
+      "file": "U18_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U19",
+      "file": "U19_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U20",
+      "file": "U20_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "U21",
+      "file": "U21_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V01_attack",
+      "file": "V01_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V01_death_v02",
+      "file": "V01_death_v02.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V01_idle",
+      "file": "V01_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V01_special",
+      "file": "V01_special_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V02_attack_v02",
+      "file": "V02_attack_v02.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V02_death",
+      "file": "V02_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V02_idle",
+      "file": "V02_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V03_attack",
+      "file": "V03_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V03_death",
+      "file": "V03_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V03_idle",
+      "file": "V03_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V04_attack",
+      "file": "V04_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V04_death",
+      "file": "V04_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V04_idle",
+      "file": "V04_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V04_walk",
+      "file": "V04_walk_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V05_attack",
+      "file": "V05_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V05_death",
+      "file": "V05_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V05_idle",
+      "file": "V05_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V06_attack",
+      "file": "V06_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V06_death",
+      "file": "V06_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V06_idle",
+      "file": "V06_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V06_special",
+      "file": "V06_special_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V07_attack",
+      "file": "V07_attack_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V07_death",
+      "file": "V07_death_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V07_idle",
+      "file": "V07_idle_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V08_molydeus",
+      "file": "V08_molydeus_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V09_ezro",
+      "file": "V09_ezro_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V09_shu",
+      "file": "V09_shu_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V10_portrait",
+      "file": "V10_portrait_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V10_sprite_v02",
+      "file": "V10_sprite_v02.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    },
+    {
+      "id": "V11",
+      "file": "V11_v01.png",
+      "production": "MATCH",
+      "incoming": "MATCH"
+    }
+  ],
+  "derivatives": [
+    {
+      "id": "U09",
+      "prepared_file": "prepared/ui/oferta/oferta_brilho.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/oferta/oferta_brilho.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U10",
+      "prepared_file": "prepared/ui/oferta/oferta_fundo_textura.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/oferta/oferta_fundo_textura.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U11",
+      "prepared_file": "prepared/ui/oferta/oferta_preco.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/oferta/oferta_preco.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U12",
+      "prepared_file": "prepared/ui/hud/hud_painel_heroi.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_painel_heroi.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U13_frame",
+      "prepared_file": "prepared/ui/hud/hud_barra_pv.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_barra_pv.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U13_fill",
+      "prepared_file": "prepared/ui/hud/hud_barra_pv_fill.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_barra_pv_fill.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U15",
+      "prepared_file": "prepared/ui/hud/hud_habilidade_anel.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_habilidade_anel.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U17",
+      "prepared_file": "prepared/ui/hud/hud_cronometro.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_cronometro.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U20",
+      "prepared_file": "prepared/ui/modal/modal_moldura.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/modal/modal_moldura.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U21",
+      "prepared_file": "prepared/ui/modal/tooltip_moldura.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/modal/tooltip_moldura.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U14_frame",
+      "prepared_file": "prepared/ui/hud/hud_barra_xp.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_barra_xp.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U14_fill",
+      "prepared_file": "prepared/ui/hud/hud_barra_xp_fill.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_barra_xp_fill.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U16_0",
+      "prepared_file": "prepared/ui/hud/hud_chip_moedas.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_chip_moedas.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U16_1",
+      "prepared_file": "prepared/ui/hud/hud_chip_abates.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_chip_abates.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U16_2",
+      "prepared_file": "prepared/ui/hud/hud_chip_ca.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_chip_ca.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U16_3",
+      "prepared_file": "prepared/ui/hud/hud_chip_cam.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_chip_cam.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U18_0",
+      "prepared_file": "prepared/ui/hud/hud_botao_pausa.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_botao_pausa.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U18_1",
+      "prepared_file": "prepared/ui/hud/hud_botao_ajuda.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_botao_ajuda.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U18_2",
+      "prepared_file": "prepared/ui/hud/hud_botao_velocidade.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_botao_velocidade.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "U19",
+      "prepared_file": "prepared/ui/hud/hud_lista_armas.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/hud/hud_lista_armas.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q02_0",
+      "prepared_file": "prepared/ui/quartel/heroi_cartao.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/heroi_cartao.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q02_1",
+      "prepared_file": "prepared/ui/quartel/heroi_cartao_bloqueado.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/heroi_cartao_bloqueado.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q02_plate",
+      "prepared_file": "prepared/ui/quartel/heroi_placa.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/heroi_placa.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q03_0",
+      "prepared_file": "prepared/ui/quartel/fase_cartao.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/fase_cartao.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q03_1",
+      "prepared_file": "prepared/ui/quartel/fase_cartao_bloqueado.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/fase_cartao_bloqueado.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q05_pip_0",
+      "prepared_file": "prepared/ui/quartel/pip_vazio.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/pip_vazio.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q05_pip_1",
+      "prepared_file": "prepared/ui/quartel/pip_cheio.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/pip_cheio.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q05_pip_2",
+      "prepared_file": "prepared/ui/quartel/pip_bloqueado.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/pip_bloqueado.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q05_pip_3",
+      "prepared_file": "prepared/ui/quartel/pip_maximo.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/pip_maximo.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q05_button_0",
+      "prepared_file": "prepared/ui/quartel/botao_comprar.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/botao_comprar.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q05_button_1",
+      "prepared_file": "prepared/ui/quartel/botao_maximo.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/botao_maximo.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q05_button_2",
+      "prepared_file": "prepared/ui/quartel/botao_bloqueado.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/botao_bloqueado.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q07",
+      "prepared_file": "prepared/ui/quartel/medalhas/bloqueada.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/medalhas/bloqueada.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q07",
+      "prepared_file": "prepared/ui/quartel/medalhas/bronze.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/medalhas/bronze.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q07",
+      "prepared_file": "prepared/ui/quartel/medalhas/prata.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/medalhas/prata.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q07",
+      "prepared_file": "prepared/ui/quartel/medalhas/ouro.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/medalhas/ouro.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q07",
+      "prepared_file": "prepared/ui/quartel/medalhas/especial.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/medalhas/especial.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q09_0",
+      "prepared_file": "prepared/icons/codex/inimigos.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/codex/inimigos.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q09_1",
+      "prepared_file": "prepared/icons/codex/armas.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/codex/armas.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q09_2",
+      "prepared_file": "prepared/icons/codex/itens.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/codex/itens.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q09_3",
+      "prepared_file": "prepared/icons/codex/passivas.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/codex/passivas.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q09_4",
+      "prepared_file": "prepared/icons/codex/bencaos.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/codex/bencaos.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q09_5",
+      "prepared_file": "prepared/icons/codex/herois.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/codex/herois.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q09_hidden",
+      "prepared_file": "prepared/ui/quartel/codex_oculto.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/ui/quartel/codex_oculto.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q10",
+      "prepared_file": "prepared/icons/resultado/tempo.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/resultado/tempo.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q10",
+      "prepared_file": "prepared/icons/resultado/nivel.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/resultado/nivel.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q10",
+      "prepared_file": "prepared/icons/resultado/abates.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/resultado/abates.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q10",
+      "prepared_file": "prepared/icons/resultado/chefes.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/resultado/chefes.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q10",
+      "prepared_file": "prepared/icons/resultado/moedas.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/resultado/moedas.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q10",
+      "prepared_file": "prepared/icons/resultado/profundidade.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/resultado/profundidade.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_abates",
+      "prepared_file": "prepared/icons/conquistas/abates.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/abates.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_sem_dano",
+      "prepared_file": "prepared/icons/conquistas/sem_dano.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/sem_dano.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_sobrevivencia",
+      "prepared_file": "prepared/icons/conquistas/sobrevivencia.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/sobrevivencia.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_nivel",
+      "prepared_file": "prepared/icons/conquistas/nivel.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/nivel.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_moedas",
+      "prepared_file": "prepared/icons/conquistas/moedas.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/moedas.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_baus",
+      "prepared_file": "prepared/icons/conquistas/baus.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/baus.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_elites",
+      "prepared_file": "prepared/icons/conquistas/elites.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/elites.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_chefes",
+      "prepared_file": "prepared/icons/conquistas/chefes.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/chefes.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_rituais",
+      "prepared_file": "prepared/icons/conquistas/rituais.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/rituais.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_ecos",
+      "prepared_file": "prepared/icons/conquistas/ecos.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/ecos.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_hqs",
+      "prepared_file": "prepared/icons/conquistas/hqs.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/hqs.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "Q08_biografias",
+      "prepared_file": "prepared/icons/conquistas/biografias.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/icons/conquistas/biografias.png",
+      "runtime_hash_comparison": "MATCH",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N01_idle",
+      "prepared_file": "prepared/poses/N01/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N01/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N01_attack",
+      "prepared_file": "prepared/poses/N01/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N01/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N01_death",
+      "prepared_file": "prepared/poses/N01/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N01/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N01",
+      "prepared_file": "prepared/animations/N01/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N01/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N01",
+      "prepared_file": "prepared/animations/N01/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N01/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N01",
+      "prepared_file": "prepared/animations/N01/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N01/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N01",
+      "prepared_file": "prepared/animations/N01/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N01/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N01",
+      "prepared_file": "prepared/characters/N01.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N01.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N02_idle",
+      "prepared_file": "prepared/poses/N02/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N02/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N02_attack",
+      "prepared_file": "prepared/poses/N02/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N02/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N02_death",
+      "prepared_file": "prepared/poses/N02/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N02/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N02",
+      "prepared_file": "prepared/animations/N02/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N02/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N02",
+      "prepared_file": "prepared/animations/N02/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N02/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N02",
+      "prepared_file": "prepared/animations/N02/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N02/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N02",
+      "prepared_file": "prepared/animations/N02/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N02/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N02",
+      "prepared_file": "prepared/characters/N02.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N02.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N03_idle",
+      "prepared_file": "prepared/poses/N03/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N03/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N03_attack",
+      "prepared_file": "prepared/poses/N03/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N03/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N03_death",
+      "prepared_file": "prepared/poses/N03/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N03/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N03",
+      "prepared_file": "prepared/animations/N03/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N03/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N03",
+      "prepared_file": "prepared/animations/N03/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N03/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N03",
+      "prepared_file": "prepared/animations/N03/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N03/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N03",
+      "prepared_file": "prepared/animations/N03/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N03/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N03",
+      "prepared_file": "prepared/characters/N03.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N03.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N04_idle",
+      "prepared_file": "prepared/poses/N04/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N04/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N04_attack",
+      "prepared_file": "prepared/poses/N04/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N04/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N04_death",
+      "prepared_file": "prepared/poses/N04/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N04/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N04",
+      "prepared_file": "prepared/animations/N04/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N04/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N04",
+      "prepared_file": "prepared/animations/N04/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N04/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N04",
+      "prepared_file": "prepared/animations/N04/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N04/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N04",
+      "prepared_file": "prepared/animations/N04/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N04/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N04",
+      "prepared_file": "prepared/characters/N04.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N04.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N05_idle",
+      "prepared_file": "prepared/poses/N05/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N05/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N05_attack",
+      "prepared_file": "prepared/poses/N05/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N05/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N05_death",
+      "prepared_file": "prepared/poses/N05/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N05/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N05",
+      "prepared_file": "prepared/animations/N05/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N05/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N05",
+      "prepared_file": "prepared/animations/N05/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N05/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N05",
+      "prepared_file": "prepared/animations/N05/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N05/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N05",
+      "prepared_file": "prepared/animations/N05/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N05/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N05",
+      "prepared_file": "prepared/characters/N05.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N05.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_taverneiro_idle",
+      "prepared_file": "prepared/poses/N06_taverneiro/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N06_taverneiro/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_taverneiro_attack",
+      "prepared_file": "prepared/poses/N06_taverneiro/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N06_taverneiro/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_taverneiro_death",
+      "prepared_file": "prepared/poses/N06_taverneiro/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N06_taverneiro/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_taverneiro",
+      "prepared_file": "prepared/animations/N06_taverneiro/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N06_taverneiro/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_taverneiro",
+      "prepared_file": "prepared/animations/N06_taverneiro/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N06_taverneiro/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_taverneiro",
+      "prepared_file": "prepared/animations/N06_taverneiro/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N06_taverneiro/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_taverneiro",
+      "prepared_file": "prepared/animations/N06_taverneiro/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N06_taverneiro/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_taverneiro",
+      "prepared_file": "prepared/characters/N06_taverneiro.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N06_taverneiro.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_atendente_idle",
+      "prepared_file": "prepared/poses/N06_atendente/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N06_atendente/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_atendente_attack",
+      "prepared_file": "prepared/poses/N06_atendente/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N06_atendente/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_atendente_death",
+      "prepared_file": "prepared/poses/N06_atendente/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N06_atendente/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_atendente",
+      "prepared_file": "prepared/animations/N06_atendente/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N06_atendente/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_atendente",
+      "prepared_file": "prepared/animations/N06_atendente/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N06_atendente/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_atendente",
+      "prepared_file": "prepared/animations/N06_atendente/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N06_atendente/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_atendente",
+      "prepared_file": "prepared/animations/N06_atendente/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N06_atendente/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N06_atendente",
+      "prepared_file": "prepared/characters/N06_atendente.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N06_atendente.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_wonka_idle",
+      "prepared_file": "prepared/poses/N07_wonka/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N07_wonka/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_wonka_attack",
+      "prepared_file": "prepared/poses/N07_wonka/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N07_wonka/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_wonka_death",
+      "prepared_file": "prepared/poses/N07_wonka/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N07_wonka/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_wonka",
+      "prepared_file": "prepared/animations/N07_wonka/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N07_wonka/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_wonka",
+      "prepared_file": "prepared/animations/N07_wonka/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N07_wonka/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_wonka",
+      "prepared_file": "prepared/animations/N07_wonka/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N07_wonka/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_wonka",
+      "prepared_file": "prepared/animations/N07_wonka/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N07_wonka/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_wonka",
+      "prepared_file": "prepared/characters/N07_wonka.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N07_wonka.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_willie_idle",
+      "prepared_file": "prepared/poses/N07_willie/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N07_willie/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_willie_attack",
+      "prepared_file": "prepared/poses/N07_willie/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N07_willie/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_willie_death",
+      "prepared_file": "prepared/poses/N07_willie/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N07_willie/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_willie",
+      "prepared_file": "prepared/animations/N07_willie/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N07_willie/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_willie",
+      "prepared_file": "prepared/animations/N07_willie/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N07_willie/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_willie",
+      "prepared_file": "prepared/animations/N07_willie/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N07_willie/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_willie",
+      "prepared_file": "prepared/animations/N07_willie/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N07_willie/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N07_willie",
+      "prepared_file": "prepared/characters/N07_willie.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N07_willie.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N08_idle",
+      "prepared_file": "prepared/poses/N08/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N08/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N08_attack",
+      "prepared_file": "prepared/poses/N08/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N08/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N08_death",
+      "prepared_file": "prepared/poses/N08/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N08/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N08",
+      "prepared_file": "prepared/animations/N08/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N08/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N08",
+      "prepared_file": "prepared/animations/N08/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N08/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N08",
+      "prepared_file": "prepared/animations/N08/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N08/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N08",
+      "prepared_file": "prepared/animations/N08/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N08/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N08",
+      "prepared_file": "prepared/characters/N08.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N08.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N09_idle",
+      "prepared_file": "prepared/poses/N09/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N09/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N09_attack",
+      "prepared_file": "prepared/poses/N09/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N09/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N09_death",
+      "prepared_file": "prepared/poses/N09/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N09/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N09",
+      "prepared_file": "prepared/animations/N09/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N09/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N09",
+      "prepared_file": "prepared/animations/N09/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N09/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N09",
+      "prepared_file": "prepared/animations/N09/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N09/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N09",
+      "prepared_file": "prepared/animations/N09/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N09/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N09",
+      "prepared_file": "prepared/characters/N09.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N09.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N10_idle",
+      "prepared_file": "prepared/poses/N10/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N10/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N10_attack",
+      "prepared_file": "prepared/poses/N10/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N10/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N10_death",
+      "prepared_file": "prepared/poses/N10/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/poses/N10/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N10",
+      "prepared_file": "prepared/animations/N10/idle.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N10/idle.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N10",
+      "prepared_file": "prepared/animations/N10/move.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N10/move.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N10",
+      "prepared_file": "prepared/animations/N10/attack.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N10/attack.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N10",
+      "prepared_file": "prepared/animations/N10/death.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/animations/N10/death.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    },
+    {
+      "id": "N10",
+      "prepared_file": "prepared/characters/N10.png",
+      "prepared": "MATCH",
+      "runtime_file": "assets/characters/N10.png",
+      "runtime_hash_comparison": "MISSING",
+      "note": "Runtime comparison is provenance only; existence or equal hash does not prove consumer use. Missing/different N derivatives are not integration failures."
+    }
+  ],
+  "consumer_baseline": [
+    {
+      "file": "ui/menu.gd",
+      "sha256": "E7E7793AE66265108AD146ADF3130356854D5FAF2B0912A5079AEEF6D2284AE3"
+    },
+    {
+      "file": "ui/menu.tscn",
+      "sha256": "15940B1A26B5BC4C4E52B83754E6AEE436AC3AF709148FEF7F73D5CCBE4D8807"
+    },
+    {
+      "file": "ui/offer_card.gd",
+      "sha256": "1D7476E86DFF8A6FD7D5CC8E20DA0ADF3A0A4AF403E78DAC0F2794FC6728575E"
+    },
+    {
+      "file": "ui/hud.gd",
+      "sha256": "BB1500B131A4D788D5A118B11AC0108CA1E85F274D44EDF22E74096EF3C893B6"
+    },
+    {
+      "file": "ui/hud.tscn",
+      "sha256": "A45031AC4AB2103CA444225A8EEA4BEDDC78D476F4AD9AD51ED030AAE4A38B37"
+    },
+    {
+      "file": "ui/hud_art.gd",
+      "sha256": "1FFEA3E3DEE2E4C7F4EAB1F2D654A498059DBDC5E3AC3B17E4F45C19A024AEB9"
+    },
+    {
+      "file": "ui/hero_panel.gd",
+      "sha256": "7C330068107E112497BB514DE257EE8FEE8830DA6F8A331D02A236386BDAAF0A"
+    },
+    {
+      "file": "ui/ability_slot.gd",
+      "sha256": "9057E431D9D7E166502F82FA1DE048C798DC56986F89E6166548B92F481A1C5B"
+    },
+    {
+      "file": "data/interaction_anims.json",
+      "sha256": "5D290C80CABE537738830433F6849960D35E090E94619F7AE7F522B133FAADA0"
+    },
+    {
+      "file": "data/stage_events.json",
+      "sha256": "222F9ADA7572107697EFDB1E68184A3AB2DF73D4F51E6CC16855E9723A0E42BE"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "U09",
+      "state": "PENDING_CODE_HALO_EXISTS",
+      "file": "ui/offer_card.gd",
+      "lines": [
+        490
+      ],
+      "snippets": [
+        "func _draw_ornaments(g: Control) -> void:"
+      ]
+    },
+    {
+      "id": "U11",
+      "state": "PENDING_TEXT_PRICE_EXISTS",
+      "file": "ui/offer_card.gd",
+      "lines": [
+        339
+      ],
+      "snippets": [
+        "chips.add_child(_label(price, 16, price_col))"
+      ]
+    },
+    {
+      "id": "U12",
+      "state": "RETAINED_FIXED_LAYOUT",
+      "file": "ui/hero_panel.gd",
+      "lines": [
+        46
+      ],
+      "snippets": [
+        "# hud_painel_heroi é um molde fixo (janela do retrato + duas faixas), não uma moldura de nove fatias; fica de fora até haver layout próprio."
+      ]
+    },
+    {
+      "id": "U13/U14",
+      "state": "INTEGRATED",
+      "file": "ui/hero_panel.gd",
+      "lines": [
+        150,
+        181
+      ],
+      "snippets": [
+        "HudArt.style_bar(hp_bar, \"hud_barra_pv\", \"hud_barra_pv_fill\", [20, 20, 6, 6])",
+        "HudArt.style_bar(xp_bar, \"hud_barra_xp\", \"hud_barra_xp_fill\", [16, 16, 4, 4])"
+      ]
+    },
+    {
+      "id": "U15",
+      "state": "INTEGRATED",
+      "file": "ui/ability_slot.gd",
+      "lines": [
+        54
+      ],
+      "snippets": [
+        "var ring := HudArt.hud(\"hud_habilidade_anel\")"
+      ]
+    },
+    {
+      "id": "U16",
+      "state": "INTEGRATED",
+      "file": "ui/hero_panel.gd",
+      "lines": [
+        247,
+        270
+      ],
+      "snippets": [
+        "var art_chips := HudArt.chip_style(\"coin\") != null",
+        "var chip_art := HudArt.chip_style(icon)"
+      ]
+    },
+    {
+      "id": "U17",
+      "state": "RETAINED_TOP_LAYOUT",
+      "file": "ui/hud.gd",
+      "lines": [
+        541
+      ],
+      "snippets": [
+        "# cronômetro: a faixa de arte (180x60) invade o rótulo da fase logo abaixo; fica sem moldura até o layout do topo ser revisto"
+      ]
+    },
+    {
+      "id": "U18",
+      "state": "INTEGRATED_HELP_SPEED_ONLY",
+      "file": "ui/hud.gd",
+      "lines": [
+        542,
+        543
+      ],
+      "snippets": [
+        "HudArt.style_square_button(%HelpBtn, \"hud_botao_ajuda\")",
+        "HudArt.style_square_button(%SpeedBtn, \"hud_botao_velocidade\")"
+      ]
+    },
+    {
+      "id": "U19",
+      "state": "RETAINED_VARIABLE_HEIGHT",
+      "file": "ui/hud.gd",
+      "lines": [
+        544
+      ],
+      "snippets": [
+        "# lista de armas: a moldura de arte é uma faixa de 1 linha; a lista tem tamanho livre, então fica sem moldura por ora"
+      ]
+    },
+    {
+      "id": "U20",
+      "state": "INTEGRATED",
+      "file": "ui/hud.gd",
+      "lines": [
+        546
+      ],
+      "snippets": [
+        "var modal := HudArt.modal_style()"
+      ]
+    },
+    {
+      "id": "U21",
+      "state": "INTEGRATED",
+      "file": "ui/offer_card.gd",
+      "lines": [
+        580
+      ],
+      "snippets": [
+        "var frame := HudArt.modal_style(true)"
+      ]
+    },
+    {
+      "id": "Q02",
+      "state": "PENDING_ITEMLIST",
+      "file": "ui/menu.gd",
+      "lines": [
+        9
+      ],
+      "snippets": [
+        "@onready var hero_list: ItemList = %HeroList"
+      ]
+    },
+    {
+      "id": "Q03",
+      "state": "PENDING_ITEMLIST",
+      "file": "ui/menu.gd",
+      "lines": [
+        12
+      ],
+      "snippets": [
+        "@onready var stage_list: ItemList = %StageList"
+      ]
+    },
+    {
+      "id": "Q05",
+      "state": "INTEGRATED",
+      "file": "ui/menu.gd",
+      "lines": [
+        431
+      ],
+      "snippets": [
+        "func _upgrade_pips(level: int, total: int, locked: bool) -> Control:"
+      ]
+    },
+    {
+      "id": "Q07/Q08",
+      "state": "Q08_INTEGRATED_Q07_RETAINED",
+      "file": "ui/menu.gd",
+      "lines": [
+        507
+      ],
+      "snippets": [
+        "cat_icon.modulate = Color(1, 1, 1, 1) if done else Color(0.45, 0.45, 0.5, 0.75)"
+      ]
+    },
+    {
+      "id": "Q09",
+      "state": "INTEGRATED_THREE_EXISTING_CATEGORIES",
+      "file": "ui/menu.gd",
+      "lines": [
+        97
+      ],
+      "snippets": [
+        "var cat_art := UiKit.icon_texture(\"res://assets/icons/codex/%s.png\" % {\"enemies\": \"inimigos\", \"weapons\": \"armas\", \"items\": \"itens\"}.get(cat, \"\"))"
+      ]
+    },
+    {
+      "id": "Q10",
+      "state": "PENDING_TEXT_RESULT_EXISTS",
+      "file": "ui/hud.gd",
+      "lines": [
+        1132
+      ],
+      "snippets": [
+        "var txt := \"%s · %s\\nTempo %02d:%02d · Nível %d · Abates %d · Chefes %d\\nModo: %s · Profundidade %d · Multiplicador ×%.2f\\n\\n+%d moedas%s (total %d)\" % ["
+      ]
+    },
+    {
+      "id": "N01",
+      "state": "INTEGRATED",
+      "file": "data/interaction_anims.json",
+      "lines": [
+        280,
+        290
+      ],
+      "snippets": [
+        "\"npc_reaper_barqueiro\": {",
+        "\"strip\": \"res://assets/animations/interactions/npc_reaper_barqueiro_idle.png\""
+      ]
+    }
+  ],
+  "baseline": "baseline.json",
+  "runtime_scope_approval": "PENDING_REVISED_REVIEWABLE_SCOPE",
+  "absent_global_instructions": [
+    "C:/Users/gui-m/.codex/AGENTS.md",
+    "C:/Users/gui-m/.codex/RTK.md"
+  ],
+  "historical_backlog": "Origin D:/dev/nottgard/games/godot/nottgard-survivors/.atena not available here; no history copied"
+}

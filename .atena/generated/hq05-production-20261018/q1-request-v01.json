@@ -1,0 +1,13 @@
+{
+  "authorization": "atena continuar a geração de imagens seguindo as recomendações",
+  "reference": "assets/hq/hq_n05_q2.png",
+  "scope": "Q1_ONLY",
+  "reference_sha256": "F62661917C203FC6B8125B46AD5DE57C27C33ED855EC9FC40CCB0BE453D3DFA0",
+  "prompt_sha256": "A29AD0925B677A0539CF305D424F1DB6EF8BA35EEE06063AA08AE9681A2A2EC5",
+  "status": "READY_FOR_BUILT_IN_IMAGE_GEN",
+  "reference_role": "Inspected locally for slime lighting, texture and bubble scale only; not sent as an edit target",
+  "runtime_modified": false,
+  "prompt_file": "q1-prompt-v01.txt",
+  "checkpoint": "CP-P05-Q01",
+  "human_acceptance": "PENDING"
+}

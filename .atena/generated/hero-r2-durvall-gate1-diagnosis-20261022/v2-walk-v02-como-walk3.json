@@ -1,0 +1,90 @@
+{
+  "arquivo": "F:/dev/abyss-megadungeon/assets_incoming/hero-r2/durvall/durvall_walk_se_v02.png",
+  "chave": "magenta",
+  "checagens": {
+    "1_figuras": "PASSA",
+    "2_fundo": "PASSA",
+    "3_escala": "PASSA",
+    "4_pes": "PASSA",
+    "5a_contato_x_passagem": "PASSA",
+    "5b_A_diferente_de_B": "INCERTO",
+    "6_pontos_soltos": "PASSA"
+  },
+  "esperadas": 3,
+  "figuras": [
+    {
+      "feet_y": 945,
+      "h": 857,
+      "i": 1,
+      "specks_prod": 0,
+      "touches_edge": false,
+      "w": 439,
+      "x": 57,
+      "y": 89
+    },
+    {
+      "feet_y": 950,
+      "h": 888,
+      "i": 2,
+      "specks_prod": 0,
+      "touches_edge": false,
+      "w": 368,
+      "x": 566,
+      "y": 63
+    },
+    {
+      "feet_y": 944,
+      "h": 858,
+      "i": 3,
+      "specks_prod": 0,
+      "touches_edge": false,
+      "w": 438,
+      "x": 1048,
+      "y": 87
+    }
+  ],
+  "halo": {
+    "base": 0.00314495377870962,
+    "excess_pp": 3.9,
+    "mid": 0.0426435814195824,
+    "por_profundidade_pct": {
+      "1": 56.3,
+      "10": 0.2,
+      "2": 7.6,
+      "3": 4.9,
+      "4": 3.6,
+      "5": 2.4,
+      "6": 1.5,
+      "7": 0.9,
+      "8": 0.5,
+      "9": 0.2
+    }
+  },
+  "identidade_e_estilo": "decisão do dono (critérios 7 a 9)",
+  "movimento": {
+    "legs_A_B": 40.6,
+    "legs_ratio": 1.27272727272727,
+    "sil_A_P1": 0.343,
+    "sil_B_P1": 0.353
+  },
+  "notas": [
+    "3_escala: pior diferença de altura contra a calibração = 3.5% (limite 6%; o vaivém do corpo na caminhada é esperado)",
+    "4_pes: variação da linha dos pés = 0.1% da altura (limite 3%)",
+    "2_fundo: resíduo magenta a 3-4 px depois do recorte de produção = 4.3%, linha de base (8-10 px) = 0.3%, excesso = 3.9 pontos (PASSA <= 5, FALHA > 10, entre os dois = INCERTO)",
+    "6_pontos_soltos: 0 na escala de produção (figura a 400 px; contados os componentes de 3 a 60 px² nessa escala)",
+    "5a: silhueta A x P1 = 34.3%, B x P1 = 35.3% (mínimo 8%)",
+    "5b: cor das pernas A x B = 40.6, ruído de mesma pose = 31.9, razão = 1.27 (PASSA >= 1.60; abaixo disso INCERTO: nunca reprova sozinho, decidir pelo recorte --crops das pernas)"
+  ],
+  "ruido_usado": {
+    "fonte": "v2out/idle_v02.json",
+    "legs": 31.9,
+    "sil": 0.046
+  },
+  "tela": [
+    1536,
+    1024
+  ],
+  "tipo": "walk3",
+  "verdict": "PASSA_COM_ITENS_A_VISTA",
+  "versao_verificador": "v2"
+}

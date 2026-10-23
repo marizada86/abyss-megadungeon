@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-22",
+  "status": "LOCAL_HANDOFF_READY_NOT_SENT",
+  "attempts_used": 3,
+  "attempts_remaining": 0,
+  "new_automated_verification": false,
+  "files": [
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\durvall_walk_se_r2_v01.png",
+      "bytes": 1836982,
+      "sha256": "FF213EA440F579CB9839DCD5A227A1B442B8D2EF17100A74124A22C245C5B3FD"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\durvall_walk_se_r2_v02.png",
+      "bytes": 1832861,
+      "sha256": "846DDFAF113714E4216FE3B553F3238FDA48BE1E3AA42C2E4964C21FF231DF6A"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\durvall_walk_se_r2_v03.png",
+      "bytes": 1811625,
+      "sha256": "720B89C1802EF54D2B58918B5579F7E25E41B5628B078296CCAAA3B549B028DA"
+    },
+    {
+      "path": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1622f-8742-7bb1-85db-aa69d429d1ca\\exec-a5b144d8-e513-42eb-b62c-28b40afe57be.png",
+      "bytes": 1836982,
+      "sha256": "FF213EA440F579CB9839DCD5A227A1B442B8D2EF17100A74124A22C245C5B3FD"
+    },
+    {
+      "path": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1622f-8742-7bb1-85db-aa69d429d1ca\\exec-7a62765e-bc34-435d-b822-4aa997efb03c.png",
+      "bytes": 1832861,
+      "sha256": "846DDFAF113714E4216FE3B553F3238FDA48BE1E3AA42C2E4964C21FF231DF6A"
+    },
+    {
+      "path": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1622f-8742-7bb1-85db-aa69d429d1ca\\exec-5075f059-b597-485e-a80d-47e44b855e4f.png",
+      "bytes": 1811625,
+      "sha256": "720B89C1802EF54D2B58918B5579F7E25E41B5628B078296CCAAA3B549B028DA"
+    },
+    {
+      "path": "F:\\dev\\nottgard-vault\\output\\referencias-personagens\\CHAR-015\\historico-S01-S09\\r01\\durvall-front-candidate-v01.png",
+      "bytes": 2091447,
+      "sha256": "A5E3B6CD8717EAD742BE130E552E2D16A0223C8A478F55AA05A54EEA2FCAFF2D"
+    },
+    {
+      "path": "F:\\dev\\nottgard-vault\\output\\referencias-personagens\\CHAR-015\\historico-S01-S09\\r01\\durvall-left-v01.png",
+      "bytes": 1902758,
+      "sha256": "3C6D7DD64964DC012BCC7ABFCB76D552561D21EDEDB971D8CC0FCE7885470C47"
+    },
+    {
+      "path": "F:\\dev\\nottgard-vault\\output\\referencias-personagens\\CHAR-015\\historico-S01-S09\\r01\\durvall-back-v01.png",
+      "bytes": 2029266,
+      "sha256": "8BCB55819E7517C66AA66AE03BF7CF529B79CE63362A6285A7462139BDD789A0"
+    },
+    {
+      "path": "F:\\dev\\nottgard-vault\\output\\referencias-personagens\\CHAR-015\\historico-S01-S09\\r01\\durvall-right-v01.png",
+      "bytes": 1895269,
+      "sha256": "ADA4D166EC2998542228A516CD7E6D106156C9414B1D2DA8FC271F509A5FA37B"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\durvall\\durvall_idle_se_v01.png",
+      "bytes": 2428329,
+      "sha256": "A7CDA92608255BB14B363659EF5747AB89D15C7A4EF1EB1D5DBB8960E0DCBDA1"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\hero-r2-durvall-walk-se-r2-20261022\\attempt-v02.json",
+      "bytes": 7585,
+      "sha256": "8B1B69A26FCE30636B1EBA14E3E45723D59120313DAC476CA9C6A1C985AE2B7E"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\hero-r2-durvall-walk-se-r2-20261022\\attempt-v03.json",
+      "bytes": 6013,
+      "sha256": "09D0E279CAB9106D11C60895480499774D73047FCA3FEAD63B4A70EF667A50CC"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\hero-r2-durvall-walk-se-r2-20261022\\MENSAGEM-PARA-CLAUDE.txt",
+      "bytes": 890,
+      "sha256": "BB2534D8FAE5D426B374E1150298543C9F1FC7179E9F11D158BA973457F04E02"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\hero-r2-durvall-walk-se-r2-20261022\\prompt.txt",
+      "bytes": 4469,
+      "sha256": "F5F85C7A49BF2E0105D89255C77A8618FE515FC54099D5432BEA4BFA7A3E12BA"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\hero-r2-durvall-walk-se-r2-20261022\\request.json",
+      "bytes": 7047,
+      "sha256": "201B376E74ED51DA578953EF515629F71BBFE1069AEC21F44E32DAEB8DEE3D8F"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\generated\\hero-r2-durvall-walk-se-r2-20261022\\RETORNO-CLAUDE.md",
+      "bytes": 6303,
+      "sha256": "F7BE4DE580E9A96B81AAF094C36A7F37812DE6B06D469F31F3DE0D87DDC35B80"
+    },
+    {
+      "path": "F:\\dev\\abyss-megadungeon\\.atena\\state\\plan.yaml",
+      "bytes": 171803,
+      "sha256": "38420528A4B3F5CDD2430D59191BB6D0FE44496A745D352D1856B076B4767807"
+    }
+  ]
+}

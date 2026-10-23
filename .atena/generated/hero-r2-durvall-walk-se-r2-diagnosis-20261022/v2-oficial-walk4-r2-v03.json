@@ -1,0 +1,71 @@
+{
+  "arquivo": "F:/dev/abyss-megadungeon/assets_incoming/hero-r2/durvall/durvall_walk_se_r2_v03.png",
+  "chave": "magenta",
+  "checagens": {
+    "1_figuras": "FALHA",
+    "2_fundo": "PASSA",
+    "3_escala": "FALHA",
+    "4_pes": "FALHA",
+    "6_pontos_soltos": "FALHA"
+  },
+  "esperadas": 4,
+  "figuras": [
+    {
+      "feet_y": 998,
+      "h": 970,
+      "i": 1,
+      "specks_prod": 1,
+      "touches_edge": false,
+      "w": 269,
+      "x": 287,
+      "y": 29
+    },
+    {
+      "feet_y": 999,
+      "h": 970,
+      "i": 2,
+      "specks_prod": 0,
+      "touches_edge": false,
+      "w": 270,
+      "x": 984,
+      "y": 30
+    }
+  ],
+  "halo": {
+    "base": 0.00204739501655341,
+    "excess_pp": 1.7,
+    "mid": 0.0193674388325286,
+    "por_profundidade_pct": {
+      "1": 71.1,
+      "10": 0.1,
+      "2": 9.9,
+      "3": 2.7,
+      "4": 1.1,
+      "5": 0.8,
+      "6": 0.6,
+      "7": 0.5,
+      "8": 0.3,
+      "9": 0.2
+    }
+  },
+  "identidade_e_estilo": "decisão do dono (critérios 7 a 9)",
+  "movimento": {},
+  "notas": [
+    "1_figuras: esperava 4, achei 2",
+    "3 e 4 não avaliados: número de figuras diferente do esperado",
+    "2_fundo: resíduo magenta a 3-4 px depois do recorte de produção = 1.9%, linha de base (8-10 px) = 0.2%, excesso = 1.7 pontos (PASSA <= 5, FALHA > 10, entre os dois = INCERTO)",
+    "6_pontos_soltos: 1 na escala de produção (figura a 400 px; contados os componentes de 3 a 60 px² nessa escala)"
+  ],
+  "ruido_usado": {
+    "fonte": "F:/dev/abyss-megadungeon/.atena/generated/hero-r2-durvall-gate1-diagnosis-20261022/v2-idle-v01.json",
+    "legs": 37.0,
+    "sil": 0.053
+  },
+  "tela": [
+    1536,
+    1024
+  ],
+  "tipo": "walk4",
+  "verdict": "REPROVA",
+  "versao_verificador": "v2"
+}

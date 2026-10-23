@@ -1,0 +1,782 @@
+[
+  {
+    "id": "N01_idle",
+    "src": "../asset-production-20261021-r1/N01_idle_v01.png",
+    "out": "prepared/poses/N01/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N01_attack",
+    "src": "../asset-production-20261021-r1/N01_attack_v01.png",
+    "out": "prepared/poses/N01/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N01_death",
+    "src": "../asset-production-20261021-r1/N01_death_v01.png",
+    "out": "prepared/poses/N01/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N01",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N01",
+    "out_static": "prepared/characters/N01.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N01_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N01_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N01_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N02_idle",
+    "src": "../asset-production-20261021-r1/N02_idle_v01.png",
+    "out": "prepared/poses/N02/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N02_attack",
+    "src": "../asset-production-20261021-r1/N02_attack_v01.png",
+    "out": "prepared/poses/N02/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N02_death",
+    "src": "../asset-production-20261021-r1/N02_death_v01.png",
+    "out": "prepared/poses/N02/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N02",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 220,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N02",
+    "out_static": "prepared/characters/N02.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N02_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N02_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N02_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N03_idle",
+    "src": "../asset-production-20261021-r1/N03_idle_v01.png",
+    "out": "prepared/poses/N03/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N03_attack",
+    "src": "../asset-production-20261021-r1/N03_attack_v01.png",
+    "out": "prepared/poses/N03/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N03_death",
+    "src": "../asset-production-20261021-r1/N03_death_v01.png",
+    "out": "prepared/poses/N03/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N03",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N03",
+    "out_static": "prepared/characters/N03.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N03_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N03_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N03_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N04_idle",
+    "src": "../asset-production-20261021-r1/N04_idle_v01.png",
+    "out": "prepared/poses/N04/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N04_attack",
+    "src": "../asset-production-20261021-r1/N04_attack_v01.png",
+    "out": "prepared/poses/N04/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N04_death",
+    "src": "../asset-production-20261021-r1/N04_death_v01.png",
+    "out": "prepared/poses/N04/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N04",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N04",
+    "out_static": "prepared/characters/N04.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N04_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N04_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N04_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N05_idle",
+    "src": "../asset-production-20261021-r1/N05_idle_v01.png",
+    "out": "prepared/poses/N05/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N05_attack",
+    "src": "../asset-production-20261021-r1/N05_attack_v01.png",
+    "out": "prepared/poses/N05/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N05_death",
+    "src": "../asset-production-20261021-r1/N05_death_v01.png",
+    "out": "prepared/poses/N05/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N05",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N05",
+    "out_static": "prepared/characters/N05.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N05_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N05_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N05_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N06_taverneiro_idle",
+    "src": "../asset-production-20261021-r1/N06_taverneiro_idle_v01.png",
+    "out": "prepared/poses/N06_taverneiro/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N06_taverneiro_attack",
+    "src": "../asset-production-20261021-r1/N06_taverneiro_attack_v01.png",
+    "out": "prepared/poses/N06_taverneiro/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N06_taverneiro_death",
+    "src": "../asset-production-20261021-r1/N06_taverneiro_death_v01.png",
+    "out": "prepared/poses/N06_taverneiro/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N06_taverneiro",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N06_taverneiro",
+    "out_static": "prepared/characters/N06_taverneiro.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N06_taverneiro_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N06_taverneiro_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N06_taverneiro_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N06_atendente_idle",
+    "src": "../asset-production-20261021-r1/N06_atendente_idle_v01.png",
+    "out": "prepared/poses/N06_atendente/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N06_atendente_attack",
+    "src": "../asset-production-20261021-r1/N06_atendente_attack_v01.png",
+    "out": "prepared/poses/N06_atendente/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N06_atendente_death",
+    "src": "../asset-production-20261021-r1/N06_atendente_death_v01.png",
+    "out": "prepared/poses/N06_atendente/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N06_atendente",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N06_atendente",
+    "out_static": "prepared/characters/N06_atendente.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N06_atendente_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N06_atendente_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N06_atendente_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N07_wonka_idle",
+    "src": "../asset-production-20261021-r1/N07_wonka_idle_v01.png",
+    "out": "prepared/poses/N07_wonka/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N07_wonka_attack",
+    "src": "../asset-production-20261021-r1/N07_wonka_attack_v01.png",
+    "out": "prepared/poses/N07_wonka/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N07_wonka_death",
+    "src": "../asset-production-20261021-r1/N07_wonka_death_v01.png",
+    "out": "prepared/poses/N07_wonka/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N07_wonka",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N07_wonka",
+    "out_static": "prepared/characters/N07_wonka.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N07_wonka_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N07_wonka_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N07_wonka_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N07_willie_idle",
+    "src": "../asset-production-20261021-r1/N07_willie_idle_v01.png",
+    "out": "prepared/poses/N07_willie/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N07_willie_attack",
+    "src": "../asset-production-20261021-r1/N07_willie_attack_v01.png",
+    "out": "prepared/poses/N07_willie/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N07_willie_death",
+    "src": "../asset-production-20261021-r1/N07_willie_death_v01.png",
+    "out": "prepared/poses/N07_willie/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N07_willie",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N07_willie",
+    "out_static": "prepared/characters/N07_willie.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N07_willie_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N07_willie_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N07_willie_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N08_idle",
+    "src": "../asset-production-20261021-r1/N08_idle_v01.png",
+    "out": "prepared/poses/N08/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N08_attack",
+    "src": "../asset-production-20261021-r1/N08_attack_v01.png",
+    "out": "prepared/poses/N08/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N08_death",
+    "src": "../asset-production-20261021-r1/N08_death_v01.png",
+    "out": "prepared/poses/N08/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N08",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N08",
+    "out_static": "prepared/characters/N08.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N08_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N08_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N08_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N09_idle",
+    "src": "../asset-production-20261021-r1/N09_idle_v01.png",
+    "out": "prepared/poses/N09/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N09_attack",
+    "src": "../asset-production-20261021-r1/N09_attack_v01.png",
+    "out": "prepared/poses/N09/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N09_death",
+    "src": "../asset-production-20261021-r1/N09_death_v01.png",
+    "out": "prepared/poses/N09/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N09",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N09",
+    "out_static": "prepared/characters/N09.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N09_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N09_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N09_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  },
+  {
+    "id": "N10_idle",
+    "src": "../asset-production-20261021-r1/N10_idle_v01.png",
+    "out": "prepared/poses/N10/idle.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N10_attack",
+    "src": "../asset-production-20261021-r1/N10_attack_v01.png",
+    "out": "prepared/poses/N10/attack.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "id": "N10_death",
+    "src": "../asset-production-20261021-r1/N10_death_v01.png",
+    "out": "prepared/poses/N10/death.png",
+    "key": "gray",
+    "fit": [
+      256,
+      384
+    ],
+    "pad": 18,
+    "anchor": "bottom"
+  },
+  {
+    "mode": "sprite",
+    "id": "N10",
+    "cell": [
+      256,
+      384
+    ],
+    "feet": 356,
+    "height": 300,
+    "max_w": 210,
+    "match_old": false,
+    "out_anim": "prepared/animations/N10",
+    "out_static": "prepared/characters/N10.png",
+    "static_size": [
+      320,
+      480
+    ],
+    "poses": {
+      "idle": "../asset-production-20261021-r1/N10_idle_v01.png",
+      "attack": "../asset-production-20261021-r1/N10_attack_v01.png",
+      "death": "../asset-production-20261021-r1/N10_death_v01.png"
+    },
+    "states": {
+      "idle": 4,
+      "move": 6,
+      "attack": 4,
+      "death": 6
+    }
+  }
+]

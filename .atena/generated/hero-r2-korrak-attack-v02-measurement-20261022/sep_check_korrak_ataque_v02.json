@@ -1,0 +1,16 @@
+[
+  {
+    "arquivo": "korrak/korrak_attack_se_v02.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 42,
+    "separadas": true
+  },
+  {
+    "arquivo": "korrak/korrak_attack_se_v01.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 20,
+    "separadas": true
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "file": "durvall_attack_se_v02.png",
+    "source": "exec-08b108fa-c330-43ee-9bc7-7cb1d2e30a16.png",
+    "sha256": "7BBE7A9CDC532661B27126BC01E7BB463CA53F470254C9BEB4138E5CE47AD538",
+    "source_equal": true
+  },
+  {
+    "file": "durvall_active_se_v02.png",
+    "source": "exec-21ece3e1-b5d3-4372-8bf7-3bdbb45a87e4.png",
+    "sha256": "C7C43C76900F13BC531053033B1502EBFB966225F8B6A0C73B25CA482EC7C16A",
+    "source_equal": true
+  },
+  {
+    "file": "durvall_death_se_v02.png",
+    "source": "exec-a9b5370d-4cec-44ef-a065-63702f86a18a.png",
+    "sha256": "6A0F7D4A96705010FA5ED9B1F188A5CDEA81BD75AD677BB3204E3BA72D4ABC20",
+    "source_equal": true
+  },
+  {
+    "file": "durvall_death_se_v03.png",
+    "source": "exec-8a16e001-5ba2-4616-bcde-7cb4c30c78ee.png",
+    "sha256": "0860C7FB048DA31BE9EEB9DAC83F8B4218D696D706969ED713F8FE83D8E1A6D8",
+    "source_equal": true
+  }
+]

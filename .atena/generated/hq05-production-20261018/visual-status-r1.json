@@ -1,0 +1,26 @@
+{
+  "owner_reply": "aprovado, continue a geração deixe as implementações para o claude",
+  "accepted": [
+    {
+      "id": "HQ05-Q1",
+      "sha256": "3B87BB83265D6A7284A288197D64098026EE81EA4FA993D41336DE4D099051B2",
+      "revision": "v01",
+      "candidate": "candidates/hq_n05_q1_cavern_bubbles_v01.png"
+    }
+  ],
+  "pending": [],
+  "implementation_owner": "Claude",
+  "runtime_admission": "NOT_PERFORMED",
+  "next_step": "WAIT_FOR_OWNER_NEW_PROMPTS_AND_RESUMPTION",
+  "rejected": [
+    {
+      "id": "HQ05-Q2",
+      "sha256": "ABA15AF00A7333FD75406299D96681FEBEF27B712FB6DAA1633918872E5583A7",
+      "revision": "v01",
+      "candidate": "candidates/hq_n05_q2_blogbog_pressure_v01.png"
+    }
+  ],
+  "latest_owner_reply": "não aprovo, o brook ficou ruim, vamos deixar isso para depois estou gerando mais prompts",
+  "production_status": "PAUSED_BY_OWNER_AWAITING_NEW_PROMPTS_AND_EXPLICIT_RESUMPTION",
+  "rejection_reason": "Q2 v01: resultado visual do Brook não aprovado"
+}

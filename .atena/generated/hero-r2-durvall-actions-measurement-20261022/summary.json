@@ -1,0 +1,167 @@
+[
+  {
+    "action": "attack",
+    "verdict": "REPROVA",
+    "checks": {
+      "1_figuras": "FALHA",
+      "2_fundo": "PASSA",
+      "4_pes": "PASSA",
+      "5e_poses_diferentes": "PASSA",
+      "5f_gesto_a_vista": "INCERTO",
+      "6_pontos_soltos": "INCERTO"
+    },
+    "figures": [
+      {
+        "feet_y": 511,
+        "h": 491,
+        "i": 1,
+        "touches_edge": false,
+        "touches_slot": true,
+        "w": 255,
+        "x": 252,
+        "y": 21
+      },
+      {
+        "feet_y": 511,
+        "h": 497,
+        "i": 2,
+        "touches_edge": false,
+        "touches_slot": true,
+        "w": 349,
+        "x": 963,
+        "y": 15
+      },
+      {
+        "feet_y": 983,
+        "h": 446,
+        "i": 3,
+        "touches_edge": false,
+        "touches_slot": true,
+        "w": 606,
+        "x": 162,
+        "y": 538
+      },
+      {
+        "feet_y": 982,
+        "h": 455,
+        "i": 4,
+        "touches_edge": false,
+        "touches_slot": false,
+        "w": 531,
+        "x": 960,
+        "y": 528
+      }
+    ],
+    "sha256": "31C1B504BCED5B5B29C4836879281882EF9D4D73B0226B2E0518617329DE864F"
+  },
+  {
+    "action": "active",
+    "verdict": "REPROVA",
+    "checks": {
+      "1_figuras": "FALHA",
+      "2_fundo": "PASSA",
+      "4_pes": "PASSA",
+      "5e_poses_diferentes": "PASSA",
+      "5f_gesto_a_vista": "INCERTO",
+      "6_pontos_soltos": "INCERTO"
+    },
+    "figures": [
+      {
+        "feet_y": 511,
+        "h": 485,
+        "i": 1,
+        "touches_edge": false,
+        "touches_slot": true,
+        "w": 278,
+        "x": 267,
+        "y": 27
+      },
+      {
+        "feet_y": 511,
+        "h": 492,
+        "i": 2,
+        "touches_edge": false,
+        "touches_slot": true,
+        "w": 428,
+        "x": 866,
+        "y": 20
+      },
+      {
+        "feet_y": 993,
+        "h": 482,
+        "i": 3,
+        "touches_edge": false,
+        "touches_slot": true,
+        "w": 586,
+        "x": 168,
+        "y": 512
+      },
+      {
+        "feet_y": 987,
+        "h": 416,
+        "i": 4,
+        "touches_edge": false,
+        "touches_slot": false,
+        "w": 517,
+        "x": 907,
+        "y": 572
+      }
+    ],
+    "sha256": "99715523C69AD6F542AF7AEA7E91C71B2C2CD4B3E87B72E309358283371E7178"
+  },
+  {
+    "action": "death",
+    "verdict": "REPROVA",
+    "checks": {
+      "1_figuras": "FALHA",
+      "2_fundo": "PASSA",
+      "4_pes": "FALHA",
+      "5e_poses_diferentes": "PASSA",
+      "5f_gesto_a_vista": "INCERTO",
+      "6_pontos_soltos": "FALHA"
+    },
+    "figures": [
+      {
+        "feet_y": 511,
+        "h": 490,
+        "i": 1,
+        "touches_edge": false,
+        "touches_slot": true,
+        "w": 244,
+        "x": 243,
+        "y": 22
+      },
+      {
+        "feet_y": 511,
+        "h": 464,
+        "i": 2,
+        "touches_edge": false,
+        "touches_slot": true,
+        "w": 405,
+        "x": 918,
+        "y": 48
+      },
+      {
+        "feet_y": 995,
+        "h": 392,
+        "i": 3,
+        "touches_edge": false,
+        "touches_slot": false,
+        "w": 411,
+        "x": 189,
+        "y": 604
+      },
+      {
+        "feet_y": 940,
+        "h": 209,
+        "i": 4,
+        "touches_edge": false,
+        "touches_slot": false,
+        "w": 686,
+        "x": 797,
+        "y": 732
+      }
+    ],
+    "sha256": "DCD9ACD59CA5891603189AE9E8B942DDA60E52463DB2DEF8D68CC54E92205F87"
+  }
+]

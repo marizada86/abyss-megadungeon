@@ -1,0 +1,86 @@
+[
+  {
+    "arquivo": "durvall/durvall_idle_se_v01.png",
+    "componentes_grandes": 3,
+    "esperadas": 3,
+    "menor_margem_da_imagem_px": 50,
+    "separadas": true
+  },
+  {
+    "arquivo": "durvall/durvall_idle_se_v02.png",
+    "componentes_grandes": 3,
+    "esperadas": 3,
+    "menor_margem_da_imagem_px": 50,
+    "separadas": true
+  },
+  {
+    "arquivo": "korrak/korrak_idle_se_v01.png",
+    "componentes_grandes": 3,
+    "esperadas": 3,
+    "menor_margem_da_imagem_px": 8,
+    "separadas": true
+  },
+  {
+    "arquivo": "durvall/durvall_walk_se_r3_E1_v01.png",
+    "componentes_grandes": 3,
+    "esperadas": 3,
+    "menor_margem_da_imagem_px": 64,
+    "separadas": true
+  },
+  {
+    "arquivo": "durvall/durvall_walk_se_r2_v01.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 16,
+    "separadas": true
+  },
+  {
+    "arquivo": "durvall/durvall_walk_se_r2_v02.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 14,
+    "separadas": true
+  },
+  {
+    "arquivo": "durvall/durvall_walk_se_r2_v03.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 24,
+    "separadas": true
+  },
+  {
+    "arquivo": "durvall/durvall_attack_se_v02.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 85,
+    "separadas": true
+  },
+  {
+    "arquivo": "durvall/durvall_active_se_v02.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 93,
+    "separadas": true
+  },
+  {
+    "arquivo": "durvall/durvall_death_se_v03.png",
+    "componentes_grandes": 4,
+    "esperadas": 4,
+    "menor_margem_da_imagem_px": 136,
+    "separadas": true
+  },
+  {
+    "arquivo": "durvall/durvall_walk_se_v01.png",
+    "componentes_grandes": 3,
+    "esperadas": 3,
+    "menor_margem_da_imagem_px": 23,
+    "separadas": true
+  },
+  {
+    "arquivo": "durvall/durvall_walk_se_v02.png",
+    "componentes_grandes": 3,
+    "esperadas": 3,
+    "menor_margem_da_imagem_px": 51,
+    "separadas": true
+  }
+]

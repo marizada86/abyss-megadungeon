@@ -1,0 +1,21 @@
+{
+  "version": "0.5.1",
+  "build_id": "83f6dd1c",
+  "source": "git archive HEAD (83f6dd1c), arvore limpa em tmp/dist-src-051",
+  "preset": "Windows Playtest Publico",
+  "zip": "build/dist-0.5.1/Nottgard-Playtest-0.5.1.zip",
+  "zip_bytes": 603582016,
+  "zip_sha256": "059F5309EA9AF273B79C7234AFF2A9059DB3128E18B48AD0E47E157BAD7FFB32",
+  "exe_bytes": 677710448,
+  "exe_sha256": "06CC2623896FFE9218C751845F85BBAE3D97F290B0F13A39D02E04BA29E0BE8F",
+  "exe_file_product_version": "0.5.1.0",
+  "contents": ["NottgardSurvivors-Playtest.exe", "LEIA-ME.txt", "NOTAS-DA-VERSAO.txt"],
+  "gates": {
+    "G1_suite": "PASS (tools/validate_release.sh na arvore de trabalho, com a versao 0.5.1)",
+    "G2_audit": "PASS (0 erros, 0 avisos)",
+    "G4_smoke": "PASS (exe headless, perfil sintetico, saida 0, 0 SCRIPT ERROR/Parse Error/Failed loading; 2 avisos de encerramento conhecidos). Template de release nao aceita cena por linha de comando.",
+    "G5_save_upgrade": "PASS (test_save_upgrade_050); sem mudanca de esquema desde a 0.5.0",
+    "G3_bots": "nao rodou; rebalanceamentos ja medidos nos commits da0c4e6, a792cca, dce57dd, 32e4536"
+  },
+  "notes": "A primeira importacao do arquivo limpo acusou theme.tres sem a fonte (ordem de importacao); a segunda foi limpa e o export saiu com 0 erros. Nada publicado, sem tag."
+}

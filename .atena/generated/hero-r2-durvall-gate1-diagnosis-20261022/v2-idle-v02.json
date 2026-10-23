@@ -1,0 +1,88 @@
+{
+  "arquivo": "F:/dev/abyss-megadungeon/assets_incoming/hero-r2/durvall/durvall_idle_se_v02.png",
+  "chave": "magenta",
+  "checagens": {
+    "1_figuras": "PASSA",
+    "2_fundo": "PASSA",
+    "3_escala": "PASSA",
+    "4_pes": "PASSA",
+    "6_pontos_soltos": "PASSA"
+  },
+  "esperadas": 3,
+  "figuras": [
+    {
+      "feet_y": 973,
+      "h": 912,
+      "i": 1,
+      "specks_prod": 0,
+      "touches_edge": false,
+      "w": 403,
+      "x": 64,
+      "y": 62
+    },
+    {
+      "feet_y": 973,
+      "h": 911,
+      "i": 2,
+      "specks_prod": 0,
+      "touches_edge": false,
+      "w": 406,
+      "x": 551,
+      "y": 63
+    },
+    {
+      "feet_y": 973,
+      "h": 910,
+      "i": 3,
+      "specks_prod": 0,
+      "touches_edge": false,
+      "w": 403,
+      "x": 1070,
+      "y": 64
+    }
+  ],
+  "halo": {
+    "base": 0.00564921881896019,
+    "excess_pp": 4.8,
+    "mid": 0.0533204259438529,
+    "por_profundidade_pct": {
+      "1": 53.2,
+      "10": 0.6,
+      "2": 6.8,
+      "3": 5.0,
+      "4": 5.6,
+      "5": 4.2,
+      "6": 2.5,
+      "7": 1.0,
+      "8": 0.6,
+      "9": 0.5
+    }
+  },
+  "identidade_e_estilo": "decisão do dono (critérios 7 a 9)",
+  "movimento": {
+    "noise": {
+      "legs_color": 31.9,
+      "legs_color_01": 27.2,
+      "sil_xor": 0.046
+    }
+  },
+  "notas": [
+    "3_escala: pior diferença de altura contra a calibração = 0.2% (limite 6%; o vaivém do corpo na caminhada é esperado)",
+    "4_pes: variação da linha dos pés = 0.0% da altura (limite 3%)",
+    "2_fundo: resíduo magenta a 3-4 px depois do recorte de produção = 5.3%, linha de base (8-10 px) = 0.6%, excesso = 4.8 pontos (PASSA <= 5, FALHA > 10, entre os dois = INCERTO)",
+    "6_pontos_soltos: 0 na escala de produção (figura a 400 px; contados os componentes de 3 a 60 px² nessa escala)",
+    "idle: ruído de 'mesma pose' medido: pernas 31.9, silhueta 4.6% (use --noise-from neste JSON nas caminhadas)"
+  ],
+  "ruido_usado": {
+    "fonte": "padrão provisório",
+    "legs": 34.0,
+    "sil": 0.05
+  },
+  "tela": [
+    1536,
+    1024
+  ],
+  "tipo": "idle",
+  "verdict": "PASSA",
+  "versao_verificador": "v2"
+}

@@ -1,0 +1,8 @@
+Claude, retome o Durvall walk SE no projeto F:/dev/abyss-megadungeon.
+
+Leia primeiro:
+F:/dev/abyss-megadungeon/.atena/generated/hero-r2-durvall-walk-se-r2-20261022/RETORNO-CLAUDE.md
+
+Executamos as 3 tentativas do contrato r2 com quatro figuras em grade 2x2. V01 e v02 foram reprovadas por mim; a v03 ainda parece repetir a mesma perna nos contatos 1 e 3 e não recebeu aceite. O movimento continua estranho, sem alternância convincente dos passos. Os prompts exatos, referências, PNGs originais e hashes estão no pacote. O verificador v2 não foi rodado nestas três novas imagens.
+
+Não gere mais nada nem integre. Analise as evidências e proponha a próxima abordagem, considerando o plano B de uma pose por imagem previsto no roteiro. Quero avaliar uma proposta concreta antes de autorizar novas gerações. Preserve o idle v01 aprovado, as tentativas e os demais planos do projeto.
