@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-22",
+  "status": "DRAFT_DELIVERED_AWAITING_MEASUREMENT_AND_VISUAL_ACCEPTANCE",
+  "authorization": "atena siga as instruções",
+  "instruction_source": "C:\\Users\\Higor Rossini\\.codex\\attachments\\5ba58faf-9303-431c-abdc-d722527ec45c\\Texto colado.txt",
+  "tool": "image_gen",
+  "prompts": "OWNER_ATTACHMENT_VERBATIM",
+  "references_order": [
+    "korrak-front-candidate-v01.png",
+    "korrak-left-v01.png",
+    "korrak-back-v01.png",
+    "korrak-right-v01.png",
+    "korrak_idle_se_v01.png"
+  ],
+  "deliveries": [
+    {
+      "file": "korrak_attack_se_v01.png",
+      "source": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1652e-fc23-76d1-9c04-304371417f2a\\exec-64238420-2928-4380-b6b0-7d09030861e6.png",
+      "sha256": "F22F0112868BE1AC513DD1AC7C933CE4F4A556FED08C1128AF8B139EFB09F8F8",
+      "prompt": "Draw the SAME character as in the attached references (images 1 to 4, the identity authority): Korrak, a goliath about 2.3 m, enormously muscled, stone-gray skin, shaved head with a dark crest of hair along the center, full black beard. Rivet-studded brown leather cuirass with a diagonal strap, a spiked steel pauldron on his LEFT shoulder and a thick tawny fur mantle on his RIGHT shoulder, studded leather bracers, wide belt with a round buckle disc, skirt of ragged leather strips, tall wrapped boots with fur cuffs. He wields the Axe of Xar'gath: a huge two-handed battle axe with a black iron head whose lava-like orange-red cracks are painted on the metal (not an effect) and a long dark wooden haft. Match the exact style, rendering and scale of the approved idle image (image 5): dark-fantasy game sprite, painterly shading, crisp dark outlines, light from the upper left, three-quarter isometric camera, three-quarter front view facing screen-RIGHT.\r\n\r\nCanvas 1536x1024, flat uniform pure magenta #FF00FF background, no floor, no shadow. Exactly 4 full-body figures in a 2x2 grid, reading order, each inside its own 768x512 quadrant. IMPORTANT: draw each figure SMALL, about 65 percent of the quadrant height, with at least 80 px of empty margin on every side including the axe, so that nothing touches another figure, a quadrant edge or the canvas edge. All the same scale.\r\n\r\nFigure 1 (top-left): neutral standing calibration pose, arms relaxed, feet together, axe held across the body.\r\nFigure 2 (top-right): ATTACK wind-up: the axe drawn back behind the RIGHT shoulder, torso twisted.\r\nFigure 3 (bottom-left): ATTACK strike: a wide horizontal chop across the front, arms extended, front foot planted.\r\nFigure 4 (bottom-right): ATTACK follow-through: the axe low on the far side, momentum carrying the torso.\r\nThe four figures must clearly differ from each other.\r\n\r\nNo text, labels, grid lines, frames, cast shadows, motion blur, sparks, flames, glow or drawn magic effects. No helmet, armor change, second weapon or redesign. Keep the steel pauldron on the left shoulder and the fur on the right shoulder in all figures.",
+      "attempts_used": 1,
+      "post_edit": false,
+      "measurement": "NOT_REQUESTED",
+      "visual_acceptance": "PENDING"
+    },
+    {
+      "file": "korrak_active_se_v01.png",
+      "source": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1652e-fc23-76d1-9c04-304371417f2a\\exec-7aee3422-a138-47b0-b14b-201d6c82f11e.png",
+      "sha256": "F316D1F345535E2CFED19F69904951498E40B7E7CC4B82C79A9FE217C4314DAC",
+      "prompt": "Draw the SAME character as in the attached references (images 1 to 4, the identity authority): Korrak, a goliath about 2.3 m, enormously muscled, stone-gray skin, shaved head with a dark crest of hair along the center, full black beard. Rivet-studded brown leather cuirass with a diagonal strap, a spiked steel pauldron on his LEFT shoulder and a thick tawny fur mantle on his RIGHT shoulder, studded leather bracers, wide belt with a round buckle disc, skirt of ragged leather strips, tall wrapped boots with fur cuffs. He wields the Axe of Xar'gath: a huge two-handed battle axe with a black iron head whose lava-like orange-red cracks are painted on the metal (not an effect) and a long dark wooden haft. Match the exact style, rendering and scale of the approved idle image (image 5): dark-fantasy game sprite, painterly shading, crisp dark outlines, light from the upper left, three-quarter isometric camera, three-quarter front view facing screen-RIGHT.\r\n\r\nCanvas 1536x1024, flat uniform pure magenta #FF00FF background, no floor, no shadow. Exactly 4 full-body figures in a 2x2 grid, reading order, each inside its own 768x512 quadrant. IMPORTANT: draw each figure SMALL, about 65 percent of the quadrant height, with at least 80 px of empty margin on every side including the axe, so that nothing touches another figure, a quadrant edge or the canvas edge. All the same scale.\r\n\r\nFigure 1 (top-left): neutral standing calibration pose, arms relaxed, feet together, axe held across the body.\r\nFigure 2 (top-right): ABILITY 1: the axe raised overhead in both hands, torso arched back.\r\nFigure 3 (bottom-left): ABILITY 2: the axe at the top of the swing, body leaning forward.\r\nFigure 4 (bottom-right): ABILITY 3: the axe driven down in front, knees bent, head down.\r\nThe four figures must clearly differ from each other.\r\n\r\nNo text, labels, grid lines, frames, cast shadows, motion blur, sparks, flames, glow, cracks in the ground or drawn magic effects. No helmet, armor change, second weapon or redesign. Keep the steel pauldron on the left shoulder and the fur on the right shoulder in all figures.",
+      "attempts_used": 1,
+      "post_edit": false,
+      "measurement": "NOT_REQUESTED",
+      "visual_acceptance": "PENDING"
+    },
+    {
+      "file": "korrak_death_se_v01.png",
+      "source": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1652e-fc23-76d1-9c04-304371417f2a\\exec-68b52d04-5c0a-4646-8dc7-9c94a11439bd.png",
+      "sha256": "27F9C1B7AE091BFECE766AFAAF467C312CDD721F1FE916284E4832671C3321E4",
+      "prompt": "Draw the SAME character as in the attached references (images 1 to 4, the identity authority): Korrak, a goliath about 2.3 m, enormously muscled, stone-gray skin, shaved head with a dark crest of hair along the center, full black beard. Rivet-studded brown leather cuirass with a diagonal strap, a spiked steel pauldron on his LEFT shoulder and a thick tawny fur mantle on his RIGHT shoulder, studded leather bracers, wide belt with a round buckle disc, skirt of ragged leather strips, tall wrapped boots with fur cuffs. He carries the Axe of Xar'gath: a huge two-handed battle axe with a black iron head whose lava-like orange-red cracks are painted on the metal (not an effect) and a long dark wooden haft. Match the exact style, rendering and scale of the approved idle image (image 5): dark-fantasy game sprite, painterly shading, crisp dark outlines, light from the upper left, three-quarter isometric camera, three-quarter front view facing screen-RIGHT.\r\n\r\nCanvas 1536x1024, flat uniform pure magenta #FF00FF background, no floor, no shadow. Exactly 4 full-body figures in a 2x2 grid, reading order, each inside its own 768x512 quadrant. IMPORTANT: draw each figure SMALL, about 65 percent of the quadrant height (the lying figure about 70 percent of the quadrant width), with at least 80 px of empty margin on every side including the axe, so that nothing touches another figure, a quadrant edge or the canvas edge. All the same scale.\r\n\r\nFigure 1 (top-left): neutral standing calibration pose, arms relaxed, feet together, axe held across the body.\r\nFigure 2 (top-right): DEATH 1, hit: recoiling backward from a blow, head thrown back, one foot just off the ground, the axe loosening in his hands.\r\nFigure 3 (bottom-left): DEATH 2, fall: dropping to the knees, head down, the axe falling from his hands.\r\nFigure 4 (bottom-right): DEATH 3, down: lying collapsed on the ground on one side, eyes closed, the axe on the ground beside the hand; no blood, no gore. Keep this wide figure fully inside its quadrant.\r\nThe four figures must clearly differ from each other.\r\n\r\nNo text, labels, grid lines, frames, cast shadows, motion blur, sparks, flames, glow or drawn magic effects. No helmet, armor change, second weapon or redesign. Keep the steel pauldron on the left shoulder and the fur on the right shoulder in all figures.",
+      "attempts_used": 1,
+      "post_edit": false,
+      "measurement": "NOT_REQUESTED",
+      "visual_acceptance": "PENDING"
+    }
+  ],
+  "visual_observations": "Poses visualmente distintas. Margens solicitadas de 80 px não atendidas visualmente em várias poses, especialmente machados elevados. Sem medição formal ou aceite inferido. Exceção do idle não aplicada.",
+  "runtime_modified": false
+}

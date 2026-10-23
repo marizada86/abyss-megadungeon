@@ -1,0 +1,65 @@
+{
+  "arquivo": "F:/dev/abyss-megadungeon/assets_incoming/hero-r2/durvall/durvall_idle_se_v01.png",
+  "chave": "magenta",
+  "checagens": {
+    "1_figuras": true,
+    "2_fundo": false,
+    "3_escala": true,
+    "4_pes": true,
+    "5_caminhada": true,
+    "6_pontos_soltos": false
+  },
+  "esperadas": 3,
+  "figuras": [
+    {
+      "area": 197693,
+      "calibration": true,
+      "cx": 265,
+      "feet_y": 973,
+      "h": 911,
+      "i": 1,
+      "specks": 17,
+      "touches_edge": false,
+      "w": 401,
+      "x": 65,
+      "y": 63
+    },
+    {
+      "area": 201953,
+      "cx": 753,
+      "feet_y": 973,
+      "h": 911,
+      "i": 2,
+      "specks": 19,
+      "touches_edge": false,
+      "w": 404,
+      "x": 552,
+      "y": 63
+    },
+    {
+      "area": 200029,
+      "cx": 1271,
+      "feet_y": 973,
+      "h": 909,
+      "i": 3,
+      "specks": 20,
+      "touches_edge": false,
+      "w": 402,
+      "x": 1071,
+      "y": 65
+    }
+  ],
+  "identidade_e_estilo": "decisão do dono (critérios 7 a 9)",
+  "notas": [
+    "3_escala: pior diferença de altura contra a calibração = 0.2%",
+    "4_pes: variação da linha dos pés = 0.0% da altura",
+    "2_fundo: 49.5% das bordas ainda parecem a cor de fundo",
+    "6_pontos_soltos: 56"
+  ],
+  "tela": [
+    1536,
+    1024
+  ],
+  "tipo": "idle",
+  "verdict": "REPROVA"
+}

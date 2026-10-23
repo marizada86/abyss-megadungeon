@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-22",
+  "status": "DRAFT_VISUALLY_APPROVED_AWAITING_MEASUREMENT",
+  "file": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\korrak\\korrak_idle_se_v01.png",
+  "source": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1652e-fc23-76d1-9c04-304371417f2a\\exec-385a3f73-f4c5-4ea0-847a-e8c20b928921.png",
+  "sha256": "1EBB6780349A26A13B47284536D07928BF0DD79487CD1A9AF2260914813426C2",
+  "tool": "image_gen",
+  "references_order": [
+    "korrak-front-candidate-v01.png",
+    "korrak-left-v01.png",
+    "korrak-back-v01.png",
+    "korrak-right-v01.png",
+    "zuggtmoy.png"
+  ],
+  "prompt_source": ".atena/generated/hero-art-reset-20261021/prompts-r2/korrak.md#1",
+  "prompt": "Dark-fantasy 2D game character illustration in the exact style of the attached game references: dense pixel-art-inspired painting with painterly shading, crisp dark outlines, muted desaturated palette, warm gold highlights, strong rim light from the upper left, no soft airbrush blur. Camera: three-quarter isometric, looking down at about 30 degrees. The silhouette must stay readable when shrunk to 64 px tall.\n\nCanvas 1536x1024, landscape. Perfectly uniform flat pure magenta #FF00FF background (no gradient, no floor, no ground shadow, no vignette, no texture), including the gaps between figures. Draw exactly 3 full-body figures of the SAME character in ONE horizontal row, left to right, evenly spaced with at least 140 px of empty background between figures. No figure touches another figure or the canvas edge, and every figure is completely visible including item, hair and cloth. All figures have the same scale (about 75 percent of the canvas height) and all feet rest on the same invisible horizontal ground line.\n\nCHARACTER (identity authority: the attached canon views; they win over any other description): Korrak, a goliath, about 2.3 m, enormously muscled: stone-gray skin with faint darker veins like granite; shaved head with a dark crest of hair along the center, a full black beard, heavy brow. A rivet-studded brown leather cuirass with a diagonal strap, a spiked steel pauldron on his LEFT shoulder and a thick tawny fur mantle on his RIGHT shoulder, studded leather bracers, a wide belt with a round buckle disc, a skirt of ragged leather strips, tall wrapped boots with fur cuffs.\n\nItem (game weapon, not in the canon views): the Axe of Xar'gath, a huge two-handed battle axe with a black iron head whose lava-like orange-red cracks are painted on the metal (not an effect) and a long dark wooden haft.\n\nNEVER: No helmet, no armor change, no flames or sparks around the axe, no second weapon.\n\nFacing for ALL figures in this image: three-quarter front view, body and face turned toward the camera and toward screen-RIGHT at about 45 degrees.\nFigure 1 — REST: relaxed standing pose, facing the camera and slightly to the right, weight even on both feet (this is the calibration figure).\nFigure 2 — BREATH IN: identical pose and identical feet; shoulders and chest raised by only 2 to 3 px; cloth and hair shift by a hair's width.\nFigure 3 — BREATH OUT: identical pose and identical feet; shoulders and chest settled slightly lower than REST; cloth and hair shift slightly the other way.\nThe three figures must be almost identical; only the tiny breathing and cloth/hair differences described. Same feet placement in all three.\n\nNo text, letters, numbers, labels, arrows, grid lines, frames or watermark. No cast shadow on the ground and no floor. No motion blur, speed lines, particles, sparks, smoke, glow effects or drawn magic effects (the game draws effects). No extra limbs, no duplicated or extra weapons, no redesign, and no costume, hair or face change between figures. Keep every asymmetric detail of the reference on the same side of the body in all figures.",
+  "attempts_used": 1,
+  "post_edit": false,
+  "runtime_modified": false,
+  "visual_acceptance": "APPROVED_OWNER_20261022",
+  "owner_visual_reply": "aprovado, proximo passo?",
+  "measurement": "PENDING"
+}

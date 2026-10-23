@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-22",
+  "status": "DRAFT_COMPOSITE_VISUALLY_APPROVED",
+  "authorization": "atena, é só utilizar a posição 4 da imagem anterior (dono, 2026-10-22; imagem colada = figura 4 do korrak_attack_se_v01.png)",
+  "file": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\korrak\\korrak_attack_se_v02b.png",
+  "sha256": "1DA5647F850A1B7B78F26507F40754B303D1241AA5A4C0A431A0ED9945F1D218",
+  "method": "composicao local sem geracao: figuras 1, 2 e 3 de korrak_attack_se_v02.png intactas; quadrante inferior direito preenchido com o magenta do v02 e a figura 4 do v01 colada 1:1 (sem escala, sem retoque), deslocada 14 px para baixo para alinhar os pes (v01 y 955 -> 969)",
+  "sources": {
+    "v02_sha256": "B3462FBDAC2D4F4A17618E8B4C630023AA5039522E23E4FE1D39606D7D690A16",
+    "v01_sha256": "F22F0112868BE1AC513DD1AC7C933CE4F4A556FED08C1128AF8B139EFB09F8F8"
+  },
+  "originals_preserved": true,
+  "attempts_used": 2,
+  "attempts_remaining": 1,
+  "generation": "NONE",
+  "measurement": ".atena/generated/hero-r2-korrak-attack-v02-measurement-20261022/RESULTADO-V02B.md",
+  "visual_acceptance": "APPROVED_OWNER_20261022",
+  "owner_visual_reply": "Aceito o ataque v02b à vista; registre o aceite visual.",
+  "acceptance_scope": "somente korrak_attack_se_v02b.png (SHA-256 acima); ressalvas: escala da figura 4 ~7% menor, altura/margem acima do pedido, transição 3-4 de composto; não é precedente; não se estende a habilidade e morte",
+  "runtime_modified": false
+}

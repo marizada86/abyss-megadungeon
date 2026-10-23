@@ -1,0 +1,17 @@
+# Preparação técnica — DRAFT r1
+
+Aceite recebido: “aprovado o aceite, continue”. Receipt visual-acceptance.json da produção registra 125 fontes por ID/revisão/SHA-256; quatro versões substituídas excluídas. Sem promoção CANON. Geração concluída em 8/8.
+
+Preparação isolada com Godot 4.7.2 já disponível e adaptação local de tools/asset_prep.gd do PC. Nenhuma dependência instalada. Projeto sintético sem autoload nem save de jogo; nenhuma escrita em assets/ do runtime. O aviso do engine sobre leitura do armazenamento de certificados do Windows apareceu no encerramento; as rotinas são offline, os processos saíram com código zero e os PNGs foram conferidos separadamente. Não alegar logs sem erros.
+
+158 derivados: 62 peças UI/Quartel, 36 poses transparentes (256×384), 12 sprites estáticos (320×480) e 48 folhas de transição em células 256×384 (4/6 quadros). Cada entidade usa escala comum nas folhas e âncora vertical em y=356. Largura limitada para absorver deslocamento/estiramento do ataque. Beholder permanece flutuante. Os nomes N são identificadores de preparação, sem criar IDs de jogo.
+
+Auditoria reproduzível audit.ps1: 158/158 saídas com dimensões esperadas e conteúdo; zero contato de alfa significativo com bordas de células nas folhas; zero resíduos magenta detectados nas peças de chave magenta; zero fontes alteradas entre os 129 PNGs. Alfa transparente conferido onde esperado. U09 preserva preto para uso aditivo; U10 permanece opaco; U13_fill é preenchimento retangular opaco intencional. O script preserva interiores cinza ao remover somente o fundo conectado às bordas. Buracos fechados requerem inspeção visual; não declarar remoção semântica perfeita.
+
+Inspeção visual: pranchas completas de UI e dos doze personagens, mais peças individuais. Corrigidos o recorte Q02 para excluir fragmento da peça vizinha e as linhas de Q08 para impedir contaminação por ícones da linha seguinte. Fontes, trajes e elementos reconhecíveis preservados; imagens com escala pequena são avaliadas no tamanho-alvo. A prévia animada permite examinar transições; não equivale a playtest ou satisfação humana.
+
+Retenções técnicas: U10 ainda não aprovado como textura repetível. U14 teve a faixa azul separada em preenchimento opaco 300×8; a versão preliminar com caixilho foi preservada em superseded/ e excluída dos 158 derivados selecionados. Margens de nine-slice precisam de validação nos consumers. Q02 fornece uma placa quadrada independente de 96×96; a janela incorporada ao cartão 360×72 é proporcionalmente menor e não atende a um retrato de 96px sem ajuste de layout. V10 sprite mantém a retenção do PC por incompatibilidade com as folhas atuais. Não substituir automaticamente esses consumers.
+
+Reconciliação PC: dc4a917 já integrou U01–U08, V01–V09, V10 retrato, V11, C10–C16, Q01/Q04/Q06; C01–C09 vieram de integração anterior. Esses assets e scripts não foram reexecutados ou sobrescritos aqui. O cursor do PC ainda descreve lote N incompleto; esta evidência fornece a atualização sem reescrever outros planos.
+
+Decisão de admissão: UI/HUD restante e cartões do Quartel exigem adequação dos consumers e capturas com texto real; N tem somente o consumer npc_reaper_barqueiro confirmado (stage_events.json/interaction_anims.json). Os demais usos são sugestões da lista. Preparação não cria chefes/eventos, não troca a escala de progressão, não promove lore e não altera IDs ou saves. A próxima proposta deve delimitar integração visual existente e separar decisões de novos usos de N.

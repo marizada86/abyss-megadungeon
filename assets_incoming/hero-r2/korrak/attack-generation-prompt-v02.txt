@@ -1,0 +1,15 @@
+Draw the SAME character as in the attached references (images 1 to 4, the identity authority): Korrak, a goliath about 2.3 m, enormously muscled, stone-gray skin, shaved head with a dark crest of hair along the center, full black beard. Rivet-studded brown leather cuirass with a diagonal strap, a spiked steel pauldron on his LEFT shoulder and a thick tawny fur mantle on his RIGHT shoulder, studded leather bracers, wide belt with a round buckle disc, skirt of ragged leather strips, tall wrapped boots with fur cuffs. He wields the Axe of Xar'gath: a huge two-handed battle axe with a black iron head whose lava-like orange-red cracks are painted on the metal (not an effect) and a long dark wooden haft. Match the exact style, rendering and scale of the approved idle image (image 5): dark-fantasy game sprite, painterly shading, crisp dark outlines, light from the upper left, three-quarter isometric camera, three-quarter front view facing screen-RIGHT.
+
+Canvas 1536x1024, flat uniform pure magenta #FF00FF background, no floor, no shadow. Exactly 4 full-body figures in a 2x2 grid, reading order, each inside its own 768x512 quadrant. IMPORTANT: draw each figure SMALL: at most 300 px tall (about 60 percent of the quadrant height), with at least 80 px of empty margin on every side including the axe, so that nothing touches another figure, a quadrant edge or the canvas edge. All the same scale.
+
+The whole attack is ONE continuous horizontal swing from left to right, always in the same horizontal plane, so the axe travels along one path and never jumps: the axe is NEVER raised overhead in this attack.
+
+In EVERY figure: both hands are clearly visible gripping the haft (one hand near the pommel end, one hand about mid-haft), never hidden behind the body, the head or the pauldron; and the complete axe head is visible, never hidden or cropped.
+
+Figure 1 (top-left): neutral standing calibration pose, arms relaxed, feet together, axe held across the body.
+Figure 2 (top-right): ATTACK wind-up: torso twisted to the LEFT, the axe drawn back low across the body to the LEFT at hip height, the axe head on the left side of the body, blade facing the camera, both hands on the haft in front of the hips, weight on the back leg.
+Figure 3 (bottom-left): ATTACK strike: the axe sweeping through the front in a wide horizontal arc toward screen-RIGHT, the blade edge leading in the direction of the swing (a chopping sweep, not a thrust), torso unwinding, front foot planted, both hands on the haft.
+Figure 4 (bottom-right): ATTACK follow-through: the axe ended low on the far RIGHT side after the swing, the torso carried past the strike, both hands still on the haft.
+The four figures must clearly differ from each other.
+
+No text, labels, grid lines, frames, cast shadows, motion blur, sparks, flames, glow or drawn magic effects. No helmet, armor change, second weapon or redesign. Keep the steel pauldron on the left shoulder and the fur on the right shoulder in all figures.

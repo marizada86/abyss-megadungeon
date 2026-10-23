@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-22",
+  "status": "DRAFT_DELIVERED_VISUAL_HAND_HOLD",
+  "authorization": "atena, siga novamente as instruções de correções do claude",
+  "file": "F:\\dev\\abyss-megadungeon\\assets_incoming\\hero-r2\\korrak\\korrak_attack_se_v02.png",
+  "source": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1652e-fc23-76d1-9c04-304371417f2a\\exec-9f86dccc-4b19-428e-8fe3-2ab8fef3e6d6.png",
+  "sha256": "B3462FBDAC2D4F4A17618E8B4C630023AA5039522E23E4FE1D39606D7D690A16",
+  "v01_preserved_sha256": "F22F0112868BE1AC513DD1AC7C933CE4F4A556FED08C1128AF8B139EFB09F8F8",
+  "tool": "image_gen",
+  "prompt_source": "attack-generation-prompt-v02.txt",
+  "prompt_mode": "OWNER_MESSAGE_VERBATIM",
+  "references_order": [
+    "korrak-front-candidate-v01.png",
+    "korrak-left-v01.png",
+    "korrak-back-v01.png",
+    "korrak-right-v01.png",
+    "korrak_idle_se_v01.png"
+  ],
+  "attempts_used": 2,
+  "attempts_remaining": 1,
+  "post_edit": false,
+  "measurement": "NOT_REQUESTED",
+  "visual_acceptance": "PENDING",
+  "visual_observation": "Na pose final uma das mãos não está claramente visível; tamanho e margens também aparentam exceder os limites solicitados. Não refazer autonomamente. Alternativa indicada pelo dono: ataque com 4 desenhos.",
+  "runtime_modified": false
+}

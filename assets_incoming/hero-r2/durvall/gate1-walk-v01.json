@@ -1,0 +1,72 @@
+{
+  "arquivo": "F:/dev/abyss-megadungeon/assets_incoming/hero-r2/durvall/durvall_walk_se_v01.png",
+  "chave": "magenta",
+  "checagens": {
+    "1_figuras": true,
+    "2_fundo": false,
+    "3_escala": true,
+    "4_pes": true,
+    "5_caminhada": true,
+    "6_pontos_soltos": false
+  },
+  "esperadas": 3,
+  "figuras": [
+    {
+      "area": 199232,
+      "cx": 301,
+      "feet_y": 948,
+      "h": 862,
+      "i": 1,
+      "specks": 18,
+      "touches_edge": false,
+      "w": 455,
+      "x": 74,
+      "y": 87
+    },
+    {
+      "area": 177027,
+      "calibration": true,
+      "cx": 771,
+      "feet_y": 957,
+      "h": 895,
+      "i": 2,
+      "specks": 11,
+      "touches_edge": false,
+      "w": 347,
+      "x": 598,
+      "y": 63
+    },
+    {
+      "area": 192793,
+      "cx": 1299,
+      "feet_y": 945,
+      "h": 861,
+      "i": 3,
+      "specks": 19,
+      "touches_edge": false,
+      "w": 426,
+      "x": 1087,
+      "y": 85
+    },
+    {
+      "walk_diffs": [
+        0.37,
+        0.358
+      ]
+    }
+  ],
+  "identidade_e_estilo": "decisão do dono (critérios 7 a 9)",
+  "notas": [
+    "3_escala: pior diferença de altura contra a calibração = 3.8%",
+    "4_pes: variação da linha dos pés = 0.3% da altura",
+    "2_fundo: 50.5% das bordas ainda parecem a cor de fundo",
+    "6_pontos_soltos: 48",
+    "5_caminhada: diferença de A e B contra P = [0.37, 0.358] (mínimo exigido 8%)"
+  ],
+  "tela": [
+    1536,
+    1024
+  ],
+  "tipo": "walk",
+  "verdict": "REPROVA"
+}
