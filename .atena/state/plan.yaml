@@ -2811,3 +2811,32 @@ hero_art_reset_20261021:
     measurement: NOT_YET
     runtime_modified: false
   next_activity: "Korrak completo no R2 (idle, ataque v02b, habilidade e morte) com aceite visual e exceções documentadas; DRAFT, nada integrado. Erik idle SE: prompt pronto em assets_incoming/hero-r2/erik/idle-generation-prompt-v01.txt, aguardando o dono gerar e entregar (3 tentativas). Pendentes: proposta B (r2_check_v4) sem decisão; ataque/habilidade/morte do Erik só depois do idle aprovado; E3 não executado; caminhada suspensa (Durvall usa piloto). Sem nova geração sem autorização."
+
+vfx_lote2_2026_10_23:
+  id: PLAN-VFX-LOTE2-20261023
+  revision: r1
+  classification: IN_PLAN_APPROVED_SCOPE
+  mode: per-plan
+  proposal: .atena/vault/drafts/PROPOSTA-vfx-lote2-20261023-r1.md
+  queue: .atena/vault/drafts/ASSET-QUEUE-VFX-LOTE2-20261023-r1.md
+  workdir: .atena/generated/vfx-lote2-20261023-r1/
+  authorization: "Aprovo as 22 folhas com o piloto M01, P02, G03. Registre no plan.yaml e prepare prompts e fila do Lote 2, sem gerar imagens. (dono, 2026-10-23)"
+  status: PILOT_AWAITING_OWNER_IMAGES
+  generation: "manual pelo dono no ChatGPT; nenhuma geração pela Atena"
+  pilot: [M01, P02, G03]
+  pilot_gate: "revisão de estilo, tamanho e legibilidade (24-48 px nos itens, 96-160 px nos chefes, também sobre fundo claro) antes de liberar as outras 19 folhas"
+  attempts: "até 3 candidatas por peça (_v01.._v03); depois, bloqueio para decisão"
+  approved_scope: [22_folhas_G01_G09_M01_M06_P01_P07]
+  series: {G_chefes: 9, M_morte: 6, P_coleta_progressao: 7}
+  depends_on: [vfx_lote1_2026_10_23]   # o código do Lote 2 vem depois do carregador compartilhado do Lote 1
+  pending_owner_decisions: [contorno_de_perigo_do_telegrafo_de_chefe_sempre_por_baixo_da_arte, camera_lenta_0_5s_e_flash_na_morte_de_chefe_em_codigo, ordem_do_codigo_lote2_depois_do_lote1]
+  steps:
+    S1_prompts_and_queue: {status: DONE, items: 22, files: [queue.json, table.md, prompts/, ref-existing-vfx.png]}
+    S2_pilot: {status: AWAITING_IMAGES, items: [M01, P02, G03]}
+    S3_remaining_sheets: {status: PENDING_PILOT_GATE, items: 19}
+    S4_preparation: {status: PENDING}   # tools/asset_jobs/vfx_lote2_v01.json com tools/asset_prep.gd
+    S5_code_tests: {status: PENDING, order: [pickup_vfx, death_vfx, boss_mechanics_draw_fx], tests: [test_pickup_vfx, test_death_vfx, test_boss_vfx]}
+    S6_validation_playtest: {status: PENDING}   # incluir playtest com chefe para a leitura dos telégrafos
+  not_authorized: [commit, push, merge, build, exportacao, publicacao, promocao_canon, geracao_de_imagens_pela_atena]
+  runtime_modified: false
+  next_activity: "Dono gera M01, P02 e G03 no ChatGPT e entrega em .atena/generated/vfx-lote2-20261023-r1/ com os nomes de queue.json; a Atena mede e revisa o piloto."
