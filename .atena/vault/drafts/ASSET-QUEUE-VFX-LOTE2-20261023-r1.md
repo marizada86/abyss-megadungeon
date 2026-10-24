@@ -20,7 +20,7 @@ Grade de geração 1536×1024. Folhas de 6 quadros: uma fileira de seis células
 
 Gerar **M01, P02 e G03** antes das demais. Cobrem as três linguagens do lote: efeito curto tingido (`M01`), efeito sobre o herói (`P02`) e telégrafo de chão com loop e detonação (`G03`, o mais difícil). Se estilo, tamanho e legibilidade passarem (a 24–48 px nos itens, 96–160 px nos chefes e também sobre fundo claro), liberar as outras 19 com o mesmo bloco de estilo.
 
-O piloto do Lote 1 (F03, F06, F13) segue pendente de imagens e independe deste.
+O Lote 1 está aprovado pelo dono (2026-10-23) e integrado localmente; o carregador compartilhado `VfxAtlas` já existe, então o código deste lote não espera mais por ele.
 
 ## Fila
 

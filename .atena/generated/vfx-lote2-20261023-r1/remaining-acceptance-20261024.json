@@ -1,0 +1,160 @@
+{
+  "authorization": "Aceito visualmente as 19 candidatas recomendadas (v02 em M04, G06 e G09; v01 nas outras 16), pelos hashes de remaining-source-audit-20261024.json. Pode preparar os atlas. (dono, 2026-10-24)",
+  "date": "2026-10-24",
+  "content_state": "DRAFT",
+  "technical_atlas_acceptance": "PENDING_PREPARATION_AUDIT",
+  "accepted": [
+    {
+      "id": "P01",
+      "file": "P01_xp_brilho_v01.png",
+      "sha256": "f7fa54add5772375c03c5fe6c4fef46734d7de77f7a7853e5778c4d3d36c9a0b",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "P03",
+      "file": "P03_moeda_coleta_v01.png",
+      "sha256": "8b1725a5af2b1f7d9900f24848b96d5c4e6c35a96dfdd5ebedaafc483d026aea",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "P04",
+      "file": "P04_pocao_coleta_v01.png",
+      "sha256": "aaeb6541b4e553ea4260835e3e578c8c839f6a5aebfa42575bacfb481af96d36",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "P05",
+      "file": "P05_ima_pulso_v01.png",
+      "sha256": "f52b4305b0ae971999083cf1bb4aa1be75d46169ce245d4bc27715423d0dfe6e",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "P06",
+      "file": "P06_subida_de_nivel_v2_v01.png",
+      "sha256": "ebf9518e99d7dbbe7b53e492baee4c7eec4abfe3ea3c3b18edd89e8e4b6d53d0",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "P07",
+      "file": "P07_mare_aura_v01.png",
+      "sha256": "9cb99049d4caaa006072b2aea45775a135207609ce475064d10c514e9473794b",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "M02",
+      "file": "M02_morte_alma_v01.png",
+      "sha256": "58648253f6de09e8aa91284dac5b74ee1dffb1daa382f1d5c26fb5e6442ee8c1",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "M03",
+      "file": "M03_morte_elite_estouro_v01.png",
+      "sha256": "dfcbdb67df17b96b16cea2c57b7b3e798f6e5337bf319b6e59ce2f9e44cad95b",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "M04",
+      "file": "M04_morte_chefe_colapso_v02.png",
+      "sha256": "e62b0aec73817c3d06534af14fc41a578324e2225a466e62ebd463051464b6ab",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "M05",
+      "file": "M05_morte_detritos_v01.png",
+      "sha256": "121bfc83f335e31292236575203574c937bf8c8e41ca01333a00700a5cd87b22",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "M06",
+      "file": "M06_morte_explosivo_v01.png",
+      "sha256": "8e715c750f519faa95c7952ea4d0ade55b3a1370ada64fc3e52d667ad25ea544",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "G01",
+      "file": "G01_boss_varredura_aviso_v01.png",
+      "sha256": "eed3d2d6d7fb563ddcebb8b00efe3a46fc88a816b0bf425884f108b0f5755511",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "G02",
+      "file": "G02_boss_varredura_feixe_v01.png",
+      "sha256": "a43c884dd8ce621f84756547db31f46b0d20e5cd7b207cc9bc9518e5fc7ed8df",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "G04",
+      "file": "G04_boss_marca_alvo_v01.png",
+      "sha256": "2816c295651d404f85dcfce77d4da1b3b480b86a34833856d6703d5415d52da9",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "G05",
+      "file": "G05_boss_conjuracao_carga_v01.png",
+      "sha256": "5b1b8555a8e3015f232a3a2f29381cdd638a0ca5959c9dc84bf2a3f243067ba4",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "G06",
+      "file": "G06_boss_conjuracao_estouro_v02.png",
+      "sha256": "0714702a2bb1d28ab9345fe19377ce7cf9b65980163917e4fd710b4cf76e8b25",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "G07",
+      "file": "G07_boss_conjuracao_interrompida_v01.png",
+      "sha256": "f9ea3a010d79222ab945d687980933a1401a9b45643f370fbf30cdfbea99fc42",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "G08",
+      "file": "G08_boss_escudo_v01.png",
+      "sha256": "7e06fe566c1b42382dd7944ba304d11852e37ad70ec37299372dd13e59e896cc",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    },
+    {
+      "id": "G09",
+      "file": "G09_boss_fase_estouro_v02.png",
+      "sha256": "0a4f007adcf93f82791f00a387dfcc31638ab5199ab6e8344d317af51934dc27",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261024",
+      "runtime_admission": false
+    }
+  ]
+}

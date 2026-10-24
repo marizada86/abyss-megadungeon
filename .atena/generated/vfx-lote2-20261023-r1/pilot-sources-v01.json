@@ -1,0 +1,29 @@
+[
+  {
+    "file": "M01_morte_poeira_v01.png",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "7ac7f9eb8ef9b01799a308e1a5eb5ea887ccecc43edc15a4f68a1aedc78a4f3d",
+    "state": "GENERATED_CANDIDATE",
+    "acceptance": "PENDING",
+    "runtime_admission": false
+  },
+  {
+    "file": "P02_xp_coleta_v01.png",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "d42d85844dbb7679a375705471caf78035bea340d0174abdf1b2e0293e2cca8b",
+    "state": "GENERATED_CANDIDATE",
+    "acceptance": "PENDING",
+    "runtime_admission": false
+  },
+  {
+    "file": "G03_boss_quadrante_runas_v01.png",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "2a70c0e923b4d337424e14a07631000cd66c4049bd0c3169d320913cf314ccb4",
+    "state": "GENERATED_CANDIDATE",
+    "acceptance": "PENDING",
+    "runtime_admission": false
+  }
+]

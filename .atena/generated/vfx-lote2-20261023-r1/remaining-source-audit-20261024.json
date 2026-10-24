@@ -1,0 +1,861 @@
+﻿{
+    "date":  "2026-10-24",
+    "state":  "DRAFT",
+    "ids":  19,
+    "candidates":  22,
+    "tool":  "image_gen built-in",
+    "prompt_set":  "COLAR-NO-CHATGPT-19-FOLHAS.md",
+    "reference":  "ref-existing-vfx.png",
+    "threshold":  24,
+    "note":  "Nominal grid occupancy is not proof of frame separability or atlas acceptance. All sources need normalization; edge counts flag possible bleed.",
+    "items":  [
+                  {
+                      "id":  "P01",
+                      "file":  "P01_xp_brilho_v01.png",
+                      "recommended":  true,
+                      "sha256":  "f7fa54add5772375c03c5fe6c4fef46734d7de77f7a7853e5778c4d3d36c9a0b",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               3946,
+                                                               12197,
+                                                               26691,
+                                                               18808,
+                                                               10374,
+                                                               3769
+                                                           ],
+                                   "bbox_widths":  [
+                                                       116,
+                                                       154,
+                                                       227,
+                                                       184,
+                                                       148,
+                                                       112
+                                                   ],
+                                   "bbox_heights":  [
+                                                        116,
+                                                        166,
+                                                        244,
+                                                        198,
+                                                        158,
+                                                        111
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  0
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "P03",
+                      "file":  "P03_moeda_coleta_v01.png",
+                      "recommended":  true,
+                      "sha256":  "8b1725a5af2b1f7d9900f24848b96d5c4e6c35a96dfdd5ebedaafc483d026aea",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               16476,
+                                                               35278,
+                                                               48040,
+                                                               14265,
+                                                               8204,
+                                                               3273
+                                                           ],
+                                   "bbox_widths":  [
+                                                       196,
+                                                       230,
+                                                       238,
+                                                       210,
+                                                       184,
+                                                       115
+                                                   ],
+                                   "bbox_heights":  [
+                                                        209,
+                                                        252,
+                                                        347,
+                                                        236,
+                                                        204,
+                                                        141
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  0
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "P04",
+                      "file":  "P04_pocao_coleta_v01.png",
+                      "recommended":  true,
+                      "sha256":  "aaeb6541b4e553ea4260835e3e578c8c839f6a5aebfa42575bacfb481af96d36",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               15297,
+                                                               28379,
+                                                               49229,
+                                                               30082,
+                                                               17582,
+                                                               3125
+                                                           ],
+                                   "bbox_widths":  [
+                                                       194,
+                                                       232,
+                                                       241,
+                                                       202,
+                                                       201,
+                                                       165
+                                                   ],
+                                   "bbox_heights":  [
+                                                        159,
+                                                        232,
+                                                        346,
+                                                        313,
+                                                        303,
+                                                        268
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  0
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "P05",
+                      "file":  "P05_ima_pulso_v01.png",
+                      "recommended":  true,
+                      "sha256":  "f52b4305b0ae971999083cf1bb4aa1be75d46169ce245d4bc27715423d0dfe6e",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               31260,
+                                                               31613,
+                                                               30345,
+                                                               21611,
+                                                               12192,
+                                                               5744
+                                                           ],
+                                   "bbox_widths":  [
+                                                       229,
+                                                       256,
+                                                       256,
+                                                       256,
+                                                       254,
+                                                       161
+                                                   ],
+                                   "bbox_heights":  [
+                                                        283,
+                                                        264,
+                                                        239,
+                                                        233,
+                                                        202,
+                                                        178
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  2078
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "P06",
+                      "file":  "P06_subida_de_nivel_v2_v01.png",
+                      "recommended":  true,
+                      "sha256":  "ebf9518e99d7dbbe7b53e492baee4c7eec4abfe3ea3c3b18edd89e8e4b6d53d0",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               19391,
+                                                               42917,
+                                                               75173,
+                                                               51570,
+                                                               36932,
+                                                               15141
+                                                           ],
+                                   "bbox_widths":  [
+                                                       237,
+                                                       247,
+                                                       256,
+                                                       254,
+                                                       243,
+                                                       217
+                                                   ],
+                                   "bbox_heights":  [
+                                                        296,
+                                                        397,
+                                                        473,
+                                                        413,
+                                                        378,
+                                                        354
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  451
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "P07",
+                      "file":  "P07_mare_aura_v01.png",
+                      "recommended":  true,
+                      "sha256":  "9cb99049d4caaa006072b2aea45775a135207609ce475064d10c514e9473794b",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               28440,
+                                                               35470,
+                                                               37667,
+                                                               37819,
+                                                               34692,
+                                                               27964
+                                                           ],
+                                   "bbox_widths":  [
+                                                       211,
+                                                       216,
+                                                       213,
+                                                       211,
+                                                       213,
+                                                       212
+                                                   ],
+                                   "bbox_heights":  [
+                                                        323,
+                                                        353,
+                                                        369,
+                                                        370,
+                                                        356,
+                                                        323
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  0
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "M02",
+                      "file":  "M02_morte_alma_v01.png",
+                      "recommended":  true,
+                      "sha256":  "58648253f6de09e8aa91284dac5b74ee1dffb1daa382f1d5c26fb5e6442ee8c1",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               13055,
+                                                               30247,
+                                                               38790,
+                                                               42095,
+                                                               32329,
+                                                               10039
+                                                           ],
+                                   "bbox_widths":  [
+                                                       212,
+                                                       220,
+                                                       215,
+                                                       209,
+                                                       186,
+                                                       175
+                                                   ],
+                                   "bbox_heights":  [
+                                                        189,
+                                                        304,
+                                                        366,
+                                                        418,
+                                                        454,
+                                                        476
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  0
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "M03",
+                      "file":  "M03_morte_elite_estouro_v01.png",
+                      "recommended":  true,
+                      "sha256":  "dfcbdb67df17b96b16cea2c57b7b3e798f6e5337bf319b6e59ce2f9e44cad95b",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               26667,
+                                                               31120,
+                                                               46658,
+                                                               27724,
+                                                               13817,
+                                                               7487
+                                                           ],
+                                   "bbox_widths":  [
+                                                       216,
+                                                       247,
+                                                       256,
+                                                       256,
+                                                       245,
+                                                       175
+                                                   ],
+                                   "bbox_heights":  [
+                                                        250,
+                                                        223,
+                                                        292,
+                                                        255,
+                                                        246,
+                                                        264
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  958
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "M04",
+                      "file":  "M04_morte_chefe_colapso_v01.png",
+                      "recommended":  false,
+                      "sha256":  "e7a8adc87cc8a011383e7e7cf149153f0fc342f9a7fd806838feb1011a33aace",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               29341,
+                                                               62203,
+                                                               86932,
+                                                               61571,
+                                                               36595,
+                                                               15910
+                                                           ],
+                                   "bbox_widths":  [
+                                                       237,
+                                                       256,
+                                                       256,
+                                                       256,
+                                                       256,
+                                                       228
+                                                   ],
+                                   "bbox_heights":  [
+                                                        319,
+                                                        412,
+                                                        481,
+                                                        441,
+                                                        386,
+                                                        374
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  4777
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "M04",
+                      "file":  "M04_morte_chefe_colapso_v02.png",
+                      "recommended":  true,
+                      "sha256":  "e62b0aec73817c3d06534af14fc41a578324e2225a466e62ebd463051464b6ab",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               17300,
+                                                               30873,
+                                                               53369,
+                                                               29331,
+                                                               17313,
+                                                               7752
+                                                           ],
+                                   "bbox_widths":  [
+                                                       152,
+                                                       244,
+                                                       256,
+                                                       235,
+                                                       186,
+                                                       158
+                                                   ],
+                                   "bbox_heights":  [
+                                                        285,
+                                                        318,
+                                                        378,
+                                                        326,
+                                                        323,
+                                                        325
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  193
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "M05",
+                      "file":  "M05_morte_detritos_v01.png",
+                      "recommended":  true,
+                      "sha256":  "121bfc83f335e31292236575203574c937bf8c8e41ca01333a00700a5cd87b22",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               17233,
+                                                               26912,
+                                                               39201,
+                                                               20210,
+                                                               11582,
+                                                               4317
+                                                           ],
+                                   "bbox_widths":  [
+                                                       198,
+                                                       241,
+                                                       256,
+                                                       245,
+                                                       203,
+                                                       153
+                                                   ],
+                                   "bbox_heights":  [
+                                                        210,
+                                                        229,
+                                                        294,
+                                                        231,
+                                                        225,
+                                                        179
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  52
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "M06",
+                      "file":  "M06_morte_explosivo_v01.png",
+                      "recommended":  true,
+                      "sha256":  "8e715c750f519faa95c7952ea4d0ade55b3a1370ada64fc3e52d667ad25ea544",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               22472,
+                                                               47165,
+                                                               63064,
+                                                               44215,
+                                                               21905,
+                                                               8864
+                                                           ],
+                                   "bbox_widths":  [
+                                                       235,
+                                                       256,
+                                                       256,
+                                                       256,
+                                                       234,
+                                                       166
+                                                   ],
+                                   "bbox_heights":  [
+                                                        229,
+                                                        293,
+                                                        332,
+                                                        318,
+                                                        307,
+                                                        308
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  2125
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "G01",
+                      "file":  "G01_boss_varredura_aviso_v01.png",
+                      "recommended":  true,
+                      "sha256":  "eed3d2d6d7fb563ddcebb8b00efe3a46fc88a816b0bf425884f108b0f5755511",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               13644,
+                                                               14171,
+                                                               14372,
+                                                               14655,
+                                                               14236,
+                                                               13539
+                                                           ],
+                                   "bbox_widths":  [
+                                                       243,
+                                                       242,
+                                                       244,
+                                                       243,
+                                                       243,
+                                                       241
+                                                   ],
+                                   "bbox_heights":  [
+                                                        74,
+                                                        76,
+                                                        75,
+                                                        78,
+                                                        76,
+                                                        74
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  25
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "G02",
+                      "file":  "G02_boss_varredura_feixe_v01.png",
+                      "recommended":  true,
+                      "sha256":  "a43c884dd8ce621f84756547db31f46b0d20e5cd7b207cc9bc9518e5fc7ed8df",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               25080,
+                                                               25784,
+                                                               26298,
+                                                               26332,
+                                                               25704,
+                                                               25804
+                                                           ],
+                                   "bbox_widths":  [
+                                                       245,
+                                                       256,
+                                                       255,
+                                                       248,
+                                                       249,
+                                                       247
+                                                   ],
+                                   "bbox_heights":  [
+                                                        139,
+                                                        165,
+                                                        163,
+                                                        172,
+                                                        171,
+                                                        155
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  367
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "G04",
+                      "file":  "G04_boss_marca_alvo_v01.png",
+                      "recommended":  true,
+                      "sha256":  "2816c295651d404f85dcfce77d4da1b3b480b86a34833856d6703d5415d52da9",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  8,
+                                   "lit_pixels_per_cell":  [
+                                                               44347,
+                                                               45125,
+                                                               46349,
+                                                               47456,
+                                                               63543,
+                                                               93182,
+                                                               110239,
+                                                               33273
+                                                           ],
+                                   "bbox_widths":  [
+                                                       332,
+                                                       340,
+                                                       332,
+                                                       331,
+                                                       337,
+                                                       374,
+                                                       384,
+                                                       352
+                                                   ],
+                                   "bbox_heights":  [
+                                                        313,
+                                                        322,
+                                                        384,
+                                                        311,
+                                                        331,
+                                                        364,
+                                                        384,
+                                                        342
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  620
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "G05",
+                      "file":  "G05_boss_conjuracao_carga_v01.png",
+                      "recommended":  true,
+                      "sha256":  "5b1b8555a8e3015f232a3a2f29381cdd638a0ca5959c9dc84bf2a3f243067ba4",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               46394,
+                                                               54789,
+                                                               59424,
+                                                               61969,
+                                                               54195,
+                                                               46517
+                                                           ],
+                                   "bbox_widths":  [
+                                                       218,
+                                                       222,
+                                                       230,
+                                                       229,
+                                                       225,
+                                                       217
+                                                   ],
+                                   "bbox_heights":  [
+                                                        413,
+                                                        430,
+                                                        433,
+                                                        440,
+                                                        430,
+                                                        432
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  0
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "G06",
+                      "file":  "G06_boss_conjuracao_estouro_v01.png",
+                      "recommended":  false,
+                      "sha256":  "2ab806cdb683e5c311be7e4ea1cd3b586c6e71b5a17119ada6c414d8a281ba8a",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               14513,
+                                                               37302,
+                                                               59157,
+                                                               43394,
+                                                               25049,
+                                                               11781
+                                                           ],
+                                   "bbox_widths":  [
+                                                       223,
+                                                       256,
+                                                       256,
+                                                       256,
+                                                       256,
+                                                       246
+                                                   ],
+                                   "bbox_heights":  [
+                                                        192,
+                                                        287,
+                                                        354,
+                                                        342,
+                                                        330,
+                                                        322
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  1892
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "G06",
+                      "file":  "G06_boss_conjuracao_estouro_v02.png",
+                      "recommended":  true,
+                      "sha256":  "0714702a2bb1d28ab9345fe19377ce7cf9b65980163917e4fd710b4cf76e8b25",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               9399,
+                                                               17946,
+                                                               36896,
+                                                               30005,
+                                                               16995,
+                                                               5738
+                                                           ],
+                                   "bbox_widths":  [
+                                                       142,
+                                                       232,
+                                                       249,
+                                                       255,
+                                                       244,
+                                                       238
+                                                   ],
+                                   "bbox_heights":  [
+                                                        146,
+                                                        190,
+                                                        268,
+                                                        263,
+                                                        261,
+                                                        233
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  159
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "G07",
+                      "file":  "G07_boss_conjuracao_interrompida_v01.png",
+                      "recommended":  true,
+                      "sha256":  "f9ea3a010d79222ab945d687980933a1401a9b45643f370fbf30cdfbea99fc42",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               43103,
+                                                               42694,
+                                                               43423,
+                                                               28002,
+                                                               16840,
+                                                               6517
+                                                           ],
+                                   "bbox_widths":  [
+                                                       253,
+                                                       256,
+                                                       250,
+                                                       242,
+                                                       245,
+                                                       225
+                                                   ],
+                                   "bbox_heights":  [
+                                                        282,
+                                                        273,
+                                                        286,
+                                                        268,
+                                                        259,
+                                                        243
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  183
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "G08",
+                      "file":  "G08_boss_escudo_v01.png",
+                      "recommended":  true,
+                      "sha256":  "7e06fe566c1b42382dd7944ba304d11852e37ad70ec37299372dd13e59e896cc",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  8,
+                                   "lit_pixels_per_cell":  [
+                                                               65677,
+                                                               66705,
+                                                               67579,
+                                                               67232,
+                                                               69816,
+                                                               72946,
+                                                               48767,
+                                                               25955
+                                                           ],
+                                   "bbox_widths":  [
+                                                       347,
+                                                       351,
+                                                       353,
+                                                       352,
+                                                       349,
+                                                       351,
+                                                       341,
+                                                       324
+                                                   ],
+                                   "bbox_heights":  [
+                                                        262,
+                                                        267,
+                                                        276,
+                                                        263,
+                                                        279,
+                                                        309,
+                                                        307,
+                                                        274
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  0
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "G09",
+                      "file":  "G09_boss_fase_estouro_v01.png",
+                      "recommended":  false,
+                      "sha256":  "cf5a5143f4ff8583693b4d50ad58bf073bf60f6aefa76bdfde07f24567ddd365",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               20027,
+                                                               40929,
+                                                               76341,
+                                                               43227,
+                                                               27942,
+                                                               10949
+                                                           ],
+                                   "bbox_widths":  [
+                                                       237,
+                                                       256,
+                                                       256,
+                                                       256,
+                                                       256,
+                                                       251
+                                                   ],
+                                   "bbox_heights":  [
+                                                        249,
+                                                        398,
+                                                        483,
+                                                        433,
+                                                        378,
+                                                        326
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  3564
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  },
+                  {
+                      "id":  "G09",
+                      "file":  "G09_boss_fase_estouro_v02.png",
+                      "recommended":  true,
+                      "sha256":  "0a4f007adcf93f82791f00a387dfcc31638ab5199ab6e8344d317af51934dc27",
+                      "scan":  {
+                                   "width":  1536,
+                                   "height":  1024,
+                                   "nominal_cells":  6,
+                                   "lit_pixels_per_cell":  [
+                                                               12250,
+                                                               25423,
+                                                               44279,
+                                                               25831,
+                                                               12712,
+                                                               5226
+                                                           ],
+                                   "bbox_widths":  [
+                                                       179,
+                                                       240,
+                                                       253,
+                                                       239,
+                                                       208,
+                                                       200
+                                                   ],
+                                   "bbox_heights":  [
+                                                        206,
+                                                        251,
+                                                        321,
+                                                        263,
+                                                        239,
+                                                        202
+                                                    ],
+                                   "lit_pixels_in_cell_edge_bands":  68
+                               },
+                      "human_visual_acceptance":  "PENDING",
+                      "runtime_admission":  false
+                  }
+              ]
+}

@@ -1,0 +1,13 @@
+{
+  "authorization": "Aceito visualmente M01, P02 e G03 v01 (hashes em pilot-sources-v01.json). Pode liberar as outras 19 folhas do Lote 2.",
+  "date": "2026-10-24",
+  "content_state": "DRAFT",
+  "technical_atlas_acceptance": "PENDING_PREPARATION",
+  "released": ["G01", "G02", "G04", "G05", "G06", "G07", "G08", "G09", "M02", "M03", "M04", "M05", "M06", "P01", "P03", "P04", "P05", "P06", "P07"],
+  "approved_pilot": [
+    {"id": "M01", "file": "M01_morte_poeira_v01.png", "revision": "v01", "sha256": "7ac7f9eb8ef9b01799a308e1a5eb5ea887ccecc43edc15a4f68a1aedc78a4f3d", "human_visual_acceptance": "PILOT_APPROVED_OWNER_20261024", "runtime_admission": false},
+    {"id": "P02", "file": "P02_xp_coleta_v01.png", "revision": "v01", "sha256": "d42d85844dbb7679a375705471caf78035bea340d0174abdf1b2e0293e2cca8b", "human_visual_acceptance": "PILOT_APPROVED_OWNER_20261024", "runtime_admission": false},
+    {"id": "G03", "file": "G03_boss_quadrante_runas_v01.png", "revision": "v01", "sha256": "2a70c0e923b4d337424e14a07631000cd66c4049bd0c3169d320913cf314ccb4", "human_visual_acceptance": "PILOT_APPROVED_OWNER_20261024", "runtime_admission": false}
+  ],
+  "hash_check": "sha256 conferido contra pilot-sources-v01.json em 2026-10-24"
+}

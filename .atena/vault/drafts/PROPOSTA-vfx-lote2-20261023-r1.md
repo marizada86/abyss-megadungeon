@@ -1,6 +1,6 @@
 # Proposta — VFX e "dopamina", Lote 2: chefes, morte de inimigos, coleta e XP (2026-10-23, r1)
 
-Status: **DRAFT, escopo aprovado em 2026-10-23** (22 folhas, piloto M01, P02 e G03; seção `vfx_lote2_2026_10_23` no `plan.yaml`, fila `ASSET-QUEUE-VFX-LOTE2-20261023-r1.md`). Decisões 3 a 5 da seção 8 seguem em aberto. Nada foi gerado, integrado, commitado ou publicado. Continua `PROPOSTA-vfx-lote1-20261023-r1.md` (cera, projéteis inimigos, golpes, faíscas de acerto), que segue no piloto F03/F06/F13. Geração manual no ChatGPT, mesmo fluxo e mesmos contratos de folha do Lote 1; numeração da série **G** (chefes), **M** (morte) e **P** (coleta), para não colidir com as séries A–F.
+Status: **DRAFT, escopo aprovado em 2026-10-23** (22 folhas, piloto M01, P02 e G03; seção `vfx_lote2_2026_10_23` no `plan.yaml`, fila `ASSET-QUEUE-VFX-LOTE2-20261023-r1.md`). Decisões 3 a 5 da seção 8 **respondidas pelo dono em 2026-10-23**: contorno de perigo sempre por baixo da arte (aprovado), câmera lenta de 0,5 s e flash na morte de chefe com "Reduzir efeitos de impacto" respeitado (aprovado), e o código do Lote 2 depois do Lote 1 (já satisfeito). Nada foi gerado, integrado, commitado ou publicado. Continua `PROPOSTA-vfx-lote1-20261023-r1.md` (cera, projéteis inimigos, golpes, faíscas de acerto), que segue no piloto F03/F06/F13. Geração manual no ChatGPT, mesmo fluxo e mesmos contratos de folha do Lote 1; numeração da série **G** (chefes), **M** (morte) e **P** (coleta), para não colidir com as séries A–F.
 
 ## 1. Problema (evidência no código)
 

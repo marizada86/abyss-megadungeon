@@ -1,0 +1,10 @@
+{
+  "local_links": "PASS",
+  "status": "PASS",
+  "base_prompts": "PASS_17",
+  "candidate_count": 17,
+  "gallery_cards": 17,
+  "runtime_tests": "NOT_RUN_SOURCE_ART_ONLY",
+  "source_png_count": 18,
+  "sha256": "PASS_17"
+}

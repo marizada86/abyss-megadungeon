@@ -1,0 +1,35 @@
+{
+  "script_compile": "ZERO_FAILURES",
+  "prepared_sheets": 17,
+  "controller": {
+    "timeout": "INHERITED_PRESERVED",
+    "write_error": "INHERITED_OUTPUT_DIRECTORY_NULL_FILE_PRESERVED",
+    "passed": 92,
+    "failed": [
+      "controller preferencias_persistem_reload: FAIL",
+      "controller zona_morta_navegacao: FAIL"
+    ]
+  },
+  "preparation_failures": 0,
+  "full_suite": "ZERO_ASSERTION_FAILURES",
+  "targeted_failures": 0,
+  "commit_push": "NOT_AUTHORIZED",
+  "interactive_launcher": "PASS",
+  "content_state": "DRAFT",
+  "unit_and_regression_tests": [
+    "test_hit_spark_vfx",
+    "test_enemy_projectile_vfx",
+    "test_wax_vfx",
+    "test_vfx_lote1_assets",
+    "test_fire_swing_vfx",
+    "test_projectile_and_ability_vfx",
+    "test_melee_vfx",
+    "test_vfx_sfx_coverage"
+  ],
+  "project_audit": "ZERO_ERRORS_ZERO_WARNINGS",
+  "human_playtest": "PENDING",
+  "prepared_frames": 112.0,
+  "source_runtime_hash_pairs": "PASS_17",
+  "rendered_checks": "PASS_11_OF_11",
+  "source_acceptance": "APPROVED_OWNER_17"
+}

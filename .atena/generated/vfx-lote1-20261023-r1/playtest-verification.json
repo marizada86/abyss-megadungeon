@@ -1,0 +1,76 @@
+{
+	"checks": [
+		{
+			"id": "isolated_user_dir",
+			"passed": true
+		},
+		{
+			"id": "flight_count_enabled_false",
+			"passed": true
+		},
+		{
+			"id": "wax_count_enabled_false",
+			"passed": true
+		},
+		{
+			"id": "flight_count_enabled_true",
+			"passed": true
+		},
+		{
+			"id": "wax_count_enabled_true",
+			"passed": true
+		},
+		{
+			"id": "projectile_unchanged",
+			"passed": true
+		},
+		{
+			"id": "zone_unchanged",
+			"passed": true
+		},
+		{
+			"id": "battle_rng_unchanged",
+			"passed": true
+		},
+		{
+			"id": "flight_cap_80",
+			"passed": true
+		},
+		{
+			"id": "impact_generated",
+			"passed": true
+		},
+		{
+			"id": "impact_cleanup",
+			"passed": true
+		}
+	],
+	"failures": [],
+	"frame_stats": {
+		"procedural_reduced": {
+			"fps": 120.0,
+			"ignorados": 0,
+			"lentos_33": 0,
+			"lentos_50": 0,
+			"ms_max": 8.5,
+			"ms_medio": 8.3,
+			"ms_p95": 8.5,
+			"ms_p99": 8.5,
+			"quadros": 180
+		},
+		"sprites": {
+			"fps": 120.0,
+			"ignorados": 0,
+			"lentos_33": 0,
+			"lentos_50": 0,
+			"ms_max": 8.6,
+			"ms_medio": 8.3,
+			"ms_p95": 8.6,
+			"ms_p99": 8.6,
+			"quadros": 180
+		}
+	},
+	"human_playtest": "PENDING",
+	"renderer": "NVIDIA GeForce GTX 1660 SUPER",
+	"synthetic": true
+}

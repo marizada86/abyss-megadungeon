@@ -1,0 +1,1517 @@
+{
+	"failures": [],
+	"sheets": [
+		{
+			"frames": [
+				{
+					"bounds": [
+						73,
+						76,
+						111,
+						116
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						63,
+						54,
+						131,
+						150
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						49,
+						32,
+						160,
+						195
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						56,
+						23,
+						144,
+						187
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						66,
+						35,
+						125,
+						165
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						76,
+						51,
+						105,
+						147
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "M01",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/morte_poeira.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						56,
+						39,
+						145,
+						179
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						54,
+						53,
+						149,
+						163
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						64,
+						36,
+						128,
+						185
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						53,
+						32,
+						152,
+						183
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						53,
+						26,
+						153,
+						187
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						57,
+						23,
+						140,
+						185
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "P02",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/xp_coleta.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						53,
+						55,
+						149,
+						146
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						53,
+						54,
+						150,
+						179
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						53,
+						54,
+						150,
+						179
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						54,
+						55,
+						149,
+						146
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						46,
+						44,
+						164,
+						168
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						45,
+						39,
+						167,
+						179
+					],
+					"index": 5,
+					"pass": true
+				},
+				{
+					"bounds": [
+						44,
+						39,
+						168,
+						182
+					],
+					"index": 6,
+					"pass": true
+				},
+				{
+					"bounds": [
+						49,
+						47,
+						159,
+						163
+					],
+					"index": 7,
+					"pass": true
+				}
+			],
+			"id": "G03",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/boss_quadrante_runas.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						78,
+						82,
+						101,
+						99
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						62,
+						55,
+						134,
+						145
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						32,
+						25,
+						193,
+						208
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						49,
+						43,
+						159,
+						171
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						65,
+						60,
+						129,
+						139
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						80,
+						83,
+						98,
+						95
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "P01",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/xp_brilho.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						78,
+						76,
+						101,
+						105
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						69,
+						61,
+						117,
+						127
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						67,
+						23,
+						122,
+						176
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						61,
+						67,
+						121,
+						118
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						80,
+						77,
+						95,
+						103
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						99,
+						97,
+						58,
+						72
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "P03",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/moeda_coleta.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						76,
+						109,
+						105,
+						87
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						66,
+						82,
+						125,
+						124
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						63,
+						23,
+						130,
+						184
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						74,
+						37,
+						110,
+						167
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						75,
+						42,
+						108,
+						161
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						84,
+						56,
+						87,
+						143
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "P04",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/pocao_coleta.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						49,
+						31,
+						158,
+						196
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						23,
+						35,
+						200,
+						181
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						41,
+						41,
+						175,
+						165
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						45,
+						46,
+						167,
+						160
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						35,
+						61,
+						155,
+						138
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						72,
+						69,
+						112,
+						122
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "P05",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/ima_pulso.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						81,
+						76,
+						95,
+						120
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						79,
+						44,
+						97,
+						158
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						77,
+						23,
+						101,
+						187
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						78,
+						41,
+						102,
+						164
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						76,
+						49,
+						101,
+						153
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						76,
+						59,
+						95,
+						142
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "P06",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/subida_de_nivel_v2.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						75,
+						44,
+						106,
+						157
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						75,
+						32,
+						108,
+						173
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						75,
+						24,
+						106,
+						180
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						75,
+						23,
+						106,
+						181
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						75,
+						31,
+						107,
+						173
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						75,
+						44,
+						105,
+						158
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "P07",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/mare_aura.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						90,
+						134,
+						76,
+						68
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						89,
+						93,
+						79,
+						109
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						89,
+						70,
+						78,
+						131
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						90,
+						48,
+						75,
+						151
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						94,
+						36,
+						69,
+						161
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						96,
+						23,
+						64,
+						171
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "M02",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/morte_alma.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						52,
+						42,
+						156,
+						179
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						42,
+						39,
+						171,
+						165
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						29,
+						24,
+						199,
+						209
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						39,
+						34,
+						176,
+						183
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						34,
+						39,
+						177,
+						176
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						64,
+						39,
+						127,
+						189
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "M03",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/morte_elite_estouro.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						90,
+						52,
+						77,
+						146
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						72,
+						41,
+						113,
+						163
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						55,
+						23,
+						146,
+						193
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						69,
+						37,
+						112,
+						166
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						79,
+						35,
+						98,
+						165
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						88,
+						29,
+						81,
+						165
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "M04",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/morte_chefe_colapso.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						60,
+						51,
+						136,
+						146
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						53,
+						45,
+						163,
+						159
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						40,
+						23,
+						176,
+						200
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						37,
+						49,
+						167,
+						159
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						58,
+						52,
+						140,
+						152
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						74,
+						70,
+						108,
+						123
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "M05",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/morte_detritos.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						60,
+						61,
+						140,
+						143
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						55,
+						40,
+						147,
+						182
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						37,
+						25,
+						182,
+						208
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						51,
+						30,
+						154,
+						198
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						48,
+						29,
+						143,
+						193
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						76,
+						31,
+						105,
+						191
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "M06",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/morte_explosivo.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						29,
+						96,
+						197,
+						65
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						23,
+						96,
+						205,
+						65
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						28,
+						96,
+						200,
+						65
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						27,
+						95,
+						201,
+						67
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						28,
+						96,
+						204,
+						66
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						29,
+						96,
+						199,
+						65
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "G01",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/boss_varredura_aviso.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						26,
+						72,
+						202,
+						116
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						23,
+						61,
+						206,
+						138
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						25,
+						59,
+						204,
+						137
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						27,
+						55,
+						203,
+						143
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						25,
+						56,
+						207,
+						142
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						25,
+						59,
+						204,
+						131
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "G02",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/boss_varredura_feixe.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						53,
+						51,
+						151,
+						151
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						50,
+						52,
+						156,
+						155
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						52,
+						51,
+						152,
+						168
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						53,
+						55,
+						151,
+						146
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						51,
+						53,
+						154,
+						151
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						44,
+						42,
+						165,
+						170
+					],
+					"index": 5,
+					"pass": true
+				},
+				{
+					"bounds": [
+						33,
+						23,
+						191,
+						208
+					],
+					"index": 6,
+					"pass": true
+				},
+				{
+					"bounds": [
+						54,
+						51,
+						150,
+						155
+					],
+					"index": 7,
+					"pass": true
+				}
+			],
+			"id": "G04",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/boss_marca_alvo.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						83,
+						33,
+						92,
+						169
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						82,
+						26,
+						93,
+						177
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						81,
+						25,
+						95,
+						178
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						81,
+						23,
+						95,
+						180
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						81,
+						26,
+						94,
+						177
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						83,
+						25,
+						91,
+						177
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "G05",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/boss_conjuracao_carga.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						74,
+						72,
+						111,
+						114
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						54,
+						55,
+						147,
+						147
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						29,
+						25,
+						200,
+						208
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						30,
+						28,
+						197,
+						203
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						25,
+						26,
+						199,
+						202
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						33,
+						38,
+						181,
+						181
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "G06",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/boss_conjuracao_estouro.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						36,
+						29,
+						184,
+						199
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						39,
+						32,
+						179,
+						192
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						41,
+						23,
+						175,
+						206
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						43,
+						36,
+						174,
+						192
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						40,
+						34,
+						176,
+						188
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						46,
+						38,
+						163,
+						176
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "G07",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/boss_conjuracao_interrompida.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						27,
+						50,
+						203,
+						154
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						25,
+						47,
+						207,
+						157
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						25,
+						44,
+						207,
+						162
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						26,
+						51,
+						207,
+						155
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						26,
+						40,
+						205,
+						164
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						26,
+						23,
+						206,
+						183
+					],
+					"index": 5,
+					"pass": true
+				},
+				{
+					"bounds": [
+						28,
+						25,
+						201,
+						181
+					],
+					"index": 6,
+					"pass": true
+				},
+				{
+					"bounds": [
+						33,
+						43,
+						190,
+						160
+					],
+					"index": 7,
+					"pass": true
+				}
+			],
+			"id": "G08",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/boss_escudo.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						72,
+						73,
+						113,
+						130
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						59,
+						46,
+						139,
+						160
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						47,
+						23,
+						162,
+						203
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						51,
+						43,
+						153,
+						167
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						47,
+						52,
+						149,
+						153
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						66,
+						74,
+						126,
+						127
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "G09",
+			"path": ".atena/generated/vfx-lote2-20261023-r1/prepared/boss_fase_estouro.png"
+		}
+	]
+}

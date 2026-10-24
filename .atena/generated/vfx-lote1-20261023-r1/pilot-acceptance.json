@@ -1,0 +1,44 @@
+{
+  "authorization": "aprovado, faça o lote completo para aprovar tudo de uma vez",
+  "full_batch_visual_acceptance": "PENDING",
+  "date": "2026-10-23",
+  "content_state": "DRAFT",
+  "approved_pilot": [
+    {
+      "id": "F03",
+      "file": "F03_cera_poca_chama_v02.png",
+      "revision": "v02",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 693895,
+      "sha256": "6bbd032ebb7f765e2d5dc763a3b7ac46db4c69745eb65e24a577bbfeba318aa0",
+      "pilot": true,
+      "human_visual_acceptance": "PILOT_APPROVED_OWNER_20261023",
+      "runtime_admission": false
+    },
+    {
+      "id": "F06",
+      "file": "F06_inimigo_flecha_v01.png",
+      "revision": "v01",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 953719,
+      "sha256": "7508872e56afddfdba83154b70982258326fe7f730792401401128183cd33fa1",
+      "pilot": true,
+      "human_visual_acceptance": "PILOT_APPROVED_OWNER_20261023",
+      "runtime_admission": false
+    },
+    {
+      "id": "F13",
+      "file": "F13_hit_fisico_v01.png",
+      "revision": "v01",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 533348,
+      "sha256": "e78460a09bba23e892efbff19731890702c504a8555414052f35495aafe513a7",
+      "pilot": true,
+      "human_visual_acceptance": "PILOT_APPROVED_OWNER_20261023",
+      "runtime_admission": false
+    }
+  ]
+}

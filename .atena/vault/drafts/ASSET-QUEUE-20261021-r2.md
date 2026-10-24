@@ -54,6 +54,7 @@ Status: DRAFT. Substitui o acompanhamento de `ASSET-GENERATION-LIST-20261021-r1.
 - Moldura de painel do herói em nove fatias (sem janela de retrato embutida) e variante de cronômetro mais baixa.
 - Folhas de animação desenhadas quadro a quadro para os chefes novos (Síntese, Death Tyrant, Receptáculo, Manifestação, Nidhogg): hoje são trocas de pose com balanço.
 - Ícones de categoria do códex para heróis, passivas e bênçãos (só se o códex ganhar essas abas).
+- **VFX e "dopamina" (série F, 2026-10-23):** 17 folhas do Lote 1 (Cera Fervente e Inferno de Cera, projéteis inimigos, golpes radiante e de fogo, faíscas de acerto) em fila própria: `ASSET-QUEUE-VFX-LOTE1-20261023-r1.md`, com prompts para o ChatGPT em `.atena/generated/vfx-lote1-20261023-r1/`. Escopo aguardando aprovação.
 
 ## 5. Pendências técnicas
 

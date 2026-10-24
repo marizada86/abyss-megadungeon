@@ -1,0 +1,34 @@
+[
+  {
+    "file": "F03_cera_poca_chama_v01.png",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "0e64b242aebce736da2e2e6307583a4f82dbcf5ae6a1fc5bf2cac66cd89ec7de",
+    "human_visual_acceptance": "PENDING",
+    "runtime_admission": false
+  },
+  {
+    "file": "F03_cera_poca_chama_v02.png",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "6bbd032ebb7f765e2d5dc763a3b7ac46db4c69745eb65e24a577bbfeba318aa0",
+    "human_visual_acceptance": "PENDING",
+    "runtime_admission": false
+  },
+  {
+    "file": "F06_inimigo_flecha_v01.png",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "7508872e56afddfdba83154b70982258326fe7f730792401401128183cd33fa1",
+    "human_visual_acceptance": "PENDING",
+    "runtime_admission": false
+  },
+  {
+    "file": "F13_hit_fisico_v01.png",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "e78460a09bba23e892efbff19731890702c504a8555414052f35495aafe513a7",
+    "human_visual_acceptance": "PENDING",
+    "runtime_admission": false
+  }
+]

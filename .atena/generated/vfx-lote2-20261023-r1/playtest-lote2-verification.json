@@ -1,0 +1,132 @@
+{
+	"checks": [
+		{
+			"id": "isolated_user_dir",
+			"passed": true
+		},
+		{
+			"id": "boss_with_mechanics",
+			"passed": true
+		},
+		{
+			"id": "pickup_effects",
+			"passed": true
+		},
+		{
+			"id": "pickup_reduced_adds_none",
+			"passed": true
+		},
+		{
+			"id": "levelup_effect",
+			"passed": true
+		},
+		{
+			"id": "tide_aura_on",
+			"passed": true
+		},
+		{
+			"id": "tide_aura_off",
+			"passed": true
+		},
+		{
+			"id": "death_cap",
+			"passed": true
+		},
+		{
+			"id": "explosion_on_boom",
+			"passed": true
+		},
+		{
+			"id": "boss_nodes",
+			"passed": true
+		},
+		{
+			"id": "boss_state_unchanged",
+			"passed": true
+		},
+		{
+			"id": "boss_nodes_reused",
+			"passed": true
+		},
+		{
+			"id": "boss_bursts",
+			"passed": true
+		},
+		{
+			"id": "boss_reduced_no_art",
+			"passed": true
+		},
+		{
+			"id": "boss_back_after_reduced",
+			"passed": true
+		},
+		{
+			"id": "shield_break_effect",
+			"passed": true
+		},
+		{
+			"id": "boss_nodes_cleaned",
+			"passed": true
+		},
+		{
+			"id": "slowmo_respects_reduced",
+			"passed": true
+		},
+		{
+			"id": "slowmo_on",
+			"passed": true
+		},
+		{
+			"id": "flash_on",
+			"passed": true
+		},
+		{
+			"id": "slowmo_restored",
+			"passed": true
+		},
+		{
+			"id": "flash_cleaned",
+			"passed": true
+		},
+		{
+			"id": "death_cap_after_stress",
+			"passed": true
+		},
+		{
+			"id": "pickup_cap_after_stress",
+			"passed": true
+		},
+		{
+			"id": "engine_time_scale_normal",
+			"passed": true
+		}
+	],
+	"failures": [],
+	"frame_stats": {
+		"reduced": {
+			"fps": 120.0,
+			"ignorados": 0,
+			"lentos_33": 0,
+			"lentos_50": 0,
+			"ms_max": 8.5,
+			"ms_medio": 8.3,
+			"ms_p95": 8.5,
+			"ms_p99": 8.5,
+			"quadros": 180
+		},
+		"sprites": {
+			"fps": 120.0,
+			"ignorados": 0,
+			"lentos_33": 0,
+			"lentos_50": 0,
+			"ms_max": 8.4,
+			"ms_medio": 8.3,
+			"ms_p95": 8.4,
+			"ms_p99": 8.4,
+			"quadros": 180
+		}
+	},
+	"human_playtest": "PENDING",
+	"renderer": "NVIDIA GeForce GTX 1660 SUPER",
+	"synthetic": true
+}

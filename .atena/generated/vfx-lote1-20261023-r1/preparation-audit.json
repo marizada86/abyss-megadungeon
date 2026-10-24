@@ -1,0 +1,1227 @@
+{
+	"failures": [],
+	"sheets": [
+		{
+			"frames": [
+				{
+					"bounds": [
+						106,
+						64,
+						46,
+						112
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						88,
+						63,
+						122,
+						153
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						46,
+						69,
+						164,
+						162
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						46,
+						60,
+						164,
+						172
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						46,
+						48,
+						164,
+						185
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						46,
+						94,
+						150,
+						130
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F01",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/cera_fervente_lancamento.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						31,
+						23,
+						197,
+						204
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						30,
+						23,
+						197,
+						204
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						31,
+						23,
+						196,
+						204
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						30,
+						23,
+						197,
+						204
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						30,
+						23,
+						197,
+						204
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						30,
+						23,
+						197,
+						204
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F02",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/cera_poca_corpo.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						46,
+						24,
+						179,
+						186
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						44,
+						31,
+						179,
+						182
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						40,
+						27,
+						180,
+						185
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						38,
+						23,
+						179,
+						189
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						34,
+						25,
+						179,
+						187
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						31,
+						24,
+						179,
+						187
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F03",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/cera_poca_chama.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						96,
+						54,
+						85,
+						161
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						67,
+						83,
+						122,
+						141
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						45,
+						82,
+						166,
+						150
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						60,
+						72,
+						137,
+						154
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						62,
+						54,
+						133,
+						179
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						62,
+						97,
+						128,
+						124
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F04",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/inferno_de_cera_lancamento.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						75,
+						27,
+						119,
+						178
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						62,
+						29,
+						132,
+						174
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						62,
+						25,
+						129,
+						179
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						67,
+						23,
+						121,
+						179
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						63,
+						28,
+						131,
+						175
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						62,
+						27,
+						121,
+						176
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F05",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/inferno_de_cera_chama.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						57,
+						90,
+						143,
+						46
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						58,
+						90,
+						142,
+						48
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						58,
+						90,
+						141,
+						143
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						61,
+						89,
+						138,
+						49
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						64,
+						67,
+						130,
+						115
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						51,
+						47,
+						156,
+						153
+					],
+					"index": 5,
+					"pass": true
+				},
+				{
+					"bounds": [
+						43,
+						41,
+						172,
+						170
+					],
+					"index": 6,
+					"pass": true
+				},
+				{
+					"bounds": [
+						59,
+						54,
+						139,
+						142
+					],
+					"index": 7,
+					"pass": true
+				}
+			],
+			"id": "F06",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/inimigo_flecha.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						64,
+						98,
+						138,
+						61
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						54,
+						98,
+						147,
+						64
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						55,
+						100,
+						139,
+						133
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						47,
+						97,
+						146,
+						62
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						62,
+						52,
+						136,
+						129
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						53,
+						47,
+						151,
+						140
+					],
+					"index": 5,
+					"pass": true
+				},
+				{
+					"bounds": [
+						41,
+						41,
+						167,
+						162
+					],
+					"index": 6,
+					"pass": true
+				},
+				{
+					"bounds": [
+						47,
+						41,
+						153,
+						151
+					],
+					"index": 7,
+					"pass": true
+				}
+			],
+			"id": "F07",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/inimigo_esporo.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						55,
+						84,
+						149,
+						87
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						52,
+						82,
+						151,
+						90
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						45,
+						85,
+						154,
+						148
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						49,
+						82,
+						152,
+						151
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						71,
+						58,
+						122,
+						119
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						49,
+						42,
+						158,
+						153
+					],
+					"index": 5,
+					"pass": true
+				},
+				{
+					"bounds": [
+						41,
+						41,
+						170,
+						167
+					],
+					"index": 6,
+					"pass": true
+				},
+				{
+					"bounds": [
+						52,
+						41,
+						142,
+						153
+					],
+					"index": 7,
+					"pass": true
+				}
+			],
+			"id": "F08",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/inimigo_orbe_abissal.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						59,
+						88,
+						143,
+						70
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						51,
+						87,
+						156,
+						72
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						54,
+						86,
+						147,
+						147
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						53,
+						84,
+						145,
+						75
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						62,
+						63,
+						136,
+						137
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						53,
+						52,
+						162,
+						156
+					],
+					"index": 5,
+					"pass": true
+				},
+				{
+					"bounds": [
+						41,
+						41,
+						174,
+						177
+					],
+					"index": 6,
+					"pass": true
+				},
+				{
+					"bounds": [
+						41,
+						56,
+						148,
+						151
+					],
+					"index": 7,
+					"pass": true
+				}
+			],
+			"id": "F09",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/inimigo_orbe_infernal.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						69,
+						96,
+						133,
+						66
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						53,
+						96,
+						140,
+						67
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						45,
+						96,
+						144,
+						66
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						51,
+						96,
+						137,
+						66
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						74,
+						62,
+						127,
+						132
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						46,
+						47,
+						167,
+						163
+					],
+					"index": 5,
+					"pass": true
+				},
+				{
+					"bounds": [
+						23,
+						24,
+						199,
+						199
+					],
+					"index": 6,
+					"pass": true
+				},
+				{
+					"bounds": [
+						52,
+						57,
+						141,
+						147
+					],
+					"index": 7,
+					"pass": true
+				}
+			],
+			"id": "F10",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/bala_de_chefe.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						71,
+						98,
+						122,
+						58
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						50,
+						41,
+						163,
+						175
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						43,
+						23,
+						170,
+						200
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						48,
+						25,
+						165,
+						197
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						43,
+						37,
+						165,
+						177
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						50,
+						58,
+						137,
+						144
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F11",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/melee_radiante_arco.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						99,
+						95,
+						87,
+						70
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						72,
+						56,
+						124,
+						133
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						52,
+						28,
+						151,
+						191
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						52,
+						23,
+						155,
+						198
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						49,
+						48,
+						146,
+						157
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						72,
+						64,
+						100,
+						132
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F12",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/melee_fogo_arco.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						102,
+						99,
+						47,
+						49
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						79,
+						84,
+						89,
+						83
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						65,
+						52,
+						115,
+						136
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						68,
+						66,
+						114,
+						114
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						67,
+						70,
+						114,
+						108
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						76,
+						75,
+						98,
+						99
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F13",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/hit_fisico.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						100,
+						89,
+						66,
+						71
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						70,
+						69,
+						127,
+						109
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						59,
+						52,
+						131,
+						143
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						65,
+						68,
+						127,
+						116
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						75,
+						68,
+						111,
+						116
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						85,
+						77,
+						85,
+						90
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F14",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/hit_magico.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						106,
+						90,
+						46,
+						49
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						88,
+						74,
+						86,
+						74
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						82,
+						52,
+						86,
+						103
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						96,
+						61,
+						64,
+						91
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						97,
+						62,
+						58,
+						85
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						100,
+						70,
+						50,
+						75
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F15",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/hit_fogo.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						98,
+						100,
+						52,
+						55
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						72,
+						73,
+						115,
+						108
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						69,
+						52,
+						118,
+						147
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						69,
+						56,
+						116,
+						128
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						98,
+						65,
+						75,
+						112
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						106,
+						75,
+						51,
+						91
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F16",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/hit_radiante.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						71,
+						45,
+						136,
+						149
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						49,
+						26,
+						163,
+						186
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						43,
+						23,
+						169,
+						191
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						43,
+						24,
+						167,
+						190
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						45,
+						29,
+						161,
+						184
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						67,
+						51,
+						114,
+						147
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "F17",
+			"path": ".atena/generated/vfx-lote1-20261023-r1/prepared/hit_critico.png"
+		}
+	]
+}

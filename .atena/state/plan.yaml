@@ -43,7 +43,7 @@ asset_preparation_2026_10_21:
   content_state: DRAFT
   source_visual_acceptance: APPROVED_SELECTED_125
   pc_baseline_integration: dc4a917
-  runtime_modified: false
+  runtime_modified: true   # local, sem commit
   canonical_promotion: false
   next_objective: Owner approves bounded PC integration proposal; then execute S-I01 baseline and consumer checks. No further source acceptance required.
   derivative_count: 158
@@ -2812,6 +2812,76 @@ hero_art_reset_20261021:
     runtime_modified: false
   next_activity: "Korrak completo no R2 (idle, ataque v02b, habilidade e morte) com aceite visual e exceções documentadas; DRAFT, nada integrado. Erik idle SE: prompt pronto em assets_incoming/hero-r2/erik/idle-generation-prompt-v01.txt, aguardando o dono gerar e entregar (3 tentativas). Pendentes: proposta B (r2_check_v4) sem decisão; ataque/habilidade/morte do Erik só depois do idle aprovado; E3 não executado; caminhada suspensa (Durvall usa piloto). Sem nova geração sem autorização."
 
+vfx_lote1_2026_10_23:
+  id: PLAN-VFX-LOTE1-20261023
+  revision: r1
+  classification: IN_PLAN_APPROVED_SCOPE
+  mode: per-plan
+  proposal: .atena/vault/drafts/PROPOSTA-vfx-lote1-20261023-r1.md
+  queue: .atena/vault/drafts/ASSET-QUEUE-VFX-LOTE1-20261023-r1.md
+  workdir: .atena/generated/vfx-lote1-20261023-r1/
+  authorization: "Aprovado o escopo das 17 folhas e o metadado src/ring no battle.gd. Comece pelo piloto F03, F06 e F13: vou gerar no ChatGPT e te trago as imagens. (dono, 2026-10-23)"
+  status: INTEGRATED_LOCAL_APPROVED_OWNER_20261023_NOT_COMMITTED
+  generation: "Atena via built-in imagegen, autorizada pelo pedido atual do dono (2026-10-23)"
+  pilot: [F03, F06, F13]
+  pilot_gate: "revisão de estilo, tamanho e legibilidade (36-56 px) antes de liberar as outras 14 folhas"
+  attempts: "até 3 candidatas por peça (_v01.._v03); depois, bloqueio para decisão"
+  approved_scope: [17_folhas_F01_F17, metadado_visual_src_ring_em_battle_gd]
+  pending_owner_decisions: []
+  decisions_20261023:
+    authorization: "Atena pode seguir as recomendações (dono, 2026-10-23)"
+    fire_swing: "test_fire_swing_vfx.gd permanece inalterado; o sprite F12 entra dentro de FireSwingVfx (fallback procedural sem folha ou com Reduzir efeitos de impacto); MeleeVfx continua kit físico mais armas radiantes por ID (golpe_do_juizo, martelo_da_gloria, martelo_da_luz); somente acrescentar testes"
+    boss_bullet_tint: "F10 tingida pela cor do inimigo em data/enemies.json, clareada até um brilho mínimo (sintese_abissal [40,20,60] e death_tyrant cinza); teste confere cor e brilho mínimo de todo chefe com anel; sem tabela nova"
+    wax_body_tint: "F02 corpo neutro claro e dessaturado, tingido por modulate (âmbar na Cera Fervente, carmim no Inferno); avaliar sobre fundo escuro quando F02 chegar (segunda leva); plano B: F02b, corpo carmim próprio do Inferno, sem mudança de código"
+  steps:
+    S1_pilot: {status: APPROVED_OWNER_20261023, items: [F03, F06, F13]}
+    S2_remaining_sheets: {status: DONE_SOURCES_ACCEPTED_20261023, items: 14, acceptance: batch-acceptance.json}
+    S3_preparation: {status: DONE, audit: preparation-audit.json, result: "17 folhas, zero falhas, margem minima 23 px", atlases: assets/vfx/}
+    S4_code_tests: {status: DONE_LOCAL_NOT_COMMITTED, done: [battle_gd_src_ring_metadata, hit_sparks, enemy_projectiles, melee_radiante, fire_swing_sprite, wax], tests: [test_wax_vfx, test_enemy_projectile_vfx, test_hit_spark_vfx, test_vfx_lote1_assets], suite: "final-suite.log 0 falhas"}
+    S5_validation_playtest: {status: DONE_OWNER_APPROVED_20261023, synthetic: "playtest-verification.json 11/11, 120 fps com e sem sprites", human_playtest: "dono jogou mapa real e respondeu 'aprovado, vamos para os proximos assets' (2026-10-23); sem lista de ressalvas registrada"}
+  battle_gd_metadata:
+    status: APPLIED_LOCAL_NOT_COMMITTED
+    change: "campos visuais src (id do inimigo) e ring (true nos anéis) nos três projéteis inimigos; nenhuma lógica os lê"
+    file: core/battle.gd
+  not_authorized: [merge, build, exportacao, publicacao, promocao_canon]
+  git_authorization_20261024: "atena, joguei esta aprovado, commit e push (dono, 2026-10-24); commit local e push para origin/main; merge, build, exportacao e promocao CANON seguem sem autorizacao"
+  runtime_modified: true   # local, sem commit: battle.gd, projectile_vfx, melee_vfx, fire_swing_vfx, overlay, run, asset_prep; novos wax_vfx, hit_spark_vfx, vfx_atlas e 4 testes
+  checkpoint: LOTE1_CLOSED_OWNER_APPROVED_COMMIT_NOT_AUTHORIZED
+  pilot_gallery: .atena/generated/vfx-lote1-20261023-r1/pilot-review.html
+  pilot_receipt: .atena/generated/vfx-lote1-20261023-r1/pilot-generation.md
+  full_batch_authorization: "aprovado, faça o lote completo para aprovar tudo de uma vez (dono, 2026-10-23)"
+  pilot_acceptance: .atena/generated/vfx-lote1-20261023-r1/pilot-acceptance.json
+  batch_gallery: .atena/generated/vfx-lote1-20261023-r1/batch-review.html
+  batch_audit: .atena/generated/vfx-lote1-20261023-r1/batch-source-audit.json
+  batch_receipt: .atena/generated/vfx-lote1-20261023-r1/batch-generation.md
+  generated_candidates: 17
+  retained_versions: 1
+  full_batch_visual_acceptance: APPROVED_OWNER_20261023_SOURCES_ONLY   # batch-acceptance.json ("atena aprovado, vamos continuar"); runtime_acceptance continua PENDING_TECHNICAL_VALIDATION
+  reconciliation_20261023:
+    note: "Reconciliado a partir dos arquivos em disco (batch-acceptance.json, preparation-audit.json, playtest-verification.json, final-suite.log, git status), pois o plano estava defasado em relacao ao codigo; a autoria de cada gravacao nao foi inferida."
+    review: "Revisao visual das 17 fontes e das capturas: arte aprovada; ressalvas de integracao tratadas abaixo."
+    adjustments_applied:
+      wax_body: "core/wax_vfx.gd: corpo da poca translucido (BODY_ALPHA 0.62) e tintas escuras (ambar 0.86/0.46/0.14, carmim 0.62/0.08/0.12); resolve o disco chapado sem gerar F02b"
+      wax_flame: "oscilacao so visual de escala (4,5%) e brilho (12%), fase por poca, relogio de tela sem RNG do jogo"
+      contrast_disc: "ui/overlay.gd: disco sob projetil inimigo de raio 9 e alfa 0.5 para raio 7.5 e alfa 0.24"
+      tests: "test_wax_vfx.gd ganhou checagens de translucidez e dos limites de oscilacao; 8 testes de VFX 0 falhas"
+      evidence: [stress-sprites.png, stress-sprites-antes-ajuste.png, contrast-light.png, playtest-ajuste.log]
+    f02b: "NAO necessaria: o corpo ficou legivel com opacidade e tinta ajustadas; so reabrir se o playtest humano reprovar"
+    open_notes: [aditivos_somem_em_fundo_muito_claro_mapas_sao_escuros, F08_violeta_pode_lembrar_orbe_arcano_do_heroi_conferir_no_playtest, chamas_F03_F05_tem_quadros_quase_identicos_oscilacao_em_codigo_compensa]
+    not_done: [commit_push_build]
+    owner_approval_20261023: "aprovado, vamos para os proximos assets (apos jogar um mapa real; sem lista de ressalvas)"
+  continuation_authorization: "atena aprovado, vamos continuar (dono, 2026-10-23)"
+  source_acceptance: .atena/generated/vfx-lote1-20261023-r1/batch-acceptance.json
+  admission: .atena/generated/vfx-lote1-20261023-r1/admission.json
+  integration_gallery: .atena/generated/vfx-lote1-20261023-r1/integration-review.html
+  integration_evidence: .atena/generated/vfx-lote1-20261023-r1/integration-evidence.md
+  integration_verification: .atena/generated/vfx-lote1-20261023-r1/integration-verification.json
+  interactive_launcher: .atena/generated/vfx-lote1-20261023-r1/Avaliar-VFX.cmd
+  controller_check: INHERITED_TWO_FAILURES_NULL_REPORT_AND_TIMEOUT_PRESERVED
+  human_runtime_acceptance: PENDING
+  content_state: DRAFT
+  next_activity: "Lote 1 encerrado e aprovado pelo dono (2026-10-23, apos jogar um mapa real); alteracoes locais sem commit (commit/push/build exigem pedido explicito, sem promocao CANON). Frente ativa: vfx_lote2_2026_10_23, piloto M01, P02 e G03."
+
 vfx_lote2_2026_10_23:
   id: PLAN-VFX-LOTE2-20261023
   revision: r1
@@ -2821,22 +2891,31 @@ vfx_lote2_2026_10_23:
   queue: .atena/vault/drafts/ASSET-QUEUE-VFX-LOTE2-20261023-r1.md
   workdir: .atena/generated/vfx-lote2-20261023-r1/
   authorization: "Aprovo as 22 folhas com o piloto M01, P02, G03. Registre no plan.yaml e prepare prompts e fila do Lote 2, sem gerar imagens. (dono, 2026-10-23)"
-  status: PILOT_AWAITING_OWNER_IMAGES
-  generation: "manual pelo dono no ChatGPT; nenhuma geração pela Atena"
+  status: INTEGRATED_APPROVED_OWNER_20261024_COMMITTED
+  generation: "image_gen integrado; piloto preservado e 19 folhas geradas por pedido atual do dono em 2026-10-24"
   pilot: [M01, P02, G03]
   pilot_gate: "revisão de estilo, tamanho e legibilidade (24-48 px nos itens, 96-160 px nos chefes, também sobre fundo claro) antes de liberar as outras 19 folhas"
   attempts: "até 3 candidatas por peça (_v01.._v03); depois, bloqueio para decisão"
   approved_scope: [22_folhas_G01_G09_M01_M06_P01_P07]
   series: {G_chefes: 9, M_morte: 6, P_coleta_progressao: 7}
-  depends_on: [vfx_lote1_2026_10_23]   # o código do Lote 2 vem depois do carregador compartilhado do Lote 1
-  pending_owner_decisions: [contorno_de_perigo_do_telegrafo_de_chefe_sempre_por_baixo_da_arte, camera_lenta_0_5s_e_flash_na_morte_de_chefe_em_codigo, ordem_do_codigo_lote2_depois_do_lote1]
+  depends_on: [vfx_lote1_2026_10_23]   # SATISFEITO em 2026-10-23: Lote 1 aprovado, carregador VfxAtlas disponivel localmente
+  pending_owner_decisions: []
+  decisions_20261023:
+    authorization: "Aprovo as duas: o contorno de perigo dos telégrafos de chefe fica sempre por baixo da arte, e a câmera lenta de 0,5 s com flash na morte de chefe, respeitando Reduzir efeitos de impacto. (dono, 2026-10-23)"
+    danger_outline: "o contorno atual de perigo dos telégrafos de chefe (linha/polígono) permanece sempre desenhado por baixo da arte, com ou sem folha; teste confere que continua desenhado com a folha presente e que a geometria do telégrafo no BossMechanics não muda"
+    boss_death: "câmera lenta de 0,5 s e flash curto na morte de chefe, só em código; desligados por Reduzir efeitos de impacto (permanece o _hit_stop atual)"
+    order: "Lote 2 em código depois do Lote 1, já satisfeito"
   steps:
     S1_prompts_and_queue: {status: DONE, items: 22, files: [queue.json, table.md, prompts/, ref-existing-vfx.png]}
-    S2_pilot: {status: AWAITING_IMAGES, items: [M01, P02, G03]}
-    S3_remaining_sheets: {status: PENDING_PILOT_GATE, items: 19}
-    S4_preparation: {status: PENDING}   # tools/asset_jobs/vfx_lote2_v01.json com tools/asset_prep.gd
-    S5_code_tests: {status: PENDING, order: [pickup_vfx, death_vfx, boss_mechanics_draw_fx], tests: [test_pickup_vfx, test_death_vfx, test_boss_vfx]}
-    S6_validation_playtest: {status: PENDING}   # incluir playtest com chefe para a leitura dos telégrafos
-  not_authorized: [commit, push, merge, build, exportacao, publicacao, promocao_canon, geracao_de_imagens_pela_atena]
+    S2_pilot: {status: APPROVED_OWNER_20261024, acceptance: pilot-acceptance-v01.json, items: [M01, P02, G03], review: review-v01/PILOT-VEREDITO-ATENA.md, verdict: "passa no portao (estilo, leitura 32-160 px em fundo escuro, separabilidade); fundo claro some por ser aditivo; normalizacao na preparacao"}
+    S3_remaining_sheets: {status: APPROVED_OWNER_20261024, acceptance: remaining-acceptance-20261024.json, hashes_verified: 19, chosen: "v02 em M04, G06 e G09; v01 nas outras 16", atena_review: review-20261024/VEREDITO-19-FOLHAS-ATENA.md, recommended: "v02 em M04, G06 e G09; v01 nas outras 16; nenhuma exige nova geracao", items: 19, candidates: 22, prompts_to_paste: COLAR-NO-CHATGPT-19-FOLHAS.md, gallery: remaining-gallery-20261024.html, receipt: remaining-generation-20261024.md, audit: remaining-source-audit-20261024.json}
+    S4_preparation: {status: DONE_20261024, job: tools/asset_jobs/vfx_lote2_v01.json, audit_script: tools/audit_vfx_lote2.gd, audit: preparation-audit.json, result: "22 atlas (19 aceitas + piloto M01, P02, G03), 0 falhas, margem minima 21 px, nenhum quadro vazio", prepared: prepared/, galleries: review-atlas/, copied_to_assets: false}
+    S5_code_tests: {status: DONE_LOCAL_NOT_COMMITTED, done: [pickup_vfx, death_vfx, boss_vfx, boss_death_cinematic], new_files: [core/pickup_vfx.gd, core/death_vfx.gd, core/boss_vfx.gd, tools/vfx_lote2_playtest.gd, tests/test_pickup_vfx.gd, tests/test_death_vfx.gd, tests/test_boss_vfx.gd, tests/test_vfx_lote2_assets.gd], edited: [core/vfx_atlas.gd, core/boss_mechanics.gd, core/battle.gd, ui/run.gd, ui/overlay.gd], atlases_copied_to: assets/vfx, suite: "run_all 0 falhas; audit_projeto 0 erros", not_done: [brilho_da_barra_de_xp, contador_de_mare_pulsando]}
+    S6_validation_playtest: {status: SYNTHETIC_DONE_HUMAN_PENDING, synthetic: "playtest-lote2-verification.json: 25 verificacoes, 0 falhas, 120 fps com e sem sprites com 100 pickups e abates em sequencia", captures: [integration-bosses.png, integration-stress.png], human_playtest: "dono jogou mapa com chefe e respondeu: joguei, esta aprovado, commit e push (2026-10-24); sem lista de ressalvas"}
+  not_authorized: [merge, build, exportacao, publicacao, promocao_canon]
+  git_authorization_20261024: "atena, joguei esta aprovado, commit e push (dono, 2026-10-24); commit local e push para origin/main; merge, build, exportacao e promocao CANON seguem sem autorizacao"
   runtime_modified: false
-  next_activity: "Dono gera M01, P02 e G03 no ChatGPT e entrega em .atena/generated/vfx-lote2-20261023-r1/ com os nomes de queue.json; a Atena mede e revisa o piloto."
+  next_activity: "Lotes 1 e 2 de VFX aprovados pelo dono e commitados (push autorizado em 2026-10-24). Pendentes opcionais: brilho da barra de XP ao encher e contador da Mare pulsando; Lote 3 (variantes de evolucao, estouro de abate de elite, zonas de tentaculo) sem escopo aprovado."
+
+  remaining_generation_authorization_20261024: 'atena vamos seguir com os planos do claude: COLAR-NO-CHATGPT-19-FOLHAS.md'
+  checkpoint: LOTE2_CLOSED_OWNER_APPROVED
