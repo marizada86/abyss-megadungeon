@@ -3,6 +3,8 @@ extends Node2D
 
 @export_enum("under", "over", "text") var mode := "over"
 var battle: Battle
+var visual_projectiles: Array = []
+var visual_wax_zones: Array = []
 ## SPEC-173: com o filtro de tela, o texto do mundo (rótulos, nomes) é desenhado por uma 3ª instância (mode "text"), numa camada
 ## acima do filtro, para não ser pixelizado. A instância "over" só enfileira o texto; a "text" desenha a fila de source.
 var split_text := false
@@ -358,7 +360,8 @@ func _draw_hero_zone(z: Dictionary) -> void:
 	var weapon_id := String(p.get("id", ""))
 	var dtype := String(p.get("dtype", ""))
 	if dtype == "fogo":
-		_draw_wax_fire(z)
+		if not visual_wax_zones.any(func(zone): return is_same(zone, z)) or Game.reduced_impact():
+			_draw_wax_fire(z)
 		return
 	if weapon_id == "colar_dos_tentaculos":
 		_draw_tentacle_zone(z)
@@ -532,6 +535,7 @@ func _draw_over() -> void:
 	_draw_happenings()
 	_draw_ecos()
 	_draw_star_path()
+	var glimmer_index := 0
 	for pk in battle.pickups:
 		var p := Iso.to_screen(pk.pos)
 		var pickup_asset: String = {"xp": "xp_shard", "gold": "gold_coin", "potion": "health_potion", "magnet": "magnet"}.get(String(pk.kind), "")
@@ -544,12 +548,14 @@ func _draw_over() -> void:
 				var pulse := 0.5 + 0.5 * sin(Time.get_ticks_msec() / 160.0)
 				draw_circle(p + Vector2(0, -size * 0.5), size * 0.55 + 3.0 * pulse, Color(1.0, 0.85, 0.3, 0.14 + 0.12 * pulse))
 			draw_texture_rect(pickup_texture, Rect2(p.x - size * 0.5, p.y - size, size, size), false)
+			if PickupVfx.draw_glimmer(self, pk, p, glimmer_index, Time.get_ticks_msec(), Game.reduced_impact()):
+				glimmer_index += 1
 		else:
 			draw_circle(p + Vector2(0, -4), 4.0, Color(0.6, 0.85, 1.0))
 	for pr in battle.projectiles:
 		var p := Iso.to_screen(pr.pos) + Vector2(0, -16)
 		if pr.owner == "hero":
-			if ProjectileVfx.handles(pr, Game.reduced_impact()):
+			if not Game.reduced_impact() and visual_projectiles.any(func(live): return is_same(live, pr)):
 				continue   # ART-029: o sprite de voo (ui/run.gd) substitui o circulo
 			var theme: Dictionary = pr.get("visual_theme", DivineVisuals.resolve(battle.hero.id, battle.visual_god, battle.visual_boon_selected))
 			var col: Color = theme.primary
@@ -557,6 +563,9 @@ func _draw_over() -> void:
 			draw_circle(p, 5.0, col)
 			draw_line(p, p - Iso.to_screen(pr.dir).normalized() * 14.0, Color(trail, 0.5), 3.0)
 		else:
+			if not Game.reduced_impact() and visual_projectiles.any(func(live): return is_same(live, pr)):
+				draw_circle(p, 7.5, Color(0.06, 0.02, 0.07, 0.24))
+				continue
 			draw_circle(p, 5.0, Color(1.0, 0.25, 0.25))
 			draw_circle(p, 2.5, Color(1.0, 0.8, 0.6))
 	if battle.boss_mech != null:   # L5: mecânicas do chefe (turíbulos, imunidade, conjuração, varredura, quadrantes)

@@ -5,6 +5,7 @@ extends Node2D
 const DURATION := 0.3
 const STEPS := 14
 const EMBERS := 12
+var _sprite: AnimatedSprite2D
 var _dir := Vector2.RIGHT
 var _range := 1.0
 var _cone := 0.0   # meio-ângulo em radianos, igual ao do cone de dano
@@ -28,6 +29,14 @@ static func create_effect(event: Dictionary, reduced_impact: bool = false) -> No
 	var material := CanvasItemMaterial.new()
 	material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
 	node.material = material
+	if String(event.get("weapon", "")) in ["tocha_do_incendiario", "machado_de_xargath"]:
+		var sprite := VfxAtlas.sprite("res://assets/vfx/melee_fogo_arco.png", false, DURATION)
+		if sprite != null:
+			sprite.use_parent_material = true
+			sprite.transform = MeleeVfx.projection(node._dir)
+			sprite.scale *= Vector2.ONE * (node._range * Iso.TILE_W * 0.5 * sqrt(2.0) / (256.0 * 0.4))
+			node._sprite = sprite
+			node.add_child(sprite)
 	var tween := node.create_tween()
 	tween.tween_property(node, "_t", 1.0, DURATION)
 	tween.tween_callback(node.queue_free)
@@ -38,6 +47,8 @@ func _ground(angle: float, fraction: float) -> Vector2:
 	return Iso.to_screen(_dir.rotated(angle) * _range * fraction)
 
 func _draw() -> void:
+	if _sprite != null:
+		return
 	var sweep := clampf(_t / 0.55, 0.0, 1.0)   # a labareda varre o cone na primeira metade
 	var fade := 1.0 - _t
 	var front := lerpf(-_cone, _cone, sweep)

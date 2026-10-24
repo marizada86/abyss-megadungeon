@@ -12,7 +12,9 @@ const WEAPON_SHAPES := {
 	"romper_armadura": "corte_medio", "maca_demolidora": "arco_largo", "esmagar_defesas": "arco_largo",
 }
 static var _frames: Dictionary = {}
+const RADIANT_WEAPONS := ["golpe_do_juizo", "martelo_da_gloria", "martelo_da_luz"]
 const SHAPE_PATHS := {
+	"arco_radiante": "res://assets/vfx/melee_radiante_arco.png",
 	"corte_medio": "res://assets/vfx/melee_fisico_corte_medio.png",
 	"arco_largo": "res://assets/vfx/melee_fisico_arco_largo.png",
 	"estocada_longa": "res://assets/vfx/melee_estocada_longa.png",
@@ -20,6 +22,8 @@ const SHAPE_PATHS := {
 }
 
 static func shape_for(weapon: String, dtype: String) -> String:
+	if dtype == "radiante" and RADIANT_WEAPONS.has(weapon):
+		return "arco_radiante"
 	if weapon == "estocada_mistica":
 		return "estocada_longa" if dtype == "magico" else ""
 	return String(WEAPON_SHAPES.get(weapon, "")) if dtype == "fisico" else ""
@@ -34,6 +38,8 @@ static func create_effect(event: Dictionary, color: Color) -> Node2D:
 	if shape.is_empty():
 		return null
 	if not _frames.has(shape):
+		if not ResourceLoader.exists(SHAPE_PATHS[shape]):
+			return null
 		var texture := load(SHAPE_PATHS[shape]) as Texture2D
 		if texture == null:
 			return null

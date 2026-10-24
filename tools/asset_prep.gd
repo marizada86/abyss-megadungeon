@@ -34,6 +34,9 @@ func _save(img: Image, path: String) -> void:
 	print("gravou ", path, " ", img.get_size())
 
 func _run(job: Dictionary) -> void:
+	if job.get("mode", "") == "vfx_atlas":
+		_vfx_atlas(job)
+		return
 	if job.get("mode", "") == "nine_compose":
 		_nine_compose(job)
 		return
@@ -56,6 +59,52 @@ func _run(job: Dictionary) -> void:
 		return
 	img = _finish(img, job)
 	_save(img, String(job.out))
+
+## Source regions are explicit: generated sheets do not guarantee a pixel-exact grid.
+## One scale for the whole animation preserves the growth/fade, with a fixed anchor per row.
+func _vfx_atlas(job: Dictionary) -> void:
+	var source := _load(String(job.src))
+	if source == null:
+		quit(1)
+		return
+	if job.get("key", "black") == "magenta":
+		_key_magenta(source, 0.24)
+	else:
+		_key_black(source, 0.045)
+	var pieces: Array[Image] = []
+	var anchors: Array[Vector2] = []
+	var target := Vector2(float(job.get("anchor", [128, 128])[0]), float(job.get("anchor", [128, 128])[1]))
+	var scale_factor := 100.0
+	var pad := 23.0
+	for spec in job.regions:
+		var rect := Rect2i(int(spec[0]), int(spec[1]), int(spec[2]), int(spec[3]))
+		var image := source.get_region(rect)
+		var anchor := Vector2(float(spec[4]), float(spec[5]))
+		var used := image.get_used_rect()
+		if not used.has_area():
+			printerr("empty frame: ", job.src)
+			quit(1)
+			return
+		var left := anchor.x - used.position.x
+		var right := used.end.x - anchor.x
+		var top := anchor.y - used.position.y
+		var bottom := used.end.y - anchor.y
+		if left > 0: scale_factor = minf(scale_factor, (target.x - pad) / left)
+		if right > 0: scale_factor = minf(scale_factor, (256.0 - pad - target.x) / right)
+		if top > 0: scale_factor = minf(scale_factor, (target.y - pad) / top)
+		if bottom > 0: scale_factor = minf(scale_factor, (256.0 - pad - target.y) / bottom)
+		pieces.append(image)
+		anchors.append(anchor)
+	scale_factor *= float(job.get("scale", 1.0))
+	var atlas := Image.create(256 * pieces.size(), 256, false, Image.FORMAT_RGBA8)
+	for index in pieces.size():
+		var image := pieces[index]
+		var used := image.get_used_rect()
+		var piece := image.get_region(used)
+		var at := Vector2i((target + (Vector2(used.position) - anchors[index]) * scale_factor).round())
+		piece.resize(maxi(1, roundi(piece.get_width() * scale_factor)), maxi(1, roundi(piece.get_height() * scale_factor)), Image.INTERPOLATE_LANCZOS)
+		atlas.blit_rect(piece, Rect2i(Vector2i.ZERO, piece.get_size()), at + Vector2i(index * 256, 0))
+	_save(atlas, String(job.out))
 
 ## Recorta, margens e tamanho final de uma imagem já sem fundo.
 func _finish(img: Image, job: Dictionary) -> Image:

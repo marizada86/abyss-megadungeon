@@ -19,6 +19,47 @@ const FAMILIES := {
 	&"onda_cortante": {"path": "res://assets/vfx/onda_cortante.png", "dtype": "magico", "scale": 0.5, "pivot_x": 147.0,
 		"weapons": ["lamina_trovejante", "tempestade"]},
 }
+const LIMIT := 80
+const ENEMY_FAMILIES := {
+	&"inimigo_flecha": {"path": "res://assets/vfx/inimigo_flecha.png", "scale": 0.20, "pivot_x": 180.0, "enemies": ["cultista_arqueiro"]},
+	&"inimigo_esporo": {"path": "res://assets/vfx/inimigo_esporo.png", "scale": 0.20, "pivot_x": 180.0, "enemies": ["esporo_voador", "discipulo_pestilento"]},
+	&"inimigo_orbe_abissal": {"path": "res://assets/vfx/inimigo_orbe_abissal.png", "scale": 0.20, "pivot_x": 180.0, "enemies": ["cultista_thullgrime", "arch_hag", "cultista_de_socothbenoth", "sucubo"]},
+	&"inimigo_orbe_infernal": {"path": "res://assets/vfx/inimigo_orbe_infernal.png", "scale": 0.20, "pivot_x": 180.0, "enemies": ["master_of_cruelties", "malcanthet"]},
+	&"bala_de_chefe": {"path": "res://assets/vfx/bala_de_chefe.png", "scale": 0.20, "pivot_x": 128.0, "enemies": []},
+}
+
+static func enemy_family_for(projectile: Dictionary) -> StringName:
+	if String(projectile.get("owner", "")) == "hero":
+		return &""
+	if bool(projectile.get("ring", false)):
+		return &"bala_de_chefe"
+	var id := String(projectile.get("src", ""))
+	for family in ENEMY_FAMILIES:
+		if (ENEMY_FAMILIES[family].enemies as Array).has(id):
+			return family
+	return &""
+
+static func visual_family_for(projectile: Dictionary) -> StringName:
+	return family_for(projectile) if String(projectile.get("owner", "")) == "hero" else enemy_family_for(projectile)
+
+static func spec_for(family: StringName) -> Dictionary:
+	return FAMILIES.get(family, ENEMY_FAMILIES.get(family, {}))
+
+static func enemy_tint(projectile: Dictionary) -> Color:
+	if not bool(projectile.get("ring", false)):
+		return Color.WHITE
+	var spec: Dictionary = Data.table("enemies").get(String(projectile.get("src", "")), {})
+	var rgb: Array = spec.get("color", [255, 255, 255])
+	var color := Color(float(rgb[0]) / 255.0, float(rgb[1]) / 255.0, float(rgb[2]) / 255.0)
+	var peak := maxf(color.r, maxf(color.g, color.b))
+	# Mix toward white to retain the data hue even for very dark boss colors.
+	if peak < 0.65:
+		color = color.lerp(Color.WHITE, (0.65 - peak) / maxf(0.001, 1.0 - peak))
+	return color
+
+static func can_spawn(current: int, reduced: bool = false) -> bool:
+	return not reduced and current < LIMIT
+
 static var _frames: Dictionary = {}
 
 static func weapon_id(projectile: Dictionary) -> String:
@@ -39,14 +80,14 @@ static func family_for(projectile: Dictionary) -> StringName:
 static func handles(projectile: Dictionary, reduced_impact: bool = false) -> bool:
 	if reduced_impact:
 		return false
-	var family := family_for(projectile)
+	var family := visual_family_for(projectile)
 	return family != &"" and not frames_for(family).is_empty()
 
 ## {"flight": SpriteFrames, "impact": SpriteFrames}, or {} when the atlas is missing or has the wrong size.
 static func frames_for(family: StringName) -> Dictionary:
 	if _frames.has(family):
 		return _frames[family]
-	var spec: Dictionary = FAMILIES.get(family, {})
+	var spec: Dictionary = spec_for(family)
 	var built := {}
 	if not spec.is_empty() and ResourceLoader.exists(spec.path):
 		built = frames_from_texture(load(spec.path) as Texture2D)
@@ -83,11 +124,11 @@ static func screen_position(ground: Vector2) -> Vector2:
 	return Iso.to_screen(ground) + LIFT
 
 static func create_flight(projectile: Dictionary, color: Color) -> AnimatedSprite2D:
-	var family := family_for(projectile)
+	var family := visual_family_for(projectile)
 	var frames := frames_for(family)
 	if family == &"" or frames.is_empty():
 		return null
-	var spec: Dictionary = FAMILIES[family]
+	var spec: Dictionary = spec_for(family)
 	var sprite := AnimatedSprite2D.new()
 	sprite.sprite_frames = frames.flight
 	sprite.scale = Vector2.ONE * float(spec.scale)
@@ -105,9 +146,10 @@ static func create_impact(family: StringName, ground: Vector2, color: Color) -> 
 		return null
 	var root := Node2D.new()
 	root.position = screen_position(ground)
+	root.add_to_group(&"projectile_vfx_impact")
 	var sprite := AnimatedSprite2D.new()
 	sprite.sprite_frames = frames.impact
-	sprite.scale = Vector2.ONE * float(FAMILIES[family].scale)
+	sprite.scale = Vector2.ONE * float(spec_for(family).scale)
 	sprite.modulate = color
 	sprite.material = _additive()
 	root.add_child(sprite)

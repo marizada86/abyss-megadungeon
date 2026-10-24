@@ -306,13 +306,14 @@ func _step_cast(dt: float) -> void:
 			var dmg := float(Dice.roll(b.rng, String(cast.dice)) + boss.atk_bonus)
 			b.events.append({"type": "text", "pos": b.hero.pos, "text": String(cast.name)})
 			b._hurt_hero(dmg, "aoe")
-		b.events.append({"type": "telegraph_burst", "pos": boss.pos})
+		b.events.append({"type": "telegraph_burst", "pos": boss.pos, "verb": "cast", "effect": String(cast.get("effect", "heavy"))})
 		cast.clear()
 
 func _interrupt(text: String) -> void:
 	var stun := float(cast.get("stun", 2.0))
 	boss.stun_t = maxf(boss.stun_t, stun)
 	b.events.append({"type": "text", "pos": boss.pos, "text": text})
+	b.events.append({"type": "cast_interrupt", "pos": boss.pos})
 	b.events.append({"type": "toast", "text": "%s O chefe fica atordoado." % text, "color": Color(0.6, 1.0, 0.6)})
 	cast.clear()
 
@@ -353,7 +354,7 @@ func _step_quad(dt: float) -> void:
 		for s in quad.sectors:
 			var at: Vector2 = (quad.center as Vector2) + Vector2.from_angle((float(s) + 0.5) * TAU / float(SECTOR_COUNT)) * float(quad.radius) * 0.5
 			b.zones.append({"owner": "enemy", "kind": "puddle", "pos": at, "radius": 1.6, "delay": 0.0, "life": 8.0, "acc": 0.0})
-	b.events.append({"type": "telegraph_burst", "pos": quad.center})
+	b.events.append({"type": "telegraph_burst", "pos": quad.center, "verb": "quad", "sectors": (quad.sectors as Array).duplicate(), "radius": float(quad.radius)})
 	quad.clear()
 
 ## PLAN-105 N1: a marca segue o herói por `follow` s e trava por `lock` s; ao fim explode onde travou.
@@ -374,7 +375,7 @@ func _step_mark(dt: float) -> void:
 			b.hero.slow_t = maxf(b.hero.slow_t, float(mark.slow))
 	if bool(mark.get("puddle", false)):
 		b.zones.append({"owner": "enemy", "kind": "puddle", "pos": at, "radius": float(mark.radius) * 0.6, "delay": 0.0, "life": 8.0, "acc": 0.0})
-	b.events.append({"type": "telegraph_burst", "pos": at})
+	b.events.append({"type": "telegraph_burst", "pos": at, "verb": "mark", "radius": float(mark.radius)})
 	mark.clear()
 
 # ------------------------------------------------------------------ desenho (chamado pelo overlay)

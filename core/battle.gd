@@ -1184,7 +1184,7 @@ func _update_zones(dt: float) -> void:
 		else:   # telegraph
 			z.delay -= dt
 			if z.delay <= 0.0:
-				events.append({"type": "boom", "pos": z.pos, "radius": z.radius})
+				events.append({"type": "boom", "pos": z.pos, "radius": z.radius, "affix": String(z.get("affix", ""))})
 				if hero.pos.distance_to(z.pos) <= z.radius + HERO_HIT_R:
 					_hurt_hero(float(Dice.roll(rng, z.dice) + int(z.bonus / 2)) * float(z.get("damage_mult", 1.0)), "aoe")
 				if z.kind == "bubble":
@@ -1207,7 +1207,7 @@ func _update_zones(dt: float) -> void:
 
 ## MEC-034: armadilha de cenário. Fere o herói e os inimigos (todos) dentro do raio, sem desvio.
 func _fire_trap(z: Dictionary) -> void:
-	events.append({"type": "boom", "pos": z.pos, "radius": z.radius})
+	events.append({"type": "boom", "pos": z.pos, "radius": z.radius, "affix": String(z.get("affix", ""))})
 	if hero.pos.distance_to(z.pos) <= float(z.radius) + HERO_HIT_R:
 		_hurt_hero(float(Dice.roll(rng, String(z.dice)) + int(float(z.bonus) / 2.0)), "trap")
 	for e in enemies:
@@ -1295,7 +1295,7 @@ func _apply_boss_phase_action(e: Enemy, action: Dictionary) -> void:
 			for k in n:
 				var ang := off + TAU * float(k) / float(n)
 				projectiles.append({"owner": "enemy", "pos": e.pos, "dir": Vector2(cos(ang), sin(ang)), "speed": float(action.speed), "life": 5.0,
-					"radius": 0.25, "dice": action.dice, "bonus": e.atk_bonus, "dtype": "magico", "pierce": 0, "hit": {}, "p": {}})
+					"radius": 0.25, "dice": action.dice, "bonus": e.atk_bonus, "dtype": "magico", "pierce": 0, "hit": {}, "p": {}, "src": e.id, "ring": true})
 		"hazard":
 			for i in int(action.n):
 				var at := hero.pos + Vector2(rng.randf_range(-5.0, 5.0), rng.randf_range(-5.0, 5.0))
@@ -1690,7 +1690,7 @@ func _use_ability(e: Enemy, idx: int, a: Dictionary, dist: float, to: Vector2) -
 			for k in n:
 				var ang := off + TAU * k / n
 				projectiles.append({"owner": "enemy", "pos": e.pos, "dir": Vector2(cos(ang), sin(ang)), "speed": float(a.speed), "life": 4.0, "radius": 0.25,
-					"dice": a.dice, "bonus": e.atk_bonus, "dtype": "magico", "pierce": 0, "hit": {}, "p": {}})
+					"dice": a.dice, "bonus": e.atk_bonus, "dtype": "magico", "pierce": 0, "hit": {}, "p": {}, "src": e.id, "ring": true})
 			events.append({"type": "enemy_action", "enemy_id": e.id, "pos": e.pos, "ability": "ring"})
 			return true
 	return false
@@ -3564,7 +3564,7 @@ func _affix_step(e: Enemy, dt: float) -> void:
 ## Explosivo: ao morrer deixa um aviso no chão e explode um segundo depois (só fere o herói).
 func _affix_explode(e: Enemy) -> void:
 	zones.append({"owner": "enemy", "kind": "telegraph", "pos": e.pos, "radius": 2.2, "delay": 1.0, "total": 1.0, "life": 99.0,
-		"dice": "2d8", "bonus": e.atk_bonus, "dtype": "fisico", "friendly": false})
+		"dice": "2d8", "bonus": e.atk_bonus, "dtype": "fisico", "friendly": false, "affix": "explosivo"})
 	events.append({"type": "telegraph", "pos": e.pos, "radius": 2.2, "delay": 1.0, "enemy_id": e.id})
 
 ## MEC-024: força da abertura de cada fase, 1.0 no começo, constante por hold_seconds e decaindo até 0 em fade_seconds.
@@ -4016,7 +4016,7 @@ func l4_section(name: String) -> Dictionary:
 ## Tiro de inimigo (imediato ou ao fim da mira).
 func _enemy_shot(e: Enemy, a: Dictionary, dir: Vector2) -> void:
 	projectiles.append({"owner": "enemy", "pos": e.pos, "dir": dir, "speed": float(a.speed), "life": float(a.range) / float(a.speed) + 1.0, "radius": 0.25,
-		"dice": a.dice, "bonus": int(a.bonus) + int(minute() / 4.0) + tier(), "dtype": a.dtype, "pierce": 0, "hit": {}, "p": {}, "by": e})
+		"dice": a.dice, "bonus": int(a.bonus) + int(minute() / 4.0) + tier(), "dtype": a.dtype, "pierce": 0, "hit": {}, "p": {}, "by": e, "src": e.id})
 	events.append({"type": "enemy_action", "enemy_id": e.id, "pos": e.pos, "ability": "shoot"})
 
 ## L4 A1: elite imóvel com golpe em área nasce ao alcance dele (antes: no anel de 8 a 11 tiles, fora do alcance de 6).

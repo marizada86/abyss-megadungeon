@@ -46,6 +46,7 @@ var _recovery_offer := false
 var _stage_clear_events_seen: Dictionary = {}
 var _final_victory_event_seen := false
 var _proj_vfx: Array[Dictionary] = []
+var _wax_vfx: Array[Dictionary] = []
 var _ability_follow := {}
 var _active_dir := Vector2.ZERO
 var _swing_dir_frame := Vector2.ZERO
@@ -483,6 +484,8 @@ func _sync_cursor() -> void:
 	CursorSkin.sync_run(battle.aim == Battle.Aim.MOUSE, get_tree().paused or battle.state != "running" or _result_shown)
 
 func _exit_tree() -> void:
+	if Engine.time_scale != 1.0:
+		Engine.time_scale = 1.0
 	if get_tree().process_frame.is_connected(_sync_cursor):
 		get_tree().process_frame.disconnect(_sync_cursor)
 	if Game.visual_settings_changed.is_connected(_on_visual_settings_changed):
@@ -677,7 +680,10 @@ func _process(dt: float) -> void:
 	if hero_node == null:
 		return
 	_sync_projectile_vfx()
+	_sync_wax_vfx()
 	_sync_ability_follow()
+	_sync_tide_aura(dt)
+	_sync_boss_vfx()
 	_shake = maxf(0.0, _shake - dt * 3.0)
 	camera.position = hero_node.position + Vector2(randf_range(-1, 1), randf_range(-1, 1)) * _shake * 6.0
 	_update_fog_overlay()
@@ -711,6 +717,7 @@ func _sync() -> void:
 			n.sync_visual(Iso.to_screen(e.pos))
 	_sync_decoys()
 	_sync_projectile_vfx()
+	_sync_wax_vfx()
 	_sync_ability_follow()
 	_update_divine_aura()
 
@@ -811,6 +818,8 @@ func _consume_events() -> void:
 		var at := Iso.to_screen(ev.pos) if ev.has("pos") else Vector2.ZERO
 		match String(ev.type):
 			"hit":
+				var spark := HitSparkVfx.create_effect(ev, Game.reduced_impact(), get_tree().get_nodes_in_group(&"hit_spark_vfx").size())
+				if spark != null: fx.add_child(spark)
 				# L3 (EVID-250): faixa do golpe (fração do PV do alvo em elite e chefe; crítico sobe a faixa) decide número, som e pausa
 				var hit_tier := String(ev.get("tier", ""))
 				var hit_frac := float(ev.get("frac", 0.0))
@@ -866,7 +875,11 @@ func _consume_events() -> void:
 			"zone":
 				Sfx.play_weapon(String(ev.get("weapon", "")), "combat.zone")
 				var zone_theme: Dictionary = ev.get("visual_theme", _divine_theme())
-				_ring(ev.pos, ev.radius, zone_theme.impact_accent, 0.25)
+				var wax_cast := WaxVfx.create_cast(ev, Game.reduced_impact())
+				if wax_cast != null:
+					fx.add_child(wax_cast)
+				else:
+					_ring(ev.pos, ev.radius, zone_theme.impact_accent, 0.25)
 			"decoy_blast":
 				Sfx.play("combat.explosion", -6.0)
 				_shadow_blast(ev.pos, float(ev.radius))
@@ -876,6 +889,10 @@ func _consume_events() -> void:
 			"boom":
 				Sfx.play("combat.explosion", -8.0)
 				_ring(ev.pos, ev.radius, Color(1.0, 0.3, 0.2), 0.3)
+				if String(ev.get("affix", "")) == "explosivo":
+					var blast_fx := DeathVfx.create_explosion(float(ev.radius), ev.pos, Game.reduced_impact(), get_tree().get_nodes_in_group(&"death_vfx").size())
+					if blast_fx != null:
+						fx.add_child(blast_fx)
 				if under.has_method("spawn_impact"):
 					under.call("spawn_impact", ev.pos, 8)
 			"kill":
@@ -901,7 +918,11 @@ func _consume_events() -> void:
 				_loot_reveal(ev.new_item)
 			"levelup":
 				Sfx.play("progress.levelup")
-				_play_sheet_effect("res://assets/vfx/vfx_subida_de_nivel.png", battle.hero.pos, 1.8, 0.48)
+				var level_fx := PickupVfx.create_levelup(battle.hero.pos, Game.reduced_impact())
+				if level_fx != null:
+					fx.add_child(level_fx)
+				else:
+					_play_sheet_effect("res://assets/vfx/vfx_subida_de_nivel.png", battle.hero.pos, 1.8, 0.48)
 			"boss":
 				Sfx.play_boss(String(ev.enemy.id), "arrival")
 				_bark("chefe")
@@ -933,6 +954,9 @@ func _consume_events() -> void:
 				Sfx.play_boss(active_boss, "phase")
 				hud.toast(ev.text, Color(1.0, 0.55, 0.35))
 				_play_enemy_action(active_boss, ev.pos, &"phase")
+				var phase_fx := BossVfx.create_phase_burst(ev.pos, _boss_scale(), Game.reduced_impact())
+				if phase_fx != null:
+					fx.add_child(phase_fx)
 			"enemy_action":
 				Sfx.play_enemy(String(ev.enemy_id), "action")
 				var action: StringName = &"attack"
@@ -952,6 +976,14 @@ func _consume_events() -> void:
 				Sfx.play("enemy.telegraph")
 			"windup":
 				Sfx.play("enemy.charge")
+			"telegraph_burst":
+				var burst_fx := BossVfx.create_burst(ev, _boss_scale(), Game.reduced_impact())
+				if burst_fx != null:
+					(under if String(ev.get("verb", "")) == "quad" else fx).add_child(burst_fx)
+			"cast_interrupt":
+				var interrupt_fx := BossVfx.create_interrupt(ev.pos, _boss_scale(), Game.reduced_impact())
+				if interrupt_fx != null:
+					fx.add_child(interrupt_fx)
 			"dead":
 				Sfx.play("player.death")
 			"divinity":
@@ -1154,7 +1186,7 @@ func _sync_projectile_vfx() -> void:
 	var live: Array = []
 	if not reduced:
 		for pr in battle.projectiles:
-			if ProjectileVfx.handles(pr):
+			if ProjectileVfx.handles(pr) and ProjectileVfx.can_spawn(live.size() + get_tree().get_nodes_in_group(&"projectile_vfx_impact").size()):
 				live.append(pr)
 	var kept: Array[Dictionary] = []
 	var i := 0
@@ -1171,27 +1203,32 @@ func _sync_projectile_vfx() -> void:
 			node.rotation = ProjectileVfx.rotation_for(pr.dir)
 		else:
 			var theme: Dictionary = pr.get("visual_theme", _divine_theme())
-			var sprite := ProjectileVfx.create_flight(pr, theme.primary)
+			var tint: Color = theme.primary if String(pr.owner) == "hero" else ProjectileVfx.enemy_tint(pr)
+			var sprite := ProjectileVfx.create_flight(pr, tint)
 			if sprite == null:
 				continue
 			fx.add_child(sprite)
-			entry = {"pr": pr, "node": sprite, "family": ProjectileVfx.family_for(pr), "theme": theme}
+			entry = {"pr": pr, "node": sprite, "family": ProjectileVfx.visual_family_for(pr), "theme": theme, "tint": tint}
 		kept.append(entry)
 	while i < _proj_vfx.size():
 		_retire_projectile_vfx(_proj_vfx[i])
 		i += 1
 	_proj_vfx = kept
+	over.visual_projectiles = live.filter(func(pr): return kept.any(func(entry): return is_same(entry.pr, pr)))
 
 func _retire_projectile_vfx(entry: Dictionary) -> void:
 	var node: Node = entry.node
 	if is_instance_valid(node):
 		node.queue_free()
 	var pr: Dictionary = entry.pr
+	if battle.projectiles.any(func(live): return is_same(live, pr)):
+		return # disabled/capped visuals are not actual impacts
 	# Acertou (consumido com vida sobrando) ou chegou ao fim do alcance dentro do mapa: toca o impacto.
 	# Projeteis que perfuram nao somem no acerto, entao o fim do alcance e o seu impacto visivel.
 	var inside: bool = pr.pos.x >= 0.0 and pr.pos.y >= 0.0 and pr.pos.x <= battle.map_size.x and pr.pos.y <= battle.map_size.y
 	if inside and not Game.reduced_impact():
-		var impact := ProjectileVfx.create_impact(entry.family, pr.pos, entry.theme.impact_accent)
+		var tint: Color = entry.theme.impact_accent if String(pr.owner) == "hero" else entry.tint
+		var impact := ProjectileVfx.create_impact(entry.family, pr.pos, tint)
 		if impact != null:
 			fx.add_child(impact)
 
@@ -1316,6 +1353,9 @@ func _hit_stop(seconds: float) -> void:
 ## Estouro de abate: partículas na cor do inimigo; elite e chefe ganham anel e pausa.
 func _kill_burst(enemy: Enemy, at: Vector2) -> void:
 	var tint := Color(enemy.color, 0.85).lightened(0.25)
+	var death_fx := DeathVfx.create_effect(enemy, at, Game.reduced_impact(), get_tree().get_nodes_in_group(&"death_vfx").size())
+	if death_fx != null:
+		fx.add_child(death_fx)
 	var reduced := Game.reduced_impact()
 	if enemy.is_boss():
 		Sfx.play("combat.explosion", -10.0, 0.75)   # L3: a queda do chefe tem peso próprio, sem arquivo novo
@@ -1323,6 +1363,7 @@ func _kill_burst(enemy: Enemy, at: Vector2) -> void:
 		if under.has_method("spawn_impact"):
 			under.call("spawn_impact", at, 6 if reduced else 16, tint)
 		_hit_stop(0.12)
+		_boss_death_cinematic()
 	elif enemy.affix != "" or enemy.drops_chest:
 		Sfx.play("combat.critical", -10.0, 0.8)   # L3: queda de elite, mais grave que o golpe
 		_ring(at, 1.2, Color(1.0, 0.85, 0.4), 0.3)
@@ -1482,7 +1523,90 @@ func _loot_reveal(item: Dictionary) -> void:
 	_float_text(hero_node.position + Vector2(-30, -78), text, col.lightened(0.15), int(fx_spec.size), rarity == "unico" or rarity == "raro")
 
 ## Coleta com ritmo: o tom sobe a cada moeda ou orbe de XP coletado em sequência.
+var _boss_vfx: Dictionary = {}
+var _boss_slowmo := false
+
+## Mecânicas de chefe (série G): nós seguem o estado de BossMechanics sem escrever nele. O contorno de perigo de
+## `BossMechanics.draw_fx` continua desenhado por baixo, com ou sem arte.
+func _sync_boss_vfx() -> void:
+	if battle == null:
+		return
+	var reduced := Game.reduced_impact()
+	var descs: Array[Dictionary] = []
+	if not reduced and battle.boss_mech != null:
+		descs = BossVfx.describe(battle.boss_mech)
+	var seen := {}
+	for desc in descs:
+		var key := String(desc.key)
+		seen[key] = true
+		var entry: Dictionary = _boss_vfx.get(key, {})
+		if entry.is_empty() or not is_instance_valid(entry.node):
+			var node := BossVfx.build(desc)
+			if node == null:
+				continue
+			(under if String(desc.layer) == "under" else fx).add_child(node)
+			entry = {"node": node}
+			_boss_vfx[key] = entry
+		BossVfx.update(entry.node, desc, Time.get_ticks_msec())
+		entry.desc = desc
+	for key in _boss_vfx.keys():
+		if seen.has(key):
+			continue
+		var gone: Dictionary = _boss_vfx[key]
+		if key == "shield" and battle.boss_mech != null and gone.has("desc"):
+			var broken := BossVfx.create_shield_break(gone.desc.pos, float(gone.desc.scale), reduced)
+			if broken != null:
+				fx.add_child(broken)
+		if is_instance_valid(gone.node):
+			gone.node.queue_free()
+		_boss_vfx.erase(key)
+
+func _boss_scale() -> float:
+	return float(battle.boss.scale) if battle != null and battle.boss != null else 1.0
+
+## Queda do chefe: câmera lenta curta e flash, só com "Reduzir efeitos de impacto" desligado; mantém a pausa de impacto de sempre.
+func _boss_death_cinematic() -> void:
+	if not BossVfx.cinematic_allowed(Game.reduced_impact()) or _boss_slowmo:
+		return
+	_boss_slowmo = true
+	Engine.time_scale = BossVfx.SLOWMO_SCALE
+	var flash := BossVfx.make_flash()
+	hud.add_child(flash)
+	var tween := flash.create_tween()
+	tween.set_ignore_time_scale(true)
+	tween.tween_property(flash, "modulate:a", 0.0, BossVfx.FLASH_SECONDS)
+	tween.tween_callback(flash.queue_free)
+	get_tree().create_timer(BossVfx.SLOWMO_SECONDS, true, false, true).timeout.connect(_end_boss_slowmo)
+
+func _end_boss_slowmo() -> void:
+	Engine.time_scale = 1.0
+	_boss_slowmo = false
+
+var _tide_aura: AnimatedSprite2D
+
+## Aura da Maré: acompanha o herói enquanto o bônus de XP da sequência de abates vigora; só apresentação.
+func _sync_tide_aura(dt: float) -> void:
+	if battle == null or hero_node == null:
+		return
+	var reduced := Game.reduced_impact()
+	var active := not reduced and battle.state == "running" and battle.tide_xp_bonus() > 0.0
+	if _tide_aura == null or not is_instance_valid(_tide_aura):
+		_tide_aura = null
+		if not active:
+			return
+		_tide_aura = PickupVfx.create_tide_aura(reduced)
+		if _tide_aura == null:
+			return
+		hero_node.add_child(_tide_aura)
+	_tide_aura.modulate.a = PickupVfx.tide_alpha(_tide_aura.modulate.a, active, dt)
+	if not active and _tide_aura.modulate.a <= 0.001:
+		_tide_aura.queue_free()
+		_tide_aura = null
+
 func _pickup_feedback(kind: String, at: Vector2) -> void:
+	var collect_fx := PickupVfx.create_collect(kind, at, Game.reduced_impact(), get_tree().get_nodes_in_group(&"pickup_vfx").size())
+	if collect_fx != null:
+		fx.add_child(collect_fx)
 	var now := Time.get_ticks_msec()
 	if float(now - _pickup_last_ms) / 1000.0 <= Sfx.CHAIN_WINDOW:
 		_pickup_chain += 1
@@ -1498,3 +1622,30 @@ func _pickup_feedback(kind: String, at: Vector2) -> void:
 	if kind == "xp" or kind == "gold":
 		hud.pulse_xp()
 
+
+## Persistent two-layer wax visuals follow the exact zone dictionary identity; no simulation fields are written.
+func _sync_wax_vfx() -> void:
+	if battle == null:
+		return
+	var kept: Array[Dictionary] = []
+	var reduced := Game.reduced_impact()
+	for entry in _wax_vfx:
+		if not reduced and battle.zones.any(func(zone): return is_same(zone, entry.zone)):
+			WaxVfx.update(entry)
+			kept.append(entry)
+		else:
+			entry.body.queue_free()
+			entry.flames.queue_free()
+	if not reduced:
+		for zone in battle.zones:
+			if not WaxVfx.supports(zone) or kept.any(func(entry): return is_same(entry.zone, zone)):
+				continue
+			var entry := WaxVfx.create_puddle(zone)
+			if entry.is_empty():
+				continue
+			under.add_child(entry.body)
+			fx.add_child(entry.flames)
+			WaxVfx.update(entry)
+			kept.append(entry)
+	_wax_vfx = kept
+	under.visual_wax_zones = kept.map(func(entry): return entry.zone)
