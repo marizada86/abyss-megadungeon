@@ -1,0 +1,90 @@
+{
+  "file": "E03_orbe_radiante_evo_v01.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "43B02DD27222A625D455F4BAE28758962FB9793E2835007A58ACEFFC420EC1D7",
+  "frames": [
+    {
+      "min_margin": 12,
+      "frame": 1,
+      "bbox": [
+        39,
+        39,
+        371,
+        190
+      ]
+    },
+    {
+      "min_margin": 20,
+      "frame": 2,
+      "bbox": [
+        30,
+        33,
+        363,
+        193
+      ]
+    },
+    {
+      "min_margin": 0,
+      "frame": 3,
+      "bbox": [
+        24,
+        37,
+        355,
+        383
+      ]
+    },
+    {
+      "min_margin": 12,
+      "frame": 4,
+      "bbox": [
+        12,
+        41,
+        362,
+        198
+      ]
+    },
+    {
+      "min_margin": 38,
+      "frame": 5,
+      "bbox": [
+        62,
+        38,
+        328,
+        294
+      ]
+    },
+    {
+      "min_margin": 0,
+      "frame": 6,
+      "bbox": [
+        28,
+        13,
+        383,
+        328
+      ]
+    },
+    {
+      "min_margin": 0,
+      "frame": 7,
+      "bbox": [
+        0,
+        0,
+        374,
+        359
+      ]
+    },
+    {
+      "min_margin": 29,
+      "frame": 8,
+      "bbox": [
+        38,
+        29,
+        338,
+        320
+      ]
+    }
+  ]
+}

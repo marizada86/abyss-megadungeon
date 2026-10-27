@@ -1,0 +1,465 @@
+{
+  "method": "Nominal grid, RGB max > 24/255. Bounding boxes include neighbour contamination; not a separability or acceptance proof.",
+  "results": [
+    {
+      "file": "D01_detonacao_fisica_v01.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "FE313164FDB0402FC18058362762E056AB9D8E0300B99B59FEE07E364E0DB6E0",
+      "frames": [
+        {
+          "frame": 1,
+          "bbox": [
+            9,
+            15,
+            255,
+            218
+          ],
+          "min_margin": 0
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            0,
+            3,
+            255,
+            213
+          ],
+          "min_margin": 0
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            0,
+            0,
+            255,
+            238
+          ],
+          "min_margin": 0
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            0,
+            0,
+            255,
+            228
+          ],
+          "min_margin": 0
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            0,
+            30,
+            255,
+            212
+          ],
+          "min_margin": 0
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            0,
+            49,
+            236,
+            199
+          ],
+          "min_margin": 0
+        }
+      ]
+    },
+    {
+      "file": "D01_detonacao_fisica_v02.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "31471D14C73BF77A96F46F22E225221ADB54295522851631507B9DDEDEAC84DC",
+      "frames": [
+        {
+          "frame": 1,
+          "bbox": [
+            43,
+            40,
+            221,
+            201
+          ],
+          "min_margin": 34
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            23,
+            29,
+            230,
+            202
+          ],
+          "min_margin": 23
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            2,
+            13,
+            253,
+            215
+          ],
+          "min_margin": 2
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            8,
+            29,
+            248,
+            212
+          ],
+          "min_margin": 7
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            14,
+            42,
+            241,
+            207
+          ],
+          "min_margin": 14
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            19,
+            78,
+            225,
+            204
+          ],
+          "min_margin": 19
+        }
+      ]
+    },
+    {
+      "file": "E03_orbe_radiante_evo_v01.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "43B02DD27222A625D455F4BAE28758962FB9793E2835007A58ACEFFC420EC1D7",
+      "frames": [
+        {
+          "frame": 1,
+          "bbox": [
+            39,
+            39,
+            371,
+            190
+          ],
+          "min_margin": 12
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            30,
+            33,
+            363,
+            193
+          ],
+          "min_margin": 20
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            24,
+            37,
+            355,
+            383
+          ],
+          "min_margin": 0
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            12,
+            41,
+            362,
+            198
+          ],
+          "min_margin": 12
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            62,
+            38,
+            328,
+            294
+          ],
+          "min_margin": 38
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            28,
+            13,
+            383,
+            328
+          ],
+          "min_margin": 0
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            0,
+            0,
+            374,
+            359
+          ],
+          "min_margin": 0
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            38,
+            29,
+            338,
+            320
+          ],
+          "min_margin": 29
+        }
+      ]
+    },
+    {
+      "file": "E03_orbe_radiante_evo_v02.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "115E71296AE51778057E99EDA455E2C5FA1474BF6EDEFE73141431089ECBC8B2",
+      "frames": [
+        {
+          "frame": 1,
+          "bbox": [
+            45,
+            63,
+            356,
+            216
+          ],
+          "min_margin": 27
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            40,
+            72,
+            352,
+            213
+          ],
+          "min_margin": 31
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            35,
+            50,
+            351,
+            220
+          ],
+          "min_margin": 32
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            36,
+            76,
+            338,
+            204
+          ],
+          "min_margin": 36
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            94,
+            76,
+            313,
+            285
+          ],
+          "min_margin": 70
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            45,
+            40,
+            341,
+            329
+          ],
+          "min_margin": 40
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            24,
+            2,
+            354,
+            349
+          ],
+          "min_margin": 2
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            38,
+            28,
+            325,
+            334
+          ],
+          "min_margin": 28
+        }
+      ]
+    },
+    {
+      "file": "T02_tentaculos_laco_v01.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "D1CF2FB61A1B32AB0A60D20B551177F98D755A98CAC09A69645C2B55C40EF0A1",
+      "frames": [
+        {
+          "frame": 1,
+          "bbox": [
+            18,
+            28,
+            242,
+            234
+          ],
+          "min_margin": 13
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            17,
+            5,
+            245,
+            234
+          ],
+          "min_margin": 5
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            14,
+            0,
+            245,
+            233
+          ],
+          "min_margin": 0
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            9,
+            16,
+            239,
+            234
+          ],
+          "min_margin": 9
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            12,
+            14,
+            237,
+            234
+          ],
+          "min_margin": 12
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            12,
+            28,
+            236,
+            234
+          ],
+          "min_margin": 12
+        }
+      ]
+    },
+    {
+      "file": "T02_tentaculos_laco_v02.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "BA50BDDBED083736A998DE6213A9BC6D28233A9FC0029821350D2C2D1F5D4880",
+      "frames": [
+        {
+          "frame": 1,
+          "bbox": [
+            31,
+            30,
+            249,
+            224
+          ],
+          "min_margin": 6
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            26,
+            19,
+            246,
+            223
+          ],
+          "min_margin": 9
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            21,
+            11,
+            242,
+            225
+          ],
+          "min_margin": 11
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            18,
+            1,
+            239,
+            224
+          ],
+          "min_margin": 1
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            14,
+            17,
+            235,
+            223
+          ],
+          "min_margin": 14
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            8,
+            30,
+            227,
+            224
+          ],
+          "min_margin": 8
+        }
+      ]
+    }
+  ]
+}

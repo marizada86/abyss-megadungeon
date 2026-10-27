@@ -1,0 +1,223 @@
+{
+	"failures": [],
+	"sheets": [
+		{
+			"frames": [
+				{
+					"bounds": [
+						40,
+						93,
+						137,
+						68
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						36,
+						96,
+						138,
+						64
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						39,
+						88,
+						139,
+						145
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						39,
+						96,
+						136,
+						63
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						80,
+						82,
+						97,
+						92
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						63,
+						66,
+						130,
+						128
+					],
+					"index": 5,
+					"pass": true
+				},
+				{
+					"bounds": [
+						56,
+						50,
+						145,
+						152
+					],
+					"index": 6,
+					"pass": true
+				},
+				{
+					"bounds": [
+						66,
+						61,
+						126,
+						135
+					],
+					"index": 7,
+					"pass": true
+				}
+			],
+			"id": "E03",
+			"path": ".atena/generated/vfx-lote3-20261027-r1/prepared/orbe_radiante_evo.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						55,
+						63,
+						147,
+						132
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						42,
+						54,
+						191,
+						142
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						25,
+						42,
+						207,
+						166
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						29,
+						55,
+						200,
+						150
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						34,
+						65,
+						190,
+						135
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						44,
+						93,
+						168,
+						105
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "D01",
+			"path": ".atena/generated/vfx-lote3-20261027-r1/prepared/detonacao_fisica.png"
+		},
+		{
+			"frames": [
+				{
+					"bounds": [
+						37,
+						44,
+						182,
+						164
+					],
+					"index": 0,
+					"pass": true
+				},
+				{
+					"bounds": [
+						36,
+						36,
+						185,
+						172
+					],
+					"index": 1,
+					"pass": true
+				},
+				{
+					"bounds": [
+						36,
+						28,
+						185,
+						181
+					],
+					"index": 2,
+					"pass": true
+				},
+				{
+					"bounds": [
+						36,
+						23,
+						186,
+						186
+					],
+					"index": 3,
+					"pass": true
+				},
+				{
+					"bounds": [
+						36,
+						34,
+						187,
+						174
+					],
+					"index": 4,
+					"pass": true
+				},
+				{
+					"bounds": [
+						37,
+						44,
+						184,
+						164
+					],
+					"index": 5,
+					"pass": true
+				}
+			],
+			"id": "T02",
+			"path": ".atena/generated/vfx-lote3-20261027-r1/prepared/tentaculos_laco.png"
+		}
+	]
+}

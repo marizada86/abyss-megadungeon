@@ -1,0 +1,70 @@
+{
+  "file": "T02_tentaculos_laco_v01.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "D1CF2FB61A1B32AB0A60D20B551177F98D755A98CAC09A69645C2B55C40EF0A1",
+  "frames": [
+    {
+      "min_margin": 13,
+      "frame": 1,
+      "bbox": [
+        18,
+        28,
+        242,
+        234
+      ]
+    },
+    {
+      "min_margin": 5,
+      "frame": 2,
+      "bbox": [
+        17,
+        5,
+        245,
+        234
+      ]
+    },
+    {
+      "min_margin": 0,
+      "frame": 3,
+      "bbox": [
+        14,
+        0,
+        245,
+        233
+      ]
+    },
+    {
+      "min_margin": 9,
+      "frame": 4,
+      "bbox": [
+        9,
+        16,
+        239,
+        234
+      ]
+    },
+    {
+      "min_margin": 12,
+      "frame": 5,
+      "bbox": [
+        12,
+        14,
+        237,
+        234
+      ]
+    },
+    {
+      "min_margin": 12,
+      "frame": 6,
+      "bbox": [
+        12,
+        28,
+        236,
+        234
+      ]
+    }
+  ]
+}

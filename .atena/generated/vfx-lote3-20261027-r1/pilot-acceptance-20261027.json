@@ -1,0 +1,35 @@
+{
+  "batch": "VFX-LOTE3-20261027-r1",
+  "date": "2026-10-27",
+  "status": "APPROVED_OWNER_SOURCES_ONLY",
+  "owner_statement": "aprovado, vou mandar para o claude",
+  "selection_basis": "v02 dos tres IDs, candidatas mais recentes e preferidas na entrega aprovada",
+  "accepted": [
+    {
+      "id": "E03",
+      "revision": "v02",
+      "file": "E03_orbe_radiante_evo_v02.png",
+      "sha256": "115E71296AE51778057E99EDA455E2C5FA1474BF6EDEFE73141431089ECBC8B2"
+    },
+    {
+      "id": "D01",
+      "revision": "v02",
+      "file": "D01_detonacao_fisica_v02.png",
+      "sha256": "31471D14C73BF77A96F46F22E225221ADB54295522851631507B9DDEDEAC84DC"
+    },
+    {
+      "id": "T02",
+      "revision": "v02",
+      "file": "T02_tentaculos_laco_v02.png",
+      "sha256": "BA50BDDBED083736A998DE6213A9BC6D28233A9FC0029821350D2C2D1F5D4880"
+    }
+  ],
+  "technical_acceptance": "PENDING",
+  "caveats_preserved": [
+    "margens nominais abaixo do pedido",
+    "separabilidade e alinhamento pendentes",
+    "T02: sete tentaculos, bases fixas e emenda 6 para 1 pendentes"
+  ],
+  "runtime_admission": false,
+  "next_step": "Continuidade pelo dono com o Claude; demais 9 folhas liberadas para a proxima etapa pelo aceite visual do piloto, nao geradas nesta sessao"
+}
