@@ -4,8 +4,8 @@ extends RefCounted
 ## Raio, dano e tick continuam no Battle.
 const WEAPON := "colar_dos_tentaculos"
 ## Largura do anel do chão nas folhas preparadas (preparation-audit); a escala leva esse anel ao raio da zona.
-const RING_PX := 184.0
-const BASE_ANCHOR_Y := 196.0
+const RING_PX := 166.0
+const BASE_ANCHOR_Y := 164.0
 const MAX_ALPHA := 0.95
 const FADE_IN := 0.25
 const FADE_OUT := 0.35

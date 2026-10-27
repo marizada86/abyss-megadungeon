@@ -8,6 +8,8 @@ const TIDE_ALPHA := 0.35
 const TIDE_FADE_PER_SECOND := 2.0
 ## Âncora "base": o anel do chão fica em (128,196) da célula; "center": o centro da célula.
 const BASE_ANCHOR_Y := 196.0
+## Folha da aura da Maré: o centro do anel (linha mais larga) está na linha 176 da célula, 20 px acima da base (196).
+const TIDE_ANCHOR_Y := 176.0
 const COLLECT := {
 	"xp": {"sheet": "xp_coleta", "scale": 0.50, "lift": 30.0, "base": false, "gap_ms": 90},
 	"gold": {"sheet": "moeda_coleta", "scale": 0.45, "lift": 30.0, "base": false, "gap_ms": 110},
@@ -28,10 +30,10 @@ static func can_spawn(kind: String, current: int, now_ms: int, reduced: bool = f
 		return false
 	return now_ms - int(_last_ms.get(kind, -100000)) >= int(COLLECT[kind].gap_ms)
 
-static func _place(sprite: AnimatedSprite2D, base: bool, scale_value: float) -> void:
+static func _place(sprite: AnimatedSprite2D, base: bool, scale_value: float, anchor_y: float = BASE_ANCHOR_Y) -> void:
 	sprite.scale = Vector2.ONE * scale_value
 	if base:
-		sprite.offset.y = 128.0 - BASE_ANCHOR_Y
+		sprite.offset.y = 128.0 - anchor_y
 
 ## Efeito de coleta sobre o herói: `ground` é a posição do evento `pickup` (a do herói).
 static func create_collect(kind: String, ground: Vector2, reduced: bool = false, current: int = 0, now_ms: int = -1) -> Node2D:
@@ -66,7 +68,7 @@ static func create_tide_aura(reduced: bool = false) -> AnimatedSprite2D:
 	var sprite := VfxAtlas.sprite(path_for("mare_aura"), true, 0.9)
 	if sprite == null:
 		return null
-	_place(sprite, true, 0.6)
+	_place(sprite, true, 0.6, TIDE_ANCHOR_Y)
 	sprite.modulate.a = 0.0
 	return sprite
 
