@@ -602,18 +602,29 @@ func _draw_fountain_plinth(foot: Vector2, sprite_h: float) -> void:
 	ring.append(ring[0])
 	draw_polyline(ring, Color(0.36, 0.34, 0.3, 0.9), 2.0)
 
-## SPEC-129: estrela do Caminho de Tou Um (arte provisória: losango dourado). A seta de fora da tela é da HUD (SPEC-159).
+## SPEC-129: estrela do Caminho de Tou Um. Usa a arte `estrela_do_norte` (a mesma da peregrinação, com a tira de idle); sem ela,
+## vale o losango dourado de antes. A seta de fora da tela é da HUD (SPEC-159).
 func _draw_star_path() -> void:
 	var sp: Variant = battle.kinds.star_pos()
 	if sp == null:
 		return
 	var mp := Iso.to_screen(sp)
-	var pulse := 0.5 + 0.5 * sin(Time.get_ticks_msec() / 220.0)
+	var now := Time.get_ticks_msec()
+	var pulse := 0.5 + 0.5 * sin(now / 220.0)
 	var gold := Color(1.0, 0.86, 0.35)
 	var c := mp + Vector2(0, -34)
 	draw_circle(c, 16.0 + 4.0 * pulse, Color(gold, 0.16 + 0.12 * pulse))
-	draw_colored_polygon(PackedVector2Array([c + Vector2(0, -12), c + Vector2(8, 0), c + Vector2(0, 12), c + Vector2(-8, 0)]), Color(gold, 0.95))
-	_text(c + Vector2(-60, -20), "Estrela do Norte", 120, 12, Color(gold, 0.95))
+	var texture := _texture("res://assets/interactions/estrela_do_norte.png")
+	if texture != null:
+		var art_h := 56.0
+		var foot := c + Vector2(0, art_h * 0.5)   # o centro da arte fica no centro do brilho
+		var used_dest := HAPPENING_ART.destination_rect(texture, foot, art_h)
+		if not InteractionAnim.draw(self, "estrela_do_norte", texture, InteractionAnim.full_dest_from_used(texture, used_dest), now, InteractionAnim.phase_for(sp)):
+			draw_texture_rect_region(texture, used_dest, HAPPENING_ART.source_rect(texture))
+		_text(c + Vector2(-80, -art_h * 0.5 - 12.0), "Estrela do Norte", 160, 15, Color(gold.lightened(0.25), 1.0), 5)
+	else:
+		draw_colored_polygon(PackedVector2Array([c + Vector2(0, -12), c + Vector2(8, 0), c + Vector2(0, 12), c + Vector2(-8, 0)]), Color(gold, 0.95))
+		_text(c + Vector2(-60, -20), "Estrela do Norte", 120, 12, Color(gold, 0.95))
 
 ## SPEC-147: realce de item, alvo, NPC ou inimigo da quest que está dentro da tela. A cor vem do marcador, mas nunca
 ## fica apagada: o anel e a seta usam a cor com brilho mínimo para se destacar do cenário.
