@@ -3020,3 +3020,15 @@ qol_rmb_interact_20261027:
   verification: "test_rmb_interact novo: 0 falhas; run_all: 0 falhas em 2026-10-27 depois que a outra sessão ajustou test_l2_boss_field_and_corrosion e test_l5_b002_bosses ao novo boss_intro_remaining (as 2 falhas anteriores eram dessa mudança, não deste plano); audit_projeto 0 erros"
   edited: [core/battle.gd, core/game.gd, core/accessibility.gd, ui/run.gd, ui/hud.gd, ui/options_panel.gd]
   new_files: [tests/test_rmb_interact.gd]
+qol_offer_card_detail_20261027:
+  id: PLAN-ABYSS-QOL-OFFER-CARD-DETAIL-20261027
+  revision: r1
+  mode: per-plan
+  approval: APPROVED_LOCAL_R1
+  authorization: "relatos do dono em 2026-10-27: 'ao apertar shift tudo fica fora do lugar' e 'aqui não mostra os efeitos do item, tem que passar o mouse'"
+  scope: "ui/offer_card.gd: o resumo do que o item faz ganha altura reservada (min 40 px; cartão 264x440, era 410) e Shift mostra a tabela na janela do ícone sem mover o resto; cabeçalhos curtos (Este, Outro, Dif.); sem texto de preço nem explicação da escola dentro do cartão (ficam na faixa de preço e no hover)"
+  cause: "a etiqueta da escola (fd7cd9f) tomou a altura do resumo, que sumia no cartão do item com escola; a tabela de detalhe tinha cabeçalhos longos e rodapés que alargavam a coluna e empurravam selo, preço e tecla para fora do cartão"
+  status: LOCAL_DELIVERED_AWAITING_HUMAN_ACCEPTANCE
+  verification: "tests/test_offer_card_detail.gd novo (estrutura; mutação verificada); run_all 0 falhas; audit_projeto 0 erros; capturas antes/depois em .atena/generated/offer-detail-20261027/captures via tools/offer_detail_capture.gd (perfil e APPDATA sintéticos)"
+  not_authorized: [commit, push, merge, build, exportacao, publicacao]
+  human_acceptance: PENDING

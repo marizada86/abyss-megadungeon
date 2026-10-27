@@ -66,7 +66,7 @@ func setup(index: int, o: Dictionary, name_color: Color, icon_tex: Texture2D) ->
 ## `oferta_cartao.png` (280×400, nove fatias com margem 28) e `oferta_placa_icone.png` (96×96). Sem eles, valem os placeholders.
 ## Com 5 ofertas ou mais o HUD usa a versão compacta (264×196, ícone à esquerda) em duas fileiras.
 
-const CARD_SIZE := Vector2(264, 410)
+const CARD_SIZE := Vector2(264, 440)   # +30: com a etiqueta da escola o resumo dos efeitos (o que o item faz) ficava sem altura e sumia
 const COMPACT_SIZE := Vector2(264, 232)   # o conteúdo (selo + faixa de preço em duas linhas) pede ~229 px; com 222 estourava pela moldura de baixo
 const ART_DIR := "res://assets/ui/oferta/"
 const GOLD := Color(0.93, 0.78, 0.4)
@@ -133,11 +133,26 @@ var _glow: Control
 var _selection_art: TextureRect
 var _brief: Label
 var _detail_view: Control
+var _detail_host: Control          # cartão vertical: janela do ícone, onde a tabela aparece com Shift
+var _window_rows: Array[Control] = []   # ícone e espaçador da janela, escondidos enquanto a tabela ocupa o lugar
 var _school := {}   # Weapon.school() da arma da oferta; vazio quando a oferta não traz arma
+const DETAIL_MARGIN := Vector2(30, 10)   # recuo da tabela dentro da janela da arte
 
-## Shift: troca o destaque pela tabela de comparação (só nos cartões que têm detalhe).
+## Shift: mostra a tabela de comparação (só nos cartões que têm detalhe).
+## Cartão vertical: a tabela ocupa a janela do ícone e o resumo dos efeitos continua visível; cartão baixo: troca o resumo.
 func show_detail(on: bool) -> void:
 	if _detail_view == null or _brief == null:
+		return
+	if _detail_host != null:
+		if on:   # a tabela ocupa exatamente o espaço que a janela ocupa agora, para o resto do cartão não se mexer
+			var height := 0.0
+			for row in _window_rows:
+				height += row.size.y
+			height += float(_detail_host.get_parent().get_theme_constant("separation")) * float(_window_rows.size() - 1)
+			_detail_host.custom_minimum_size.y = height
+		_detail_host.visible = on
+		for row in _window_rows:
+			row.visible = not on
 		return
 	_detail_view.visible = on
 	_brief.visible = not on
@@ -301,11 +316,28 @@ func setup_card(i: int, o: Dictionary, name_color: Color, icon_tex: Texture2D, w
 		_build_full(col, title, category, ribbon, style, name_color, icon_tex, glyph_text, badge, level_chip, price, price_col, i, String(o.get("brief", "")))
 	if _has_detail(o):
 		_detail_view = build_detail(true, true)
-		_detail_view.visible = false
-		_detail_view.size_flags_vertical = Control.SIZE_EXPAND_FILL
 		_detail_view.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		_brief.get_parent().add_child(_detail_view)
-		_brief.get_parent().move_child(_detail_view, _brief.get_index() + 1)
+		if not compact and not _window_rows.is_empty():
+			var window_row: Control = _window_rows[0]
+			var host := Control.new()
+			host.clip_contents = true
+			host.visible = false
+			host.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			var height := 0.0
+			for row in _window_rows:
+				height += row.get_combined_minimum_size().y
+			height += float(window_row.get_parent().get_theme_constant("separation")) * float(_window_rows.size() - 1)
+			host.custom_minimum_size = Vector2(0, height)
+			_detail_view.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+			host.add_child(_detail_view)
+			window_row.get_parent().add_child(host)
+			window_row.get_parent().move_child(host, window_row.get_index())
+			_detail_host = host
+		else:
+			_detail_view.visible = false
+			_detail_view.size_flags_vertical = Control.SIZE_EXPAND_FILL
+			_brief.get_parent().add_child(_detail_view)
+			_brief.get_parent().move_child(_detail_view, _brief.get_index() + 1)
 	if _has_detail(o) or String(o.get("tooltip", "")) != "" or not _school.is_empty():
 		tooltip_text = " "
 	# ornamentos, gema e brilho de seleção por cima de tudo
@@ -479,11 +511,13 @@ func _build_full(col: VBoxContainer, title: String, category: String, ribbon: St
 	plate_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	col.add_child(plate_row)
 	plate_row.add_child(_plate(icon_tex, 104.0, 86.0, glyph_text))
+	_window_rows = [plate_row]
 	if art("oferta_cartao") != null:
 		var below_window := Control.new()   # a janela da arte acaba abaixo da placa: o nome não pode invadir a moldura
 		below_window.custom_minimum_size = Vector2(0, WINDOW_SPACER)
 		below_window.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		col.add_child(below_window)
+		_window_rows.append(below_window)
 	var name_label := _label(title, 20, name_color if _rarity == "" else _accent)
 	name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -524,6 +558,7 @@ func _build_full(col: VBoxContainer, title: String, category: String, ribbon: St
 	brief.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	brief.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	brief.max_lines_visible = 3
+	brief.custom_minimum_size = Vector2(0, 40)   # duas linhas sempre cabem: o que o item faz é a informação principal do cartão
 	brief.clip_text = true   # sem isto o texto longo empurra preço e tecla para fora do cartão
 	brief.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	col.add_child(brief)
@@ -742,13 +777,26 @@ func _make_custom_tooltip(_for_text: String) -> Object:
 	panel.add_child(detail)
 	return panel
 
+## Cabeçalho curto da tabela dentro do cartão: item "Nome [Raridade]" vira Este (o do cartão) e Outro; "Nv 2 (atual)" perde o parêntese.
+## A primeira coluna é sempre o item do próprio cartão (ver Battle._swap_detail).
+static func short_header(text: String, i: int) -> String:
+	if text == "Diferença":
+		return "Dif."
+	if text.contains(" ["):
+		return "Este" if i == 0 else "Outro"
+	return text.get_slice(" (", 0)
+
 ## Tabela de detalhe da oferta; inline_only=true devolve null quando não há detalhe (modo Shift do HUD).
 func build_detail(inline_only := false, compact := false) -> Control:
 	if inline_only and not _has_detail(offer):
 		return null
 	var margin := MarginContainer.new()
+	if compact and not self.compact:   # dentro da janela da arte do cartão vertical: recuo da moldura
+		margin.add_theme_constant_override("margin_left", int(DETAIL_MARGIN.x))
+		margin.add_theme_constant_override("margin_right", int(DETAIL_MARGIN.x))
+		margin.add_theme_constant_override("margin_top", int(DETAIL_MARGIN.y))
 	var box := VBoxContainer.new()
-	box.add_theme_constant_override("separation", 6)
+	box.add_theme_constant_override("separation", 4 if compact else 6)
 	margin.add_child(box)
 	var d: Dictionary = offer.get("detail", {})
 	var rows: Array = d.get("rows", [])
@@ -756,13 +804,13 @@ func build_detail(inline_only := false, compact := false) -> Control:
 		var cols: Array = d.get("columns", [])
 		var grid := GridContainer.new()
 		grid.columns = 4
-		grid.add_theme_constant_override("h_separation", 8 if compact else 18)
+		grid.add_theme_constant_override("h_separation", 6 if compact else 18)
 		grid.add_theme_constant_override("v_separation", 2)
 		box.add_child(grid)
 		var fs := 13 if compact else 16
 		grid.add_child(_label("", fs, COLOR_NEUTRAL))
-		for c in cols:
-			grid.add_child(_label(String(c), fs, Color(0.95, 0.85, 0.55)))
+		for ci in cols.size():
+			grid.add_child(_label(short_header(String(cols[ci]), ci) if compact else String(cols[ci]), fs, Color(0.95, 0.85, 0.55)))
 		for r in rows:
 			var sign := int(r.sign)
 			grid.add_child(_label(String(r.label), fs + 1, Color(0.9, 0.9, 0.9)))
@@ -773,11 +821,13 @@ func build_detail(inline_only := false, compact := false) -> Control:
 	if rows.is_empty() and footer.is_empty():
 		footer = [String(offer.get("tooltip", ""))] if String(offer.get("tooltip", "")) != "" else []
 	for line in footer:
-		var fl := _label(String(line), 13 if compact else 16, Color(0.8, 0.8, 0.7))
+		if compact and not rows.is_empty() and String(line).begins_with("vende "):
+			continue   # a faixa de preço do cartão já diz o que se vende; a tabela fica com o espaço
+		var fl := _label(String(line), 12 if compact else 16, Color(0.8, 0.8, 0.7))
 		fl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		fl.custom_minimum_size = Vector2(0 if compact else 420, 0)
 		box.add_child(fl)
-	if not _school.is_empty():   # o que a etiqueta da escola quer dizer, na cor do atributo
+	if not _school.is_empty() and not compact:   # o que a etiqueta da escola quer dizer, na cor do atributo (no cartão, fica no hover)
 		var hint := _label(Weapon.school_hint(weapon_def_of(offer)), 13 if compact else 16, Color(_school.color).lightened(0.35))
 		hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		hint.custom_minimum_size = Vector2(0 if compact else 420, 0)
