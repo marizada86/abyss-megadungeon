@@ -2,7 +2,7 @@ extends SceneTree
 ## PLAN-ABYSS-HERO-PORTRAITS-20261027: recorta e reduz os retratos gerados do HUD (256x256) e da Ficha (768x432, 16:9).
 ## Uso: Godot --headless --path . --script tools/portrait_prep.gd -- <id> [ficha_cx ficha_y0 ficha_w]
 ## Entrada: assets_incoming/hero-portraits-r1/<id>/<id>_hud_v01.png e <id>_ficha_v01.png (1:1 e 3:2).
-## Saída: assets/portraits/hud/<id>.png e assets/portraits/ficha/<id>.png. A Ficha recorta um 16:9 de largura ficha_w (padrão 1152)
+## Saída: assets/portraits/hud/<id>.png e assets/portraits/ficha/<id>.png. A Ficha recorta um 16:9 de largura ficha_w (padrão 1152; acima da largura da imagem, ex. 1820, usa a altura inteira e espelha as laterais)
 ## centrado em ficha_cx (padrão: meio) e começando em ficha_y0 (padrão: centrado).
 const INCOMING := "res://assets_incoming/hero-portraits-r1/"
 const OUT := "res://assets/portraits/"
@@ -43,11 +43,28 @@ func _hud(id: String) -> int:
 	_save(crop, "%shud/%s.png" % [OUT, id])
 	return 0
 
+## Modo "altura inteira": o 16:9 da altura toda da imagem; as laterais que faltam são completadas espelhando a borda do cenário.
+func _fit_wide(img: Image) -> Image:
+	var h := img.get_height()
+	var full_w := h * FICHA_SIZE.x / FICHA_SIZE.y
+	var pad := (full_w - img.get_width()) / 2
+	var canvas := Image.create(full_w, h, false, Image.FORMAT_RGBA8)
+	canvas.blit_rect(img, Rect2i(0, 0, img.get_width(), h), Vector2i(pad, 0))
+	var left := img.get_region(Rect2i(0, 0, pad, h))
+	left.flip_x()
+	canvas.blit_rect(left, Rect2i(0, 0, pad, h), Vector2i(0, 0))
+	var right := img.get_region(Rect2i(img.get_width() - pad, 0, pad, h))
+	right.flip_x()
+	canvas.blit_rect(right, Rect2i(0, 0, pad, h), Vector2i(pad + img.get_width(), 0))
+	return canvas
+
 func _ficha(id: String, cx: int, y0: int, w: int) -> int:
 	var img := _load("%s%s/%s_ficha_v01.png" % [INCOMING, id, id])
 	if img == null:
 		push_error("sem %s_ficha_v01.png" % id)
 		return 1
+	if w > img.get_width():
+		img = _fit_wide(img)
 	w = mini(w, img.get_width())
 	var h := w * FICHA_SIZE.y / FICHA_SIZE.x
 	h = mini(h, img.get_height())

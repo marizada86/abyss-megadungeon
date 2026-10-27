@@ -3038,14 +3038,15 @@ hero_portraits_20261027:
     S-P03_normalize_integrate: {status: DONE_LOCAL_NOT_COMMITTED, what: "recortar e reduzir para 256x256 e 768x256; copiar para assets/portraits/hud e ficha; .import"}
     S-P04_captures_tests: {status: DONE_LOCAL_NOT_COMMITTED, what: "capturas 1920x1080 do HUD e da Ficha (base, 150%, alto contraste); test_hero_portraits em diretório sintético isolado; audit_projeto"}
     S-P05_owner_acceptance: {status: DONE_HUD_AND_FICHA_16x9_ACCEPTED_2026-10-27, what: "aceite visual do piloto pelo dono"}
-    S-P06_remaining_heroes: {status: PROMPTS_READY_AWAITING_OWNER_GENERATION, what: "autorizado pelo dono em 2026-10-27 após aceite do piloto; 11 arquivos de colar em .atena/generated/hero-portraits-20261027-r1/colar/ (INDEX.md); Ficha 16:9 (768x432) e HUD 256x256; refs em .atena/generated/art-candidates/hero-portraits-r1-refs/<id>/"}
-  open_decisions: [relampago_na_espada_do_menu_vs_espada_sombria_sem_brilho, normalizacao_lanczos, gerador_sem_3x1]
+    S-P06_remaining_heroes: {status: DONE_LOCAL, what: "11 heróis integrados (sylas, korrak e os 9 do lote); Erik com cabelo e barba (decisão A2 revista pelo dono em 2026-10-27: segue o CANON das imagens)"}
+  open_decisions: []
+  decisions_resolved: [espada_sem_brilho, normalizacao_lanczos, ficha_16x9, erik_com_cabelo_e_barba_A2_revista]
   tests_policy: "diretório sintético isolado; jamais o save real"
   not_authorized: [commit, push, merge, build, exportacao, publicacao]
-  status: PILOT_ACCEPTED_BATCH_PROMPTS_READY
-  human_acceptance: PILOT_ACCEPTED_2026-10-27
-  checkpoint: S-P06/PROMPTS_WRITTEN
-  completed_steps: 5
+  status: ALL_12_HEROES_INTEGRATED_ACCEPTED
+  human_acceptance: ACCEPTED_2026-10-27
+  checkpoint: S-P06/DONE
+  completed_steps: 6
   total_steps: 6
   batch_prompts: .atena/generated/hero-portraits-20261027-r1/colar/INDEX.md
   batch_builder: .atena/generated/hero-portraits-20261027-r1/build_batch.js
@@ -3057,8 +3058,8 @@ hero_portraits_20261027:
   new_files: [tools/portrait_prep.gd, tools/portrait_capture.gd, tools/portrait_render.ps1, assets/portraits/hud/durvall.png, assets/portraits/ficha/durvall.png]
   captures: .atena/generated/hero-portraits-20261027-r1/captures/
   verification: "test_hero_portraits e test_hero_panel: 0 falhas (APPDATA sintético); .import gerados por godot --import; capturas antes e depois do Durvall"
-  batch_progress: "Sylas integrado (prep: sylas -1 -1 1536; test_hero_portraits e test_hero_panel 0 falhas; capturas depois), aguardando aceite do dono; restantes: arlindo bromnor brook erik kayron korrak leoric maelor nyrelia zynara"
-  next_activity: "Dono gera HUD e Ficha de cada herói (um por vez) em assets_incoming/hero-portraits-r1/<id>/; Atena recorta (prep: <id> -1 -1 1536), integra, captura e testa"
+  batch_progress: "12 heróis com HUD 256x256 e Ficha 768x432; Durvall, Sylas e Korrak primeiro; os 9 restantes com recorte de altura inteira e laterais espelhadas (portrait_batch.ps1 -Crop 1820); test_hero_portraits e test_hero_panel 0 falhas; dono aprovou os 9 e o Erik"
+  next_activity: "Sem pendência do plano. Opcional: conferir as Fichas a 125% e 150% e com alto contraste; run_all e audit_projeto antes de publicar"
   working_tree_note: "ui/run.gd e controller-experience/v01/unit-profile.json.bak modificados por outras frentes; fora deste plano"
 qol_offer_card_detail_20261027:
   id: PLAN-ABYSS-QOL-OFFER-CARD-DETAIL-20261027

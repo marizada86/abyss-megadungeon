@@ -21,3 +21,14 @@ Referências copiadas em `.atena/generated/art-candidates/hero-portraits-r1-refs
 Ordem sugerida: começar por Korrak e Sylas (silhuetas mais difíceis), depois os demais. Gerar um herói por vez e me avisar; recorto, integro e mostro.
 
 Decisões do dono já aplicadas nos prompts: Kayron pelo CANON pós-S24 (A1), Erik raspado (A2), Maelor sem luz desenhada (A3), Leoric com a concha (A4), Brook sem arma (A5).
+
+## Em lote (a partir do Korrak, 2026-10-27)
+Sylas e Korrak aprovados. Pode gerar vários heróis antes de me avisar (as conversas são independentes; abra uma por imagem e faça vários em paralelo). Quando as imagens estiverem salvas, me diga a lista; eu integro tudo com um comando:
+
+```text
+powershell -ExecutionPolicy Bypass -File tools/portrait_batch.ps1 -Heroes "brook,bromnor,leoric" -Tag lote1
+```
+
+Ele recorta (16:9 de largura inteira), importa uma vez, captura o jogo de cada herói, roda `test_hero_portraits` e `test_hero_panel` e gera uma folha de contato (`captures/contato-<tag>.png`) para revisão de uma vez. Heróis com algum arquivo faltando são pulados e avisados.
+
+Lotes sugeridos para os 9 restantes: **A** brook, bromnor, leoric · **B** erik, kayron, maelor · **C** zynara, arlindo, nyrelia. Ou os 9 de uma vez.
