@@ -20,6 +20,23 @@ const FAMILIES := {
 		"weapons": ["lamina_trovejante", "tempestade"]},
 }
 const LIMIT := 80
+## Evoluções por sobreposição (Lote 3): a arma evoluída usa a arte própria quando a folha existe. As listas das
+## famílias-base acima não mudam, e sem a folha a evolução continua com a arte da base.
+const EVOLVED_FAMILIES := {
+	&"orbe_radiante_evo": {"path": "res://assets/vfx/orbe_radiante_evo.png", "dtype": "radiante", "scale": 0.62, "pivot_x": 128.0,
+		"weapons": ["luz_mais_pura"]},
+}
+
+static func evolved_family_for(projectile: Dictionary) -> StringName:
+	if String(projectile.get("owner", "")) != "hero":
+		return &""
+	var id := weapon_id(projectile)
+	var dtype := String(projectile.get("p", {}).get("dtype", ""))
+	for family in EVOLVED_FAMILIES:
+		var spec: Dictionary = EVOLVED_FAMILIES[family]
+		if spec.dtype == dtype and (spec.weapons as Array).has(id) and not frames_for(family).is_empty():
+			return family
+	return &""
 const ENEMY_FAMILIES := {
 	&"inimigo_flecha": {"path": "res://assets/vfx/inimigo_flecha.png", "scale": 0.20, "pivot_x": 180.0, "enemies": ["cultista_arqueiro"]},
 	&"inimigo_esporo": {"path": "res://assets/vfx/inimigo_esporo.png", "scale": 0.20, "pivot_x": 180.0, "enemies": ["esporo_voador", "discipulo_pestilento"]},
@@ -40,10 +57,13 @@ static func enemy_family_for(projectile: Dictionary) -> StringName:
 	return &""
 
 static func visual_family_for(projectile: Dictionary) -> StringName:
-	return family_for(projectile) if String(projectile.get("owner", "")) == "hero" else enemy_family_for(projectile)
+	if String(projectile.get("owner", "")) != "hero":
+		return enemy_family_for(projectile)
+	var evolved := evolved_family_for(projectile)
+	return evolved if evolved != &"" else family_for(projectile)
 
 static func spec_for(family: StringName) -> Dictionary:
-	return FAMILIES.get(family, ENEMY_FAMILIES.get(family, {}))
+	return FAMILIES.get(family, ENEMY_FAMILIES.get(family, EVOLVED_FAMILIES.get(family, {})))
 
 static func enemy_tint(projectile: Dictionary) -> Color:
 	if not bool(projectile.get("ring", false)):

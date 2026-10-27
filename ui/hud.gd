@@ -1203,6 +1203,9 @@ func _focus_visible(button: Control) -> void:
 ## SPEC-116 D3: a barra de XP pisca ao receber moeda ou XP.
 var _xp_pulse: Tween
 
+func shine_xp() -> void:
+	hero_panel.shine_xp(Game.reduced_impact())
+
 func pulse_xp() -> void:
 	if _xp_pulse != null and _xp_pulse.is_valid():
 		_xp_pulse.kill()

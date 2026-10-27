@@ -5,6 +5,7 @@ extends Node2D
 var battle: Battle
 var visual_projectiles: Array = []
 var visual_wax_zones: Array = []
+var visual_tentacle_zones: Array = []
 ## SPEC-173: com o filtro de tela, o texto do mundo (rótulos, nomes) é desenhado por uma 3ª instância (mode "text"), numa camada
 ## acima do filtro, para não ser pixelizado. A instância "over" só enfileira o texto; a "text" desenha a fila de source.
 var split_text := false
@@ -364,7 +365,8 @@ func _draw_hero_zone(z: Dictionary) -> void:
 			_draw_wax_fire(z)
 		return
 	if weapon_id == "colar_dos_tentaculos":
-		_draw_tentacle_zone(z)
+		if Game.reduced_impact() or not visual_tentacle_zones.any(func(zone): return is_same(zone, z)):
+			_draw_tentacle_zone(z)
 		return
 	var col := _dcol(dtype, 0.24)
 	draw_colored_polygon(_ellipse(z.pos, z.radius), col)

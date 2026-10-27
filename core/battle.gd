@@ -1184,7 +1184,7 @@ func _update_zones(dt: float) -> void:
 		else:   # telegraph
 			z.delay -= dt
 			if z.delay <= 0.0:
-				events.append({"type": "boom", "pos": z.pos, "radius": z.radius, "affix": String(z.get("affix", ""))})
+				events.append({"type": "boom", "pos": z.pos, "radius": z.radius, "affix": String(z.get("affix", "")), "dtype": String(z.get("dtype", ""))})
 				if hero.pos.distance_to(z.pos) <= z.radius + HERO_HIT_R:
 					_hurt_hero(float(Dice.roll(rng, z.dice) + int(z.bonus / 2)) * float(z.get("damage_mult", 1.0)), "aoe")
 				if z.kind == "bubble":
@@ -1207,7 +1207,7 @@ func _update_zones(dt: float) -> void:
 
 ## MEC-034: armadilha de cenário. Fere o herói e os inimigos (todos) dentro do raio, sem desvio.
 func _fire_trap(z: Dictionary) -> void:
-	events.append({"type": "boom", "pos": z.pos, "radius": z.radius, "affix": String(z.get("affix", ""))})
+	events.append({"type": "boom", "pos": z.pos, "radius": z.radius, "affix": String(z.get("affix", "")), "dtype": String(z.get("dtype", ""))})
 	if hero.pos.distance_to(z.pos) <= float(z.radius) + HERO_HIT_R:
 		_hurt_hero(float(Dice.roll(rng, String(z.dice)) + int(float(z.bonus) / 2.0)), "trap")
 	for e in enemies:
@@ -1711,7 +1711,7 @@ func _enemy_hit_hero(bonus: int, dice: String, dtype: String, is_proj: bool, dam
 		return
 	var dmg := float(Dice.roll(rng, dice)) * (2.0 if r == 20 else 1.0) * damage_mult * RandomEvents.world_mult(world_mod, "enemy_dmg", by != null and by.is_boss())   # SPEC-164: Eclipse
 	var hp_before: float = hero.hp
-	_hurt_hero(dmg, "hit")
+	_hurt_hero(dmg, "hit", false, dtype)
 	if by != null and not by.dead and by.has_affix("vampirico"):
 		by.hp = minf(by.max_hp, by.hp + maxf(0.0, hp_before - hero.hp) * AFFIX_LEECH)
 
@@ -1738,7 +1738,7 @@ func _emit_continuous_hurt(dmg: float, force: bool) -> void:
 	_dot_last_emit = time
 	events.append({"type": "hurt", "pos": hero.pos, "amount": whole, "continuous": true})
 
-func _hurt_hero(dmg: float, src: String, bypass_generic_defenses: bool = false) -> void:
+func _hurt_hero(dmg: float, src: String, bypass_generic_defenses: bool = false, dtype: String = "") -> void:
 	if hero.dead or (invuln > 0.0 and not bypass_generic_defenses):
 		return
 	if active_guard > 0 and not bypass_generic_defenses:
@@ -1772,7 +1772,7 @@ func _hurt_hero(dmg: float, src: String, bypass_generic_defenses: bool = false) 
 	if CONTINUOUS_HURT_SOURCES.has(src):
 		_emit_continuous_hurt(dmg, hero.hp <= 0.0)
 	else:
-		events.append({"type": "hurt", "pos": hero.pos, "amount": int(dmg)})
+		events.append({"type": "hurt", "pos": hero.pos, "amount": int(dmg), "dtype": dtype})
 	if _has_boon_effect("pain_retaliation") and not bypass_generic_defenses:
 		for e in enemies:
 			if not e.dead and e.pos.distance_to(hero.pos) <= 2.2:

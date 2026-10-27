@@ -683,6 +683,7 @@ func _process(dt: float) -> void:
 	_sync_wax_vfx()
 	_sync_ability_follow()
 	_sync_tide_aura(dt)
+	_sync_tentacle_vfx()
 	_sync_boss_vfx()
 	_shake = maxf(0.0, _shake - dt * 3.0)
 	camera.position = hero_node.position + Vector2(randf_range(-1, 1), randf_range(-1, 1)) * _shake * 6.0
@@ -889,6 +890,9 @@ func _consume_events() -> void:
 			"boom":
 				Sfx.play("combat.explosion", -8.0)
 				_ring(ev.pos, ev.radius, Color(1.0, 0.3, 0.2), 0.3)
+				var slam_fx := DetonationVfx.create_effect(float(ev.radius), ev.pos, String(ev.get("dtype", "")), Game.reduced_impact(), get_tree().get_nodes_in_group(&"detonation_vfx").size(), String(ev.get("affix", "")))
+				if slam_fx != null:
+					fx.add_child(slam_fx)
 				if String(ev.get("affix", "")) == "explosivo":
 					var blast_fx := DeathVfx.create_explosion(float(ev.radius), ev.pos, Game.reduced_impact(), get_tree().get_nodes_in_group(&"death_vfx").size())
 					if blast_fx != null:
@@ -918,6 +922,7 @@ func _consume_events() -> void:
 				_loot_reveal(ev.new_item)
 			"levelup":
 				Sfx.play("progress.levelup")
+				hud.shine_xp()
 				var level_fx := PickupVfx.create_levelup(battle.hero.pos, Game.reduced_impact())
 				if level_fx != null:
 					fx.add_child(level_fx)
@@ -1204,6 +1209,8 @@ func _sync_projectile_vfx() -> void:
 		else:
 			var theme: Dictionary = pr.get("visual_theme", _divine_theme())
 			var tint: Color = theme.primary if String(pr.owner) == "hero" else ProjectileVfx.enemy_tint(pr)
+			if ProjectileVfx.EVOLVED_FAMILIES.has(ProjectileVfx.visual_family_for(pr)):
+				tint = Color.WHITE.lerp(tint, 0.3)   # a arte evoluída já tem cor própria: o deus só a matiza
 			var sprite := ProjectileVfx.create_flight(pr, tint)
 			if sprite == null:
 				continue
@@ -1228,6 +1235,8 @@ func _retire_projectile_vfx(entry: Dictionary) -> void:
 	var inside: bool = pr.pos.x >= 0.0 and pr.pos.y >= 0.0 and pr.pos.x <= battle.map_size.x and pr.pos.y <= battle.map_size.y
 	if inside and not Game.reduced_impact():
 		var tint: Color = entry.theme.impact_accent if String(pr.owner) == "hero" else entry.tint
+		if ProjectileVfx.EVOLVED_FAMILIES.has(entry.family):
+			tint = Color.WHITE.lerp(tint, 0.3)
 		var impact := ProjectileVfx.create_impact(entry.family, pr.pos, tint)
 		if impact != null:
 			fx.add_child(impact)
@@ -1523,6 +1532,33 @@ func _loot_reveal(item: Dictionary) -> void:
 	_float_text(hero_node.position + Vector2(-30, -78), text, col.lightened(0.15), int(fx_spec.size), rarity == "unico" or rarity == "raro")
 
 ## Coleta com ritmo: o tom sobe a cada moeda ou orbe de XP coletado em sequência.
+var _tentacle_vfx: Array[Dictionary] = []
+
+## Zona do Colar dos Tentáculos: o laço segue o dicionário da zona (identidade), sem escrever nele.
+func _sync_tentacle_vfx() -> void:
+	if battle == null:
+		return
+	var reduced := Game.reduced_impact()
+	var kept: Array[Dictionary] = []
+	for entry in _tentacle_vfx:
+		if not reduced and battle.zones.any(func(zone): return is_same(zone, entry.zone)):
+			TentacleVfx.update(entry)
+			kept.append(entry)
+		else:
+			entry.sprite.queue_free()
+	if not reduced:
+		for zone in battle.zones:
+			if not TentacleVfx.supports(zone) or kept.any(func(entry): return is_same(entry.zone, zone)):
+				continue
+			var entry := TentacleVfx.create_zone(zone)
+			if entry.is_empty():
+				continue
+			fx.add_child(entry.sprite)
+			TentacleVfx.update(entry)
+			kept.append(entry)
+	_tentacle_vfx = kept
+	under.visual_tentacle_zones = kept.map(func(entry): return entry.zone)
+
 var _boss_vfx: Dictionary = {}
 var _boss_slowmo := false
 

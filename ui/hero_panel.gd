@@ -22,6 +22,8 @@ const XP_INSET := Vector2(23, 5)
 const HINT_PULSE_UNTIL := 90.0  ## o selo da tecla C pulsa até a ficha ser aberta ou até esse tempo de run
 
 var xp_bar: ProgressBar
+var tide_label: Label   # Lote 3: "Maré +N%" ao lado do nível, só enquanto o bônus vigora
+var _xp_shine: Tween
 var hp_bar: ProgressBar
 var barrier_bar: ProgressBar
 var hp_label: Label
@@ -137,6 +139,10 @@ func _build_main_column() -> Control:
 	level_label = _label("", 14, MUTED)
 	level_label.size_flags_vertical = Control.SIZE_SHRINK_END
 	name_row.add_child(level_label)
+	tide_label = _outlined(_label("", 14, Color(0.74, 0.58, 1.0)))   # Lote 3: indicador da Maré ao lado do nível, só enquanto o bônus vigora
+	tide_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	tide_label.visible = false
+	name_row.add_child(tide_label)
 	var spacer := Control.new()
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	spacer.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -182,6 +188,7 @@ func _build_main_column() -> Control:
 	xp_bar.add_theme_stylebox_override("fill", _box(Color(0.25, 0.6, 0.9), Color(0, 0, 0, 0), 0, 2))
 	xp_bar.add_theme_stylebox_override("background", _box(Color(0.05, 0.08, 0.12, 0.5), Color(0.18, 0.28, 0.4, 0.7), 1, 2))
 	col.add_child(xp_bar)
+	xp_bar.clip_contents = true
 	if HudArt.hud("hud_barra_xp") != null:
 		xp_bar.custom_minimum_size = Vector2(0, 12)
 		HudArt.style_bar(xp_bar, "hud_barra_xp", "hud_barra_xp_fill", [23, 23, 5, 5], 0.0, XP_INSET)
@@ -318,6 +325,7 @@ func update(b: Battle) -> void:
 	gold_label.text = str(int(h.gold))
 	kills_label.text = str(b.stats.kills)
 	_update_abyss(b)
+	_update_tide(b)
 	var ev_ca := h.typed_evasion("fisico")
 	var ev_cam := h.typed_evasion("magico")
 	ca_label.text = defense_text(h.ca(), ev_ca)
@@ -383,3 +391,41 @@ func _boon_icon(bn: Dictionary) -> Control:
 		letter.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		frame.add_child(letter)
 	return frame
+
+## Lote 3: texto do indicador da Maré; vazio sem bônus.
+static func tide_text(bonus: float) -> String:
+	return "" if bonus <= 0.0 else "Maré +%d%%" % roundi(bonus * 100.0)
+
+## Opacidade do indicador: pulsa devagar; com "Reduzir efeitos de impacto" fica parada.
+static func tide_alpha(time: float, reduced: bool) -> float:
+	return 1.0 if reduced else 0.78 + 0.22 * sin(time * 4.0)
+
+func _update_tide(b: Battle) -> void:
+	var text := tide_text(b.tide_xp_bonus())
+	tide_label.visible = text != ""
+	if text != "":
+		tide_label.text = text
+		tide_label.modulate.a = tide_alpha(Time.get_ticks_msec() / 1000.0, Game.reduced_impact())
+
+## Lote 3: brilho que varre a barra de XP quando ela enche e vira nível.
+func shine_xp(reduced: bool = false) -> bool:
+	if reduced or xp_bar == null or not is_instance_valid(xp_bar):
+		return false
+	if _xp_shine != null and _xp_shine.is_valid():
+		_xp_shine.kill()
+	for old in xp_bar.get_children():
+		if old.is_in_group(&"xp_shine"):
+			old.queue_free()
+	var shine := ColorRect.new()
+	shine.add_to_group(&"xp_shine")
+	shine.color = Color(1.0, 0.97, 0.85, 0.55)
+	shine.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var height := maxf(8.0, xp_bar.size.y)
+	var width := maxf(24.0, xp_bar.size.x)
+	shine.size = Vector2(width * 0.18, height)
+	shine.position = Vector2(-shine.size.x, 0.0)
+	xp_bar.add_child(shine)
+	_xp_shine = create_tween()
+	_xp_shine.tween_property(shine, "position:x", width, 0.45)
+	_xp_shine.tween_callback(shine.queue_free)
+	return true
