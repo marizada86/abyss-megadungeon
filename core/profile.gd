@@ -107,6 +107,15 @@ func _migrate_settings(source: Dictionary) -> void:
 		data.settings.hints = "on"
 	if not (data.settings.get("hints_seen", {}) is Dictionary):
 		data.settings.hints_seen = {}
+	# PLAN-ABYSS-QOL-A11Y-P1: chaves opcionais; só se corrigem valores inválidos que o perfil já traz (perfil antigo não ganha chave nova).
+	if data.settings.has("ui_scale") and not (int(data.settings.ui_scale) in Accessibility.UI_SCALES):
+		data.settings.ui_scale = 100
+	if data.settings.has("high_contrast") and not (data.settings.high_contrast is bool):
+		data.settings.high_contrast = false
+	if data.settings.has("color_mode") and not (str(data.settings.color_mode) in Accessibility.COLOR_MODES):
+		data.settings.color_mode = "off"
+	if data.settings.has("speech_time") and not (str(data.settings.speech_time) in Accessibility.SPEECH_MODES):
+		data.settings.speech_time = "normal"
 
 func coins() -> int:
 	return int(data.coins)

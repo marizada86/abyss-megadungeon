@@ -439,6 +439,13 @@ func _unhandled_input(ev: InputEvent) -> void:
 		return
 	if not ev.is_pressed() or (ev is InputEventKey and ev.echo):
 		return
+	# botão direito sobre um objeto interativo ao alcance interage (como E); fora de objeto continua sendo a habilidade
+	if battle.state == "running" and ev is InputEventMouseButton and ev.button_index == MOUSE_BUTTON_RIGHT and Game.right_click_interact() and not hud.pointer_over_ui():
+		var target := battle.interactable_at_screen(get_global_mouse_position(), hero_node.position)
+		if not target.is_empty() and battle.interact(target):
+			Sfx.play("click")
+			get_viewport().set_input_as_handled()
+			return
 	if battle.state == "running" and ev.is_action_pressed("hero_active"):
 		_active_dir = battle.aim_dir
 		if battle.use_active(battle.aim_dir):
@@ -836,9 +843,9 @@ func _consume_events() -> void:
 				var merged: bool = not ev.crit and _merge_damage_number(int(ev.get("tid", 0)), int(ev.amount), hit_frac)
 				if not merged and _numbers < 14:
 					var tone: float = maxf(0.25 if ev.crit else 0.0, DamageFeedback.lighten(hit_band))
-					var label := _float_text(at + Vector2(randf_range(-6, 6), -36), str(ev.amount), number_col.lightened(tone), DamageFeedback.number_size(hit_band, bool(ev.crit)), bool(ev.crit) or hit_band >= 2, theme.outline, true, DamageFeedback.outline_size(hit_band))
+					var label := _float_text(at + Vector2(randf_range(-6, 6), -36), Accessibility.damage_text(int(ev.amount), String(ev.get("dtype", "fisico")), Game.color_mode()), number_col.lightened(tone), DamageFeedback.number_size(hit_band, bool(ev.crit)), bool(ev.crit) or hit_band >= 2, theme.outline, true, DamageFeedback.outline_size(hit_band))
 					if not ev.crit and ev.has("tid"):
-						_recent_numbers[int(ev.tid)] = {"label": label, "amount": int(ev.amount), "frac": hit_frac, "tier": hit_tier, "color": number_col, "until": Time.get_ticks_msec() + int(DamageFeedback.MERGE_MS.get(hit_tier, NUMBER_MERGE_MS))}
+						_recent_numbers[int(ev.tid)] = {"label": label, "dtype": String(ev.get("dtype", "fisico")), "amount": int(ev.amount), "frac": hit_frac, "tier": hit_tier, "color": number_col, "until": Time.get_ticks_msec() + int(DamageFeedback.MERGE_MS.get(hit_tier, NUMBER_MERGE_MS))}
 					if ev.has("visual_theme") and under.has_method("spawn_impact"):
 						under.call("spawn_impact", ev.pos, 3, theme.impact_accent)
 			"miss":
@@ -1056,11 +1063,12 @@ func _play_interaction(ev: Dictionary) -> void:
 	animated.play(&"activate")
 
 func _dcol(dtype: String) -> Color:
+	var base := Color(0.85, 0.85, 0.9)
 	match dtype:
-		"fogo": return Color(1.0, 0.5, 0.15)
-		"radiante": return Color(1.0, 0.95, 0.65)
-		"magico": return Color(0.65, 0.45, 1.0)
-	return Color(0.85, 0.85, 0.9)
+		"fogo": base = Color(1.0, 0.5, 0.15)
+		"radiante": base = Color(1.0, 0.95, 0.65)
+		"magico": base = Color(0.65, 0.45, 1.0)
+	return Accessibility.dtype_color(dtype, Game.color_mode(), base)
 
 ## Soma o acerto ao número recente do mesmo alvo, se ainda estiver na janela; devolve true se somou.
 func _merge_damage_number(tid: int, amount: int, frac: float = 0.0) -> bool:
@@ -1075,7 +1083,7 @@ func _merge_damage_number(tid: int, amount: int, frac: float = 0.0) -> bool:
 	var label: Label = raw_label
 	entry.amount = int(entry.amount) + amount
 	entry.frac = float(entry.get("frac", 0.0)) + frac
-	label.text = str(entry.amount)
+	label.text = Accessibility.damage_text(int(entry.amount), String(entry.get("dtype", "fisico")), Game.color_mode())
 	label.scale = Vector2.ONE * 1.2
 	# L3: a soma de golpes seguidos em elite e chefe pode subir de faixa
 	var merged_band := DamageFeedback.band(float(entry.frac), String(entry.get("tier", "")), false)
@@ -1092,6 +1100,7 @@ func _float_text(at: Vector2, text: String, col: Color, size: int, critical: boo
 	l.position = at
 	l.modulate = col
 	l.add_theme_font_size_override("font_size", size)
+	l.set_meta(UiAdapter.META_SKIP, true)   # número do mundo: tem a escala própria de DamageFeedback
 	l.add_theme_color_override("font_outline_color", outline)
 	l.add_theme_constant_override("outline_size", outline_px if outline_px > 0 else (5 if critical else 4))
 	l.pivot_offset = Vector2(18, 12)
@@ -1452,7 +1461,7 @@ func _bark_now(trigger: String) -> void:
 	_text_fx.add_child(l)
 	_bark_label = l
 	var t := create_tween()
-	t.tween_interval(2.6)
+	t.tween_interval(Accessibility.speech_hold(Game.speech_time(), 2.6))
 	t.tween_property(l, "modulate:a", 0.0, 0.6)
 	t.tween_callback(l.queue_free)
 

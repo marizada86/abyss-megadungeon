@@ -367,6 +367,13 @@ func _cancel_action() -> void:
 func pointer_over_ui() -> bool:
 	return get_viewport().gui_get_hovered_control() != null
 
+## Tecla (ou botão) de interagir; com mouse e teclado, mostra também o botão direito sobre o objeto.
+func _interact_keys() -> String:
+	var key: String = Game.controls.prompt("run_interact", "E")
+	if not Game.controls.is_controller() and Game.right_click_interact():
+		return "%s / clique direito" % key
+	return key
+
 func _unhandled_input(ev: InputEvent) -> void:
 	if not Game.controls.accepts(ev):
 		return
@@ -514,13 +521,13 @@ func update_stats(b: Battle) -> void:
 	var pr := ""
 	for it in b.interactions:
 		if not it.used and (it.kind in ["altar", "ritual", "portal", "loja", "ferreiro", "arcanista", "curandeiro", "ampulheta", "doacao", "aposta", "event_pact", "camara"] or RandomEvents.is_kind(String(it.kind))) and it.pos.distance_to(h.pos) <= 1.6:
-			pr = "[%s] " % Game.controls.prompt("run_interact", "E") + {"altar": "rezar no altar", "ritual": "iniciar o ritual", "portal": "descer pelo portal",
+			pr = "[%s] " % _interact_keys() + {"altar": "rezar no altar", "ritual": "iniciar o ritual", "portal": "descer pelo portal",
 				"loja": "negociar na loja", "ferreiro": "forjar no ferreiro", "arcanista": "estudar com o arcanista", "camara": "abrir a câmara selada", "curandeiro": "buscar cura", "ampulheta": "girar a ampulheta (+60 s, inimigos acumulados)", "doacao": "doar um item por uma bênção", "aposta": "arriscar moedas na mesa",
 				"event_pact": "%s" % String(it.get("label", "pacto")).replace(" [E/oeste]", "")}[it.kind]
 	if pr == "" and (b.stage_cleared or b.final_victory):
 		pr = "[%s] Pausa → Extrair ×%.2f" % [Game.controls.prompt("run_pause", "Esc"), b.reward_multiplier()]
 		if b.stage.get("next", "") != "":
-			pr += "   [%s] %s ×%.2f" % [Game.controls.prompt("run_interact", "E"), "Continuar" if b.stage_id in ["docas", "reino_abissal", "domwieck"] else "Descer", b.next_reward_multiplier()]
+			pr += "   [%s] %s ×%.2f" % [_interact_keys(), "Continuar" if b.stage_id in ["docas", "reino_abissal", "domwieck"] else "Descer", b.next_reward_multiplier()]
 	prompt_label.text = pr
 	var quest_entries: Array = b.happenings.hud_entries(b)
 	var chamber_row: Dictionary = b.chamber_entry()   # SPEC-175: a câmara selada diz o que a abre
@@ -1060,7 +1067,7 @@ func _show_toast(text: String, color: Color) -> void:
 	toast_box.add_child(l)
 	_trim_toasts()
 	var tw := l.create_tween()
-	tw.tween_interval(3.0 + maxf(0.0, float(text.length() - TOAST_LONG_CHARS)) * 0.04)
+	tw.tween_interval(Accessibility.speech_hold(Game.speech_time(), 3.0 + maxf(0.0, float(text.length() - TOAST_LONG_CHARS)) * 0.04))
 	tw.tween_property(l, "modulate:a", 0.0, 0.6)
 	tw.tween_callback(_drop_toast.bind(l))
 

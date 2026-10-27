@@ -40,6 +40,13 @@ const FADE_OUT := 0.18
 const WINDOW_ALPHA := 0.9    # opacidade do fundo da janela padrão (a moldura segue opaca)
 const DIM_ALPHA := 0.5       # escurecimento atrás da ficha (era 0,7)
 
+## Contraste alto (PLAN-ABYSS-QOL-A11Y-P1): janela opaca e fundo mais escuro; o padrão continua nas constantes acima.
+static func window_alpha() -> float:
+	return Accessibility.HC_WINDOW_ALPHA if Game.high_contrast() else WINDOW_ALPHA
+
+static func dim_alpha() -> float:
+	return Accessibility.HC_DIM_ALPHA if Game.high_contrast() else DIM_ALPHA
+
 ## Sem fade nas capturas e verificações (`qa_sandbox`): elas fotografam logo depois de abrir.
 static func fades_enabled() -> bool:
 	return not Game.qa_sandbox
@@ -96,7 +103,10 @@ static func dissolve_from_screen(tree: SceneTree, duration: float = FADE_OUT) ->
 ## Escurece o que está atrás de uma janela modal; não captura o mouse.
 static func dim() -> ColorRect:
 	var d := ColorRect.new()
-	d.color = Color(0, 0, 0, DIM_ALPHA)
+	d.color = Color(0, 0, 0, dim_alpha())
+	var refresh := func(): d.color = Color(0, 0, 0, dim_alpha())
+	Game.visual_settings_changed.connect(refresh)
+	d.tree_exited.connect(func(): if Game.visual_settings_changed.is_connected(refresh): Game.visual_settings_changed.disconnect(refresh))
 	d.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	d.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	return d
@@ -111,7 +121,8 @@ static func window(size: Vector2) -> PanelContainer:
 static func apply_window(panel: PanelContainer, size: Vector2) -> void:
 	panel.custom_minimum_size = size
 	var background := SheetArt.background()
-	background.modulate_color = Color(1, 1, 1, WINDOW_ALPHA)
+	background.modulate_color = Color(1, 1, 1, window_alpha())
+	Game.visual_settings_changed.connect(func(): if is_instance_valid(panel): background.modulate_color = Color(1, 1, 1, window_alpha()))
 	background.expand_margin_left = -WINDOW_BG_TRIM.x
 	background.expand_margin_right = -WINDOW_BG_TRIM.x
 	background.expand_margin_top = -WINDOW_BG_TRIM.y

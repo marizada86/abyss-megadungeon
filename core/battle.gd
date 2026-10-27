@@ -2606,18 +2606,48 @@ func _update_interactions(dt: float) -> void:
 				events.append({"type": "toast", "text": (spring_text if spring_text != "" else "Fonte: +%d%% PV") % int(round(heal_pct * 100.0))})
 	interactions = interactions.filter(func(i): return not i.used)
 
-## Interação manual (E): altar, ritual, portal, loja, ferreiro, curandeiro.
-func interact() -> bool:
+const INTERACT_RANGE := 1.6
+const INTERACT_KINDS := ["altar", "ritual", "portal", "loja", "ferreiro", "arcanista", "curandeiro", "ampulheta", "doacao", "aposta", "event_pact", "camara"]
+## Área, em pixels de tela ao redor do ponto do objeto, que o clique direito acerta (a arte fica acima do ponto no chão).
+const INTERACT_CLICK_RECT := Rect2(-56, -96, 112, 120)
+
+func can_interact_with(it: Dictionary) -> bool:
+	return not it.used and time - float(it.get("born_at", 0.0)) >= 0.65 and (it.kind in INTERACT_KINDS or RandomEvents.is_kind(String(it.kind)))
+
+## O objeto interativo sob o cursor (`mouse` e `hero_screen` no mesmo espaço de tela do mundo) que o herói alcança; vazio se não houver.
+func interactable_at_screen(mouse: Vector2, hero_screen: Vector2) -> Dictionary:
+	if state != "running":
+		return {}
+	var best: Dictionary = {}
+	var best_d := INF
+	for it in interactions:
+		if not can_interact_with(it) or it.pos.distance_to(hero.pos) > INTERACT_RANGE:
+			continue
+		var at := hero_screen + Iso.to_screen(it.pos - hero.pos)
+		if INTERACT_CLICK_RECT.has_point(mouse - at):
+			var d := (mouse - at).length()
+			if d < best_d:
+				best_d = d
+				best = it
+	return best
+
+## Interação manual (E ou botão direito sobre o objeto): altar, ritual, portal, loja, ferreiro, curandeiro.
+## Com `target`, só ele conta (e precisa estar ao alcance); sem, vale o mais próximo.
+func interact(target: Dictionary = {}) -> bool:
 	if state != "running":
 		return false
 	var best: Dictionary = {}
-	var bd := 1.6
-	for it in interactions:
-		if not it.used and time - float(it.get("born_at", 0.0)) >= 0.65 and (it.kind in ["altar", "ritual", "portal", "loja", "ferreiro", "arcanista", "curandeiro", "ampulheta", "doacao", "aposta", "event_pact", "camara"] or RandomEvents.is_kind(String(it.kind))):
-			var d: float = it.pos.distance_to(hero.pos)
-			if d <= bd:
-				bd = d
-				best = it
+	if not target.is_empty():
+		if interactions.any(func(i): return is_same(i, target)) and can_interact_with(target) and target.pos.distance_to(hero.pos) <= INTERACT_RANGE:
+			best = target
+	else:
+		var bd := INTERACT_RANGE
+		for it in interactions:
+			if can_interact_with(it):
+				var d: float = it.pos.distance_to(hero.pos)
+				if d <= bd:
+					bd = d
+					best = it
 	if best.is_empty():
 		return false
 	best.used = true

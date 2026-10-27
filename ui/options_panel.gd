@@ -15,6 +15,7 @@ var music_mute: CheckBox
 var sfx_mute: CheckBox
 var ambience_mute: CheckBox
 var barks: CheckBox
+var rmb_interact: CheckBox
 var reduced_impact: CheckBox
 var display_mode: OptionButton
 var resolution: OptionButton
@@ -22,11 +23,16 @@ var visual: OptionButton
 var atmosphere: OptionButton  # SPEC-177 R5-C/D
 var hints: OptionButton  # SPEC-179 R2
 var title_font: OptionButton
+var ui_scale: OptionButton  # PLAN-ABYSS-QOL-A11Y-P1
+var high_contrast: CheckBox
+var color_mode: OptionButton
+var speech: OptionButton
 var _syncing := false
 
 func _init() -> void:
 	add_theme_constant_override("separation", 8)
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_build_accessibility()
 	add_child(UiKit.label("ÁUDIO", 16, UiKit.GOLD))
 	master_vol = _slider_row("Volume mestre", func(v): _save_master(v))
 	music_vol = _slider_row("Música", func(v): _save_volume("music_volume", v))
@@ -45,6 +51,7 @@ func _init() -> void:
 		Game.set_aim(Battle.Aim.MOUSE if i == 1 else Battle.Aim.AUTO)
 		changed.emit())
 	add_child(_row("Mira", aim))
+	rmb_interact = _check("Botão direito interage (altar, portal, loja...) quando o cursor está no objeto", func(on): _save("rmb_interact", on))
 	barks = _check("Falas dos personagens", func(on): _save("barks", on))
 	reduced_impact = _check("Impacto reduzido (menos tremor e flash)", func(on): _save("reduced_impact", on))
 	add_child(UiKit.label("TELA", 16, UiKit.GOLD))
@@ -114,6 +121,41 @@ func _init() -> void:
 		changed.emit())
 	add_child(_row("Fonte dos títulos", title_font))
 
+## PLAN-ABYSS-QOL-A11Y-P1: fica no topo do painel, para quem precisa dela achar antes de rolar.
+func _build_accessibility() -> void:
+	add_child(UiKit.label("ACESSIBILIDADE", 16, UiKit.GOLD))
+	ui_scale = OptionButton.new()
+	for label in Accessibility.UI_SCALE_LABELS:
+		ui_scale.add_item(label)
+	ui_scale.tooltip_text = "Aumenta o texto da interface (HUD, janelas, avisos). Os números de dano não mudam."
+	ui_scale.item_selected.connect(func(i):
+		if _syncing:
+			return
+		Game.set_ui_scale(int(Accessibility.UI_SCALES[i]))
+		changed.emit())
+	add_child(_row("Tamanho do texto", ui_scale))
+	high_contrast = _check("Contraste alto (janelas opacas, texto mais claro)", func(on): _apply_accessibility(func(): Game.set_high_contrast(on)))
+	color_mode = OptionButton.new()
+	for label in Accessibility.COLOR_LABELS:
+		color_mode.add_item(label)
+	color_mode.tooltip_text = "Troca as cores de tipo de dano e raridade e marca o tipo no número de dano (▲ fogo, ● radiante, ◆ mágico)."
+	color_mode.item_selected.connect(func(i):
+		if _syncing:
+			return
+		Game.set_color_mode(String(Accessibility.COLOR_MODES[i]))
+		changed.emit())
+	add_child(_row("Daltonismo", color_mode))
+	speech = OptionButton.new()
+	for label in Accessibility.SPEECH_LABELS:
+		speech.add_item(label)
+	speech.tooltip_text = "Quanto tempo as falas dos personagens e os avisos do topo ficam na tela."
+	speech.item_selected.connect(func(i):
+		if _syncing:
+			return
+		Game.set_speech_time(String(Accessibility.SPEECH_MODES[i]))
+		changed.emit())
+	add_child(_row("Duração das falas", speech))
+
 func _row(text: String, control: Control) -> Control:
 	var row := HBoxContainer.new()
 	var l := UiKit.label(text, 15)
@@ -156,6 +198,7 @@ func refresh() -> void:
 	music_mute.button_pressed = bool(s.get("music_muted", false))
 	sfx_mute.button_pressed = bool(s.get("sfx_muted", false))
 	ambience_mute.button_pressed = bool(s.get("ambience_muted", false))
+	rmb_interact.button_pressed = bool(s.get("rmb_interact", true))
 	barks.button_pressed = bool(s.get("barks", true))
 	reduced_impact.button_pressed = bool(s.get("reduced_impact", false))
 	display_mode.select(maxi(0, Game.WINDOW_MODES.find(String(s.get("window_mode", "windowed")))))
@@ -165,7 +208,15 @@ func refresh() -> void:
 	hints.select(0 if String(s.get("hints", "on")) != "off" else 1)
 	var font_ids: Array = UiFonts.available().map(func(o): return String(o.id))
 	title_font.select(maxi(0, font_ids.find(UiFonts.normalize(s.get("ui_font", UiFonts.DEFAULT_ID)))))
+	ui_scale.select(maxi(0, Accessibility.UI_SCALES.find(Accessibility.ui_scale_of(s))))
+	high_contrast.button_pressed = Accessibility.high_contrast_of(s)
+	color_mode.select(maxi(0, Accessibility.COLOR_MODES.find(Accessibility.color_mode_of(s))))
+	speech.select(maxi(0, Accessibility.SPEECH_MODES.find(Accessibility.speech_mode_of(s))))
 	_syncing = false
+
+func _apply_accessibility(action: Callable) -> void:
+	action.call()
+	changed.emit()
 
 func _save(key: String, value: Variant) -> void:
 	Game.profile.data.settings[key] = value

@@ -143,12 +143,13 @@ static func price(kind: String, r: String) -> float:
 	return float(table.get(r, fallback))
 
 static func rarity_color(r: String) -> Color:
+	var base := Color(0.85, 0.85, 0.85)
 	match r:
-		"magico": return Color(0.45, 0.6, 1.0)
-		"incomum": return Color(0.4, 0.85, 0.45)
-		"raro": return Color(1.0, 0.9, 0.3)
-		"unico": return Color(1.0, 0.55, 0.15)
-	return Color(0.85, 0.85, 0.85)
+		"magico": base = Color(0.45, 0.6, 1.0)
+		"incomum": base = Color(0.4, 0.85, 0.45)
+		"raro": base = Color(1.0, 0.9, 0.3)
+		"unico": base = Color(1.0, 0.55, 0.15)
+	return Accessibility.rarity_color(r, Accessibility.active_color_mode, base)
 
 const MOD_LABELS := {"dmg_pct": "dano", "speed_pct": "velocidade", "cd_pct": "recarga", "area_pct": "área", "gold_pct": "moedas", "xp_pct": "XP",
 	"hp": "PV", "regen": "PV/s", "ca": "CA", "cam": "CAM", "hit": "precisão", "pickup": "coleta", "dr": "redução de dano", "forca": "FOR", "inteligencia": "INT",

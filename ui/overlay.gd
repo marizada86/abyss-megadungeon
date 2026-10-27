@@ -423,11 +423,12 @@ func _ellipse_closed(c: Vector2, r: float) -> PackedVector2Array:
 	return p
 
 func _dcol(dtype: String, a: float) -> Color:
+	var base := Color(0.8, 0.8, 0.8, a)
 	match dtype:
-		"fogo": return Color(1.0, 0.45, 0.1, a)
-		"radiante": return Color(1.0, 0.95, 0.6, a)
-		"magico": return Color(0.6, 0.4, 1.0, a)
-	return Color(0.8, 0.8, 0.8, a)
+		"fogo": base = Color(1.0, 0.45, 0.1, a)
+		"radiante": base = Color(1.0, 0.95, 0.6, a)
+		"magico": base = Color(0.6, 0.4, 1.0, a)
+	return Accessibility.dtype_color(dtype, Game.color_mode(), base)
 
 func _texture(path: String) -> Texture2D:
 	if not _texture_cache.has(path):

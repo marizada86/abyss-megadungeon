@@ -2968,3 +2968,55 @@ vfx_lote3_2026_10_27:
   git_authorization_20261027: "aprovado, commit e push (dono, 2026-10-27); piloto do Lote 3 integrado localmente; merge, build, exportacao e promocao CANON seguem sem autorizacao"
   runtime_modified: true   # local, sem commit
   next_activity: "As 12 folhas do Lote 3 estao integradas localmente (evolucoes de golpe, orbe arcano, onda cortante, pulso e fogo; detonacao fisica e magica; tentaculos com emersao; dano no heroi; indicador da Mare; brilho de XP). Falta o playtest humano com evolucoes e um chefe. Sem commit/push ate novo pedido."
+qol_accessibility_p1_20261027:
+  id: PLAN-ABYSS-QOL-A11Y-P1-20261027
+  spec_id: SPEC-ABYSS-QOL-ACCESSIBILITY-20261027
+  spec: .atena/specs/SPEC-ABYSS-QOL-ACCESSIBILITY-20261027/spec-r1.md
+  revision: r1
+  mode: per-plan
+  approval: APPROVED_LOCAL_R1
+  authorization: "Aprovado: começar pelo P1 (escala de interface, contraste, daltonismo, falas). Registre o plano em plan.yaml e execute por plano. (dono, 2026-10-27)"
+  scope: P1_ONLY_P2_TO_P5_NOT_AUTHORIZED
+  platform: windows-x86_64
+  save_contract: "chaves opcionais em profile.data.settings (ui_scale, high_contrast, color_mode, speech_time); leitura com padrão; perfil antigo abre idêntico; sem migração destrutiva"
+  ordered_steps: [S-A01, S-A02, S-A03, S-A04, S-A05]
+  steps:
+    S-A01_ui_scale: {status: DONE_LOCAL_NOT_COMMITTED, what: "escala 100/125/150% da interface (tema + fontes explícitas), ao vivo, sem tocar nos números de dano do mundo"}
+    S-A02_high_contrast: {status: DONE_LOCAL_NOT_COMMITTED, what: "janelas opacas, escurecimento maior, contorno e texto apagado clareado"}
+    S-A03_colorblind: {status: DONE_LOCAL_NOT_COMMITTED, what: "protanopia, deuteranopia, tritanopia: paleta central de tipo de dano e raridade + segunda pista não cromática; teste por simulação"}
+    S-A04_speech: {status: DONE_LOCAL_NOT_COMMITTED_QUEUE_DEFERRED, what: "duração das falas e dicas (normal, longa, até a próxima); fila visível de falas sobrepostas fica adiada"}
+    S-A05_tests_evidence: {status: DONE_LOCAL_NOT_COMMITTED, what: "test_accessibility, test_options_menu, test_profile, run_all, audit_projeto; capturas 1280x720 e 1920x1080; evidência"}
+  tests_policy: "diretório sintético isolado; jamais o save real"
+  not_authorized: [commit, push, merge, build, exportacao, publicacao, P2_a_P5]
+  human_acceptance: PENDING
+  status: LOCAL_DELIVERED_AWAITING_HUMAN_ACCEPTANCE
+  checkpoint: S-A05/EVIDENCE_WRITTEN
+  completed_steps: 5
+  total_steps: 5
+  verification: "run_all 0 falhas; audit_projeto 0 erros e 0 avisos; test_accessibility novo; 24 capturas 1280x720 e 1920x1080"
+  evidence: .atena/generated/qol-a11y-p1-20261027-r1/evidence.md
+  new_files: [core/accessibility.gd, ui/ui_adapter.gd, tests/test_accessibility.gd, tools/a11y_capture.gd, tools/a11y_render.ps1]
+  edited: [core/game.gd, core/profile.gd, core/items.gd, ui/options_panel.gd, ui/ui_kit.gd, ui/run.gd, ui/overlay.gd, ui/hud.gd]
+  deferred: [fila_visivel_de_falas, tintas_de_sprites_de_vfx, telas_nao_capturadas]
+  next_activity: "Revisão humana do P1 (125% e 150% em ficha, ofertas, HQ, resultado). P2 a P5 seguem sem autorização."
+qol_rmb_interact_20261027:
+  id: PLAN-ABYSS-QOL-RMB-INTERACT-20261027
+  parent_spec: SPEC-ABYSS-QOL-ACCESSIBILITY-20261027
+  revision: r1
+  mode: per-plan
+  approval: APPROVED_LOCAL_R1
+  authorization: "atena, clique direito para interagir com eventos e etc para facilitar fazer tudo com o mouse (dono, 2026-10-27); pedido isolado, não é o P2 (P2 segue não autorizado)"
+  scope: "botão direito do mouse sobre um objeto interativo ao alcance (altar, ritual, portal, loja, ferreiro, arcanista, curandeiro, ampulheta, doação, aposta, pacto, câmara, eventos aleatórios) faz o mesmo que E"
+  rule: "RMB com o cursor sobre o objeto e o herói a até 1,6 de distância interage; em qualquer outro caso o RMB continua sendo a habilidade (hero_active). Opção 'Clique direito interage' em Opções → Jogo, padrão ligada."
+  save_contract: "chave opcional settings.rmb_interact (padrão true); perfil antigo não ganha a chave"
+  steps:
+    S-R01_battle_target: {status: DONE_LOCAL_NOT_COMMITTED, what: "Battle.interact(target) e Battle.interactable_at_screen(mouse)"}
+    S-R02_run_input: {status: DONE_LOCAL_NOT_COMMITTED, what: "ui/run.gd: RMB sobre objeto interage antes da habilidade; respeita pointer_over_ui"}
+    S-R03_prompt_option: {status: DONE_LOCAL_NOT_COMMITTED, what: "prompt do HUD mostra clique direito; checkbox em Opções"}
+    S-R04_tests: {status: DONE_LOCAL_NOT_COMMITTED, what: "tests/test_rmb_interact.gd, run_all, audit_projeto"}
+  not_authorized: [commit, push, merge, build, exportacao, publicacao, P2_a_P5]
+  status: LOCAL_DELIVERED_AWAITING_HUMAN_ACCEPTANCE
+  human_acceptance: PENDING
+  verification: "test_rmb_interact novo: 0 falhas; run_all: 0 falhas em 2026-10-27 depois que a outra sessão ajustou test_l2_boss_field_and_corrosion e test_l5_b002_bosses ao novo boss_intro_remaining (as 2 falhas anteriores eram dessa mudança, não deste plano); audit_projeto 0 erros"
+  edited: [core/battle.gd, core/game.gd, core/accessibility.gd, ui/run.gd, ui/hud.gd, ui/options_panel.gd]
+  new_files: [tests/test_rmb_interact.gd]

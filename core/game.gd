@@ -27,6 +27,7 @@ var last_summary: Dictionary = {}
 var log_lines: Array = []
 var screen_name := "menu"
 var controls = preload("res://core/controller_input.gd").new()
+var ui_adapter := UiAdapter.new()   # PLAN-ABYSS-QOL-A11Y-P1: escala da interface e contraste alto
 
 func touch_controls_enabled() -> bool:
 	return false
@@ -68,6 +69,8 @@ func _ready() -> void:
 	ensure_input_actions()
 	load_profile()
 	ensure_input_actions()
+	ui_adapter.install(get_tree())
+	apply_accessibility()
 	apply_settings()
 	CursorSkin.install(get_tree())  # SPEC-132: cursor temático (sem arte, fica o do sistema)
 	if save_notice != "":
@@ -457,6 +460,60 @@ func set_ui_font(id: String) -> void:
 		return
 	profile.data.settings.ui_font = id
 	save()
+
+# ------------------------------------------------------------------ acessibilidade (PLAN-ABYSS-QOL-A11Y-P1)
+
+## Põe no ar a escala e o contraste do perfil e avisa quem desenha (janelas, filtros).
+func apply_accessibility() -> void:
+	if profile == null:
+		return
+	var s: Dictionary = profile.data.settings
+	Accessibility.active_color_mode = Accessibility.color_mode_of(s)
+	ui_adapter.configure(Accessibility.ui_factor(s), Accessibility.high_contrast_of(s))
+	visual_settings_changed.emit()
+
+func set_ui_scale(percent: int) -> void:
+	if not (percent in Accessibility.UI_SCALES):
+		return
+	profile.data.settings.ui_scale = percent
+	save()
+	apply_accessibility()
+
+func set_high_contrast(on: bool) -> void:
+	profile.data.settings.high_contrast = on
+	save()
+	apply_accessibility()
+
+func set_color_mode(mode: String) -> void:
+	if not (mode in Accessibility.COLOR_MODES):
+		return
+	profile.data.settings.color_mode = mode
+	Accessibility.active_color_mode = mode
+	save()
+	visual_settings_changed.emit()
+
+func set_speech_time(mode: String) -> void:
+	if not (mode in Accessibility.SPEECH_MODES):
+		return
+	profile.data.settings.speech_time = mode
+	save()
+
+## Botão direito sobre um objeto interativo ao alcance interage (padrão ligado).
+func right_click_interact() -> bool:
+	return profile == null or Accessibility.rmb_interact_of(profile.data.settings)
+
+func set_right_click_interact(on: bool) -> void:
+	profile.data.settings.rmb_interact = on
+	save()
+
+func high_contrast() -> bool:
+	return profile != null and Accessibility.high_contrast_of(profile.data.settings)
+
+func color_mode() -> String:
+	return Accessibility.color_mode_of(profile.data.settings) if profile != null else "off"
+
+func speech_time() -> String:
+	return Accessibility.speech_mode_of(profile.data.settings) if profile != null else "normal"
 
 
 func set_resolution(resolution: String) -> void:
