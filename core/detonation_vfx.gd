@@ -4,9 +4,9 @@ extends RefCounted
 ## tamanho do aviso e nunca passa dele. O afixo explosivo continua com a arte de morte explosiva (DeathVfx).
 const LIMIT := 10
 const SECONDS := 0.5
-## sheet, largura do anel elíptico no pico da folha preparada (preparation-audit) e se a âncora fica na base.
+## sheet, largura do anel elíptico no pico da folha preparada (preparation-audit) e se a âncora é o centro do anel do chão (VfxAtlas.GROUND_ROW).
 const KINDS := {
-	"fisico": {"sheet": "detonacao_fisica", "ring_px": 190.0, "base": false},
+	"fisico": {"sheet": "detonacao_fisica", "ring_px": 190.0, "base": true},
 	"magico": {"sheet": "detonacao_magica", "ring_px": 122.0, "base": true},
 }
 
@@ -36,7 +36,7 @@ static func create_effect(radius: float, ground: Vector2, dtype: String, reduced
 		return null
 	sprite.scale = Vector2.ONE * scale_for(radius, dtype)
 	if bool(KINDS[dtype].base):
-		sprite.offset.y = 128.0 - 196.0
+		sprite.offset.y = VfxAtlas.ground_offset_y(sheet)
 	var root := VfxAtlas.one_shot(sprite, Iso.to_screen(ground))
 	root.add_to_group(&"detonation_vfx")
 	return root

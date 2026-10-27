@@ -14,7 +14,6 @@ const SIGIL_HALF_PX := 74.0
 const MARK_HALF_PX := 75.0
 const DOME_PX := 130.0
 const DOME_ART_PX := 203.0
-const BASE_ANCHOR_Y := 196.0
 const SCALE_MIN := 0.8
 const SCALE_MAX := 1.6
 ## Fatias [x, largura] da barra na célula: pontas fixas e miolo esticado ao comprimento da varredura.
@@ -185,12 +184,12 @@ static func build(desc: Dictionary) -> Node2D:
 		"charge":
 			var charge := VfxAtlas.sprite(path_for("boss_conjuracao_carga"), true, 0.8)
 			if charge != null:
-				charge.offset.y = 128.0 - BASE_ANCHOR_Y
+				charge.offset.y = VfxAtlas.ground_offset_y("boss_conjuracao_carga")
 			node = charge
 		"dome":
 			var dome := VfxAtlas.sprite8(path_for("boss_escudo"), "loop", 0.8)
 			if dome != null:
-				dome.offset.y = 128.0 - BASE_ANCHOR_Y
+				dome.offset.y = VfxAtlas.ground_offset_y("boss_escudo")
 			node = dome
 	if node != null:
 		node.set_meta(&"kind", String(desc.kind))
@@ -292,7 +291,7 @@ static func create_phase_burst(pos: Vector2, boss_scale: float = 1.0, reduced: b
 	if sprite == null:
 		return null
 	sprite.scale = Vector2.ONE * 0.8 * fit(boss_scale)
-	sprite.offset.y = 128.0 - BASE_ANCHOR_Y
+	sprite.offset.y = VfxAtlas.ground_offset_y("boss_fase_estouro")
 	return _one_shot_sprite(sprite, Iso.to_screen(pos))
 
 static func create_shield_break(pos: Vector2, boss_scale: float = 1.0, reduced: bool = false) -> Node2D:
@@ -302,5 +301,5 @@ static func create_shield_break(pos: Vector2, boss_scale: float = 1.0, reduced: 
 	if sprite == null:
 		return null
 	sprite.scale = Vector2.ONE * DOME_PX * fit(boss_scale) / DOME_ART_PX
-	sprite.offset.y = 128.0 - BASE_ANCHOR_Y
+	sprite.offset.y = VfxAtlas.ground_offset_y("boss_escudo")
 	return _one_shot_sprite(sprite, Iso.to_screen(pos))

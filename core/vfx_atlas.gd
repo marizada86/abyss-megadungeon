@@ -2,6 +2,20 @@ class_name VfxAtlas
 extends RefCounted
 ## Shared, presentation-only six-frame atlas reader. Missing/invalid sheets keep procedural fallbacks.
 static var _cache: Dictionary = {}
+## Linha da célula (256 px) onde fica o CENTRO do anel de chão de cada folha ancorada no chão. Não é a borda de baixo da arte
+## (196): o anel é uma elipse achatada, e ancorar o fundo dela no ponto do chão a levantava 14-38 px acima do alvo. Medida na
+## folha (linha mais larga do anel no quadro de pico) e confirmada no jogo; tests/test_vfx_ground_anchor.gd confere a medida.
+## Folha fora da tabela usa a base da arte (`BASE_ROW`).
+const BASE_ROW := 196.0
+const GROUND_ROW := {
+	"mare_aura": 176.0, "pocao_coleta": 171.0, "subida_de_nivel_v2": 175.0, "detonacao_magica": 189.0, "detonacao_fisica": 143.0,
+	"tentaculos_laco": 164.0, "tentaculos_emergem": 164.0, "boss_fase_estouro": 175.0, "morte_chefe_colapso": 175.0, "morte_alma": 179.0,
+}
+
+## `offset.y` que põe o centro do anel da folha sobre o ponto do chão (a escala do nó multiplica o offset, então não entra aqui).
+static func ground_offset_y(sheet: String) -> float:
+	return 128.0 - float(GROUND_ROW.get(sheet, BASE_ROW))
+
 
 static func frames(path: String, looped: bool = false, duration: float = 0.24) -> SpriteFrames:
 	var key := "%s:%s:%s" % [path, looped, duration]

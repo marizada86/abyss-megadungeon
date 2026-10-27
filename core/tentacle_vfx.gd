@@ -5,7 +5,6 @@ extends RefCounted
 const WEAPON := "colar_dos_tentaculos"
 ## Largura do anel do chão nas folhas preparadas (preparation-audit); a escala leva esse anel ao raio da zona.
 const RING_PX := 166.0
-const BASE_ANCHOR_Y := 164.0
 const MAX_ALPHA := 0.95
 const FADE_IN := 0.25
 const FADE_OUT := 0.35
@@ -33,7 +32,7 @@ static func create_cast(event: Dictionary, reduced: bool = false, current: int =
 	if sprite == null:
 		return null
 	sprite.scale = Vector2.ONE * scale_for(float(event.radius))
-	sprite.offset.y = 128.0 - BASE_ANCHOR_Y
+	sprite.offset.y = VfxAtlas.ground_offset_y("tentaculos_emergem")
 	var root := VfxAtlas.one_shot(sprite, Iso.to_screen(event.pos))
 	root.add_to_group(&"tentacle_vfx")
 	return root
@@ -45,7 +44,7 @@ static func create_zone(zone: Dictionary, reduced: bool = false) -> Dictionary:
 	if sprite == null:
 		return {}
 	sprite.scale = Vector2.ONE * scale_for(float(zone.radius))
-	sprite.offset.y = 128.0 - BASE_ANCHOR_Y
+	sprite.offset.y = VfxAtlas.ground_offset_y("tentaculos_laco")
 	sprite.position = Iso.to_screen(zone.pos)
 	sprite.modulate.a = 0.0
 	var delay := LOOP_DELAY if VfxAtlas.texture(CAST_PATH) != null else 0.0

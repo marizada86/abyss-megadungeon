@@ -40,7 +40,7 @@ static func _build(kind: StringName, at_ground: Vector2, scale_value: float, tin
 		return null
 	sprite.scale = Vector2.ONE * scale_value
 	if bool(spec.base):
-		sprite.offset.y = 128.0 - PickupVfx.BASE_ANCHOR_Y
+		sprite.offset.y = VfxAtlas.ground_offset_y(String(spec.sheet))
 	sprite.modulate = tint
 	var lift := 0.0 if bool(spec.base) else 18.0
 	var root := VfxAtlas.one_shot(sprite, Iso.to_screen(at_ground) + Vector2(0, -lift))

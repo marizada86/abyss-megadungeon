@@ -87,5 +87,5 @@ static func create_sprite_effect(event: Dictionary, reduced_impact: bool = false
 	if sprite == null:
 		return null
 	sprite.scale = Vector2.ONE * sprite_scale_for(float(event.radius))
-	sprite.offset.y = 128.0 - 196.0
+	sprite.offset.y = VfxAtlas.ground_offset_y("explosao_fogo")
 	return VfxAtlas.one_shot(sprite, Iso.to_screen(event.pos))
