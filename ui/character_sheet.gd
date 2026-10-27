@@ -105,15 +105,19 @@ func _build_hero_column() -> Control:
 	var frame := PanelContainer.new()
 	frame.add_theme_stylebox_override("panel", SheetArt.frame(SheetArt.DETAIL, 16, 20))
 	_portrait = TextureRect.new()
-	_portrait.custom_minimum_size = Vector2(250, 70 if false else 90)
+	_portrait.custom_minimum_size = Vector2(250, 141)  # 16:9, como a imagem própria da Ficha (SPEC-178)
 	_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	frame.add_child(_portrait)
 	col.add_child(frame)
+	var name_row := HBoxContainer.new()
+	name_row.add_theme_constant_override("separation", 10)
 	_hero_label = _label("", 22, GOLD)
-	col.add_child(_hero_label)
+	name_row.add_child(_hero_label)
 	_level_label = _label("", 14, MUTED)
-	col.add_child(_level_label)
+	_level_label.size_flags_vertical = Control.SIZE_SHRINK_END
+	name_row.add_child(_level_label)
+	col.add_child(name_row)
 	var grid := GridContainer.new()
 	grid.columns = 2
 	grid.add_theme_constant_override("h_separation", 18)

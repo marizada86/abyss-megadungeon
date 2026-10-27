@@ -3020,6 +3020,46 @@ qol_rmb_interact_20261027:
   verification: "test_rmb_interact novo: 0 falhas; run_all: 0 falhas em 2026-10-27 depois que a outra sessão ajustou test_l2_boss_field_and_corrosion e test_l5_b002_bosses ao novo boss_intro_remaining (as 2 falhas anteriores eram dessa mudança, não deste plano); audit_projeto 0 erros"
   edited: [core/battle.gd, core/game.gd, core/accessibility.gd, ui/run.gd, ui/hud.gd, ui/options_panel.gd]
   new_files: [tests/test_rmb_interact.gd]
+hero_portraits_20261027:
+  id: PLAN-ABYSS-HERO-PORTRAITS-20261027
+  spec_id: SPEC-ABYSS-HERO-PORTRAITS-20261027
+  spec: .atena/specs/SPEC-ABYSS-HERO-PORTRAITS-20261027/spec-r1.md
+  revision: r1
+  mode: per-plan
+  approval: APPROVED_LOCAL_R1_PILOT_PREPARATION_ONLY
+  authorization: "Sim: registre o plano (PLAN/SPEC no .atena) e prepare os prompts do piloto Durvall (HUD 256x256 e Ficha 768x256), sem commit. (dono, 2026-10-27)"
+  scope: "retratos próprios do HUD (256x256) e da Ficha (768x432, 16:9) distintos do retrato do menu/Quartel; piloto Durvall; os outros 11 heróis só após aceite do piloto e nova aprovação"
+  platform: windows-x86_64
+  save_contract: "nenhuma mudança de save ou de dados; resolvedor da SPEC-178 (ui/hero_portraits.gd) já cobre ficha/hud com fallback no menu"
+  ordered_steps: [S-P01, S-P02, S-P03, S-P04, S-P05, S-P06]
+  steps:
+    S-P01_register_prompts: {status: DONE_LOCAL_NOT_COMMITTED, what: "spec r1, entrada no plano e prompts do piloto Durvall (HUD e Ficha)"}
+    S-P02_owner_generation: {status: DONE_LOCAL_DRAFT, what: "geração com imagegen autorizada pelo dono neste chat; durvall_hud_v01.png e durvall_ficha_v01.png entregues em assets_incoming/hero-portraits-r1/durvall/; aceite humano pendente"}
+    S-P03_normalize_integrate: {status: DONE_LOCAL_NOT_COMMITTED, what: "recortar e reduzir para 256x256 e 768x256; copiar para assets/portraits/hud e ficha; .import"}
+    S-P04_captures_tests: {status: DONE_LOCAL_NOT_COMMITTED, what: "capturas 1920x1080 do HUD e da Ficha (base, 150%, alto contraste); test_hero_portraits em diretório sintético isolado; audit_projeto"}
+    S-P05_owner_acceptance: {status: DONE_HUD_AND_FICHA_16x9_ACCEPTED_2026-10-27, what: "aceite visual do piloto pelo dono"}
+    S-P06_remaining_heroes: {status: PROMPTS_READY_AWAITING_OWNER_GENERATION, what: "autorizado pelo dono em 2026-10-27 após aceite do piloto; 11 arquivos de colar em .atena/generated/hero-portraits-20261027-r1/colar/ (INDEX.md); Ficha 16:9 (768x432) e HUD 256x256; refs em .atena/generated/art-candidates/hero-portraits-r1-refs/<id>/"}
+  open_decisions: [relampago_na_espada_do_menu_vs_espada_sombria_sem_brilho, normalizacao_lanczos, gerador_sem_3x1]
+  tests_policy: "diretório sintético isolado; jamais o save real"
+  not_authorized: [commit, push, merge, build, exportacao, publicacao]
+  status: PILOT_ACCEPTED_BATCH_PROMPTS_READY
+  human_acceptance: PILOT_ACCEPTED_2026-10-27
+  checkpoint: S-P06/PROMPTS_WRITTEN
+  completed_steps: 5
+  total_steps: 6
+  batch_prompts: .atena/generated/hero-portraits-20261027-r1/colar/INDEX.md
+  batch_builder: .atena/generated/hero-portraits-20261027-r1/build_batch.js
+  prompts: .atena/generated/hero-portraits-20261027-r1/prompts/durvall.md
+  chatgpt_paste: .atena/generated/hero-portraits-20261027-r1/COLAR-NO-CHATGPT-durvall.md
+  incoming_dir: assets_incoming/hero-portraits-r1/durvall/
+  runtime_code_changes: "ui/character_sheet.gd: caixa do retrato 250x141 (16:9) e nome+nível na mesma linha; contrato da Ficha passa de 768x256 (3:1) para 768x432 (16:9) por pedido do dono (3:1 achatava o herói)"
+  owner_acceptance: "HUD do Durvall aprovado pelo dono em 2026-10-27; Ficha 16:9 com recorte fechado (prep: durvall 770 325 800) aguardando"
+  new_files: [tools/portrait_prep.gd, tools/portrait_capture.gd, tools/portrait_render.ps1, assets/portraits/hud/durvall.png, assets/portraits/ficha/durvall.png]
+  captures: .atena/generated/hero-portraits-20261027-r1/captures/
+  verification: "test_hero_portraits e test_hero_panel: 0 falhas (APPDATA sintético); .import gerados por godot --import; capturas antes e depois do Durvall"
+  batch_progress: "Sylas integrado (prep: sylas -1 -1 1536; test_hero_portraits e test_hero_panel 0 falhas; capturas depois), aguardando aceite do dono; restantes: arlindo bromnor brook erik kayron korrak leoric maelor nyrelia zynara"
+  next_activity: "Dono gera HUD e Ficha de cada herói (um por vez) em assets_incoming/hero-portraits-r1/<id>/; Atena recorta (prep: <id> -1 -1 1536), integra, captura e testa"
+  working_tree_note: "ui/run.gd e controller-experience/v01/unit-profile.json.bak modificados por outras frentes; fora deste plano"
 qol_offer_card_detail_20261027:
   id: PLAN-ABYSS-QOL-OFFER-CARD-DETAIL-20261027
   revision: r1

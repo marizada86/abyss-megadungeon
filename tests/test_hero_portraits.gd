@@ -1,7 +1,7 @@
 extends RefCounted
 ## SPEC-178: retratos próprios da Ficha (C) e do HUD, com fallback para o retrato do menu.
 
-const SIZES := {"ficha": Vector2i(768, 256), "hud": Vector2i(256, 256)}
+const SIZES := {"ficha": Vector2i(768, 432), "hud": Vector2i(256, 256)}
 
 func run() -> Array:
 	var out: Array = []

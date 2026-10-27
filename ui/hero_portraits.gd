@@ -1,7 +1,7 @@
 class_name HeroPortraits
 extends RefCounted
 ## SPEC-178: retrato do herói por tela. O menu usa `assets/portraits/<id>.png`; a Ficha (C) e o HUD têm
-## imagens próprias (faixa 3:1 e quadrado) e, sem elas, caem no retrato do menu.
+## imagens próprias (16:9 e quadrado) e, sem elas, caem no retrato do menu.
 const ROOT := "res://assets/portraits/"
 const MENU := "menu"
 const FICHA := "ficha"
