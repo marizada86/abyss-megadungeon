@@ -2929,13 +2929,18 @@ vfx_lote3_2026_10_27:
   queue: .atena/vault/drafts/ASSET-QUEUE-VFX-LOTE3-20261027-r1.md
   workdir: .atena/generated/vfx-lote3-20261027-r1/
   authorization: "Aprovo as 12 folhas do Lote 3 com o piloto E03, D01 e T02, o indicador da Maré na HUD e os metadados dtype. Registre no plan.yaml e prepare prompts e fila, sem gerar imagens. (dono, 2026-10-27)"
-  status: PILOT_REVIEWED_PASSES_GATE_9_SHEETS_RELEASED
+  status: REMAINING_9_GENERATED_VISUAL_REVIEW_PENDING
   generation: "Atena via image_gen integrado, autorizada pelo pedido atual do dono em 2026-10-27; E03, D01 e T02 v01 e v02 preservadas"
   generation_authorization_20261027: "atena, proximo lote de imagens vindo do claude, pode gerar"
   pilot_receipt: .atena/generated/vfx-lote3-20261027-r1/pilot-generation-20261027.md
   pilot_gallery: .atena/generated/vfx-lote3-20261027-r1/pilot-review.html
   pilot_audit: .atena/generated/vfx-lote3-20261027-r1/pilot-source-audit.json
-  checkpoint: LOTE3_PILOT_PASSES_GATE_9_SHEETS_AWAITING_IMAGES
+  checkpoint: LOTE3_REMAINING_9_SOURCE_REVIEW_PENDING
+  remaining_generation_authorization_20261027: "atena, continue"
+  remaining_receipt: .atena/generated/vfx-lote3-20261027-r1/remaining-generation-20261027.md
+  remaining_gallery: .atena/generated/vfx-lote3-20261027-r1/remaining-review.html
+  remaining_manifest: .atena/generated/vfx-lote3-20261027-r1/remaining-manifest-20261027.json
+  remaining_audit: .atena/generated/vfx-lote3-20261027-r1/remaining-source-audit-20261027.json
   pilot_acceptance: .atena/generated/vfx-lote3-20261027-r1/pilot-acceptance-20261027.json
   pilot_owner_statement: "aprovado, vou mandar para o claude"
   pilot: [E03, D01, T02]
@@ -2955,11 +2960,11 @@ vfx_lote3_2026_10_27:
   steps:
     S1_prompts_and_queue: {status: DONE, items: 12, files: [queue.json, table.md, prompts/, ref-existing-vfx.png, COLAR-PILOTO-E03-D01-T02.md, COLAR-NO-CHATGPT-9-FOLHAS.md]}
     S2_pilot: {status: APPROVED_OWNER_20261027_SOURCES_ONLY, items: [E03, D01, T02], selected_revision: v02, acceptance: pilot-acceptance-20261027.json, candidates: 6, attempts_used_per_id: 2, attempts_remaining_per_id: 1, human_visual_acceptance: APPROVED_OWNER_20261027, technical_acceptance: PENDING}
-    S3_remaining_sheets: {status: RELEASED_20261027_AWAITING_IMAGES, atena_review: review-pilot/PILOT-VEREDITO-ATENA.md, items: 9, prompts_to_paste: COLAR-NO-CHATGPT-9-FOLHAS.md}
+    S3_remaining_sheets: {status: GENERATED_VISUAL_REVIEW_PENDING, pilot_gate_review: review-pilot/PILOT-VEREDITO-ATENA.md, items: 9, candidates: 14, recommended: "E01/E02/T01 v02, E06 v03, demais v01", human_visual_acceptance: PENDING, prompts_to_paste: COLAR-NO-CHATGPT-9-FOLHAS.md}
     S4_preparation: {status: PILOT_DONE_9_PENDING, job: tools/asset_jobs/vfx_lote3_v01.json, audit_script: tools/audit_vfx_lote3.gd, audit: preparation-audit.json, result: "3 atlas do piloto (E03, D01, T02 v02) preparados, 0 falhas, margem minima 21 px, copiados para assets/vfx", pending: ["as outras 9 folhas, quando chegarem"]}
     S5_code_tests: {status: PARTIAL_LOCAL_NOT_COMMITTED, done: [metadado_dtype_boom_e_hurt, DetonationVfx_fisica, TentacleVfx_laco, evolucao_luz_mais_pura_E03, indicador_da_mare, brilho_da_barra_de_xp], new_files: [core/detonation_vfx.gd, core/tentacle_vfx.gd, tools/vfx_lote3_playtest.gd, tools/audit_vfx_lote3.gd, tests/test_evolution_vfx.gd, tests/test_detonation_vfx.gd, tests/test_tentacle_vfx.gd, tests/test_lote3_hud.gd, tests/test_vfx_lote3_assets.gd], edited: [core/projectile_vfx.gd, core/battle.gd, ui/run.gd, ui/overlay.gd, ui/hero_panel.gd, ui/hud.gd], suite: "run_all 0 falhas; audit_projeto 0 erros", pending_with_art: [E01, E02, E04, E05, E06, E07_fire_burst, D02_magica, T01_emergem, H01_hurt_vfx]}
     S6_validation_playtest: {status: SYNTHETIC_PARTIAL_HUMAN_PENDING, synthetic: "playtest-lote3-verification.json: 14 verificacoes, 0 falhas, 120 fps com e sem sprites", captures: [integration-lote3.png, crop-hud.png], human_playtest: PENDING}
   not_authorized: [merge, build, exportacao, publicacao, promocao_canon]
   git_authorization_20261027: "aprovado, commit e push (dono, 2026-10-27); piloto do Lote 3 integrado localmente; merge, build, exportacao e promocao CANON seguem sem autorizacao"
   runtime_modified: true   # local, sem commit
-  next_activity: "Piloto integrado localmente (Luz Mais Pura evoluída, detonação física, laço de tentáculos, indicador da Maré, brilho da barra de XP, dtype em boom e hurt). Faltam as 9 folhas (COLAR-NO-CHATGPT-9-FOLHAS.md); cada uma entra no código existente ao chegar: E01/E02/E04/E05/E06/E07, D02, T01 e H01. Sem commit/push até novo pedido."
+  next_activity: "Revisar e aceitar por ID/revisao/hash as 9 folhas restantes (14 candidatas; remaining-review.html). Recomendadas E01/E02/T01 v02, E06 v03, demais v01. Depois preparar e integrar E01/E02/E04/E05/E06/E07, D02, T01 e H01; preservar piloto ja aceito/integrado. Nesta sessao apenas fontes e registros, sem codigo, commit ou push. E06 usou 3/3 tentativas; demais contagens no manifesto."

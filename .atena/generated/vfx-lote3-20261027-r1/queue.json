@@ -2,14 +2,14 @@
   "batch": "VFX-LOTE3-20261027-r1",
   "state": "DRAFT",
   "approval": "SCOPE_APPROVED_20261027",
-  "generation": "Piloto E03/D01/T02 v02 aceito visualmente pelo dono em 2026-10-27; demais 9 aguardam continuidade com Claude",
+  "generation": "Piloto aprovado preservado; 9 folhas restantes geradas pela Atena via image_gen em 2026-10-27, 14 candidatas; aceite visual pendente",
   "items": [
     {
       "id": "E01",
       "name": "melee_fisico_evo_arco",
-      "state": "QUEUED",
+      "state": "GENERATED_REVIEW_PENDING",
       "revision": "v01",
-      "tool": "chatgpt-image (manual)",
+      "tool": "image_gen integrado",
       "prompt_file": "prompts/E01_melee_fisico_evo_arco_prompt.txt",
       "expected_file": "E01_melee_fisico_evo_arco_v01.png",
       "generation_canvas": "1536x1024",
@@ -23,14 +23,23 @@
       "pilot": false,
       "attach_reference": "ref-existing-vfx.png",
       "human_visual_acceptance": "PENDING",
-      "runtime_admission": false
+      "runtime_admission": false,
+      "candidates": [
+        "E01_melee_fisico_evo_arco_v01.png",
+        "E01_melee_fisico_evo_arco_v02.png"
+      ],
+      "attempts_used": 2,
+      "attempts_remaining": 1,
+      "recommended_file": "E01_melee_fisico_evo_arco_v02.png",
+      "recommended_sha256": "3FDBBC2B38E2C85AC556F5CC9593F4431E37770AE9CAA6FF4AAB8660D65C3022",
+      "technical_acceptance": "SEPARATORS_CHECKED_AT_THRESHOLD_ATLAS_PENDING"
     },
     {
       "id": "E02",
       "name": "melee_rajada_evo",
-      "state": "QUEUED",
+      "state": "GENERATED_REVIEW_PENDING",
       "revision": "v01",
-      "tool": "chatgpt-image (manual)",
+      "tool": "image_gen integrado",
       "prompt_file": "prompts/E02_melee_rajada_evo_prompt.txt",
       "expected_file": "E02_melee_rajada_evo_v01.png",
       "generation_canvas": "1536x1024",
@@ -44,7 +53,16 @@
       "pilot": false,
       "attach_reference": "ref-existing-vfx.png",
       "human_visual_acceptance": "PENDING",
-      "runtime_admission": false
+      "runtime_admission": false,
+      "candidates": [
+        "E02_melee_rajada_evo_v01.png",
+        "E02_melee_rajada_evo_v02.png"
+      ],
+      "attempts_used": 2,
+      "attempts_remaining": 1,
+      "recommended_file": "E02_melee_rajada_evo_v02.png",
+      "recommended_sha256": "52952AA2C7D65E87DFD694FE41C6BA42D8460763603E1183AC2D14F8564CAB3F",
+      "technical_acceptance": "SEPARATORS_CHECKED_AT_THRESHOLD_ATLAS_PENDING"
     },
     {
       "id": "E03",
@@ -80,9 +98,9 @@
     {
       "id": "E04",
       "name": "orbe_arcano_evo",
-      "state": "QUEUED",
+      "state": "GENERATED_REVIEW_PENDING",
       "revision": "v01",
-      "tool": "chatgpt-image (manual)",
+      "tool": "image_gen integrado",
       "prompt_file": "prompts/E04_orbe_arcano_evo_prompt.txt",
       "expected_file": "E04_orbe_arcano_evo_v01.png",
       "generation_canvas": "1536x1024",
@@ -96,14 +114,22 @@
       "pilot": false,
       "attach_reference": "ref-existing-vfx.png",
       "human_visual_acceptance": "PENDING",
-      "runtime_admission": false
+      "runtime_admission": false,
+      "candidates": [
+        "E04_orbe_arcano_evo_v01.png"
+      ],
+      "attempts_used": 1,
+      "attempts_remaining": 2,
+      "recommended_file": "E04_orbe_arcano_evo_v01.png",
+      "recommended_sha256": "C8A5D6780ADB9E034C8E47A09DA06DE03CBD07301F4006538036F6EA2EFB5920",
+      "technical_acceptance": "SEPARATORS_CHECKED_AT_THRESHOLD_ATLAS_PENDING"
     },
     {
       "id": "E05",
       "name": "onda_cortante_evo",
-      "state": "QUEUED",
+      "state": "GENERATED_REVIEW_PENDING",
       "revision": "v01",
-      "tool": "chatgpt-image (manual)",
+      "tool": "image_gen integrado",
       "prompt_file": "prompts/E05_onda_cortante_evo_prompt.txt",
       "expected_file": "E05_onda_cortante_evo_v01.png",
       "generation_canvas": "1536x1024",
@@ -117,14 +143,22 @@
       "pilot": false,
       "attach_reference": "ref-existing-vfx.png",
       "human_visual_acceptance": "PENDING",
-      "runtime_admission": false
+      "runtime_admission": false,
+      "candidates": [
+        "E05_onda_cortante_evo_v01.png"
+      ],
+      "attempts_used": 1,
+      "attempts_remaining": 2,
+      "recommended_file": "E05_onda_cortante_evo_v01.png",
+      "recommended_sha256": "071D5490293A08559E2255D4599B6FBDD8C0385AC0C35DBE6B18D5E23DF29E80",
+      "technical_acceptance": "SEPARATORS_CHECKED_AT_THRESHOLD_ATLAS_PENDING"
     },
     {
       "id": "E06",
       "name": "pulso_evo",
-      "state": "QUEUED",
+      "state": "GENERATED_REVIEW_PENDING",
       "revision": "v01",
-      "tool": "chatgpt-image (manual)",
+      "tool": "image_gen integrado",
       "prompt_file": "prompts/E06_pulso_evo_prompt.txt",
       "expected_file": "E06_pulso_evo_v01.png",
       "generation_canvas": "1536x1024",
@@ -138,14 +172,24 @@
       "pilot": false,
       "attach_reference": "ref-existing-vfx.png",
       "human_visual_acceptance": "PENDING",
-      "runtime_admission": false
+      "runtime_admission": false,
+      "candidates": [
+        "E06_pulso_evo_v01.png",
+        "E06_pulso_evo_v02.png",
+        "E06_pulso_evo_v03.png"
+      ],
+      "attempts_used": 3,
+      "attempts_remaining": 0,
+      "recommended_file": "E06_pulso_evo_v03.png",
+      "recommended_sha256": "401899E46C3D6E0E14F805E452AB20E899F312D6C5B3B1F1A596D442FD223F22",
+      "technical_acceptance": "SEPARATORS_CHECKED_AT_THRESHOLD_ATLAS_PENDING"
     },
     {
       "id": "E07",
       "name": "explosao_fogo",
-      "state": "QUEUED",
+      "state": "GENERATED_REVIEW_PENDING",
       "revision": "v01",
-      "tool": "chatgpt-image (manual)",
+      "tool": "image_gen integrado",
       "prompt_file": "prompts/E07_explosao_fogo_prompt.txt",
       "expected_file": "E07_explosao_fogo_v01.png",
       "generation_canvas": "1536x1024",
@@ -159,7 +203,15 @@
       "pilot": false,
       "attach_reference": "ref-existing-vfx.png",
       "human_visual_acceptance": "PENDING",
-      "runtime_admission": false
+      "runtime_admission": false,
+      "candidates": [
+        "E07_explosao_fogo_v01.png"
+      ],
+      "attempts_used": 1,
+      "attempts_remaining": 2,
+      "recommended_file": "E07_explosao_fogo_v01.png",
+      "recommended_sha256": "A3B1D222BBED595E502DC1B0CC9157D50CF90BA4A315667CBD14D202AA10B34F",
+      "technical_acceptance": "SEPARATORS_CHECKED_AT_THRESHOLD_ATLAS_PENDING"
     },
     {
       "id": "D01",
@@ -195,9 +247,9 @@
     {
       "id": "D02",
       "name": "detonacao_magica",
-      "state": "QUEUED",
+      "state": "GENERATED_REVIEW_PENDING",
       "revision": "v01",
-      "tool": "chatgpt-image (manual)",
+      "tool": "image_gen integrado",
       "prompt_file": "prompts/D02_detonacao_magica_prompt.txt",
       "expected_file": "D02_detonacao_magica_v01.png",
       "generation_canvas": "1536x1024",
@@ -211,14 +263,22 @@
       "pilot": false,
       "attach_reference": "ref-existing-vfx.png",
       "human_visual_acceptance": "PENDING",
-      "runtime_admission": false
+      "runtime_admission": false,
+      "candidates": [
+        "D02_detonacao_magica_v01.png"
+      ],
+      "attempts_used": 1,
+      "attempts_remaining": 2,
+      "recommended_file": "D02_detonacao_magica_v01.png",
+      "recommended_sha256": "9043F364C77B1553CA03D8657DBBB9F397ACB21C7CF3129FAD732401AA47DC6D",
+      "technical_acceptance": "SEPARATORS_CHECKED_AT_THRESHOLD_ATLAS_PENDING"
     },
     {
       "id": "T01",
       "name": "tentaculos_emergem",
-      "state": "QUEUED",
+      "state": "GENERATED_REVIEW_PENDING",
       "revision": "v01",
-      "tool": "chatgpt-image (manual)",
+      "tool": "image_gen integrado",
       "prompt_file": "prompts/T01_tentaculos_emergem_prompt.txt",
       "expected_file": "T01_tentaculos_emergem_v01.png",
       "generation_canvas": "1536x1024",
@@ -232,7 +292,16 @@
       "pilot": false,
       "attach_reference": "ref-existing-vfx.png",
       "human_visual_acceptance": "PENDING",
-      "runtime_admission": false
+      "runtime_admission": false,
+      "candidates": [
+        "T01_tentaculos_emergem_v01.png",
+        "T01_tentaculos_emergem_v02.png"
+      ],
+      "attempts_used": 2,
+      "attempts_remaining": 1,
+      "recommended_file": "T01_tentaculos_emergem_v02.png",
+      "recommended_sha256": "4DD12AC267C4F321FB2C3BEC7876B0861EF89D838E41DB7A9D79190F0372B8E0",
+      "technical_acceptance": "SEPARATORS_CHECKED_AT_THRESHOLD_ATLAS_PENDING"
     },
     {
       "id": "T02",
@@ -268,9 +337,9 @@
     {
       "id": "H01",
       "name": "dano_heroi",
-      "state": "QUEUED",
+      "state": "GENERATED_REVIEW_PENDING",
       "revision": "v01",
-      "tool": "chatgpt-image (manual)",
+      "tool": "image_gen integrado",
       "prompt_file": "prompts/H01_dano_heroi_prompt.txt",
       "expected_file": "H01_dano_heroi_v01.png",
       "generation_canvas": "1536x1024",
@@ -284,7 +353,15 @@
       "pilot": false,
       "attach_reference": "ref-existing-vfx.png",
       "human_visual_acceptance": "PENDING",
-      "runtime_admission": false
+      "runtime_admission": false,
+      "candidates": [
+        "H01_dano_heroi_v01.png"
+      ],
+      "attempts_used": 1,
+      "attempts_remaining": 2,
+      "recommended_file": "H01_dano_heroi_v01.png",
+      "recommended_sha256": "7FC4FAC7E9C069012B9DDD4CDC94A99322C9FA00C446409B00D7F2685C70802D",
+      "technical_acceptance": "SEPARATORS_CHECKED_AT_THRESHOLD_ATLAS_PENDING"
     }
   ]
 }

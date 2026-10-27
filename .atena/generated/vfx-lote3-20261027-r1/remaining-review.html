@@ -1,0 +1,22 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Lote 3 — nove folhas restantes</title>
+<style>body{background:#17151d;color:#eee;font:16px system-ui;margin:30px}h1{margin-bottom:8px}p{max-width:1100px;line-height:1.5}section{border-top:1px solid #555;margin-top:32px;padding-top:12px}a{color:#bac5ff}img{width:100%;max-width:1200px;display:block}canvas{border:1px solid #666;margin:6px}label{margin-right:20px}button,select{font:inherit;padding:5px}small{display:block;color:#ccc}.preview{display:flex;align-items:center;gap:15px;flex-wrap:wrap}</style>
+<h1>Lote 3 — nove folhas restantes</h1><p>DRAFT · 14 candidatas · aceite visual pendente. Recomendadas: E01/E02/T01 v02, E06 v03, demais v01. Piloto aprovado preservado. E06 chegou a 3/3 tentativas.</p>
+<p><a href="remaining-generation-20261027.md">Recibo e ressalvas</a> · <a href="remaining-manifest-20261027.json">Versões e hashes</a> · <a href="remaining-source-audit-20261027.json">Auditoria</a> · <a href="pilot-review.html">Piloto</a></p>
+<label>Fundo <select id="bg"><option value="#17151d">Escuro</option><option value="#b7b9b0">Claro</option></select></label><button id="pause">Pausar prévias</button>
+<p>Prévia aditiva pela grade nominal, sem normalização. Partes altas podem ser cortadas e vizinhos podem aparecer: conferir a fonte integral abaixo. Prévias repetem a sequência para comparação, sem representar o tempo final do jogo. A preparação ainda deve alinhar os pivôs e normalizar a escala.</p><main id="sheets"></main>
+<script>
+const specs=[['E01_melee_fisico_evo_arco','v02',['v01','v02'],6],['E02_melee_rajada_evo','v02',['v01','v02'],6],['E04_orbe_arcano_evo','v01',['v01'],8],['E05_onda_cortante_evo','v01',['v01'],8],['E06_pulso_evo','v03',['v01','v02','v03'],6],['E07_explosao_fogo','v01',['v01'],6],['D02_detonacao_magica','v01',['v01'],6],['T01_tentaculos_emergem','v02',['v01','v02'],6],['H01_dano_heroi','v01',['v01'],6]];
+const previews=[];let paused=false,tick=0;
+for(const [name,recommended,versions,count] of specs){
+ const section=document.createElement('section');const title=document.createElement('h2');title.textContent=name;section.append(title);
+ const label=document.createElement('label');label.textContent='Versão ';const select=document.createElement('select');
+ for(const version of versions){const option=document.createElement('option');option.value=version;option.textContent=version+(version===recommended?' · recomendada':'');select.append(option)}select.value=recommended;label.append(select);section.append(label);
+ const open=document.createElement('a');open.textContent='Abrir PNG integral';section.append(open);
+ const im=new Image();const full=new Image();const modes=count===8?['voo','impacto']:['sequência'];const group=document.createElement('div');group.className='preview';
+ for(const mode of modes){const wrap=document.createElement('div');const text=document.createElement('small');text.textContent=mode+' · '+(count===8?'48':'220')+' px';wrap.append(text);const c=document.createElement('canvas');c.width=c.height=count===8?48:220;wrap.append(c);group.append(wrap);previews.push({c,im,count,mode})}section.append(group);
+ const details=document.createElement('details');const summary=document.createElement('summary');summary.textContent='Mostrar fonte completa';details.append(summary,full);section.append(details);
+ const set=()=>{const file=name+'_'+select.value+'.png';im.src=file;full.src=file;open.href=file};select.onchange=set;set();document.querySelector('main').append(section);
+}
+document.querySelector('#pause').onclick=()=>{paused=!paused;document.querySelector('#pause').textContent=paused?'Continuar prévias':'Pausar prévias'};
+setInterval(()=>{if(!paused)tick++;for(const {c,im,count,mode} of previews){if(!im.complete||!im.naturalWidth)continue;const ctx=c.getContext('2d');ctx.globalCompositeOperation='source-over';ctx.fillStyle=document.querySelector('#bg').value;ctx.fillRect(0,0,c.width,c.height);const cell=count===8?384:256;const n=count===8?(tick%4)+(mode==='impacto'?4:0):tick%6;const x=(count===8?n%4:n)*cell;const y=count===8?128+Math.floor(n/4)*cell:384;ctx.globalCompositeOperation='lighter';ctx.drawImage(im,x,y,cell,cell,0,0,c.width,c.height)}},140);
+</script></html>
