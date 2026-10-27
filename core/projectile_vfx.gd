@@ -25,6 +25,10 @@ const LIMIT := 80
 const EVOLVED_FAMILIES := {
 	&"orbe_radiante_evo": {"path": "res://assets/vfx/orbe_radiante_evo.png", "dtype": "radiante", "scale": 0.62, "pivot_x": 128.0,
 		"weapons": ["luz_mais_pura"]},
+	&"orbe_arcano_evo": {"path": "res://assets/vfx/orbe_arcano_evo.png", "dtype": "magico", "scale": 0.62, "pivot_x": 128.0,
+		"weapons": ["raio_da_ruina", "dominio_coletivo"]},
+	&"onda_cortante_evo": {"path": "res://assets/vfx/onda_cortante_evo.png", "dtype": "magico", "scale": 0.62, "pivot_x": 128.0,
+		"weapons": ["tempestade"]},
 }
 
 static func evolved_family_for(projectile: Dictionary) -> StringName:

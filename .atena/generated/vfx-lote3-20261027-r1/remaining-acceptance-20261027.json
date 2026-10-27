@@ -1,0 +1,98 @@
+{
+  "authorization": "Aceito visualmente a seleção recomendada: E01, E02, T01 v02; E06 v03; E04, E05, E07, D02, H01 v01, pelos hashes de remaining-source-audit-20261027.json. Pode preparar os atlas e integrar no código. (dono, 2026-10-27)",
+  "date": "2026-10-27",
+  "content_state": "DRAFT",
+  "technical_atlas_acceptance": "PENDING_PREPARATION_AUDIT",
+  "accepted": [
+    {
+      "id": "E01",
+      "revision": "v02",
+      "file": "E01_melee_fisico_evo_arco_v02.png",
+      "sha256": "3fdbbc2b38e2c85ac556f5cc9593f4431e37770ae9caa6ff4aab8660d65c3022",
+      "audit_sha256": "3fdbbc2b38e2c85ac556f5cc9593f4431e37770ae9caa6ff4aab8660d65c3022",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261027",
+      "runtime_admission": false
+    },
+    {
+      "id": "E02",
+      "revision": "v02",
+      "file": "E02_melee_rajada_evo_v02.png",
+      "sha256": "52952aa2c7d65e87dfd694fe41c6ba42d8460763603e1183ac2d14f8564cab3f",
+      "audit_sha256": "52952aa2c7d65e87dfd694fe41c6ba42d8460763603e1183ac2d14f8564cab3f",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261027",
+      "runtime_admission": false
+    },
+    {
+      "id": "T01",
+      "revision": "v02",
+      "file": "T01_tentaculos_emergem_v02.png",
+      "sha256": "4dd12ac267c4f321fb2c3bec7876b0861ef89d838e41db7a9d79190f0372b8e0",
+      "audit_sha256": "4dd12ac267c4f321fb2c3bec7876b0861ef89d838e41db7a9d79190f0372b8e0",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261027",
+      "runtime_admission": false
+    },
+    {
+      "id": "E06",
+      "revision": "v03",
+      "file": "E06_pulso_evo_v03.png",
+      "sha256": "401899e46c3d6e0e14f805e452ab20e899f312d6c5b3b1f1a596d442fd223f22",
+      "audit_sha256": "401899e46c3d6e0e14f805e452ab20e899f312d6c5b3b1f1a596d442fd223f22",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261027",
+      "runtime_admission": false
+    },
+    {
+      "id": "E04",
+      "revision": "v01",
+      "file": "E04_orbe_arcano_evo_v01.png",
+      "sha256": "c8a5d6780adb9e034c8e47a09da06de03cbd07301f4006538036f6ea2efb5920",
+      "audit_sha256": "c8a5d6780adb9e034c8e47a09da06de03cbd07301f4006538036f6ea2efb5920",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261027",
+      "runtime_admission": false
+    },
+    {
+      "id": "E05",
+      "revision": "v01",
+      "file": "E05_onda_cortante_evo_v01.png",
+      "sha256": "071d5490293a08559e2255d4599b6fbdd8c0385ac0c35dbe6b18d5e23df29e80",
+      "audit_sha256": "071d5490293a08559e2255d4599b6fbdd8c0385ac0c35dbe6b18d5e23df29e80",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261027",
+      "runtime_admission": false
+    },
+    {
+      "id": "E07",
+      "revision": "v01",
+      "file": "E07_explosao_fogo_v01.png",
+      "sha256": "a3b1d222bbed595e502dc1b0cc9157d50cf90ba4a315667cbd14d202aa10b34f",
+      "audit_sha256": "a3b1d222bbed595e502dc1b0cc9157d50cf90ba4a315667cbd14d202aa10b34f",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261027",
+      "runtime_admission": false
+    },
+    {
+      "id": "D02",
+      "revision": "v01",
+      "file": "D02_detonacao_magica_v01.png",
+      "sha256": "9043f364c77b1553ca03d8657dbbb9f397acb21c7cf3129fad732401aa47dc6d",
+      "audit_sha256": "9043f364c77b1553ca03d8657dbbb9f397acb21c7cf3129fad732401aa47dc6d",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261027",
+      "runtime_admission": false
+    },
+    {
+      "id": "H01",
+      "revision": "v01",
+      "file": "H01_dano_heroi_v01.png",
+      "sha256": "7fc4fac7e9c069012b9ddd4cdc94a99322c9fa00c446409b00d7f2685c70802d",
+      "audit_sha256": "7fc4fac7e9c069012b9ddd4cdc94a99322c9fa00c446409b00d7f2685c70802d",
+      "hash_verified": true,
+      "human_visual_acceptance": "APPROVED_OWNER_20261027",
+      "runtime_admission": false
+    }
+  ]
+}

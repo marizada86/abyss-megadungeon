@@ -13,12 +13,18 @@ const WEAPON_SHAPES := {
 }
 static var _frames: Dictionary = {}
 const RADIANT_WEAPONS := ["golpe_do_juizo", "martelo_da_gloria", "martelo_da_luz"]
+## Evoluções físicas (Lote 3): arte própria quando a folha existe; sem ela vale a arte da base de WEAPON_SHAPES.
+const EVOLVED_SHAPES := {"espada_do_receptaculo": "arco_fisico_evo", "maca_demolidora": "arco_fisico_evo", "esmagar_defesas": "arco_fisico_evo", "rajada_infinita": "rajada_evo"}
+## Alcance da arte a partir do centro da célula, em fração de 256 px (medido no pico de cada folha preparada).
+const REACH_FRACTION := {"arco_fisico_evo": 0.395, "rajada_evo": 0.35}
 const SHAPE_PATHS := {
 	"arco_radiante": "res://assets/vfx/melee_radiante_arco.png",
 	"corte_medio": "res://assets/vfx/melee_fisico_corte_medio.png",
 	"arco_largo": "res://assets/vfx/melee_fisico_arco_largo.png",
 	"estocada_longa": "res://assets/vfx/melee_estocada_longa.png",
 	"chicote": "res://assets/vfx/melee_chicote.png",
+	"arco_fisico_evo": "res://assets/vfx/melee_fisico_evo_arco.png",
+	"rajada_evo": "res://assets/vfx/melee_rajada_evo.png",
 }
 
 static func shape_for(weapon: String, dtype: String) -> String:
@@ -26,6 +32,8 @@ static func shape_for(weapon: String, dtype: String) -> String:
 		return "arco_radiante"
 	if weapon == "estocada_mistica":
 		return "estocada_longa" if dtype == "magico" else ""
+	if dtype == "fisico" and EVOLVED_SHAPES.has(weapon) and ResourceLoader.exists(String(SHAPE_PATHS[EVOLVED_SHAPES[weapon]])):
+		return String(EVOLVED_SHAPES[weapon])
 	return String(WEAPON_SHAPES.get(weapon, "")) if dtype == "fisico" else ""
 
 static func projection(direction: Vector2) -> Transform2D:
@@ -57,7 +65,7 @@ static func create_effect(event: Dictionary, color: Color) -> Node2D:
 	root.position = Iso.to_screen(event.pos) + Vector2(0, -18)
 	var sprite := AnimatedSprite2D.new()
 	sprite.sprite_frames = _frames[shape]
-	var radius_fraction := 0.45 if shape in ["estocada_longa", "chicote"] else 0.4
+	var radius_fraction := float(REACH_FRACTION.get(shape, 0.45 if shape in ["estocada_longa", "chicote"] else 0.4))
 	var reach_scale := float(event.range) * Iso.TILE_W * 0.5 * sqrt(2.0) / (256.0 * radius_fraction)
 	sprite.scale = Vector2.ONE * reach_scale
 	sprite.modulate = color

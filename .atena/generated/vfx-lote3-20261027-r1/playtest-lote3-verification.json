@@ -49,6 +49,34 @@
 			"passed": true
 		},
 		{
+			"id": "arcane_and_wind_evolved",
+			"passed": true
+		},
+		{
+			"id": "lote3_effects_spawned",
+			"passed": true
+		},
+		{
+			"id": "tentacle_cast_spawned",
+			"passed": true
+		},
+		{
+			"id": "detonation_magica_spawned",
+			"passed": true
+		},
+		{
+			"id": "hurt_effect_not_for_fog",
+			"passed": true
+		},
+		{
+			"id": "lote3_reduced_adds_none",
+			"passed": true
+		},
+		{
+			"id": "montage_nodes",
+			"passed": true
+		},
+		{
 			"id": "detonation_cap_after_stress",
 			"passed": true
 		},
@@ -60,25 +88,25 @@
 	"failures": [],
 	"frame_stats": {
 		"reduced": {
-			"fps": 120.0,
+			"fps": 6.0,
 			"ignorados": 0,
-			"lentos_33": 0,
-			"lentos_50": 0,
-			"ms_max": 8.8,
-			"ms_medio": 8.3,
-			"ms_p95": 8.8,
-			"ms_p99": 8.8,
+			"lentos_33": 180,
+			"lentos_50": 180,
+			"ms_max": 1030.8,
+			"ms_medio": 166.5,
+			"ms_p95": 200.0,
+			"ms_p99": 200.0,
 			"quadros": 180
 		},
 		"sprites": {
-			"fps": 120.0,
+			"fps": 6.0,
 			"ignorados": 0,
-			"lentos_33": 0,
-			"lentos_50": 0,
-			"ms_max": 8.4,
-			"ms_medio": 8.3,
-			"ms_p95": 8.4,
-			"ms_p99": 8.4,
+			"lentos_33": 180,
+			"lentos_50": 180,
+			"ms_max": 955.1,
+			"ms_medio": 166.2,
+			"ms_p95": 200.0,
+			"ms_p99": 200.0,
 			"quadros": 180
 		}
 	},

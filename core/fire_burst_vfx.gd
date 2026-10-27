@@ -69,3 +69,23 @@ func _draw() -> void:
 		var heat := fposmod(float(i) * 0.29, 1.0)
 		draw_circle(base + Vector2(0, -rise), size, Color(1.0, 0.45 + 0.45 * heat, 0.1 + 0.3 * heat, 0.9 * fade))
 		draw_line(base, base + Vector2(0, -rise), Color(1.0, 0.4, 0.1, 0.35 * fade), size * 0.8)
+
+## Lote 3 (E07): bola de fogo desenhada, somada ao desenho procedural (que continua marcando o raio do dano).
+const SPRITE_PATH := "res://assets/vfx/explosao_fogo.png"
+const SPRITE_ART_PX := 144.0   # largura da bola de fogo no pico, com a âncora na base (preparation-audit)
+const SPRITE_SECONDS := 0.6
+const SPRITE_SCALE_MIN := 0.9
+const SPRITE_SCALE_MAX := 1.5
+
+static func sprite_scale_for(radius: float) -> float:
+	return clampf(axes_for_radius(radius).x / SPRITE_ART_PX, SPRITE_SCALE_MIN, SPRITE_SCALE_MAX)
+
+static func create_sprite_effect(event: Dictionary, reduced_impact: bool = false) -> Node2D:
+	if not supports(event, reduced_impact):
+		return null
+	var sprite := VfxAtlas.sprite(SPRITE_PATH, false, SPRITE_SECONDS)
+	if sprite == null:
+		return null
+	sprite.scale = Vector2.ONE * sprite_scale_for(float(event.radius))
+	sprite.offset.y = 128.0 - 196.0
+	return VfxAtlas.one_shot(sprite, Iso.to_screen(event.pos))

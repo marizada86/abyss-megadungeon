@@ -5,6 +5,7 @@ func run() -> Array[String]:
 	var ground := Vector2(12, 9)
 	for dtype in DetonationVfx.KINDS:
 		var sheet := DetonationVfx.sheet_for(dtype)
+		if sheet.is_empty(): out.append("tipo sem folha cadastrada: " + dtype)
 		var texture := VfxAtlas.texture(DetonationVfx.path_for(sheet))
 		var effect := DetonationVfx.create_effect(2.2, ground, dtype)
 		if texture != null:
@@ -12,7 +13,7 @@ func run() -> Array[String]:
 			else:
 				if not effect.is_in_group(&"detonation_vfx"): out.append("efeito fora do grupo")
 				if effect.position != Iso.to_screen(ground): out.append("âncora da detonação " + dtype)
-				if absf((effect.get_child(0) as AnimatedSprite2D).scale.x - DetonationVfx.scale_for(2.2)) > 0.001: out.append("escala não acompanha o raio")
+				if absf((effect.get_child(0) as AnimatedSprite2D).scale.x - DetonationVfx.scale_for(2.2, dtype)) > 0.001: out.append("escala não acompanha o raio")
 				if (effect.get_child(0) as AnimatedSprite2D).sprite_frames.get_animation_loop(&"default"): out.append("detonação em laço")
 				effect.free()
 			var image := texture.get_image()

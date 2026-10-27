@@ -13,6 +13,15 @@ func run() -> Array[String]:
 	var before := zone.duplicate(true)
 	if not TentacleVfx.supports(zone) or TentacleVfx.supports(zone, true): out.append("suporte ou impacto reduzido")
 	if TentacleVfx.supports({"weapon": "cera_fervente", "radius": 2.0}) or TentacleVfx.supports({"owner": "enemy", "weapon": "colar_dos_tentaculos", "radius": 2.0}) or TentacleVfx.supports({"weapon": "colar_dos_tentaculos", "radius": 0.0}): out.append("consumer indevido")
+	# emersão (T01) no evento da zona; o laço entra com atraso quando a folha existe
+	var cast := TentacleVfx.create_cast({"owner": "hero", "weapon": "colar_dos_tentaculos", "radius": 2.4, "pos": Vector2(7, 6)})
+	if cast == null: out.append("sem emersão dos tentáculos")
+	else:
+		if not cast.is_in_group(&"tentacle_vfx"): out.append("emersão fora do grupo")
+		if cast.position != Iso.to_screen(Vector2(7, 6)): out.append("âncora da emersão")
+		if (cast.get_child(0) as AnimatedSprite2D).sprite_frames.get_animation_loop(&"default"): out.append("emersão em laço")
+		cast.free()
+	if TentacleVfx.create_cast({"weapon": "cera_fervente", "radius": 2.0}) != null or TentacleVfx.create_cast({"weapon": "colar_dos_tentaculos", "radius": 2.0}, true) != null or TentacleVfx.create_cast({"weapon": "colar_dos_tentaculos", "radius": 2.0}, false, TentacleVfx.LIMIT) != null: out.append("emersão em consumer indevido, impacto reduzido ou acima do limite")
 	var entry := TentacleVfx.create_zone(zone)
 	if entry.is_empty(): out.append("sem laço de tentáculos")
 	else:
@@ -20,6 +29,9 @@ func run() -> Array[String]:
 		if not sprite.sprite_frames.get_animation_loop(&"default"): out.append("laço deveria repetir")
 		if sprite.offset.y >= 0.0: out.append("o laço ancora na base")
 		if absf(sprite.scale.x - TentacleVfx.scale_for(2.4)) > 0.001: out.append("escala não acompanha o raio")
+		if absf(float(entry.delay) - TentacleVfx.LOOP_DELAY) > 0.0001: out.append("o laço deveria esperar a emersão")
+		TentacleVfx.update(entry)
+		if sprite.modulate.a != 0.0: out.append("o laço nasce invisível, atrás da emersão")
 		entry.born = int(entry.born) - 2000
 		TentacleVfx.update(entry)
 		if absf(sprite.modulate.a - TentacleVfx.MAX_ALPHA) > 0.001: out.append("opacidade cheia no meio da vida")

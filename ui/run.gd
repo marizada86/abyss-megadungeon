@@ -847,6 +847,9 @@ func _consume_events() -> void:
 					_shake = 0.6
 				if _danger != null:
 					_danger.on_hurt(float(ev.amount), battle.hero.max_hp, bool(ev.get("continuous", false)), Game.reduced_impact())
+				var hurt_fx := HurtVfx.create_effect(ev, Game.reduced_impact(), get_tree().get_nodes_in_group(&"hurt_vfx").size())
+				if hurt_fx != null:
+					fx.add_child(hurt_fx)
 				_float_text(at + Vector2(0, -58), "-%d" % ev.amount, Color(1.0, 0.35, 0.3), DamageFeedback.HURT_SIZE, false, Color(0, 0, 0), false, DamageFeedback.AUX_OUTLINE)
 			"text":
 				var cue := String(ev.text).to_lower()
@@ -876,6 +879,9 @@ func _consume_events() -> void:
 			"zone":
 				Sfx.play_weapon(String(ev.get("weapon", "")), "combat.zone")
 				var zone_theme: Dictionary = ev.get("visual_theme", _divine_theme())
+				var tentacle_cast := TentacleVfx.create_cast(ev, Game.reduced_impact(), get_tree().get_nodes_in_group(&"tentacle_vfx").size())
+				if tentacle_cast != null:
+					fx.add_child(tentacle_cast)
 				var wax_cast := WaxVfx.create_cast(ev, Game.reduced_impact())
 				if wax_cast != null:
 					fx.add_child(wax_cast)
@@ -1281,6 +1287,9 @@ func _nova_effect(event: Dictionary) -> void:
 		pulse = HourglassVfx.create_effect(event, color, Game.reduced_impact())
 	if pulse == null:
 		pulse = FireBurstVfx.create_effect(event, Game.reduced_impact())
+		var burst_art := FireBurstVfx.create_sprite_effect(event, Game.reduced_impact())
+		if burst_art != null:
+			fx.add_child(burst_art)
 	if pulse == null and event.get("dtype", "") == "fogo":
 		color = _dcol("fogo")   # impacto reduzido: o anel simples ao menos lê como fogo
 	if pulse != null:
