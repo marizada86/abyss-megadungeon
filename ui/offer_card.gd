@@ -68,6 +68,15 @@ func setup(index: int, o: Dictionary, name_color: Color, icon_tex: Texture2D) ->
 
 const CARD_SIZE := Vector2(264, 440)   # +30: com a etiqueta da escola o resumo dos efeitos (o que o item faz) ficava sem altura e sumia
 const COMPACT_SIZE := Vector2(264, 232)   # o conteúdo (selo + faixa de preço em duas linhas) pede ~229 px; com 222 estourava pela moldura de baixo
+## Cartão completo estreito (5 ofertas, ~217 px): selo e faixa de preço não cabem numa linha e quebram em duas (+29 px). A altura
+## sobe o que a quebra consome, senão a faixa de preço encosta na tecla assentada na moldura de baixo.
+const NARROW_WIDTH := 250.0
+const NARROW_EXTRA := 20.0
+
+static func height_for(width: float, compact_mode: bool) -> float:
+	if compact_mode:
+		return COMPACT_SIZE.y
+	return CARD_SIZE.y + (NARROW_EXTRA if width < NARROW_WIDTH else 0.0)
 const ART_DIR := "res://assets/ui/oferta/"
 const GOLD := Color(0.93, 0.78, 0.4)
 const RARITY_GEM := {"comum": Color(0.62, 0.62, 0.66), "magico": Color(0.35, 0.6, 1.0), "incomum": Color(0.4, 0.85, 0.5), "raro": Color(1.0, 0.7, 0.25), "unico": Color(0.78, 0.45, 1.0)}
@@ -242,7 +251,7 @@ func setup_card(i: int, o: Dictionary, name_color: Color, icon_tex: Texture2D, w
 		_accent = RandomEvents.color(String(o.ev))
 	elif _rarity != "" and kind in ["shop_item", "shop_item_up", "item_swap", "donate"]:
 		_accent = Items.rarity_color(_rarity)
-	custom_minimum_size = Vector2(width, COMPACT_SIZE.y if compact else CARD_SIZE.y)
+	custom_minimum_size = Vector2(width, height_for(width, compact))
 	size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	focus_mode = Control.FOCUS_ALL
 	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
@@ -471,7 +480,7 @@ func _chips_row(badge: Control, level_chip: String, price: String, price_col: Co
 			var split := price.rfind(": ")
 			if split > 0:
 				# "vende Nome Longo: 20": só o nome cede (reticências); o valor fica sempre visível e a faixa tem largura fixa
-				plate.custom_minimum_size.x = 176.0
+				plate.custom_minimum_size.x = 140.0 if compact else minf(176.0, custom_minimum_size.x - 64.0)   # nunca mais larga que a coluna útil (cartão estreito: 157 px)
 				price_label.text = price.substr(split)
 				var name_label := _label(price.substr(0, split), 16, price_col)
 				name_label.clip_text = true
@@ -580,12 +589,19 @@ func _build_compact(col: VBoxContainer, title: String, category: String, ribbon:
 	col.add_child(top)
 	var plate_col := VBoxContainer.new()
 	plate_col.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	plate_col.add_child(_plate(icon_tex, 76.0, 60.0, glyph_text))
+	plate_col.add_child(_plate(icon_tex, 70.0, 56.0, glyph_text))
 	if ribbon != "":
 		var rb := CenterContainer.new()
 		rb.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		rb.add_child(_pill(ribbon, Color(style.ribbon_col)))
 		plate_col.add_child(rb)
+	# O selo (▲▼ ou "Nv N") mora aqui, sob a fita: na base ele e a faixa de preço ocupavam duas linhas e estouravam a moldura.
+	var tag: Control = badge if badge != null else (_label(level_chip, 16, COLOR_UP) if level_chip != "" else null)
+	if tag != null:
+		var tag_row := CenterContainer.new()
+		tag_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		tag_row.add_child(tag)
+		plate_col.add_child(tag_row)
 	top.add_child(plate_col)
 	var text_col := VBoxContainer.new()
 	text_col.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -598,8 +614,7 @@ func _build_compact(col: VBoxContainer, title: String, category: String, ribbon:
 	name_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	text_col.add_child(name_label)
 	var category_label := _label(category, 13, Color(_accent.r, _accent.g, _accent.b, 0.85))
-	category_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	category_label.max_lines_visible = 2
+	category_label.clip_text = true   # uma linha só: com a coluna de ~74 px a categoria quebrava em duas e roubava a altura do resumo
 	category_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	text_col.add_child(category_label)
 	if not _school.is_empty():
@@ -609,7 +624,7 @@ func _build_compact(col: VBoxContainer, title: String, category: String, ribbon:
 		text_col.add_child(chip_row)
 	var brief := _label(brief_text, 13, Color(0.9, 0.9, 0.9))
 	brief.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	brief.max_lines_visible = 3
+	brief.max_lines_visible = 2 if not _school.is_empty() else 3   # a etiqueta de escola ocupa uma linha da altura do cartão
 	brief.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	brief.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	text_col.add_child(brief)
@@ -617,7 +632,7 @@ func _build_compact(col: VBoxContainer, title: String, category: String, ribbon:
 	var base := HBoxContainer.new()
 	base.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	base.add_theme_constant_override("separation", 8)
-	var chips := _chips_row(badge, level_chip, price, price_col)
+	var chips := _chips_row(null, "", price, price_col)
 	chips.alignment = FlowContainer.ALIGNMENT_BEGIN
 	chips.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	base.add_child(chips)
