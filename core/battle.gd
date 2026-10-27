@@ -2203,8 +2203,13 @@ func _start_boss_intro(e: Enemy) -> void:
 	var presentation := _boss_presentation(e.id)
 	if presentation.is_empty():
 		return
-	boss_intro_remaining = clampf(float(presentation.get("pause_seconds", 1.0)), 0.8, 1.2)
+	# A simulação fica parada pelo menos enquanto a arte da apresentação está na tela.
+	boss_intro_remaining = maxf(clampf(float(presentation.get("pause_seconds", 1.0)), 0.8, 1.2), intro_overlay_seconds(presentation))
 	events.append({"type": "boss_intro", "enemy": e, "presentation": presentation})
+
+## Quanto tempo o PNG de apresentação do chefe fica visível (a UI e a pausa da simulação usam o mesmo valor).
+static func intro_overlay_seconds(presentation: Dictionary) -> float:
+	return clampf(float(presentation.get("overlay_seconds", 1.8)), 1.5, 2.0)
 
 ## MEC-060: toda fase com próximo mapa recebe a Maré após o chefe, com o padrão de data/fog.json;
 ## `fog` em boss_presentations.json sobrescreve campo a campo. A frente anda na mesma velocidade (tiles/s) em 60x60 e 84x84.

@@ -38,6 +38,7 @@ func _alive_with_boss(l2: bool) -> int:
 	b.qa_prepare({"target_state": "boss", "prelude_seconds": 0.5, "level": 8})
 	var t := 0.0
 	while t < 22.0:
+		b.boss_intro_remaining = minf(b.boss_intro_remaining, 1.0)   # a medida foi calibrada com 1 s de pausa; a arte agora segura mais
 		b.hero.hp = b.hero.max_hp
 		if b.state == "levelup" or b.state == "altar" or b.state == "item_offer":
 			b.choose(0)

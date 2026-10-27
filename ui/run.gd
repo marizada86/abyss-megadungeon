@@ -380,7 +380,7 @@ func _show_boss_intro(ev: Dictionary) -> void:
 	_boss_intro_panel.modulate.a = 0.0
 	_boss_intro_panel.visible = true
 	hud.modal_overlay = true   # esconde o botão da habilidade (Q/RMB) e os marcadores, que apareciam por trás do véu
-	var duration := clampf(float(presentation.get("overlay_seconds", 1.8)), 1.5, 2.0)
+	var duration := Battle.intro_overlay_seconds(presentation)
 	var tween := create_tween()
 	tween.tween_property(_boss_intro_panel, "modulate:a", 1.0, 0.16)
 	tween.tween_interval(maxf(0.1, duration - 0.46))
@@ -643,6 +643,8 @@ func _physics_process(dt: float) -> void:
 	if battle.stage_changed:
 		_load_stage()
 		battle.hero.pos = Iso.to_ground(start_pos)
+	if battle.boss_intro_remaining > 0.0:
+		steps = mini(steps, 1)   # a pausa da apresentação acompanha o relógio da arte, mesmo com o jogo acelerado
 		await _record_stage_reached(battle.stage_id)
 	await _process_hq_milestones()
 	_sync()

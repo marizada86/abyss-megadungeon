@@ -1052,6 +1052,9 @@ func run() -> Array:
 	if intro_count != 1 or intro.boss_intro_remaining <= 0.0 or intro.time != before_intro_time:
 		out.append("introducao do chefe deveria pausar a simulacao uma unica vez")
 	intro.step(Vector2.ZERO, 0.6)
+	if intro.boss_intro_remaining <= 0.0:
+		out.append("introducao do chefe nao pode terminar antes da arte sair da tela (1.1 s)")
+	intro.step(Vector2.ZERO, 1.0)
 	if not intro.events.any(func(ev): return ev.type == "boss_intro_end") or not intro.events.any(func(ev): return ev.type == "telegraph" and ev.enemy_id == intro.boss.id):
 		out.append("introducao do chefe deveria terminar com telegrafo")
 

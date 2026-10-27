@@ -22,6 +22,7 @@ func _boss_battle(stage_id: String) -> Battle:
 		b.step(Vector2.ZERO, 0.05)
 		if b.boss != null:
 			break
+	b.boss_intro_remaining = 0.0   # todo chefe tem apresentação; estes testes medem as mecânicas, não a pausa
 	for e in b.enemies:
 		if e != b.boss:
 			b._kill(e)
