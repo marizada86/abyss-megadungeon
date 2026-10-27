@@ -66,8 +66,8 @@ func setup(index: int, o: Dictionary, name_color: Color, icon_tex: Texture2D) ->
 ## `oferta_cartao.png` (280×400, nove fatias com margem 28) e `oferta_placa_icone.png` (96×96). Sem eles, valem os placeholders.
 ## Com 5 ofertas ou mais o HUD usa a versão compacta (264×196, ícone à esquerda) em duas fileiras.
 
-const CARD_SIZE := Vector2(264, 396)
-const COMPACT_SIZE := Vector2(264, 222)
+const CARD_SIZE := Vector2(264, 410)
+const COMPACT_SIZE := Vector2(264, 232)   # o conteúdo (selo + faixa de preço em duas linhas) pede ~229 px; com 222 estourava pela moldura de baixo
 const ART_DIR := "res://assets/ui/oferta/"
 const GOLD := Color(0.93, 0.78, 0.4)
 const RARITY_GEM := {"comum": Color(0.62, 0.62, 0.66), "magico": Color(0.35, 0.6, 1.0), "incomum": Color(0.4, 0.85, 0.5), "raro": Color(1.0, 0.7, 0.25), "unico": Color(0.78, 0.45, 1.0)}
@@ -254,7 +254,7 @@ func setup_card(i: int, o: Dictionary, name_color: Color, icon_tex: Texture2D, w
 	for side in ["left", "right"]:
 		margin.add_theme_constant_override("margin_" + side, 36 if compact else 30)
 	margin.add_theme_constant_override("margin_top", 28 if compact else 20)
-	margin.add_theme_constant_override("margin_bottom", 30 if compact else 30)
+	margin.add_theme_constant_override("margin_bottom", 26 if compact else 44)   # cheio: a tecla (assentada na moldura) não pode tocar a faixa de preço
 	add_child(margin)
 	var col := VBoxContainer.new()
 	col.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -434,7 +434,7 @@ func _chips_row(badge: Control, level_chip: String, price: String, price_col: Co
 			var plate := PanelContainer.new()
 			plate.name = "PricePlate"
 			plate.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			plate.custom_minimum_size = Vector2(120, 36)
+			plate.custom_minimum_size = Vector2(120 if compact else 108, 36)   # cheio: selo + faixa na mesma linha, sem encostar nos ornamentos dos cantos
 			plate.add_theme_stylebox_override("panel", price_style)
 			var split := price.rfind(": ")
 			if split > 0:
@@ -586,7 +586,10 @@ func _build_compact(col: VBoxContainer, title: String, category: String, ribbon:
 	chips.alignment = FlowContainer.ALIGNMENT_BEGIN
 	chips.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	base.add_child(chips)
-	base.add_child(_key_chip(i))
+	var key_chip := _key_chip(i)
+	key_chip.custom_minimum_size = Vector2(0, 36)   # mesma altura da faixa de preço: a tecla fica centrada nela, não no topo
+	key_chip.size_flags_vertical = Control.SIZE_SHRINK_END
+	base.add_child(key_chip)
 	col.add_child(base)
 
 func _frame_style(state: String) -> StyleBox:
