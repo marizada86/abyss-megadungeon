@@ -123,7 +123,8 @@
         {"req": "base", "text": "Ele treina para reconstruir o Amuleto da Luz e estima mais uma semana de trabalho.", "fonte": "03_NPCs/Erik Blackthorn, Sessão 14"},
         {"req": "base", "text": "Idade aproximada em 1690: 26 anos.", "fonte": "03_NPCs/Erik Blackthorn, DEC-IDADES-HELION-20261019-r2"},
         {"req": "bio", "text": "Recebeu a Lâmina da Digestão.", "fonte": "03_NPCs/Erik Blackthorn, Sessão 17; 06_Itens/Lâmina da Digestão"},
-        {"req": "bio", "text": "Procurado por ter incendiado navios na invasão das Docas, raspou a cabeça e a barba para não ser reconhecido.", "fonte": "03_NPCs/Erik Blackthorn, Sessão 20 parte 2"}
+        {"req": "bio", "text": "Procurado por ter incendiado navios na invasão das Docas, raspou a cabeça e a barba para não ser reconhecido.", "fonte": "03_NPCs/Erik Blackthorn, Sessão 20 parte 2"},
+        {"req": "bio", "text": "O pai de Erik, Frank Blackthorn, forjou o Amuleto da Luz original ao lado de Sylvaris. A mãe, Bárbara, fazia parte do antigo grupo de Helion.", "fonte": "03_NPCs/Frank Blackthorn e Bárbara Blackthorn, Sessão 13"}
       ]
     }
   },
@@ -584,7 +585,7 @@
       "onde": ["pilares"],
       "quem": "Monstruosidade grande e aberrante, a última do primeiro arco. Ocupa quatro espaços no grid.",
       "curiosities": [
-        {"req": "base", "text": "Resiste a dano psíquico e a armas não mágicas, e é imune a Enfeitiçado e Amedrontado. Só o dano radiante a fura.", "fonte": "07_Criaturas/A Síntese Abissal"},
+        {"req": "base", "text": "Na mesa, resistia a dano psíquico e a armas não mágicas, e era imune a Enfeitiçado e Amedrontado. Só o dano radiante a furava. No jogo, o psíquico não a atinge.", "fonte": "07_Criaturas/A Síntese Abissal; divergência entre o jogo e o Vault"},
         {"req": "hq:hqn_10", "text": "Carrega a presença de Ghaunadaur, que causa medo em área, e invoca e absorve slimes.", "fonte": "07_Criaturas/A Síntese Abissal"},
         {"req": "hq:hqn_10", "text": "Usou as runas do salão para erguer o Castelo da Fome à superfície.", "fonte": "07_Criaturas/A Síntese Abissal"},
         {"req": "boss", "text": "Foi derrotada sem nenhuma morte entre os personagens-jogadores. A última gota de Slime deixou a cabeça de Ailalore, que acordou livre.", "fonte": "07_Criaturas/A Síntese Abissal"}
@@ -654,6 +655,7 @@
       "quem": "Artefato original criado por Sylvaris e Frank Blackthorn. Ilumina o caminho na névoa e protege Erik de seus efeitos.",
       "curiosities": [
         {"req": "base", "text": "Foi destruído. Para refazê-lo são necessários uma lasca de Ailalore, Erik como artesão treinado e o Martelo da Glória.", "fonte": "06_Itens/Amuleto da Luz, Sessão 13"},
+        {"req": "base", "text": "Frank era o pai de Erik.", "fonte": "03_NPCs/Frank Blackthorn, Sessão 13"},
         {"req": "base", "text": "O caderno achado na Igreja das Sombras atribuía o amuleto a Bromnor. A decisão canônica posterior dá a autoria a Sylvaris e a Frank Blackthorn.", "fonte": "06_Itens/Amuleto da Luz; DEC-AMULETO-ARANIS-20261018-r1"}
       ]
     },

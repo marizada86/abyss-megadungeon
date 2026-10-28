@@ -61,6 +61,10 @@ static func detail(category: String, id: String, known: bool, profile: Profile =
 			var d: Dictionary = Data.table("enemies").get(id, {})
 			if d.is_empty():
 				return UNKNOWN_DETAIL
+			if id.ends_with("_quebravel"):   # objeto quebrável: sem ataque, velocidade nem resistências para mostrar
+				var qlore := enemy_lore(id) if profile != null else {}
+				var qtext := "[b]%s[/b]\nPV %d · quebra e não ataca\n\n%s" % [d.name, d.hp, String(qlore.quem) if not qlore.is_empty() else d.get("note", "")]
+				return qtext + enemy_extra(profile, id, qlore) if not qlore.is_empty() else qtext
 			var lore := enemy_lore(id) if profile != null else {}
 			var text := "[b]%s[/b]\nPV %d · CA %d (%d%%) · CAM %d (%d%%) · dano %s · velocidade %.1f\n\n%s\nResistências: %s" % [d.name, d.hp, d.ca, clampi((int(d.ca) - 10) * 3, 0, 30), d.cam, clampi((int(d.cam) - 10) * 3, 0, 30), d.atk, float(d.speed), String(lore.quem) if not lore.is_empty() else d.get("note", ""), resist_text(d)]
 			return text + enemy_extra(profile, id, lore) if not lore.is_empty() else text

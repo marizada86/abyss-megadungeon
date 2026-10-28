@@ -190,6 +190,25 @@ func run() -> Array:
 	if kraken.find("Aboleth") < 0 or kraken.find("segundo Kraken") >= 0:
 		out.append("Kraken: Aboleth (base) sim, o da Sessão 21 só depois da HQ final")
 
+
+	# quebráveis: detalhe enxuto, com e sem perfil (a pausa não passa perfil)
+	for with_profile in [true, false]:
+		var urn := Catalog.detail("enemies", "urna_funeraria_quebravel", true, Profile.new() if with_profile else null)
+		if urn.find("quebra e não ataca") < 0 or urn.find("velocidade") >= 0 or urn.find("dano") >= 0 or urn.find("Resistências") >= 0:
+			out.append("quebrável: só PV e 'quebra e não ataca', sem dano, velocidade nem resistências (%s)" % urn.left(120))
+	if Catalog.detail("enemies", "urna_funeraria_quebravel", true, Profile.new()).find(String(elore.urna_funeraria_quebravel.quem)) < 0:
+		out.append("quebrável com perfil: deveria trazer o 'quem'")
+	# Erik: os pais entram só com a biografia liberada
+	var erik_plain := Catalog.hero_detail(Profile.new({"achievements": {"ach_dummy": true}}), "erik")
+	if erik_plain.find("Frank Blackthorn") >= 0:
+		out.append("Erik: os pais só aparecem com a biografia liberada")
+	var erik_bio := Catalog.hero_detail(Profile.new({"achievements": {"bio_erik": true, "ecos_docas": true}}), "erik")
+	if erik_bio.find("Frank Blackthorn") < 0:
+		out.append("Erik: com a biografia, o pai Frank Blackthorn deveria aparecer")
+	# Síntese: a divergência da mesa fica escrita
+	if Catalog.detail("enemies", "sintese_abissal", true, Profile.new()).find("No jogo, o psíquico não a atinge") < 0:
+		out.append("Síntese: deveria dizer que no jogo o psíquico não a atinge")
+
 	# "Resistências" não pode mostrar o dicionário cru dos dados
 	var sint := Catalog.detail("enemies", "sintese_abissal", true, Profile.new())
 	if sint.find("{") >= 0 or sint.find("dano recebido: ") < 0 or sint.find("radiante 100%") < 0:

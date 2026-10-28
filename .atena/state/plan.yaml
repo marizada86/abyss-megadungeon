@@ -3142,3 +3142,14 @@ codex_lore_20261027:
     common_files: [data/codex_lore.json, core/catalog.gd, ui/menu.gd, ui/menu.tscn, tests/test_codex_lore.gd, tests/test_codex_quartel.gd, tests/test_quartel.gd, tools/codex_capture.gd]
     save_changes: none
     visual_acceptance_codex_items_weapons: "ACEITO (2026-10-27)"
+  minor_pendencies_20261027:
+    status: ADJUSTED_UNCOMMITTED
+    interview: "Atena, ajustar as pendências menores (2026-10-27); respostas: pais do Erik sim, quebráveis enxutos sim, Síntese dizer a divergência, Colar de visão deixar como está, HQs de Arlindo e Nyrelia não verificar"
+    applied: [erik_pais_frank_e_barbara, amuleto_frank_pai_de_erik, quebraveis_enxutos_PV_e_quebra_e_nao_ataca, sintese_na_mesa_resistia_no_jogo_psiquico_nao_atinge]
+    verification: "test_codex_lore, test_catalog, test_quartel, test_codex_quartel, test_pause_menu 0 falhas; run_all 0 falhas; audit_projeto 0 erros 0 avisos; captura do quebrável conferida"
+    left_as_is:
+      colar_visao_nota_astherion: "o jogo já usa Lodo de Astherion na luta da Síntese e nas crônicas; Códex segue sem citá-lo (W-3)"
+      hqs_arlindo_nyrelia_sem_nome: "limitação conhecida; 252 imagens de HQ não foram inspecionadas"
+    investigated_no_change:
+      test_l5_boss_mechanics: "falhou 1 vez em ~50 execuções; 0 falhas em 30 execuções isoladas e 7 rodadas completas (3 com APPDATA novo). Não reproduzido; suspeita sem prova: sorteio global (Array.shuffle em core/boss_mechanics.gd:239) ou dano rolado menor que o bônus -20. Reabrir se voltar, anotando seed e o log."
+      test_quartel_recurso_em_uso: "causa: AudioStreamMP3 ui.click_01.mp3 mantido pelo autoload Sfx ao encerrar o runner headless; test_pause_menu (anterior ao Códex) tem o mesmo aviso e test_quartel não; dívida de ambiente já registrada (GODOT_WINDOWS_CERTIFICATE_STORE_AND_RENDER_CLEANUP_MESSAGES); sem defeito do Códex"
