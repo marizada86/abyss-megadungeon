@@ -68,7 +68,7 @@ func run() -> Array:
 		if menu.codex_list.get_item_text(zumbi_at) != String(expected[zumbi_at].name):
 			out.append("o nome do inimigo conhecido deveria vir do Catalog")
 		menu._show_codex(zumbi_at)
-		if menu.codex_text.text != Catalog.detail("enemies", "zumbi", true):
+		if menu.codex_text.text != Catalog.detail("enemies", "zumbi", true, Game.profile):
 			out.append("o detalhe do códex deveria ser o do Catalog")
 	var locked := 0 if zumbi_at != 0 else 1
 	if menu.codex_list.get_item_text(locked) != Catalog.UNKNOWN_NAME:

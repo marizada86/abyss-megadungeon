@@ -1,0 +1,852 @@
+{
+  "_fonte": "Textos do Códex do Quartel. Origem: Vault de Nottgard (F:\\dev\\nottgard-vault), rascunhos aceitos em .atena/vault/drafts/CODEX-HEROES-DRAFT-20261027-r1.md. Só fatos conhecidos pelo grupo; sem cânone do mestre. `req`: base (herói liberado), bio (biografia liberada) ou hq:<id> (HQ já vista). `fonte` é nota de auditoria e não aparece ao jogador.",
+  "heroes": {
+    "durvall": {
+      "hqs": ["hqn_01", "hqn_21"],
+      "curiosities": [
+        {"req": "base", "text": "O Livrinho, um livro animado, chama Durvall de “amiguinho” e pede para ir com o grupo. Só os aventureiros conseguem vê-lo.", "fonte": "06_Itens/Livrinho"},
+        {"req": "base", "text": "No armazém das Docas, Durvall achou a carta sobre o Messias, meio queimada, ligada a quem procura ou fabrica um salvador.", "fonte": "12_Lore/Carta sobre o Messias"},
+        {"req": "base", "text": "A névoa não o afetou na aproximação das Docas, mas outras cenas o mostram em transe. O grupo nunca o tratou como imune.", "fonte": "02_Personagens/Durvall, Conhecimento do grupo e limites"},
+        {"req": "bio", "text": "Duas lembranças voltaram em Dagruve: o Jardim Vermelho e um homem faminto. O mestre deixou o lugar e a data da segunda sem resposta, de propósito.", "fonte": "02_Personagens/Durvall, Sessão 07"}
+      ]
+    },
+    "brook": {
+      "hqs": ["hqn_19", "hqn_21"],
+      "curiosities": [
+        {"req": "base", "text": "A armadura completa de Brook faz tanto barulho que chamou a atenção das gárgulas da Biblioteca Corrompida.", "fonte": "02_Personagens/Brook França, Sessão 04"},
+        {"req": "base", "text": "A carta de Bromnor, entregue por Gilly, admite o que Brook dizia: havia algo errado em Fateridge. Bromnor também não sentia mais a presença do próprio martelo.", "fonte": "06_Itens/Carta de Bromnor para Brook"},
+        {"req": "base", "text": "Brook entende língua de sinais.", "fonte": "02_Personagens/Brook França, Sessões 16 a 24"},
+        {"req": "bio", "text": "Entre os papéis do grupo, Brook achou uma cópia autenticada da carta de trégua de Helion, de 1400, sobre Dagruve e o território humano.", "fonte": "06_Itens/Carta de Trégua de 1400"},
+        {"req": "hq:hqn_19", "text": "No depoimento público em Fateridge, o martelo falhou diante de todos e só voltou a brilhar quando Brook pediu perdão pelo juramento a Lliira.", "fonte": "02_Personagens/Brook França, Sessão 21"},
+        {"req": "hq:hqn_21", "text": "Depois do arco, Brook foi eleito Conselheiro de Fateridge.", "fonte": "02_Personagens/Brook França, Sessão 24"}
+      ]
+    },
+    "maelor": {
+      "hqs": ["hqn_19", "hqn_20"],
+      "curiosities": [
+        {"req": "base", "text": "Antes de se conhecerem em pessoa, Maelor e Sylas trocaram cartas por uns três meses, investigando os cultistas de Fateridge.", "fonte": "02_Personagens/Maelor, Relações"},
+        {"req": "base", "text": "Na biblioteca, a Ampulheta do Silêncio Eterno chamou a atenção de Maelor. O grupo ficou com ela, com a permissão de Helion.", "fonte": "06_Itens/Ampulheta do Silêncio Eterno"},
+        {"req": "base", "text": "O diário de manutenção das gárgulas lista os nomes que o grupo usou para desativá-las.", "fonte": "06_Itens/Diário de Manutenção das Gárgulas"},
+        {"req": "bio", "text": "Foi Maelor quem deu o golpe final na Arch-hag das Docas, e a essência de Sendrinah entrou na arma dele.", "fonte": "02_Personagens/Maelor, Sessão 13"},
+        {"req": "bio", "text": "Com um desejo, trouxe a Luz Mais Pura que Thalion guardava e levou o brilho até Aila, que acordou. Ainda guardou um segundo desejo.", "fonte": "02_Personagens/Maelor, Sessão 14; 06_Itens/Luz Mais Pura de Thalion"},
+        {"req": "hq:hqn_20", "text": "O pai de Maelor é Aranis Vellen, do antigo grupo de Helion. Ele cortou contato com os humanos para proteger o filho. Arondir Vellen é irmão de Maelor.", "fonte": "02_Personagens/Maelor, Sessões 13 e 14"}
+      ]
+    },
+    "sylas": {
+      "hqs": ["hqn_02", "hqn_14", "hqn_18"],
+      "curiosities": [
+        {"req": "base", "text": "O Ritual de Remoção, nas Docas, levou sangue celestial de Kayron, sangue insano da criatura e um osso de galinha. Sylas ficou desnorteado depois.", "fonte": "02_Personagens/Sylas Malafaia, Sessão 02"},
+        {"req": "base", "text": "Sylas conseguiu roupas com capuz para o grupo atravessar a área humana de Fateridge.", "fonte": "02_Personagens/Sylas Malafaia, Sessão 03"},
+        {"req": "base", "text": "O colar de visão verdadeira do Santuário dá visão da verdade a quem o usa. Sylas o ativou contra Willie e depois diante da estrela.", "fonte": "06_Itens/Colar de visão verdadeira do Santuário"},
+        {"req": "bio", "text": "Foi Sylas quem fez o ritual que fechou a Tarn em Dagruve e encerrou a névoa na cidade.", "fonte": "02_Personagens/Sylas Malafaia, Sessão 08"},
+        {"req": "hq:hqn_14", "text": "A aura de Nyrelia é amarela e lembra Mask. A névoa do santuário é roxa. São duas coisas diferentes.", "fonte": "02_Personagens/Sylas Malafaia, Conhecimento do grupo e limites"},
+        {"req": "hq:hqn_21", "text": "Ao fim do arco, sacou o Baralho de Muitas Coisas e perdeu os bens, o cajado e parte da inteligência.", "fonte": "02_Personagens/Sylas Malafaia, Sessão 24"}
+      ]
+    },
+    "kayron": {
+      "hqs": ["hqn_02", "hqn_16", "hqn_19"],
+      "curiosities": [
+        {"req": "base", "text": "Foi Kayron quem leu em abissal o “Seremos um só”, título da segunda HQ.", "fonte": "02_Personagens/Kayron, Sessão 02"},
+        {"req": "base", "text": "Os dois olhos de Kayron têm uma única cor, vermelha, da pupila à esclera. Vale para todos os aasimar do Vault, cada um na sua cor.", "fonte": "02_Personagens/Kayron, DEC-AASIMAR-EYES-001"},
+        {"req": "base", "text": "Quando Kayron derramou o sangue do recipiente ao atacar o sacerdote, interrompeu o ritual da igreja de Dagruve.", "fonte": "02_Personagens/Kayron, Sessão 03"},
+        {"req": "bio", "text": "O Broche Celestial que ele recebeu com o grupo abre as portas de Castle Rodhe.", "fonte": "06_Itens/Broche Celestial"},
+        {"req": "bio", "text": "No templo de Tou Um, o dano psíquico dele em área decidiu o combate. Mais tarde, no Castelo da Fome, foi o dano radiante que furou o mini-chefe.", "fonte": "02_Personagens/Kayron, Sessões 18 e 23"},
+        {"req": "hq:hqn_16", "text": "Em homenagem a Shar, sacrificou os três rebeldes sob custódia; uma asa negra em aura vermelha apareceu e sumiu.", "fonte": "02_Personagens/Kayron, Sessão 06"}
+      ]
+    },
+    "korrak": {
+      "hqs": ["hqn_06", "hqn_19", "hqn_20"],
+      "curiosities": [
+        {"req": "base", "text": "Korrak tem cerca de 2,32 m, pele acinzentada com listras tribais, dois machados e uma besta pesada nas costas.", "fonte": "03_NPCs/Korrak"},
+        {"req": "base", "text": "Ele e Leoric tiveram o mesmo mestre, Silva, cujo nome verdadeiro é Sylvaris.", "fonte": "03_NPCs/Korrak e Leoric, Sessão 10"},
+        {"req": "base", "text": "Gilly lhe deu uma luneta oficial.", "fonte": "06_Itens/Luneta de Korrak"},
+        {"req": "bio", "text": "A primeira provação do Machado de Xar'gath foi um duelo 1×1 em Durao. A segunda, servir sete dias. Os ferimentos são reais.", "fonte": "02_Personagens/Korrak, Sessões 16 e 17; 06_Itens/Machado de Xar'gath"},
+        {"req": "bio", "text": "Quando o machado não é alimentado, queima as costas dele. A Peregrinação da Estrela suspendeu a cobrança por um tempo.", "fonte": "02_Personagens/Korrak, Sessões 17 e 18"},
+        {"req": "hq:hqn_21", "text": "Depois do arco, Korrak voltou ao exército sob Hrothgar, que o fez aspirante a oficial “porque é herói”.", "fonte": "02_Personagens/Korrak, Sessão 24"}
+      ]
+    },
+    "leoric": {
+      "hqs": ["hqn_03", "hqn_16", "hqn_19", "hqn_20"],
+      "curiosities": [
+        {"req": "base", "text": "Gnomo de cerca de 1 m, de terno marrom com detalhes pretos e cabelo castanho grisalho. O grisalho não muda a idade: 45 anos em 1690.", "fonte": "03_NPCs/Leoric, Idade canônica"},
+        {"req": "base", "text": "O diário dele registra a saída da Tarn por uma rachadura nas Docas e uma amizade com notívagos. Leoric só se lembra de ter escrito até o segundo dia.", "fonte": "03_NPCs/Leoric, Sessão 10"},
+        {"req": "bio", "text": "Fez o juramento de proteger a fauna, lê estrelas por admiração pessoal e teve uma visão na véspera do dia em que apareceu.", "fonte": "03_NPCs/Leoric, Sessão 10"},
+        {"req": "bio", "text": "Meditando no Abismo, descobriu que os “morros” são raízes de uma única árvore que atravessa os planos.", "fonte": "03_NPCs/Leoric, Sessão 12"},
+        {"req": "hq:hqn_20", "text": "Recebeu o Anel da Resistência Abissal e virou águia para avisar Brook do Kraken.", "fonte": "03_NPCs/Leoric, Sessão 17; 02_Personagens/Leoric, Sessão 21"}
+      ]
+    },
+    "nyrelia": {
+      "hqs": ["hqn_14"],
+      "curiosities": [
+        {"req": "base", "text": "A grafia certa é Nyrelia. “Nirelia” é só variante de transcrição.", "fonte": "03_NPCs/Nyrelia, Aparência e presença"},
+        {"req": "base", "text": "Ela usa máscara e ninguém sabe a espécie dela.", "fonte": "03_NPCs/Nyrelia, Aparência e presença"},
+        {"req": "bio", "text": "Arlindo disse que a chamou porque ela reconheceria a máscara de Sylas.", "fonte": "03_NPCs/Nyrelia, Sessão 09"},
+        {"req": "bio", "text": "Ela guia o grupo até a base dos Grimholders sem deixar rastros.", "fonte": "03_NPCs/Nyrelia, Sessão 09"},
+        {"req": "bio", "text": "O que ela sabe sobre a máscara de Sylas, ninguém disse.", "fonte": "03_NPCs/Nyrelia, Pontos em aberto"}
+      ]
+    },
+    "zynara": {
+      "hqs": ["hqn_01", "hqn_21"],
+      "curiosities": [
+        {"req": "base", "text": "Zynara Vellen tem parentesco distante com a família Vellen de Maelor.", "fonte": "03_NPCs/Zynara, Sessão 13; 12_Lore/Família Vellen"},
+        {"req": "base", "text": "Ela estuda botânica. Em Domwieck achou raízes de outro plano e cogumelos que lembravam o Underdark, e acha que vêm do Reino Abissal. O grupo a viu sorrir pela primeira vez.", "fonte": "03_NPCs/Zynara, Sessão 13"},
+        {"req": "bio", "text": "Helion revelou que foi ela quem apagou os registros da antiga Aluris.", "fonte": "03_NPCs/Zynara, S9-16"},
+        {"req": "bio", "text": "Na Sessão 23 abrigou o grupo no laboratório das Docas e montou o portal azul para o Castelo da Fome com as plantas de um túmulo.", "fonte": "03_NPCs/Zynara, Sessão 23; 06_Itens/Plantas do Túmulo"},
+        {"req": "hq:hqn_21", "text": "Ao fim do arco organizou as eleições com Gilly e partiu com Arlindo Orlando.", "fonte": "03_NPCs/Zynara, Sessão 24"}
+      ]
+    },
+    "bromnor": {
+      "hqs": ["hqn_11", "hqn_16", "hqn_18", "hqn_19", "hqn_21"],
+      "curiosities": [
+        {"req": "base", "text": "Anão de cerca de 255 anos em 1690, líder de batalha e governante justo.", "fonte": "03_NPCs/Bromnor Martelo da Luz; DEC-IDADES-HELION-20261019-r2"},
+        {"req": "base", "text": "O diário vinculado dele ficou no Espeto de Pau: ele achou o martelo, não o recuperou a tempo e tentou interromper um ritual tarde demais.", "fonte": "06_Itens/Diário Vinculado de Bromnor"},
+        {"req": "bio", "text": "Em vida, forjou com uma lasca de Ailalore o Martelo da Luz e o Anel da Passagem Sombria, para dar à humanidade uma chance contra a escuridão.", "fonte": "06_Itens/Um breve conto sobre Bromnor do Martelo da Luz"},
+        {"req": "hq:hqn_11", "text": "A Aurora da Concórdia Eterna é um clarão dourado e prateado que faz as armas caírem. Bromnor a chamou no Massacre Celestial.", "fonte": "03_NPCs/Bromnor Martelo da Luz, Sessão 10"},
+        {"req": "hq:hqn_11", "text": "Não havia corpo: ele virou luz. O espírito dele passou a habitar o martelo.", "fonte": "03_NPCs/Bromnor Martelo da Luz, S9-33 e Sessão 12"},
+        {"req": "hq:hqn_19", "text": "No fim, o espírito entregou o martelo ao grupo (“Agora, ele é seu”) e a arma, nas mãos de Brook, virou o Martelo da Glória. Reapareceu só mais uma vez, no depoimento de Brook.", "fonte": "03_NPCs/Bromnor Martelo da Luz, Sessões 12 e 21"}
+      ]
+    },
+    "arlindo": {
+      "hqs": [],
+      "curiosities": [
+        {"req": "base", "text": "Ele é o andarilho sentado sozinho à margem da estrada que avisa o grupo de que a névoa mexe com a cabeça, sem tentar impedi-los.", "fonte": "03_NPCs/Arlindo Orlando, S3-34"},
+        {"req": "base", "text": "Os Grimholders se dizem “os mais antigos dessas bandas”. A cidade que hoje é Dagruve se chamava Grimhold.", "fonte": "03_NPCs/Arlindo Orlando, S9-37; 05_Organizações/Grimholders"},
+        {"req": "bio", "text": "Com Modify Memory, mostrou a Brook a memória do Massacre Celestial.", "fonte": "03_NPCs/Arlindo Orlando, S8-11"},
+        {"req": "bio", "text": "Avisou o grupo: “tomem cuidado com o orgulho elfo” e que o nome Aluris podia dar problema.", "fonte": "03_NPCs/Arlindo Orlando, S9-39"},
+        {"req": "hq:hqn_21", "text": "Liderou uma força-tarefa dos Grimholders atrás dos cultistas restantes de Ghaunadaur e, no fim do arco, partiu com Zynara.", "fonte": "03_NPCs/Arlindo Orlando, Sessão 20 parte 2; 03_NPCs/Zynara, Sessão 24"}
+      ]
+    },
+    "erik": {
+      "hqs": ["hqn_15", "hqn_17", "hqn_21"],
+      "curiosities": [
+        {"req": "base", "text": "O Amuleto da Luz que Erik porta o torna imune à névoa.", "fonte": "03_NPCs/Erik Blackthorn"},
+        {"req": "base", "text": "Ele treina para reconstruir o Amuleto da Luz e estima mais uma semana de trabalho.", "fonte": "03_NPCs/Erik Blackthorn, Sessão 14"},
+        {"req": "base", "text": "Idade aproximada em 1690: 26 anos.", "fonte": "03_NPCs/Erik Blackthorn, DEC-IDADES-HELION-20261019-r2"},
+        {"req": "bio", "text": "Recebeu a Lâmina da Digestão.", "fonte": "03_NPCs/Erik Blackthorn, Sessão 17; 06_Itens/Lâmina da Digestão"},
+        {"req": "bio", "text": "Procurado por ter incendiado navios na invasão das Docas, raspou a cabeça e a barba para não ser reconhecido.", "fonte": "03_NPCs/Erik Blackthorn, Sessão 20 parte 2"}
+      ]
+    }
+  },
+  "enemies": {
+    "zumbi": {
+      "onde": ["dagruve"],
+      "quem": "Corpo que a névoa ainda move. Na igreja da Praça da Loucura, o sacerdote de A Mente Derretida ergueu quatro deles dos cadáveres do ritual.",
+      "curiosities": [
+        {"req": "base", "text": "Os quatro zumbis morreram junto com o sacerdote, no mesmo instante.", "fonte": "Sessão 03, S3-50"}
+      ]
+    },
+    "notivago": {
+      "onde": ["dagruve", "reino_abissal", "domwieck"],
+      "quem": "Pessoa profundamente afetada pela névoa. A mesa os descreveu como semelhantes a zumbis.",
+      "curiosities": [
+        {"req": "base", "text": "Arlindo avisou o grupo: havia mais notívagos nas ruas de Dagruve, capazes de atacar e morder sem aviso.", "fonte": "04_Locais/Dagruve, S7-15"},
+        {"req": "base", "text": "Dois notívagos entraram no santuário durante o confronto. Quando a causa da névoa ali se desfez, caíram sem sentidos. O narrador confirmou: eram cadáveres.", "fonte": "07_Criaturas/Notívagos, Sessão 07"},
+        {"req": "base", "text": "Na igreja da Praça da Loucura, os cultistas penduraram notívagos de cabeça para baixo: humanos à esquerda, animais à direita.", "fonte": "05_Organizações/A Mente Derretida, S3-47"}
+      ]
+    },
+    "cultista_adaga": {
+      "onde": ["dagruve", "docas", "reino_abissal", "domwieck"],
+      "quem": "Cultista de A Mente Derretida, grupo ligado à névoa e ao culto de Ghaunadaur em Dagruve. Anda encapuzado.",
+      "curiosities": [
+        {"req": "base", "text": "Na Praça da Loucura havia de dez a quatorze cultistas. O combate foi longo e um aventureiro chegou perto da morte.", "fonte": "05_Organizações/A Mente Derretida, S3-45"},
+        {"req": "base", "text": "Maelor os reconheceu pelo capuz e viu para onde iam: uma igreja que ele conhecia da infância, antes dedicada a Nott.", "fonte": "05_Organizações/A Mente Derretida, S3-39"},
+        {"req": "base", "text": "Depois de derrotá-los, o grupo entrou disfarçado na igreja onde o ritual acontecia.", "fonte": "04_Locais/Praça da Loucura, Sessão 03"}
+      ]
+    },
+    "cultista_arqueiro": {
+      "onde": ["dagruve", "reino_abissal", "domwieck"],
+      "quem": "Arqueiro de A Mente Derretida. Entre os cultistas da Praça da Loucura havia arqueiros cujas flechas descreviam curvas no ar.",
+      "curiosities": [],
+      "fonte": "05_Organizações/A Mente Derretida, S3-45"
+    },
+    "cultista_cajado": {
+      "onde": ["dagruve", "docas", "reino_abissal", "domwieck"],
+      "quem": "Cultista de A Mente Derretida que conduz o feitiço com um cajado e um lampião de cera, atrás da linha de frente.",
+      "curiosities": [],
+      "fonte": "jogo"
+    },
+    "criatura_corrompida": {
+      "onde": ["dagruve", "docas", "reino_abissal", "domwieck"],
+      "quem": "Criatura que a névoa corrompeu. No porão das Docas, uma delas se revelou demoníaca. O grupo saiu de lá sem saber o nome do que enfrentou.",
+      "curiosities": [],
+      "fonte": "04_Locais/Docas, Sessão 02"
+    },
+    "slime_corrosivo": {
+      "onde": ["dagruve", "docas"],
+      "quem": "Slime que corrói metal. No porão de um galpão das Docas, vivia no armazém.",
+      "curiosities": [],
+      "fonte": "04_Locais/Docas, Sessão 02"
+    },
+    "sacerdote_mente_derretida": {
+      "onde": ["dagruve"],
+      "quem": "Sacerdote encapuzado que canalizava o feitiço diante de uma taça gigante cheia de sangue, na antiga igreja de Nott. Sob o capuz, tem um único olho no meio da testa, gelatinoso, que se mexe sozinho.",
+      "curiosities": [
+        {"req": "base", "text": "Encarar o olho dele causa terror.", "fonte": "Sessão 03, S3-49"},
+        {"req": "base", "text": "Chamava o grupo de “criaturas insignificantes” e “inferiores” e se recusava a responder perguntas.", "fonte": "Sessão 03, S3-49"},
+        {"req": "base", "text": "O ritual caiu quando Kayron bateu a cabeça dele na bancada e derramou a taça.", "fonte": "Sessão 03, S3-48"},
+        {"req": "boss", "text": "Ferido, rastejou de volta ao ritual para uma última ação, mas morreu queimado por luz, o corpo fumegando como o dos cadáveres notívagos.", "fonte": "Sessão 03, S3-50"}
+      ]
+    },
+    "gargula": {
+      "onde": ["dagruve"],
+      "quem": "Havia dez gárgulas na Biblioteca Corrompida. Pedra que parece ter sido derretida e moldada de novo como argila, olhos brilhantes, rostos deformados. Uma já estava destruída; as outras despertam em grupos de três.",
+      "curiosities": [
+        {"req": "base", "text": "Chamar uma gárgula pelo nome registrado no diário de manutenção a desativa.", "fonte": "07_Criaturas/Gárgulas da Biblioteca Corrompida; 06_Itens/Diário de Manutenção das Gárgulas"},
+        {"req": "base", "text": "Duas gárgulas passaram a observar Brook. Quando ele ficou imóvel, uma parou de se mover e o barulho cessou. O grupo trata isso como hipótese, não como regra.", "fonte": "07_Criaturas/Gárgulas da Biblioteca Corrompida"},
+        {"req": "base", "text": "Quatro caíram na Sessão 04; seis seguiram ativas.", "fonte": "07_Criaturas/Gárgulas da Biblioteca Corrompida"}
+      ]
+    },
+    "guardiao_copia": {
+      "onde": ["docas"],
+      "quem": "Guardião alado do ritual no porão do galpão. O primeiro que o grupo derrotou era uma cópia.",
+      "curiosities": [
+        {"req": "base", "text": "Exigia que os invasores se convertessem e se tornassem um só.", "fonte": "Sessão 02; 04_Locais/Docas"}
+      ]
+    },
+    "guardiao_verdadeiro": {
+      "onde": ["docas"],
+      "quem": "O verdadeiro guardião alado do porão. Ao morrer, deixou sangue negro.",
+      "curiosities": [
+        {"req": "base", "text": "“Seremos um só” está escrito em abissal junto à porta do porão. Kayron leu a frase.", "fonte": "04_Locais/Docas, Sessão 02"},
+        {"req": "boss", "text": "Ao deixarem o porão, o grupo viu a névoa das Docas parecer se dissipar. O Vault não diz por quê nem até onde.", "fonte": "04_Locais/Docas, Sessão 02"}
+      ]
+    },
+    "arch_hag": {
+      "onde": ["docas"],
+      "quem": "Conjuradora invocada por um ritual autossustentável num navio abandonado, junto com um Kraken. O ritual funcionava sem conjurador por perto.",
+      "curiosities": [
+        {"req": "base", "text": "Maelor deu o golpe final, e a essência de Sendrinah entrou na arma dele.", "fonte": "07_Criaturas/Arch-hag das Docas; 02_Personagens/Maelor, Sessão 13"},
+        {"req": "base", "text": "As duas criaturas vieram depois do Véu Vivo, quando criaturas de outros mundos fugiram para as Docas.", "fonte": "07_Criaturas/Kraken, Sessão 13"}
+      ]
+    },
+    "tentaculo_kraken": {
+      "onde": ["docas"],
+      "quem": "Parte do Kraken das Docas: enorme, metade dentro da água, com tentáculos que agarram e a capacidade de dominar mentes.",
+      "curiosities": [
+        {"req": "base", "text": "Agarrou Leoric e tentou afogá-lo e dominá-lo. Sylas dominou a mente do próprio Kraken e Korrak, em fúria, decepou todos os tentáculos.", "fonte": "07_Criaturas/Kraken, Sessão 13"},
+        {"req": "base", "text": "Nos registros da mesa, a criatura chegou a ser chamada de “Aboleth”; o certo é Kraken.", "fonte": "07_Criaturas/Kraken"},
+        {"req": "hq:hqn_21", "text": "Um segundo Kraken, com dez tentáculos, saiu das Docas numa névoa fortíssima. Imune a frio e raio, só deixou a cidade quando Thalion o puxou por um portal.", "fonte": "07_Criaturas/Kraken, Sessão 21"}
+      ]
+    },
+    "totem_de_chefe": {
+      "onde": [],
+      "quem": "Turíbulo que blinda o chefe até ser quebrado.",
+      "curiosities": [],
+      "fonte": "jogo"
+    },
+    "mimico": {
+      "onde": [],
+      "quem": "Baú armadilhado que esconde um mímico. No porão do Espeto de Pau, um deles guardava a passagem para uma porta falante.",
+      "curiosities": [
+        {"req": "base", "text": "A porta falante só abriu com calor: “O fogo pede seu tributo. O calor da forja é a chave”. Por trás dela estava o diário vinculado de Bromnor.", "fonte": "04_Locais/Espeto de Pau; Sessão 10"}
+      ]
+    },
+    "pilha_carga_quebravel": {
+      "onde": [],
+      "quem": "Carga dos galpões de suprimentos das Docas, que abastecem os outros distritos.",
+      "curiosities": [],
+      "fonte": "04_Locais/Docas"
+    },
+    "carroca_quebravel": {
+      "onde": [],
+      "quem": "Carroças das Docas levam carga aos outros distritos. Kayron e Durvall chegaram a perseguir carroças de sequestradores.",
+      "curiosities": [],
+      "fonte": "04_Locais/Docas; 02_Personagens/Kayron, S5-37"
+    },
+    "caixote_quebravel": {
+      "onde": [],
+      "quem": "Os galpões das Docas guardam o que o porto movimenta, em caixotes e carga.",
+      "curiosities": [],
+      "fonte": "04_Locais/Docas"
+    },
+    "candelabro_quebravel": {
+      "onde": [],
+      "quem": "Candelabro de cais e porto. Quebra e não ataca.",
+      "curiosities": [],
+      "fonte": "jogo"
+    },
+    "arbusto_quebravel": {
+      "onde": [],
+      "quem": "Mato comum. Quebra e não ataca.",
+      "curiosities": [],
+      "fonte": "jogo"
+    },
+    "cogumelo_fungico": {
+      "onde": ["shedaklah", "molor"],
+      "quem": "Fungo vivo do andar 222, o domínio de Zuggtmoy. Criaturas fúngicas emboscaram o grupo no caminho do rio de almas.",
+      "curiosities": [
+        {"req": "base", "text": "Para abrir um arco de pedra antigo, as runas pediam que se unissem os dois opostos da camada: o fungo de Zuggtmoy e o slime de Juiblex.", "fonte": "Sessão 16; 04_Locais/Camadas do Plano Abissal"}
+      ]
+    },
+    "servo_de_zuggtmoy": {
+      "onde": ["shedaklah"],
+      "quem": "Humano ou meio-orc que serve Zuggtmoy por escolha. Ela mantém uns quatrocentos.",
+      "curiosities": [],
+      "fonte": "03_NPCs/Zuggtmoy, Guarnição"
+    },
+    "esporo_voador": {
+      "onde": ["shedaklah"],
+      "quem": "Esporo solto no ar do andar 222, onde fungo e limo dividem o território.",
+      "curiosities": [],
+      "fonte": "jogo"
+    },
+    "pudim_negro": {
+      "onde": ["shedaklah", "molor"],
+      "quem": "Pudim negro, do séquito de limos de Juiblex.",
+      "curiosities": [
+        {"req": "base", "text": "Quando a mente de Sylas foi projetada ao Abismo profundo, ele viu Juiblex cercado de limos e pudins negros.", "fonte": "03_NPCs/Juiblex, Sessão 12"}
+      ]
+    },
+    "slime_de_juiblex": {
+      "onde": ["shedaklah", "molor", "goranthis", "pilares"],
+      "quem": "Slime do território de Juiblex. Divide-se ao morrer. Juiblex é uma mente-colmeia, e cada limo que o grupo matou era ele.",
+      "curiosities": [
+        {"req": "base", "text": "Marciela explicou: as criaturas que o grupo mata são Juiblex, e matá-las desequilibra as camadas.", "fonte": "03_NPCs/Juiblex, Sessão 16"},
+        {"req": "base", "text": "O grupo atravessou o território coberto de limo furtivamente, entre slimes e bolhas explosivas.", "fonte": "Sessão 15"}
+      ]
+    },
+    "zuggtmoy": {
+      "onde": ["shedaklah"],
+      "quem": "Soberana fúngica de Shedaklah. Não pode sair do próprio domínio. Oferece mapa e orientação ao grupo em troca de ajuda para conter Juiblex.",
+      "curiosities": [
+        {"req": "base", "text": "Juiblex toma território dela e se fortalece com as almas do Rio Estige.", "fonte": "03_NPCs/Zuggtmoy e Juiblex, Sessão 15"},
+        {"req": "base", "text": "O grupo negociou com ela no palácio, antes de entrar no território de Juiblex.", "fonte": "04_Locais/Palácio de Zuggtmoy"},
+        {"req": "base", "text": "Na mesa, Zuggtmoy foi aliada. No jogo, ela é o desafio do andar.", "fonte": "03_NPCs/Zuggtmoy; divergência entre o jogo e o Vault"}
+      ]
+    },
+    "bolha_de_slime": {
+      "onde": ["molor"],
+      "quem": "Bolha de slime que cresce e explode. Molor é uma caverna fechada cheia delas.",
+      "curiosities": [],
+      "fonte": "Sessão 16; 04_Locais/Molor"
+    },
+    "cultista_thullgrime": {
+      "onde": ["molor"],
+      "quem": "Habitante de Thullgrime, assentamento de Molor onde só há cultistas de Ghaunadaur.",
+      "curiosities": [
+        {"req": "base", "text": "Ouvem as vozes de Ghaunadaur, mas nunca o viram. Falam “daquele que está aqui, mas não está”.", "fonte": "Sessão 17"},
+        {"req": "base", "text": "Quando o grupo atacou o sítio do ritual, os cultistas cortaram a própria garganta. O sangue escorreu até a massa, que despertou.", "fonte": "Sessão 17"},
+        {"req": "base", "text": "O diário do chefe deles registra o “ritual de estagnação” do Rio Estige.", "fonte": "06_Itens/Diário do Chefe dos Cultistas de Thullgrime"}
+      ]
+    },
+    "receptaculo_de_juiblex": {
+      "onde": ["shedaklah", "molor", "goranthis", "pilares"],
+      "quem": "“Backup” de Juiblex, sem a consciência do original, sustentado por ritual em Thullgrime: uma massa gigantesca de carne e gosma, com um casulo e olhos ao centro.",
+      "curiosities": [
+        {"req": "base", "text": "Resiste a concussão, perfuração e corte, é imune a veneno e fraco a dano radiante.", "fonte": "Sessão 17"},
+        {"req": "base", "text": "Conjurou uma poça de ácido enorme que quase matou o grupo.", "fonte": "Sessão 17"},
+        {"req": "base", "text": "O diário do chefe dos cultistas confirma: era “uma casca vazia”.", "fonte": "06_Itens/Diário do Chefe dos Cultistas de Thullgrime"},
+        {"req": "base", "text": "Debaixo dele havia um portal inativo, que ele alimentava. Ao morrer, desfez-se sobre o portal e o acendeu.", "fonte": "Sessão 17"}
+      ]
+    },
+    "manifestacao_de_juiblex": {
+      "onde": [],
+      "quem": "Juiblex é uma mente-colmeia: um único ser dividido em muitos. Cada manifestação que o grupo derrota é ele.",
+      "curiosities": [
+        {"req": "base", "text": "O plano dele sempre foi seguir o Rio Estige de andar em andar, gelatinizando-o, e isso desequilibra as camadas.", "fonte": "03_NPCs/Juiblex, Sessões 17 e 18"},
+        {"req": "base", "text": "O grupo chegou a cogitar selar Juiblex em vez de matá-lo, para não desequilibrar o Abismo.", "fonte": "03_NPCs/Juiblex, Sessão 17"},
+        {"req": "hq:hqn_09", "text": "Juiblex foi derrotado em Goranthis, depois de consumir Socothbenoth. O Rio Estige voltou a correr em todas as camadas.", "fonte": "03_NPCs/Juiblex, Sessões 19 e 20 (parte 1)"}
+      ]
+    },
+    "blogbog": {
+      "onde": ["molor"],
+      "quem": "Chefe fúngico de Molor. Seu núcleo verde é uma manifestação de Juiblex.",
+      "curiosities": [
+        {"req": "base", "text": "Usava ácido em área e teve os pontos de vida reforçados durante a luta.", "fonte": "Sessão 16"},
+        {"req": "boss", "text": "Dentro do corpo havia um núcleo verde que continuava a se agitar. O grupo o usou como essência no portal de Molor, e o Rio Estige voltou a correr ali.", "fonte": "Sessão 16; 07_Criaturas/Blogbog"}
+      ]
+    },
+    "saco_de_esporos_quebravel": {
+      "onde": [],
+      "quem": "Saco de esporos de Shedaklah, onde fungo e limo dividem o andar.",
+      "curiosities": [],
+      "fonte": "04_Locais/Camadas do Plano Abissal"
+    },
+    "casulo_viscoso_quebravel": {
+      "onde": [],
+      "quem": "Casulo viscoso numa caverna fechada de bolhas de slime.",
+      "curiosities": [],
+      "fonte": "04_Locais/Molor"
+    },
+    "alma_penada": {
+      "onde": ["durao"],
+      "quem": "Alma presa no rio de almas de Durao, um rio em parte solidificado como gelatina.",
+      "curiosities": [
+        {"req": "base", "text": "O rio virou gelatina porque Juiblex passou por ali: o resíduo dele é o rio.", "fonte": "Sessão 16, desertores capturados"}
+      ]
+    },
+    "demonio_de_gehenna": {
+      "onde": ["durao", "pilares"],
+      "quem": "Combatente da fronteira entre o Abismo e Gehenna. Em Durao houve uma guerra antiga e sem fim entre os demônios do Abismo e Gehenna.",
+      "curiosities": [
+        {"req": "base", "text": "A guerra daquele andar terminou. Ninguém sabe quem venceu, e o andar inteiro desertou.", "fonte": "12_Lore/Gehenna, Sessão 16"},
+        {"req": "base", "text": "Marciela leu sobre isso na biblioteca de Castle Rodhe.", "fonte": "Sessão 16"}
+      ]
+    },
+    "carcereiro_de_pedra": {
+      "onde": ["durao"],
+      "quem": "Guarda da jaula gigante de Durao, cheia de prisioneiros apodrecendo.",
+      "curiosities": [
+        {"req": "base", "text": "Dentro da jaula está Vhaerith Aetherion, primo de Thalion, exilado ao Abismo por desobedecer a uma ordem dele. Brook reconheceu o sobrenome num teste de história.", "fonte": "Sessão 16"},
+        {"req": "base", "text": "Vhaerith diz que ensinou runas a Thalion e que, no Abismo, “as coisas têm que ser do jeito que são”: não se pode simplesmente libertar os prisioneiros.", "fonte": "Sessão 16"},
+        {"req": "base", "text": "O portal diante da jaula abre com sangue de Molydeus e sangue de elfo verdadeiro. Vhaerith deu o dele de bom grado, em troca de uma runa que o deixasse sair dali.", "fonte": "12_Lore/Portal de Durao; Sessões 16 e 17"}
+      ]
+    },
+    "molydeus_menor": {
+      "onde": ["durao", "pilares"],
+      "quem": "Carcereiro de Durao. São três, e patrulham atrás de desertores e espiões para prendê-los numa jaula imensa. Voam e se deslocam por portais.",
+      "curiosities": [
+        {"req": "base", "text": "Resistem a fogo, raio, trovão, concussão, perfuração, corte e veneno. São fracos a dano radiante e necrótico.", "fonte": "07_Criaturas/Molydeus; Sessão 16"},
+        {"req": "base", "text": "O grupo ouviu falar de três, mas viu e derrotou só um.", "fonte": "07_Criaturas/Molydeus"},
+        {"req": "base", "text": "Durante a luta, o Molydeus matou e mutilou os desertores capturados.", "fonte": "Sessão 16"},
+        {"req": "base", "text": "Corpo musculoso vermelho, cabeça lupina escura, uma segunda cabeça serpentina verde e cauda escura.", "fonte": "07_Criaturas/Molydeus, referência visual r1"}
+      ]
+    },
+    "molydeus_chefe": {
+      "onde": ["durao"],
+      "quem": "O carcereiro que o grupo enfrentou ao seguir o rio até a jaula. Tem ataque múltiplo, mordida e um sopro em linha.",
+      "curiosities": [
+        {"req": "base", "text": "Korrak, ampliado por Leoric, lutou ao lado de Brook, que usou a Redenção Divina do martelo de Bromnor.", "fonte": "Sessão 16"},
+        {"req": "boss", "text": "Depois da luta, o grupo recolheu o sangue dele, um dos dois que abrem o portal da jaula.", "fonte": "Sessão 16; 12_Lore/Portal de Durao"}
+      ]
+    },
+    "aberracao_shu": {
+      "onde": ["durao"],
+      "quem": "Aberração semelhante a um gafanhoto, de origem não estabelecida. Normalmente age por conta própria.",
+      "curiosities": [
+        {"req": "base", "text": "Na mesa, Shu foi encontrada sob controle de Ghaunadaur, na Vila das Sombras. Erik estranhou, porque criaturas assim costumam ser independentes.", "fonte": "07_Criaturas/Shu; Sessão 11"},
+        {"req": "base", "text": "O grupo colheu o sangue da aberração depois de derrotá-la.", "fonte": "Sessão 11"},
+        {"req": "base", "text": "No jogo, Shu aparece em Durao.", "fonte": "divergência entre o jogo e o Vault"}
+      ]
+    },
+    "ezro": {
+      "onde": ["durao"],
+      "quem": "Demônio-sapo naturalmente maligno.",
+      "curiosities": [
+        {"req": "base", "text": "Na mesa, Ezro estava subordinado a Ghaunadaur na Vila das Sombras, o que Erik achou estranho.", "fonte": "07_Criaturas/Ezro; Sessão 11"},
+        {"req": "base", "text": "O grupo colheu a saliva do sapo.", "fonte": "Sessão 11"},
+        {"req": "base", "text": "No jogo, Ezro aparece em Durao.", "fonte": "divergência entre o jogo e o Vault"}
+      ]
+    },
+    "urna_funeraria_quebravel": {
+      "onde": [],
+      "quem": "Urna de um andar árido, de vegetação morta e acampamentos abandonados, onde corre um rio de almas.",
+      "curiosities": [],
+      "fonte": "04_Locais/Durao; Sessão 16"
+    },
+    "larva_de_lu_yueh": {
+      "onde": ["feng_tu"],
+      "quem": "Criatura pequena com rosto de pessoa, serva de Lu Yueh. Espalha praga ao ser tocada e explode em pestilência ao morrer.",
+      "curiosities": [
+        {"req": "base", "text": "Pelo andar havia muitas delas. O grupo se desviou das que pôde, com testes de Destreza.", "fonte": "Sessão 17"},
+        {"req": "base", "text": "Uma larva atingida pelo machado de Xar'gath virou uma pessoa e tentou fugir. Foi capturada: era Kūkan Shito, sacerdote de Amatsu-Mikaboshi.", "fonte": "Sessão 18"},
+        {"req": "base", "text": "O amuleto do grupo mostrou que ele era só uma cópia ilusória, “uma casca, aura vazia”.", "fonte": "03_NPCs/Kūkan Shito; Sessão 18"}
+      ]
+    },
+    "cultista_de_feng_tu": {
+      "onde": ["feng_tu"],
+      "quem": "Cultista de Lu Yueh. Cerca de cinco conduziam um ritual no templo de Tou Um, um deles de máscara, ao centro.",
+      "curiosities": [
+        {"req": "base", "text": "O de máscara era provavelmente Kūkan Shito.", "fonte": "Sessão 17"},
+        {"req": "base", "text": "Lu Yueh destruiu o templo de Tou Um e massacrou os fiéis dela, aproveitando o desequilíbrio que Juiblex causou no andar.", "fonte": "12_Lore/Tou Um e Lu Yueh; Sessão 17"}
+      ]
+    },
+    "estatua_do_templo": {
+      "onde": ["feng_tu"],
+      "quem": "Estátua do templo de Tou Um, um terraço de três degraus e quatro pilastras cujo interior a pestilência de Lu Yueh degradou de forma não natural.",
+      "curiosities": [],
+      "fonte": "jogo"
+    },
+    "discipulo_pestilento": {
+      "onde": ["feng_tu"],
+      "quem": "Sacerdote de Lu Yueh no templo de Tou Um. Lança Cloudkill, transforma o chão em névoa tóxica e desfere um ataque psíquico em área.",
+      "curiosities": [
+        {"req": "base", "text": "O Cloudkill dele cobriu uma área enorme e quase matou o grupo.", "fonte": "Sessão 18"},
+        {"req": "boss", "text": "Kayron foi decisivo: teleportava para atacar e voltava, e um golpe psíquico dele em área matou cerca de quatro inimigos de uma vez.", "fonte": "Sessão 18"},
+        {"req": "boss", "text": "Depois do combate, Erik e Brook estavam doentes e só se curaram na peregrinação da estrela de Tou Um: oito dias de transe seguindo uma miragem.", "fonte": "Sessão 18; 12_Lore/Tou Um"}
+      ]
+    },
+    "lu_yueh": {
+      "onde": [],
+      "quem": "Deus das epidemias. Agressivo, “não é do tipo que conversa”. Tomou Feng-tu depois do desequilíbrio que Juiblex causou.",
+      "curiosities": [
+        {"req": "base", "text": "Feng-tu se autoequilibrava pelo conflito de território entre Tou Um e Lu Yueh, como Shedaklah entre Zuggtmoy e Juiblex.", "fonte": "12_Lore/Tou Um e Lu Yueh; Sessão 18"},
+        {"req": "base", "text": "Os servos dele são criaturas pequenas com rostos de pessoas, que espalham praga ao serem tocadas.", "fonte": "12_Lore/Tou Um e Lu Yueh"},
+        {"req": "base", "text": "A rival dele, Tou Um, é a deusa da Estrela do Norte. Só se segue a estrela, que é uma miragem e nunca se aproxima.", "fonte": "12_Lore/Tou Um e Lu Yueh"}
+      ]
+    },
+    "lanterna_de_papel_quebravel": {
+      "onde": [],
+      "quem": "Lanterna de um andar de estética oriental: cerejeiras, pontes, bambu e montanhas nevadas.",
+      "curiosities": [],
+      "fonte": "Sessão 17; 04_Locais/Feng-tu"
+    },
+    "escravo_de_rivenheart": {
+      "onde": ["shendilavri"],
+      "quem": "Vítima humanoide de Rivenheart, cidade murada de comércio de escravos, enfeitiçada e drenada até ficar quase raquítica.",
+      "curiosities": [
+        {"req": "base", "text": "O grupo entrou na cidade disfarçado: Sylas de mercador, os outros de escravos.", "fonte": "Sessão 18"}
+      ]
+    },
+    "sucubo": {
+      "onde": ["shendilavri", "pilares"],
+      "quem": "Súcubo de Rivenheart, cidade que ela e os íncubos dominam sob uma ilusão.",
+      "curiosities": [
+        {"req": "base", "text": "Com o amuleto, o grupo viu através da ilusão: quase todos na cidade eram súcubos e íncubos.", "fonte": "Sessão 18"}
+      ]
+    },
+    "ilusao_de_sucubo": {
+      "onde": ["shendilavri"],
+      "quem": "Rivenheart é quase toda ilusão de súcubos: o que parece um morador comum é só a máscara.",
+      "curiosities": [
+        {"req": "base", "text": "Só o amuleto do grupo mostrava a cidade como ela era.", "fonte": "Sessão 18"}
+      ]
+    },
+    "guarda_do_castelo": {
+      "onde": ["shendilavri"],
+      "quem": "Guarda do Castelo Argento, castelo de Graz'zt, que se alcança por uma passagem secreta da masmorra de Malcanthet.",
+      "curiosities": [
+        {"req": "base", "text": "Quando o grupo emergiu ao lado da sala de música, os servos do castelo estavam enfeitiçados.", "fonte": "Sessão 19"},
+        {"req": "base", "text": "A passagem foi construída quando Malcanthet e Graz'zt eram amantes. As Irmãs Radiantes a revelaram.", "fonte": "Sessão 18"}
+      ]
+    },
+    "malcanthet": {
+      "onde": ["shendilavri"],
+      "quem": "Rainha das súcubos de Shendilavri. Na sala do trono, quem falha no teste de Constituição passa a concordar com tudo que ela diz.",
+      "curiosities": [
+        {"req": "base", "text": "Contratou o grupo, em segredo, para trazer Graz'zt e/ou recuperar o Espelho das Almas Desejantes, que ele roubou dela.", "fonte": "03_NPCs/Malcanthet, Sessão 18"},
+        {"req": "base", "text": "Emprestou duas guerreiras como guias, as Irmãs Radiantes, Nyxara e Vaelis.", "fonte": "Sessão 18"},
+        {"req": "base", "text": "Sylas resistiu ao enfeitiçamento e a enganou num teste crítico de negociação.", "fonte": "Sessão 18"},
+        {"req": "hq:hqn_08", "text": "Graz'zt arrancou o chifre dela com a mão, jogou-o no portal e declarou guerra.", "fonte": "03_NPCs/Malcanthet; Sessão 19"}
+      ]
+    },
+    "ilusao_de_socothbenoth": {
+      "onde": ["goranthis"],
+      "quem": "Goranthis (Camada 597) se chama “o verdadeiro Paraíso”, mas o castelo de Socothbenoth era todo ilusão, sustentada por Juiblex.",
+      "curiosities": [
+        {"req": "base", "text": "A festa tinha bebida e comida de graça e não havia um guarda.", "fonte": "Sessão 19"},
+        {"req": "base", "text": "Para quebrar a ilusão, foi preciso tirar Socothbenoth do trono.", "fonte": "Sessão 19"}
+      ]
+    },
+    "guardiao_de_goranthis": {
+      "onde": ["goranthis", "pilares"],
+      "quem": "Guardião do paraíso ilusório de Goranthis.",
+      "curiosities": [
+        {"req": "base", "text": "Na mesa, o castelo estava em festa e sem guardas. No jogo, o Paraíso tem guardiões.", "fonte": "Sessão 19; divergência entre o jogo e o Vault"}
+      ]
+    },
+    "cultista_de_socothbenoth": {
+      "onde": ["goranthis"],
+      "quem": "Sacerdote de ilusões do castelo de Socothbenoth.",
+      "curiosities": [],
+      "fonte": "jogo"
+    },
+    "socothbenoth": {
+      "onde": ["goranthis"],
+      "quem": "Lorde do Abismo que Juiblex usava como âncora para manter o castelo em festa.",
+      "curiosities": [
+        {"req": "base", "text": "Tirado do trono, o palácio verdadeiro se revelou: paredes e tetos de carne e uma gosma preta onde estaria o rosto dele, espalhando-se pelo teto.", "fonte": "Sessão 19"},
+        {"req": "base", "text": "As paredes de carne se moviam de forma caótica, “como se pedissem um mestre”.", "fonte": "Sessão 19"},
+        {"req": "hq:hqn_09", "text": "Foi consumido dentro de Juiblex depois do último golpe da batalha final do arco no Abismo.", "fonte": "03_NPCs/Socothbenoth; Sessão 19 e 20 (parte 1)"}
+      ]
+    },
+    "espelho_ilusorio_quebravel": {
+      "onde": [],
+      "quem": "Espelho de um reino de ilusão. O Espelho das Almas Desejantes, o verdadeiro, estava com Graz'zt.",
+      "curiosities": [],
+      "fonte": "06_Itens/Espelho das Almas Desejantes; Sessão 18"
+    },
+    "estatua_rachada_quebravel": {
+      "onde": [],
+      "quem": "Estátua de um paraíso que era ilusão.",
+      "curiosities": [],
+      "fonte": "04_Locais/Castelo de Socothbenoth"
+    },
+    "cultista_ghaunadaur": {
+      "onde": ["feng_tu", "shendilavri", "pilares"],
+      "quem": "Seguidor de Ghaunadaur. A rede de cultos que o segue se estende pelas camadas do Abismo por onde corre o Rio Estige.",
+      "curiosities": [
+        {"req": "base", "text": "Um livro que Sylas leu descreve Ghaunadaur como muito antigo, anterior a muitos deuses e quase primordial.", "fonte": "12_Lore/Ghaunadaur, Sessão 03"},
+        {"req": "base", "text": "Ghaunadaur domina também animais e criaturas normalmente independentes, como Ezro e Shu.", "fonte": "12_Lore/Ghaunadaur"},
+        {"req": "base", "text": "Quem usa o Colar de Ghaunadaur é dominado pela consciência dele.", "fonte": "12_Lore/Ghaunadaur, S7-04"}
+      ]
+    },
+    "master_of_cruelties": {
+      "onde": ["pilares"],
+      "quem": "Criatura encontrada no ritual do Castelo da Fome. Fala Abissal, voa e enfeitiça com uma presença cativante.",
+      "curiosities": [
+        {"req": "base", "text": "Afirmou que o grupo a usava para invadir a casa do mestre dela, que ainda teria um mestre próprio.", "fonte": "07_Criaturas/Master of Cruelties, Sessão 23"},
+        {"req": "base", "text": "É imune a fogo e resistente à maior parte dos danos. O dano radiante é eficaz.", "fonte": "07_Criaturas/Master of Cruelties"},
+        {"req": "base", "text": "O grupo a matou ali mesmo, na Sessão 23.", "fonte": "07_Criaturas/Master of Cruelties"}
+      ]
+    },
+    "sintese_abissal": {
+      "onde": ["pilares"],
+      "quem": "Monstruosidade grande e aberrante, a última do primeiro arco. Ocupa quatro espaços no grid.",
+      "curiosities": [
+        {"req": "base", "text": "Resiste a dano psíquico e a armas não mágicas, e é imune a Enfeitiçado e Amedrontado. Só o dano radiante a fura.", "fonte": "07_Criaturas/A Síntese Abissal"},
+        {"req": "hq:hqn_10", "text": "Carrega a presença de Ghaunadaur, que causa medo em área, e invoca e absorve slimes.", "fonte": "07_Criaturas/A Síntese Abissal"},
+        {"req": "hq:hqn_10", "text": "Usou as runas do salão para erguer o Castelo da Fome à superfície.", "fonte": "07_Criaturas/A Síntese Abissal"},
+        {"req": "boss", "text": "Foi derrotada sem nenhuma morte entre os personagens-jogadores. A última gota de Slime deixou a cabeça de Ailalore, que acordou livre.", "fonte": "07_Criaturas/A Síntese Abissal"}
+      ]
+    },
+    "death_tyrant": {
+      "onde": ["reino_abissal"],
+      "quem": "Forma criada quando o cadáver de Kein se fundiu ao de um Beholder, depois do ritual no Reino Abissal.",
+      "curiosities": [
+        {"req": "base", "text": "O grupo o destruiu, e o martelo de Bromnor deu o golpe final.", "fonte": "07_Criaturas/Death Tyrant; 03_NPCs/Bromnor Martelo da Luz, Sessão 12"},
+        {"req": "hq:hqn_11", "text": "Bella apontou Kein como o assassino de Bromnor, disfarçado de Guarda Celestial.", "fonte": "Sessão 09, S9-31"},
+        {"req": "base", "text": "Kein desprezava os traços élficos de Maelor e não agradeceu quando ele o escoltou ao Conselho.", "fonte": "02_Personagens/Maelor, Relações"}
+      ]
+    },
+    "nidhogg": {
+      "onde": [],
+      "quem": "Criatura enorme numa raiz de Yggdrasil, à qual a mesa não deu nome.",
+      "curiosities": [
+        {"req": "base", "text": "Mordeu Maelor gravemente quando ele caiu isolado numa passagem pela raiz.", "fonte": "Sessão 15"},
+        {"req": "hq:hqn_20", "text": "Maelor escapou em direção a um portal e, mais tarde, reencontrou Marciela.", "fonte": "Sessão 15"},
+        {"req": "base", "text": "O nome Nidhogg é do jogo. A mesa só falou de “uma criatura enorme”.", "fonte": "divergência entre o jogo e o Vault"}
+      ]
+    },
+    "relicario_instavel_quebravel": {
+      "onde": [],
+      "quem": "Relicário dos Pilares. Quebra e não ataca.",
+      "curiosities": [],
+      "fonte": "jogo"
+    }
+  },
+  "items": {
+    "machado_de_xargath": {
+      "quem": "Machado de batalha infernal, +1, com +1d6 de dano de fogo. Guarda a alma de um demônio, Xar'gath; a entidade dentro dele é chamada Satanaxe. Tem um olho que sussurra na mente de quem o empunha. Empunhá-lo exige provações.",
+      "curiosities": [
+        {"req": "base", "text": "Tem Fire Breath, uma vez por dia, e Fade Breath como reação.", "fonte": "06_Itens/Machado de Xar'gath"},
+        {"req": "base", "text": "Korrak o achou perto da jaula de Durao e desmaiou ao pegá-lo.", "fonte": "Sessão 16"},
+        {"req": "base", "text": "Na primeira provação, Korrak cortou os dois chifres de Xar'gath, “o Testador”, que se desfez e reapareceu numa forma de “Plagueiro”.", "fonte": "Sessão 16"},
+        {"req": "hq:hqn_21", "text": "Durante a peregrinação da estrela, o machado passou fome e “quase morreu”. Sua manifestação de ódio “criou pernas” e saiu de Korrak como um Goliath infernal parecido com ele. Korrak passou a alimentá-lo matando animais com a arma.", "fonte": "06_Itens/Machado de Xar'gath, Sessão 23"}
+      ]
+    },
+    "martelo_da_gloria": {
+      "quem": "O martelo de Bromnor, forjado com uma lasca da estrela Ailalore. Dano contundente; empurra até uns 3 metros um alvo Grande ou menor.",
+      "curiosities": [
+        {"req": "base", "text": "Redenção Divina, uma vez por descanso longo: um golpe de luz que fere os inimigos em área e cura os aliados próximos. É destrutivo e curativo ao mesmo tempo.", "fonte": "06_Itens/Martelo da Glória"},
+        {"req": "base", "text": "Serve de condutor de rituais de portal, sem o sacrifício que outros métodos exigem. O grupo o usou para reativar o portal do Laboratório de Marciela e para abrir o portal de retorno a Nottgard.", "fonte": "06_Itens/Martelo da Glória, Sessões 15, 19 e 20"},
+        {"req": "hq:hqn_18", "text": "Kein o usou para abrir portais e o manteve no Abismo, sacrificando um elfo e um cultista com ele. O grupo o recuperou do cadáver dele, e Kayron o identificou.", "fonte": "06_Itens/Martelo da Glória, Sessão 12"},
+        {"req": "hq:hqn_19", "text": "Ao fim da Sessão 12, o espírito de Bromnor entregou o martelo ao grupo (“Agora, ele é seu”), e Brook passou a portá-lo. A luz mudou de amarela para vermelha, e ele passou a se chamar Martelo da Glória.", "fonte": "06_Itens/Martelo da Glória, Sessão 12"}
+      ]
+    },
+    "colar_visao_verdadeira": {
+      "quem": "Colar que concede visão verdadeira: permite enxergar através de ilusões e perceber o que está escondido. Sylas o usa para observar auras. Não tem um nome próprio.",
+      "curiosities": [
+        {"req": "base", "text": "O efeito dura cerca de uma hora, e a mesa trata a ativação como algo que se “conjura”.", "fonte": "06_Itens/Colar de visão verdadeira do Santuário, S8-37"},
+        {"req": "base", "text": "Há registro de uma maldição, mas ninguém esclareceu como ela funciona.", "fonte": "06_Itens/Colar de visão verdadeira do Santuário"},
+        {"req": "base", "text": "Com o colar, Sylas viu a aura amarela de Nyrelia, que lembra Mask, e um rastro que deixou o grupo seguir a figura mascarada.", "fonte": "Sessão 09"},
+        {"req": "base", "text": "Diante de Ailalore, viu uma aura dourada e celestial e resistiu a uma força que tentava dominar a mente dele. A origem dessa força não foi identificada.", "fonte": "Sessão 09"}
+      ]
+    },
+    "broche_celestial": {
+      "quem": "Broche que o grupo recebeu na Sessão 03, ao passar a atuar a serviço de Castle Rodhe. Representa quem trabalha no castelo.",
+      "curiosities": [
+        {"req": "base", "text": "Autoriza o grupo a entrar e sair do castelo quando quiser.", "fonte": "06_Itens/Broche Celestial, S3-20"},
+        {"req": "base", "text": "Kayron recebeu o broche junto com a missão de investigar o armamento humano.", "fonte": "02_Personagens/Kayron, Sessão 03"}
+      ]
+    },
+    "amuleto_da_luz": {
+      "quem": "Artefato original criado por Sylvaris e Frank Blackthorn. Ilumina o caminho na névoa e protege Erik de seus efeitos.",
+      "curiosities": [
+        {"req": "base", "text": "Foi destruído. Para refazê-lo são necessários uma lasca de Ailalore, Erik como artesão treinado e o Martelo da Glória.", "fonte": "06_Itens/Amuleto da Luz, Sessão 13"},
+        {"req": "base", "text": "O caderno achado na Igreja das Sombras atribuía o amuleto a Bromnor. A decisão canônica posterior dá a autoria a Sylvaris e a Frank Blackthorn.", "fonte": "06_Itens/Amuleto da Luz; DEC-AMULETO-ARANIS-20261018-r1"}
+      ]
+    },
+    "lamina_da_digestao": {
+      "quem": "Espada +1 que causa 1d6 de dano de ácido e dissolve a armadura do alvo num acerto crítico.",
+      "curiosities": [
+        {"req": "base", "text": "O grupo a achou nas barracas de Thullgrime, junto com o Manto do Pântano e o Anel da Resistência Abissal.", "fonte": "Sessão 17"}
+      ]
+    },
+    "chicote_avarento": {
+      "quem": "Chicote +1 que revela o maior desejo de quem ele amarra.",
+      "curiosities": [
+        {"req": "base", "text": "Ficava numa parede secreta da sala de música do Castelo Argento, atrás de sete runas, junto do Espelho das Almas Desejantes.", "fonte": "04_Locais/Sala de Música do Castelo Argento; Sessão 19"},
+        {"req": "base", "text": "O mural da sala pedia a ordem das runas: “primeiro, a dor; depois, a luta; a fúria que se acalma; a alegria da vitória; o conhecimento que se ganha; a paz que se encontra; e, por fim, a esperança que renasce”.", "fonte": "Sessão 19"},
+        {"req": "base", "text": "Uma luz prateada testava a intenção de quem se aproximava: a mente gananciosa era amaldiçoada com esquecimento, a curiosidade genuína recebia inspiração.", "fonte": "Sessão 19"}
+      ]
+    },
+    "cajado_dos_desejos": {
+      "quem": "Cajado amaldiçoado que sussurra desejos a quem o porta.",
+      "curiosities": [
+        {"req": "base", "text": "Malcanthet o deu ao grupo, com outros equipamentos, quando os contratou.", "fonte": "Sessão 18"},
+        {"req": "base", "text": "Sylas o usou, com cargas de re-rolagem.", "fonte": "02_Personagens/Sylas Malafaia, Sessões 16 a 24"}
+      ]
+    },
+    "colar_dos_tentaculos": {
+      "quem": "Colar que invoca uma criatura tentacular, até nove vezes. Também chamado Olho de Ghaunadaur.",
+      "curiosities": [
+        {"req": "base", "text": "Foi encontrado no navio das Docas.", "fonte": "06_Itens/Colar dos Tentáculos, Sessão 14"},
+        {"req": "base", "text": "Ao fim do arco, o grupo carregava um Olho de Ghaunadaur com nove usos.", "fonte": "Sessão 19 e 20 (parte 1)"},
+        {"req": "base", "text": "Na mesa, o Colar dos Tentáculos e o Olho de Ghaunadaur são dois itens. No jogo, são um só.", "fonte": "divergência entre o jogo e o Vault"}
+      ]
+    },
+    "sopro_de_estrela": {
+      "quem": "Concha com um Sopro de Estrela, que abre o portal do segundo andar do templo de Tou Um.",
+      "curiosities": [
+        {"req": "base", "text": "João Barbosa, devoto de Tou Um, a entregou ao grupo em agradecimento por “desinfestar” o templo.", "fonte": "Sessão 18"},
+        {"req": "base", "text": "Sylas a usou para ativar o portal que levou o grupo a Shendilavri.", "fonte": "Sessão 18"}
+      ]
+    },
+    "ampulheta": {
+      "quem": "Relíquia antiga achada na Biblioteca Corrompida. Contém a magia Silêncio.",
+      "curiosities": [
+        {"req": "base", "text": "O grupo a guarda com a permissão de Helion.", "fonte": "06_Itens/Ampulheta do Silêncio Eterno"},
+        {"req": "base", "text": "Foi encontrada junto com o diário de manutenção das gárgulas.", "fonte": "Sessão 05"}
+      ]
+    },
+    "anel_resistencia_abissal": {
+      "quem": "Anel que dá vantagem para escapar de agarrão.",
+      "curiosities": [
+        {"req": "base", "text": "Estava nas barracas de Thullgrime, e Leoric ficou com ele.", "fonte": "Sessão 17"}
+      ]
+    },
+    "anel_passagem_sombria": {
+      "quem": "Artefato forjado por Bromnor com uma lasca de Ailalore. Permite teleportar entre sombras e ficar invisível num raio de uns 9 metros, uma vez por descanso.",
+      "curiosities": [
+        {"req": "hq:hqn_16", "text": "Uma caixa escondia o anel e um relato sobre os artefatos de Bromnor.", "fonte": "06_Itens/Anel da Passagem Sombria, Sessão 11"}
+      ]
+    },
+    "aneis_de_grazzt": {
+      "quem": "Anéis que invocam Graz'zt, o Lorde do Abismo, uma única vez, quando o nome dele é dito três vezes.",
+      "curiosities": [
+        {"req": "base", "text": "Graz'zt deu o primeiro ao grupo, como dádiva, no castelo dele. O segundo, o último, vira cinzas ao ser usado.", "fonte": "Sessão 19"},
+        {"req": "base", "text": "O grupo carregava dois, um uso cada.", "fonte": "Sessão 19 e 20 (parte 1)"}
+      ]
+    },
+    "manto_do_pantano": {
+      "quem": "Manto imune ao ácido dos limos, com vantagem contra veneno.",
+      "curiosities": [
+        {"req": "base", "text": "Estava nas barracas de Thullgrime, e Marciela ficou com ele.", "fonte": "Sessão 17"}
+      ]
+    },
+    "luneta_de_korrak": {
+      "quem": "Luneta oficial que Gilly entregou a Korrak.",
+      "curiosities": [],
+      "fonte": "06_Itens/Luneta de Korrak, Sessão 13"
+    },
+    "lasca_de_ailalore": {
+      "quem": "Fragmento furtado da estrela Ailalore para reconstruir o Amuleto da Luz.",
+      "curiosities": [
+        {"req": "base", "text": "A mesma lasca de estrela é a base do Martelo da Luz e do Anel da Passagem Sombria, forjados por Bromnor.", "fonte": "06_Itens/Lasca de Ailalore; Martelo da Glória; Anel da Passagem Sombria"}
+      ]
+    },
+    "colar_runico_de_thalion": {
+      "quem": "Colar de Thalion Aetherion que emana magia do tipo Primordial.",
+      "curiosities": [
+        {"req": "hq:hqn_21", "text": "Brilhou em vermelho enquanto Thalion sustentava o portal rúnico que arrastou o Kraken. As runas terminaram trincadas, e o esforço drenou a vitalidade dele.", "fonte": "06_Itens/Colar Rúnico de Thalion, Sessão 21"}
+      ]
+    },
+    "cajado_familia_infernum": {
+      "quem": "Relíquia da família Infernum, feita de Yggdrasil e cravejada com pedras da estrela de Eléstria.",
+      "curiosities": [
+        {"req": "hq:hqn_21", "text": "Trish decidiu que o cajado fica com um tio: não com Dante, por ele não ter magia, nem com Vergil, por achar a magia dele caótica.", "fonte": "06_Itens/Cajado da Família Infernum, Sessão 21"}
+      ]
+    },
+    "wave_of_terror": {
+      "quem": "Espada longa mágica, recompensa de Graz'zt. Causa dano de ácido (Toque do Abismo).",
+      "curiosities": [
+        {"req": "base", "text": "Dança das Sombras: o portador se esconde mesmo observado.", "fonte": "Sessão 19 e 20 (parte 1)"},
+        {"req": "base", "text": "Traz a Maldição da Ambição Sombria: em tensão social, o portador é compelido a semear discórdia.", "fonte": "Sessão 19 e 20 (parte 1)"},
+        {"req": "base", "text": "Graz'zt a deu ao grupo, com 4000 de ouro, como recompensa.", "fonte": "Sessão 19 e 20 (parte 1)"}
+      ]
+    },
+    "detector_arcano": {
+      "quem": "Aparelho que detecta assinaturas mágicas. John Tobias o usou numa caravana de reconhecimento fora do Véu Vivo.",
+      "curiosities": [
+        {"req": "hq:hqn_21", "text": "Detectou uma assinatura mágica fraca e extremamente pura, que levou John e Joseph Tobias até quem a emanava.", "fonte": "06_Itens/Detector Arcano, Sessão 21"}
+      ]
+    },
+    "dispositivo_antimagia_gilly": {
+      "quem": "Escudo antimagia para cerca de cinco pessoas, com cerca de trinta usos. O custo é sentido por quem o usa.",
+      "curiosities": [
+        {"req": "hq:hqn_21", "text": "Gilly o entregou aos Companions para a escolta de Bella.", "fonte": "Sessão 22 (Companions)"}
+      ]
+    },
+    "dispositivo_das_docas": {
+      "quem": "Mecanismo do porto das Docas que afasta criaturas do mar. É associado a Wonka.",
+      "curiosities": [
+        {"req": "hq:hqn_21", "text": "Wonka tentava consertá-lo depois do incêndio que Erik provocou. Um tentáculo do Kraken o capturou durante o combate.", "fonte": "06_Itens/Dispositivo das Docas, Sessão 21"}
+      ]
+    },
+    "espelho_das_almas_desejantes": {
+      "quem": "Espelho que mostra o maior desejo de quem o encara. Graz'zt o roubou de Malcanthet.",
+      "curiosities": [
+        {"req": "base", "text": "Malcanthet contratou o grupo, em segredo, para recuperá-lo ou trazer Graz'zt.", "fonte": "06_Itens/Espelho das Almas Desejantes; Sessão 18"},
+        {"req": "base", "text": "Ficava na parede secreta da sala de música do Castelo Argento, atrás de sete runas.", "fonte": "04_Locais/Sala de Música do Castelo Argento; Sessão 19"},
+        {"req": "base", "text": "Graz'zt entregou o espelho ao grupo ao oferecer a aliança.", "fonte": "Sessão 19"}
+      ]
+    },
+    "coracao_da_dominancia": {
+      "quem": "Troféu da vontade: nasceu quando o portador resistiu à Rainha das Súcubos e conquistou seu respeito.",
+      "curiosities": [],
+      "fonte": "jogo"
+    }
+  },
+  "weapons": {
+    "machado_de_xargath": {"igual_a": "machado_de_xargath"},
+    "martelo_da_gloria": {"igual_a": "martelo_da_gloria"},
+    "martelo_da_luz": {"igual_a": "martelo_da_gloria"},
+    "lamina_da_digestao": {"igual_a": "lamina_da_digestao"},
+    "chicote_avarento": {"igual_a": "chicote_avarento"},
+    "cajado_dos_desejos": {"igual_a": "cajado_dos_desejos"},
+    "colar_dos_tentaculos": {"igual_a": "colar_dos_tentaculos"},
+    "sopro_de_estrela": {"igual_a": "sopro_de_estrela"},
+    "ampulheta": {"igual_a": "ampulheta"},
+    "dominio_da_vontade": {"igual_a": "coracao_da_dominancia"},
+    "sentenca_de_lliira": {
+      "quem": "O golpe de fé de Brook, paladino de Lliira, a divindade a quem ele fez o juramento.",
+      "curiosities": [
+        {"req": "hq:hqn_19", "text": "Na Sessão 21, diante do QG saqueado, uma voz cobrou Brook: “Cumpra seu juramento, ou o julgamento será inevitável”. Ele viu a imagem de Lliira chorando.", "fonte": "12_Lore/Lliira, Sessão 21"}
+      ]
+    },
+    "julgamento_da_gloria": {
+      "quem": "Julgamento espiritual ligado a Lliira e ao Martelo da Glória de Brook.",
+      "curiosities": [
+        {"req": "hq:hqn_19", "text": "No depoimento público em Fateridge, o martelo falhou diante de todos e só voltou a brilhar quando Brook pediu perdão pelo juramento quebrado.", "fonte": "12_Lore/Julgamento da Glória, Sessão 21"},
+        {"req": "hq:hqn_19", "text": "O espírito de Bromnor deu a Brook uma prorrogação: “só dessa vez; você ainda tem que se provar digno”.", "fonte": "12_Lore/Lliira, Sessão 21"}
+      ]
+    },
+    "raio_de_luz": {
+      "quem": "Feitiço de luz de Maelor, devoto de Sendrinah.",
+      "curiosities": [
+        {"req": "base", "text": "Maelor reconheceu os símbolos de Sendrinah nas ruínas da muralha de Aluris.", "fonte": "12_Lore/Sendrinah, Sessão 09"}
+      ]
+    },
+    "luz_mais_pura": {
+      "quem": "Pedra guardada por Thalion, trazida pelo desejo de Maelor e absorvida por Aila ao despertar.",
+      "curiosities": [],
+      "fonte": "06_Itens/Luz Mais Pura de Thalion, Sessão 14"
+    },
+    "memoria_alterada": {
+      "quem": "Modify Memory, a magia de Arlindo Orlando, líder dos Grimholders.",
+      "curiosities": [
+        {"req": "base", "text": "Com ela, Arlindo mostrou a Brook uma memória do Massacre Celestial, em Fateridge.", "fonte": "03_NPCs/Arlindo Orlando, S8-11"},
+        {"req": "hq:hqn_11", "text": "Na memória, um Guarda Celestial atacou Bromnor pelas costas durante o efeito de pacificação, e ele se dissolveu em partículas douradas.", "fonte": "03_NPCs/Bromnor Martelo da Luz, S8-12"}
+      ]
+    },
+    "dominar_pessoa": {
+      "quem": "Magia de controle da mente. Sylas, devoto de Mask, é o conjurador de ilusão e Dominar Pessoa do grupo.",
+      "curiosities": [],
+      "fonte": "02_Personagens/Sylas Malafaia; 12_Lore/Mask"
+    },
+    "tocha_do_incendiario": {
+      "quem": "A arma de Erik Blackthorn, que incendiou dois navios nas Docas na noite de 9/10/1690.",
+      "curiosities": [
+        {"req": "hq:hqn_21", "text": "Em público, Erik declarou: “Eu sou o Erik Blackthorn e eu queimei os navios”. Disse ter agido sozinho, movido por um sonho profético de que o Kraken atacaria, e que incendiou o porto um dia antes para esvaziá-lo e evitar mortes.", "fonte": "Sessão 21"}
+      ]
+    },
+    "constelacao_de_silva": {
+      "quem": "O Modo de Constelação de Leoric: uma forma estrelada de arqueiro que dá reforço radiante aos aliados. Silva é o mestre dele e de Korrak, e o nome verdadeiro é Sylvaris.",
+      "curiosities": [
+        {"req": "base", "text": "Sylvaris começou a ensinar Leoric a ler as estrelas (Meditação Estelar). Na primeira aula, Leoric teve a visão de uma caverna de paredões altos e de uma presença ancestral, “que não é ruim, e também não é boa”.", "fonte": "Sessão 13"},
+        {"req": "base", "text": "O Modo de Constelação apareceu no templo de Tou Um, com flechas guiadas e reforço radiante aos aliados.", "fonte": "03_NPCs/Leoric, Sessão 18"}
+      ]
+    }
+  }
+}

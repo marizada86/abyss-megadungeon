@@ -204,13 +204,37 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="CodexText" type="RichTextLabel" parent="Tabs/Códex" unique_id=1075091208]
+[node name="Details" type="HBoxContainer" parent="Tabs/Códex"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="CodexText" type="RichTextLabel" parent="Tabs/Códex/Details" unique_id=1075091208]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 140)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
+
+[node name="Side" type="VBoxContainer" parent="Tabs/Códex/Details"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CodexArt" type="TextureRect" parent="Tabs/Códex/Details/Side"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CodexGallery" type="HFlowContainer" parent="Tabs/Códex/Details/Side"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
 
 [node name="Opções" type="ScrollContainer" parent="Tabs" unique_id=2098473828]
 visible = false

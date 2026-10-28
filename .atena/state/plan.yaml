@@ -3073,3 +3073,72 @@ qol_offer_card_detail_20261027:
   verification: "tests/test_offer_card_detail.gd novo (estrutura; mutação verificada); run_all 0 falhas; audit_projeto 0 erros; capturas antes/depois em .atena/generated/offer-detail-20261027/captures via tools/offer_detail_capture.gd (perfil e APPDATA sintéticos)"
   not_authorized: [commit, push, merge, build, exportacao, publicacao]
   human_acceptance: PENDING
+codex_lore_20261027:
+  id: PLAN-ABYSS-CODEX-LORE-20261027
+  spec_id: SPEC-ABYSS-CODEX-LORE-20261027
+  revision: r1
+  mode: per-plan
+  approval: APPROVED_LOCAL_R1
+  authorization: "Atena, aprovo o plano. Comece por S-C01 e S-C02 (heróis). Armas e itens ficam para depois; quebráveis entram com 1 linha; dossiê por chefe derrotado, sem mexer no save; aceite de texto por lote. (2026-10-27)"
+  spec: .atena/specs/SPEC-ABYSS-CODEX-LORE-20261027/spec-r1.md
+  platform: pc
+  status: IN_PROGRESS
+  completed_steps: 8
+  total_steps: 8
+  checkpoint: PLAN_DELIVERED_PORT_AND_COMMIT_PENDING
+  deliverables:
+    S-C01: .atena/vault/drafts/CODEX-SOURCES-20261027-r1.md
+    S-C02: .atena/vault/drafts/CODEX-HEROES-DRAFT-20261027-r1.md
+  runtime_code_changes: "core/catalog.gd (aba Personagens, LABELS.heroes); ui/menu.gd (categoria heroes, CodexArt, galeria de HQs, _open_hq compartilhado com o Diário, foco de controle); ui/menu.tscn (Códex: Details com CodexText + Side com CodexArt e CodexGallery); sem mudança na pausa nem no save"
+  save_changes: none
+  decisions_made: [D-1 aceita, D-5 entra atrás de hqn_16, D-6 entra atrás de hqn_21, D-3 Leoric cartola e azarado mantidos como escolhas do jogo, D-3 Ampulheta da Zynara só regra do jogo, D-4 visão S9-08 fora]
+  pending_decisions: []
+  d2_decision: "manter cresceu em Dagruve na bio do Maelor (2026-10-27)"
+  new_files: [data/codex_lore.json, tests/test_codex_lore.gd, tests/test_codex_quartel.gd, tools/codex_capture.gd, tools/codex_render.ps1]
+  verification: "test_codex_quartel, test_quartel, test_catalog, test_codex_lore 0 falhas; run_all 0 falhas; audit_projeto 0 erros 0 avisos; 24 capturas (1920x1080 e 1280x720; base, 150%, 150% com alto contraste; Sylas completo, Durvall início, Bromnor bloqueado, zumbi) em .atena/generated/codex-lore-20261027-r1/captures/, perfil sintético"
+  next_activity: "Fechar: portagem real (origem inacessível; ver .atena/generated/codex-lore-20261027-r1/portagem-S-C08.md), commit com aprovação explícita, playtest humano com controle"
+  source_port_parity: PENDING_SOURCE_PROJECT_NOT_ACCESSIBLE_FROM_THIS_SESSION
+  not_authorized: [commit, push, merge, build, exportacao, publicacao]
+  human_acceptance: "VISUAL ACEITO (heróis, inimigos, armas e itens, 2026-10-27); PENDENTE playtest humano com controle e portagem"
+  s_c03:
+    status: ALL_6_LOTES_IN_JSON_AWAITING_VISUAL_ACCEPTANCE
+    authorization: "Atena, aceito as capturas do Códex. Siga para o S-C03: inventário e rascunho dos inimigos, primeiro lote por região. (2026-10-27)"
+    deliverables:
+      S-C03a: .atena/vault/drafts/CODEX-ENEMY-SOURCES-20261027-r1.md
+      S-C03b_lote_1: .atena/vault/drafts/CODEX-ENEMIES-DRAFT-20261027-r1.md
+    lote_1: "Docas e Dagruve: 15 inimigos e 5 quebráveis, 23 curiosidades; 5 entradas sem lastro no Vault marcadas jogo"
+    visual_acceptance_codex_heroes: "ACEITO (2026-10-27)"
+    pending_decisions: []
+    decisions_made: [L-1 entradas sem lastro entram com 1 linha marcadas jogo, E-1 Aboleth fica, lote 1 aceito (2026-10-27), lote 2 aceito (2026-10-27), Z-1 Zuggtmoy aliada na mesa fica, Z-2 Manifestação sem fase com hqn_09, lote 3 aceito, Du-1 Shu e Ezro no jogo em Durao fica, lote 4 aceito, F-1 larva vira Kūkan Shito fica, lote 5 aceito, S-1 guardião do Paraíso no jogo fica, S-2 guarda do Castelo Argento só com o Vault, lote 6 aceito, Sy-1 Síntese sem a origem, K-1 Kein atrás de hqn_11, N-1 nome Nidhogg é do jogo]
+    runtime_code_changes: "core/catalog.gd (detail com profile opcional, enemy_lore, enemy_extra, enemy_req_met); ui/menu.gd (passa Game.profile ao detail); data/codex_lore.json (enemies, lote 1: 15 inimigos e 5 quebráveis); tests/test_codex_lore.gd e test_quartel.gd ajustados; pausa sem mudança"
+    verification: "test_codex_lore, test_catalog, test_quartel, test_codex_quartel, test_pause_menu 0 falhas; mutação de onde e boss detectada"
+    lote_2: "Shedaklah e Molor em codex_lore.json: 11 inimigos e 2 quebráveis; teste de termos de inimigos separado (ENEMY_FORBIDDEN)"
+    lote_3: "Durao em codex_lore.json: 7 inimigos e 1 quebrável, 21 curiosidades"
+    lote_4: "Feng-tu em codex_lore.json: 6 inimigos e 1 quebrável, 11 curiosidades"
+    lote_5: "Shendilavri e Goranthis em codex_lore.json: 9 inimigos e 2 quebráveis, 15 curiosidades"
+    lote_6: "Pilares, Reino Abissal e sem fase em codex_lore.json: 5 inimigos e 1 quebrável, 16 curiosidades; cobertura total: 52 inimigos e 12 quebráveis (teste exige entrada para todo id de enemies.json)"
+    extra_fix: "Resistências do inimigo saíam como dicionário cru; agora Catalog.resist_text mostra dano recebido por tipo (vale também na pausa)"
+    verification_final: "run_all 0 falhas; audit_projeto 0 erros 0 avisos; 54 capturas (9 cenários x 3 variantes x 2 resoluções) em .atena/generated/codex-lore-20261027-r1/captures/"
+  s_c09:
+    status: DONE_VISUAL_ACCEPTED
+    authorization: "Atena, aceito as capturas dos inimigos. Siga as recomendações: prepare o S-C09 (armas e itens únicos) com o inventário de fontes. (2026-10-27)"
+    visual_acceptance_codex_enemies: "ACEITO (2026-10-27)"
+    deliverable: .atena/vault/drafts/CODEX-ITEMS-SOURCES-20261027-r1.md
+    scope: "43 armas e feitiços e 25 itens únicos; 5 itens com arquivo próprio no Vault (A), 19 curtos (B), 1 sem lastro (C); 10 armas repetem um único; 10 têm âncora no Vault; 23 são cartas sem âncora"
+    decisions_made: [W-1 a W-5 aprovadas como recomendado (2026-10-27), lote A aceito, A-1 correção de autoria do Amuleto fica, A-2 fome do Machado atrás de hqn_21, lote B aceito, B-1 Colar dos Tentáculos e Olho fundidos no jogo fica, W-3 teste restrito ao Colar de visão verdadeira, lote C aceito, C-1 fatos S21 e S22 atrás de hqn_21, C-2 Detector sem o encontrado, C-3 Coração da Dominância só com a nota do jogo, lote D aceito, D-1 Raio de Luz e Dominar Pessoa com linha ligada ao herói, D-2 Memória Alterada atrás de hqn_11, D-3 Sentença e Julgamento atrás de hqn_19]
+    pending_decisions: []
+    user_note_martelo: "Ao passar para Brook, o martelo virou o Martelo da Glória (2026-10-27): curiosidades do item e do Bromnor ajustadas para citar Brook"
+    lote_a: "5 itens e 3 armas por igual_a em codex_lore.json (items, weapons); Catalog.item_lore e detail com perfil para armas e itens; tests/test_codex_lore.gd; capturas item-martelo, arma-martelo-gloria e item-amuleto"
+    lote_b: "10 itens e 6 armas por igual_a em codex_lore.json, 18 curiosidades; teste de termos separado"
+    lote_c: "10 itens e 1 arma em codex_lore.json, 12 curiosidades; os 25 itens únicos têm entrada (teste exige); run_all 0 falhas, audit 0 erros"
+    lote_d: "8 armas com texto próprio em codex_lore.json (weapons), 9 curiosidades; espadas do Durvall sem entrada (W-2); 23 cartas sem texto novo (W-1)"
+    verification_final: "test_codex_lore, test_catalog, test_quartel, test_codex_quartel, test_pause_menu 0 falhas; run_all 0 falhas; audit_projeto 0 erros 0 avisos; 90 capturas em .atena/generated/codex-lore-20261027-r1/captures/ (15 cenários x 3 variantes x 2 resoluções)"
+    runtime_code_changes: "core/catalog.gd (item_lore, detail de armas e itens com perfil); sem mudança na pausa nem no save"
+  s_c08:
+    status: REGISTERED_PORT_PENDING
+    record: .atena/generated/codex-lore-20261027-r1/portagem-S-C08.md
+    source_head: b83f188a6dae9d32f78420a318bffedcac4ff4a3
+    origin_accessible: false
+    common_files: [data/codex_lore.json, core/catalog.gd, ui/menu.gd, ui/menu.tscn, tests/test_codex_lore.gd, tests/test_codex_quartel.gd, tests/test_quartel.gd, tools/codex_capture.gd]
+    save_changes: none
+    visual_acceptance_codex_items_weapons: "ACEITO (2026-10-27)"

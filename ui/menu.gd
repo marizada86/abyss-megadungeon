@@ -17,6 +17,8 @@ const AbyssPanel := preload("res://ui/abyss_panel.gd")
 @onready var codex_cat: OptionButton = %CodexCat
 @onready var codex_list: ItemList = %CodexList
 @onready var codex_text: RichTextLabel = %CodexText
+@onready var codex_art: TextureRect = %CodexArt
+@onready var codex_gallery: HFlowContainer = %CodexGallery
 ## SPEC-166 (MEC-003 lote 2): as opções vêm do OptionsPanel (mesmo componente da pausa); estes nomes são apelidos dos controles dele,
 ## para as verificações e o foco por controle seguirem valendo.
 var options_panel: OptionsPanel
@@ -93,8 +95,8 @@ func _ready() -> void:
 	resolution_opt = options_panel.resolution
 	codex_cat.item_selected.connect(func(_i): _fill_codex())
 	codex_list.item_selected.connect(_show_codex)
-	for cat in Catalog.CATEGORIES:
-		var cat_art := UiKit.icon_texture("res://assets/icons/codex/%s.png" % {"enemies": "inimigos", "weapons": "armas", "items": "itens"}.get(cat, ""))
+	for cat in Catalog.QUARTEL_CATEGORIES:   # PLAN-ABYSS-CODEX-LORE: a pausa lista 3; o Quartel acrescenta Personagens
+		var cat_art := UiKit.icon_texture("res://assets/icons/codex/%s.png" % {"enemies": "inimigos", "weapons": "armas", "items": "itens", "heroes": "herois"}.get(cat, ""))
 		if cat_art != null:
 			codex_cat.add_icon_item(cat_art, String(Catalog.LABELS[cat]))
 		else:
@@ -198,6 +200,14 @@ func _input(event: InputEvent) -> void:
 			target = codex_text if right else codex_cat
 		elif owner == codex_text and left:
 			target = codex_list
+		elif owner == codex_text and right and codex_gallery.visible and codex_gallery.get_child_count() > 0:
+			target = codex_gallery.get_child(0)
+		elif owner != null and owner.get_parent() == codex_gallery and left and owner.get_index() == 0:
+			target = codex_text
+		elif owner != null and owner.get_parent() == codex_gallery:
+			var next := owner.get_index() + (1 if right else -1)
+			if next >= 0 and next < codex_gallery.get_child_count():
+				target = codex_gallery.get_child(next)
 		elif owner == codex_cat and right:
 			target = codex_list
 		elif owner == hq_list and right:
@@ -544,8 +554,10 @@ func _fill_codex() -> void:
 	codex_list.clear()
 	codex_ids.clear()
 	codex_text.text = ""
-	var cat: String = Catalog.CATEGORIES[clampi(codex_cat.selected, 0, Catalog.CATEGORIES.size() - 1)]
-	for e in Catalog.entries(cat, Game.profile.data.codex):
+	_refresh_codex_extras("", "", false)
+	var cat: String = Catalog.QUARTEL_CATEGORIES[clampi(codex_cat.selected, 0, Catalog.QUARTEL_CATEGORIES.size() - 1)]
+	var entries: Array = Catalog.hero_entries(Game.profile) if cat == "heroes" else Catalog.entries(cat, Game.profile.data.codex)
+	for e in entries:
 		codex_ids.append(e.id)
 		var icon: Texture2D = load(String(e.icon)) if bool(e.known) and ResourceLoader.exists(String(e.icon)) else null
 		codex_list.add_item(String(e.name), icon)
@@ -556,7 +568,55 @@ var _codex_cat_cache := "enemies"
 func _show_codex(i: int) -> void:
 	var id: String = codex_ids[i]
 	var cat := _codex_cat_cache
-	codex_text.text = Catalog.detail(cat, id, Game.profile.data.codex[cat].has(id))
+	var known: bool = Game.profile.hero_unlocked(id) if cat == "heroes" else Game.profile.data.codex[cat].has(id)
+	codex_text.text = Catalog.hero_detail(Game.profile, id) if cat == "heroes" else Catalog.detail(cat, id, known, Game.profile)
+	_refresh_codex_extras(cat, id, known)
+
+## Arte grande (herói e inimigo conhecidos) e galeria das HQs já vistas em que o personagem aparece; sem spoiler: HQ não vista não aparece.
+func _refresh_codex_extras(cat: String, id: String, known: bool) -> void:
+	for c in codex_gallery.get_children():
+		codex_gallery.remove_child(c)
+		c.queue_free()
+	var art_path := ""
+	if known and cat == "heroes":
+		art_path = "res://assets/portraits/%s.png" % id
+	elif known and cat == "enemies":
+		art_path = Catalog.icon_path(cat, id)
+	codex_art.texture = load(art_path) if art_path != "" and ResourceLoader.exists(art_path) else null
+	codex_art.custom_minimum_size = Vector2(0, minf(240.0, 240.0 * codex_art.texture.get_height() / codex_art.texture.get_width())) if codex_art.texture != null else Vector2.ZERO
+	codex_art.visible = codex_art.texture != null
+	codex_art.get_parent().visible = codex_art.visible
+	if not known or cat != "heroes":
+		codex_gallery.visible = false
+		return
+	for hq_id in Array(Catalog.hero_lore(id).get("hqs", [])):
+		if not Game.profile.data.hqs_seen.has(hq_id) or not Data.table("hqs").has(hq_id):
+			continue
+		var hq: Dictionary = Data.table("hqs")[hq_id]
+		var panels: Array = Array(hq.get("panels", []))
+		var thumb_path := String(panels[0].get("image", "")) if not panels.is_empty() else ""
+		var b := Button.new()
+		b.name = "Gallery_%s" % hq_id
+		b.custom_minimum_size = Vector2(112, 64)
+		b.expand_icon = true
+		b.icon = load(thumb_path) if thumb_path != "" and ResourceLoader.exists(thumb_path) else null
+		b.text = "" if b.icon != null else String(hq.get("title", hq_id))
+		b.tooltip_text = "Reler a HQ «%s»" % String(hq.get("title", hq_id))
+		b.focus_mode = Control.FOCUS_ALL
+		b.pressed.connect(_open_hq_from_gallery.bind(hq_id))
+		codex_gallery.add_child(b)
+	codex_gallery.visible = codex_gallery.get_child_count() > 0
+
+func _open_hq_from_gallery(hq_id: String) -> void:
+	await _open_hq(hq_id)
+	var selected := codex_list.get_selected_items()
+	if not selected.is_empty():
+		_show_codex(selected[0])   # a HQ vista pode ter liberado curiosidades
+	var back := codex_gallery.get_node_or_null("Gallery_%s" % hq_id)
+	if back is Control:
+		back.call_deferred("grab_focus")
+	else:
+		codex_list.call_deferred("grab_focus")
 
 # ------------------------------------------------------------------ histórias
 
@@ -641,6 +701,11 @@ func _open_selected_hq() -> void:
 	var hq_id: String = hq_ids[selected[0]]
 	if hq_id.begins_with("chr:") or hq_id.begins_with("eco:"):
 		return
+	await _open_hq(hq_id)
+	hq_play_btn.call_deferred("grab_focus")
+
+## Abre o leitor de HQ (Diário e galeria do Códex usam o mesmo fluxo, inclusive o marcador de HQ vista).
+func _open_hq(hq_id: String) -> void:
 	var hq: Dictionary = Data.table("hqs").get(hq_id, {})
 	if hq.is_empty():
 		return
@@ -666,7 +731,6 @@ func _open_selected_hq() -> void:
 		ChapterFlow.resolve(Game.profile.data, hq_id, completed)
 		Game.save()
 	_hq_open = false
-	hq_play_btn.call_deferred("grab_focus")
 	screen.queue_free()
 	if completed:
 		var newly_earned: Array = Game.profile.mark_hq_seen(hq_id)
