@@ -43,6 +43,13 @@ func run() -> Array:
 	var out: Array = []
 
 	# ---- regras puras
+	if not Game.vsync_of({}) or Game.vsync_of({"vsync": false}) or Game.fps_cap_of({}) != 0 or Game.fps_cap_of({"fps_cap": 60}) != 60 or Game.fps_cap_of({"fps_cap": 77}) != 0:
+		out.append("0.5.2: VSync padrão ligado e limite de quadros padrão sem limite; valor inválido volta a 0")
+	var slot := AbilitySlot.new()
+	slot.set_alert(true)
+	if not slot._alert:
+		out.append("0.5.2: o slot da habilidade deveria aceitar o alerta de conjuração")
+	slot.free()
 	if Accessibility.ui_scale_of({}) != 100 or Accessibility.ui_scale_of({"ui_scale": 140}) != 100 or Accessibility.ui_scale_of({"ui_scale": 150}) != 150:
 		out.append("escala: ausente ou inválida volta a 100; 150 vale")
 	if not is_equal_approx(Accessibility.ui_factor({"ui_scale": 125}), 1.25):

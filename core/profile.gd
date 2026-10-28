@@ -116,6 +116,12 @@ func _migrate_settings(source: Dictionary) -> void:
 		data.settings.color_mode = "off"
 	if data.settings.has("speech_time") and not (str(data.settings.speech_time) in Accessibility.SPEECH_MODES):
 		data.settings.speech_time = "normal"
+	if data.settings.has("keybinds") and not (data.settings.keybinds is Dictionary):
+		data.settings.keybinds = {}
+	if data.settings.has("vsync") and not (data.settings.vsync is bool):
+		data.settings.vsync = true
+	if data.settings.has("fps_cap") and not (int(data.settings.fps_cap) in [0, 30, 60, 120, 144]):
+		data.settings.fps_cap = 0
 
 func coins() -> int:
 	return int(data.coins)

@@ -616,10 +616,10 @@ func _physics_process(dt: float) -> void:
 		_hit_stop_t -= dt
 		return
 	var d := Hero.movement_input(
-		Input.is_physical_key_pressed(KEY_A) or Input.is_physical_key_pressed(KEY_LEFT),
-		Input.is_physical_key_pressed(KEY_D) or Input.is_physical_key_pressed(KEY_RIGHT),
-		Input.is_physical_key_pressed(KEY_W) or Input.is_physical_key_pressed(KEY_UP),
-		Input.is_physical_key_pressed(KEY_S) or Input.is_physical_key_pressed(KEY_DOWN))
+		Input.is_action_pressed(&"key_move_left") or Input.is_physical_key_pressed(KEY_LEFT),
+		Input.is_action_pressed(&"key_move_right") or Input.is_physical_key_pressed(KEY_RIGHT),
+		Input.is_action_pressed(&"key_move_up") or Input.is_physical_key_pressed(KEY_UP),
+		Input.is_action_pressed(&"key_move_down") or Input.is_physical_key_pressed(KEY_DOWN))
 	if d == Vector2.ZERO:
 		d = Game.movement_joystick()
 	d = Hero.mouse_walk_dir(d, Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT), hud.pointer_over_ui(), get_global_mouse_position() - hero_node.position)
@@ -643,6 +643,8 @@ func _physics_process(dt: float) -> void:
 	_speed_acc += battle.speed_scale()
 	var steps := int(_speed_acc)
 	_speed_acc -= steps
+	if battle.boss_intro_remaining > 0.0:
+		steps = mini(steps, 1)   # a pausa da apresentação acompanha o relógio da arte, mesmo com o jogo acelerado
 	for _i in steps:
 		battle.step(d, dt)
 		if battle.state != "running" or battle.stage_changed:
@@ -650,8 +652,6 @@ func _physics_process(dt: float) -> void:
 	if battle.stage_changed:
 		_load_stage()
 		battle.hero.pos = Iso.to_ground(start_pos)
-	if battle.boss_intro_remaining > 0.0:
-		steps = mini(steps, 1)   # a pausa da apresentação acompanha o relógio da arte, mesmo com o jogo acelerado
 		await _record_stage_reached(battle.stage_id)
 	await _process_hq_milestones()
 	_sync()
@@ -853,7 +853,8 @@ func _consume_events() -> void:
 			"hurt":
 				if not ev.get("continuous", false):   # SPEC-177 F-1: dano contínuo da névoa não soa nem treme a cada aviso
 					Sfx.play("player.hurt")
-					_shake = 0.6
+					if not Game.reduced_impact():   # 0.5.2: "Impacto reduzido" também tira o tremor da câmera
+						_shake = 0.6
 				if _danger != null:
 					_danger.on_hurt(float(ev.amount), battle.hero.max_hp, bool(ev.get("continuous", false)), Game.reduced_impact())
 				var hurt_fx := HurtVfx.create_effect(ev, Game.reduced_impact(), get_tree().get_nodes_in_group(&"hurt_vfx").size())
@@ -996,6 +997,8 @@ func _consume_events() -> void:
 				Sfx.play("enemy.telegraph")
 			"windup":
 				Sfx.play("enemy.charge")
+			"cast_start":
+				Sfx.play("world.warning")   # 0.5.2: aviso próprio da conjuração interrompível
 			"telegraph_burst":
 				var burst_fx := BossVfx.create_burst(ev, _boss_scale(), Game.reduced_impact())
 				if burst_fx != null:

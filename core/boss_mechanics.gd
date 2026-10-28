@@ -219,9 +219,11 @@ func _start(v: Dictionary) -> void:
 			var effect := String(v.get("effect", "heavy"))
 			cast = {"name": String(v.get("name", "Conjuração")), "t": float(v.get("windup", 2.5)), "total": float(v.get("windup", 2.5)),
 				"dice": String(v.get("dice", "2d8")), "stun": float(v.get("stun", 2.0)), "effect": effect,
-				"armor_s": float(v.get("armor_s", config().get("armor", {}).get("seconds", 6.0)))}
+				"armor_s": float(v.get("armor_s", config().get("armor", {}).get("seconds", 6.0))),
+				"cap_pct": float(v.get("cap_pct", config().get("cast", {}).get("max_hp_pct", 0.0)))}
 			b.events.append({"type": "trap_warn", "pos": boss.pos})
-			b.events.append({"type": "toast", "text": "%s! Use a habilidade (%s) para interromper." % [cast.name, "Q"] if not _told_interrupt else "%s!" % cast.name, "color": Color(1.0, 0.8, 0.4)})
+			b.events.append({"type": "cast_start", "pos": boss.pos, "effect": effect})
+			b.events.append({"type": "toast", "text": "%s! Use a habilidade (%s) para interromper." % [cast.name, KeyBindings.active_hint("hero_active")] if not _told_interrupt else "%s!" % cast.name, "color": Color(1.0, 0.8, 0.4)})
 			_told_interrupt = true
 		"sweep":
 			var to := b.hero.pos - boss.pos
@@ -303,11 +305,28 @@ func _step_cast(dt: float) -> void:
 			armor_t = float(cast.get("armor_s", 6.0))
 			b.events.append({"type": "toast", "text": "%s: o chefe se blinda!" % String(cast.name), "color": Color(0.7, 0.8, 1.0)})
 		else:
-			var dmg := float(Dice.roll(b.rng, String(cast.dice)) + boss.atk_bonus)
+			var dmg := _capped_hit(float(Dice.roll(b.rng, String(cast.dice)) + boss.atk_bonus), float(cast.get("cap_pct", 0.0)))
 			b.events.append({"type": "text", "pos": b.hero.pos, "text": String(cast.name)})
-			b._hurt_hero(dmg, "aoe")
+			_hurt(dmg, String(cast.name))
 		b.events.append({"type": "telegraph_burst", "pos": boss.pos, "verb": "cast", "effect": String(cast.get("effect", "heavy"))})
 		cast.clear()
+
+## Teto do golpe pesado como fração do PV máximo do herói, medido depois dos multiplicadores de fase, dificuldade e enrage
+## (o bônus de ataque do chefe vezes o multiplicador da fase tornava o erro de interrupção letal nos últimos mapas). 0 = sem teto.
+## Golpe de mecânica de chefe: o nome vai para a tela de resultado ("o que me matou").
+func _hurt(dmg: float, label: String) -> void:
+	b.blow_label = label
+	b._hurt_hero(dmg, "aoe")
+
+func _hit_cap() -> float:
+	return float(config().get("hit_cap_pct", 0.0))
+
+func _capped_hit(raw: float, cap_pct: float) -> float:
+	if cap_pct <= 0.0 or b.hero.max_hp <= 0.0:
+		return raw
+	var scaled := raw * b.difficulty * b._stage_dmg_mult("aoe")
+	var ceiling := b.hero.max_hp * cap_pct
+	return raw if scaled <= ceiling else raw * ceiling / scaled
 
 func _interrupt(text: String) -> void:
 	var stun := float(cast.get("stun", 2.0))
@@ -336,7 +355,7 @@ func _step_sweep(dt: float) -> void:
 		var across := absf(rel.cross(dir))
 		if along > 0.0 and along <= float(sweep.len) and across <= 0.7 and _hit_cd <= 0.0:
 			_hit_cd = 0.7
-			b._hurt_hero(float(Dice.roll(b.rng, String(sweep.dice)) + boss.atk_bonus), "aoe")
+			_hurt(_capped_hit(float(Dice.roll(b.rng, String(sweep.dice)) + boss.atk_bonus), _hit_cap()), "Feixe de %s" % boss.name)
 			break
 
 func _step_quad(dt: float) -> void:
@@ -349,7 +368,7 @@ func _step_quad(dt: float) -> void:
 	if rel.length() <= float(quad.radius):
 		var idx := int(floor(wrapf(rel.angle(), 0.0, TAU) / (TAU / float(SECTOR_COUNT))))
 		if (quad.sectors as Array).has(idx):
-			b._hurt_hero(float(Dice.roll(b.rng, String(quad.dice)) + boss.atk_bonus), "aoe")
+			_hurt(_capped_hit(float(Dice.roll(b.rng, String(quad.dice)) + boss.atk_bonus), _hit_cap()), "Quadrantes de %s" % boss.name)
 	if bool(quad.get("puddle", false)):
 		for s in quad.sectors:
 			var at: Vector2 = (quad.center as Vector2) + Vector2.from_angle((float(s) + 0.5) * TAU / float(SECTOR_COUNT)) * float(quad.radius) * 0.5
@@ -370,7 +389,7 @@ func _step_mark(dt: float) -> void:
 		return
 	var at: Vector2 = mark.pos
 	if b.hero.pos.distance_to(at) <= float(mark.radius):
-		b._hurt_hero(float(Dice.roll(b.rng, String(mark.dice)) + boss.atk_bonus), "aoe")
+		_hurt(_capped_hit(float(Dice.roll(b.rng, String(mark.dice)) + boss.atk_bonus), _hit_cap()), "Marca de %s" % boss.name)
 		if float(mark.slow) > 0.0:
 			b.hero.slow_t = maxf(b.hero.slow_t, float(mark.slow))
 	if bool(mark.get("puddle", false)):
@@ -404,7 +423,7 @@ func draw_fx(ci: CanvasItem) -> void:
 		ci.draw_rect(Rect2(top, Vector2(68, 8)), Color(0, 0, 0, 0.75))
 		ci.draw_rect(Rect2(top + Vector2(1, 1), Vector2(66.0 * ratio, 6)), Color(1.0, 0.55, 0.2))
 		ci.draw_rect(Rect2(top, Vector2(68, 8)), Color(1.0, 0.85, 0.5), false, 1.0)
-		ci.draw_string(ThemeDB.fallback_font, top + Vector2(-20, -4), "%s (Q interrompe)" % String(cast.name), HORIZONTAL_ALIGNMENT_LEFT, 150, 12, Color(1.0, 0.9, 0.6))
+		ci.draw_string(ThemeDB.fallback_font, top + Vector2(-20, -4), "%s (%s interrompe)" % [String(cast.name), KeyBindings.active_hint("hero_active")], HORIZONTAL_ALIGNMENT_LEFT, 150, 12, Color(1.0, 0.9, 0.6))
 	if not sweep.is_empty():
 		var origin := Iso.to_screen(sweep.origin) + Vector2(0, -8)
 		var warn_phase := float(sweep.t) < float(sweep.warn)

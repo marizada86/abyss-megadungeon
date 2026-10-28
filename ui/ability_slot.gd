@@ -15,6 +15,8 @@ var _flash := 0.0
 var _was_cooling := false
 var _key_text := "Q/RMB"
 var key_icon: Texture2D
+var _alert := false          # 0.5.2: conjuração interrompível em curso e a habilidade pronta: o Q é a resposta
+var _alert_steady := false   # impacto reduzido: anel fixo, sem pulsar
 
 func _init() -> void:
 	custom_minimum_size = SIZE
@@ -40,6 +42,14 @@ func set_state(cd: float, cd_max: float, guard_active: bool, delta: float) -> vo
 	_cd = cd
 	_cd_max = maxf(cd_max, 0.001)
 	_guard = guard_active
+	queue_redraw()
+
+## Destaca o slot enquanto o chefe conjura e a habilidade está pronta.
+func set_alert(on: bool, steady: bool = false) -> void:
+	if on == _alert and steady == _alert_steady:
+		return
+	_alert = on
+	_alert_steady = steady
 	queue_redraw()
 
 static func cooldown_text(cd: float) -> String:
@@ -76,6 +86,11 @@ func _draw() -> void:
 	if ring != null:
 		var rsize := radius * 2.0 + 14.0
 		draw_texture_rect(ring, Rect2(center - Vector2(rsize, rsize) * 0.5, Vector2(rsize, rsize)), false)
+	if _alert and not cooling:
+		var pulse := 1.0 if _alert_steady else 0.5 + 0.5 * sin(float(Time.get_ticks_msec()) / 110.0)
+		draw_arc(center, radius + 5.0, 0.0, TAU, 40, Color(1.0, 0.72, 0.25, 0.55 + 0.4 * pulse), 3.0 + 2.0 * pulse)
+		if not _alert_steady:
+			queue_redraw()
 	if _guard:
 		draw_circle(center, radius, Color(0.45, 0.75, 1.0, 0.28))
 	if _flash > 0.0:

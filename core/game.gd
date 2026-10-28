@@ -85,7 +85,6 @@ func ensure_input_actions() -> void:
 			for event in InputMap.action_get_events(action):
 				if event is InputEventJoypadButton or event is InputEventJoypadMotion:
 					InputMap.action_erase_event(action, event)
-	_add_input_event(&"hero_active", _key_event(KEY_Q))
 	_add_input_event(&"hero_active", _mouse_event(MOUSE_BUTTON_RIGHT))
 	_add_input_event(&"hero_active", _joy_button_event(controls.button("hero_active")))
 	_add_input_event(ACTION_MOVE_LEFT, _joy_axis_event(JOY_AXIS_LEFT_X, -1.0))
@@ -102,16 +101,9 @@ func ensure_input_actions() -> void:
 	_add_input_event(ACTION_AIM_DOWN, _joy_axis_event(JOY_AXIS_RIGHT_Y, 1.0))
 	_add_input_event(ACTION_RUN_PAUSE, _key_event(KEY_ESCAPE))
 	_add_input_event(ACTION_RUN_PAUSE, _joy_button_event(JOY_BUTTON_START))
-	_add_input_event(ACTION_RUN_AIM, _key_event(KEY_TAB))
 	_add_input_event(ACTION_RUN_AIM, _joy_button_event(controls.button("run_toggle_aim")))
-	_add_input_event(ACTION_RUN_INTERACT, _key_event(KEY_E))
 	_add_input_event(ACTION_RUN_INTERACT, _joy_button_event(controls.button("run_interact")))
-	_add_input_event(ACTION_RUN_EXTRACT, _key_event(KEY_X))
-	_add_input_event(ACTION_RUN_ITEMS, _key_event(KEY_C))
 	_add_input_event(ACTION_RUN_ITEMS, _joy_button_event(controls.button("run_items")))
-	_add_input_event(ACTION_RUN_SPEED, _key_event(KEY_F))
-	_add_input_event(ACTION_RUN_SPEED, _key_event(KEY_T))
-	_add_input_event(ACTION_RUN_REROLL, _key_event(KEY_R))
 	_add_input_event(ACTION_RUN_REROLL, _joy_button_event(controls.button("run_reroll")))
 	_add_input_event(ACTION_OFFER_DETAILS, _key_event(KEY_SHIFT))
 	_add_input_event(ACTION_OFFER_DETAILS, _joy_button_event(controls.button("offer_details")))
@@ -130,6 +122,35 @@ func ensure_input_actions() -> void:
 		InputMap.action_set_deadzone(action, controls.deadzone(action in [ACTION_AIM_LEFT, ACTION_AIM_RIGHT, ACTION_AIM_UP, ACTION_AIM_DOWN]))
 	for action in [&"ui_left", &"ui_right", &"ui_up", &"ui_down"]:
 		InputMap.action_set_deadzone(action, controls.deadzone())
+	apply_keybinds()
+
+## 0.5.2: teclado remapeável (ver KeyBindings). Troca só os eventos de teclado das ações; mouse e controle ficam como estão.
+## O T continua como segunda tecla de velocidade enquanto nenhuma ação o usa.
+func apply_keybinds() -> void:
+	var s: Dictionary = profile.data.settings if profile != null else {}
+	for id in KeyBindings.ids():
+		var action := StringName(id)
+		if not InputMap.has_action(action):
+			InputMap.add_action(action)
+		for event in InputMap.action_get_events(action):
+			if event is InputEventKey:
+				InputMap.action_erase_event(action, event)
+		KeyBindings.active_codes[id] = KeyBindings.code_of(s, id)
+		InputMap.action_add_event(action, _key_event(KeyBindings.code_of(s, id) as Key))
+	for event in InputMap.action_get_events(ACTION_RUN_SPEED):
+		if event is InputEventKey and (event as InputEventKey).physical_keycode == KEY_T:
+			InputMap.action_erase_event(ACTION_RUN_SPEED, event)
+	if KeyBindings.owner_of(s, KEY_T, "") == "":
+		InputMap.action_add_event(ACTION_RUN_SPEED, _key_event(KEY_T))
+
+## Tecla atual de uma ação remapeável, em texto ("Q"), para dicas e avisos.
+func key_hint(action: String) -> String:
+	return KeyBindings.hint(profile.data.settings if profile != null else {}, action)
+
+func set_keybinds(diff: Dictionary) -> void:
+	profile.data.settings.keybinds = diff
+	apply_keybinds()
+	save()
 
 
 func _add_input_event(action: StringName, event: InputEvent) -> void:
@@ -372,6 +393,9 @@ func start_qa_run(request: Dictionary) -> bool:
 
 const SUPPORTED_RESOLUTIONS = ["1280x720", "1600x900", "1920x1080"]
 const WINDOW_MODES = ["windowed", "borderless", "fullscreen"]
+## 0.5.2: sincronia vertical e limite de quadros (0 = sem limite). Padrões iguais ao comportamento anterior.
+const FPS_CAPS: Array[int] = [0, 30, 60, 120, 144]
+const FPS_CAP_LABELS: Array[String] = ["Sem limite", "30 quadros/s", "60 quadros/s", "120 quadros/s", "144 quadros/s"]
 
 ## SPEC-116: opção de acessibilidade; desliga a pausa de acerto e reduz as partículas novas de impacto.
 func reduced_impact() -> bool:
@@ -391,6 +415,32 @@ func apply_audio() -> void:
 func apply_settings() -> void:
 	apply_audio()
 	apply_window()
+	apply_frame_pacing()
+
+## 0.5.2: VSync e limite de quadros. Chaves opcionais em `settings` (`vsync`, `fps_cap`); sem elas, VSync ligado e sem limite.
+static func vsync_of(settings: Dictionary) -> bool:
+	return bool(settings.get("vsync", true))
+
+static func fps_cap_of(settings: Dictionary) -> int:
+	var value := int(settings.get("fps_cap", 0))
+	return value if value in FPS_CAPS else 0
+
+func apply_frame_pacing() -> void:
+	var s: Dictionary = profile.data.settings
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if vsync_of(s) else DisplayServer.VSYNC_DISABLED)
+	Engine.max_fps = fps_cap_of(s)
+
+func set_vsync(on: bool) -> void:
+	profile.data.settings.vsync = on
+	apply_frame_pacing()
+	save()
+
+func set_fps_cap(value: int) -> void:
+	if not (value in FPS_CAPS):
+		return
+	profile.data.settings.fps_cap = value
+	apply_frame_pacing()
+	save()
 
 ## Modo de tela, borda e resolução. Só deve rodar na partida, ao mudar modo ou resolução.
 func apply_window() -> void:

@@ -48,6 +48,8 @@ func run() -> Array:
 	_totems(out)
 	_immunity(out)
 	_cast(out)
+	_cast_cap(out)
+	_hit_cap_test(out)
 	_sweep(out)
 	_quadrants(out)
 	_enrage(out)
@@ -166,6 +168,70 @@ func _cast(out: Array) -> void:
 		out.append("usar a habilidade ativa deveria interromper a conjuração")
 	if b.boss.stun_t < 1.5:
 		out.append("o chefe interrompido deveria ficar atordoado (%.2f)" % b.boss.stun_t)
+
+## 0.5.2: errar a interrupção custa no máximo `boss_mech.cast.max_hp_pct` do PV máximo (antes passava de 100% nos últimos mapas).
+func _cast_cap(out: Array) -> void:
+	var cast_def := {"t": "cast", "name": "Verdade desfeita", "windup": 2.5, "dice": "3d8", "stun": 2}
+	var pct := float(Data.table("difficulty").boss_mech.get("cast", {}).get("max_hp_pct", 0.0))
+	if pct <= 0.0 or pct >= 1.0:
+		out.append("boss_mech.cast.max_hp_pct deveria existir entre 0 e 1 (%.2f)" % pct)
+		return
+	for stage_id in ["goranthis", "pilares"]:
+		for cap_on in [true, false]:
+			_cfg(["boss_mech", "cast", "max_hp_pct"], pct if cap_on else 0.0)
+			var b := _boss_battle(stage_id)
+			if b.boss_mech == null:
+				out.append("%s deveria ter mecânicas de chefe" % stage_id)
+				continue
+			var m: BossMechanics = b.boss_mech
+			b.hero.max_hp = 88.0
+			b.hero.hp = 88.0
+			b.invuln = 0.0
+			m.enrage_steps = 5
+			m._start(cast_def)
+			m.cast.t = 0.0
+			m._step_cast(0.0)
+			var lost: float = 88.0 - b.hero.hp
+			if cap_on and (b.last_blow.get("label", "") != "Verdade desfeita" or b.hits_taken < 1):
+				out.append("0.5.2: o último golpe deveria nomear a conjuração (%s, golpes %d)" % [b.last_blow, b.hits_taken])
+			if cap_on and (lost > 88.0 * pct + 0.01 or lost <= 0.0):
+				out.append("%s: a conjuração não interrompida deveria custar até %d%% do PV (perdeu %.1f de 88)" % [stage_id, int(pct * 100.0), lost])
+			if not cap_on and lost <= 88.0 * pct:
+				out.append("%s: sem o teto a conjuração deveria passar de %d%% do PV (perdeu %.1f de 88)" % [stage_id, int(pct * 100.0), lost])
+	_cfg(["boss_mech", "cast", "max_hp_pct"], pct)
+
+## 0.5.2: quadrantes, marca e feixe também respeitam `boss_mech.hit_cap_pct`.
+func _hit_cap_test(out: Array) -> void:
+	var pct := float(Data.table("difficulty").boss_mech.get("hit_cap_pct", 0.0))
+	if pct <= 0.0 or pct >= 1.0:
+		out.append("boss_mech.hit_cap_pct deveria existir entre 0 e 1 (%.2f)" % pct)
+		return
+	var b := _boss_battle("pilares")
+	if b.boss_mech == null:
+		out.append("pilares deveria ter mecânicas de chefe")
+		return
+	var m: BossMechanics = b.boss_mech
+	b.hero.max_hp = 88.0
+	m.enrage_steps = 5
+	var lost_by := {}
+	for kind in ["quad", "mark", "sweep"]:
+		b.hero.hp = 88.0
+		b.invuln = 0.0
+		m._hit_cd = 0.0
+		match kind:
+			"quad":
+				m.quad = {"center": b.hero.pos, "sectors": [0, 1, 2, 3], "t": 0.0, "total": 1.0, "radius": 9.0, "dice": "2d8", "puddle": false}
+				m._step_quad(0.0)
+			"mark":
+				m.mark = {"pos": b.hero.pos, "follow": 0.0, "lock": 0.0, "t": 0.0, "radius": 3.0, "dice": "2d8", "slow": 0.0, "puddle": false}
+				m._step_mark(0.0)
+			"sweep":
+				m.sweep = {"origin": b.hero.pos - Vector2(1, 0), "a": 0.0, "a0": 0.0, "sign": 1.0, "arc": 0.0, "warn": 0.0, "dur": 5.0, "t": 0.0,
+					"len": 9.0, "dice": "2d8", "offsets": [0.0]}
+				m._step_sweep(0.01)
+		lost_by[kind] = 88.0 - b.hero.hp
+		if lost_by[kind] <= 0.0 or lost_by[kind] > 88.0 * pct + 0.01:
+			out.append("%s: o golpe deveria custar até %d%% do PV (perdeu %.1f de 88)" % [kind, int(pct * 100.0), lost_by[kind]])
 
 func _sweep(out: Array) -> void:
 	var b := _boss_battle("docas")

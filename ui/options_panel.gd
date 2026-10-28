@@ -27,6 +27,11 @@ var ui_scale: OptionButton  # PLAN-ABYSS-QOL-A11Y-P1
 var high_contrast: CheckBox
 var color_mode: OptionButton
 var speech: OptionButton
+var vsync: CheckBox  # 0.5.2
+var fps_cap: OptionButton
+var key_buttons: Dictionary = {}   # id da ação -> Button
+var key_notice: Label
+var _capturing := ""
 var _syncing := false
 
 func _init() -> void:
@@ -73,6 +78,17 @@ func _init() -> void:
 		Game.set_resolution(resolution.get_item_text(i))
 		changed.emit())
 	add_child(_row("Resolução", resolution))
+	vsync = _check("Sincronia vertical (VSync): evita rasgos na imagem", func(on): _apply_accessibility(func(): Game.set_vsync(on)))
+	fps_cap = OptionButton.new()
+	for label in Game.FPS_CAP_LABELS:
+		fps_cap.add_item(label)
+	fps_cap.tooltip_text = "Limita os quadros por segundo (menos calor e ruído em notebooks)."
+	fps_cap.item_selected.connect(func(i):
+		if _syncing:
+			return
+		Game.set_fps_cap(int(Game.FPS_CAPS[i]))
+		changed.emit())
+	add_child(_row("Limite de quadros", fps_cap))
 	visual = OptionButton.new()  # SPEC-173 (MEC-065)
 	for label in VisualFilter.LABELS:
 		visual.add_item(label)
@@ -120,6 +136,64 @@ func _init() -> void:
 		Game.set_ui_font(String(UiFonts.available()[i].id))
 		changed.emit())
 	add_child(_row("Fonte dos títulos", title_font))
+	_build_keys()
+
+## 0.5.2 (Q3): teclas do teclado. Clique no botão e aperte a nova tecla; Esc cancela. Trocar por uma tecla em uso inverte as duas.
+func _build_keys() -> void:
+	add_child(UiKit.label("TECLAS", 16, UiKit.GOLD))
+	for id in KeyBindings.ids():
+		var button := Button.new()
+		button.custom_minimum_size = Vector2(150, 0)
+		button.pressed.connect(func(): _start_capture(String(id)))
+		key_buttons[id] = button
+		add_child(_row(KeyBindings.label_of(String(id)), button))
+	key_notice = UiKit.label("Esc, setas, 1-9, Enter e Espaço ficam fixos. O mouse e o controle não mudam.", 13)
+	key_notice.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	add_child(key_notice)
+	var reset := Button.new()
+	reset.text = "Restaurar teclas"
+	reset.pressed.connect(func():
+		_capturing = ""
+		Game.set_keybinds({})
+		_refresh_keys()
+		changed.emit())
+	add_child(reset)
+
+func _start_capture(id: String) -> void:
+	_capturing = id
+	(key_buttons[id] as Button).text = "Aperte a tecla..."
+
+func _refresh_keys() -> void:
+	var s: Dictionary = Game.profile.data.settings
+	for id in key_buttons:
+		(key_buttons[id] as Button).text = KeyBindings.key_text(KeyBindings.code_of(s, String(id)))
+
+## Recebe a tecla enquanto o painel espera uma; Esc cancela. Consome o evento para a pausa e o jogo não reagirem.
+func _input(event: InputEvent) -> void:
+	if _capturing == "" or not (event is InputEventKey) or not event.pressed or event.echo:
+		return
+	get_viewport().set_input_as_handled()
+	var code := int((event as InputEventKey).physical_keycode)
+	var id := _capturing
+	_capturing = ""
+	if code == KEY_ESCAPE:
+		_refresh_keys()
+		return
+	apply_key(id, code)
+
+## Aplica uma tecla nova (também usada pelos testes). Devolve false quando a tecla é reservada.
+func apply_key(id: String, code: int) -> bool:
+	var diff := KeyBindings.rebind(Game.profile.data.settings, id, code)
+	if diff.is_empty() and not KeyBindings.is_assignable(code):
+		key_notice.text = "Essa tecla é reservada. Escolha outra."
+		_refresh_keys()
+		return false
+	var taken := KeyBindings.owner_of(Game.profile.data.settings, code, id)
+	Game.set_keybinds(diff)
+	key_notice.text = "Trocado com: %s." % KeyBindings.label_of(taken) if taken != "" else "Tecla atribuída."
+	_refresh_keys()
+	changed.emit()
+	return true
 
 ## PLAN-ABYSS-QOL-A11Y-P1: fica no topo do painel, para quem precisa dela achar antes de rolar.
 func _build_accessibility() -> void:
@@ -203,6 +277,8 @@ func refresh() -> void:
 	reduced_impact.button_pressed = bool(s.get("reduced_impact", false))
 	display_mode.select(maxi(0, Game.WINDOW_MODES.find(String(s.get("window_mode", "windowed")))))
 	resolution.select(maxi(0, Game.SUPPORTED_RESOLUTIONS.find(String(s.get("resolution", "1280x720")))))
+	vsync.button_pressed = Game.vsync_of(s)
+	fps_cap.select(maxi(0, Game.FPS_CAPS.find(Game.fps_cap_of(s))))
 	visual.select(maxi(0, VisualFilter.MODES.find(VisualFilter.mode_of(s))))
 	atmosphere.select(maxi(0, Atmosphere.MODES.find(Atmosphere.mode_of(s))))
 	hints.select(0 if String(s.get("hints", "on")) != "off" else 1)
@@ -212,6 +288,7 @@ func refresh() -> void:
 	high_contrast.button_pressed = Accessibility.high_contrast_of(s)
 	color_mode.select(maxi(0, Accessibility.COLOR_MODES.find(Accessibility.color_mode_of(s))))
 	speech.select(maxi(0, Accessibility.SPEECH_MODES.find(Accessibility.speech_mode_of(s))))
+	_refresh_keys()
 	_syncing = false
 
 func _apply_accessibility(action: Callable) -> void:
@@ -283,4 +360,5 @@ func _exit_tree() -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_VISIBILITY_CHANGED and not is_visible_in_tree():
+		_capturing = ""
 		flush_save()

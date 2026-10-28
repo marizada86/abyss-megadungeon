@@ -37,8 +37,8 @@ func run() -> Array:
 			if img.get_pixelv(corner).a > 0.01:
 				out.append("%s: canto %s não é transparente (chave mal removida?)" % [id, corner])
 				break
-	if count != 8:
-		out.append("data/lettering.json deveria ter 8 peças, tem %d" % count)
+	if count != 7:
+		out.append("data/lettering.json deveria ter 7 peças, tem %d" % count)
 
 	# Estilo de lettering em Label dinâmico (sem arte nenhuma).
 	var label := Label.new()

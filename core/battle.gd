@@ -133,6 +133,9 @@ var revive_left := 0
 var free_revive_used := false
 var death_reward_rate := 0.5
 var death_reason := ""
+var hits_taken := 0          # 0.5.2: golpes sofridos (sem o dano contínuo); alimenta o resultado
+var blow_label := ""         # 0.5.2: quem causa o próximo golpe; o chamador define logo antes de _hurt_hero
+var last_blow: Dictionary = {}
 var invuln := 0.0
 var stats := {"boons_declined": 0, "kills": 0, "crits": 0, "ones": 0, "elites": 0, "bosses": 0, "chests": 0, "gold": 0.0, "gold_src": {}, "gold_extra": {}, "damage_taken": 0.0, "clean_kills": 0, "clean_streak_best": 0, "still_best": 0.0, "stages_cleared": 0, "rituals": 0, "bets_won": 0, "loyalty": 0, "boss_ids": [], "stage_ids": [], "cleared_ids": [], "ecos": []}
 ## Medalhas do Quartel: métricas da fase atual (zeradas em load_stage) e o registro das fases concluídas na run.
@@ -1711,6 +1714,7 @@ func _enemy_hit_hero(bonus: int, dice: String, dtype: String, is_proj: bool, dam
 		return
 	var dmg := float(Dice.roll(rng, dice)) * (2.0 if r == 20 else 1.0) * damage_mult * RandomEvents.world_mult(world_mod, "enemy_dmg", by != null and by.is_boss())   # SPEC-164: Eclipse
 	var hp_before: float = hero.hp
+	blow_label = String(by.name) if by != null else ("Projétil" if is_proj else "")
 	_hurt_hero(dmg, "hit", false, dtype)
 	if by != null and not by.dead and by.has_affix("vampirico"):
 		by.hp = minf(by.max_hp, by.hp + maxf(0.0, hp_before - hero.hp) * AFFIX_LEECH)
@@ -1726,6 +1730,19 @@ func _stage_dmg_mult(src: String) -> float:
 	var enrage := boss_mech.enrage_mult() if boss_mech != null and boss != null and not boss.dead else 1.0   # L5
 	return float(stage.get("dmg_mult", 1.0)) * _mk_dmg * enrage
 
+## 0.5.2: nome legível do golpe para a tela de resultado ("o que me matou").
+func _blow_label(src: String, label: String) -> String:
+	if label != "":
+		return label
+	match src:
+		"puddle": return "Poça corrosiva"
+		"trap": return "Armadilha"
+		"aoe": return "Golpe em área"
+		"hit": return "Golpe"
+		"false_sanctuary": return "Falso santuário"
+		"pact": return "Pacto"
+	return src
+
 ## Acumula o dano contínuo e emite `hurt` (continuous) com o inteiro acumulado no máximo a cada CONTINUOUS_HURT_INTERVAL; a fração fica guardada.
 func _emit_continuous_hurt(dmg: float, force: bool) -> void:
 	_dot_accum += dmg
@@ -1739,6 +1756,8 @@ func _emit_continuous_hurt(dmg: float, force: bool) -> void:
 	events.append({"type": "hurt", "pos": hero.pos, "amount": whole, "continuous": true})
 
 func _hurt_hero(dmg: float, src: String, bypass_generic_defenses: bool = false, dtype: String = "") -> void:
+	var label := blow_label
+	blow_label = ""
 	if hero.dead or (invuln > 0.0 and not bypass_generic_defenses):
 		return
 	if active_guard > 0 and not bypass_generic_defenses:
@@ -1766,6 +1785,9 @@ func _hurt_hero(dmg: float, src: String, bypass_generic_defenses: bool = false, 
 	if not bypass_generic_defenses:
 		invuln = maxf(invuln, HIT_INVULN)
 	stats.damage_taken += dmg
+	if not CONTINUOUS_HURT_SOURCES.has(src):
+		hits_taken += 1
+		last_blow = {"label": _blow_label(src, label), "amount": int(dmg)}
 	_medal_hurt = true
 	stats.clean_kills = 0
 	kinds.on_hit(self, src)
@@ -3973,7 +3995,8 @@ func result() -> Dictionary:
 		"abyss_level": abyss_level, "abyss_marks": abyss_marks.duplicate(), "abyss_start_stage": abyss_start_stage,
 		"clean_streak": stats.clean_streak_best, "level": hero.level, "stage": stage_id, "hero": hero.id, "bosses": stats.bosses, "boss_ids": stats.boss_ids, "elites": stats.elites, "crits": stats.crits,
 		"ones": stats.ones, "still": stats.still_best, "rituals": stats.rituals, "bets_won": stats.bets_won, "loyalty": stats.loyalty, "chests": stats.chests, "stages_cleared": stats.stages_cleared, "stage_ids": stats.stage_ids, "cleared_ids": stats.cleared_ids, "stage_medals": medal_log.duplicate(true), "final_victory": final_victory, "weapons": hero.weapons.map(func(w): return w.id), "codex": codex,
-		"reward_rate": death_reward_rate if state == "dead" else 1.0, "death_reason": death_reason}
+		"reward_rate": death_reward_rate if state == "dead" else 1.0, "death_reason": death_reason,
+		"hits_taken": hits_taken, "last_blow": last_blow.duplicate()}
 
 ## L1 (IN-095): passivas que faltam para evoluir uma arma que já está no nível máximo.
 ## Retorna {id_da_passiva: {"weapon": nome da arma, "into": nome da evolução}}.

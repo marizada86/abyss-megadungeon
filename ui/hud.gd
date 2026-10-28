@@ -451,7 +451,8 @@ func update_stats(b: Battle) -> void:
 		_ability_slot.set_ability(String(ability.get("name", "")), String(ability.get("desc", "")),
 			load(ability_path) if ResourceLoader.exists(ability_path) else null, "Q/RMB")
 	_ability_slot.set_state(b.active_cd, b.active_cd_max, b.active_guard > 0, get_process_delta_time())
-	_ability_slot._key_text = Game.controls.prompt("hero_active", "Q/RMB")
+	_ability_slot.set_alert(b.boss_mech != null and not b.boss_mech.cast.is_empty() and b.active_cd <= 0.0, Game.reduced_impact())
+	_ability_slot._key_text = Game.controls.prompt("hero_active", "%s/RMB" % Game.key_hint("hero_active"))
 	_ability_slot.key_icon = Game.controls.glyph("hero_active")
 	_pause_speed.visible = b.can_speed_2x()
 	_pause_speed.text = "Velocidade: %s" % b.speed_label()
@@ -1176,6 +1177,11 @@ func show_result(res: Dictionary, summary: Dictionary) -> void:
 		_result_icon("moedas"), summary.earned, (" (%d%% da tentativa)" % int(round(float(summary.reward_rate) * 100.0))) if float(summary.reward_rate) < 1.0 else "", summary.coins]
 	if int(res.get("abyss_level", 0)) > 0:
 		txt += "\nMarcas do Abismo: nível %d (moedas +%d%%)%s" % [int(res.abyss_level), int(round(AbyssMarks.reward_bonus(res.abyss_marks) * 100.0)), "  ★ novo recorde" if bool(summary.get("abyss_record", false)) else ""]
+	if bool(res.get("dead", false)) and not (res.get("last_blow", {}) as Dictionary).is_empty():
+		var blow: Dictionary = res.last_blow   # 0.5.2: o que derrubou o herói, para aprender a mecânica
+		txt += "\nÚltimo golpe: %s (%d de dano)" % [String(blow.label).replace("[", "[lb]"), int(blow.amount)]
+	if bool(res.get("won", false)):
+		txt += "\nGolpes sofridos: %d" % int(res.get("hits_taken", 0))
 	var names: Array = []
 	for id in summary.achievements:
 		for a in Data.table("achievements").achievements:

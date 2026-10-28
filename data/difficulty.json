@@ -35,6 +35,12 @@
       "reduction": 0.4,
       "seconds": 6.0
     },
+    "hit_cap_pct": 0.45,
+    "_hit_cap_pct": "0.5.2: mesmo teto (fração do PV máximo) para os golpes desviáveis dos chefes: quadrantes, marca e feixe. 0 desliga.",
+    "cast": {
+      "_spec": "0.5.2: teto do golpe da conjuração não interrompida, em fração do PV máximo do herói (depois dos multiplicadores de fase, dificuldade e enrage). Antes ele chegava a 100-180% do PV nos últimos mapas. Cada conjuração pode sobrescrever com cap_pct em boss_mechanics.json; 0 desliga.",
+      "max_hp_pct": 0.55
+    },
     "off_bosses": [],
     "budget": {
       "base": 2,
