@@ -3153,3 +3153,25 @@ codex_lore_20261027:
     investigated_no_change:
       test_l5_boss_mechanics: "falhou 1 vez em ~50 execuções; 0 falhas em 30 execuções isoladas e 7 rodadas completas (3 com APPDATA novo). Não reproduzido; suspeita sem prova: sorteio global (Array.shuffle em core/boss_mechanics.gd:239) ou dano rolado menor que o bônus -20. Reabrir se voltar, anotando seed e o log."
       test_quartel_recurso_em_uso: "causa: AudioStreamMP3 ui.click_01.mp3 mantido pelo autoload Sfx ao encerrar o runner headless; test_pause_menu (anterior ao Códex) tem o mesmo aviso e test_quartel não; dívida de ambiente já registrada (GODOT_WINDOWS_CERTIFICATE_STORE_AND_RENDER_CLEANUP_MESSAGES); sem defeito do Códex"
+polish_0_5_2_20261028:
+  authorization: "Atena, varredura com bots, atualizar para v0.5.2, reduzir o dano do interrupt do chefe (2026-10-28); depois: Manter 55%; tudo aprovado conforme suas sugestoes, vamos seguir com o plano (2026-10-28)"
+  status: APPLIED_LOCAL_COMMITTED_AWAITING_BUILD_APPROVAL
+  report: .atena/vault/drafts/POLISH-0-5-2-20261028-r1.md
+  assets_index: .atena/vault/drafts/PROMPTS-ASSETS-0-5-2-20261028-r1.md  # nada gerado; geracao e aceite sao do dono
+  release_plan: .atena/specs/SPEC-NOTTGARD-RELEASE-0-5-2-20261028/plan-r1.md
+  applied:
+    version: "core/version.gd e 3 presets de export_presets.cfg -> 0.5.2 / 0.5.2.0; LEIA-ME e NOTAS em specs/SPEC-NOTTGARD-RELEASE-0-5-2-20261028/distribution"
+    boss_caps: "difficulty.json boss_mech.cast.max_hp_pct 0.55 (decidido pelo dono) e boss_mech.hit_cap_pct 0.45 (quadrantes, marca, feixe); core/boss_mechanics.gd _capped_hit; antes o cast tirava 99-182% do PV (88) de Feng-tu a Goranthis, agora 55%"
+    qol: "Q1 tremor segue Impacto reduzido (ui/run.gd); Q2 VSync e limite de quadros (core/game.gd, ui/options_panel.gd); Q3 teclas remapeaveis (core/key_bindings.gd, Game.apply_keybinds, secao TECLAS); Q4 anel dourado no slot da habilidade (ui/ability_slot.gd, ui/hud.gd); Q5 evento cast_start + som world.warning; Q6 ultimo golpe na derrota; Q7 golpes sofridos na vitoria (Battle.hits_taken, last_blow)"
+    fixes: "ui/run.gd await _record_stage_reached sob stage_changed (estava sob boss_intro_remaining; ja estava na arvore); data/lettering.json entrada orfa prompt_clique removida (tests/test_lettering_assets.gd 8 -> 7)"
+  verification:
+    suite: "run_all 0 falhas; audit_projeto 0 erros 0 avisos"
+    bots: "bot5 smart-god nivel 38 meta cheia, 4 runs por mapa, tetos off x on: golpes letais Feng-tu 2->0, Shendilavri 8->3, Goranthis 29->20; chefe morto 4/4 nos dois. Bot mortal morre antes do chefe (78-265 s): nao mede o cast. Custo da simulacao 0,5-1,5 ms por passo em Goranthis e Pilares"
+    controller_check: "92 PASS e 2 FAIL (preferencias_persistem_reload, zona_morta_navegacao) tanto no HEAD limpo quanto na arvore alterada com o mesmo perfil; falhas anteriores a esta tarefa, dependem do estado do perfil sintetico"
+    method_note: "no modo --script os autoloads (Game) nao existem: core/ nao pode referenciar Game; usar KeyBindings.active_hint"
+  not_done:
+    - "build/exportacao do preset Playtest Publico, smoke do exe, zip e SHA-256 (exige aprovacao)"
+    - "assets de arte e audio: so ha o indice de prompts"
+    - "textos de ajuda estaticos ainda citam Q/E/C (tooltip da ficha, guia do playtest)"
+    - "golpes comuns do chefe e inimigos em Goranthis ainda geram ~5 golpes letais por run do bot imortal"
+    - "playtest humano (G6) e medicao de quadros reais em Goranthis/Pilares"

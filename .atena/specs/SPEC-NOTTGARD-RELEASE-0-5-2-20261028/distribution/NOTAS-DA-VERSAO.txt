@@ -1,0 +1,44 @@
+NOTTGARD - ABYSS MEGADUNGEON  |  NOTAS DO PLAYTEST 0.5.2
+=======================================================
+
+A 0.5.2 substitui a 0.5.1. Se voce ainda nao jogou a 0.5.1, ignore-a e use esta.
+Mesmo progresso salvo; nada de esquema novo.
+
+O QUE MUDOU NA 0.5.2 (em relacao a 0.5.1)
+- Chefes: errar a interrupcao (Q) nao mata mais de um golpe. A conjuracao nao interrompida tira no maximo 55% da sua
+  vida maxima e os golpes desviaveis (quadrantes, marca, feixe) no maximo 45%. Antes, de Feng-tu em diante, o golpe
+  passava de 100% da vida. O telegrafo e a mecanica seguem iguais.
+- Chefes: durante a conjuracao o botao da habilidade ganha um anel dourado piscando (fixo com "Impacto reduzido"),
+  toca um aviso proprio e os textos mostram a tecla que voce escolheu.
+- Tela de derrota: mostra o ultimo golpe ("Ultimo golpe: Verdade desfeita (48 de dano)"). Tela de vitoria: mostra os golpes sofridos.
+- Teclas: movimento, habilidade, interagir, ficha, velocidade, rerrolar, extrair e mira podem ser trocadas em
+  Configuracoes > TECLAS (trocar por uma tecla em uso inverte as duas; "Restaurar teclas" volta o padrao).
+- Tela: novas opcoes "Sincronia vertical (VSync)" e "Limite de quadros" (padrao igual ao anterior).
+- "Impacto reduzido" agora tambem desliga o tremor da camera (antes so reduzia os flashes).
+- Codex do Quartel com aba Personagens e historia de herois, inimigos, armas e itens.
+- Retratos proprios do HUD e da Ficha para os 12 herois.
+- Efeitos visuais novos (lotes 1 a 3): chefes, mortes, coletas e XP, tentaculos, detonacoes, luz e cera, dano no heroi.
+- Acessibilidade: tamanho do texto, contraste alto, daltonismo e duracao das falas; botao direito interage com altares, portais e lojas.
+- Cartoes de oferta com o que o item faz e sem desalinhar; estrela do caminho de Tou Um com arte propria.
+- Correcao: a fase alcancada passa a ser registrada em toda troca de fase, nao so durante a apresentacao do chefe.
+
+O QUE TESTAR (em ordem de interesse)
+1. Chefes das fases fundas (Feng-tu, Shendilavri, Goranthis): errar o Q agora e dificil demais, justo ou facil demais?
+   Os golpes de quadrantes, marca e feixe ficaram justos?
+2. O aviso de conjuracao (anel dourado + som) e suficiente para voce reagir a tempo?
+3. Teclas: trocou alguma tecla? Algo ficou preso, duplicado ou sem aviso na tela?
+4. Desempenho em Goranthis e Pilares (muitos inimigos): trava? Em qual fase e heroi? Ajuda o limite de quadros?
+5. Pilares ainda e o mais dificil: robos so derrotam o chefe com o Quartel no maximo. Diga se esta na medida.
+6. Tela de derrota: o "ultimo golpe" ajuda a entender o que aconteceu?
+
+JA SABEMOS (nao precisa reportar)
+- Musica e ambiencia do Reino Abissal, Domwieck e Pilares sao reaproveitadas de outras fases.
+- Alguns inimigos ainda aparecem parados (Molydeus comum, ilusoes de Shendilavri e Goranthis): animacoes em producao.
+- Os herois ainda usam a arte e as animacoes de caminhada antigas; a arte nova esta em producao.
+- Os limiares das medalhas sao provisorios; mapas por objetivo nao tem medalha de tempo.
+- Controle fisico nunca foi testado em hardware.
+- Alguns textos de ajuda ainda citam as teclas padrao (Q, E, C) mesmo depois de trocadas.
+
+COMO REPORTAR
+Por item: Funcionou? | Dificuldade (facil / ok / dificil) | Diversao (1 a 5) | Bug (o que fazia, fase, heroi) | Print (F6).
+F5 para a nota, F7 para o ZIP. Detalhes no LEIA-ME.txt.
