@@ -26,7 +26,7 @@ const ANIMATED := {
 	"sucubo": {"cell": Vector2i(256, 384), "body_height": 177.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6}, "flip_h_for_move": true},
 	"escravo_de_rivenheart": {"cell": Vector2i(256, 384), "body_height": 153.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6}, "flip_h_for_move": true},
 	"lu_yueh": {"cell": Vector2i(256, 384), "body_height": 145.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6, "special": 6}, "flip_h_for_move": true},
-	"discipulo_pestilento": {"cell": Vector2i(256, 384), "body_height": 171.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6}, "flip_h_for_move": true},
+	"discipulo_pestilento": {"cell": Vector2i(256, 384), "body_height": 171.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6, "special": 6}, "flip_h_for_move": true},
 	"cultista_ghaunadaur": {"cell": Vector2i(256, 384), "body_height": 153.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6}, "flip_h_for_move": true},
 	"estatua_do_templo": {"cell": Vector2i(256, 384), "body_height": 152.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6}, "flip_h_for_move": true},
 	"cultista_de_feng_tu": {"cell": Vector2i(256, 384), "body_height": 119.0, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6}, "flip_h_for_move": true},
@@ -113,6 +113,8 @@ const DEATH_ONLY := ["candelabro_quebravel", "caixote_quebravel", "arbusto_quebr
 const DEATH_ONLY_CELL := Vector2i(512, 512)
 const DEATH_ONLY_BASELINE := 432.0
 const DEATH_ONLY_FRAMES := 5
+## Conjuração interrompível do chefe: a pose "special" fica no último quadro enquanto a preparação durar (a folha sozinha dura 0,5 s).
+const CAST_HOLD := ["discipulo_pestilento"]
 static var _tex_cache := {}
 ## Altura visível (alfa) do primeiro quadro do idle, em px da célula, por inimigo.
 static var _art_height_cache := {}
@@ -129,6 +131,7 @@ var tex: Texture2D
 var _has_animation := false
 var _flip_h_for_move := false
 var _action_locked := false
+var _cast_hold := false
 var _dying := false
 var _death_only := false
 var _static_hidden := false
@@ -252,8 +255,18 @@ func sync_visual(screen_position: Vector2) -> void:
 	_update_modulate()
 	queue_redraw()
 
+## Liga/desliga a pose de conjuração (acompanha o estado da preparação do chefe, não um temporizador: respeita pausa e velocidade).
+func set_cast_hold(on: bool) -> void:
+	if on == _cast_hold or _dying or not _has_animation or not (preview_enemy_id in CAST_HOLD) or not sprite.sprite_frames.has_animation(&"special"):
+		return
+	_cast_hold = on
+	_action_locked = on
+	if on:
+		sprite.flip_h = false
+		sprite.play(&"special")
+
 func play_action(action: StringName = &"attack") -> void:
-	if not _has_animation or _dying:
+	if not _has_animation or _dying or _cast_hold:
 		return
 	if _flip_h_for_move:
 		sprite.flip_h = false
@@ -291,6 +304,8 @@ func _on_animation_finished() -> void:
 	if sprite.animation == &"death":
 		queue_free()
 		return
+	if _cast_hold and sprite.animation == &"special":
+		return   # fica no último quadro até a conjuração acabar ou ser interrompida
 	_action_locked = false
 
 func _update_modulate() -> void:

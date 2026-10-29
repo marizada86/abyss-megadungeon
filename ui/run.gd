@@ -725,6 +725,7 @@ func _sync() -> void:
 			enemy_nodes.erase(e)
 		else:
 			n.sync_visual(Iso.to_screen(e.pos))
+			n.set_cast_hold(e.is_boss() and battle.boss_mech != null and not battle.boss_mech.cast.is_empty())
 	_sync_decoys()
 	_sync_projectile_vfx()
 	_sync_wax_vfx()

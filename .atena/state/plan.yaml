@@ -3287,7 +3287,7 @@ asset_discipulo_special_20261029:
   revision: r1
   mode: per-plan
   authorization: "aprovado, proximo (2026-10-29), apos carga r2, continuando para A04 da lista"
-  status: COMPLETE_CANDIDATE_DELIVERED_AWAITING_VISUAL_ACCEPTANCE
+  status: INTEGRATED_LOCAL_COMMITTED
   scope: [A04_discipulo_special]
   content_state: DRAFT
   prompts_base: .atena/vault/drafts/PROMPTS-ASSETS-0-5-2-20261028-r2.md
@@ -3301,7 +3301,9 @@ asset_discipulo_special_20261029:
   exact_prompt: .atena/generated/asset-discipulo-special-20261029-r1/prompt.txt
   qa: .atena/generated/asset-discipulo-special-20261029-r1/qa.json
   technical_qa: PASS_RGBA_SIX_FRAMES_1536x384
-  runtime_modified: false
-  human_acceptance: PENDING
-  not_authorized: [runtime_integration, commit, push, build, publicacao]
-  next_activity: "Dono avalia A04; fila atual de geracao concluida. Integracao futura deve sustentar 2,5 s e cancelar ao interromper ou morrer."
+  runtime_modified: true
+  human_acceptance: APPROVED_OWNER_20261029  # "atena pode integrar o discipulo e de commit"
+  integrated: "assets/animations/enemies/discipulo_pestilento/special.png (copia de prepared/) + .import; EnemyView.ANIMATED special 6; EnemyView.CAST_HOLD + set_cast_hold (pose no ultimo quadro enquanto a preparacao do chefe durar; liberada ao resolver, interromper ou morrer); Run._sync liga ao estado boss_mech.cast; tests/test_cast_hold.gd novo; test_animation_assets inclui special"
+  verification: "run_all: 3 falhas ja existentes (test_ui_kit x2, test_accessibility x1), nenhuma nova; sem teste em janela"
+  not_authorized: [push, build, publicacao]
+  next_activity: "Ver a conjuracao em jogo (Feng-tu, Grito na mente)."
