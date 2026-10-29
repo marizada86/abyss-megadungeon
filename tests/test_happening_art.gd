@@ -72,6 +72,8 @@ func _check_event_consumption(out: Array) -> void:
 	var joao := _fire("feng_tu", "escolta_do_peregrino")
 	if String(joao.happenings.allies[0].asset) != "npc_joao_barbosa":
 		out.append("Escort lost João's event art")
+	if String(_points(joao, "event_target")[0].asset) != "templo_de_tou_um":
+		out.append("Escort destination must use the Templo de Tou Um art")
 	var journal := _fire("molor", "diario_do_chefe")
 	if String(_points(journal, "event_npc")[0].asset) != "":
 		out.append("Uncovered journal must preserve fallback, not borrow an unrelated NPC")

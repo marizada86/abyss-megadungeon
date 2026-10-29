@@ -3155,7 +3155,7 @@ codex_lore_20261027:
       test_quartel_recurso_em_uso: "causa: AudioStreamMP3 ui.click_01.mp3 mantido pelo autoload Sfx ao encerrar o runner headless; test_pause_menu (anterior ao Códex) tem o mesmo aviso e test_quartel não; dívida de ambiente já registrada (GODOT_WINDOWS_CERTIFICATE_STORE_AND_RENDER_CLEANUP_MESSAGES); sem defeito do Códex"
 polish_0_5_2_20261028:
   authorization: "Atena, varredura com bots, atualizar para v0.5.2, reduzir o dano do interrupt do chefe (2026-10-28); depois: Manter 55%; tudo aprovado conforme suas sugestoes, vamos seguir com o plano (2026-10-28)"
-  status: APPLIED_LOCAL_COMMITTED_AWAITING_BUILD_APPROVAL
+  status: BUILT_LOCAL_AWAITING_HUMAN_PLAYTEST
   report: .atena/vault/drafts/POLISH-0-5-2-20261028-r1.md
   assets_index: .atena/vault/drafts/PROMPTS-ASSETS-0-5-2-20261028-r1.md  # nada gerado; geracao e aceite sao do dono
   release_plan: .atena/specs/SPEC-NOTTGARD-RELEASE-0-5-2-20261028/plan-r1.md
@@ -3212,3 +3212,93 @@ asset_integration_0_5_2_20261028:
   not_integrated: "carga_da_legiao_quebravel: quase igual ao caixote_quebravel existente; segue em assets_incoming aguardando decisao do dono (nova geracao com outra silhueta, ou aceitar assim). Reino Abissal continua com o arbusto"
   verification: "run_all 0 falhas; audit_projeto 0 erros 0 avisos; sem teste em janela (HUD e quebra nao vistos em jogo)"
   not_authorized: [commit, push, build, exportacao, publicacao]
+build_0_5_2_20261028:
+  authorization: "Commit e build (2026-10-28)"
+  commit: 092b12e0  # feat: icone de corrosao das Docas e urna elfica quebravel de Domwieck (sem push)
+  preset: "Windows Playtest Publico"
+  output: build/dist-0.5.2/  # ignorado pelo Git
+  artifacts:
+    zip: "Nottgard-Playtest-0.5.2.zip (657974206 bytes) SHA-256 6AA1D649F9768A84BAAF060AD7E10D1D421536BF1037AEAFF90B723E855A7FE0"
+    exe: "NottgardSurvivors-Playtest.exe (732465232 bytes) SHA-256 7F6FC2008A4A920A827729D11EA019E36EB625506FB4EBCF92C98286BCCA8526"
+    contents: [exe, LEIA-ME.txt, NOTAS-DA-VERSAO.txt]
+  smoke: "exe headless --quit-after 240 em perfil sintetico: exit 0 (a mensagem '1 resources still in use at exit' tambem ocorre no exe 0.5.1); tools/smoke.tscn: 11 fases ok"
+  not_done: "smoke em janela (G4 visual), playtest humano (G6); envio, tag e push nao feitos (so por pedido explicito)"
+asset_templo_tou_um_20261029:
+  revision: r1
+  authorization: "Sim, incluir (2026-10-29): incluir o templo de Tou Um na fila de producao de assets, apos o playtest do Vitao"
+  generation_authorization: "pode gerar (2026-10-29), apos recomendacao de comecar pelo Templo de Tou Um"
+  mode: per-plan
+  status: COMPLETE_SOURCE_VISUALLY_ACCEPTED
+  content_state: DRAFT
+  scope: [A05_templo_de_tou_um]
+  prompts_base: .atena/vault/drafts/PROMPTS-ASSETS-TEMPLO-TOU-UM-20261029-r1.md
+  interim: "data/stage_events.json escolta_do_peregrino usa asset arco_pedra como paliativo; core/happenings.gd _complete retira o destino do mapa ao concluir (local, sem commit)"
+  future_destination: assets/interactions/templo_de_tou_um.png
+  integration_after_acceptance: "trocar asset arco_pedra -> templo_de_tou_um no evento; test_happening_art.gd; importacao Godot"
+  generated: true
+  generated_source_count: 1
+  prepared_derivative_count: 1
+  completed_steps: 4
+  total_steps: 4
+  checkpoint: S-TG04/SOURCE_VISUALLY_ACCEPTED
+  report: .atena/generated/asset-templo-tou-um-20261029-r1/production.md
+  exact_prompt: .atena/generated/asset-templo-tou-um-20261029-r1/prompt.txt
+  qa: .atena/generated/asset-templo-tou-um-20261029-r1/qa.json
+  delivery: assets_incoming/templo-tou-um-20261029-r1/
+  technical_qa: PASS_RGBA_256x300
+  human_acceptance: APPROVED_OWNER_20261029
+  visual_acceptance_reply: "aprovado, proxima geração (2026-10-29)"
+  visual_acceptance_receipt: .atena/generated/asset-templo-tou-um-20261029-r1/visual-acceptance.json
+  runtime_modified_for_art: true
+  integration_authorization: "Sim, integrar (2026-10-29)"
+  integrated: "assets/interactions/templo_de_tou_um.png (copia byte a byte do prepared/, SHA-256 b87f291e...a7f9) + .import; data/stage_events.json escolta_do_peregrino asset arco_pedra -> templo_de_tou_um; tests/test_happening_art.gd exige templo_de_tou_um; core/happenings.gd _complete retira o destino do mapa (tests/test_happenings.gd cobre)"
+  verification: "test_happening_art, test_happenings, test_interaction_anim, test_event_pointer 0 falhas; run_all 3 falhas fora do escopo (test_ui_kit x2, test_accessibility x1; falham tambem isolados, nenhum arquivo de UI alterado; nao conferido em arvore limpa); sem teste em janela"
+  not_authorized: [commit, push, build, publicacao]
+  next_activity: "Integracao local aplicada, sem commit. Falta ver o templo em jogo (Feng-tu, escolta de Joao)."
+asset_carga_legiao_20261029:
+  revision: r2
+  mode: per-plan
+  authorization: "aprovado, proxima geração (2026-10-29), apos A05 e recomendacao de nova silhueta para a carga"
+  status: COMPLETE_SOURCE_VISUALLY_ACCEPTED
+  scope: [A02_carga_da_legiao_quebravel]
+  content_state: DRAFT
+  design_revision: "carga baixa e alongada com volumes atados em berco de madeira; distinta do caixote alto existente"
+  previous_candidate: assets_incoming/beta-0-5-2-20261028-r1/prepared/carga_da_legiao_quebravel/
+  delivery: assets_incoming/carga-legiao-20261029-r2/
+  generated_source_count: 1
+  prepared_derivative_count: 2
+  completed_steps: 4
+  total_steps: 4
+  checkpoint: S-CG04/SOURCE_VISUALLY_ACCEPTED
+  report: .atena/generated/asset-carga-legiao-20261029-r2/production.md
+  exact_prompt: .atena/generated/asset-carga-legiao-20261029-r2/prompt.txt
+  qa: .atena/generated/asset-carga-legiao-20261029-r2/qa.json
+  technical_qa: PASS_RGBA_FIVE_FRAMES_2560x512_STATIC_512x512
+  runtime_modified: false
+  human_acceptance: APPROVED_OWNER_20261029
+  visual_acceptance_reply: "aprovado, proximo (2026-10-29)"
+  visual_acceptance_receipt: .atena/generated/asset-carga-legiao-20261029-r2/visual-acceptance.json
+  not_authorized: [runtime_integration, commit, push, build, publicacao]
+  next_activity: "Carga r2 aceita, integracao pendente. Seguir geracao A04 autorizada em plano separado."
+asset_discipulo_special_20261029:
+  revision: r1
+  mode: per-plan
+  authorization: "aprovado, proximo (2026-10-29), apos carga r2, continuando para A04 da lista"
+  status: COMPLETE_CANDIDATE_DELIVERED_AWAITING_VISUAL_ACCEPTANCE
+  scope: [A04_discipulo_special]
+  content_state: DRAFT
+  prompts_base: .atena/vault/drafts/PROMPTS-ASSETS-0-5-2-20261028-r2.md
+  delivery: assets_incoming/discipulo-special-20261029-r1/
+  generated_source_count: 1
+  prepared_derivative_count: 1
+  completed_steps: 4
+  total_steps: 4
+  checkpoint: S-DG04/CANDIDATE_DELIVERED_AWAITING_VISUAL_ACCEPTANCE
+  report: .atena/generated/asset-discipulo-special-20261029-r1/production.md
+  exact_prompt: .atena/generated/asset-discipulo-special-20261029-r1/prompt.txt
+  qa: .atena/generated/asset-discipulo-special-20261029-r1/qa.json
+  technical_qa: PASS_RGBA_SIX_FRAMES_1536x384
+  runtime_modified: false
+  human_acceptance: PENDING
+  not_authorized: [runtime_integration, commit, push, build, publicacao]
+  next_activity: "Dono avalia A04; fila atual de geracao concluida. Integracao futura deve sustentar 2,5 s e cancelar ao interromper ou morrer."

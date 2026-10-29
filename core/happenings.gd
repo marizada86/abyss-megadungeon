@@ -443,6 +443,10 @@ func _complete(b: Battle, obj: Dictionary, at: Vector2) -> void:
 	var text := String(def.get("success_text", "%s: concluído!" % String(obj.title)))
 	b.events.append({"type": "toast", "text": text, "color": Color(0.65, 0.95, 0.7)})
 	b.events.append({"type": "happening_done", "id": String(obj.id), "pos": at})
+	# o destino (templo, trono, massa) cumpriu o papel: sai do mapa junto com o objetivo
+	for it in b.interactions:
+		if String(it.get("obj", "")) == String(obj.id):
+			it.used = true
 	_apply_reward(b, def.get("reward", {}), at)
 
 func _fail(b: Battle, obj: Dictionary, at: Vector2) -> void:

@@ -176,6 +176,8 @@ func _check_escort(out: Array) -> void:
 	b.happenings.step(b, 0.01)
 	if b.interactions.filter(func(i): return i.kind == "chest").is_empty() or b.hero.temp_t <= 0.0:
 		out.append("chegar ao templo deveria dar baú e a Bênção da Estrela")
+	if not b.interactions.filter(func(i): return i.kind == "event_target" and not i.used).is_empty():
+		out.append("o templo deveria sair do mapa depois da escolta concluída")
 	var c := _bat("feng_tu")
 	_fire(c, "feng_tu", "escolta_do_peregrino")
 	c.happenings.allies[0].hp = 0.0

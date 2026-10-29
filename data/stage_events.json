@@ -477,6 +477,7 @@
       "jitter": 0.1,
       "distance": 15,
       "target_label": "templo de Tou Um",
+      "asset": "templo_de_tou_um",
       "color": [
         190,
         220,
