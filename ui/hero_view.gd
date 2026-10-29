@@ -232,6 +232,10 @@ func sync_visual(screen_position: Vector2, is_dead: bool, is_flash: bool) -> voi
 		trace_before = {"anim": sprite.animation, "frame": sprite.frame}
 	var moving := screen_position.distance_squared_to(_last_screen_position) > 0.04
 	position = screen_position
+	if dead and not is_dead and _has_animation:
+		# Reviveu: a trava da animação de morte nunca solta sozinha (_on_animation_finished ignora "death").
+		_action_locked = false
+		sprite.play(&"idle")
 	dead = is_dead
 	flash = is_flash
 	if _has_animation:
