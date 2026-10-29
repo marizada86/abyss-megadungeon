@@ -65,7 +65,36 @@ func run() -> Array[String]:
 	if PickupVfx.draw_glimmer(probe, pickup, Vector2.ZERO, PickupVfx.GLIMMER_LIMIT, 0) or PickupVfx.draw_glimmer(probe, pickup, Vector2.ZERO, 0, 0, true): out.append("limite de brilhos ou impacto reduzido ignorado")
 	pickup.kind = "gold"
 	if pickup != before: out.append("o pickup foi alterado")
+	# pulso: só XP, respeita impacto reduzido e não altera o pickup
+	pickup.kind = "xp"
+	if PickupVfx.draw_pulse(probe, pickup, Vector2.ZERO, 0, true): out.append("pulso ignora impacto reduzido")
+	var phases := {}
+	for ms in range(0, 3000, 50):
+		var s := PickupVfx.pulse_phase(Vector2(3.2, 8.1), ms)
+		if s < 0.0 or s > 1.0: out.append("fase do pulso fora de 0..1")
+		phases[snappedf(s, 0.1)] = true
+	if phases.size() < 5: out.append("o pulso deveria variar no tempo")
+	if is_equal_approx(PickupVfx.pulse_phase(Vector2(1, 1), 0), PickupVfx.pulse_phase(Vector2(4, 9), 0)): out.append("cristais diferentes pulsam em fase")
+	pickup.kind = "gold"
+	if PickupVfx.draw_pulse(probe, pickup, Vector2.ZERO, 0): out.append("só cristal de XP pulsa")
+	if pickup != before: out.append("o pulso alterou o pickup")
 	probe.free()
+	# seleção do brilho: visíveis e mais próximos, nunca os antigos fora da tela
+	var crowd: Array = []
+	for i in 60:   # os 60 mais antigos, longe e fora da tela
+		crowd.append({"kind": "xp", "pos": Vector2(100 + i, 100), "value": 1.0, "magnet": false, "src": ""})
+	for i in 60:   # os 60 mais novos, visíveis, a distâncias crescentes
+		crowd.append({"kind": "xp", "pos": Vector2(1 + i * 0.1, 0), "value": 1.0, "magnet": false, "src": ""})
+	crowd.append({"kind": "gold", "pos": Vector2(0.5, 0), "value": 1.0, "magnet": false, "src": ""})
+	var on_screen := func(c: Vector2) -> bool: return c.x < 50.0
+	var picked := PickupVfx.glimmer_indices(crowd, Vector2.ZERO, on_screen)
+	if picked.size() != PickupVfx.GLIMMER_LIMIT: out.append("o brilho deveria usar o orçamento inteiro (%d), usou %d" % [PickupVfx.GLIMMER_LIMIT, picked.size()])
+	for i in picked:
+		if i < 60: out.append("brilho em cristal fora da tela (%d)" % i)
+		if String(crowd[i].kind) != "xp": out.append("brilho em pickup que não é XP")
+	if not picked.has(60) or picked.has(119): out.append("deveria priorizar os cristais mais próximos do herói")
+	var few := PickupVfx.glimmer_indices(crowd.slice(60, 70), Vector2.ZERO, on_screen)
+	if few.size() != 10: out.append("poucos cristais visíveis: todos brilham")
 	# nenhum RNG nem estado do jogo
 	var battle := Battle.new(808, "durvall", "dagruve")
 	var rng_state := battle.rng.state

@@ -539,7 +539,9 @@ func _draw_over() -> void:
 	_draw_ecos()
 	_draw_star_path()
 	var glimmer_index := 0
-	for pk in battle.pickups:
+	var glimmer_set := PickupVfx.glimmer_indices(battle.pickups, battle.hero.pos, _particle_emitter_visible)
+	for pk_i in battle.pickups.size():
+		var pk: Dictionary = battle.pickups[pk_i]
 		var p := Iso.to_screen(pk.pos)
 		var pickup_asset: String = {"xp": "xp_shard", "gold": "gold_coin", "potion": "health_potion", "magnet": "magnet"}.get(String(pk.kind), "")
 		var pickup_texture := _texture("res://assets/pickups/%s.png" % pickup_asset)
@@ -551,8 +553,10 @@ func _draw_over() -> void:
 				var pulse := 0.5 + 0.5 * sin(Time.get_ticks_msec() / 160.0)
 				draw_circle(p + Vector2(0, -size * 0.5), size * 0.55 + 3.0 * pulse, Color(1.0, 0.85, 0.3, 0.14 + 0.12 * pulse))
 			draw_texture_rect(pickup_texture, Rect2(p.x - size * 0.5, p.y - size, size, size), false)
-			if PickupVfx.draw_glimmer(self, pk, p, glimmer_index, Time.get_ticks_msec(), Game.reduced_impact()):
+			if glimmer_set.has(pk_i) and PickupVfx.draw_glimmer(self, pk, p, glimmer_index, Time.get_ticks_msec(), Game.reduced_impact()):
 				glimmer_index += 1
+			else:
+				PickupVfx.draw_pulse(self, pk, p, Time.get_ticks_msec(), Game.reduced_impact())
 		else:
 			draw_circle(p + Vector2(0, -4), 4.0, Color(0.6, 0.85, 1.0))
 	for pr in battle.projectiles:

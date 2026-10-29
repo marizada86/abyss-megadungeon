@@ -4,6 +4,8 @@ extends RefCounted
 const LIMIT := 10
 const GLIMMER_LIMIT := 48
 const GLIMMER_SIZE := 44.0
+const PULSE_RADIUS := 7.0
+const PULSE_LIFT := 11.0
 const TIDE_ALPHA := 0.35
 const TIDE_FADE_PER_SECOND := 2.0
 const COLLECT := {
@@ -74,6 +76,34 @@ static func tide_alpha(current: float, active: bool, dt: float) -> float:
 static func glimmer_frame(ground: Vector2, now_ms: int) -> int:
 	var phase := int(absf(ground.x) * 7.0 + absf(ground.y) * 13.0)
 	return int(now_ms / 150 + phase) % 6
+
+## Quais cristais de XP (índices em `pickups`) recebem o brilho em laço: só os visíveis, os mais próximos do herói
+## primeiro, até `GLIMMER_LIMIT`. Antes valiam os 48 mais antigos do array, que em horda densa ficavam fora da tela.
+static func glimmer_indices(pickups: Array, hero_pos: Vector2, is_visible: Callable) -> Dictionary:
+	var seen: Array[int] = []
+	for i in pickups.size():
+		var pk: Dictionary = pickups[i]
+		if String(pk.get("kind", "")) == "xp" and bool(is_visible.call(pk.pos)):
+			seen.append(i)
+	if seen.size() > GLIMMER_LIMIT:
+		seen.sort_custom(func(a: int, b: int) -> bool: return pickups[a].pos.distance_squared_to(hero_pos) < pickups[b].pos.distance_squared_to(hero_pos))
+		seen.resize(GLIMMER_LIMIT)
+	var chosen := {}
+	for i in seen:
+		chosen[i] = true
+	return chosen
+
+## Pulso barato (um círculo suave) para o cristal de XP que ficou sem o brilho em laço: nunca parece apagado.
+static func draw_pulse(ci: CanvasItem, pickup: Dictionary, screen: Vector2, now_ms: int, reduced: bool = false) -> bool:
+	if reduced or String(pickup.get("kind", "")) != "xp":
+		return false
+	var s := pulse_phase(pickup.pos, now_ms)
+	ci.draw_circle(screen + Vector2(0, -PULSE_LIFT), PULSE_RADIUS + 1.5 * s, Color(0.55, 0.9, 1.0, 0.10 + 0.14 * s))
+	return true
+
+## 0..1, com fase própria por cristal para não pulsarem todos juntos.
+static func pulse_phase(ground: Vector2, now_ms: int) -> float:
+	return 0.5 + 0.5 * sin(float(now_ms) / 260.0 + absf(ground.x) * 7.0 + absf(ground.y) * 13.0)
 
 ## Brilho em laço sobre um cristal de XP no chão. Desenho direto com a folha (sem nós); só os `GLIMMER_LIMIT` primeiros.
 static func draw_glimmer(ci: CanvasItem, pickup: Dictionary, screen: Vector2, index: int, now_ms: int, reduced: bool = false) -> bool:
