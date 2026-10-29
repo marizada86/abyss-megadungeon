@@ -1,5 +1,7 @@
 # Assets que faltam para fechar o beta (0.5.2) — índice de prompts (2026-10-28, r1)
 
+> Revisão de 28/10: consultar [r2](PROMPTS-ASSETS-0-5-2-20261028-r2.md) antes de gerar. A conferência do consumer identificou aliases animados e especiais existentes que a auditoria por caminhos não reconhece. As recomendações abaixo foram preservadas como histórico.
+
 Status: DRAFT. Nenhuma imagem foi gerada nem integrada por esta tarefa (geração e aceite são do dono). Base: `asset_gaps.gd` rodado hoje (19 lacunas, 0 erros).
 Os prompts completos, com destino, formato e referências, estão em `.atena/generated/balance-bots-20261018/PROMPTS-CHATGPT-ASSETS-FALTANTES-DRAFT-r1.md` (regras globais no topo dele). Este arquivo diz **quais ainda valem** e em que ordem.
 

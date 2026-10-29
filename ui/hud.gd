@@ -458,7 +458,7 @@ func update_stats(b: Battle) -> void:
 	_pause_speed.text = "Velocidade: %s" % b.speed_label()
 	_extract_button.visible = b.stage_cleared or b.final_victory
 	var stage_icons := {
-		"dagruve": "dagruve_rituals", "shedaklah": "shedaklah_puddles", "molor": "molor_bubbles",
+		"dagruve": "dagruve_rituals", "docas": "docas_puddles", "shedaklah": "shedaklah_puddles", "molor": "molor_bubbles",
 		"durao": "", "feng_tu": "feng_tu_strikes", "shendilavri": "shendilavri_illusions",
 		"goranthis": "goranthis_sanctuary", "pilares": "pilares_rotation"
 	}

@@ -109,7 +109,7 @@ const FEET_Y := {
 ## SPEC-185 (LOT04 e LOT05): quebráveis estáticos com tira de morte própria (5 quadros, célula 512x512, base na linha 432, escala da arte estática);
 ## a arte estática vale até a morte e a tira a substitui, sem mudar posição nem regras.
 const DEATH_ONLY := ["candelabro_quebravel", "caixote_quebravel", "arbusto_quebravel", "saco_de_esporos_quebravel", "casulo_viscoso_quebravel", "urna_funeraria_quebravel",
-	"carroca_quebravel", "pilha_carga_quebravel", "lanterna_de_papel_quebravel", "espelho_ilusorio_quebravel", "estatua_rachada_quebravel", "relicario_instavel_quebravel"]
+	"carroca_quebravel", "pilha_carga_quebravel", "lanterna_de_papel_quebravel", "espelho_ilusorio_quebravel", "estatua_rachada_quebravel", "relicario_instavel_quebravel", "urna_elfica_quebravel"]
 const DEATH_ONLY_CELL := Vector2i(512, 512)
 const DEATH_ONLY_BASELINE := 432.0
 const DEATH_ONLY_FRAMES := 5

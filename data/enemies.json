@@ -1914,5 +1914,27 @@
       "quebravel"
     ],
     "note": "Objeto quebrável dos Pilares; não se move nem ataca."
+  },
+  "urna_elfica_quebravel": {
+    "name": "Urna Élfica",
+    "hp": 4,
+    "atk": "1d1",
+    "bonus": 0,
+    "ca": 0,
+    "cam": 0,
+    "xp": 0,
+    "speed": 0.0,
+    "radius": 0.3,
+    "color": [
+      120,
+      122,
+      118
+    ],
+    "scale": 0.75,
+    "flags": [
+      "inerte",
+      "quebravel"
+    ],
+    "note": "Objeto quebrável de Domwieck; não se move nem ataca."
   }
 }

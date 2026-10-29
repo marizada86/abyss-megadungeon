@@ -1,5 +1,5 @@
 extends RefCounted
-## SPEC-185 (LOT04 e LOT05): os 12 quebráveis tocam a tira de morte própria no lugar da arte estática, sem mudar a arte antes de quebrar.
+## SPEC-185 (LOT04 e LOT05): os 13 quebráveis tocam a tira de morte própria no lugar da arte estática, sem mudar a arte antes de quebrar.
 
 const EnemyViewScript := preload("res://ui/enemy_view.gd")
 
@@ -9,8 +9,8 @@ func run() -> Array:
 	var packed: PackedScene = load("res://ui/enemy_view.tscn")
 	if tree == null or packed == null:
 		return ["não foi possível instanciar o visual de inimigo"]
-	if EnemyViewScript.DEATH_ONLY.size() != 12:
-		out.append("deveria haver 12 quebráveis com tira de morte, há %d" % EnemyViewScript.DEATH_ONLY.size())
+	if EnemyViewScript.DEATH_ONLY.size() != 13:
+		out.append("deveria haver 13 quebráveis com tira de morte, há %d" % EnemyViewScript.DEATH_ONLY.size())
 	for id in EnemyViewScript.DEATH_ONLY:
 		var strip := "res://assets/animations/enemies/%s/death.png" % id
 		if not ResourceLoader.exists(strip):

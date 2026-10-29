@@ -1,0 +1,180 @@
+{
+  "audio": [
+    {
+      "stage": "reino_abissal",
+      "kind": "music",
+      "path": "res://assets/audio/music/pilares.wav",
+      "exists": true
+    },
+    {
+      "stage": "reino_abissal",
+      "kind": "ambience",
+      "path": "res://assets/audio/ambience/pilares.wav",
+      "exists": true
+    },
+    {
+      "stage": "domwieck",
+      "kind": "music",
+      "path": "res://assets/audio/music/goranthis.wav",
+      "exists": true
+    },
+    {
+      "stage": "domwieck",
+      "kind": "ambience",
+      "path": "res://assets/audio/ambience/goranthis.wav",
+      "exists": true
+    },
+    {
+      "stage": "pilares",
+      "kind": "music",
+      "path": "res://assets/audio/music/pilares.wav",
+      "exists": true
+    },
+    {
+      "stage": "pilares",
+      "kind": "ambience",
+      "path": "res://assets/audio/ambience/pilares.wav",
+      "exists": true
+    }
+  ],
+  "scope": "read-only runtime verification; documentation only changes",
+  "synthetic_profile": ".atena/generated/asset-review-0-5-2-20261028-r1/synthetic",
+  "head": "921b42e033af8da4e6a4aabb4fd53cdd9f5fd797",
+  "checked_sources": [
+    {
+      "path": "assets/animations/enemies/molydeus_chefe/death.png",
+      "width": 1536,
+      "height": 384,
+      "expected_width": 1536,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/molydeus_chefe/attack.png",
+      "width": 1024,
+      "height": 384,
+      "expected_width": 1024,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/molydeus_chefe/idle.png",
+      "width": 1024,
+      "height": 384,
+      "expected_width": 1024,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/molydeus_chefe/move.png",
+      "width": 1536,
+      "height": 384,
+      "expected_width": 1536,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/molydeus_chefe/special.png",
+      "width": 1536,
+      "height": 384,
+      "expected_width": 1536,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/cultista_de_socothbenoth/death.png",
+      "width": 1536,
+      "height": 384,
+      "expected_width": 1536,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/cultista_de_socothbenoth/attack.png",
+      "width": 1024,
+      "height": 384,
+      "expected_width": 1024,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/cultista_de_socothbenoth/idle.png",
+      "width": 1024,
+      "height": 384,
+      "expected_width": 1024,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/cultista_de_socothbenoth/move.png",
+      "width": 1536,
+      "height": 384,
+      "expected_width": 1536,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/sucubo/death.png",
+      "width": 1536,
+      "height": 384,
+      "expected_width": 1536,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/sucubo/attack.png",
+      "width": 1024,
+      "height": 384,
+      "expected_width": 1024,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/sucubo/idle.png",
+      "width": 1024,
+      "height": 384,
+      "expected_width": 1024,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/sucubo/move.png",
+      "width": 1536,
+      "height": 384,
+      "expected_width": 1536,
+      "expected_height": 384,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/sacerdote_mente_derretida/special_b.png",
+      "width": 2560,
+      "height": 480,
+      "expected_width": 2560,
+      "expected_height": 480,
+      "pass": true,
+      "import_present": true
+    },
+    {
+      "path": "assets/animations/enemies/sacerdote_mente_derretida/special_a.png",
+      "width": 2560,
+      "height": 480,
+      "expected_width": 2560,
+      "expected_height": 480,
+      "pass": true,
+      "import_present": true
+    }
+  ]
+}

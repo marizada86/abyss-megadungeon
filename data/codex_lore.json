@@ -614,6 +614,12 @@
       "quem": "Relicário dos Pilares. Quebra e não ataca.",
       "curiosities": [],
       "fonte": "jogo"
+    },
+    "urna_elfica_quebravel": {
+      "onde": [],
+      "quem": "Urna de pedra élfica de Domwieck. Quebra e não ataca.",
+      "curiosities": [],
+      "fonte": "jogo"
     }
   },
   "items": {

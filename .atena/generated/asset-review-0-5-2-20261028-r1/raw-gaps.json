@@ -1,0 +1,138 @@
+{
+	"gaps": [
+		{
+			"caminho_esperado": "res://assets/animations/enemies/tentaculo_kraken",
+			"cat": "inimigo",
+			"detalhe": "faltam sequências: move; fase docas",
+			"gravidade": "degrada",
+			"id": "tentaculo_kraken"
+		},
+		{
+			"caminho_esperado": "res://assets/animations/enemies/molydeus_menor/{idle,move,attack,death}.png",
+			"cat": "inimigo",
+			"detalhe": "só sprite estático (sem animações); fase pilares",
+			"gravidade": "degrada",
+			"id": "molydeus_menor"
+		},
+		{
+			"caminho_esperado": "res://assets/animations/enemies/ilusao_de_sucubo/{idle,move,attack,death}.png",
+			"cat": "inimigo",
+			"detalhe": "só sprite estático (sem animações); fase shendilavri",
+			"gravidade": "degrada",
+			"id": "ilusao_de_sucubo"
+		},
+		{
+			"caminho_esperado": "res://assets/animations/enemies/ilusao_de_socothbenoth/{idle,move,attack,death}.png",
+			"cat": "inimigo",
+			"detalhe": "só sprite estático (sem animações); fase goranthis",
+			"gravidade": "degrada",
+			"id": "ilusao_de_socothbenoth"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/stages/docas_rule.png",
+			"cat": "fase_icone",
+			"detalhe": "sem ícone da regra de fase no HUD (hud.gd mapeia só 7 fases; durao é vazio de propósito)",
+			"gravidade": "cosmetico",
+			"id": "docas"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/stages/reino_abissal_rule.png",
+			"cat": "fase_icone",
+			"detalhe": "sem ícone da regra de fase no HUD (hud.gd mapeia só 7 fases; durao é vazio de propósito)",
+			"gravidade": "cosmetico",
+			"id": "reino_abissal"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/stages/domwieck_rule.png",
+			"cat": "fase_icone",
+			"detalhe": "sem ícone da regra de fase no HUD (hud.gd mapeia só 7 fases; durao é vazio de propósito)",
+			"gravidade": "cosmetico",
+			"id": "domwieck"
+		},
+		{
+			"caminho_esperado": "assets/decals/raiz_yggdrasil_remendo_01.png, raiz_yggdrasil_trilha_01.png",
+			"cat": "fase_decais",
+			"detalhe": "sem remendo/trilha de chão (ground_decals.json)",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "data/chronicles.json",
+			"cat": "fase_texto",
+			"detalhe": "sem crônica de campanha (chronicles.json) — texto, depende de lore aprovada",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "data/stage_story.json",
+			"cat": "fase_texto",
+			"detalhe": "sem stage_story",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "data/stage_rules.json",
+			"cat": "fase_regra",
+			"detalhe": "sem regra de fase (stage_rules.json)",
+			"gravidade": "degrada",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "data/atmosphere.json",
+			"cat": "fase_atmosfera",
+			"detalhe": "sem atmosfera",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "res://assets/stages/raiz_yggdrasil_thumb.png",
+			"cat": "fase_thumb",
+			"detalhe": "sem miniatura de seleção",
+			"gravidade": "degrada",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "res://assets/icons/stages/raiz_yggdrasil_rule.png",
+			"cat": "fase_icone",
+			"detalhe": "sem ícone da regra de fase no HUD (hud.gd mapeia só 7 fases; durao é vazio de propósito)",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "Battle.BREAKABLE_TYPES_BY_STAGE",
+			"cat": "quebravel",
+			"detalhe": "sem quebráveis temáticos dedicados (usa fallback arbusto_quebravel)",
+			"gravidade": "cosmetico",
+			"id": "reino_abissal"
+		},
+		{
+			"caminho_esperado": "Battle.BREAKABLE_TYPES_BY_STAGE",
+			"cat": "quebravel",
+			"detalhe": "sem quebráveis temáticos dedicados (usa fallback arbusto_quebravel)",
+			"gravidade": "cosmetico",
+			"id": "domwieck"
+		},
+		{
+			"caminho_esperado": "Battle.BREAKABLE_TYPES_BY_STAGE",
+			"cat": "quebravel",
+			"detalhe": "sem quebráveis temáticos dedicados (usa fallback arbusto_quebravel)",
+			"gravidade": "cosmetico",
+			"id": "raiz_yggdrasil"
+		},
+		{
+			"caminho_esperado": "res://assets/animations/enemies/sacerdote_mente_derretida/special.png",
+			"cat": "chefe_special",
+			"detalhe": "tem mecânica L5 mas sem sequência special.png",
+			"gravidade": "cosmetico",
+			"id": "sacerdote_mente_derretida"
+		},
+		{
+			"caminho_esperado": "res://assets/animations/enemies/discipulo_pestilento/special.png",
+			"cat": "chefe_special",
+			"detalhe": "tem mecânica L5 mas sem sequência special.png",
+			"gravidade": "cosmetico",
+			"id": "discipulo_pestilento"
+		}
+	],
+	"total": 19
+}

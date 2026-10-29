@@ -1,0 +1,265 @@
+{
+	"method": "find transparent gaps near five source columns; crop margins using alpha >= 0.1 bounds; uniform isotropic scale per strip; align each cell bottom to y=432 and center to x=256; preserve alpha within crops; original sources untouched",
+	"outputs": [
+		{
+			"alpha": 2,
+			"bounds": [
+				13,
+				20,
+				101,
+				86
+			],
+			"file_bytes": 16046,
+			"height": 128,
+			"path": "assets_incoming/beta-0-5-2-20261028-r1/prepared/docas_puddles.png",
+			"sha256": "229b1d39ab2e612ed2648c952cd9f826d3ae7fe35e30b8372284424c5f4cd4a0",
+			"width": 128
+		},
+		{
+			"alpha": 2,
+			"bounds": [
+				183,
+				180,
+				2230,
+				252
+			],
+			"file_bytes": 477450,
+			"height": 512,
+			"path": "assets_incoming/beta-0-5-2-20261028-r1/prepared/carga_da_legiao_quebravel/death.png",
+			"sha256": "875e787b5a7466fee82935e95b9e09ca44d45436042c5ddd6c67c800685941fc",
+			"width": 2560
+		},
+		{
+			"alpha": 2,
+			"bounds": [
+				183,
+				182,
+				145,
+				250
+			],
+			"file_bytes": 87171,
+			"height": 512,
+			"path": "assets_incoming/beta-0-5-2-20261028-r1/prepared/carga_da_legiao_quebravel/static.png",
+			"sha256": "dfc1e42c42f9c439a24863fcbcff481d88f82afe509d4622acd8561139bb8a60",
+			"width": 512
+		},
+		{
+			"alpha": 2,
+			"bounds": [
+				166,
+				146,
+				2256,
+				286
+			],
+			"file_bytes": 543661,
+			"height": 512,
+			"path": "assets_incoming/beta-0-5-2-20261028-r1/prepared/urna_elfica_quebravel/death.png",
+			"sha256": "4a16874a7b1bf50684ec0eed44c5914b93c69c8c4276acae47b305427de12672",
+			"width": 2560
+		},
+		{
+			"alpha": 2,
+			"bounds": [
+				166,
+				147,
+				179,
+				285
+			],
+			"file_bytes": 108093,
+			"height": 512,
+			"path": "assets_incoming/beta-0-5-2-20261028-r1/prepared/urna_elfica_quebravel/static.png",
+			"sha256": "f8f725c855db590d2e4ed4c0a1647df22ce20c0877c7ec413062deb83c2aaaef",
+			"width": 512
+		}
+	],
+	"sources": [
+		{
+			"alpha": 2,
+			"bounds": [
+				0,
+				29,
+				1194,
+				1201
+			],
+			"height": 1254,
+			"id": "docas_puddles",
+			"sha256": "80fc6027a60a77b6cb68c6c85f35d12284dcfd9f2dcc3c4868d16256c5559b74",
+			"width": 1254
+		},
+		{
+			"alpha": 2,
+			"bounds": [
+				65,
+				39,
+				1898,
+				723
+			],
+			"height": 793,
+			"id": "carga_da_legiao_quebravel",
+			"prepared_cells": [
+				[
+					183,
+					182,
+					145,
+					250
+				],
+				[
+					162,
+					183,
+					187,
+					249
+				],
+				[
+					156,
+					180,
+					199,
+					252
+				],
+				[
+					134,
+					236,
+					243,
+					196
+				],
+				[
+					147,
+					317,
+					218,
+					115
+				]
+			],
+			"reference_first_frame_height": 250,
+			"sha256": "f0fa3c414b03ec56314a50c49f59055353f47531d618e16b72d88509bdf8b21e",
+			"source_cells": [
+				[
+					81,
+					193,
+					238,
+					410
+				],
+				[
+					28,
+					193,
+					307,
+					408
+				],
+				[
+					2,
+					196,
+					327,
+					414
+				],
+				[
+					1,
+					280,
+					398,
+					321
+				],
+				[
+					1,
+					418,
+					357,
+					189
+				]
+			],
+			"source_column_cuts": [
+				0,
+				397,
+				793,
+				1155,
+				1580,
+				1983
+			],
+			"uniform_scale": 0.609756097560976,
+			"width": 1983
+		},
+		{
+			"alpha": 2,
+			"bounds": [
+				49,
+				28,
+				1916,
+				765
+			],
+			"height": 793,
+			"id": "urna_elfica_quebravel",
+			"prepared_cells": [
+				[
+					166,
+					147,
+					179,
+					285
+				],
+				[
+					156,
+					146,
+					200,
+					286
+				],
+				[
+					148,
+					148,
+					216,
+					284
+				],
+				[
+					122,
+					251,
+					268,
+					181
+				],
+				[
+					137,
+					340,
+					237,
+					92
+				]
+			],
+			"reference_first_frame_height": 285,
+			"sha256": "e782ff92d04fc31d2f649cf2c74c8a7e0d4892e1cfd4e64f4f339e9844677a9c",
+			"source_cells": [
+				[
+					57,
+					205,
+					258,
+					411
+				],
+				[
+					24,
+					205,
+					288,
+					412
+				],
+				[
+					21,
+					206,
+					312,
+					410
+				],
+				[
+					1,
+					356,
+					387,
+					261
+				],
+				[
+					32,
+					490,
+					342,
+					132
+				]
+			],
+			"source_column_cuts": [
+				0,
+				397,
+				793,
+				1181,
+				1586,
+				1983
+			],
+			"uniform_scale": 0.693430656934307,
+			"width": 1983
+		}
+	],
+	"status": "PASS"
+}

@@ -3175,3 +3175,40 @@ polish_0_5_2_20261028:
     - "textos de ajuda estaticos ainda citam Q/E/C (tooltip da ficha, guia do playtest)"
     - "golpes comuns do chefe e inimigos em Goranthis ainda geram ~5 golpes letais por run do bot imortal"
     - "playtest humano (G6) e medicao de quadros reais em Goranthis/Pilares"
+asset_complement_0_5_2_20261028:
+  revision: r1
+  mode: per-plan
+  authorization: "atena pode gerar o que falta (2026-10-28), apos revisao r2 e recomendacao de tres fontes"
+  status: COMPLETE_CANDIDATES_DELIVERED_AWAITING_VISUAL_ACCEPTANCE
+  content_state: DRAFT
+  scope: [A01_docas_puddles, A02_carga_da_legiao_quebravel, A03_urna_elfica_quebravel]
+  deferred: [A04_discipulo_special_optional]
+  prompts_base: .atena/vault/drafts/PROMPTS-ASSETS-0-5-2-20261028-r2.md
+  exact_prompts: .atena/generated/asset-production-0-5-2-20261028-r1/prompts.json
+  report: .atena/generated/asset-production-0-5-2-20261028-r1/production.md
+  gallery: .atena/generated/asset-production-0-5-2-20261028-r1/index.html
+  qa: .atena/generated/asset-production-0-5-2-20261028-r1/qa.json
+  delivery: assets_incoming/beta-0-5-2-20261028-r1/
+  generated_source_count: 3
+  prepared_derivative_count: 5
+  ordered_steps: [S-G01, S-G02, S-G03, S-G04]
+  completed_steps: 4
+  total_steps: 4
+  checkpoint: S-G04/CANDIDATES_DELIVERED_AWAITING_VISUAL_ACCEPTANCE
+  technical_qa: PASS_DIMENSIONS_ALPHA_FIVE_FRAME_SEPARATION_HASHES
+  human_acceptance: PENDING
+  runtime_modified: false
+  canonical_promotion: false
+  next_activity: "Dono revisa as tres candidatas na galeria; integracao e aceite nao foram presumidos. Fontes anteriores preservadas."
+  not_authorized: [runtime_integration, commit, push, merge, build, exportacao, publicacao]
+asset_integration_0_5_2_20261028:
+  authorization: "aprovado, pode implementar e vamos dar sequencia a v0.5.2 (2026-10-28), apos a recomendacao de integrar icone e urna e deixar a carga para nova geracao"
+  status: APPLIED_LOCAL_UNCOMMITTED
+  source: assets_incoming/beta-0-5-2-20261028-r1/prepared/  # fontes e derivados preservados la
+  integrated:
+    - "assets/icons/stages/docas_puddles.png; ui/hud.gd stage_icons docas -> docas_puddles"
+    - "urna_elfica_quebravel (Domwieck): assets/enemies/urna_elfica_quebravel.png, assets/animations/enemies/urna_elfica_quebravel/death.png, data/enemies.json, data/codex_lore.json, data/audio_manifest.json (mesmos sons da urna funeraria), Battle.BREAKABLE_TYPES_BY_STAGE domwieck, EnemyView.DEATH_ONLY (13)"
+    - "tests/test_breakable_death_art.gd 12 -> 13"
+  not_integrated: "carga_da_legiao_quebravel: quase igual ao caixote_quebravel existente; segue em assets_incoming aguardando decisao do dono (nova geracao com outra silhueta, ou aceitar assim). Reino Abissal continua com o arbusto"
+  verification: "run_all 0 falhas; audit_projeto 0 erros 0 avisos; sem teste em janela (HUD e quebra nao vistos em jogo)"
+  not_authorized: [commit, push, build, exportacao, publicacao]

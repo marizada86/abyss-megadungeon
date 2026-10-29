@@ -20,6 +20,7 @@ O QUE MUDOU NA 0.5.2 (em relacao a 0.5.1)
 - Efeitos visuais novos (lotes 1 a 3): chefes, mortes, coletas e XP, tentaculos, detonacoes, luz e cera, dano no heroi.
 - Acessibilidade: tamanho do texto, contraste alto, daltonismo e duracao das falas; botao direito interage com altares, portais e lojas.
 - Cartoes de oferta com o que o item faz e sem desalinhar; estrela do caminho de Tou Um com arte propria.
+- Docas: o aviso de regra do HUD ganhou icone proprio (corrosao). Domwieck: quebravel novo, a urna elfica, com animacao de quebra.
 - Correcao: a fase alcancada passa a ser registrada em toda troca de fase, nao so durante a apresentacao do chefe.
 
 O QUE TESTAR (em ordem de interesse)
@@ -33,7 +34,7 @@ O QUE TESTAR (em ordem de interesse)
 
 JA SABEMOS (nao precisa reportar)
 - Musica e ambiencia do Reino Abissal, Domwieck e Pilares sao reaproveitadas de outras fases.
-- Alguns inimigos ainda aparecem parados (Molydeus comum, ilusoes de Shendilavri e Goranthis): animacoes em producao.
+- Domwieck usa o quebravel urna elfica nova; o Reino Abissal ainda usa o arbusto generico (a carga da legiao esta em revisao).
 - Os herois ainda usam a arte e as animacoes de caminhada antigas; a arte nova esta em producao.
 - Os limiares das medalhas sao provisorios; mapas por objetivo nao tem medalha de tempo.
 - Controle fisico nunca foi testado em hardware.

@@ -61,6 +61,7 @@ const BREAKABLE_TYPES_BY_STAGE := {
 	"shendilavri": ["espelho_ilusorio_quebravel", "arbusto_quebravel"],
 	"goranthis": ["estatua_rachada_quebravel", "arbusto_quebravel"],
 	"pilares": ["relicario_instavel_quebravel", "arbusto_quebravel"],
+	"domwieck": ["urna_elfica_quebravel", "arbusto_quebravel"],
 }
 const BREAKABLE_DEFAULT_TYPES := ["arbusto_quebravel"]
 
