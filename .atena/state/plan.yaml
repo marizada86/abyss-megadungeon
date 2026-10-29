@@ -3274,12 +3274,15 @@ asset_carga_legiao_20261029:
   exact_prompt: .atena/generated/asset-carga-legiao-20261029-r2/prompt.txt
   qa: .atena/generated/asset-carga-legiao-20261029-r2/qa.json
   technical_qa: PASS_RGBA_FIVE_FRAMES_2560x512_STATIC_512x512
-  runtime_modified: false
+  runtime_modified: true
   human_acceptance: APPROVED_OWNER_20261029
   visual_acceptance_reply: "aprovado, proximo (2026-10-29)"
   visual_acceptance_receipt: .atena/generated/asset-carga-legiao-20261029-r2/visual-acceptance.json
-  not_authorized: [runtime_integration, commit, push, build, publicacao]
-  next_activity: "Carga r2 aceita, integracao pendente. Seguir geracao A04 autorizada em plano separado."
+  integration_authorization: "implementar outros assets (2026-10-29)"
+  integrated: "assets/enemies/carga_da_legiao_quebravel.png + assets/animations/enemies/carga_da_legiao_quebravel/death.png (copias de prepared/) com .import; data/enemies.json, data/codex_lore.json, data/audio_manifest.json (sons do caixote); Battle.BREAKABLE_TYPES_BY_STAGE reino_abissal; EnemyView.DEATH_ONLY (14); tests/test_breakable_death_art.gd 13 -> 14. Battle._spawn_random_breakable tenta ate 16 posicoes em fases com raizes (so ~18-40% dos pontos sao pisaveis; antes o quebravel era perdido na maioria das vezes); test_manual_debt exigiu isso"
+  verification: "test_breakable_death_art, test_manual_debt, test_codex_lore, test_battle, test_death_vfx 0 falhas; run_all completo e audit_projeto nao rodados apos a ultima mudanca; sem teste em janela"
+  not_authorized: [commit, push, build, publicacao]
+  next_activity: "Integracao local aplicada, sem commit. Reino Abissal e fase QA (qa_only): ver a carga em jogo. A04 segue aguardando aceite."
 asset_discipulo_special_20261029:
   revision: r1
   mode: per-plan

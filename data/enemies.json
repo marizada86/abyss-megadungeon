@@ -1936,5 +1936,27 @@
       "quebravel"
     ],
     "note": "Objeto quebrável de Domwieck; não se move nem ataca."
+  },
+  "carga_da_legiao_quebravel": {
+    "name": "Carga da Legião",
+    "hp": 4,
+    "atk": "1d1",
+    "bonus": 0,
+    "ca": 0,
+    "cam": 0,
+    "xp": 0,
+    "speed": 0.0,
+    "radius": 0.35,
+    "color": [
+      110,
+      90,
+      70
+    ],
+    "scale": 0.8,
+    "flags": [
+      "inerte",
+      "quebravel"
+    ],
+    "note": "Objeto quebrável do Reino Abissal; não se move nem ataca."
   }
 }

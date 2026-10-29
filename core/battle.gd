@@ -62,6 +62,7 @@ const BREAKABLE_TYPES_BY_STAGE := {
 	"goranthis": ["estatua_rachada_quebravel", "arbusto_quebravel"],
 	"pilares": ["relicario_instavel_quebravel", "arbusto_quebravel"],
 	"domwieck": ["urna_elfica_quebravel", "arbusto_quebravel"],
+	"reino_abissal": ["carga_da_legiao_quebravel", "arbusto_quebravel"],
 }
 const BREAKABLE_DEFAULT_TYPES := ["arbusto_quebravel"]
 
@@ -3787,8 +3788,12 @@ func _spawn_random_breakable() -> void:
 	if types.is_empty():
 		return
 	var id: String = types[rng.randi() % types.size()]
-	var ang := rng.randf() * TAU
-	_spawn(id, hero.pos + Vector2(cos(ang), sin(ang)) * rng.randf_range(6.0, 11.0))
+	# Fases com raízes recusam pontos sem chão (_spawn devolve um morto sem registrar): tenta de novo em vez de perder o quebrável.
+	var attempts := 16 if TerrainLayout.has_roots(stage_id) else 1
+	for i in attempts:
+		var ang := rng.randf() * TAU
+		if not _spawn(id, hero.pos + Vector2(cos(ang), sin(ang)) * rng.randf_range(6.0, 11.0)).dead:
+			break
 
 func _spawn_random_interaction() -> void:
 	if bool(stage.get("prototype_no_interactions", false)):

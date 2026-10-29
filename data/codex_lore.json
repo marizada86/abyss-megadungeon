@@ -620,6 +620,12 @@
       "quem": "Urna de pedra élfica de Domwieck. Quebra e não ataca.",
       "curiosities": [],
       "fonte": "jogo"
+    },
+    "carga_da_legiao_quebravel": {
+      "onde": [],
+      "quem": "Carga de suprimentos da legião no Reino Abissal, atada num berço de madeira. Quebra e não ataca.",
+      "curiosities": [],
+      "fonte": "jogo"
     }
   },
   "items": {
