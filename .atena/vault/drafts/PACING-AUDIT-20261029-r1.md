@@ -186,3 +186,37 @@ Decisão do dono: "Garantir serviço". Em `core/battle.gd` (`_spawn_random_inter
 Sonda (60 sementes, `resultado-m3b.txt`), quem coleta tudo: **P(pelo menos um serviço) 98 a 100 %** nos mapas longos (antes 66 a 74 %); P(ferreiro) 25 a 45 %. Quem deixa interativos no chão: 0 a 100 % conforme o mapa (Shedaklah e Shendilavri 0 %, Feng-tu 22 %, Goranthis 53 %), porque os interativos dos acontecimentos também contam no teto de 3 vivos e a vaga não abre. Isso pede uma decisão futura sobre o teto (contar só interativos comuns, ou subir para 4 em mapas longos); não foi mexido.
 
 Teste novo em `tests/test_pacing.gd` (serviço em 8 sementes de Molor). `run_all`: só as 3 falhas de UI de antes.
+
+## 8. M4 — Shedaklah 540 → 330 s (2026-11-01, local, sem commit)
+
+Fator k = 330/540 = 0,611. Arredondado a inteiros; `every`, `n`, `max`, `cap` das ondas, prazos (`deadline`), avisos (`warning`) e regras periódicas (poças a cada 8 s) **não** foram escalados (dependem da caminhada e do ritmo do combate, não da duração). Editado em `data/stages.json`, no espelho `data/chapter_flow.json` (`legacy_stages`) e em `data/stage_events.json`.
+
+| Campo | Antes | Depois |
+|---|---|---|
+| `duration` / chefe | 540 | 330 |
+| servo_de_zuggtmoy `t1` | 200 | 122 |
+| cogumelo_fungico `t1` | 240 | 147 |
+| esporo_voador `t0`–`t1` | 60–400 | 37–244 |
+| slime_de_juiblex `t0`–`t1` | 120–540 | 73–330 |
+| pudim_negro `t0`–`t1` | 240–540 | 147–330 |
+| Elites (pudim_negro, receptáculo de Juiblex) | 150, 400 | 92, 244 |
+| `pedido_de_zuggtmoy` | 45 | 28 |
+| `altar_disputado_shedaklah` | 150 | 92 |
+| `portal_sem_vao` (prazo 75 s mantido) | 250 | 153 |
+| `barqueiro_do_estige` | 380 | 232 |
+
+**Bots** (`balance-bots-20261018/bot5.gd`, política `smart-god`, dt 0,05, durvall/brook/maelor × sementes 1 a 3 = 9 runs por cronograma, resultados em `balance-bots-20261018/results/m4-shed-old.jsonl` e `m4-shed-new.jsonl`; amostra pequena, sem valor estatístico forte):
+
+| | Antes (540 s) | Depois (330 s) |
+|---|---|---|
+| Chefe derrotado | 6/9 | 6/9 |
+| Tempo até derrotar o chefe (média dos vencidos) | 684 s (11,4 min) | 447 s (7,5 min) |
+| Nível do herói no fim (média) | 15,7 | 13,6 |
+| Abates (média) | 560 | 418 |
+| Ouro (média) | 151 | 111 |
+
+Leitura: a taxa de vitória se manteve, o tempo total do mapa caiu cerca de 35 %, e o herói chega ao chefe com cerca de 2 níveis a menos, 25 % menos abates e 27 % menos ouro. Sem compensação, os mapas seguintes (já reescalados) acumulam esse déficit; alavancas: `xp_mult`/`coin_mult` do mapa, ou o crescimento de PV por minuto. Não ajustei nada para isso ainda, pois com 9 runs a diferença de taxa de vitória não é distinguível de ruído.
+
+Acontecimentos (sonda): 3 objetivos por mapa em 5,5 min (≈0,55 por minuto, antes ≈0,28). Ampulheta 100 %, serviço 98 % para quem coleta; quem ignora ainda sofre o teto de 3 vivos (decisão aberta).
+
+`run_all`: só as 3 falhas de UI de antes.

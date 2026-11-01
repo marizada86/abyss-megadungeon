@@ -266,7 +266,7 @@
     "name": "Shedaklah",
     "sub": "Andar 222 · fungo e slime",
     "order": 4,
-    "duration": 540,
+    "duration": 330,
     "cap": 50,
     "tier": 2,
     "coin_mult": 1.4,
@@ -306,7 +306,7 @@
     "waves": [
       {
         "t0": 0,
-        "t1": 200,
+        "t1": 122,
         "id": "servo_de_zuggtmoy",
         "every": 3,
         "n": 2,
@@ -314,31 +314,31 @@
       },
       {
         "t0": 0,
-        "t1": 240,
+        "t1": 147,
         "id": "cogumelo_fungico",
         "every": 5,
         "n": 1,
         "max": 7
       },
       {
-        "t0": 60,
-        "t1": 400,
+        "t0": 37,
+        "t1": 244,
         "id": "esporo_voador",
         "every": 5,
         "n": 2,
         "max": 8
       },
       {
-        "t0": 120,
-        "t1": 540,
+        "t0": 73,
+        "t1": 330,
         "id": "slime_de_juiblex",
         "every": 4,
         "n": 2,
         "max": 12
       },
       {
-        "t0": 240,
-        "t1": 540,
+        "t0": 147,
+        "t1": 330,
         "id": "pudim_negro",
         "every": 9,
         "n": 1,
@@ -347,11 +347,11 @@
     ],
     "elites": [
       {
-        "at": 150,
+        "at": 92,
         "id": "pudim_negro"
       },
       {
-        "at": 400,
+        "at": 244,
         "id": "receptaculo_de_juiblex"
       }
     ],

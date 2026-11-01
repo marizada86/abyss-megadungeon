@@ -65,7 +65,7 @@
   "shedaklah": [
     {
       "id": "pedido_de_zuggtmoy",
-      "at": 45,
+      "at": 28,
       "warning": 5,
       "kind": "collect",
       "until_boss": true,
@@ -112,7 +112,7 @@
     },
     {
       "id": "portal_sem_vao",
-      "at": 250,
+      "at": 153,
       "warning": 5,
       "kind": "collect",
       "jitter": 0.1,
@@ -170,7 +170,7 @@
     },
     {
       "id": "barqueiro_do_estige",
-      "at": 380,
+      "at": 232,
       "warning": 5,
       "kind": "pact",
       "pool": "optional",
@@ -208,7 +208,7 @@
     },
     {
       "id": "altar_disputado_shedaklah",
-      "at": 150,
+      "at": 92,
       "warning": 5,
       "kind": "pact",
       "pool": "optional",

@@ -3310,7 +3310,7 @@ asset_discipulo_special_20261029:
 pacing_audit_20261029:
   revision: r1
   authorization: "atena, vamos auditar o jogo e fazer um plano para diminuir o tempo de mapa; analisar a ampulheta e a aleatoriedade dos spawns (2026-10-29)"
-  status: M0_M2_M3_COMMITTED_SERVICE_GUARANTEE_LOCAL
+  status: M4_SHEDAKLAH_APPLIED_LOCAL_UNCOMMITTED
   content_state: DRAFT
   report: .atena/vault/drafts/PACING-AUDIT-20261029-r1.md
   findings: [event_density_late_maps_6_to_7x_lower, enemy_roster_static_after_36_to_50_pct, hourglass_5_2_pct_per_roll_23_to_27_pct_per_long_map, interactions_pure_random_with_silent_discards_and_shared_rng, speed_2x_only_after_clearing_same_map]
@@ -3325,4 +3325,6 @@ pacing_audit_20261029:
   m3_applied: "battle.gd saco embaralhado, RNG propria dos interativos, retry em vez de descarte, cadencia proporcional a duracao (scale_above 200, reference 600, min_scale 0.55); difficulty.json interactions retry_seconds/scale_above/reference_duration/min_scale; tests/test_pacing.gd ampliado; resultado-m3.txt"
   service_guarantee_applied: "1 servico por mapa >= 300 s no 2o sorteio (difficulty.json interactions.service_*); decisao do dono 2026-10-31"
   open_decision: "teto de 3 interativos vivos conta os dos acontecimentos (quem ignora fica sem vaga): contar so os comuns ou subir para 4 em mapas longos"
-  next_activity: "M4 (reescala B mapa a mapa) e playtest M5 com o Vitao."
+  m4_done: "shedaklah 540->330 s (stages.json, chapter_flow.json, stage_events.json); bots 9 runs: vitoria 6/9 igual, tempo ate o chefe -35%, nivel -2, abates -25%, ouro -27%"
+  m4_remaining: [dagruve_240, molor_360, durao_390, feng_tu_390, shendilavri_420, goranthis_420]
+  next_activity: "Decidir compensacao de XP/ouro; continuar M4 pelos demais mapas e M5 com o Vitao."
