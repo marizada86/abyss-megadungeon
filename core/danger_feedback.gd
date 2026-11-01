@@ -11,6 +11,18 @@ const FLASH_SECONDS := 0.35
 const FADE_PER_SECOND := 2.0     # velocidade com que a vinheta de vida baixa entra e sai
 const MAX_ALPHA := 0.55
 
+## Playtest 0.5.2: o aviso de ataque inimigo ganha a cor do tipo de dano ("main" preenche e contorna, "hot" marca a borda e o fim).
+## Físico mantém o vermelho de sempre; tipo desconhecido cai nele.
+const WARN_COLORS := {
+	"fisico": {"main": Color(1.0, 0.27, 0.18), "hot": Color(1.0, 0.72, 0.36)},
+	"magico": {"main": Color(0.68, 0.38, 1.0), "hot": Color(0.9, 0.78, 1.0)},
+	"fogo": {"main": Color(1.0, 0.5, 0.1), "hot": Color(1.0, 0.88, 0.4)},
+	"radiante": {"main": Color(1.0, 0.85, 0.4), "hot": Color(1.0, 0.98, 0.8)},
+}
+
+static func warn_colors(dtype: String) -> Dictionary:
+	return WARN_COLORS.get(dtype, WARN_COLORS.fisico)
+
 static func is_low(fraction: float, was_low: bool) -> bool:
 	return fraction < (LOW_EXIT if was_low else LOW_ENTER)
 

@@ -34,6 +34,10 @@ func build(game_box: Control, volume_row: Control) -> void:
 	add_theme_constant_override("separation", 10)
 	var header := HBoxContainer.new()
 	header.add_child(UiKit.label("PAUSA", 24, UiKit.GOLD))
+	var spacer := Control.new()
+	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	header.add_child(spacer)
+	header.add_child(UiKit.label(build_text(), 13, Color(0.62, 0.62, 0.68)))   # Playtest 0.5.2: os relatos de bug passam a trazer o build
 	add_child(header)
 	add_child(_build_tabs())
 	var stack := Control.new()
@@ -51,6 +55,10 @@ func build(game_box: Control, volume_row: Control) -> void:
 	Game.controls.changed.connect(_update_hints)
 	_update_hints()
 	set_tab(0)
+
+## "v0.5.2" e, nos builds de playtest/QA, o id do build (o mesmo texto do Quartel).
+static func build_text() -> String:
+	return "v%s%s" % [Version.VERSION, "  ·  build %s (%s)" % [Version.profile_slug(), Version.build_id()] if Version.evidence_enabled() else ""]
 
 func _build_tabs() -> Control:
 	var row := HBoxContainer.new()

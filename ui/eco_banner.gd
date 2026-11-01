@@ -45,11 +45,19 @@ func _label(size: int, color: Color) -> Label:
 	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	return l
 
+## Playtest 0.5.2: a faixa atrapalha quem quer seguir jogando; o controle a fecha na hora (B/círculo, ver `Hud`).
+func dismiss() -> void:
+	if _tween != null and _tween.is_valid():
+		_tween.kill()
+	visible = false
+
 ## `known`: o Eco já estava no Diário (título diferente, mesma faixa).
 func show_eco(text: String, source: String, known: bool, seconds: float) -> void:
 	_title.text = "✦ Eco de Nottgard%s" % (" (já no Diário)" if known else " — novo no Diário")
 	_text.text = text
 	_source.text = "Fonte: %s" % source if source != "" else ""
+	if Game.controls.is_controller():
+		_source.text = ("%s   ·   " % _source.text if source != "" else "") + "%s fecha" % Game.controls.prompt("ui_cancel", "")
 	visible = true
 	modulate.a = 1.0
 	if _tween != null and _tween.is_valid():

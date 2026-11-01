@@ -402,6 +402,10 @@ func _unhandled_input(ev: InputEvent) -> void:
 		_controller_detail_on = not _controller_detail_on
 		get_viewport().set_input_as_handled()
 		return
+	if eco_banner != null and eco_banner.visible and not pause_panel.visible and not levelup_panel.visible and ev is InputEventJoypadButton and ev.is_action_pressed(&"ui_cancel"):
+		eco_banner.dismiss()   # B/círculo fecha a faixa do Eco (Playtest 0.5.2)
+		get_viewport().set_input_as_handled()
+		return
 	if (ev.is_action_pressed(Game.ACTION_RUN_PAUSE) or ev.is_action_pressed(&"ui_cancel")) and pause_panel.visible:
 		resume_pressed.emit()
 		get_viewport().set_input_as_handled()

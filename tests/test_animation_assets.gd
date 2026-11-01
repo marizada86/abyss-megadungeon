@@ -370,6 +370,9 @@ func run() -> Array[String]:
 			failures.append("espelhamento horizontal ausente para %s" % direction)
 	if hero_script.walk_flips_horizontally(Vector2.RIGHT):
 		failures.append("move_e nao deveria ser espelhado")
+	# Playtest 0.5.2: o ataque espelha pela mira na tela (a arte olha para a direita), não pela última caminhada
+	if hero_script.attack_flips_horizontally(Iso.to_ground(Vector2.RIGHT)) or not hero_script.attack_flips_horizontally(Iso.to_ground(Vector2.LEFT)):
+		failures.append("mira para a direita na tela não espelha o ataque; para a esquerda espelha")
 	if southwest_input != Vector2(-1, 1):
 		failures.append("A+S não resolve para baixo e esquerda: %s" % southwest_input)
 	var hero := Hero.new()

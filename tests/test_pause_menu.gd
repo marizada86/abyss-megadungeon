@@ -120,6 +120,18 @@ func run() -> Array:
 		if not saved_settings.has(k):
 			settings.erase(k)
 
+	# Playtest 0.5.2: o build aparece no cabeçalho da pausa; a faixa do eco fecha na hora
+	if not PauseMenu.build_text().begins_with("v%s" % Version.VERSION):
+		out.append("o cabeçalho da pausa deveria mostrar a versão")
+	var eco := EcoBanner.new()
+	eco.show_eco("texto", "fonte", false, 6.0)
+	if not eco.visible:
+		out.append("o eco deveria aparecer")
+	eco.dismiss()
+	if eco.visible:
+		out.append("dismiss deveria fechar a faixa do eco")
+	eco.free()
+
 	hud.show_pause(false)
 	hud.free()
 	return out

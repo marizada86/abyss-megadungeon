@@ -338,24 +338,25 @@ func _draw_trap(z: Dictionary) -> void:
 	draw_circle(Iso.to_screen(z.pos), 2.5 + pulse * 1.2 + t * 2.0, Color(col.r, col.g, col.b, 0.4 + t * 0.4))
 
 func _draw_telegraph(z: Dictionary) -> void:
+	var warn := _warn(String(z.get("dtype", "fisico")))
 	var total := maxf(0.01, float(z.get("total", z.delay)))
 	var t := clampf(1.0 - float(z.delay) / total, 0.0, 1.0)
 	if z.has("src"):   # L4 A2: linha de quem lançou até o círculo, mais forte perto do golpe
 		var from := Iso.to_screen(z.src) + Vector2(0, -14)
 		var to := Iso.to_screen(z.pos)
-		_draw_dashes(from, to, Color(1.0, 0.45, 0.2, 0.3 + t * 0.55), 1.8 + t * 1.4, 9.0, 7.0, 0.0 if Game.reduced_impact() else _phase() * (30.0 + t * 50.0))
-		draw_circle(from, 3.0 + t * 1.5, Color(WARN_HOT, 0.55 + t * 0.35))   # origem do golpe
+		_draw_dashes(from, to, Color(warn.main.lerp(warn.hot, 0.3), 0.3 + t * 0.55), 1.8 + t * 1.4, 9.0, 7.0, 0.0 if Game.reduced_impact() else _phase() * (30.0 + t * 50.0))
+		draw_circle(from, 3.0 + t * 1.5, Color(warn.hot, 0.55 + t * 0.35))   # origem do golpe
 	var beat := 0.5 + 0.5 * sin(_phase() * (5.0 + t * 9.0))
-	draw_colored_polygon(_ellipse(z.pos, z.radius), Color(0.92, 0.12, 0.08, 0.1 + t * 0.18))
-	draw_polyline(_ellipse_closed(z.pos, z.radius), Color(1.0, 0.3, 0.16, 0.56 + t * 0.34), 1.8 + t * 1.6)
+	draw_colored_polygon(_ellipse(z.pos, z.radius), Color(warn.main.darkened(0.25), 0.1 + t * 0.18))
+	draw_polyline(_ellipse_closed(z.pos, z.radius), Color(warn.main, 0.56 + t * 0.34), 1.8 + t * 1.6)
 	if not _allow_large_fx(z.pos):
 		return
-	_draw_ellipse_arc(z.pos, z.radius * (1.03 + beat * 0.045), -PI * 0.2, PI * 0.38, Color(1.0, 0.72, 0.36, 0.28 + beat * 0.45), 1.4 + t)
+	_draw_ellipse_arc(z.pos, z.radius * (1.03 + beat * 0.045), -PI * 0.2, PI * 0.38, Color(warn.hot, 0.28 + beat * 0.45), 1.4 + t)
 	for i in 3:
 		var a := -PI * 0.5 + float(i) * TAU / 3.0
 		var a0 := Iso.to_screen(z.pos + Vector2(cos(a), sin(a)) * z.radius * 0.76)
 		var a1 := Iso.to_screen(z.pos + Vector2(cos(a), sin(a)) * z.radius * 0.98)
-		draw_line(a0, a1, Color(1.0, 0.7, 0.34, 0.36 + t * 0.42), 1.5)
+		draw_line(a0, a1, Color(warn.hot, 0.36 + t * 0.42), 1.5)
 
 func _draw_hero_zone(z: Dictionary) -> void:
 	var p: Dictionary = z.p
@@ -581,30 +582,34 @@ func _draw_over() -> void:
 	for e in battle.enemies:
 		if e.windup > 0.0:   # investida/bote: faixa no chão que enche até o disparo
 			var total := maxf(0.01, e.windup_total if e.windup_total > 0.0 else e.windup)
-			_draw_charge_lane(e.pos, e.charge_dir, float(e.charge_ab.dist), e.radius + HERO_LANE_PAD, clampf(1.0 - e.windup / total, 0.0, 1.0))
+			_draw_charge_lane(e.pos, e.charge_dir, float(e.charge_ab.dist), e.radius + HERO_LANE_PAD, clampf(1.0 - e.windup / total, 0.0, 1.0), String(e.charge_ab.get("dtype", "fisico")))
 		if e.shoot_wind > 0.0:   # L4 B1: mira do atirador, a direção que o tiro vai seguir
-			_draw_aim_beam(e.pos, e.shoot_dir, float(e.shoot_ab.get("range", 8.0)), clampf(1.0 - e.shoot_wind / 0.4, 0.0, 1.0))
+			_draw_aim_beam(e.pos, e.shoot_dir, float(e.shoot_ab.get("range", 8.0)), clampf(1.0 - e.shoot_wind / 0.4, 0.0, 1.0), String(e.shoot_ab.get("dtype", "fisico")))
 
 ## Playtest 0.5.2: os avisos de ataque eram linhas vermelhas lisas. Agora têm forma própria: faixa no chão (investida),
 ## raio com mira (tiro) e linha tracejada que corre até o círculo (golpe em área). "Impacto reduzido" tira o movimento.
 const HERO_LANE_PAD := 0.35   # folga da faixa além do raio do inimigo (o herói é pequeno)
-const WARN_RED := Color(1.0, 0.27, 0.18)
-const WARN_HOT := Color(1.0, 0.72, 0.36)
+
+## Cores do aviso pelo tipo de dano do golpe (`DangerFeedback.warn_colors`); no modo de daltonismo a cor principal segue a paleta do dano.
+func _warn(dtype: String) -> Dictionary:
+	var colors := DangerFeedback.warn_colors(dtype)
+	return {"main": Accessibility.dtype_color(dtype, Game.color_mode(), colors.main), "hot": colors.hot}
 
 ## Faixa de investida em coordenadas de chão: preenchimento fraco no trajeto todo, forte até `progress`, bordas e setas que avançam.
-func _draw_charge_lane(origin: Vector2, dir: Vector2, length: float, half_width: float, progress: float) -> void:
+func _draw_charge_lane(origin: Vector2, dir: Vector2, length: float, half_width: float, progress: float, dtype := "fisico") -> void:
+	var warn := _warn(dtype)
 	if dir == Vector2.ZERO or length <= 0.0:
 		return
 	var side := Vector2(-dir.y, dir.x) * half_width
 	var end := origin + dir * length
 	var lane := PackedVector2Array([Iso.to_screen(origin + side), Iso.to_screen(end + side), Iso.to_screen(end - side), Iso.to_screen(origin - side)])
-	draw_colored_polygon(lane, Color(WARN_RED, 0.1 + progress * 0.08))
+	draw_colored_polygon(lane, Color(warn.main, 0.1 + progress * 0.08))
 	var mid := origin + dir * length * progress
 	var filled := PackedVector2Array([Iso.to_screen(origin + side), Iso.to_screen(mid + side), Iso.to_screen(mid - side), Iso.to_screen(origin - side)])
-	draw_colored_polygon(filled, Color(WARN_RED, 0.16 + progress * 0.2))
-	var edge := Color(WARN_RED, 0.55 + progress * 0.35)
+	draw_colored_polygon(filled, Color(warn.main, 0.16 + progress * 0.2))
+	var edge := Color(warn.main, 0.55 + progress * 0.35)
 	draw_polyline(PackedVector2Array([lane[0], lane[1], lane[2], lane[3], lane[0]]), edge, 1.6 + progress * 1.2)
-	draw_line(Iso.to_screen(mid + side * 1.15), Iso.to_screen(mid - side * 1.15), Color(WARN_HOT, 0.9), 2.2)   # frente do preenchimento
+	draw_line(Iso.to_screen(mid + side * 1.15), Iso.to_screen(mid - side * 1.15), Color(warn.hot, 0.9), 2.2)   # frente do preenchimento
 	var spacing := 1.1
 	var shift := 0.0 if Game.reduced_impact() else fposmod(_phase() * (1.5 + progress * 3.0), spacing)
 	var k := shift
@@ -612,22 +617,23 @@ func _draw_charge_lane(origin: Vector2, dir: Vector2, length: float, half_width:
 		var c := origin + dir * k
 		var fade := 0.25 + 0.45 * (k / length)
 		var tip := Iso.to_screen(c + dir * 0.32)
-		draw_polyline(PackedVector2Array([Iso.to_screen(c - dir * 0.18 + side * 0.55), tip, Iso.to_screen(c - dir * 0.18 - side * 0.55)]), Color(WARN_HOT, fade), 1.6)
+		draw_polyline(PackedVector2Array([Iso.to_screen(c - dir * 0.18 + side * 0.55), tip, Iso.to_screen(c - dir * 0.18 - side * 0.55)]), Color(warn.hot, fade), 1.6)
 		k += spacing
-	draw_line(lane[1], lane[2], Color(WARN_HOT, 0.85), 3.0)   # fim do trajeto
+	draw_line(lane[1], lane[2], Color(warn.hot, 0.85), 3.0)   # fim do trajeto
 
 ## Raio do atirador: brilho largo, núcleo fino e uma mira no ponto final que fecha conforme o tiro se aproxima.
-func _draw_aim_beam(origin: Vector2, dir: Vector2, length: float, progress: float) -> void:
+func _draw_aim_beam(origin: Vector2, dir: Vector2, length: float, progress: float, dtype := "fisico") -> void:
+	var warn := _warn(dtype)
 	var lift := Vector2(0, -16)
 	var a := Iso.to_screen(origin) + lift
 	var b := Iso.to_screen(origin + dir * length) + lift
-	draw_line(a, b, Color(WARN_RED, 0.1 + progress * 0.14), 6.0 + progress * 3.0)
-	draw_line(a, b, Color(WARN_RED, 0.3 + progress * 0.5), 1.6 + progress)
-	_draw_dashes(a, b, Color(WARN_HOT, 0.35 + progress * 0.45), 1.2, 7.0, 9.0, 0.0 if Game.reduced_impact() else _phase() * 40.0)
+	draw_line(a, b, Color(warn.main, 0.1 + progress * 0.14), 6.0 + progress * 3.0)
+	draw_line(a, b, Color(warn.main, 0.3 + progress * 0.5), 1.6 + progress)
+	_draw_dashes(a, b, Color(warn.hot, 0.35 + progress * 0.45), 1.2, 7.0, 9.0, 0.0 if Game.reduced_impact() else _phase() * 40.0)
 	var r := 11.0 - progress * 5.0
-	draw_arc(b, r, 0.0, TAU, 20, Color(WARN_HOT, 0.45 + progress * 0.45), 1.6)
-	draw_line(b + Vector2(-r - 3.0, 0), b + Vector2(-r + 3.0, 0), Color(WARN_HOT, 0.8), 1.4)
-	draw_line(b + Vector2(r - 3.0, 0), b + Vector2(r + 3.0, 0), Color(WARN_HOT, 0.8), 1.4)
+	draw_arc(b, r, 0.0, TAU, 20, Color(warn.hot, 0.45 + progress * 0.45), 1.6)
+	draw_line(b + Vector2(-r - 3.0, 0), b + Vector2(-r + 3.0, 0), Color(warn.hot, 0.8), 1.4)
+	draw_line(b + Vector2(r - 3.0, 0), b + Vector2(r + 3.0, 0), Color(warn.hot, 0.8), 1.4)
 
 ## Linha tracejada de `a` para `b`; `offset` (px) faz os traços correrem no sentido a -> b.
 func _draw_dashes(a: Vector2, b: Vector2, col: Color, width: float, dash: float, gap: float, offset: float) -> void:

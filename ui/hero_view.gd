@@ -408,11 +408,19 @@ func _lab_stride(delta: float) -> void:
 		sprite.position = sprite.position.lerp(Vector2.ZERO, k)
 		sprite.rotation = lerpf(sprite.rotation, 0.0, k)
 
-func play_action(action: StringName) -> void:
+## `aim`: direção do golpe no chão. A arte de ataque olha para a direita; o espelho vem da mira, não da última caminhada
+## (Playtest 0.5.2: o ataque saía sempre para o lado em que o herói tinha andado por último).
+func play_action(action: StringName, aim: Vector2 = Vector2.ZERO) -> void:
 	if not _has_animation or dead or not sprite.sprite_frames.has_animation(action):
 		return
 	_action_locked = true
+	if action == &"attack" and not REAL_WEST_WALK.has(StringName(_active_hero_id)) and absf(Iso.to_screen(aim).x) > 0.01:   # mira vertical pura mantém o lado atual
+		sprite.flip_h = attack_flips_horizontally(aim)
 	sprite.play(action)
+
+## Verdadeiro quando a mira aponta para a esquerda da tela.
+static func attack_flips_horizontally(aim: Vector2) -> bool:
+	return Iso.to_screen(aim).x < 0.0
 
 func _on_animation_finished() -> void:
 	if sprite.animation == &"death":

@@ -84,4 +84,9 @@ func run() -> Array:
 	for b in 4:
 		if DamageFeedback.outline_size(b) < 5:
 			out.append("contorno da faixa %d abaixo de 5 px" % b)
+	# Playtest 0.5.2: o aviso de ataque ganha a cor do tipo de dano; tipo desconhecido cai no físico
+	if DangerFeedback.warn_colors("magico").main == DangerFeedback.warn_colors("fisico").main:
+		out.append("o aviso mágico deveria ter cor diferente do físico")
+	if DangerFeedback.warn_colors("veneno_inexistente") != DangerFeedback.warn_colors("fisico"):
+		out.append("tipo de dano desconhecido deveria usar o aviso físico")
 	return out

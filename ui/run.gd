@@ -878,12 +878,12 @@ func _consume_events() -> void:
 				_float_text(at + Vector2(0, -60), "+%d" % ev.amount, Color(0.4, 1.0, 0.5), DamageFeedback.HEAL_SIZE, false, Color(0, 0, 0), false, DamageFeedback.AUX_OUTLINE)
 			"swing":
 				Sfx.play_weapon(String(ev.get("weapon", "")), "combat.swing")
-				hero_node.play_action(&"attack")
+				hero_node.play_action(&"attack", ev.get("dir", Vector2.ZERO))
 				_swing_dir_frame = ev.get("dir", Vector2.ZERO)
 				_swing(ev, _divine_theme())
 			"cast":
 				Sfx.play_weapon(String(ev.get("weapon", "")), "combat.magic")
-				hero_node.play_action(&"attack")
+				hero_node.play_action(&"attack", ev.get("dir", Vector2.ZERO))
 			"nova":
 				Sfx.play_weapon(String(ev.get("weapon", "")), "combat.nova")
 				_nova_effect(ev)
