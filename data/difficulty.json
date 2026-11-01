@@ -124,7 +124,11 @@
     "_spec": "SPEC-122 B-004: baus, fontes e altares aleatorios (antes 50+25 s, ate 4 vivos).",
     "min_seconds": 80,
     "spread_seconds": 35,
-    "max_alive": 3
+    "max_alive": 3,
+    "retry_seconds": 8,
+    "scale_above": 200,
+    "reference_duration": 600,
+    "min_scale": 0.55
   },
   "happenings": {
     "_spec": "SPEC-122 B-004: sorteio de acontecimentos opcionais por fase (antes 1 a 2).",

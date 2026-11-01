@@ -164,6 +164,8 @@ const EMPTY_CELL: Array = []   # PLAN-098: consulta de célula vazia sem alocar 
 var _first_inter := true
 var _inter_rolls := 0          # sorteios aleatórios válidos do mapa (sem o baú fixo); alimenta a garantia da ampulheta
 var _hourglass_seen := false
+var _inter_rng := RandomNumberGenerator.new()   # fluxo próprio dos interativos (semente da run + fase): o combate não puxa a sequência
+var _inter_bag: Array = []
 var _spawn_serial := 0
 var _cine_queue: Array = []      # MEC-009: evoluções aguardando a mini-cinemática
 var evolve_cine: Dictionary = {}   # {from, into, passive, level} da cinemática em curso
@@ -390,6 +392,8 @@ func load_stage(stage_key: String) -> void:
 	_first_inter = true
 	_inter_rolls = 0
 	_hourglass_seen = false
+	_inter_rng.seed = hash("%d:%s:interativos" % [_seed, stage_id])
+	_inter_bag.clear()
 	_breakable_t = 20.0 + rng.randf() * 10.0
 	_amb_puddle = 9.0
 	_amb_strike = 6.0
@@ -3762,8 +3766,7 @@ func _director(dt: float) -> void:
 			_spawn(String(w0.id), _ring_pos())
 	_inter_t -= dt
 	if _inter_t <= 0.0:
-		var icfg: Dictionary = Data.table("difficulty").get("interactions", {})
-		_inter_t = float(icfg.get("min_seconds", 50.0)) + rng.randf() * float(icfg.get("spread_seconds", 25.0))
+		_inter_t = _interaction_interval()
 		_spawn_random_interaction()
 	_breakable_t -= dt
 	if _breakable_t <= 0.0:
@@ -3804,47 +3807,80 @@ func _spawn_random_interaction() -> void:
 	if bool(stage.get("prototype_no_interactions", false)):
 		return
 	var alive_n := interactions.filter(func(i): return not i.used and i.kind != "portal" and not bool(i.get("fixed", false))).size()
-	if alive_n >= int(Data.table("difficulty").get("interactions", {}).get("max_alive", 4)):
+	var cfg: Dictionary = Data.table("difficulty").get("interactions", {})
+	if alive_n >= int(cfg.get("max_alive", 4)):
+		_inter_t = float(cfg.get("retry_seconds", 8.0))   # sem vaga: tenta de novo logo, em vez de perder o sorteio e esperar o intervalo inteiro
 		return
 	var weights: Dictionary = stage.interactions
 	if _mk_truce:
 		weights = weights.duplicate()
 		for k in TRUCE_KINDS:
 			weights.erase(k)
-	var total := 0.0
-	for k in weights:
-		total += float(weights[k])
-	var roll := rng.randf() * total
-	var kind := "chest"
-	for k in weights:
-		roll -= float(weights[k])
-		if roll <= 0.0:
-			kind = k
-			break
-	if kind == "eclipse_pedra" and not world_mod.is_empty():
-		return   # SPEC-164: só um eclipse por vez
-	if _first_inter:
-		_first_inter = false
-		kind = "chest"
-	var ang := rng.randf() * TAU
-	else:
-		_inter_rolls += 1
-		# Garantia: nos mapas longos a ampulheta (5% por sorteio) vem pelo menos uma vez; sem ela ninguém vê o item que adianta o relógio.
+	if _inter_bag.is_empty():
+		_fill_inter_bag(weights)
+	if _inter_bag.is_empty():
+		return
+	var kind := "chest" if _first_inter else String(_inter_bag[0])
+	var forced := false
+	if not _first_inter:
+		# Garantia: nos mapas longos a ampulheta vem pelo menos uma vez; sem ela ninguém vê o item que adianta o relógio.
 		var hg_cfg: Dictionary = Data.table("difficulty").get("hourglass", {})
 		if kind != "ampulheta" and not _hourglass_seen and weights.has("ampulheta") and not boss_spawned \
-				and float(stage.duration) >= float(hg_cfg.get("guarantee_min_duration", 300.0)) and _inter_rolls >= int(hg_cfg.get("guarantee_after_rolls", 1)):
+				and float(stage.duration) >= float(hg_cfg.get("guarantee_min_duration", 300.0)) and _inter_rolls + 1 >= int(hg_cfg.get("guarantee_after_rolls", 1)):
 			kind = "ampulheta"
-	if kind == "ampulheta":
-		_hourglass_seen = true
-	var at := hero.pos + Vector2(cos(ang), sin(ang)) * rng.randf_range(6.0, 12.0)
-	# Não sobrepor um interativo fixo (poço de Dagruve etc.): dois assets no mesmo ponto.
+			forced = true
+	if kind == "eclipse_pedra" and not world_mod.is_empty():
+		_inter_bag.append(_inter_bag.pop_front())   # SPEC-164: só um eclipse por vez; fica para o fim do saco e o sorteio se repete logo
+		_inter_t = float(cfg.get("retry_seconds", 8.0))
+		return
+	var ang := _inter_rng.randf() * TAU
+	var at := hero.pos + Vector2(cos(ang), sin(ang)) * _inter_rng.randf_range(6.0, 12.0)
+	# Não sobrepor um interativo fixo (poço de Dagruve etc.): dois assets no mesmo ponto. Outro ponto em 3 s.
 	for other in interactions:
 		if bool(other.get("fixed", false)) and not other.used and other.pos.distance_to(at) < 3.0:
+			_inter_t = 3.0
 			return
+	if _first_inter:
+		_first_inter = false
+		_inter_bag.erase("chest")   # o baú fixo do início conta como uma das fichas de baú do saco
+	else:
+		_inter_rolls += 1
+		if forced:
+			_inter_bag.erase("ampulheta")
+		else:
+			_inter_bag.pop_front()
+	if kind == "ampulheta":
+		_hourglass_seen = true
 	_add_interaction(kind, at)
 	events.append({"type": "toast", "text": String(Data.table("stage_story").get(stage_id, {}).get("aparece", "Algo apareceu no mapa..."))})
 
 func _stage_has_rule(kind: String) -> bool:
+## Saco embaralhado dos interativos do mapa: cada tipo entra com round(peso) fichas (mínimo 1) e sai sem reposição; vazio, é refeito.
+## Embaralha com o fluxo próprio (semente da run + fase), não com a RNG do combate.
+func _fill_inter_bag(weights: Dictionary) -> void:
+	_inter_bag.clear()
+	for k in weights:
+		for i in maxi(1, int(round(float(weights[k])))):
+			_inter_bag.append(String(k))
+	for i in range(_inter_bag.size() - 1, 0, -1):
+		var j := _inter_rng.randi() % (i + 1)
+		var swap = _inter_bag[i]
+		_inter_bag[i] = _inter_bag[j]
+		_inter_bag[j] = swap
+
+## Intervalo até o próximo interativo aleatório. Mapas de mais de `scale_above` s encurtam o intervalo em proporção à duração
+## (referência `reference_duration`, piso `min_scale`); os de 180 s não mudam.
+func _interaction_interval() -> float:
+	var cfg: Dictionary = Data.table("difficulty").get("interactions", {})
+	var lo := float(cfg.get("min_seconds", 50.0))
+	var spread := float(cfg.get("spread_seconds", 25.0))
+	var dur := float(stage.duration)
+	if dur > float(cfg.get("scale_above", 200.0)):
+		var k := clampf(dur / float(cfg.get("reference_duration", 600.0)), float(cfg.get("min_scale", 0.55)), 1.0)
+		lo *= k
+		spread *= k
+	return lo + _inter_rng.randf() * spread
+
 	var configured := String(stage_rule.get("kind", ""))
 	if configured == kind:
 		return true

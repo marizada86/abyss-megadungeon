@@ -8,6 +8,9 @@ func run() -> Array:
 	_check_hourglass_skip(out)
 	_check_optional_happening(out)
 	_check_speed_unlock(out)
+	_check_bag(out)
+	_check_stream(out)
+	_check_retry_and_cadence(out)
 	return out
 
 func _bat(seed_value: int, stage: String) -> Battle:
@@ -79,3 +82,61 @@ func _check_speed_unlock(out: Array) -> void:
 	b.cleared_stages = ["docas"]
 	if not b.can_speed_2x():
 		out.append("vencer qualquer mapa deveria liberar a velocidade extra nos outros")
+
+func _check_bag(out: Array) -> void:
+	var b := _bat(11, "molor")
+	var weights: Dictionary = b.stage.interactions
+	b._fill_inter_bag(weights)
+	var tickets := 0
+	for k in weights:
+		tickets += maxi(1, int(round(float(weights[k]))))
+	if b._inter_bag.size() != tickets:
+		out.append("o saco deveria ter %d fichas, tem %d" % [tickets, b._inter_bag.size()])
+	for k in weights:
+		var n := b._inter_bag.count(String(k))
+		if n != maxi(1, int(round(float(weights[k])))):
+			out.append("%s: %d fichas no saco, esperado %d" % [k, n, maxi(1, int(round(float(weights[k]))))])
+
+## A sequência de interativos vem de um fluxo próprio: mesma semente, mesmo mapa e mesma ordem, mesmo que o combate consuma a RNG.
+func _check_stream(out: Array) -> void:
+	var seqs: Array = []
+	for variant in 2:
+		var b := _bat(21, "molor")
+		var seq: Array = []
+		for i in 12:
+			if variant == 1:
+				for j in 7:
+					b.rng.randf()   # o combate consumindo a RNG da Battle
+			if b._inter_bag.is_empty():
+				b._fill_inter_bag(b.stage.interactions)
+			seq.append(String(b._inter_bag.pop_front()))
+		seqs.append(seq)
+	if seqs[0] != seqs[1]:
+		out.append("a ordem dos interativos não deveria depender da RNG do combate")
+
+func _check_retry_and_cadence(out: Array) -> void:
+	var b := _bat(31, "molor")
+	for i in 3:
+		b._add_interaction("chest", b.hero.pos + Vector2(2 + i, 0))
+	b._inter_t = 0.0
+	b._spawn_random_interaction()
+	if absf(b._inter_t - 8.0) > 0.01:
+		out.append("sem vaga o sorteio deveria tentar de novo em 8 s, ficou %.1f" % b._inter_t)
+	var docas := _bat(32, "docas")
+	for i in 20:
+		if docas._interaction_interval() < 80.0:
+			out.append("mapas de 180 s não devem encurtar o intervalo de interativos")
+			break
+	var mid := _bat(33, "molor")
+	mid.stage.duration = 330.0
+	for i in 20:
+		var v: float = mid._interaction_interval()
+		if v < 44.0 or v > 63.3:
+			out.append("mapa de 330 s deveria sortear entre 44 e 63 s, veio %.1f" % v)
+			break
+	var long := _bat(34, "molor")
+	for i in 20:
+		var v: float = long._interaction_interval()
+		if v < 76.0 or v > 114.0:
+			out.append("mapa de 570 s deveria ficar perto de 76 a 114 s, veio %.1f" % v)
+			break

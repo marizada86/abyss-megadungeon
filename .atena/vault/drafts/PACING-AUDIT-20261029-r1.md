@@ -165,3 +165,16 @@ Conclusões: (1) a ampulheta aparece em **no máximo 23 %** dos mapas longos par
 - Verificação: sonda repetida em Molor, Goranthis e Dagruve: ampulheta em 100 % dos mapas para o coletor; `run_all`: apenas as 3 falhas de UI que já existiam. Goranthis ignorador ficou em 52 %, porque o teto de 3 vivos ainda descarta rolagens (item R4.3, parte de M3).
 
 Pendente: M3 (saco embaralhado, cadência proporcional, retry em vez de descarte, RNG própria), M4 (reescala B, mapa a mapa) e M5 (playtest). Com B, Dagruve (240 s) deixa de entrar na garantia (limite 300 s) e Shedaklah (330 s) entra.
+
+## 6. Atualização 2026-10-31 — M3 aplicado (interativos), local
+
+Mudanças em `core/battle.gd` e `data/difficulty.json` (`interactions`):
+- **Saco embaralhado** por mapa (`_fill_inter_bag`): cada tipo entra com `round(peso)` fichas (mínimo 1; 21 fichas nos mapas padrão) e sai sem reposição; vazio, é refeito. O baú fixo dos 45 s consome uma ficha de baú. Efeito colateral aceito: tipos de peso 0,6 a 0,8 passam a ter 1 ficha, perto do dobro da chance relativa anterior.
+- **Fluxo de RNG próprio** (`_inter_rng`, semente da run + fase): ordem, ângulo e distância dos interativos deixam de depender do combate.
+- **Sem vaga, tenta de novo**: com o teto de vivos cheio, ou eclipse já ativo (a ficha vai para o fim do saco), o sorteio se repete em 8 s (`retry_seconds`); sobreposição com interativo fixo repete em 3 s. Antes a rolagem era perdida e o intervalo inteiro de 80 a 115 s esperado.
+- **Cadência proporcional** (`_interaction_interval`): mapas com mais de 200 s multiplicam 80/35 s por `clamp(duração/600, 0,55, 1)`; os de 180 s ficam como estavam. Com a opção B (330 s) o intervalo cai para 44 a 63 s.
+- A garantia da ampulheta passa a tirar a ficha do saco para não haver duas.
+
+Medição repetida com a sonda (60 sementes, `resultado-m3.txt`): ampulheta em **100 %** dos mapas de 300 s ou mais (Shedaklah ignorador 93 %); interativos por mapa para quem coleta: Dagruve 5,0 e Pilares 5,1 (eram 3,0 pela cadência proporcional), 6,1 a 6,8 nos longos; quem não coleta segue com 2 a 3,5 (o teto de 3 vivos é regra de projeto). Tipos de serviço (loja/ferreiro/arcanista/curandeiro) ainda faltam em muitos mapas: P(ao menos 1 ferreiro) 12 a 28 % para quem coleta tudo. **Decisão aberta**: garantir 1 serviço por mapa de 300 s ou mais (mesma ideia da ampulheta), que não apliquei por ser escolha de jogo.
+
+`run_all`: só as 3 falhas de UI de antes. Pendente: M4 (reescala B), M5 (playtest).
