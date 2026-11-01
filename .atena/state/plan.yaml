@@ -3307,3 +3307,19 @@ asset_discipulo_special_20261029:
   verification: "run_all: 3 falhas ja existentes (test_ui_kit x2, test_accessibility x1), nenhuma nova; sem teste em janela"
   not_authorized: [push, build, publicacao]
   next_activity: "Ver a conjuracao em jogo (Feng-tu, Grito na mente)."
+pacing_audit_20261029:
+  revision: r1
+  authorization: "atena, vamos auditar o jogo e fazer um plano para diminuir o tempo de mapa; analisar a ampulheta e a aleatoriedade dos spawns (2026-10-29)"
+  status: M0_DONE_M2_APPLIED_LOCAL_UNCOMMITTED
+  content_state: DRAFT
+  report: .atena/vault/drafts/PACING-AUDIT-20261029-r1.md
+  findings: [event_density_late_maps_6_to_7x_lower, enemy_roster_static_after_36_to_50_pct, hourglass_5_2_pct_per_roll_23_to_27_pct_per_long_map, interactions_pure_random_with_silent_discards_and_shared_rng, speed_2x_only_after_clearing_same_map]
+  options: {A: "-18% (64,5 min)", B: "-29% recomendada (56,5 min)", C: "-39% (48 min)"}
+  steps: [M0_measure, M1_owner_decisions, M2_data_changes, M3_interaction_code, M4_rescale_maps_4_to_10, M5_human_playtest]
+  code_or_data_modified: true
+  owner_decision: "B (56,5 min), 2026-10-31"
+  m0: .atena/generated/pacing-m0-20261031-r1/
+  m2_applied: "difficulty.json optional_min 1 + hourglass skip_pct/guarantee; battle.gd garantia da ampulheta, salto proporcional, can_speed_2x apos vencer qualquer mapa; tests/test_pacing.gd"
+  verification: "run_all: 3 falhas de UI ja existentes, nenhuma nova; sem teste em janela"
+  not_authorized: [commit, push, build, publicacao, M4_rescale_before_M3]
+  next_activity: "M3 (interativos) e depois M4 (reescala B mapa a mapa); playtest M5 com o Vitao."

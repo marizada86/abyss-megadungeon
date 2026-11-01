@@ -162,6 +162,8 @@ var _trickle := 0.0
 var _grid := {}
 const EMPTY_CELL: Array = []   # PLAN-098: consulta de célula vazia sem alocar um Array novo por inimigo e por passo
 var _first_inter := true
+var _inter_rolls := 0          # sorteios aleatórios válidos do mapa (sem o baú fixo); alimenta a garantia da ampulheta
+var _hourglass_seen := false
 var _spawn_serial := 0
 var _cine_queue: Array = []      # MEC-009: evoluções aguardando a mini-cinemática
 var evolve_cine: Dictionary = {}   # {from, into, passive, level} da cinemática em curso
@@ -386,6 +388,8 @@ func load_stage(stage_key: String) -> void:
 	_awake_elite_t = 0.0
 	_inter_t = FIRST_INTERACTION_SECONDS
 	_first_inter = true
+	_inter_rolls = 0
+	_hourglass_seen = false
 	_breakable_t = 20.0 + rng.randf() * 10.0
 	_amb_puddle = 9.0
 	_amb_strike = 6.0
@@ -2432,7 +2436,7 @@ func _update_pickups(dt: float) -> void:
 
 ## MEC-010: o 2x só vale em fase que o perfil já venceu.
 func can_speed_2x() -> bool:
-	return cleared_stages.has(stage_id)
+	return not cleared_stages.is_empty()   # 0.5.3: vencer qualquer mapa libera 1,5x/2x em todos
 
 func speed_scale() -> float:
 	return speed_mult if can_speed_2x() else 1.0
@@ -2441,7 +2445,7 @@ func speed_scale() -> float:
 func toggle_speed() -> bool:
 	if not can_speed_2x():
 		speed_mult = 1.0
-		events.append({"type": "toast", "text": "A velocidade extra libera depois de vencer este mapa."})
+		events.append({"type": "toast", "text": "A velocidade extra libera depois de vencer um mapa."})
 		return false
 	speed_mult = 1.5 if speed_mult < 1.4 else (2.0 if speed_mult < 1.9 else 1.0)
 	if speed_mult > 1.0:
@@ -2458,7 +2462,8 @@ func _use_hourglass() -> bool:
 	if boss_spawned:
 		events.append({"type": "toast", "text": "A ampulheta não tem mais efeito: o chefe já chegou."})
 		return false
-	var skip := minf(float(cfg.get("skip_seconds", 60.0)), float(stage.duration) - time - 5.0)
+	var want := maxf(float(cfg.get("skip_seconds", 60.0)), float(stage.duration) * float(cfg.get("skip_pct", 0.0)))
+	var skip := minf(want, float(stage.duration) - time - 5.0)
 	if skip < 5.0:
 		events.append({"type": "toast", "text": "Falta pouco para o chefe; a ampulheta não ajuda."})
 		return false
@@ -3822,6 +3827,15 @@ func _spawn_random_interaction() -> void:
 		_first_inter = false
 		kind = "chest"
 	var ang := rng.randf() * TAU
+	else:
+		_inter_rolls += 1
+		# Garantia: nos mapas longos a ampulheta (5% por sorteio) vem pelo menos uma vez; sem ela ninguém vê o item que adianta o relógio.
+		var hg_cfg: Dictionary = Data.table("difficulty").get("hourglass", {})
+		if kind != "ampulheta" and not _hourglass_seen and weights.has("ampulheta") and not boss_spawned \
+				and float(stage.duration) >= float(hg_cfg.get("guarantee_min_duration", 300.0)) and _inter_rolls >= int(hg_cfg.get("guarantee_after_rolls", 1)):
+			kind = "ampulheta"
+	if kind == "ampulheta":
+		_hourglass_seen = true
 	var at := hero.pos + Vector2(cos(ang), sin(ang)) * rng.randf_range(6.0, 12.0)
 	# Não sobrepor um interativo fixo (poço de Dagruve etc.): dois assets no mesmo ponto.
 	for other in interactions:

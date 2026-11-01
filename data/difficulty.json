@@ -128,7 +128,7 @@
   },
   "happenings": {
     "_spec": "SPEC-122 B-004: sorteio de acontecimentos opcionais por fase (antes 1 a 2).",
-    "optional_min": 0,
+    "optional_min": 1,
     "optional_max": 1
   },
   "breakables": {
@@ -212,7 +212,10 @@
   "evolve_cinematic_seconds": 2.6,
   "hourglass": {
     "skip_seconds": 60,
-    "burst_max": 18
+    "burst_max": 18,
+    "skip_pct": 0.2,
+    "guarantee_after_rolls": 1,
+    "guarantee_min_duration": 300
   },
   "ritual_blessing": {
     "duration": 20.0,
