@@ -16,7 +16,7 @@ Base: `data/stages.json`, `data/chapter_flow.json`, `data/stage_events.json`, `d
 | 4 | Dagruve | 300 s | 2 | 0,40 |
 | 5 | Shedaklah | 540 s | 2 fixos + 0 a 1 de 2 opcionais = 2,5 | 0,28 |
 | 6 | Molor | 570 s | 1 fixo + 0 a 1 de 2 opcionais = 1,5 | 0,16 |
-| 7 | Durão | 600 s | 3 fixos + 0 a 1 de 1 opcional = 3,5 | 0,35 |
+| 7 | Durao | 600 s | 3 fixos + 0 a 1 de 1 opcional = 3,5 | 0,35 |
 | 8 | Feng-tu | 600 s | 2 fixos + 0 a 1 de 2 opcionais = 2,5 | 0,25 |
 | 9 | Shendilavri | 630 s | 2 fixos + 0 a 1 de 1 opcional = 2,5 | 0,24 |
 | 10 | Goranthis | 660 s | 1 fixo + 0 a 1 de 2 opcionais = 1,5 | 0,14 |
@@ -30,7 +30,7 @@ Causa: `optional_min` é 0 em `data/difficulty.json` (`happenings`), então um m
 
 Último inimigo novo que entra em cada mapa longo (`t0` da onda mais tardia) contra a duração:
 
-- Shedaklah: 240 de 540 s. Durão: 300 de 600 s. Goranthis: 240 de 660 s.
+- Shedaklah: 240 de 540 s. Durao: 300 de 600 s. Goranthis: 240 de 660 s.
 - Em Goranthis, de 240 a 660 s (7 minutos) o elenco é exatamente o mesmo: 4 tipos, 3 elites em 180, 360 e 520 s.
 
 Somado ao crescimento de PV dentro do mapa (`core/enemy.gd`: PV × (1 + 0,10 × minuto), bônus de ataque + minuto/4), o mapa longo vira "os mesmos inimigos, só mais encorpados".
@@ -72,7 +72,7 @@ Três opções para decidir (os três primeiros mapas ficam em 180 s):
 | Dagruve | 300 | 270 | 240 | 240 |
 | Shedaklah | 540 | 420 | 330 | 300 |
 | Molor | 570 | 450 | 360 | 300 |
-| Durão | 600 | 450 | 390 | 300 |
+| Durao | 600 | 450 | 390 | 300 |
 | Feng-tu | 600 | 450 | 390 | 300 |
 | Shendilavri | 630 | 480 | 420 | 300 |
 | Goranthis | 660 | 510 | 420 | 300 |
@@ -149,7 +149,7 @@ Sonda `probe.gd`: 100 sementes por mapa, sem combate (ondas e elites vazias), he
 | Dagruve (300 s) | 3,0 / 3,0 | 13 % / 13 % | 11 % |
 | Shedaklah (540 s) | 5,2 / 2,4 | 14 % / 2 % | 17 % |
 | Molor (570 s) | 6,5 / 3,5 | 23 % / 7 % | 20 % |
-| Durão (600 s) | 5,7 / 3,5 | 20 % / 7 % | 22 % |
+| Durao (600 s) | 5,7 / 3,5 | 20 % / 7 % | 22 % |
 | Feng-tu (600 s) | 5,7 / 2,2 | 19 % / 7 % | 25 % |
 | Shendilavri (630 s) | 6,0 / 2,5 | 18 % / 5 % | 27 % |
 | Goranthis (660 s) | 6,8 / 2,7 | 21 % / 6 % | 17 % |
@@ -220,3 +220,36 @@ Leitura: a taxa de vitória se manteve, o tempo total do mapa caiu cerca de 35 %
 Acontecimentos (sonda): 3 objetivos por mapa em 5,5 min (≈0,55 por minuto, antes ≈0,28). Ampulheta 100 %, serviço 98 % para quem coleta; quem ignora ainda sofre o teto de 3 vivos (decisão aberta).
 
 `run_all`: só as 3 falhas de UI de antes.
+
+## 9. M4 — Molor 570 → 360 s (2026-11-01, local, sem commit)
+
+Fator k = 360/570 = 0,632, mesmo método da seção 8 (`stages.json`, espelho em `chapter_flow.json`, `stage_events.json`).
+
+| Campo | Antes | Depois |
+|---|---|---|
+| `duration` / chefe (Blogbog) | 570 | 360 |
+| bolha_de_slime `t1` | 200 | 126 |
+| slime_de_juiblex `t0`–`t1` | 30–400 | 19–253 |
+| cultista_thullgrime `t0`–`t1` | 90–570 | 57–360 |
+| pudim_negro `t0`–`t1` | 180–570 | 114–360 |
+| cogumelo_fungico `t0`–`t1` | 300–570 | 189–360 |
+| Elites (pudim_negro, receptáculo ×2) | 140, 270, 420 | 88, 171, 265 |
+| `vigilia_em_thullgrime` | 120 (opcional) | 76 (**fixo**) |
+| `ritual_de_estagnacao` | 230 | 145 |
+| `diario_do_chefe` (prazo 60 s mantido) | 400 (opcional) | 253 (**fixo**) |
+
+Os dois acontecimentos opcionais de Molor viraram fixos (R2.3): Molor tem 3 acontecimentos em 6 min, em vez de 1 a 2 em 9,5 min.
+
+**Bots** (mesmo conjunto: durvall/brook/maelor × sementes 1 a 3; `results/m4-molor-old.jsonl` e `m4-molor-new.jsonl`; as duas rodadas foram feitas **antes** de fixar os opcionais):
+
+| | Antes (570 s) | Depois (360 s) |
+|---|---|---|
+| Chefe derrotado | 3/9 | 3/9 |
+| Tempo até derrotar o chefe (vencidos) | 793 s (13,2 min) | 589 s (9,8 min) |
+| Nível do herói no fim (média) | 17,0 | 14,9 |
+| Abates (média) | 902 | 666 |
+| Ouro (média) | 243 | 170 |
+
+Leitura: a taxa de vitória dos bots é baixa nos dois cronogramas (3/9), então Molor já é duro para eles e a redução não piorou isso; o tempo cai cerca de 26 %, e o herói chega com 2 níveis a menos, 26 % menos abates e 30 % menos ouro. Mesmo ressalva de amostra pequena.
+
+Testes: `tests/test_pacing.gd` passou a medir o opcional em Shedaklah (Molor não tem mais opcionais) e a fixar 570 s no teste de cadência. `run_all`: só as 3 falhas de UI de antes.

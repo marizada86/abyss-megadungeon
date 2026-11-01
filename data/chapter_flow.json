@@ -705,7 +705,7 @@
       "name": "Molor",
       "sub": "Andar 528 · caverna de bolhas",
       "order": 3,
-      "duration": 570,
+      "duration": 360,
       "cap": 55,
       "tier": 3,
       "coin_mult": 1.8,
@@ -744,39 +744,39 @@
       "waves": [
         {
           "t0": 0,
-          "t1": 200,
+          "t1": 126,
           "id": "bolha_de_slime",
           "every": 2.6,
           "n": 2,
           "max": 16
         },
         {
-          "t0": 30,
-          "t1": 400,
+          "t0": 19,
+          "t1": 253,
           "id": "slime_de_juiblex",
           "every": 4,
           "n": 2,
           "max": 12
         },
         {
-          "t0": 90,
-          "t1": 570,
+          "t0": 57,
+          "t1": 360,
           "id": "cultista_thullgrime",
           "every": 4,
           "n": 2,
           "max": 10
         },
         {
-          "t0": 180,
-          "t1": 570,
+          "t0": 114,
+          "t1": 360,
           "id": "pudim_negro",
           "every": 8,
           "n": 1,
           "max": 5
         },
         {
-          "t0": 300,
-          "t1": 570,
+          "t0": 189,
+          "t1": 360,
           "id": "cogumelo_fungico",
           "every": 7,
           "n": 2,
@@ -785,15 +785,15 @@
       ],
       "elites": [
         {
-          "at": 140,
+          "at": 88,
           "id": "pudim_negro"
         },
         {
-          "at": 270,
+          "at": 171,
           "id": "receptaculo_de_juiblex"
         },
         {
-          "at": 420,
+          "at": 265,
           "id": "receptaculo_de_juiblex"
         }
       ],

@@ -66,13 +66,13 @@ func _check_hourglass_skip(out: Array) -> void:
 
 func _check_optional_happening(out: Array) -> void:
 	var fixed := 0
-	for d in Data.table("stage_events").get("molor", []):
+	for d in Data.table("stage_events").get("shedaklah", []):
 		if String(d.get("pool", "fixed")) != "optional":
 			fixed += 1
 	for s in 20:
-		var picked := Happenings.select("molor", Data.table("stage_events").get("molor", []), 900 + s)
+		var picked := Happenings.select("shedaklah", Data.table("stage_events").get("shedaklah", []), 900 + s)
 		if picked.size() != fixed + 1:
-			out.append("Molor deveria ter os fixos + 1 opcional em toda semente (semente %d veio com %d)" % [900 + s, picked.size()])
+			out.append("Shedaklah deveria ter os fixos + 1 opcional em toda semente (semente %d veio com %d)" % [900 + s, picked.size()])
 			return
 
 func _check_speed_unlock(out: Array) -> void:
@@ -136,6 +136,7 @@ func _check_retry_and_cadence(out: Array) -> void:
 			out.append("mapa de 330 s deveria sortear entre 44 e 63 s, veio %.1f" % v)
 			break
 	var long := _bat(34, "molor")
+	long.stage.duration = 570.0   # o cálculo é por duração; Molor ficou em 360 s na M4
 	for i in 20:
 		var v: float = long._interaction_interval()
 		if v < 76.0 or v > 114.0:

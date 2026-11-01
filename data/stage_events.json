@@ -264,10 +264,9 @@
   "molor": [
     {
       "id": "vigilia_em_thullgrime",
-      "at": 120,
+      "at": 76,
       "warning": 5,
       "kind": "wave",
-      "pool": "optional",
       "enemy_id": "cultista_thullgrime",
       "count": 5,
       "title": "Emboscada na vigília",
@@ -277,7 +276,7 @@
     },
     {
       "id": "ritual_de_estagnacao",
-      "at": 230,
+      "at": 145,
       "warning": 6,
       "kind": "intercept",
       "jitter": 0.1,
@@ -311,10 +310,9 @@
     },
     {
       "id": "diario_do_chefe",
-      "at": 400,
+      "at": 253,
       "warning": 5,
       "kind": "rescue",
-      "pool": "optional",
       "n": 1,
       "deadline": 60,
       "label": "diário do chefe",
