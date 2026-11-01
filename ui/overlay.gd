@@ -343,7 +343,8 @@ func _draw_telegraph(z: Dictionary) -> void:
 	if z.has("src"):   # L4 A2: linha de quem lançou até o círculo, mais forte perto do golpe
 		var from := Iso.to_screen(z.src) + Vector2(0, -14)
 		var to := Iso.to_screen(z.pos)
-		draw_line(from, to, Color(1.0, 0.45, 0.2, 0.25 + t * 0.5), 1.5 + t * 1.5)
+		_draw_dashes(from, to, Color(1.0, 0.45, 0.2, 0.3 + t * 0.55), 1.8 + t * 1.4, 9.0, 7.0, 0.0 if Game.reduced_impact() else _phase() * (30.0 + t * 50.0))
+		draw_circle(from, 3.0 + t * 1.5, Color(WARN_HOT, 0.55 + t * 0.35))   # origem do golpe
 	var beat := 0.5 + 0.5 * sin(_phase() * (5.0 + t * 9.0))
 	draw_colored_polygon(_ellipse(z.pos, z.radius), Color(0.92, 0.12, 0.08, 0.1 + t * 0.18))
 	draw_polyline(_ellipse_closed(z.pos, z.radius), Color(1.0, 0.3, 0.16, 0.56 + t * 0.34), 1.8 + t * 1.6)
@@ -578,15 +579,70 @@ func _draw_over() -> void:
 	if battle.boss_mech != null:   # L5: mecânicas do chefe (turíbulos, imunidade, conjuração, varredura, quadrantes)
 		battle.boss_mech.draw_fx(self)
 	for e in battle.enemies:
-		if e.windup > 0.0:
-			var a := Iso.to_screen(e.pos)
-			var b := Iso.to_screen(e.pos + e.charge_dir * float(e.charge_ab.dist))
-			draw_line(a, b, Color(1.0, 0.25, 0.2, 0.6), 4.0)
+		if e.windup > 0.0:   # investida/bote: faixa no chão que enche até o disparo
+			var total := maxf(0.01, e.windup_total if e.windup_total > 0.0 else e.windup)
+			_draw_charge_lane(e.pos, e.charge_dir, float(e.charge_ab.dist), e.radius + HERO_LANE_PAD, clampf(1.0 - e.windup / total, 0.0, 1.0))
 		if e.shoot_wind > 0.0:   # L4 B1: mira do atirador, a direção que o tiro vai seguir
-			var sa := Iso.to_screen(e.pos) + Vector2(0, -16)
-			var sb := Iso.to_screen(e.pos + e.shoot_dir * float(e.shoot_ab.get("range", 8.0))) + Vector2(0, -16)
-			var fade := clampf(1.0 - e.shoot_wind / 0.4, 0.0, 1.0)
-			draw_line(sa, sb, Color(1.0, 0.35, 0.25, 0.25 + fade * 0.55), 1.5 + fade)
+			_draw_aim_beam(e.pos, e.shoot_dir, float(e.shoot_ab.get("range", 8.0)), clampf(1.0 - e.shoot_wind / 0.4, 0.0, 1.0))
+
+## Playtest 0.5.2: os avisos de ataque eram linhas vermelhas lisas. Agora têm forma própria: faixa no chão (investida),
+## raio com mira (tiro) e linha tracejada que corre até o círculo (golpe em área). "Impacto reduzido" tira o movimento.
+const HERO_LANE_PAD := 0.35   # folga da faixa além do raio do inimigo (o herói é pequeno)
+const WARN_RED := Color(1.0, 0.27, 0.18)
+const WARN_HOT := Color(1.0, 0.72, 0.36)
+
+## Faixa de investida em coordenadas de chão: preenchimento fraco no trajeto todo, forte até `progress`, bordas e setas que avançam.
+func _draw_charge_lane(origin: Vector2, dir: Vector2, length: float, half_width: float, progress: float) -> void:
+	if dir == Vector2.ZERO or length <= 0.0:
+		return
+	var side := Vector2(-dir.y, dir.x) * half_width
+	var end := origin + dir * length
+	var lane := PackedVector2Array([Iso.to_screen(origin + side), Iso.to_screen(end + side), Iso.to_screen(end - side), Iso.to_screen(origin - side)])
+	draw_colored_polygon(lane, Color(WARN_RED, 0.1 + progress * 0.08))
+	var mid := origin + dir * length * progress
+	var filled := PackedVector2Array([Iso.to_screen(origin + side), Iso.to_screen(mid + side), Iso.to_screen(mid - side), Iso.to_screen(origin - side)])
+	draw_colored_polygon(filled, Color(WARN_RED, 0.16 + progress * 0.2))
+	var edge := Color(WARN_RED, 0.55 + progress * 0.35)
+	draw_polyline(PackedVector2Array([lane[0], lane[1], lane[2], lane[3], lane[0]]), edge, 1.6 + progress * 1.2)
+	draw_line(Iso.to_screen(mid + side * 1.15), Iso.to_screen(mid - side * 1.15), Color(WARN_HOT, 0.9), 2.2)   # frente do preenchimento
+	var spacing := 1.1
+	var shift := 0.0 if Game.reduced_impact() else fposmod(_phase() * (1.5 + progress * 3.0), spacing)
+	var k := shift
+	while k < length:
+		var c := origin + dir * k
+		var fade := 0.25 + 0.45 * (k / length)
+		var tip := Iso.to_screen(c + dir * 0.32)
+		draw_polyline(PackedVector2Array([Iso.to_screen(c - dir * 0.18 + side * 0.55), tip, Iso.to_screen(c - dir * 0.18 - side * 0.55)]), Color(WARN_HOT, fade), 1.6)
+		k += spacing
+	draw_line(lane[1], lane[2], Color(WARN_HOT, 0.85), 3.0)   # fim do trajeto
+
+## Raio do atirador: brilho largo, núcleo fino e uma mira no ponto final que fecha conforme o tiro se aproxima.
+func _draw_aim_beam(origin: Vector2, dir: Vector2, length: float, progress: float) -> void:
+	var lift := Vector2(0, -16)
+	var a := Iso.to_screen(origin) + lift
+	var b := Iso.to_screen(origin + dir * length) + lift
+	draw_line(a, b, Color(WARN_RED, 0.1 + progress * 0.14), 6.0 + progress * 3.0)
+	draw_line(a, b, Color(WARN_RED, 0.3 + progress * 0.5), 1.6 + progress)
+	_draw_dashes(a, b, Color(WARN_HOT, 0.35 + progress * 0.45), 1.2, 7.0, 9.0, 0.0 if Game.reduced_impact() else _phase() * 40.0)
+	var r := 11.0 - progress * 5.0
+	draw_arc(b, r, 0.0, TAU, 20, Color(WARN_HOT, 0.45 + progress * 0.45), 1.6)
+	draw_line(b + Vector2(-r - 3.0, 0), b + Vector2(-r + 3.0, 0), Color(WARN_HOT, 0.8), 1.4)
+	draw_line(b + Vector2(r - 3.0, 0), b + Vector2(r + 3.0, 0), Color(WARN_HOT, 0.8), 1.4)
+
+## Linha tracejada de `a` para `b`; `offset` (px) faz os traços correrem no sentido a -> b.
+func _draw_dashes(a: Vector2, b: Vector2, col: Color, width: float, dash: float, gap: float, offset: float) -> void:
+	var span := a.distance_to(b)
+	if span < 1.0:
+		return
+	var step := dash + gap
+	var dir := (b - a) / span
+	var d := fposmod(offset, step) - step
+	while d < span:
+		var s := maxf(d, 0.0)
+		var e := minf(d + dash, span)
+		if e > s:
+			draw_line(a + dir * s, a + dir * e, col, width)
+		d += step
 
 ## A arte da fonte tem a base só em contorno (o miolo é transparente): sobre tábuas, calçada ou estrada o desenho do chão
 ## atravessava a moldura e serrilhava tudo. Um piso de pedra opaco por baixo da arte isola a fonte do cenário.

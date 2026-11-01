@@ -159,6 +159,28 @@ func set_tab(i: int) -> void:
 	elif _tab == 2:
 		options.refresh()
 	tab_changed.emit(_tab)
+	if Game.controls.is_controller():
+		_focus_page.call_deferred()
+
+## Playtest 0.5.2: no controle, trocar de aba deixava o foco num botão escondido da aba anterior e o direcional não fazia nada.
+## Catálogo: primeira casa da grade (mostra o detalhe); as outras abas: o primeiro controle habilitado.
+func _focus_page() -> void:
+	if not is_visible_in_tree() or is_blocked.call():
+		return
+	var target: Control = first_cell() if _tab == 1 else _first_focus(_pages[_tab])
+	if target == null and _tab == 1 and not _cat_buttons.is_empty():
+		target = _cat_buttons[0]
+	if target != null and target.is_visible_in_tree():
+		target.grab_focus()
+
+static func _first_focus(node: Node) -> Control:
+	if node is Control and node.is_visible_in_tree() and node.focus_mode == Control.FOCUS_ALL and not (node is BaseButton and node.disabled):
+		return node
+	for child in node.get_children():
+		var found := _first_focus(child)
+		if found != null:
+			return found
+	return null
 
 func set_category(i: int) -> void:
 	_category = clampi(i, 0, Catalog.CATEGORIES.size() - 1)

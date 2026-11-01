@@ -368,59 +368,100 @@ func _tab_icons() -> void:
 		node.add_theme_constant_override("icon_max_width", 30)
 
 func _fill_upgrades() -> void:
-	# BUG-043: as linhas são refeitas a cada compra; sem isto o botão focado morria junto e o controle ficava sem foco.
+	var p: Profile = Game.profile
+	var defs: Array = p.upgrade_defs()
+	# Playtest 0.5.2: comprar refazia a lista e a rolagem descia; com as mesmas melhorias, só atualiza as linhas existentes (foco e rolagem ficam).
+	if upgrade_box.get_child_count() == defs.size() and defs.size() > 0 and _upgrade_rows_match(defs):
+		var focus_now := _focused_upgrade_id()
+		var scroll_now := _upgrade_scroll()
+		for i in defs.size():
+			_refresh_upgrade_row(upgrade_box.get_child(i), defs[i])
+		if focus_now != "":
+			_restore_upgrade_focus(focus_now, scroll_now.scroll_vertical if scroll_now != null else 0)
+		return
+	# BUG-043: as linhas são refeitas; sem isto o botão focado morria junto e o controle ficava sem foco.
 	var focus_id := _focused_upgrade_id()
 	var upgrade_scroll := _upgrade_scroll()
 	var scroll_at := upgrade_scroll.scroll_vertical if upgrade_scroll != null else 0
 	for c in upgrade_box.get_children():
 		upgrade_box.remove_child(c)   # sai da árvore já (libera o foco e não duplica linhas no mesmo quadro)
 		c.queue_free()
-	var p: Profile = Game.profile
-	for u in p.upgrade_defs():
-		var row := HBoxContainer.new()
-		row.add_theme_constant_override("separation", 10)
-		var up_icon := UiKit.icon_rect("res://assets/icons/melhorias/%s.png" % String(u.id), 56.0)
-		if up_icon != null:
-			row.add_child(up_icon)
-		var lab := Label.new()
-		var lv := p.upgrade_level(u.id)
-		lab.text = "%s   [%d/%d]\n%s" % [u.name, lv, u.costs.size(), u.desc]
-		lab.custom_minimum_size = Vector2(590 if up_icon == null else 530, 0)
-		lab.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART   # texto de conquista longo não empurra o botão
-		row.add_child(lab)
-		var btn := Button.new()
-		var cost := p.upgrade_cost(u.id)
-		var locked_by := p.upgrade_locked_by(u.id)
-		if locked_by != "":
-			lab.text += "\nBloqueado. Conquista: %s" % _ach_name(locked_by)
-			lab.modulate = Color(1, 1, 1, 0.7)
-		btn.text = "Bloqueado" if locked_by != "" else ("Comprar (%d)" % cost if cost >= 0 else "Máximo")
-		_style_buy_button(btn, "bloqueado" if locked_by != "" else ("comprar" if cost >= 0 else "maximo"))
-		var pips := _upgrade_pips(lv, u.costs.size(), locked_by != "")
-		if pips != null:
-			lab.text = lab.text.replace("   [%d/%d]" % [lv, u.costs.size()], "")
-			lab.add_theme_constant_override("line_spacing", 0)
-			var holder := VBoxContainer.new()
-			holder.add_theme_constant_override("separation", 0)
-			holder.custom_minimum_size = Vector2(530 if up_icon != null else 590, 0)
-			row.remove_child(lab)
-			lab.custom_minimum_size = Vector2(0, 0)
-			holder.add_child(pips)
-			holder.add_child(lab)
-			row.add_child(holder)
-		btn.disabled = locked_by != "" or cost < 0 or cost > p.coins()
-		btn.custom_minimum_size = Vector2(190, 48)   # proporção da arte (240x48); menos que isso espreme o cadeado
-		btn.size_flags_vertical = Control.SIZE_SHRINK_CENTER   # sem isto a linha de 3 textos estica o botão (e o cadeado)
-		btn.set_meta("upgrade_id", String(u.id))
-		btn.pressed.connect(func():
-			if p.buy_upgrade(u.id):
-				Sfx.play("item")
-				Game.save()
-				_refresh_all())
-		row.add_child(btn)
+	for u in defs:
+		var row := _build_upgrade_row(u)
+		_refresh_upgrade_row(row, u)
 		upgrade_box.add_child(row)
 	if focus_id != "":
 		_restore_upgrade_focus.call_deferred(focus_id, scroll_at)
+
+func _upgrade_rows_match(defs: Array) -> bool:
+	for i in defs.size():
+		if String(upgrade_box.get_child(i).get_meta("upgrade_row", "")) != String(defs[i].id):
+			return false
+	return true
+
+## Esqueleto da linha (ícone, texto, botão); o conteúdo que muda com o perfil vem de `_refresh_upgrade_row`.
+func _build_upgrade_row(u: Dictionary) -> HBoxContainer:
+	var p: Profile = Game.profile
+	var row := HBoxContainer.new()
+	row.set_meta("upgrade_row", String(u.id))
+	row.add_theme_constant_override("separation", 10)
+	var up_icon := UiKit.icon_rect("res://assets/icons/melhorias/%s.png" % String(u.id), 56.0)
+	if up_icon != null:
+		row.add_child(up_icon)
+	var lab := Label.new()
+	lab.custom_minimum_size = Vector2(590 if up_icon == null else 530, 0)
+	lab.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART   # texto de conquista longo não empurra o botão
+	row.add_child(lab)
+	row.set_meta("lab", lab)
+	var probe := _upgrade_pips(0, u.costs.size(), false)   # só confere se há arte de pips; os reais entram em `_refresh_upgrade_row`
+	if probe != null:
+		probe.free()
+		lab.add_theme_constant_override("line_spacing", 0)
+		var holder := VBoxContainer.new()
+		holder.add_theme_constant_override("separation", 0)
+		holder.custom_minimum_size = Vector2(530 if up_icon != null else 590, 0)
+		row.remove_child(lab)
+		lab.custom_minimum_size = Vector2(0, 0)
+		holder.add_child(lab)   # os pips entram antes dele, a cada atualização
+		row.add_child(holder)
+		row.set_meta("holder", holder)
+	var btn := Button.new()
+	btn.size_flags_vertical = Control.SIZE_SHRINK_CENTER   # sem isto a linha de 3 textos estica o botão (e o cadeado)
+	btn.set_meta("upgrade_id", String(u.id))
+	btn.pressed.connect(func():
+		if p.buy_upgrade(u.id):
+			Sfx.play("item")
+			Game.save()
+			_refresh_all())
+	row.add_child(btn)
+	return row
+
+## Texto, pips e botão da linha conforme nível, custo, bloqueio e moedas atuais.
+func _refresh_upgrade_row(row: Control, u: Dictionary) -> void:
+	var p: Profile = Game.profile
+	var lab: Label = row.get_meta("lab")
+	var btn := row.get_child(row.get_child_count() - 1) as Button
+	var lv := p.upgrade_level(u.id)
+	var cost := p.upgrade_cost(u.id)
+	var locked_by := p.upgrade_locked_by(u.id)
+	var holder: VBoxContainer = row.get_meta("holder", null)
+	lab.text = "%s\n%s" % [u.name, u.desc] if holder != null else "%s   [%d/%d]\n%s" % [u.name, lv, u.costs.size(), u.desc]
+	lab.modulate = Color.WHITE
+	if locked_by != "":
+		lab.text += "\nBloqueado. Conquista: %s" % _ach_name(locked_by)
+		lab.modulate = Color(1, 1, 1, 0.7)
+	if holder != null:
+		for c in holder.get_children():
+			if c != lab:
+				holder.remove_child(c)
+				c.queue_free()
+		var pips := _upgrade_pips(lv, u.costs.size(), locked_by != "")
+		holder.add_child(pips)
+		holder.move_child(pips, 0)
+	btn.text = "Bloqueado" if locked_by != "" else ("Comprar (%d)" % cost if cost >= 0 else "Máximo")
+	_style_buy_button(btn, "bloqueado" if locked_by != "" else ("comprar" if cost >= 0 else "maximo"))
+	btn.disabled = locked_by != "" or cost < 0 or cost > p.coins()
+	btn.custom_minimum_size = Vector2(190, 48)   # proporção da arte (240x48); menos que isso espreme o cadeado
 
 ## Botão de compra com a moldura de arte do estado (comprar, máximo, bloqueado); sem arquivo, o botão padrão.
 func _style_buy_button(btn: Button, state: String) -> void:
@@ -479,8 +520,8 @@ func _focused_upgrade_id() -> String:
 		return String(focus_owner.get_meta("upgrade_id"))
 	return ""
 
-## Devolve o foco ao botão da mesma melhoria; se ele ficou desabilitado (máximo ou sem moedas), ao próximo
-## habilitado da lista, depois ao anterior e, por fim, ao primeiro foco da aba.
+## Devolve o foco ao botão da mesma melhoria; se ele ficou desabilitado (máximo ou sem moedas), ao habilitado
+## mais próximo da lista e, por fim, ao primeiro foco da aba.
 func _restore_upgrade_focus(focus_id: String, scroll_at: int) -> void:
 	var buttons: Array = []
 	for row in upgrade_box.get_children():
@@ -493,15 +534,14 @@ func _restore_upgrade_focus(focus_id: String, scroll_at: int) -> void:
 			at = i
 	var target: Button
 	if at >= 0:
-		for i in range(at, buttons.size()):
-			if not buttons[i].disabled:
-				target = buttons[i]
+		# o mais próximo habilitado (empate: o de baixo); pular direto para longe fazia a lista rolar sozinha
+		for step in buttons.size():
+			if at + step < buttons.size() and not buttons[at + step].disabled:
+				target = buttons[at + step]
 				break
-		if target == null:
-			for i in range(at - 1, -1, -1):
-				if not buttons[i].disabled:
-					target = buttons[i]
-					break
+			if at - step >= 0 and not buttons[at - step].disabled:
+				target = buttons[at - step]
+				break
 	var scroll := _upgrade_scroll()
 	if scroll != null:
 		scroll.scroll_vertical = scroll_at

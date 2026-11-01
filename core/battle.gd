@@ -1678,6 +1678,7 @@ func _use_ability(e: Enemy, idx: int, a: Dictionary, dist: float, to: Vector2) -
 			if dist < 2.5 or dist > float(a.dist) + 3.0:
 				return false
 			e.windup = float(a.windup)
+			e.windup_total = e.windup
 			e.charge_dir = to.normalized()
 			e.charge_ab = a
 			events.append({"type": "windup", "pos": e.pos, "dir": e.charge_dir, "len": float(a.dist), "enemy_id": e.id})
@@ -4176,6 +4177,7 @@ func _l4_lunge_step(e: Enemy, dist: float, to: Vector2, dt: float) -> void:
 		return
 	e.lunge_cd = float(s.get("cd", 4.0))
 	e.windup = float(s.get("windup", 0.45))
+	e.windup_total = e.windup
 	e.charge_dir = to.normalized()
 	e.charge_ab = {"dist": float(s.get("dist", 3.0)), "speed": float(s.get("speed", 9.0)), "dice": e.atk_dice, "bonus": e.atk_bonus}
 	events.append({"type": "windup", "pos": e.pos, "dir": e.charge_dir, "len": float(e.charge_ab.dist), "enemy_id": e.id})

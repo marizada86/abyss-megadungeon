@@ -33,6 +33,7 @@ var burn_dps := 0.0
 var mark_t := 0.0
 var mark := 0.0
 var windup := 0.0          # investida armada
+var windup_total := 0.0    # duração do preparo atual (a faixa de aviso enche proporcionalmente)
 var charge_t := 0.0
 var charge_dir := Vector2.ZERO
 var charge_ab: Dictionary = {}

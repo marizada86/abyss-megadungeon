@@ -8,6 +8,11 @@ func _texts(node: Node, out: Array) -> void:
 	for c in node.get_children():
 		_texts(c, out)
 
+func _altar_battle() -> Battle:
+	var b := Battle.new(45, "durvall", "dagruve")
+	b._open_altar()
+	return b
+
 func _hud(tree: SceneTree) -> Node:
 	var hud: Node = load("res://ui/hud.tscn").instantiate()
 	tree.root.add_child(hud)
@@ -74,6 +79,14 @@ func run() -> Array:
 	var b3 := Battle.new(44, "durvall", "dagruve")
 	b3.hero.gold = 500
 	b3._open_shop_event("loja")
+	hud3.show_offer(b3)
+	# Playtest 0.5.2: oferta que cobra moedas mostra o saldo; o altar (sem preço) não
+	var wallet: Label = hud3.lv_title.get_parent().get_node_or_null("OfferWallet")
+	if wallet == null or not wallet.visible or wallet.text != "Suas moedas: 500":
+		out.append("a loja deveria mostrar o saldo do herói (%s)" % (wallet.text if wallet != null else "sem rótulo"))
+	hud3.show_offer(_altar_battle())
+	if hud3.lv_title.get_parent().get_node("OfferWallet").visible:
+		out.append("o altar não cobra moedas: o saldo deveria sumir")
 	hud3.show_offer(b3)
 	if hud3.offer_box.vertical:
 		out.append("a loja deveria usar cartões em fileira")

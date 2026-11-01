@@ -105,7 +105,16 @@ func run() -> Array:
 			if String(u.id) == first_id:
 				costs = u.costs
 		Game.profile.data.upgrades[first_id] = costs.size()
+		var rows_before: Array = menu.upgrade_box.get_children()
 		menu._refresh_all()
+		# Playtest 0.5.2: comprar atualiza as linhas no lugar (refazer a lista fazia a rolagem descer)
+		var rows_after: Array = menu.upgrade_box.get_children()
+		if rows_after.size() != rows_before.size() or rows_after.is_empty() or rows_after[0] != rows_before[0]:
+			out.append("comprar deveria atualizar as linhas de melhoria no lugar, sem recriá-las")
+		for row in rows_after:
+			var rb := row.get_child(row.get_child_count() - 1) as Button
+			if String(rb.get_meta("upgrade_id", "")) == first_id and rb.text != "Máximo":
+				out.append("a linha no máximo deveria mostrar 'Máximo' (mostra '%s')" % rb.text)
 		if menu.upgrade_box.get_child_count() != Game.profile.upgrade_defs().size():
 			out.append("refazer as linhas não pode deixar linhas velhas na lista (%d)" % menu.upgrade_box.get_child_count())
 		menu._restore_upgrade_focus(first_id, 0)

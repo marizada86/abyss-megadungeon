@@ -636,6 +636,7 @@ func show_offer(b: Battle) -> void:
 	var grid := _offer_grid_mode(b)
 	_offer_kind_now = b.offer_kind
 	_apply_offer_layout(grid, b.offer.size())
+	_show_offer_wallet(b)
 	for i in b.offer.size():
 		var o: Dictionary = b.offer[i]
 		if grid and not o.has("brief"):
@@ -723,6 +724,28 @@ func show_offer(b: Battle) -> void:
 
 func hide_offer() -> void:
 	levelup_panel.visible = false
+
+## Playtest 0.5.2: toda oferta que cobra moedas (loja, ferreiro, aposta, eventos, pactos) mostra o saldo do herói sob o título.
+static func offer_spends_gold(offer: Array) -> bool:
+	for o in offer:
+		if int(o.get("price", 0)) > 0 or int(o.get("bet", 0)) > 0:
+			return true
+	return false
+
+var _offer_wallet: Label
+
+func _show_offer_wallet(b: Battle) -> void:
+	if _offer_wallet == null:
+		_offer_wallet = Label.new()
+		_offer_wallet.name = "OfferWallet"
+		_offer_wallet.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		_offer_wallet.add_theme_font_size_override("font_size", 22)
+		_offer_wallet.add_theme_color_override("font_color", Color(1, 0.85, 0.3))
+		lv_title.get_parent().add_child(_offer_wallet)
+		lv_title.get_parent().move_child(_offer_wallet, lv_title.get_index() + 1)
+	_offer_wallet.visible = offer_spends_gold(b.offer)
+	_offer_wallet.horizontal_alignment = lv_title.horizontal_alignment
+	_offer_wallet.text = "Suas moedas: %d" % int(b.hero.gold)
 
 # ------------------------------------------------------------------ cartões verticais (nível e altar)
 
