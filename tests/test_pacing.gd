@@ -11,6 +11,7 @@ func run() -> Array:
 	_check_bag(out)
 	_check_stream(out)
 	_check_retry_and_cadence(out)
+	_check_service_guarantee(out)
 	return out
 
 func _bat(seed_value: int, stage: String) -> Battle:
@@ -140,3 +141,30 @@ func _check_retry_and_cadence(out: Array) -> void:
 		if v < 76.0 or v > 114.0:
 			out.append("mapa de 570 s deveria ficar perto de 76 a 114 s, veio %.1f" % v)
 			break
+
+func _services_seen_until(seed_value: int, stage: String, until: float) -> bool:
+	var b := _bat(seed_value, stage)
+	var seen := false
+	while b.time < until:
+		var before := b.time
+		b.step(Vector2.ZERO, 0.5)
+		b.hero.hp = b.hero.max_hp
+		b.hero.dead = false
+		if b.state == "evolve_cine":
+			b.skip_cine()
+		if b.state != "running":
+			b.offer = []
+			b.offer_kind = ""
+			b.state = "running"
+		for it in b.interactions:
+			if Battle.TRUCE_KINDS.has(String(it.kind)):
+				seen = true
+			it.used = true
+		if is_equal_approx(before, b.time):
+			break
+	return seen
+
+func _check_service_guarantee(out: Array) -> void:
+	for s in 8:
+		if not _services_seen_until(700 + s, "molor", 330.0):
+			out.append("molor (semente %d): deveria sair pelo menos um serviço até o segundo sorteio aleatório" % (700 + s))

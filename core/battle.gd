@@ -164,6 +164,7 @@ const EMPTY_CELL: Array = []   # PLAN-098: consulta de célula vazia sem alocar 
 var _first_inter := true
 var _inter_rolls := 0          # sorteios aleatórios válidos do mapa (sem o baú fixo); alimenta a garantia da ampulheta
 var _hourglass_seen := false
+var _service_seen := false     # já saiu loja, ferreiro, arcanista ou curandeiro neste mapa
 var _inter_rng := RandomNumberGenerator.new()   # fluxo próprio dos interativos (semente da run + fase): o combate não puxa a sequência
 var _inter_bag: Array = []
 var _spawn_serial := 0
@@ -392,6 +393,7 @@ func load_stage(stage_key: String) -> void:
 	_first_inter = true
 	_inter_rolls = 0
 	_hourglass_seen = false
+	_service_seen = false
 	_inter_rng.seed = hash("%d:%s:interativos" % [_seed, stage_id])
 	_inter_bag.clear()
 	_breakable_t = 20.0 + rng.randf() * 10.0
@@ -3807,8 +3809,8 @@ func _spawn_random_breakable() -> void:
 func _spawn_random_interaction() -> void:
 	if bool(stage.get("prototype_no_interactions", false)):
 		return
-	var alive_n := interactions.filter(func(i): return not i.used and i.kind != "portal" and not bool(i.get("fixed", false))).size()
 	var cfg: Dictionary = Data.table("difficulty").get("interactions", {})
+	var alive_n := interactions.filter(func(i): return not i.used and i.kind != "portal" and not bool(i.get("fixed", false))).size()
 	if alive_n >= int(cfg.get("max_alive", 4)):
 		_inter_t = float(cfg.get("retry_seconds", 8.0))   # sem vaga: tenta de novo logo, em vez de perder o sorteio e esperar o intervalo inteiro
 		return
@@ -3830,6 +3832,17 @@ func _spawn_random_interaction() -> void:
 				and float(stage.duration) >= float(hg_cfg.get("guarantee_min_duration", 300.0)) and _inter_rolls + 1 >= int(hg_cfg.get("guarantee_after_rolls", 1)):
 			kind = "ampulheta"
 			forced = true
+		# Garantia de serviço (loja, ferreiro, arcanista, curandeiro): nos mapas longos sai pelo menos um, para a build poder se reforçar.
+		var svc_after := int(cfg.get("service_after_rolls", 2))
+		if not forced and not _service_seen and not boss_spawned and not (kind in TRUCE_KINDS) \
+				and float(stage.duration) >= float(cfg.get("service_min_duration", 300.0)) and _inter_rolls + 1 >= svc_after:
+			var services: Array = []
+			for k in TRUCE_KINDS:
+				if weights.has(k):
+					services.append(k)
+			if not services.is_empty():
+				kind = String(services[_inter_rng.randi() % services.size()])
+				forced = true
 	if kind == "eclipse_pedra" and not world_mod.is_empty():
 		_inter_bag.append(_inter_bag.pop_front())   # SPEC-164: só um eclipse por vez; fica para o fim do saco e o sorteio se repete logo
 		_inter_t = float(cfg.get("retry_seconds", 8.0))
@@ -3847,15 +3860,16 @@ func _spawn_random_interaction() -> void:
 	else:
 		_inter_rolls += 1
 		if forced:
-			_inter_bag.erase("ampulheta")
+			_inter_bag.erase(kind)
 		else:
 			_inter_bag.pop_front()
 	if kind == "ampulheta":
 		_hourglass_seen = true
+	if kind in TRUCE_KINDS:
+		_service_seen = true
 	_add_interaction(kind, at)
 	events.append({"type": "toast", "text": String(Data.table("stage_story").get(stage_id, {}).get("aparece", "Algo apareceu no mapa..."))})
 
-func _stage_has_rule(kind: String) -> bool:
 ## Saco embaralhado dos interativos do mapa: cada tipo entra com round(peso) fichas (mínimo 1) e sai sem reposição; vazio, é refeito.
 ## Embaralha com o fluxo próprio (semente da run + fase), não com a RNG do combate.
 func _fill_inter_bag(weights: Dictionary) -> void:
@@ -3882,6 +3896,7 @@ func _interaction_interval() -> float:
 		spread *= k
 	return lo + _inter_rng.randf() * spread
 
+func _stage_has_rule(kind: String) -> bool:
 	var configured := String(stage_rule.get("kind", ""))
 	if configured == kind:
 		return true

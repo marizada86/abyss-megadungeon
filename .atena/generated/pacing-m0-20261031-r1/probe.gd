@@ -16,6 +16,7 @@ func _run() -> void:
 			var kinds := {}
 			var hg_maps := 0
 			var smith_maps := 0
+			var svc_maps := 0
 			var happen := 0
 			var happen_min := 99
 			var inter_total := 0
@@ -32,6 +33,7 @@ func _run() -> void:
 				var objs := {}
 				var hg := false
 				var smith := false
+				var svc := false
 				var n_inter := 0
 				var stall := 0
 				var last_t := -1.0
@@ -64,6 +66,7 @@ func _run() -> void:
 						n_inter += 1
 						if k == "ampulheta": hg = true
 						if k == "ferreiro": smith = true
+						if k in ["loja", "ferreiro", "arcanista", "curandeiro"]: svc = true
 					for o in b.happenings.objectives:
 						objs[String(o.id)] = true
 					if mode == "coletor":
@@ -72,8 +75,9 @@ func _run() -> void:
 								it.used = true
 				if hg: hg_maps += 1
 				if smith: smith_maps += 1
+				if svc: svc_maps += 1
 				happen += objs.size()
 				happen_min = mini(happen_min, objs.size())
 				inter_total += n_inter
-			print("%s %s: interativos/mapa=%.1f  P(ampulheta)=%.0f%%  P(ferreiro)=%.0f%%  acontecimentos/mapa=%.1f (min %d)  [%.0f s]  %s" % [stage_id, mode, float(inter_total) / seeds, 100.0 * hg_maps / seeds, 100.0 * smith_maps / seeds, float(happen) / seeds, happen_min, (Time.get_ticks_msec() - t0) / 1000.0, str(kinds)])
+			print("%s %s: interativos/mapa=%.1f  P(ampulheta)=%.0f%%  P(ferreiro)=%.0f%%  P(servico)=%.0f%%  acontecimentos/mapa=%.1f (min %d)  [%.0f s]  %s" % [stage_id, mode, float(inter_total) / seeds, 100.0 * hg_maps / seeds, 100.0 * smith_maps / seeds, 100.0 * svc_maps / seeds, float(happen) / seeds, happen_min, (Time.get_ticks_msec() - t0) / 1000.0, str(kinds)])
 	quit()

@@ -178,3 +178,11 @@ Mudanças em `core/battle.gd` e `data/difficulty.json` (`interactions`):
 Medição repetida com a sonda (60 sementes, `resultado-m3.txt`): ampulheta em **100 %** dos mapas de 300 s ou mais (Shedaklah ignorador 93 %); interativos por mapa para quem coleta: Dagruve 5,0 e Pilares 5,1 (eram 3,0 pela cadência proporcional), 6,1 a 6,8 nos longos; quem não coleta segue com 2 a 3,5 (o teto de 3 vivos é regra de projeto). Tipos de serviço (loja/ferreiro/arcanista/curandeiro) ainda faltam em muitos mapas: P(ao menos 1 ferreiro) 12 a 28 % para quem coleta tudo. **Decisão aberta**: garantir 1 serviço por mapa de 300 s ou mais (mesma ideia da ampulheta), que não apliquei por ser escolha de jogo.
 
 `run_all`: só as 3 falhas de UI de antes. Pendente: M4 (reescala B), M5 (playtest).
+
+## 7. Atualização 2026-10-31 — serviço garantido por mapa longo (local)
+
+Decisão do dono: "Garantir serviço". Em `core/battle.gd` (`_spawn_random_interaction`) e `data/difficulty.json` (`interactions.service_after_rolls` 2, `service_min_duration` 300): em mapas de 300 s ou mais, se ainda não saiu loja, ferreiro, arcanista ou curandeiro, o 2º sorteio aleatório vira um deles (sorteado entre os que o mapa tem, só os que a marca "Sem trégua" não removeu). A ampulheta continua no 1º sorteio. A ficha forçada sai do saco.
+
+Sonda (60 sementes, `resultado-m3b.txt`), quem coleta tudo: **P(pelo menos um serviço) 98 a 100 %** nos mapas longos (antes 66 a 74 %); P(ferreiro) 25 a 45 %. Quem deixa interativos no chão: 0 a 100 % conforme o mapa (Shedaklah e Shendilavri 0 %, Feng-tu 22 %, Goranthis 53 %), porque os interativos dos acontecimentos também contam no teto de 3 vivos e a vaga não abre. Isso pede uma decisão futura sobre o teto (contar só interativos comuns, ou subir para 4 em mapas longos); não foi mexido.
+
+Teste novo em `tests/test_pacing.gd` (serviço em 8 sementes de Molor). `run_all`: só as 3 falhas de UI de antes.
