@@ -324,3 +324,27 @@ Os horários dos acontecimentos já ficam antes do chefe com folga: a última ta
 Sonda (30 sementes): 3 acontecimentos por mapa, ampulheta 100 %, serviço 100 % para quem coleta e 0 % para quem ignora. `run_all`: só as 3 falhas de UI de antes (`test_ui_kit` ×2, `test_accessibility` ×1).
 
 Medalhas: os limiares de abates (600/950/1250) foram calibrados para 630 s. Com −18 % a 25 % de abates, a medalha de ouro fica mais difícil; fica para o playtest humano (M5).
+
+### 13. M4: Goranthis 660 → 420 s
+
+Fator 0,636 em `stages.json`, no espelho de `chapter_flow.json` e em `stage_events.json`. Mantidos `every`, `n`, `max`, `cap`. Os dois opcionais (`a_luz_prateada`, `o_nome_tres_vezes`) foram **promovidos a fixos**, como previsto no item 3 da seção de recomendações: o mapa passa de 1,5 para 3 acontecimentos.
+
+| Campo | Antes | Depois |
+|---|---|---|
+| Duração (chefe, Socothbenoth) | 660 | 420 |
+| ilusao_de_socothbenoth, fim | 240 | 153 |
+| guardiao_de_goranthis `t0`–`t1` | 20–660 | 13–420 |
+| cultista_de_socothbenoth `t0`–`t1` | 60–660 | 38–420 |
+| slime_de_juiblex `t0`–`t1` | 240–660 | 153–420 |
+| Elites (guardião, receptáculo de Juiblex, guardião) | 180, 360, 520 | 115, 229, 331 |
+| `a_luz_prateada` | 200 (opcional) | 127 (**fixo**) |
+| `do_trono_ao_lodo` (jitter 0,08) | 400 | 255 |
+| `o_nome_tres_vezes` (varre o mapa e chama Graz'zt) | 520 (opcional) | 331 (**fixo**) |
+
+O Graz'zt e a terceira elite continuam coincidindo (331 s), como no original (520 s): a varredura poupa elites e chefe. A boon da luz (60 s) e a de 45 s terminam antes do chefe.
+
+**Bots** (durvall/brook/maelor × sementes 1 a 3, nível inicial 1; `results/m4-gor-old.jsonl` e `m4-gor-new.jsonl`): nenhuma partida chegou ao chefe nas duas versões (0/9, `reach` falso), mesmo problema de Shendilavri; não discrimina. Nível médio 3,8 → 3,1; abates 632 → 548 (−13 %); ouro 13,2 → 10,2.
+
+Sonda (30 sementes): 2 acontecimentos com objetivo mais a troca de mapa (sem objetivo, por isso a sonda não conta), ampulheta 100 %, serviço 100 % para quem coleta e 0 % para quem ignora. `run_all`: só as 3 falhas de UI de antes.
+
+Medalhas: limiares de abates (1400/2200/3000) calibrados para 660 s; com menos abates a medalha de ouro fica mais difícil. Fica para o M5.

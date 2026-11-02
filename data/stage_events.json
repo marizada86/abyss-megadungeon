@@ -729,10 +729,9 @@
   "goranthis": [
     {
       "id": "a_luz_prateada",
-      "at": 200,
+      "at": 127,
       "warning": 5,
       "kind": "pact",
-      "pool": "optional",
       "label": "luz prateada",
       "color": [
         220,
@@ -780,7 +779,7 @@
     },
     {
       "id": "do_trono_ao_lodo",
-      "at": 400,
+      "at": 255,
       "warning": 6,
       "kind": "map_shift",
       "jitter": 0.08,
@@ -804,10 +803,9 @@
     },
     {
       "id": "o_nome_tres_vezes",
-      "at": 520,
+      "at": 331,
       "warning": 5,
       "kind": "pact",
-      "pool": "optional",
       "label": "eco de Graz'zt",
       "color": [
         150,

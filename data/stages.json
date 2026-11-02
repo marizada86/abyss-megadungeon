@@ -856,7 +856,7 @@
     "name": "Goranthis",
     "sub": "Camada 597 · o verdadeiro Paraíso",
     "order": 9,
-    "duration": 660,
+    "duration": 420,
     "cap": 65,
     "tier": 7,
     "coin_mult": 4,
@@ -897,31 +897,31 @@
     "waves": [
       {
         "t0": 0,
-        "t1": 240,
+        "t1": 153,
         "id": "ilusao_de_socothbenoth",
         "every": 2.2,
         "n": 4,
         "max": 24
       },
       {
-        "t0": 20,
-        "t1": 660,
+        "t0": 13,
+        "t1": 420,
         "id": "guardiao_de_goranthis",
         "every": 6,
         "n": 1,
         "max": 8
       },
       {
-        "t0": 60,
-        "t1": 660,
+        "t0": 38,
+        "t1": 420,
         "id": "cultista_de_socothbenoth",
         "every": 5,
         "n": 2,
         "max": 10
       },
       {
-        "t0": 240,
-        "t1": 660,
+        "t0": 153,
+        "t1": 420,
         "id": "slime_de_juiblex",
         "every": 4,
         "n": 3,
@@ -930,15 +930,15 @@
     ],
     "elites": [
       {
-        "at": 180,
+        "at": 115,
         "id": "guardiao_de_goranthis"
       },
       {
-        "at": 360,
+        "at": 229,
         "id": "receptaculo_de_juiblex"
       },
       {
-        "at": 520,
+        "at": 331,
         "id": "guardiao_de_goranthis"
       }
     ],
