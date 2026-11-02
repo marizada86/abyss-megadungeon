@@ -598,7 +598,7 @@
   "shendilavri": [
     {
       "id": "mercador_de_rivenheart",
-      "at": 160,
+      "at": 107,
       "warning": 5,
       "kind": "pact",
       "pool": "optional",
@@ -645,7 +645,7 @@
     },
     {
       "id": "o_convite",
-      "at": 310,
+      "at": 207,
       "warning": 6,
       "kind": "pact",
       "jitter": 0.1,
@@ -689,7 +689,7 @@
     },
     {
       "id": "vitimas_drenadas",
-      "at": 450,
+      "at": 300,
       "warning": 5,
       "kind": "rescue",
       "n": 4,

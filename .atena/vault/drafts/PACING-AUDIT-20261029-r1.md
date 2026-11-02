@@ -299,3 +299,28 @@ A maldição da peregrinação foi encurtada de 150 para 100 s porque 273 + 150 
 **Bots** (durvall/brook/maelor × sementes 1 a 3; `results/m4-feng-old.jsonl` e `m4-feng-new.jsonl`; rodada nova com o enxame já fixo): nenhuma partida derrotou o chefe nas duas versões (0/9), então vitória e tempo não discriminam. Nível médio 14,6 → 12,8; abates 741 → 568 (−23 %); ouro 187 → 131 (−30 %).
 
 Sonda: 3 acontecimentos de objetivo em 6,5 min mais o enxame (onda). Ampulheta 100 %, serviço 100 % para quem coleta. `run_all`: só as 3 falhas de UI de antes.
+
+### 12. M4: Shendilavri 630 → 420 s
+
+Fator 0,667 aplicado em `stages.json`, no espelho de `chapter_flow.json` e em `stage_events.json`. Mantidos `every`, `n`, `max`, `cap` e o prazo de 55 s das vítimas.
+
+| Campo | Antes | Depois |
+|---|---|---|
+| Duração (chefe, Malcanthet) | 630 | 420 |
+| escravo_de_rivenheart, fim | 240 | 160 |
+| sucubo `t0`–`t1` | 30–500 | 20–333 |
+| ilusao_de_sucubo `t0`–`t1` | 30–630 | 20–420 |
+| guarda_do_castelo `t0`–`t1` | 200–630 | 133–420 |
+| cultista_ghaunadaur `t0`–`t1` | 300–630 | 200–420 |
+| Elites (guarda, sucubo ×2) | 160, 320, 480 | 107, 213, 320 |
+| `mercador_de_rivenheart` (opcional, único: sempre sai) | 160 | 107 |
+| `o_convite` (jitter 0,1) | 310 | 207 |
+| `vitimas_drenadas` (prazo 55 s) | 450 | 300 |
+
+Os horários dos acontecimentos já ficam antes do chefe com folga: a última tarefa termina em 355 s. Nenhum efeito longo foi alterado.
+
+**Bots** (durvall/brook/maelor × sementes 1 a 3, nível inicial 1; `results/m4-shen-old.jsonl` e `m4-shen-new.jsonl`): nenhuma partida chegou ao chefe nas duas versões (0/9, `reach false`), pois os bots entram no nível 1 em um mapa de tier 6 e ficam sem vida. A comparação não discrimina. Nível médio 4,8 → 4,6; abates 651 → 536 (−18 %); o ouro (14,6 → 23,4) é ruído de amostra.
+
+Sonda (30 sementes): 3 acontecimentos por mapa, ampulheta 100 %, serviço 100 % para quem coleta e 0 % para quem ignora. `run_all`: só as 3 falhas de UI de antes (`test_ui_kit` ×2, `test_accessibility` ×1).
+
+Medalhas: os limiares de abates (600/950/1250) foram calibrados para 630 s. Com −18 % a 25 % de abates, a medalha de ouro fica mais difícil; fica para o playtest humano (M5).

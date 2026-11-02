@@ -735,7 +735,7 @@
     "name": "Shendilavri e Rivenheart",
     "sub": "Camada 570 · o reino das súcubos",
     "order": 8,
-    "duration": 630,
+    "duration": 420,
     "cap": 60,
     "tier": 6,
     "coin_mult": 3.2,
@@ -775,39 +775,39 @@
     "waves": [
       {
         "t0": 0,
-        "t1": 240,
+        "t1": 160,
         "id": "escravo_de_rivenheart",
         "every": 3,
         "n": 3,
         "max": 18
       },
       {
-        "t0": 30,
-        "t1": 500,
+        "t0": 20,
+        "t1": 333,
         "id": "sucubo",
         "every": 4,
         "n": 2,
         "max": 10
       },
       {
-        "t0": 30,
-        "t1": 630,
+        "t0": 20,
+        "t1": 420,
         "id": "ilusao_de_sucubo",
         "every": 3,
         "n": 3,
         "max": 14
       },
       {
-        "t0": 200,
-        "t1": 630,
+        "t0": 133,
+        "t1": 420,
         "id": "guarda_do_castelo",
         "every": 9,
         "n": 1,
         "max": 5
       },
       {
-        "t0": 300,
-        "t1": 630,
+        "t0": 200,
+        "t1": 420,
         "id": "cultista_ghaunadaur",
         "every": 6,
         "n": 2,
@@ -816,15 +816,15 @@
     ],
     "elites": [
       {
-        "at": 160,
+        "at": 107,
         "id": "guarda_do_castelo"
       },
       {
-        "at": 320,
+        "at": 213,
         "id": "sucubo"
       },
       {
-        "at": 480,
+        "at": 320,
         "id": "sucubo"
       }
     ],
