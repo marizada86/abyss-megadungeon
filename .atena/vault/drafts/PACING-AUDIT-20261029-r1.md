@@ -253,3 +253,25 @@ Os dois acontecimentos opcionais de Molor viraram fixos (R2.3): Molor tem 3 acon
 Leitura: a taxa de vitória dos bots é baixa nos dois cronogramas (3/9), então Molor já é duro para eles e a redução não piorou isso; o tempo cai cerca de 26 %, e o herói chega com 2 níveis a menos, 26 % menos abates e 30 % menos ouro. Mesmo ressalva de amostra pequena.
 
 Testes: `tests/test_pacing.gd` passou a medir o opcional em Shedaklah (Molor não tem mais opcionais) e a fixar 570 s no teste de cadência. `run_all`: só as 3 falhas de UI de antes.
+
+## 10. M4 — Durao 600 → 390 s (2026-11-01, local, sem commit)
+
+Fator k = 390/600 = 0,65, mesmo método (`stages.json`, espelho em `chapter_flow.json`, `stage_events.json`). Grafia do mapa: **Durao** (decisão do dono, sem til).
+
+| Campo | Antes | Depois |
+|---|---|---|
+| `duration` / chefe (Molydeus) | 600 | 390 |
+| alma_penada `t1` | 220 | 143 |
+| demonio_de_gehenna `t0`–`t1` | 30–400 | 20–260 |
+| carcereiro_de_pedra `t0`–`t1` | 120–600 | 78–390 |
+| aberracao_shu `t0`–`t1` | 240–600 | 156–390 |
+| ezro `t0`–`t1` | 300–600 | 195–390 |
+| Elites (carcereiro, molydeus_menor ×2) | 160, 300, 450 | 104, 195, 293 |
+| `desertores` (prazo 50 s) | 200 | 130 |
+| `patrulha_do_carcereiro` (6 s depois dos desertores, como antes) | 206 | 136 |
+| `arena_do_testador` (prazo 45 s) | 380 | 247 |
+| `vhaerith_na_jaula` (opcional, único: sempre sai com `optional_min` 1) | 470 | 306 |
+
+**Bots** (durvall/brook/maelor × sementes 1 a 3; `results/m4-durao-old.jsonl` e `m4-durao-new.jsonl`): o chefe só foi derrotado em **1/9** partidas nas duas versões (Durao já é muito duro para os bots), então a taxa de vitória e o tempo até o chefe não discriminam. Nível médio 14,6 → 14,3; abates 312 → 226 (−28 %); ouro 100 → 79 (−21 %). Pouca informação; o jogo humano é a prova.
+
+Sonda de interativos: 4 acontecimentos em 6,5 min (≈0,6/min, antes 3,5 em 10 min), ampulheta 100 %, serviço 100 %. `run_all`: só as 3 falhas de UI de antes.

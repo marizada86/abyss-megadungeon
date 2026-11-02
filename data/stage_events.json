@@ -335,7 +335,7 @@
   "durao": [
     {
       "id": "desertores",
-      "at": 200,
+      "at": 130,
       "warning": 6,
       "kind": "rescue",
       "jitter": 0.1,
@@ -368,7 +368,7 @@
     },
     {
       "id": "patrulha_do_carcereiro",
-      "at": 206,
+      "at": 136,
       "warning": 3,
       "kind": "invasion",
       "enemy_id": "molydeus_menor",
@@ -386,7 +386,7 @@
     },
     {
       "id": "arena_do_testador",
-      "at": 380,
+      "at": 247,
       "warning": 5,
       "kind": "arena",
       "jitter": 0.1,
@@ -415,7 +415,7 @@
     },
     {
       "id": "vhaerith_na_jaula",
-      "at": 470,
+      "at": 306,
       "warning": 5,
       "kind": "pact",
       "pool": "optional",

@@ -825,7 +825,7 @@
       "name": "Durao",
       "sub": "Andar 274 · a jaula e o rio de almas",
       "order": 4,
-      "duration": 600,
+      "duration": 390,
       "cap": 55,
       "tier": 4,
       "coin_mult": 2.2,
@@ -864,39 +864,39 @@
       "waves": [
         {
           "t0": 0,
-          "t1": 220,
+          "t1": 143,
           "id": "alma_penada",
           "every": 2.6,
           "n": 3,
           "max": 18
         },
         {
-          "t0": 30,
-          "t1": 400,
+          "t0": 20,
+          "t1": 260,
           "id": "demonio_de_gehenna",
           "every": 6,
           "n": 1,
           "max": 6
         },
         {
-          "t0": 120,
-          "t1": 600,
+          "t0": 78,
+          "t1": 390,
           "id": "carcereiro_de_pedra",
           "every": 9,
           "n": 1,
           "max": 5
         },
         {
-          "t0": 240,
-          "t1": 600,
+          "t0": 156,
+          "t1": 390,
           "id": "aberracao_shu",
           "every": 5,
           "n": 2,
           "max": 8
         },
         {
-          "t0": 300,
-          "t1": 600,
+          "t0": 195,
+          "t1": 390,
           "id": "ezro",
           "every": 12,
           "n": 1,
@@ -905,15 +905,15 @@
       ],
       "elites": [
         {
-          "at": 160,
+          "at": 104,
           "id": "carcereiro_de_pedra"
         },
         {
-          "at": 300,
+          "at": 195,
           "id": "molydeus_menor"
         },
         {
-          "at": 450,
+          "at": 293,
           "id": "molydeus_menor"
         }
       ],
