@@ -275,3 +275,27 @@ Fator k = 390/600 = 0,65, mesmo método (`stages.json`, espelho em `chapter_flow
 **Bots** (durvall/brook/maelor × sementes 1 a 3; `results/m4-durao-old.jsonl` e `m4-durao-new.jsonl`): o chefe só foi derrotado em **1/9** partidas nas duas versões (Durao já é muito duro para os bots), então a taxa de vitória e o tempo até o chefe não discriminam. Nível médio 14,6 → 14,3; abates 312 → 226 (−28 %); ouro 100 → 79 (−21 %). Pouca informação; o jogo humano é a prova.
 
 Sonda de interativos: 4 acontecimentos em 6,5 min (≈0,6/min, antes 3,5 em 10 min), ampulheta 100 %, serviço 100 %. `run_all`: só as 3 falhas de UI de antes.
+
+## 11. M4 — Feng-tu 600 → 390 s (2026-11-01, local, sem commit)
+
+Fator k = 390/600 = 0,65, mesmo método (`stages.json`, espelho em `chapter_flow.json`, `stage_events.json`).
+
+| Campo | Antes | Depois |
+|---|---|---|
+| `duration` / chefe (Discipulo Pestilento) | 600 | 390 |
+| larva_de_lu_yueh `t1` | 240 | 156 |
+| cultista_de_feng_tu `t0`–`t1` | 30–420 | 20–273 |
+| estatua_do_templo `t0`–`t1` | 150–600 | 98–390 |
+| cultista_ghaunadaur `t0`–`t1` | 240–600 | 156–390 |
+| Elites (estatua_do_templo ×2, cultista_de_feng_tu) | 150, 300, 450 | 98, 195, 293 |
+| `enxame_pestilento` | 120 (opcional) | 78 (**fixo**) |
+| `escolta_do_peregrino` | 230 | 150 |
+| `altar_disputado_feng_tu` (opcional, único: sempre sai) | 170 | 110 |
+| `peregrinacao_da_estrela` | 420 | 273 |
+| Maldição da peregrinação (`curse.duration`) | 150 s | **100 s** |
+
+A maldição da peregrinação foi encurtada de 150 para 100 s porque 273 + 150 = 423 s passaria do chefe (390 s): sem achar a estrela o herói entraria doente (−20 % de dano) na luta. Com 100 s ela acaba em 373 s.
+
+**Bots** (durvall/brook/maelor × sementes 1 a 3; `results/m4-feng-old.jsonl` e `m4-feng-new.jsonl`; rodada nova com o enxame já fixo): nenhuma partida derrotou o chefe nas duas versões (0/9), então vitória e tempo não discriminam. Nível médio 14,6 → 12,8; abates 741 → 568 (−23 %); ouro 187 → 131 (−30 %).
+
+Sonda: 3 acontecimentos de objetivo em 6,5 min mais o enxame (onda). Ampulheta 100 %, serviço 100 % para quem coleta. `run_all`: só as 3 falhas de UI de antes.

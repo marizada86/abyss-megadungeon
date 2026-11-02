@@ -945,7 +945,7 @@
       "name": "Feng-tu",
       "sub": "Andar 300 · templo de Tou Um",
       "order": 5,
-      "duration": 600,
+      "duration": 390,
       "cap": 60,
       "tier": 5,
       "coin_mult": 2.7,
@@ -984,31 +984,31 @@
       "waves": [
         {
           "t0": 0,
-          "t1": 240,
+          "t1": 156,
           "id": "larva_de_lu_yueh",
           "every": 2,
           "n": 4,
           "max": 26
         },
         {
-          "t0": 30,
-          "t1": 420,
+          "t0": 20,
+          "t1": 273,
           "id": "cultista_de_feng_tu",
           "every": 4,
           "n": 2,
           "max": 10
         },
         {
-          "t0": 150,
-          "t1": 600,
+          "t0": 98,
+          "t1": 390,
           "id": "estatua_do_templo",
           "every": 10,
           "n": 1,
           "max": 5
         },
         {
-          "t0": 240,
-          "t1": 600,
+          "t0": 156,
+          "t1": 390,
           "id": "cultista_ghaunadaur",
           "every": 6,
           "n": 2,
@@ -1017,15 +1017,15 @@
       ],
       "elites": [
         {
-          "at": 150,
+          "at": 98,
           "id": "estatua_do_templo"
         },
         {
-          "at": 300,
+          "at": 195,
           "id": "estatua_do_templo"
         },
         {
-          "at": 450,
+          "at": 293,
           "id": "cultista_de_feng_tu"
         }
       ],

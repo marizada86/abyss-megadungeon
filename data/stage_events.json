@@ -456,10 +456,9 @@
   "feng_tu": [
     {
       "id": "enxame_pestilento",
-      "at": 120,
+      "at": 78,
       "warning": 5,
       "kind": "wave",
-      "pool": "optional",
       "enemy_id": "larva_de_lu_yueh",
       "count": 10,
       "title": "Enxame pestilento",
@@ -469,7 +468,7 @@
     },
     {
       "id": "escolta_do_peregrino",
-      "at": 230,
+      "at": 150,
       "warning": 6,
       "kind": "escort",
       "jitter": 0.1,
@@ -511,7 +510,7 @@
     },
     {
       "id": "peregrinacao_da_estrela",
-      "at": 420,
+      "at": 273,
       "warning": 5,
       "kind": "pilgrimage",
       "jitter": 0.1,
@@ -526,7 +525,7 @@
         "mods": {
           "dmg_pct": -0.2
         },
-        "duration": 150
+        "duration": 100
       },
       "title": "Peregrinação",
       "warning_text": "A pestilência do templo deixou doença no ar.",
@@ -541,7 +540,7 @@
     },
     {
       "id": "altar_disputado_feng_tu",
-      "at": 170,
+      "at": 110,
       "warning": 5,
       "kind": "pact",
       "pool": "optional",
