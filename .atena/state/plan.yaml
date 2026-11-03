@@ -3310,7 +3310,7 @@ asset_discipulo_special_20261029:
 pacing_audit_20261029:
   revision: r1
   authorization: "atena, vamos auditar o jogo e fazer um plano para diminuir o tempo de mapa; analisar a ampulheta e a aleatoriedade dos spawns (2026-10-29)"
-  status: M4_THROUGH_GORANTHIS_COMMITTED_DAGRUVE_LOCAL
+  status: M4_DONE_M5_BOT_SWEEP_LOCAL
   content_state: DRAFT
   report: .atena/vault/drafts/PACING-AUDIT-20261029-r1.md
   findings: [event_density_late_maps_6_to_7x_lower, enemy_roster_static_after_36_to_50_pct, hourglass_5_2_pct_per_roll_23_to_27_pct_per_long_map, interactions_pure_random_with_silent_discards_and_shared_rng, speed_2x_only_after_clearing_same_map]
@@ -3333,4 +3333,6 @@ pacing_audit_20261029:
   m4_goranthis: "660->420 s; luz prateada e nome tres vezes promovidos a fixos; bots 0/9 vitorias nas duas versoes (nao discrimina); abates -13%; medalha de abates a revisar no playtest"
   m4_dagruve: "300->240 s; guardas D5 em test_chapter1_chain, test_dagruve_encounter e test_secrets atualizadas; bots 9/9 vitorias (antes 8/9), partida -27%, abates -20%"
   m4_remaining: []
+  m5_decisao: "2026-11-02 dono: nao compensar XP nem ouro; testar balanceamento assim (humanos fazem mais XP que os bots)"
+  m5_varredura: "144 jobs old/new/newm2 (tmp/base-pre-m4 = dados de 7693826); tempo de mapa -16 a -35%; pressao por minuto +27% Shedaklah, +20% Molor; defasagem de nivel encadeada 0,2 a 0,5 ate Molor; mortais morrem 100% (descartados); secao 15 do audit"
   next_activity: "Decidir compensacao de XP/ouro; continuar M4 pelos demais mapas e M5 com o Vitao."

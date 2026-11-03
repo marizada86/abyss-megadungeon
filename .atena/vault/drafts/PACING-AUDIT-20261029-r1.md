@@ -372,3 +372,48 @@ Fator 0,8 em `stages.json`, no espelho de `chapter_flow.json` e em `stage_events
 **Bots** (durvall/brook/maelor × sementes 1 a 3; `results/m4-dag-old.jsonl` e `m4-dag-new.jsonl`): vitórias 8/9 → 9/9; duração da partida 387 → 282 s (−27 %); nível 15,0 → 13,9; abates 611 → 490 (−20 %); ouro 182 → 152 (−17 %). Este é o único mapa da rampa em que os bots vencem, então é o dado mais confiável: a derrota do chefe não ficou mais difícil.
 
 Sonda (30 sementes): Dagruve sai da garantia de ampulheta (limite 300 s), como previsto: ampulheta em 10 % dos mapas para quem coleta tudo, aceitável num mapa de 4 min. Serviço 67 % para quem coleta. `run_all`: só as 3 falhas de UI de antes.
+
+### 15. Varredura de bots da M5 (rampa B inteira)
+
+**Decisão do dono (2026-11-02):** não compensar XP nem ouro; testar o balanceamento assim, porque jogadores humanos fazem mais XP que os bots. Esta varredura mede o efeito das novas durações sem compensação.
+
+**Método.** 144 trabalhos, 5 processos em paralelo, `dt` 0,05, perfil sintético isolado, sem ler o save. Código atual nas duas pontas; a única diferença é `data/`: braço **old** = dados de `7693826` (antes de Shedaklah, extraídos para `tmp/base-pre-m4/data`, com junções para o resto do projeto); braço **new** = dados atuais; braço **newm2** = dados atuais com 2 níveis a menos de início (estresse para a perda de XP). Heróis durvall/brook/maelor × sementes 1 e 2 (n = 6 por célula), 3 itens raros. Nível inicial de referência por mapa: Dagruve 24, Shedaklah 28, Molor 30, Durao 32, Feng-tu 34, Shendilavri 36, Goranthis 38, Pilares 40 (a tabela 36/38/40 já usada na rodada `bal22`, estendida de 2 em 2). Scripts: `bot6.gd` (limite de 12 segmentos na campanha), `run-bot6.sh`, `jobs-m5.txt`, `launch-m5.sh`, `aggregate-m5.js`, `aggregate-m5b.js`; saídas em `results/s5-*.jsonl`.
+
+**Limites.** (1) Os bots **mortais** morrem em 100 % das partidas em todos os mapas, mesmo no nível 24 em Dagruve; não discriminam e foram descartados. (2) Amostra pequena: uma célula de 6 partidas tem passos de 17 pontos percentuais, e "Goranthis 17 % → 50 %" é ruído, não melhora. (3) Pilares não mudou e só tem o braço newm2 (nível 38). (4) O bot imortal mede pressão, não a experiência humana.
+
+**Imortal, tempo total de mapa (média das partidas, em s)**
+
+| Mapa | old | new | variação |
+|---|---|---|---|
+| Dagruve | 322 | 269 | −16 % |
+| Shedaklah | 586 | 382 | −35 % |
+| Molor | 642 | 444 | −31 % |
+| Durao | 690 | 490 | −29 % |
+| Feng-tu | 877 | 683 | −22 % |
+| Shendilavri | 957 | 772 | −19 % |
+| Goranthis | 990 | 705 | −29 % |
+
+**Imortal, pressão (dano recebido por minuto de partida)**
+
+| Mapa | old | new | newm2 |
+|---|---|---|---|
+| Dagruve | 120 | 130 (+8 %) | 164 (+37 %) |
+| Shedaklah | 320 | 408 (+27 %) | 554 (+73 %) |
+| Molor | 615 | 740 (+20 %) | 800 (+30 %) |
+| Durao | 1 091 | 1 101 (+1 %) | 1 008 (−8 %) |
+| Feng-tu | 2 090 | 2 258 (+8 %) | 2 057 (−2 %) |
+| Shendilavri | 3 101 | 3 308 (+7 %) | 3 578 (+15 %) |
+| Goranthis | 3 579 | 3 394 (−5 %) | 3 933 (+10 %) |
+
+**Vitórias do imortal (de 6):** Dagruve 6/6 nos três braços; Shedaklah 6/6; Molor 6/6, 6/6 e 5/6; Durao 6/6 nos três; Feng-tu 4, 3 e 3; Shendilavri 2 nos três; Goranthis 1, 3 e 3.
+
+**Campanha encadeada de docas (imortal, 6 partidas por braço):** o nível médio ao fim de cada mapa quase não difere entre os braços: Dagruve 20,2 → 19,8, Shedaklah 25,0 → 24,8, Molor 29,8 → 29,3. O herói ganha cerca de 5 níveis por mapa nas duas versões (4,8 / 4,8 contra 5,0 / 4,5). A campanha encadeada quase não passa de Molor (chegam a Durao 2 partidas no old e 1 no new, e nenhuma vence), porque o bot imortal não derrota com folga o chefe de Molor; por isso a comparação dos mapas finais vem das partidas isoladas.
+
+**Leituras**
+1. **O tempo de mapa cai de 16 a 35 %** em todos os mapas reescalados; é a meta do plano.
+2. **O "−2 níveis" não se acumula na campanha.** Aquele número vinha de partidas isoladas começando no nível 1, em que o nível final dependia só do mapa. Encadeado, a defasagem fica em 0,2 a 0,5 nível até Molor, porque os inimigos dos mapas seguintes dão mais XP. Isso sustenta a decisão de não compensar. O braço newm2 é, portanto, um estresse pessimista, não o caso esperado.
+3. **A pressão por minuto sobe nos mapas do meio** (Shedaklah +27 %, Molor +20 %), pois as mesmas ondas cabem em menos tempo. É o efeito desejado (menos monotonia) e é onde um playtest humano deve prestar atenção. Em Durao, Feng-tu e Goranthis a pressão fica estável.
+4. **Sem regressão de vitória que se distinga de ruído.** A única queda possível é Feng-tu (4 → 3 de 6), dentro de uma partida de variação.
+5. **Dagruve no newm2 sobe 37 % em dano por minuto** com 2 níveis a menos: é o mapa mais sensível ao nível, o que pesa porque é o primeiro depois do capítulo 1.
+
+**Pendências.** Playtest humano com o Vitão nos mapas do meio (Shedaklah, Molor, Durao) e em Dagruve; medalhas de abates por revisar; teto de 3 interativos vivos por decidir. A rodada com `dt` 0,0167 e mais heróis (kayron, korrak, sylas) fica para quando houver dúvida num mapa específico.
