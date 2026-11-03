@@ -2,7 +2,7 @@
   "dagruve": [
     {
       "id": "ritual_da_nevoa",
-      "at": 115,
+      "at": 92,
       "warning": 5,
       "kind": "ritual",
       "title": "Ritual da Névoa",
@@ -16,7 +16,7 @@
     },
     {
       "id": "pulso_da_fratura",
-      "at": 290,
+      "at": 232,
       "warning": 5,
       "kind": "hazard",
       "title": "Pulso da Fratura",

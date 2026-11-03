@@ -402,7 +402,7 @@ func _chamber_log(out: Array) -> void:
 	var e: Dictionary = b.chamber_entry()
 	if e.is_empty() or String(e.kind) != "chamber" or String(e.title) != "Câmara selada":
 		out.append("dagruve: perto da câmara deveria aparecer a linha 'Câmara selada' (%s)" % str(e))
-	elif String(e.text).find("Ritual da Névoa") < 0 or String(e.text).find("1:55") < 0:
+	elif String(e.text).find("Ritual da Névoa") < 0 or String(e.text).find("1:32") < 0:
 		out.append("dagruve: a linha deveria dizer o acontecimento e o horário (%s)" % String(e.text))
 	b._stage_events_done["ritual_da_nevoa"] = true
 	if String(b.chamber_entry().text).find("selo") < 0:

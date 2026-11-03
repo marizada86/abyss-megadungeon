@@ -3,7 +3,7 @@
     "name": "Dagruve",
     "sub": "Distrito negligenciado · névoa e culto",
     "order": 3,
-    "duration": 300,
+    "duration": 240,
     "cap": 45,
     "tier": 0,
     "coin_mult": 1,
@@ -40,63 +40,63 @@
     "waves": [
       {
         "t0": 0,
-        "t1": 94,
+        "t1": 75,
         "id": "zumbi",
         "every": 2.2,
         "n": 2,
         "max": 16
       },
       {
-        "t0": 12,
-        "t1": 125,
+        "t0": 10,
+        "t1": 100,
         "id": "slime_corrosivo",
         "every": 4,
         "n": 1,
         "max": 6
       },
       {
-        "t0": 38,
-        "t1": 188,
+        "t0": 30,
+        "t1": 150,
         "id": "cultista_adaga",
         "every": 3,
         "n": 2,
         "max": 12
       },
       {
-        "t0": 75,
-        "t1": 225,
+        "t0": 60,
+        "t1": 180,
         "id": "cultista_arqueiro",
         "every": 6,
         "n": 1,
         "max": 5
       },
       {
-        "t0": 94,
-        "t1": 262,
+        "t0": 75,
+        "t1": 210,
         "id": "notivago",
         "every": 3,
         "n": 3,
         "max": 14
       },
       {
-        "t0": 131,
-        "t1": 300,
+        "t0": 105,
+        "t1": 240,
         "id": "cultista_cajado",
         "every": 7,
         "n": 1,
         "max": 4
       },
       {
-        "t0": 150,
-        "t1": 300,
+        "t0": 120,
+        "t1": 240,
         "id": "criatura_corrompida",
         "every": 6,
         "n": 1,
         "max": 6
       },
       {
-        "t0": 150,
-        "t1": 300,
+        "t0": 120,
+        "t1": 240,
         "id": "gargula",
         "every": 12,
         "n": 1,
@@ -105,15 +105,15 @@
     ],
     "elites": [
       {
-        "at": 94,
+        "at": 75,
         "id": "criatura_corrompida"
       },
       {
-        "at": 188,
+        "at": 150,
         "id": "cultista_cajado"
       },
       {
-        "at": 240,
+        "at": 192,
         "id": "gargula"
       }
     ],

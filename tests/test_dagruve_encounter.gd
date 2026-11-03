@@ -15,7 +15,7 @@ func run() -> Array:
 	var b:=_battle()
 	_check(out,Battle.stage_definition("dagruve_thalion_r1").is_empty(),"Overlay incorrectly admitted as standalone stage")
 	_check(out,b.is_dagruve_encounter() and b.stage_id=="dagruve" and b.stage.qa_only,"Variant not isolated on original stage id")
-	_check(out,standard.stage==source and standard.stage.duration==300 and standard.stage.boss=="sacerdote_mente_derretida" and not standard.stage_rule.is_empty(),"Standard Dagruve changed")
+	_check(out,standard.stage==source and standard.stage.duration==240 and standard.stage.boss=="sacerdote_mente_derretida" and not standard.stage_rule.is_empty(),"Standard Dagruve changed")
 	_check(out,b.has_reach_objective() and b.stage.duration==180 and b.stage.cap==32 and b.stage.boss=="" and b.stage.elites.is_empty() and b.stage.next=="","Variant contract mismatch")
 	_check(out,b.stage.completion.get("target_label","")=="Área marcada","QA objective inherited legacy Ritual label")
 	_check(out,b.stage_rule.is_empty() and b.stage_events.is_empty() and b.edge_band_tiles()==0.0 and b.place_scenery()==0 and b.interactions.is_empty() and b.ecos.is_empty(),"Legacy event/fog/scenery content leaked")

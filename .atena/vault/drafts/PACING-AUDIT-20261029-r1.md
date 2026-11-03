@@ -348,3 +348,27 @@ O Graz'zt e a terceira elite continuam coincidindo (331 s), como no original (52
 Sonda (30 sementes): 2 acontecimentos com objetivo mais a troca de mapa (sem objetivo, por isso a sonda não conta), ampulheta 100 %, serviço 100 % para quem coleta e 0 % para quem ignora. `run_all`: só as 3 falhas de UI de antes.
 
 Medalhas: limiares de abates (1400/2200/3000) calibrados para 660 s; com menos abates a medalha de ouro fica mais difícil. Fica para o M5.
+
+### 14. M4: Dagruve 300 → 240 s
+
+Fator 0,8 em `stages.json`, no espelho de `chapter_flow.json` e em `stage_events.json`. Mantidos `every`, `n`, `max`, `cap`.
+
+| Campo | Antes | Depois |
+|---|---|---|
+| Duração (chefe, Sacerdote da Mente Derretida) | 300 | 240 |
+| zumbi `t0`–`t1` | 0–94 | 0–75 |
+| slime_corrosivo | 12–125 | 10–100 |
+| cultista_adaga | 38–188 | 30–150 |
+| cultista_arqueiro | 75–225 | 60–180 |
+| notivago | 94–262 | 75–210 |
+| cultista_cajado | 131–300 | 105–240 |
+| criatura_corrompida, gargula | 150–300 | 120–240 |
+| Elites (criatura, cajado, gárgula) | 94, 188, 240 | 75, 150, 192 |
+| `ritual_da_nevoa` (câmara selada) | 115 | 92 |
+| `pulso_da_fratura` | 290 | 232 |
+
+**Guardas de teste alteradas.** Três testes protegiam o valor antigo: `test_chapter1_chain` ("Dagruve deve ficar como está (decisão D5)", exigia 300 s), `test_dagruve_encounter` (exigia `duration == 300`) e `test_secrets` (exigia o texto «Ritual da Névoa» aos 1:55; agora 1:32). Os três agora exigem os valores novos. O texto original da decisão D5 não foi encontrado em `.atena/vault` nem em `plan.yaml`; a rampa B, aprovada pelo dono, lista Dagruve em 240 s. **Reverter é trivial** (restaurar os 3 testes e os 3 arquivos de dados).
+
+**Bots** (durvall/brook/maelor × sementes 1 a 3; `results/m4-dag-old.jsonl` e `m4-dag-new.jsonl`): vitórias 8/9 → 9/9; duração da partida 387 → 282 s (−27 %); nível 15,0 → 13,9; abates 611 → 490 (−20 %); ouro 182 → 152 (−17 %). Este é o único mapa da rampa em que os bots vencem, então é o dado mais confiável: a derrota do chefe não ficou mais difícil.
+
+Sonda (30 sementes): Dagruve sai da garantia de ampulheta (limite 300 s), como previsto: ampulheta em 10 % dos mapas para quem coleta tudo, aceitável num mapa de 4 min. Serviço 67 % para quem coleta. `run_all`: só as 3 falhas de UI de antes.

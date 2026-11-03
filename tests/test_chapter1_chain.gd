@@ -47,8 +47,8 @@ func _durations(out: Array[String]) -> void:
 				out.append("%s: evento %s não cabe nos 180 s (%s)" % [sid, ev.id, ev.at])
 		if sid != "docas" and float(st.completion.hold_seconds) != 3.0:
 			out.append("%s: a presença de 3 s do objetivo não deveria mudar" % sid)
-	if int(stages.dagruve.duration) != 300:
-		out.append("Dagruve deve ficar como está (decisão D5)")
+	if int(stages.dagruve.duration) != 240:
+		out.append("Dagruve deve ter 240 s (rampa B da auditoria de ritmo; antes ficava em 300 s pela decisão D5)")
 
 func _permissions(out: Array[String]) -> void:
 	var p := Profile.new()
