@@ -3,7 +3,8 @@ extends RefCounted
 
 const WEAPONS := ["espada_sombria", "espada_do_receptaculo", "golpe_esmagador", "adaga_rapida", "rajada_infinita", "golpe_atordoante", "romper_armadura", "esmagar_defesas",
 	"golpe_do_juizo", "chicote_avarento", "martelo_da_gloria", "machado_de_xargath", "lamina_da_digestao", "tocha_do_incendiario",
-	"maca_demolidora", "martelo_da_luz"]   # SPEC-174: evoluções físicas/radiantes de corpo a corpo do lote 1
+	"maca_demolidora", "martelo_da_luz",   # SPEC-174: evoluções físicas/radiantes de corpo a corpo do lote 1
+	"chicote_da_cobica", "machado_devorador", "lamina_dissolvente", "pira_do_incendiario"]   # plano de evolução 2026-11-04
 
 func _bat(seed_value := 1, hero := "durvall", stage := "dagruve") -> Battle:
 	var b := Battle.new(seed_value, hero, stage)

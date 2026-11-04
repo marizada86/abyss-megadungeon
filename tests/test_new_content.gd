@@ -101,8 +101,9 @@ func _shadow_blade(out: Array) -> void:
 	var d := _valid_weapon(out, "lamina_de_sombra", "bolt", "magico", true, 4)
 	if d.is_empty():
 		return
-	if d.has("evolve"):
-		out.append("Lâmina de Sombra não evolui na 0.4.0")
+	# Plano de evolução (2026-11-04): a Lâmina de Sombra passou a evoluir; a cobertura geral fica em test_weapon_evolution_coverage.gd.
+	if String(d.get("evolve", {}).get("into", "")) != "lamina_do_eclipse":
+		out.append("Lâmina de Sombra deveria evoluir para Lâmina do Eclipse")
 	if int(d.get("ignore_def", 0)) != 1 or int(Weapon.make("lamina_de_sombra", 5).params().get("ignore_def", 0)) != 2:
 		out.append("Lâmina de Sombra deveria ignorar 1 de defesa e 2 no Nv 5")
 	var e := Enemy.make("zumbi", Vector2(0, 0), 0.0, 1.0, 0)
@@ -138,7 +139,7 @@ func _armor_break(out: Array) -> void:
 	var d := _valid_weapon(out, "romper_armadura", "melee", "fisico", false, 4)
 	if d.is_empty():
 		return
-	if not d.has("evolve") or String(d.evolve.passive) != "cota_de_malha" or String(d.evolve.into) != "esmagar_defesas":
+	if not d.has("evolve") or String(d.evolve.passive) != "quebra_defesas" or String(d.evolve.into) != "esmagar_defesas":
 		out.append("Romper Armadura deveria evoluir com Cota de Malha em Esmagar Defesas")
 	var evo := _valid_weapon(out, "esmagar_defesas", "melee", "fisico", false, 0)
 	if not evo.is_empty() and (String(evo.get("src", "")) != "Evolução" or int(evo.get("weaken", 0)) != 3):
@@ -275,9 +276,9 @@ func _icons(out: Array) -> void:
 # ---------------------------------------------------------------- Evoluções do lote 1 e atributo mínimo (SPEC-174)
 ## base, evolução, passiva, atributo mínimo e valor (D5: 16 em todas; Martelo em Constituição).
 const LOTE1 := [
-	{"base": "dominar_pessoa", "into": "dominio_coletivo", "passive": "sabedoria", "attr": "carisma", "min": 16},
+	{"base": "dominar_pessoa", "into": "dominio_coletivo", "passive": "presenca_dominante", "attr": "carisma", "min": 16},
 	{"base": "golpe_esmagador", "into": "maca_demolidora", "passive": "pele_de_pedra", "attr": "forca", "min": 16},
-	{"base": "martelo_da_gloria", "into": "martelo_da_luz", "passive": "cota_de_malha", "attr": "constituicao", "min": 16},
+	{"base": "martelo_da_gloria", "into": "martelo_da_luz", "passive": "vigor_sagrado", "attr": "constituicao", "min": 16},
 	{"base": "raio_enfraquecedor", "into": "raio_da_ruina", "passive": "robe_arcano", "attr": "inteligencia", "min": 16},
 	{"base": "sopro_de_estrela", "into": "constelacao_de_silva", "passive": "sabedoria", "attr": "carisma", "min": 16},
 ]
@@ -342,7 +343,7 @@ func _lote1_evolutions(out: Array) -> void:
 	hammer.hero.weapons = [Weapon.make("martelo_da_gloria", 5)]
 	hammer.hero.meta_mods = {"choices": 60}
 	hammer.hero.base_attrs["constituicao"] = 14
-	hammer.hero.passives = {"cota_de_malha": 1, "constituicao": 1}
+	hammer.hero.passives = {"vigor_sagrado": 1, "constituicao": 1}
 	hammer.hero.recalc()
 	if hammer.hero.attr("constituicao") != 15 or _offer_has_evolve(hammer, "martelo_da_luz"):
 		out.append("Martelo da Luz não deveria abrir com CON 15 (atributo %d)" % hammer.hero.attr("constituicao"))
@@ -359,7 +360,12 @@ func _lote1_evolutions(out: Array) -> void:
 		if hammer.hero.weapons[0].id != "martelo_da_luz":
 			out.append("escolher a evolução deveria trocar o Martelo da Glória pelo Martelo da Luz")
 	# regressão: as 10 evoluções anteriores continuam sem exigência de atributo
+	# (as 12 evoluções do plano de 2026-11-04 trazem a exigência de atributo de propósito: Machado, Cajado, Ampulheta e Memória)
+	var plan_20261104 := ["estocada_mistica", "vela_sagrada", "marca_da_retidao", "chicote_avarento", "machado_de_xargath", "colar_dos_tentaculos",
+		"lamina_da_digestao", "cajado_dos_desejos", "ampulheta", "lamina_de_sombra", "memoria_alterada", "tocha_do_incendiario"]
 	for id in table:
 		var d: Dictionary = table[id]
+		if plan_20261104.has(String(id)):
+			continue
 		if d.has("evolve") and not LOTE1.any(func(c): return String(c.base) == String(id)) and d.evolve.has("min_attr"):
 			out.append("%s (evolução anterior ao lote 1) não deveria ter min_attr" % id)

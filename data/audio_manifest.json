@@ -3114,6 +3114,150 @@
       "pitch_jitter": 0.035,
       "cooldown_ms": 55,
       "priority": 2
+    },
+    "weapon.estocada_transfixante.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.estocada_mistica.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.estocada_mistica.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.92,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.vigilia_perpetua.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.vela_sagrada.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.vela_sagrada.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.92,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.selo_da_retidao.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.marca_da_retidao.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.marca_da_retidao.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.92,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.chicote_da_cobica.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.chicote_avarento.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.chicote_avarento.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.92,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.machado_devorador.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.machado_de_xargath.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.machado_de_xargath.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.92,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.abraco_dos_tentaculos.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.colar_dos_tentaculos.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.colar_dos_tentaculos.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.92,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.lamina_dissolvente.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.lamina_da_digestao.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.lamina_da_digestao.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.92,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.cajado_dos_desejos_realizados.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.cajado_dos_desejos.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.cajado_dos_desejos.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.92,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.ampulheta_do_tempo_parado.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.ampulheta.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.ampulheta.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.92,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.lamina_do_eclipse.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.lamina_trovejante.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.lamina_trovejante.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.782,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.memoria_reescrita.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.dominar_pessoa.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.dominar_pessoa.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 1.012,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
+    },
+    "weapon.pira_do_incendiario.fire": {
+      "files": [
+        "res://assets/audio/sfx/weapon/weapon.espada_sombria.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.espada_sombria.fire_02.wav"
+      ],
+      "bus": "Player",
+      "volume_db": -12,
+      "pitch": 0.81,
+      "pitch_jitter": 0.035,
+      "cooldown_ms": 55,
+      "priority": 2
     }
   },
   "aliases": {

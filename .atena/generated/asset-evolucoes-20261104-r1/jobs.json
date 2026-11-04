@@ -1,0 +1,74 @@
+[
+ {
+  "src": "assets_incoming/E01_a_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/passives",
+  "names": ["precisao", "ponta_certeira", "sede_de_sangue", "brasa", "acido"],
+  "fit": [128, 128],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ },
+ {
+  "src": "assets_incoming/E02_a_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/passives",
+  "names": ["olhar_abissal", "ventura", "tempo_suspenso", "veu_de_sombras", "memoria_viva"],
+  "fit": [128, 128],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ },
+ {
+  "src": "assets_incoming/E06_a_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/passives",
+  "names": ["quebra_defesas", "vigor_sagrado", "presenca_dominante"],
+  "fit": [128, 128],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ },
+ {
+  "src": "assets_incoming/E03_a_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/weapons",
+  "names": ["estocada_transfixante", "vigilia_perpetua", "selo_da_retidao", "chicote_da_cobica"],
+  "fit": [128, 128],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ },
+ {
+  "src": "assets_incoming/E04_a_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/weapons",
+  "names": ["machado_devorador", "abraco_dos_tentaculos", "lamina_dissolvente", "cajado_dos_desejos_realizados"],
+  "fit": [128, 128],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ },
+ {
+  "src": "assets_incoming/E05_a_v01.png",
+  "key": "gray",
+  "split": "components",
+  "out_dir": "assets/icons/weapons",
+  "names": ["ampulheta_do_tempo_parado", "lamina_do_eclipse", "memoria_reescrita", "pira_do_incendiario"],
+  "fit": [128, 128],
+  "pad": 6,
+  "min_area": 1500,
+  "gap": 12,
+  "row_tol": 150
+ }
+]

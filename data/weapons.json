@@ -446,7 +446,11 @@
         "dmg": 3,
         "cd": -0.15
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "ponta_certeira",
+      "into": "estocada_transfixante"
+    }
   },
   "cera_fervente": {
     "name": "Cera Fervente",
@@ -528,7 +532,11 @@
       {
         "dice": "1d8"
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "regeneracao",
+      "into": "vigilia_perpetua"
+    }
   },
   "lamina_trovejante": {
     "name": "Lâmina Trovejante",
@@ -615,7 +623,7 @@
       }
     ],
     "evolve": {
-      "passive": "sabedoria",
+      "passive": "presenca_dominante",
       "into": "dominio_coletivo",
       "min_attr": {
         "carisma": 16
@@ -669,7 +677,11 @@
         "mark": 0.15,
         "weaken": 1
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "precisao",
+      "into": "selo_da_retidao"
+    }
   },
   "chicote_avarento": {
     "name": "Chicote Avarento",
@@ -696,7 +708,11 @@
       {
         "dmg": 3
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "ganancia",
+      "into": "chicote_da_cobica"
+    }
   },
   "martelo_da_gloria": {
     "name": "Martelo da Luz",
@@ -726,7 +742,7 @@
       }
     ],
     "evolve": {
-      "passive": "cota_de_malha",
+      "passive": "vigor_sagrado",
       "into": "martelo_da_luz",
       "min_attr": {
         "constituicao": 16
@@ -741,11 +757,12 @@
     "dtype": "radiante",
     "attr": "forca",
     "dice": "4d10",
-    "cd": 1.8,
+    "cd": 1.6,
+    "dmg": 4,
     "range": 2.3,
     "cone": 130,
     "knock": 2.0,
-    "stun": 1.0,
+    "stun": 1,
     "levels": [],
     "desc": "A luz do martelo, agora vermelha, varre um arco largo e derruba."
   },
@@ -776,7 +793,14 @@
         "dmg": 4,
         "cd": -0.2
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "sede_de_sangue",
+      "into": "machado_devorador",
+      "min_attr": {
+        "forca": 16
+      }
+    }
   },
   "colar_dos_tentaculos": {
     "name": "Colar dos Tentáculos",
@@ -806,7 +830,11 @@
         "dice": "2d6",
         "radius": 0.5
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "olhar_abissal",
+      "into": "abraco_dos_tentaculos"
+    }
   },
   "sopro_de_estrela": {
     "name": "Sopro de Estrela",
@@ -883,7 +911,11 @@
       {
         "dmg": 3
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "acido",
+      "into": "lamina_dissolvente"
+    }
   },
   "cajado_dos_desejos": {
     "name": "Cajado dos Desejos Sussurrantes",
@@ -913,7 +945,14 @@
         "cd": -0.4,
         "dmg": 2
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "ventura",
+      "into": "cajado_dos_desejos_realizados",
+      "min_attr": {
+        "carisma": 16
+      }
+    }
   },
   "ampulheta": {
     "name": "Ampulheta do Silêncio Eterno",
@@ -939,7 +978,14 @@
       {
         "stun": 1.0
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "tempo_suspenso",
+      "into": "ampulheta_do_tempo_parado",
+      "min_attr": {
+        "inteligencia": 16
+      }
+    }
   },
   "bola_de_fogo": {
     "name": "Bola de Fogo",
@@ -1014,7 +1060,11 @@
         "count": 1,
         "ignore_def": 1
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "veu_de_sombras",
+      "into": "lamina_do_eclipse"
+    }
   },
   "romper_armadura": {
     "name": "Romper Armadura",
@@ -1045,7 +1095,7 @@
       }
     ],
     "evolve": {
-      "passive": "cota_de_malha",
+      "passive": "quebra_defesas",
       "into": "esmagar_defesas"
     }
   },
@@ -1110,7 +1160,14 @@
         "count": 1,
         "dmg": 2
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "memoria_viva",
+      "into": "memoria_reescrita",
+      "min_attr": {
+        "carisma": 16
+      }
+    }
   },
   "tocha_do_incendiario": {
     "name": "Tocha do Incendiário",
@@ -1139,6 +1196,210 @@
         "dice": "2d6",
         "range": 0.3
       }
-    ]
+    ],
+    "evolve": {
+      "passive": "brasa",
+      "into": "pira_do_incendiario"
+    }
+  },
+  "estocada_transfixante": {
+    "name": "Estocada Transfixante",
+    "src": "Evolução",
+    "icon_like": "estocada_mistica",
+    "kind": "melee",
+    "dtype": "magico",
+    "attr": "carisma",
+    "dice": "3d8",
+    "cd": 0.75,
+    "range": 3.6,
+    "cone": 30,
+    "dmg": 5,
+    "weaken": 1,
+    "levels": [],
+    "desc": "A estocada atravessa a defesa e alcança longe."
+  },
+  "vigilia_perpetua": {
+    "name": "Vigília Perpétua",
+    "src": "Evolução",
+    "icon_like": "vela_sagrada",
+    "kind": "nova",
+    "dtype": "radiante",
+    "attr": "constituicao",
+    "dice": "3d6",
+    "cd": 2.5,
+    "radius": 3.6,
+    "heal": 2.2,
+    "levels": [],
+    "desc": "A chama que nunca se apaga fere os inimigos e cura muito mais."
+  },
+  "selo_da_retidao": {
+    "name": "Selo da Retidão",
+    "src": "Evolução",
+    "icon_like": "marca_da_retidao",
+    "kind": "bolt",
+    "dtype": "radiante",
+    "attr": "constituicao",
+    "dice": "2d4",
+    "cd": 2.2,
+    "range": 9,
+    "speed": 12,
+    "pierce": 1,
+    "count": 2,
+    "spread": 14,
+    "mark": 0.6,
+    "weaken": 2,
+    "levels": [],
+    "desc": "Três marcas atravessam o alvo: todos os golpes doem muito mais."
+  },
+  "chicote_da_cobica": {
+    "name": "Chicote da Cobiça",
+    "src": "Evolução",
+    "icon_like": "chicote_avarento",
+    "kind": "melee",
+    "dtype": "fisico",
+    "attr": "carisma",
+    "dice": "3d6",
+    "cd": 0.7,
+    "range": 3.8,
+    "cone": 30,
+    "dmg": 3,
+    "gold_hit": 5,
+    "levels": [],
+    "desc": "Estala sem parar e arranca moedas a cada acerto."
+  },
+  "machado_devorador": {
+    "name": "Machado Devorador",
+    "src": "Evolução",
+    "icon_like": "machado_de_xargath",
+    "kind": "melee",
+    "dtype": "fogo",
+    "attr": "forca",
+    "dice": "4d8",
+    "cd": 1.1,
+    "range": 2.3,
+    "cone": 140,
+    "dmg": 7,
+    "burn": 5,
+    "lifesteal": 0.08,
+    "levels": [],
+    "desc": "A lâmina infernal devora a vida dos queimados."
+  },
+  "abraco_dos_tentaculos": {
+    "name": "Abraço dos Tentáculos",
+    "src": "Evolução",
+    "icon_like": "colar_dos_tentaculos",
+    "kind": "zone",
+    "dtype": "magico",
+    "attr": "inteligencia",
+    "dice": "3d6",
+    "cd": 5.0,
+    "range": 0,
+    "radius": 4.2,
+    "duration": 6.0,
+    "tick": 0.5,
+    "slow": 1.0,
+    "levels": [],
+    "desc": "Uma floresta de tentáculos domina a área por mais tempo."
+  },
+  "lamina_dissolvente": {
+    "name": "Lâmina Dissolvente",
+    "src": "Evolução",
+    "icon_like": "lamina_da_digestao",
+    "kind": "melee",
+    "dtype": "fisico",
+    "attr": "forca",
+    "dice": "3d6",
+    "cd": 0.85,
+    "range": 2.4,
+    "cone": 80,
+    "dmg": 4,
+    "weaken": 5,
+    "levels": [],
+    "desc": "O ácido corrói a armadura até o osso."
+  },
+  "cajado_dos_desejos_realizados": {
+    "name": "Cajado dos Desejos Realizados",
+    "src": "Evolução",
+    "icon_like": "cajado_dos_desejos",
+    "kind": "bolt",
+    "dtype": "magico",
+    "attr": "carisma",
+    "dice": "2d6",
+    "cd": 1.8,
+    "range": 9,
+    "speed": 8,
+    "pierce": 0,
+    "count": 5,
+    "spread": 26,
+    "dmg": 3,
+    "levels": [],
+    "desc": "Cinco desejos sussurrados em leque amplo."
+  },
+  "ampulheta_do_tempo_parado": {
+    "name": "Ampulheta do Tempo Parado",
+    "src": "Evolução",
+    "icon_like": "ampulheta",
+    "kind": "nova",
+    "dtype": "magico",
+    "attr": "inteligencia",
+    "dice": "4d8",
+    "cd": 3.5,
+    "radius": 6.5,
+    "stun": 4.0,
+    "levels": [],
+    "desc": "O silêncio se alarga: quase todos ao redor ficam parados por mais tempo."
+  },
+  "lamina_do_eclipse": {
+    "name": "Lâmina do Eclipse",
+    "src": "Evolução",
+    "icon_like": "lamina_de_sombra",
+    "kind": "bolt",
+    "dtype": "magico",
+    "attr": "inteligencia",
+    "dice": "2d8",
+    "cd": 1.4,
+    "range": 9,
+    "speed": 11,
+    "pierce": 3,
+    "count": 3,
+    "spread": 14,
+    "ignore_def": 4,
+    "levels": [],
+    "desc": "Três lâminas de sombra atravessam as defesas mágicas."
+  },
+  "memoria_reescrita": {
+    "name": "Memória Reescrita",
+    "src": "Evolução",
+    "icon_like": "memoria_alterada",
+    "kind": "bolt",
+    "dtype": "magico",
+    "attr": "carisma",
+    "dice": "3d6",
+    "cd": 1.6,
+    "range": 8.5,
+    "speed": 10,
+    "pierce": 0,
+    "count": 2,
+    "spread": 10,
+    "dmg": 3,
+    "slow": 4.0,
+    "levels": [],
+    "desc": "Memórias reescritas: os alvos arrastam-se e esquecem como lutar."
+  },
+  "pira_do_incendiario": {
+    "name": "Pira do Incendiário",
+    "src": "Evolução",
+    "icon_like": "tocha_do_incendiario",
+    "kind": "melee",
+    "dtype": "fogo",
+    "attr": "forca",
+    "dice": "3d6",
+    "cd": 1.3,
+    "range": 2.6,
+    "cone": 100,
+    "dmg": 5,
+    "burn": 5,
+    "levels": [],
+    "desc": "A tocha vira pira: um arco largo de fogo que não apaga."
   }
 }

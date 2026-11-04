@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PAR;base;evolucao;passiva;base_single;evo_single;x_single;base_ring;evo_ring;x_ring
+PAR;machado_de_xargath;machado_devorador;sede_de_sangue;8.4;25.9;3.09;54.7;139.3;2.55
+PAR;tocha_do_incendiario;pira_do_incendiario;brasa;3.7;11.6;3.17;32.3;85.4;2.65

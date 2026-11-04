@@ -12,5 +12,18 @@
   "sabedoria":        {"name": "Sabedoria", "src": "Experiência", "desc": "+10% de XP por nível.", "mods": {"xp_pct": 0.10}},
   "sorte_de_sendrinah": {"name": "Sorte de Sendrinah", "src": "Conquista", "desc": "+3% de crítico por excedente a cada dois níveis.", "mods": {"crit_overflow_step": 1}},
   "ganancia":         {"name": "Ganância", "src": "Economia", "desc": "+15% de moedas por nível.", "mods": {"gold_pct": 0.15}},
-  "pele_de_pedra":    {"name": "Pele de Pedra", "src": "Gárgulas", "desc": "-1 de dano recebido por nível (mín. 1).", "mods": {"dr": 1}}
+  "pele_de_pedra":    {"name": "Pele de Pedra", "src": "Gárgulas", "desc": "-1 de dano recebido por nível (mín. 1).", "mods": {"dr": 1}},
+  "precisao":          {"name": "Mira Justa", "src": "Treino", "desc": "+1 de precisão por nível: acerta mais e erra menos.", "mods": {"hit": 1}},
+  "sede_de_sangue":    {"name": "Sede de Sangue", "src": "Sangue", "desc": "+1% de roubo de vida por nível.", "mods": {"lifesteal": 0.01}},
+  "brasa":             {"name": "Brasa Viva", "src": "Fogo", "desc": "+8% de dano de fogo por nível.", "mods": {"fire_pct": 0.08}},
+  "ponta_certeira":    {"name": "Ponta Certeira", "src": "Treino", "desc": "+2% de crítico por nível.", "mods": {"crit_overflow_bonus": 0.02}},
+  "olhar_abissal":     {"name": "Olhar Abissal", "src": "Abismo", "desc": "+6% de dano em área por nível.", "mods": {"area_dmg_pct": 0.06}},
+  "acido":             {"name": "Ácido Corrosivo", "src": "Alquimia", "desc": "+1 de dano por acerto por nível.", "mods": {"dmg_flat": 1}},
+  "ventura":           {"name": "Ventura", "src": "Fortuna", "desc": "+1 de sorte por nível: melhores achados.", "mods": {"sorte": 1}},
+  "tempo_suspenso":    {"name": "Tempo Suspenso", "src": "Poder Místico", "desc": "-4% de recarga das armas por nível.", "mods": {"cd_pct": 0.04}},
+  "veu_de_sombras":    {"name": "Véu de Sombras", "src": "Sombra", "desc": "+2% de esquiva por nível.", "mods": {"dodge": 0.02}},
+  "memoria_viva":      {"name": "Memória Viva", "src": "Experiência", "desc": "+4% de XP e +3% de XP por Eco, por nível.", "mods": {"xp_pct": 0.04, "eco_xp_pct": 0.03}},
+  "quebra_defesas":    {"name": "Quebra-Defesas", "src": "Treino", "desc": "+4% de dano por nível.", "mods": {"dmg_pct": 0.04}},
+  "vigor_sagrado":     {"name": "Vigor Sagrado", "src": "Fé", "desc": "+6 PV por nível.", "mods": {"hp": 6}},
+  "presenca_dominante": {"name": "Presença Dominante", "src": "Carisma", "desc": "-3% de recarga e +1 de precisão por nível.", "mods": {"cd_pct": 0.03, "hit": 1}}
 }

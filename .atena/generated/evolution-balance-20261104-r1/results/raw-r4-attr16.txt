@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PAR;base;evolucao;passiva;base_single;evo_single;x_single;base_ring;evo_ring;x_ring
+PAR;dominar_pessoa;dominio_coletivo;presenca_dominante;4.6;12.9;2.80;4.6;22.8;4.96
+PAR;martelo_da_gloria;martelo_da_luz;vigor_sagrado;8.8;9.8;1.12;56.8;74.6;1.31
+PAR;romper_armadura;esmagar_defesas;quebra_defesas;6.7;14.7;2.20;24.2;68.8;2.85

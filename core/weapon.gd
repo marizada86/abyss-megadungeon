@@ -39,6 +39,7 @@ const ATTR_COLORS := {"forca": Color(0.92, 0.42, 0.38), "inteligencia": Color(0.
 ## Armas Física/Mágica cujo atributo não é o padrão (Física→Força, Mágica→Inteligência). Decisão consciente: são das classes
 ## Paladino, Devoto, Bardo e Dominação; trocar o atributo mudaria o dano desses heróis. Novas armas fora da regra precisam entrar aqui.
 const SCHOOL_EXCEPTIONS := ["golpe_atordoante", "chicote_avarento", "estocada_mistica", "dominar_pessoa", "dominio_coletivo",
+	"estocada_transfixante", "chicote_da_cobica", "cajado_dos_desejos_realizados", "memoria_reescrita",
 	"cajado_dos_desejos", "dominio_da_vontade", "memoria_alterada"]
 
 ## {dtype, attr, label (tipo), attr_name, tag ("Física · Força"), tag_short ("Física · FOR", cartão compacto), color, exception, guard}. `d` é a definição da arma.

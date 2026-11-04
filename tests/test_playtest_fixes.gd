@@ -327,8 +327,8 @@ func _armas() -> Array:
 	for wid in wdata:
 		if wdata[wid].has("evolve"):
 			evolving.append(String(wid))
-	if evolving.size() != 15:   # 10 anteriores + 5 do lote 1 (SPEC-174)
-		out.append("esperava 15 armas que evoluem, achei %d (atualize o teste se o conteúdo mudou)" % evolving.size())
+	if evolving.size() != 27:   # 10 anteriores + 5 do lote 1 (SPEC-174) + 12 do plano de evolução de 2026-11-04
+		out.append("esperava 27 armas que evoluem, achei %d (atualize o teste se o conteúdo mudou)" % evolving.size())
 	for base in evolving:
 		var into := String(wdata[base].evolve.into)
 		var b := Battle.new(3, "sylas", "dagruve")
@@ -396,10 +396,10 @@ func _ficha() -> Array:
 	if d.find("Próximo nível") >= 0 or d.find("Nível máximo") < 0 or d.find("Evolução:") < 0:
 		out.append("arma no nível máximo: deve dizer 'Nível máximo' e manter a evolução")
 	# arma que não evolui: sem bloco de evolução
-	var plain := Weapon.make("estocada_mistica")
+	var plain := Weapon.make("espada_do_receptaculo")   # forma evoluída: não tem níveis nem nova evolução
 	d = sheet._weapon_entry(plain).detail
-	if d.find("Evolução:") >= 0 or d.find("Próximo nível (Nv 2)") < 0:
-		out.append("arma sem evolução: só o próximo nível, sem bloco de evolução")
+	if d.find("Evolução:") >= 0:
+		out.append("arma sem evolução: sem bloco de evolução")
 	# passiva: valor agora e do próximo nível; no nível 5, máximo
 	d = sheet._passive_entry("forca", 2).detail
 	if d.find("Próximo nível (Nv 3)") < 0 or d.find("+3") < 0 or d.find("+2") < 0:
