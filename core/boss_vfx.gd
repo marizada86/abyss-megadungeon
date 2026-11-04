@@ -20,6 +20,30 @@ const SCALE_MAX := 1.6
 const BEAM := {
 	"boss_varredura_aviso": {"l": [24.0, 56.0], "m": [80.0, 96.0], "r": [176.0, 56.0], "k": 0.46},
 	"boss_varredura_feixe": {"l": [24.0, 56.0], "m": [80.0, 96.0], "r": [176.0, 56.0], "k": 0.50},
+	# Peles temáticas: mesmas fatias; `k` corrigido pela espessura medida do miolo contra a folha neutra (a faixa visível não pode
+	# passar a mentir sobre a largura do golpe, que é fixa).
+	"boss_varredura_aviso_guardiao": {"l": [24.0, 56.0], "m": [80.0, 96.0], "r": [176.0, 56.0], "k": 0.44},
+	"boss_varredura_aviso_malcanthet": {"l": [24.0, 56.0], "m": [80.0, 96.0], "r": [176.0, 56.0], "k": 0.50},
+	"boss_varredura_aviso_molydeus": {"l": [24.0, 56.0], "m": [80.0, 96.0], "r": [176.0, 56.0], "k": 0.37},
+	"boss_varredura_aviso_sintese": {"l": [24.0, 56.0], "m": [80.0, 96.0], "r": [176.0, 56.0], "k": 0.38},
+	"boss_varredura_feixe_guardiao": {"l": [24.0, 56.0], "m": [80.0, 96.0], "r": [176.0, 56.0], "k": 0.40},
+	"boss_varredura_feixe_malcanthet": {"l": [24.0, 56.0], "m": [80.0, 96.0], "r": [176.0, 56.0], "k": 0.50},
+	"boss_varredura_feixe_molydeus": {"l": [24.0, 56.0], "m": [80.0, 96.0], "r": [176.0, 56.0], "k": 0.43},
+	"boss_varredura_feixe_sintese": {"l": [24.0, 56.0], "m": [80.0, 96.0], "r": [176.0, 56.0], "k": 0.50},
+}
+## Peles temáticas por chefe (id de data/enemies.json): sufixo do arquivo e folhas neutras que cada chefe troca. O que não está
+## aqui, ou cuja folha não existe, continua com a neutra. Fontes: .atena/generated/asset-queue-20261104-r1 e r2; preparo em
+## tools/telegraph_prep.gd (job tools/asset_jobs/telegraph_skins_v01.json).
+const SKINS := {
+	"guardiao_verdadeiro": {"suffix": "guardiao", "sheets": ["boss_varredura_aviso", "boss_varredura_feixe", "boss_conjuracao_carga"]},
+	"molydeus_chefe": {"suffix": "molydeus", "sheets": ["boss_varredura_aviso", "boss_varredura_feixe", "boss_marca_alvo"]},
+	"malcanthet": {"suffix": "malcanthet", "sheets": ["boss_varredura_aviso", "boss_varredura_feixe", "boss_marca_alvo", "boss_conjuracao_carga"]},
+	"sintese_abissal": {"suffix": "sintese", "sheets": ["boss_varredura_aviso", "boss_varredura_feixe", "boss_quadrante_runas", "boss_conjuracao_carga"]},
+	"blogbog": {"suffix": "blogbog", "sheets": ["boss_quadrante_runas"]},
+	"zuggtmoy": {"suffix": "zuggtmoy", "sheets": ["boss_quadrante_runas"]},
+	"discipulo_pestilento": {"suffix": "discipulo", "sheets": ["boss_quadrante_runas", "boss_marca_alvo", "boss_conjuracao_carga"]},
+	"socothbenoth": {"suffix": "socothbenoth", "sheets": ["boss_quadrante_runas", "boss_conjuracao_carga"]},
+	"sacerdote_mente_derretida": {"suffix": "sacerdote", "sheets": ["boss_conjuracao_carga"]},
 }
 const SHEETS := ["boss_varredura_aviso", "boss_varredura_feixe", "boss_quadrante_runas", "boss_marca_alvo", "boss_conjuracao_carga",
 	"boss_conjuracao_estouro", "boss_conjuracao_interrompida", "boss_escudo", "boss_fase_estouro"]
@@ -31,6 +55,25 @@ static func fit(boss_scale: float) -> float:
 
 static func path_for(sheet: String) -> String:
 	return "res://assets/vfx/%s.png" % sheet
+
+## Nome da folha com a pele do chefe, ou o da neutra quando o chefe não tem pele para ela ou o arquivo não existe.
+static func skinned(sheet: String, boss_id: String) -> String:
+	var skin: Dictionary = SKINS.get(boss_id, {})
+	if not (skin.get("sheets", []) as Array).has(sheet):
+		return sheet
+	var name := "%s_%s" % [sheet, skin.suffix]
+	return name if ResourceLoader.exists(path_for(name)) else sheet
+
+## Todas as folhas de pele declaradas em SKINS (para os testes).
+static func skin_sheets() -> Array[String]:
+	var out: Array[String] = []
+	for boss_id in SKINS:
+		for sheet in SKINS[boss_id].sheets:
+			out.append("%s_%s" % [sheet, SKINS[boss_id].suffix])
+	return out
+
+static func _boss_id(mech: BossMechanics) -> String:
+	return String(mech.boss.id)
 
 static func cinematic_allowed(reduced: bool) -> bool:
 	return not reduced
@@ -134,20 +177,21 @@ static func describe(mech: BossMechanics) -> Array[Dictionary]:
 	if mech == null or mech.finished or mech.boss == null or mech.boss.dead:
 		return out
 	var boss_scale := float(mech.boss.scale)
+	var boss_id := _boss_id(mech)
 	if not mech.sweep.is_empty():
 		var warn: bool = float(mech.sweep.t) < float(mech.sweep.warn)
 		var index := 0
 		for off in mech.sweep.get("offsets", [0.0]):
 			var tip: Vector2 = (mech.sweep.origin as Vector2) + Vector2.from_angle(float(mech.sweep.a) + float(off)) * float(mech.sweep.len)
-			out.append({"key": "sweep:%d" % index, "kind": "beam", "layer": "fx", "sheet": "boss_varredura_aviso" if warn else "boss_varredura_feixe", "from": mech.sweep.origin, "to": tip})
+			out.append({"key": "sweep:%d" % index, "kind": "beam", "layer": "fx", "sheet": skinned("boss_varredura_aviso" if warn else "boss_varredura_feixe", boss_id), "from": mech.sweep.origin, "to": tip})
 			index += 1
 	if not mech.quad.is_empty():
-		out.append({"key": "quad", "kind": "sectors", "layer": "under", "center": mech.quad.center, "radius": float(mech.quad.radius), "sectors": (mech.quad.sectors as Array).duplicate(),
+		out.append({"key": "quad", "kind": "sectors", "layer": "under", "boss": boss_id, "center": mech.quad.center, "radius": float(mech.quad.radius), "sectors": (mech.quad.sectors as Array).duplicate(),
 			"ratio": clampf(1.0 - float(mech.quad.t) / maxf(0.01, float(mech.quad.total)), 0.0, 1.0)})
 	if not mech.mark.is_empty():
-		out.append({"key": "mark", "kind": "ring", "layer": "under", "pos": mech.mark.pos, "radius": float(mech.mark.radius), "locked": float(mech.mark.t) >= float(mech.mark.follow)})
+		out.append({"key": "mark", "kind": "ring", "layer": "under", "boss": boss_id, "pos": mech.mark.pos, "radius": float(mech.mark.radius), "locked": float(mech.mark.t) >= float(mech.mark.follow)})
 	if not mech.cast.is_empty():
-		out.append({"key": "cast", "kind": "charge", "layer": "fx", "pos": mech.boss.pos, "scale": boss_scale, "ratio": clampf(1.0 - float(mech.cast.t) / maxf(0.01, float(mech.cast.total)), 0.0, 1.0)})
+		out.append({"key": "cast", "kind": "charge", "layer": "fx", "boss": boss_id, "pos": mech.boss.pos, "scale": boss_scale, "ratio": clampf(1.0 - float(mech.cast.t) / maxf(0.01, float(mech.cast.total)), 0.0, 1.0)})
 	if shield_active(mech):
 		out.append({"key": "shield", "kind": "dome", "layer": "fx", "pos": mech.boss.pos, "scale": boss_scale})
 	return out
@@ -172,7 +216,7 @@ static func build(desc: Dictionary) -> Node2D:
 			beam.material = _additive()
 			node = beam
 		"sectors":
-			var texture8 := VfxAtlas.texture(path_for("boss_quadrante_runas"), 8)
+			var texture8 := VfxAtlas.texture(path_for(skinned("boss_quadrante_runas", String(desc.get("boss", "")))), 8)
 			if texture8 == null:
 				return null
 			var sectors := SectorNode.new()
@@ -180,11 +224,12 @@ static func build(desc: Dictionary) -> Node2D:
 			sectors.material = _additive()
 			node = sectors
 		"ring":
-			node = VfxAtlas.sprite8(path_for("boss_marca_alvo"), "loop", 0.6)
+			node = VfxAtlas.sprite8(path_for(skinned("boss_marca_alvo", String(desc.get("boss", "")))), "loop", 0.6)
 		"charge":
-			var charge := VfxAtlas.sprite(path_for("boss_conjuracao_carga"), true, 0.8)
+			var charge_sheet := skinned("boss_conjuracao_carga", String(desc.get("boss", "")))
+			var charge := VfxAtlas.sprite(path_for(charge_sheet), true, 0.8)
 			if charge != null:
-				charge.offset.y = VfxAtlas.ground_offset_y("boss_conjuracao_carga")
+				charge.offset.y = VfxAtlas.ground_offset_y(charge_sheet)
 			node = charge
 		"dome":
 			var dome := VfxAtlas.sprite8(path_for("boss_escudo"), "loop", 0.8)
@@ -247,7 +292,7 @@ static func create_burst(event: Dictionary, boss_scale: float = 1.0, reduced: bo
 	var pos: Vector2 = event.get("pos", Vector2.ZERO)
 	match String(event.get("verb", "")):
 		"quad":
-			var texture := VfxAtlas.texture(path_for("boss_quadrante_runas"), 8)
+			var texture := VfxAtlas.texture(path_for(skinned("boss_quadrante_runas", String(event.get("boss", "")))), 8)
 			if texture == null or (event.get("sectors", []) as Array).is_empty():
 				return null
 			var node := SectorNode.new()
@@ -262,7 +307,7 @@ static func create_burst(event: Dictionary, boss_scale: float = 1.0, reduced: bo
 			node.add_to_group(&"boss_vfx")
 			return node
 		"mark":
-			var sprite := VfxAtlas.sprite8(path_for("boss_marca_alvo"), "burst", 0.6, BURST_SECONDS)
+			var sprite := VfxAtlas.sprite8(path_for(skinned("boss_marca_alvo", String(event.get("boss", "")))), "burst", 0.6, BURST_SECONDS)
 			if sprite == null:
 				return null
 			sprite.scale = _ring_scale(float(event.get("radius", 1.0)))

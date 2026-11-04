@@ -25,8 +25,8 @@ func _boss_battle(stage_id: String) -> Battle:
 	return b
 
 func _sheet(out: Array[String]) -> void:
-	for sheet in BossVfx.SHEETS:
-		var cells := 8 if BossVfx.EIGHT_CELL.has(sheet) else 6
+	for sheet in BossVfx.SHEETS + BossVfx.skin_sheets():
+		var cells := 8 if BossVfx.EIGHT_CELL.any(func(base): return sheet == base or sheet.begins_with(base + "_")) else 6
 		var texture := VfxAtlas.texture(BossVfx.path_for(sheet), cells)
 		if texture == null:
 			out.append("atlas ausente ou com geometria errada: " + sheet)
@@ -37,6 +37,50 @@ func _sheet(out: Array[String]) -> void:
 			var box := image.get_region(Rect2i(cell * 256, 0, 256, 256)).get_used_rect()
 			if not box.has_area() or box.position.x < 21 or box.position.y < 21 or box.end.x > 235 or box.end.y > 235:
 				out.append("%s célula %d vazia ou sem margem" % [sheet, cell])
+
+## Peles temáticas por chefe: escolha por id, fallback neutro, `k` da barra, arte lida da folha certa e `boss` nos eventos.
+func _skins(out: Array[String], m: BossMechanics, at: Vector2) -> void:
+	if BossVfx.skinned("boss_varredura_aviso", "molydeus_chefe") != "boss_varredura_aviso_molydeus": out.append("Molydeus deveria ter pele na varredura em aviso")
+	for neutral in [["boss_marca_alvo", "guardiao_verdadeiro"], ["boss_varredura_aviso", ""], ["boss_varredura_aviso", "chefe_que_nao_existe"], ["boss_escudo", "molydeus_chefe"]]:
+		if BossVfx.skinned(neutral[0], neutral[1]) != neutral[0]: out.append("sem pele deveria ficar a folha neutra: %s/%s" % neutral)
+	for sheet in BossVfx.skin_sheets():
+		if sheet.begins_with("boss_varredura") and not BossVfx.BEAM.has(sheet): out.append("pele de varredura sem fatias em BEAM: " + sheet)
+	var chefes := 0
+	for boss_id in BossVfx.SKINS:
+		chefes += 1
+		for sheet in BossVfx.SKINS[boss_id].sheets:
+			if not BossVfx.SHEETS.has(sheet): out.append("pele declarada para folha desconhecida: %s/%s" % [boss_id, sheet])
+	if chefes != 9: out.append("as peles deveriam cobrir 9 chefes (%d)" % chefes)
+	if BossVfx.skin_sheets().size() != 22: out.append("deveria haver 22 folhas de pele (%d)" % BossVfx.skin_sheets().size())
+	# o chefe da luta escolhe a folha pelo id; descrição e nós leem a pele, o contorno de perigo não muda
+	var real_id: String = m.boss.id
+	m.boss.id = "molydeus_chefe"
+	m.sweep = {"origin": m.boss.pos, "a": 0.5, "a0": 0.5, "sign": 1.0, "arc": 1.0, "warn": 1.0, "dur": 1.0, "t": 0.2, "len": 6.0, "dice": "1d4", "offsets": [0.0]}
+	m.mark = {"pos": m.b.hero.pos, "follow": 2.0, "lock": 1.0, "t": 2.5, "radius": 3.0, "dice": "1d4", "slow": 0.0, "puddle": false}
+	m.cast = {"name": "Teste", "t": 1.0, "total": 2.5, "dice": "1d4", "stun": 2.0, "effect": "heavy", "armor_s": 6.0}
+	var kinds := {}
+	for d in BossVfx.describe(m): kinds[String(d.key)] = d
+	if String(kinds["sweep:0"].sheet) != "boss_varredura_aviso_molydeus": out.append("varredura do Molydeus deveria usar a pele")
+	var ring := BossVfx.build(kinds["mark"]) as AnimatedSprite2D
+	if ring == null or String((ring.sprite_frames.get_frame_texture(&"default", 0) as AtlasTexture).atlas.resource_path) != BossVfx.path_for("boss_marca_alvo_molydeus"): out.append("marca do Molydeus deveria ler a pele")
+	if ring != null: ring.free()
+	var charge := BossVfx.build(kinds["cast"]) as AnimatedSprite2D
+	if charge == null or String((charge.sprite_frames.get_frame_texture(&"default", 0) as AtlasTexture).atlas.resource_path) != BossVfx.path_for("boss_conjuracao_carga"): out.append("conjuração do Molydeus não tem pele: deveria ficar a neutra")
+	if charge != null: charge.free()
+	m.boss.id = "zuggtmoy"
+	m.quad = {"center": m.boss.pos, "sectors": [0, 2], "t": 0.5, "total": 1.5, "radius": 9.0, "dice": "1d4", "puddle": false}
+	var quad_desc: Dictionary = {}
+	for d in BossVfx.describe(m):
+		if String(d.key) == "quad": quad_desc = d
+	if String(quad_desc.get("boss", "")) != "zuggtmoy": out.append("descrição do quadrante deveria levar o id do chefe")
+	var skin_burst := BossVfx.create_burst({"verb": "quad", "pos": at, "sectors": [0, 1], "radius": 5.0, "boss": "zuggtmoy"}) as BossVfx.SectorNode
+	if skin_burst == null or skin_burst.texture.resource_path != BossVfx.path_for("boss_quadrante_runas_zuggtmoy"): out.append("detonação do quadrante da Zuggtmoy deveria ler a pele")
+	if skin_burst != null: skin_burst.free()
+	var plain_burst := BossVfx.create_burst({"verb": "quad", "pos": at, "sectors": [0, 1], "radius": 5.0, "boss": "malcanthet"}) as BossVfx.SectorNode
+	if plain_burst == null or plain_burst.texture.resource_path != BossVfx.path_for("boss_quadrante_runas"): out.append("chefe sem pele de quadrante deveria detonar com a neutra")
+	if plain_burst != null: plain_burst.free()
+	m.boss.id = real_id
+	m.sweep.clear(); m.quad.clear(); m.mark.clear(); m.cast.clear()
 
 func run() -> Array[String]:
 	var out: Array[String] = []
@@ -110,6 +154,7 @@ func run() -> Array[String]:
 	for e in b.events:
 		if String(e.get("type", "")) == "telegraph_burst": burst = e
 	if String(burst.get("verb", "")) != "quad" or (burst.get("sectors", []) as Array) != [1, 3] or float(burst.get("radius", 0.0)) != 9.0: out.append("evento do quadrante sem metadado")
+	if String(burst.get("boss", "")) != String(b.boss.id): out.append("evento do quadrante deveria levar o id do chefe")
 	m.mark = {"pos": b.hero.pos + Vector2(10, 0), "follow": 0.0, "lock": 0.0, "t": 0.0, "radius": 3.0, "dice": "1d4", "slow": 0.0, "puddle": false}
 	b.events.clear()
 	m._step_mark(0.05)
@@ -142,6 +187,7 @@ func run() -> Array[String]:
 		else: shot.free()
 	if BossVfx.create_burst({"verb": "quad", "pos": at, "sectors": [], "radius": 5.0}) != null: out.append("quadrante sem fatias não deveria detonar")
 	if BossVfx.create_burst({"verb": "desconhecido", "pos": at}) != null: out.append("verbo desconhecido não deveria detonar")
+	_skins(out, m, at)
 	for node in [BossVfx.create_interrupt(at, 1.2), BossVfx.create_phase_burst(at, 1.2), BossVfx.create_shield_break(at, 1.2)]:
 		if node == null: out.append("efeito pontual ausente")
 		else: node.free()

@@ -373,7 +373,7 @@ func _step_quad(dt: float) -> void:
 		for s in quad.sectors:
 			var at: Vector2 = (quad.center as Vector2) + Vector2.from_angle((float(s) + 0.5) * TAU / float(SECTOR_COUNT)) * float(quad.radius) * 0.5
 			b.zones.append({"owner": "enemy", "kind": "puddle", "pos": at, "radius": 1.6, "delay": 0.0, "life": 8.0, "acc": 0.0})
-	b.events.append({"type": "telegraph_burst", "pos": quad.center, "verb": "quad", "sectors": (quad.sectors as Array).duplicate(), "radius": float(quad.radius)})
+	b.events.append({"type": "telegraph_burst", "pos": quad.center, "verb": "quad", "boss": boss.id, "sectors": (quad.sectors as Array).duplicate(), "radius": float(quad.radius)})
 	quad.clear()
 
 ## PLAN-105 N1: a marca segue o herói por `follow` s e trava por `lock` s; ao fim explode onde travou.
@@ -394,7 +394,7 @@ func _step_mark(dt: float) -> void:
 			b.hero.slow_t = maxf(b.hero.slow_t, float(mark.slow))
 	if bool(mark.get("puddle", false)):
 		b.zones.append({"owner": "enemy", "kind": "puddle", "pos": at, "radius": float(mark.radius) * 0.6, "delay": 0.0, "life": 8.0, "acc": 0.0})
-	b.events.append({"type": "telegraph_burst", "pos": at, "verb": "mark", "radius": float(mark.radius)})
+	b.events.append({"type": "telegraph_burst", "pos": at, "verb": "mark", "boss": boss.id, "radius": float(mark.radius)})
 	mark.clear()
 
 # ------------------------------------------------------------------ desenho (chamado pelo overlay)
