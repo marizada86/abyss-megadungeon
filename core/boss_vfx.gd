@@ -214,6 +214,7 @@ static func build(desc: Dictionary) -> Node2D:
 			beam.texture = texture
 			beam.sheet = String(desc.sheet)
 			beam.material = _additive()
+			VfxAtlas.smooth(beam)
 			node = beam
 		"sectors":
 			var texture8 := VfxAtlas.texture(path_for(skinned("boss_quadrante_runas", String(desc.get("boss", "")))), 8)
@@ -222,6 +223,7 @@ static func build(desc: Dictionary) -> Node2D:
 			var sectors := SectorNode.new()
 			sectors.texture = texture8
 			sectors.material = _additive()
+			VfxAtlas.smooth(sectors)
 			node = sectors
 		"ring":
 			node = VfxAtlas.sprite8(path_for(skinned("boss_marca_alvo", String(desc.get("boss", "")))), "loop", 0.6)
@@ -298,6 +300,7 @@ static func create_burst(event: Dictionary, boss_scale: float = 1.0, reduced: bo
 			var node := SectorNode.new()
 			node.texture = texture
 			node.material = _additive()
+			VfxAtlas.smooth(node)
 			node.center = pos
 			node.radius = float(event.get("radius", 1.0))
 			node.sectors = (event.get("sectors", []) as Array).duplicate()

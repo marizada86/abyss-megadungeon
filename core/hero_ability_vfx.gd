@@ -79,6 +79,7 @@ static func create_effect(ability_id: String, event: Dictionary, color: Color, h
 	var root := Node2D.new()
 	var sprite := AnimatedSprite2D.new()
 	sprite.sprite_frames = frames
+	VfxAtlas.smooth(sprite)
 	sprite.modulate = color
 	var material := CanvasItemMaterial.new()
 	material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD

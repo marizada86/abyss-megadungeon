@@ -65,6 +65,7 @@ static func create_effect(event: Dictionary, color: Color) -> Node2D:
 	root.position = Iso.to_screen(event.pos) + Vector2(0, -18)
 	var sprite := AnimatedSprite2D.new()
 	sprite.sprite_frames = _frames[shape]
+	VfxAtlas.smooth(sprite)
 	var radius_fraction := float(REACH_FRACTION.get(shape, 0.45 if shape in ["estocada_longa", "chicote"] else 0.4))
 	var reach_scale := float(event.range) * Iso.TILE_W * 0.5 * sqrt(2.0) / (256.0 * radius_fraction)
 	sprite.scale = Vector2.ONE * reach_scale

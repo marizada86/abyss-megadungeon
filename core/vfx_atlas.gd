@@ -12,6 +12,14 @@ const GROUND_ROW := {
 	"tentaculos_laco": 164.0, "tentaculos_emergem": 164.0, "boss_fase_estouro": 175.0, "morte_chefe_colapso": 175.0, "morte_alma": 179.0,
 }
 
+## Filtro dos efeitos. O projeto usa nearest (pixel art), mas as folhas de VFX são arte pintada de 256 px ampliada em escala
+## fracionária, achatada em Y (chão isométrico) e girada; em nearest isso vira degraus e pixels desiguais. Só os VFX suavizam;
+## personagens e tiles continuam nearest. Ver tools/vfx_filter_bench.gd (comparação nearest x linear x mipmaps).
+const FILTER := CanvasItem.TEXTURE_FILTER_LINEAR
+
+static func smooth(node: CanvasItem) -> void:
+	node.texture_filter = FILTER
+
 ## `offset.y` que põe o centro do anel da folha sobre o ponto do chão (a escala do nó multiplica o offset, então não entra aqui).
 static func ground_offset_y(sheet: String) -> float:
 	return 128.0 - float(GROUND_ROW.get(sheet, BASE_ROW))
@@ -43,6 +51,7 @@ static func sprite(path: String, looped: bool = false, duration: float = 0.24, a
 		return null
 	var node := AnimatedSprite2D.new()
 	node.sprite_frames = built
+	smooth(node)
 	if additive:
 		var material := CanvasItemMaterial.new()
 		material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
@@ -97,6 +106,7 @@ static func sprite8(path: String, part: String, loop_duration: float = 0.6, burs
 		return null
 	var node := AnimatedSprite2D.new()
 	node.sprite_frames = built[part]
+	smooth(node)
 	if additive:
 		var material := CanvasItemMaterial.new()
 		material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD

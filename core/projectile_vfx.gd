@@ -155,6 +155,7 @@ static func create_flight(projectile: Dictionary, color: Color) -> AnimatedSprit
 	var spec: Dictionary = spec_for(family)
 	var sprite := AnimatedSprite2D.new()
 	sprite.sprite_frames = frames.flight
+	VfxAtlas.smooth(sprite)
 	sprite.scale = Vector2.ONE * float(spec.scale)
 	sprite.offset = Vector2(CELL * 0.5 - float(spec.pivot_x), 0.0)
 	sprite.modulate = color
@@ -173,6 +174,7 @@ static func create_impact(family: StringName, ground: Vector2, color: Color) -> 
 	root.add_to_group(&"projectile_vfx_impact")
 	var sprite := AnimatedSprite2D.new()
 	sprite.sprite_frames = frames.impact
+	VfxAtlas.smooth(sprite)
 	sprite.scale = Vector2.ONE * float(spec_for(family).scale)
 	sprite.modulate = color
 	sprite.material = _additive()

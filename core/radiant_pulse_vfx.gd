@@ -54,6 +54,7 @@ static func create_effect(event: Dictionary, color: Color, reduced_impact: bool 
 	root.position = Iso.to_screen(event.pos)
 	var sprite := AnimatedSprite2D.new()
 	sprite.sprite_frames = _evolved_frames if evolved else _frames
+	VfxAtlas.smooth(sprite)
 	sprite.scale = scale_for_radius(float(event.radius), EVOLVED_PEAK_RING_RADIUS if evolved else PEAK_RING_RADIUS)
 	sprite.modulate = color
 	var material := CanvasItemMaterial.new()
