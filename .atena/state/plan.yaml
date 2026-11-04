@@ -3336,6 +3336,26 @@ pacing_audit_20261029:
   m5_decisao: "2026-11-02 dono: nao compensar XP nem ouro; testar balanceamento assim (humanos fazem mais XP que os bots)"
   m5_varredura: "144 jobs old/new/newm2 (tmp/base-pre-m4 = dados de 7693826); tempo de mapa -16 a -35%; pressao por minuto +27% Shedaklah, +20% Molor; defasagem de nivel encadeada 0,2 a 0,5 ate Molor; mortais morrem 100% (descartados); secao 15 do audit"
   next_activity: "Decidir compensacao de XP/ouro; continuar M4 pelos demais mapas e M5 com o Vitao."
+weapon_evolution_plan_20261104:
+  revision: r4
+  mode: per-plan
+  authorization: 'atena vamos criar um plano de evolução para todos (2026-11-04); Sim, executar; Remover repetições; Sim, reforçar; commit e push'
+  status: DATA_TESTS_BALANCE_DELIVERED_AND_PUSHED
+  content_state: DRAFT   # nomes das 12 evoluções provisórios
+  plan: .atena/vault/drafts/PLANO-EVOLUCOES-20261104-r1.md
+  ordered_steps: [S-E01_decisoes, S-E02_dados, S-E03_testes, S-E04_balanco, S-E05_apresentacao, S-E06_registro]
+  completed_steps: [S-E01_decisoes, S-E02_dados, S-E03_testes, S-E04_balanco, S-E06_registro]
+  pending_steps: [S-E05_apresentacao]
+  scope: 12 armas sem evolução (Domínio da Vontade fica de fora por decisão recomendada), 13 passivas novas, 27 evoluções com 27 passivas distintas
+  rule_owner: a passiva exigida por uma evolução não se repete (sem exceções)
+  commits: [94a03e9, 71db8c0]   # feat/codex-lore, enviados ao remoto
+  checks: suíte tests/run_all.gd com 0 falhas e tools/audit_projeto.gd com 0 erros e 0 avisos, em perfil sintético (--controller-profile); save real não carregado
+  balance: sonda .atena/generated/evolution-balance-20261104-r1/probe.gd; evoluções novas 1,8x a 2,4x o DPS do Nv 5 (referência antiga 1,1x a 3,3x, mediana 2,2x); Ampulheta 3,3x; Fúria Sombria não medida (age abaixo de 50% de PV); bots de campanha não reexecutados
+  engine_change: Battle._hero_hit soma radiant_pct a dano radiante (uma linha); rótulos radiant_pct e low_hp_dmg em Items.MOD_LABELS
+  assets: ícones aceitos pela fila asset_evolucoes (25 fontes, E01-E06); preparação, VFX próprios, Codex e nomes finais pendentes de aprovação; ver prompts em .atena/vault/drafts/PROMPTS-ASSETS-EVOLUCOES-20261104-r1.md
+  porting: NOT_ASSESSED   # AGENTS.md exige portagem registrada para alterações comuns; origem não consultada nesta frente
+  not_authorized: [build, publication, canonical_promotion]
+  next_activity: Dono decide a integração dos ícones (S-E05) e os nomes finais; reexecutar bots de campanha e medir a Fúria Sombria abaixo de 50% de PV; avaliar portagem.
 telegraph_skins_20261104:
   revision: r1
   mode: per-plan
