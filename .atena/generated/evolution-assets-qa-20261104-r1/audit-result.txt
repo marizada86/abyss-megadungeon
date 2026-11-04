@@ -1,0 +1,157 @@
+INFO ícones novos: 12 armas, 13 passivas
+OK    toda arma tem PNG próprio em assets/icons/weapons (sem: )
+OK    toda passiva tem PNG em assets/icons/passives (sem: )
+OK    weapons/estocada_transfixante tem 128x128 ((128, 128))
+OK    weapons/estocada_transfixante: cantos e borda transparentes
+OK    weapons/estocada_transfixante: margem >= 3 px (caixa 6,19-121,108)
+OK    weapons/estocada_transfixante: preenchimento 3627 px e cinza residual 0.03%
+OK    weapons/vigilia_perpetua tem 128x128 ((128, 128))
+OK    weapons/vigilia_perpetua: cantos e borda transparentes
+OK    weapons/vigilia_perpetua: margem >= 3 px (caixa 25,6-101,121)
+OK    weapons/vigilia_perpetua: preenchimento 5139 px e cinza residual 0.00%
+OK    weapons/selo_da_retidao tem 128x128 ((128, 128))
+OK    weapons/selo_da_retidao: cantos e borda transparentes
+OK    weapons/selo_da_retidao: margem >= 3 px (caixa 6,9-121,118)
+OK    weapons/selo_da_retidao: preenchimento 7896 px e cinza residual 0.10%
+OK    weapons/chicote_da_cobica tem 128x128 ((128, 128))
+OK    weapons/chicote_da_cobica: cantos e borda transparentes
+OK    weapons/chicote_da_cobica: margem >= 3 px (caixa 6,20-121,106)
+OK    weapons/chicote_da_cobica: preenchimento 5133 px e cinza residual 0.00%
+OK    weapons/machado_devorador tem 128x128 ((128, 128))
+OK    weapons/machado_devorador: cantos e borda transparentes
+OK    weapons/machado_devorador: margem >= 3 px (caixa 6,14-121,113)
+OK    weapons/machado_devorador: preenchimento 5056 px e cinza residual 0.00%
+OK    weapons/abraco_dos_tentaculos tem 128x128 ((128, 128))
+OK    weapons/abraco_dos_tentaculos: cantos e borda transparentes
+OK    weapons/abraco_dos_tentaculos: margem >= 3 px (caixa 8,6-119,121)
+OK    weapons/abraco_dos_tentaculos: preenchimento 6906 px e cinza residual 0.00%
+OK    weapons/lamina_dissolvente tem 128x128 ((128, 128))
+OK    weapons/lamina_dissolvente: cantos e borda transparentes
+OK    weapons/lamina_dissolvente: margem >= 3 px (caixa 6,7-121,119)
+OK    weapons/lamina_dissolvente: preenchimento 4183 px e cinza residual 0.00%
+OK    weapons/cajado_dos_desejos_realizados tem 128x128 ((128, 128))
+OK    weapons/cajado_dos_desejos_realizados: cantos e borda transparentes
+OK    weapons/cajado_dos_desejos_realizados: margem >= 3 px (caixa 16,6-110,121)
+OK    weapons/cajado_dos_desejos_realizados: preenchimento 2533 px e cinza residual 0.00%
+OK    weapons/ampulheta_do_tempo_parado tem 128x128 ((128, 128))
+OK    weapons/ampulheta_do_tempo_parado: cantos e borda transparentes
+OK    weapons/ampulheta_do_tempo_parado: margem >= 3 px (caixa 13,6-113,121)
+OK    weapons/ampulheta_do_tempo_parado: preenchimento 7790 px e cinza residual 0.59%
+OK    weapons/lamina_do_eclipse tem 128x128 ((128, 128))
+OK    weapons/lamina_do_eclipse: cantos e borda transparentes
+OK    weapons/lamina_do_eclipse: margem >= 3 px (caixa 7,6-119,121)
+OK    weapons/lamina_do_eclipse: preenchimento 7115 px e cinza residual 0.00%
+OK    weapons/memoria_reescrita tem 128x128 ((128, 128))
+OK    weapons/memoria_reescrita: cantos e borda transparentes
+OK    weapons/memoria_reescrita: margem >= 3 px (caixa 15,6-112,121)
+OK    weapons/memoria_reescrita: preenchimento 7032 px e cinza residual 0.00%
+OK    weapons/pira_do_incendiario tem 128x128 ((128, 128))
+OK    weapons/pira_do_incendiario: cantos e borda transparentes
+OK    weapons/pira_do_incendiario: margem >= 3 px (caixa 13,6-114,121)
+OK    weapons/pira_do_incendiario: preenchimento 5110 px e cinza residual 0.02%
+OK    passives/precisao tem 128x128 ((128, 128))
+OK    passives/precisao: cantos e borda transparentes
+OK    passives/precisao: margem >= 3 px (caixa 8,6-119,121)
+OK    passives/precisao: preenchimento 8659 px e cinza residual 0.01%
+OK    passives/sede_de_sangue tem 128x128 ((128, 128))
+OK    passives/sede_de_sangue: cantos e borda transparentes
+OK    passives/sede_de_sangue: margem >= 3 px (caixa 14,6-113,121)
+OK    passives/sede_de_sangue: preenchimento 5037 px e cinza residual 0.00%
+OK    passives/brasa tem 128x128 ((128, 128))
+OK    passives/brasa: cantos e borda transparentes
+OK    passives/brasa: margem >= 3 px (caixa 16,6-111,121)
+OK    passives/brasa: preenchimento 6517 px e cinza residual 0.00%
+OK    passives/ponta_certeira tem 128x128 ((128, 128))
+OK    passives/ponta_certeira: cantos e borda transparentes
+OK    passives/ponta_certeira: margem >= 3 px (caixa 10,6-116,121)
+OK    passives/ponta_certeira: preenchimento 3613 px e cinza residual 0.03%
+OK    passives/olhar_abissal tem 128x128 ((128, 128))
+OK    passives/olhar_abissal: cantos e borda transparentes
+OK    passives/olhar_abissal: margem >= 3 px (caixa 6,11-121,115)
+OK    passives/olhar_abissal: preenchimento 6405 px e cinza residual 0.00%
+OK    passives/acido tem 128x128 ((128, 128))
+OK    passives/acido: cantos e borda transparentes
+OK    passives/acido: margem >= 3 px (caixa 11,6-116,121)
+OK    passives/acido: preenchimento 5620 px e cinza residual 0.11%
+OK    passives/ventura tem 128x128 ((128, 128))
+OK    passives/ventura: cantos e borda transparentes
+OK    passives/ventura: margem >= 3 px (caixa 7,6-119,121)
+OK    passives/ventura: preenchimento 8417 px e cinza residual 0.01%
+OK    passives/tempo_suspenso tem 128x128 ((128, 128))
+OK    passives/tempo_suspenso: cantos e borda transparentes
+OK    passives/tempo_suspenso: margem >= 3 px (caixa 18,6-108,121)
+OK    passives/tempo_suspenso: preenchimento 5613 px e cinza residual 0.02%
+OK    passives/veu_de_sombras tem 128x128 ((128, 128))
+OK    passives/veu_de_sombras: cantos e borda transparentes
+OK    passives/veu_de_sombras: margem >= 3 px (caixa 6,6-120,121)
+OK    passives/veu_de_sombras: preenchimento 7927 px e cinza residual 0.01%
+OK    passives/memoria_viva tem 128x128 ((128, 128))
+OK    passives/memoria_viva: cantos e borda transparentes
+OK    passives/memoria_viva: margem >= 3 px (caixa 8,6-119,121)
+OK    passives/memoria_viva: preenchimento 6540 px e cinza residual 0.00%
+OK    passives/furia_sombria tem 128x128 ((128, 128))
+OK    passives/furia_sombria: cantos e borda transparentes
+OK    passives/furia_sombria: margem >= 3 px (caixa 20,6-106,121)
+OK    passives/furia_sombria: preenchimento 6296 px e cinza residual 0.22%
+OK    passives/fe_radiante tem 128x128 ((128, 128))
+OK    passives/fe_radiante: cantos e borda transparentes
+OK    passives/fe_radiante: margem >= 3 px (caixa 9,6-117,121)
+OK    passives/fe_radiante: preenchimento 4736 px e cinza residual 0.08%
+OK    passives/presenca_dominante tem 128x128 ((128, 128))
+OK    passives/presenca_dominante: cantos e borda transparentes
+OK    passives/presenca_dominante: margem >= 3 px (caixa 15,6-111,121)
+OK    passives/presenca_dominante: preenchimento 5623 px e cinza residual 0.05%
+INFO ocupação média: existentes 4616 px, novos 5941 px
+OK    estocada_transfixante resolve o ícone próprio (sem icon_like)
+OK    vigilia_perpetua resolve o ícone próprio (sem icon_like)
+OK    selo_da_retidao resolve o ícone próprio (sem icon_like)
+OK    chicote_da_cobica resolve o ícone próprio (sem icon_like)
+OK    machado_devorador resolve o ícone próprio (sem icon_like)
+OK    abraco_dos_tentaculos resolve o ícone próprio (sem icon_like)
+OK    lamina_dissolvente resolve o ícone próprio (sem icon_like)
+OK    cajado_dos_desejos_realizados resolve o ícone próprio (sem icon_like)
+OK    ampulheta_do_tempo_parado resolve o ícone próprio (sem icon_like)
+OK    lamina_do_eclipse resolve o ícone próprio (sem icon_like)
+OK    memoria_reescrita resolve o ícone próprio (sem icon_like)
+OK    pira_do_incendiario resolve o ícone próprio (sem icon_like)
+OK    selo_retidao_evo tem 2048x256 ((2048, 256))
+OK    selo_retidao_evo: margem mínima 25 px por célula (>= 20)
+OK    selo_retidao_evo: borda das células com alfa 0
+OK    selo_retidao_evo: impacto desvanece (massa q8 390 < metade de q6 8034)
+OK    selo_retidao_evo: voo estável (massa 2123..2809)
+OK    cajado_realizado_evo tem 2048x256 ((2048, 256))
+OK    cajado_realizado_evo: margem mínima 34 px por célula (>= 20)
+OK    cajado_realizado_evo: borda das células com alfa 0
+OK    cajado_realizado_evo: impacto desvanece (massa q8 182 < metade de q6 5503)
+FALHA cajado_realizado_evo: voo estável (massa 2295..3656)
+OK    eclipse_evo tem 2048x256 ((2048, 256))
+OK    eclipse_evo: margem mínima 25 px por célula (>= 20)
+OK    eclipse_evo: borda das células com alfa 0
+OK    eclipse_evo: impacto desvanece (massa q8 121 < metade de q6 2836)
+FALHA eclipse_evo: voo estável (massa 1138..1984)
+OK    memoria_reescrita_evo tem 2048x256 ((2048, 256))
+OK    memoria_reescrita_evo: margem mínima 34 px por célula (>= 20)
+OK    memoria_reescrita_evo: borda das células com alfa 0
+OK    memoria_reescrita_evo: impacto desvanece (massa q8 166 < metade de q6 6588)
+OK    memoria_reescrita_evo: voo estável (massa 3805..4919)
+OK    pulso_vigilia tem 1536x256 ((1536, 256))
+OK    pulso_vigilia: margem mínima 27 px por célula (>= 20)
+OK    pulso_vigilia: borda das células com alfa 0
+OK    pulso_vigilia: pico no quadro 4 e dissipação no último
+OK    pulso_ampulheta_tempo tem 1536x256 ((1536, 256))
+OK    pulso_ampulheta_tempo: margem mínima 27 px por célula (>= 20)
+OK    pulso_ampulheta_tempo: borda das células com alfa 0
+OK    pulso_ampulheta_tempo: pico no quadro 4 e dissipação no último
+OK    abraco_laco tem 1536x256 ((1536, 256))
+OK    abraco_laco: margem mínima 24 px por célula (>= 20)
+OK    abraco_laco: borda das células com alfa 0
+OK    abraco_laco: laço estável entre quadros (massa 3697..3944)
+OK    selo_da_retidao: família evoluída selo_retidao_evo e fallback orbe_radiante
+OK    cajado_dos_desejos_realizados: família evoluída cajado_realizado_evo e fallback orbe_arcano
+OK    lamina_do_eclipse: família evoluída eclipse_evo e fallback onda_cortante
+OK    memoria_reescrita: família evoluída memoria_reescrita_evo e fallback orbe_arcano
+OK    Vigília roteada ao pulso radiante
+OK    Ampulheta evoluída roteada ao VFX da ampulheta
+OK    Abraço roteado ao VFX da zona
+OK    abraco_laco registrado em VfxAtlas.GROUND_ROW
+RESUMO falhas=2
