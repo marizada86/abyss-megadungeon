@@ -13,11 +13,11 @@ const LIFT := Vector2(0, -16)
 ## `scale` is DRAFT calibration (screen px per art px); `pivot_x` is the light centroid measured on the flight frames.
 const FAMILIES := {
 	&"orbe_radiante": {"path": "res://assets/vfx/orbe_radiante.png", "dtype": "radiante", "scale": 0.45, "pivot_x": 124.0,
-		"weapons": ["raio_de_luz", "luz_mais_pura", "marca_da_retidao", "constelacao"]},
+		"weapons": ["raio_de_luz", "luz_mais_pura", "marca_da_retidao", "constelacao", "selo_da_retidao"]},
 	&"orbe_arcano": {"path": "res://assets/vfx/orbe_arcano.png", "dtype": "magico", "scale": 0.45, "pivot_x": 124.0,
-		"weapons": ["raio_enfraquecedor", "dominar_pessoa", "cajado_dos_desejos", "raio_da_ruina", "dominio_coletivo"]},
+		"weapons": ["raio_enfraquecedor", "dominar_pessoa", "cajado_dos_desejos", "raio_da_ruina", "dominio_coletivo", "cajado_dos_desejos_realizados", "memoria_reescrita"]},
 	&"onda_cortante": {"path": "res://assets/vfx/onda_cortante.png", "dtype": "magico", "scale": 0.5, "pivot_x": 147.0,
-		"weapons": ["lamina_trovejante", "tempestade"]},
+		"weapons": ["lamina_trovejante", "tempestade", "lamina_do_eclipse"]},
 }
 const LIMIT := 80
 ## Evoluções por sobreposição (Lote 3): a arma evoluída usa a arte própria quando a folha existe. As listas das
@@ -29,6 +29,15 @@ const EVOLVED_FAMILIES := {
 		"weapons": ["raio_da_ruina", "dominio_coletivo"]},
 	&"onda_cortante_evo": {"path": "res://assets/vfx/onda_cortante_evo.png", "dtype": "magico", "scale": 0.62, "pivot_x": 128.0,
 		"weapons": ["tempestade"]},
+	## Evoluções novas (plano de 2026-11-04): uma folha própria por arma, mesma convenção (voo 0-3, impacto 4-7, pivô na luz).
+	&"selo_retidao_evo": {"path": "res://assets/vfx/selo_retidao_evo.png", "dtype": "radiante", "scale": 0.62, "pivot_x": 128.0,
+		"weapons": ["selo_da_retidao"]},
+	&"cajado_realizado_evo": {"path": "res://assets/vfx/cajado_realizado_evo.png", "dtype": "magico", "scale": 0.62, "pivot_x": 128.0,
+		"weapons": ["cajado_dos_desejos_realizados"]},
+	&"eclipse_evo": {"path": "res://assets/vfx/eclipse_evo.png", "dtype": "magico", "scale": 0.62, "pivot_x": 128.0,
+		"weapons": ["lamina_do_eclipse"]},
+	&"memoria_reescrita_evo": {"path": "res://assets/vfx/memoria_reescrita_evo.png", "dtype": "magico", "scale": 0.62, "pivot_x": 128.0,
+		"weapons": ["memoria_reescrita"]},
 }
 
 static func evolved_family_for(projectile: Dictionary) -> StringName:

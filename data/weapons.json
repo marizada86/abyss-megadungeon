@@ -1205,7 +1205,6 @@
   "estocada_transfixante": {
     "name": "Estocada Transfixante",
     "src": "Evolução",
-    "icon_like": "estocada_mistica",
     "kind": "melee",
     "dtype": "magico",
     "attr": "carisma",
@@ -1221,7 +1220,6 @@
   "vigilia_perpetua": {
     "name": "Vigília Perpétua",
     "src": "Evolução",
-    "icon_like": "vela_sagrada",
     "kind": "nova",
     "dtype": "radiante",
     "attr": "constituicao",
@@ -1235,7 +1233,6 @@
   "selo_da_retidao": {
     "name": "Selo da Retidão",
     "src": "Evolução",
-    "icon_like": "marca_da_retidao",
     "kind": "bolt",
     "dtype": "radiante",
     "attr": "constituicao",
@@ -1254,7 +1251,6 @@
   "chicote_da_cobica": {
     "name": "Chicote da Cobiça",
     "src": "Evolução",
-    "icon_like": "chicote_avarento",
     "kind": "melee",
     "dtype": "fisico",
     "attr": "carisma",
@@ -1270,7 +1266,6 @@
   "machado_devorador": {
     "name": "Machado Devorador",
     "src": "Evolução",
-    "icon_like": "machado_de_xargath",
     "kind": "melee",
     "dtype": "fogo",
     "attr": "forca",
@@ -1287,7 +1282,6 @@
   "abraco_dos_tentaculos": {
     "name": "Abraço dos Tentáculos",
     "src": "Evolução",
-    "icon_like": "colar_dos_tentaculos",
     "kind": "zone",
     "dtype": "magico",
     "attr": "inteligencia",
@@ -1304,7 +1298,6 @@
   "lamina_dissolvente": {
     "name": "Lâmina Dissolvente",
     "src": "Evolução",
-    "icon_like": "lamina_da_digestao",
     "kind": "melee",
     "dtype": "fisico",
     "attr": "forca",
@@ -1320,7 +1313,6 @@
   "cajado_dos_desejos_realizados": {
     "name": "Cajado dos Desejos Realizados",
     "src": "Evolução",
-    "icon_like": "cajado_dos_desejos",
     "kind": "bolt",
     "dtype": "magico",
     "attr": "carisma",
@@ -1338,7 +1330,6 @@
   "ampulheta_do_tempo_parado": {
     "name": "Ampulheta do Tempo Parado",
     "src": "Evolução",
-    "icon_like": "ampulheta",
     "kind": "nova",
     "dtype": "magico",
     "attr": "inteligencia",
@@ -1352,7 +1343,6 @@
   "lamina_do_eclipse": {
     "name": "Lâmina do Eclipse",
     "src": "Evolução",
-    "icon_like": "lamina_de_sombra",
     "kind": "bolt",
     "dtype": "magico",
     "attr": "inteligencia",
@@ -1370,7 +1360,6 @@
   "memoria_reescrita": {
     "name": "Memória Reescrita",
     "src": "Evolução",
-    "icon_like": "memoria_alterada",
     "kind": "bolt",
     "dtype": "magico",
     "attr": "carisma",
@@ -1389,7 +1378,6 @@
   "pira_do_incendiario": {
     "name": "Pira do Incendiário",
     "src": "Evolução",
-    "icon_like": "tocha_do_incendiario",
     "kind": "melee",
     "dtype": "fogo",
     "attr": "forca",

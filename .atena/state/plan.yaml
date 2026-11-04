@@ -3340,22 +3340,22 @@ weapon_evolution_plan_20261104:
   revision: r4
   mode: per-plan
   authorization: 'atena vamos criar um plano de evolução para todos (2026-11-04); Sim, executar; Remover repetições; Sim, reforçar; commit e push'
-  status: DATA_TESTS_BALANCE_DELIVERED_AND_PUSHED
+  status: DATA_TESTS_BALANCE_ASSETS_INTEGRATED_PUSHED_TO_MAIN
   content_state: DRAFT   # nomes das 12 evoluções provisórios
   plan: .atena/vault/drafts/PLANO-EVOLUCOES-20261104-r1.md
   ordered_steps: [S-E01_decisoes, S-E02_dados, S-E03_testes, S-E04_balanco, S-E05_apresentacao, S-E06_registro]
-  completed_steps: [S-E01_decisoes, S-E02_dados, S-E03_testes, S-E04_balanco, S-E06_registro]
-  pending_steps: [S-E05_apresentacao]
+  completed_steps: [S-E01_decisoes, S-E02_dados, S-E03_testes, S-E04_balanco, S-E05_apresentacao_icones_e_vfx, S-E06_registro]
+  pending_steps: [S-E05b_nomes_finais_codex_sons]
   scope: 12 armas sem evolução (Domínio da Vontade fica de fora por decisão recomendada), 13 passivas novas, 27 evoluções com 27 passivas distintas
   rule_owner: a passiva exigida por uma evolução não se repete (sem exceções)
-  commits: [94a03e9, 71db8c0]   # feat/codex-lore, enviados ao remoto
+  commits: [94a03e9, 71db8c0, b4c1a1d]   # integração de ícones e VFX no commit seguinte (ver git log); enviado a main por pedido explícito do dono
   checks: suíte tests/run_all.gd com 0 falhas e tools/audit_projeto.gd com 0 erros e 0 avisos, em perfil sintético (--controller-profile); save real não carregado
   balance: sonda .atena/generated/evolution-balance-20261104-r1/probe.gd; evoluções novas 1,8x a 2,4x o DPS do Nv 5 (referência antiga 1,1x a 3,3x, mediana 2,2x); Ampulheta 3,3x; Fúria Sombria não medida (age abaixo de 50% de PV); bots de campanha não reexecutados
   engine_change: Battle._hero_hit soma radiant_pct a dano radiante (uma linha); rótulos radiant_pct e low_hp_dmg em Items.MOD_LABELS
-  assets: ícones aceitos pela fila asset_evolucoes (25 fontes, E01-E06); preparação, VFX próprios, Codex e nomes finais pendentes de aprovação; ver prompts em .atena/vault/drafts/PROMPTS-ASSETS-EVOLUCOES-20261104-r1.md
+  assets: 25 ícones (13 passivas, 12 evoluções) e 7 VFX aceitos pelo dono, preparados e integrados em 2026-11-04: ícones 128x128 em assets/icons, icon_like removido das 12 evoluções; VFX em assets/vfx (selo_retidao_evo, cajado_realizado_evo, eclipse_evo, memoria_reescrita_evo via ProjectileVfx.EVOLVED_FAMILIES; pulso_vigilia via RadiantPulseVfx.OWN_PULSES; pulso_ampulheta_tempo via HourglassVfx; abraco_laco via TentacleVfx e VfxAtlas.GROUND_ROW). Preparação em .atena/generated/asset-evolucoes-20261104-r1/prep e vfx-evolucoes-20261104-r1/prep. E05 exigiu corte manual (ampulheta e esfera encostadas). Sons próprios, nomes finais e Codex pendentes
   porting: NOT_ASSESSED   # AGENTS.md exige portagem registrada para alterações comuns; origem não consultada nesta frente
   not_authorized: [build, publication, canonical_promotion]
-  next_activity: Dono decide a integração dos ícones (S-E05) e os nomes finais; reexecutar bots de campanha e medir a Fúria Sombria abaixo de 50% de PV; avaliar portagem.
+  next_activity: Dono confere o jogo (ícones e VFX em partida real), decide nomes finais, sons próprios e Codex; reexecutar bots de campanha; avaliar portagem.
 telegraph_skins_20261104:
   revision: r1
   mode: per-plan

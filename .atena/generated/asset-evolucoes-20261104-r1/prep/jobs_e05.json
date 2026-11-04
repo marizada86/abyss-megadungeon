@@ -1,0 +1,6 @@
+[
+ {"src":"tmp/evolucoes_icons/e05_ampulheta_do_tempo_parado.png","key":"gray","out":"tmp/evolucoes_icons/weapons/ampulheta_do_tempo_parado.png","fit":[128,128],"pad":6},
+ {"src":"tmp/evolucoes_icons/e05_lamina_do_eclipse.png","key":"gray","out":"tmp/evolucoes_icons/weapons/lamina_do_eclipse.png","fit":[128,128],"pad":6},
+ {"src":"tmp/evolucoes_icons/e05_memoria_reescrita.png","key":"gray","out":"tmp/evolucoes_icons/weapons/memoria_reescrita.png","fit":[128,128],"pad":6},
+ {"src":"tmp/evolucoes_icons/e05_pira_do_incendiario.png","key":"gray","out":"tmp/evolucoes_icons/weapons/pira_do_incendiario.png","fit":[128,128],"pad":6}
+]

@@ -4,7 +4,7 @@ extends RefCounted
 ## (aura da Maré, Colar dos Tentáculos, poção, subida de nível, detonações, mortes).
 const TOLERANCE := 10.0
 ## Folhas cujo anel é a feição mais larga do quadro de pico: a tabela precisa bater com a linha medida na arte.
-const MEASURED := ["mare_aura", "pocao_coleta", "subida_de_nivel_v2", "detonacao_magica", "tentaculos_laco", "tentaculos_emergem", "boss_fase_estouro"]
+const MEASURED := ["mare_aura", "pocao_coleta", "subida_de_nivel_v2", "detonacao_magica", "tentaculos_laco", "tentaculos_emergem", "boss_fase_estouro", "abraco_laco"]
 
 func _widest_row(sheet: String) -> int:
 	var texture := VfxAtlas.texture("res://assets/vfx/%s.png" % sheet)

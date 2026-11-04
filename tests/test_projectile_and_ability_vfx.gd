@@ -2,9 +2,9 @@ extends RefCounted
 ## ART-029 (projeteis) e ART-030 (habilidades dos herois): atlas, roteamento por arma/habilidade, projecao e isolamento.
 
 const FAMILIES := {
-	"orbe_radiante": {"dtype": "radiante", "weapons": ["raio_de_luz", "luz_mais_pura", "marca_da_retidao"]},
-	"orbe_arcano": {"dtype": "magico", "weapons": ["raio_enfraquecedor", "dominar_pessoa", "cajado_dos_desejos", "raio_da_ruina", "dominio_coletivo"]},
-	"onda_cortante": {"dtype": "magico", "weapons": ["lamina_trovejante", "tempestade"]},
+	"orbe_radiante": {"dtype": "radiante", "weapons": ["raio_de_luz", "luz_mais_pura", "marca_da_retidao", "selo_da_retidao"]},
+	"orbe_arcano": {"dtype": "magico", "weapons": ["raio_enfraquecedor", "dominar_pessoa", "cajado_dos_desejos", "raio_da_ruina", "dominio_coletivo", "cajado_dos_desejos_realizados", "memoria_reescrita"]},
+	"onda_cortante": {"dtype": "magico", "weapons": ["lamina_trovejante", "tempestade", "lamina_do_eclipse"]},   # + evoluções do plano de 2026-11-04 (fallback quando a folha própria falta)
 }
 const ABILITY_KINDS := {
 	"durvall": ["ruptura_sombria", "cleave", "arc"], "brook": ["guarda_de_lliira", "guard", "follow"],

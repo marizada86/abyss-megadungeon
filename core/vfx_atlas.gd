@@ -9,7 +9,7 @@ static var _cache: Dictionary = {}
 const BASE_ROW := 196.0
 const GROUND_ROW := {
 	"mare_aura": 176.0, "pocao_coleta": 171.0, "subida_de_nivel_v2": 175.0, "detonacao_magica": 189.0, "detonacao_fisica": 143.0,
-	"tentaculos_laco": 164.0, "tentaculos_emergem": 164.0, "boss_fase_estouro": 175.0, "morte_chefe_colapso": 175.0, "morte_alma": 179.0,
+	"tentaculos_laco": 164.0, "tentaculos_emergem": 164.0, "abraco_laco": 140.0, "boss_fase_estouro": 175.0, "morte_chefe_colapso": 175.0, "morte_alma": 179.0,
 }
 
 ## Filtro dos efeitos. O projeto usa nearest (pixel art), mas as folhas de VFX são arte pintada de 256 px ampliada em escala
