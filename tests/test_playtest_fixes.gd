@@ -112,6 +112,16 @@ func _topo() -> Array:
 			hud.toast("Aviso %d com texto bem comprido para quebrar a linha na largura do bloco de avisos do topo da tela" % i)
 		var stack: VBoxContainer = hud.top_stack
 		stack.notification(Container.NOTIFICATION_SORT_CHILDREN)
+		# as linhas de status (Favor, juramento, buffs) ficam no canto inferior direito, longe do centro da luta
+		if hud.objective_label.get_parent() == stack:
+			out.append("as linhas de status não podem ficar na pilha do topo central")
+		var status_rect: Rect2 = hud.objective_label.get_global_rect()
+		var view_size: Vector2 = hud.get_viewport().get_visible_rect().size
+		if not Rect2(Vector2.ZERO, view_size).encloses(status_rect) or status_rect.position.x < view_size.x * 0.5 or status_rect.position.y < view_size.y * 0.5:
+			out.append("as linhas de status %s devem ficar no canto inferior direito" % status_rect)
+		for other in [hud.weapons_label, hud.prompt_label, hud._ability_slot]:
+			if (other as Control).get_global_rect().intersects(status_rect):
+				out.append("as linhas de status %s tocam %s" % [status_rect, other.name])
 		var rects: Array = []
 		for c in stack.get_children():
 			if (c as Control).visible:

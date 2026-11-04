@@ -17,6 +17,9 @@ signal extract_pressed
 signal pause_items_pressed
 
 const STATUS_MAX_LINES := 4
+const STATUS_WIDTH := 300.0   # canto inferior direito; fora da faixa do aviso central (640 px) e da lista de armas (esquerda)
+const STATUS_HEIGHT := 180.0
+const STATUS_MARGIN := Vector2(14, 24)   # mesmo recuo da lista de armas
 const STACK_TOP := 116.0   # abaixo da moldura do relógio, progresso, fase e ícone da regra
 const STACK_WIDTH := 640.0   # a barra do chefe tem 580 px; 640 deixa a direita livre para o questlog (x >= 968)
 const PAUSE_MARGIN := Vector2(80, 72)   # recuo do conteúdo da pausa (laterais, topo/base) dentro da moldura da ficha
@@ -264,7 +267,7 @@ static func styx_status(b: Battle) -> Dictionary:
 			"tip": "Esquecimento do Estige: você não consegue se aproximar do rio enquanto durar."}
 	return {}
 
-## SPEC-147 (IN-069, IN-072): barra do chefe, linhas de status e avisos numa pilha só (as quests moraram aqui até a SPEC-168); o container empilha,
+## SPEC-147 (IN-069, IN-072): barra do chefe e avisos numa pilha só (as linhas de status foram para o canto inferior direito) (as quests moraram aqui até a SPEC-168); o container empilha,
 ## então nenhum desses blocos cobre outro, qualquer que seja o número de linhas.
 func _build_top_stack() -> void:
 	top_stack = VBoxContainer.new()
@@ -288,22 +291,34 @@ func _build_top_stack() -> void:
 	quest_panel.grow_horizontal = Control.GROW_DIRECTION_BEGIN
 	quest_panel.grow_vertical = Control.GROW_DIRECTION_END
 	add_child(quest_panel)
+	# as linhas de status (Favor das bênçãos, juramento, buffs) moram no canto inferior direito, espelho da lista de armas,
+	# para não cobrir o centro da tela na luta contra o chefe
 	objective_label = Label.new()
 	objective_label.name = "ObjectiveLabel"
-	objective_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	objective_label.add_theme_font_size_override("font_size", 15)
+	objective_label.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
+	objective_label.offset_left = -STATUS_WIDTH - STATUS_MARGIN.x
+	objective_label.offset_right = -STATUS_MARGIN.x
+	objective_label.offset_top = -STATUS_HEIGHT - STATUS_MARGIN.y
+	objective_label.offset_bottom = -STATUS_MARGIN.y
+	objective_label.grow_horizontal = Control.GROW_DIRECTION_BEGIN
+	objective_label.grow_vertical = Control.GROW_DIRECTION_BEGIN
+	objective_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	objective_label.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+	objective_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	objective_label.add_theme_font_size_override("font_size", 14)
 	objective_label.add_theme_color_override("font_color", Color(0.98, 0.86, 0.55))
 	objective_label.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.85))
 	objective_label.add_theme_constant_override("outline_size", 5)
 	objective_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	objective_label.visible = false
-	top_stack.add_child(objective_label)
+	add_child(objective_label)
 	toast_box.reparent(top_stack, false)
 	toast_box.size_flags_horizontal = Control.SIZE_SHRINK_CENTER   # SPEC-167: só a largura do aviso, livre da ficha
 	toast_box.custom_minimum_size.x = TOAST_WIDTH
 	# a pilha fica na ordem de desenho que o ToastBox tinha: abaixo da ficha C, das ofertas e das pausas
 	move_child(top_stack, prompt_label.get_index())
 	move_child(quest_panel, prompt_label.get_index())
+	move_child(objective_label, prompt_label.get_index())   # abaixo das ofertas e das pausas, como a pilha
 
 ## SPEC-168: no celular os botões de topo (Pausa, Ficha, Ajuda, 1x) ocupam o canto; o questlog desce para baixo deles.
 func _place_questlog() -> void:
