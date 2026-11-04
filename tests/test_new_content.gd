@@ -139,7 +139,7 @@ func _armor_break(out: Array) -> void:
 	var d := _valid_weapon(out, "romper_armadura", "melee", "fisico", false, 4)
 	if d.is_empty():
 		return
-	if not d.has("evolve") or String(d.evolve.passive) != "quebra_defesas" or String(d.evolve.into) != "esmagar_defesas":
+	if not d.has("evolve") or String(d.evolve.passive) != "cota_de_malha" or String(d.evolve.into) != "esmagar_defesas":
 		out.append("Romper Armadura deveria evoluir com Cota de Malha em Esmagar Defesas")
 	var evo := _valid_weapon(out, "esmagar_defesas", "melee", "fisico", false, 0)
 	if not evo.is_empty() and (String(evo.get("src", "")) != "Evolução" or int(evo.get("weaken", 0)) != 3):
@@ -278,7 +278,7 @@ func _icons(out: Array) -> void:
 const LOTE1 := [
 	{"base": "dominar_pessoa", "into": "dominio_coletivo", "passive": "presenca_dominante", "attr": "carisma", "min": 16},
 	{"base": "golpe_esmagador", "into": "maca_demolidora", "passive": "pele_de_pedra", "attr": "forca", "min": 16},
-	{"base": "martelo_da_gloria", "into": "martelo_da_luz", "passive": "vigor_sagrado", "attr": "constituicao", "min": 16},
+	{"base": "martelo_da_gloria", "into": "martelo_da_luz", "passive": "fe_radiante", "attr": "constituicao", "min": 16},
 	{"base": "raio_enfraquecedor", "into": "raio_da_ruina", "passive": "robe_arcano", "attr": "inteligencia", "min": 16},
 	{"base": "sopro_de_estrela", "into": "constelacao_de_silva", "passive": "sabedoria", "attr": "carisma", "min": 16},
 ]
@@ -343,7 +343,7 @@ func _lote1_evolutions(out: Array) -> void:
 	hammer.hero.weapons = [Weapon.make("martelo_da_gloria", 5)]
 	hammer.hero.meta_mods = {"choices": 60}
 	hammer.hero.base_attrs["constituicao"] = 14
-	hammer.hero.passives = {"vigor_sagrado": 1, "constituicao": 1}
+	hammer.hero.passives = {"fe_radiante": 1, "constituicao": 1}
 	hammer.hero.recalc()
 	if hammer.hero.attr("constituicao") != 15 or _offer_has_evolve(hammer, "martelo_da_luz"):
 		out.append("Martelo da Luz não deveria abrir com CON 15 (atributo %d)" % hammer.hero.attr("constituicao"))

@@ -1034,6 +1034,8 @@ func _hero_hit(e: Enemy, p: Dictionary, roll: bool, visual_theme: Dictionary = {
 			pct += hero.m("low_hp_dmg")
 		if dtype == "fogo":   # SPEC-160: Incendiário Procurado (Erik)
 			pct += hero.m("fire_pct")
+		elif dtype == "radiante":   # Fé Radiante (evolução do Martelo da Glória): bônus só para dano radiante
+			pct += hero.m("radiant_pct")
 		if AREA_KINDS.has(String(p.get("kind", ""))):
 			pct += hero.m("area_dmg_pct")
 		dmg *= maxf(0.2, pct) * (1.0 + e.mark) * float(e.resist.get(dtype, 1.0)) * _shield_factor(e)

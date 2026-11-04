@@ -46,15 +46,15 @@ Prompt: *[bloco de estilo]* + "Five different emblem icons in this order: 1) a p
 
 ## Folha E06 — passivas das evoluções antigas · `assets_incoming/E06_a_v01.png`
 
-Para desfazer a repetição de `cota_de_malha` e `sabedoria` entre evoluções antigas (decisão do dono, 2026-11-04). Grade de 3 emblemas, mesmo estilo de E01.
+Para desfazer a repetição de `cota_de_malha` e `sabedoria` entre evoluções antigas (decisão do dono, 2026-11-04; revisão r4: Fúria Sombria e Fé Radiante). Grade de 3 emblemas, mesmo estilo de E01.
 
 | # | id | Passiva | Desenho |
 |---|---|---|---|
-| 1 | `quebra_defesas` | Quebra-Defesas | escudo rachado ao meio por um golpe, faíscas laranja |
-| 2 | `vigor_sagrado` | Vigor Sagrado | coração de luz dourada dentro de um halo, linhas radiantes |
+| 1 | `furia_sombria` | Fúria Sombria | elmo negro rachado com brilho vermelho-escuro nos olhos e névoa de sombra subindo |
+| 2 | `fe_radiante` | Fé Radiante | martelo de luz erguido sobre um sol dourado com raios retos |
 | 3 | `presenca_dominante` | Presença Dominante | mão aberta estendida com um olho dourado na palma e ondas de comando |
 
-Prompt: *[bloco de estilo]* + "Three different emblem icons in this order: 1) a round shield cracked in two by a blow, orange sparks; 2) a glowing golden heart inside a halo with radiant lines; 3) an open outstretched hand with a golden eye in the palm and ripples of command around it. Same passive-skill emblem look as sheet E01."
+Prompt: *[bloco de estilo]* + "Three different emblem icons in this order: 1) a dark cracked knight helm with dim red glow in the eye slits and shadow mist rising; 2) a hammer of golden light raised in front of a sun with straight rays; 3) an open outstretched hand with a golden eye in the palm and ripples of command around it. Same passive-skill emblem look as sheet E01."
 
 ## Folhas E03–E05 — armas evoluídas · `assets_incoming/E03_a_v01.png`, `E04_a_v01.png`, `E05_a_v01.png`
 

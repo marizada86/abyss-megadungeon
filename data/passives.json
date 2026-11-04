@@ -23,7 +23,7 @@
   "tempo_suspenso":    {"name": "Tempo Suspenso", "src": "Poder Místico", "desc": "-4% de recarga das armas por nível.", "mods": {"cd_pct": 0.04}},
   "veu_de_sombras":    {"name": "Véu de Sombras", "src": "Sombra", "desc": "+2% de esquiva por nível.", "mods": {"dodge": 0.02}},
   "memoria_viva":      {"name": "Memória Viva", "src": "Experiência", "desc": "+4% de XP e +3% de XP por Eco, por nível.", "mods": {"xp_pct": 0.04, "eco_xp_pct": 0.03}},
-  "quebra_defesas":    {"name": "Quebra-Defesas", "src": "Treino", "desc": "+4% de dano por nível.", "mods": {"dmg_pct": 0.04}},
-  "vigor_sagrado":     {"name": "Vigor Sagrado", "src": "Fé", "desc": "+6 PV por nível.", "mods": {"hp": 6}},
+  "furia_sombria":    {"name": "Fúria Sombria", "src": "Sombra", "desc": "+5% de dano abaixo de 50% de PV, por nível.", "mods": {"low_hp_dmg": 0.05}},
+  "fe_radiante":      {"name": "Fé Radiante", "src": "Fé", "desc": "+8% de dano radiante por nível.", "mods": {"radiant_pct": 0.08}},
   "presenca_dominante": {"name": "Presença Dominante", "src": "Carisma", "desc": "-3% de recarga e +1 de precisão por nível.", "mods": {"cd_pct": 0.03, "hit": 1}}
 }

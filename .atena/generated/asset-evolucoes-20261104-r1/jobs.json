@@ -28,7 +28,7 @@
   "key": "gray",
   "split": "components",
   "out_dir": "assets/icons/passives",
-  "names": ["quebra_defesas", "vigor_sagrado", "presenca_dominante"],
+  "names": ["furia_sombria", "fe_radiante", "presenca_dominante"],
   "fit": [128, 128],
   "pad": 6,
   "min_area": 1500,

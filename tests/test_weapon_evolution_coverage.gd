@@ -19,6 +19,7 @@ func run() -> Array:
 	_coverage(out)
 	_new_passives(out)
 	_reachable(out)
+	run_radiant(out)
 	return out
 
 func _coverage(out: Array) -> void:
@@ -79,7 +80,7 @@ func _new_passives(out: Array) -> void:
 	var expected := {"precisao": {"hit": 1.0}, "sede_de_sangue": {"lifesteal": 0.01}, "brasa": {"fire_pct": 0.08}, "ponta_certeira": {"crit_overflow_bonus": 0.02},
 		"olhar_abissal": {"area_dmg_pct": 0.06}, "acido": {"dmg_flat": 1.0}, "ventura": {"sorte": 1.0}, "tempo_suspenso": {"cd_pct": 0.04},
 		"veu_de_sombras": {"dodge": 0.02}, "memoria_viva": {"xp_pct": 0.04, "eco_xp_pct": 0.03},
-		"quebra_defesas": {"dmg_pct": 0.04}, "vigor_sagrado": {"hp": 6.0}, "presenca_dominante": {"cd_pct": 0.03, "hit": 1.0}}
+		"furia_sombria": {"low_hp_dmg": 0.05}, "fe_radiante": {"radiant_pct": 0.08}, "presenca_dominante": {"cd_pct": 0.03, "hit": 1.0}}
 	for pid in expected:
 		if not passives.has(pid):
 			out.append("passiva nova %s ausente" % pid)
@@ -124,3 +125,29 @@ func _reachable(out: Array) -> void:
 		b.choose(0)
 		if b.hero.weapons.size() != 1 or b.hero.weapons[0].id != String(d.evolve.into):
 			out.append("%s: aplicar a evolução deveria trocar a arma por %s" % [wid, d.evolve.into])
+
+## Fé Radiante só reforça dano radiante (mesma semente: o dado e o acerto são idênticos; muda apenas o multiplicador).
+func _dmg_of(weapon_id: String, passive: String) -> float:
+	var b := _bat()
+	b.hero.pos = Vector2(20, 20)
+	b.hero.weapons = [Weapon.make(weapon_id)]
+	if passive != "":
+		b.hero.passives[passive] = 5
+	b.hero.recalc()
+	var foe: Enemy = b.spawn_for_test("zumbi", b.hero.pos + Vector2(1.0, 0))
+	foe.max_hp = 1.0e9
+	foe.hp = 1.0e9
+	b._hero_hit(foe, b.hero.weapons[0].params(), true)
+	return 1.0e9 - foe.hp
+
+func run_radiant(out: Array) -> void:
+	var plain := _dmg_of("martelo_da_gloria", "")
+	var boosted := _dmg_of("martelo_da_gloria", "fe_radiante")
+	if plain <= 0.0:
+		out.append("o golpe de teste errou o alvo: troque a semente do teste")
+	elif boosted <= plain:
+		out.append("Fé Radiante deveria aumentar o dano de uma arma radiante (%s -> %s)" % [plain, boosted])
+	var fire_plain := _dmg_of("tocha_do_incendiario", "")
+	var fire_boosted := _dmg_of("tocha_do_incendiario", "fe_radiante")
+	if absf(fire_plain - fire_boosted) > 0.001:
+		out.append("Fé Radiante não deveria mexer no dano de fogo (%s -> %s)" % [fire_plain, fire_boosted])

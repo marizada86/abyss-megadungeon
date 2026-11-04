@@ -119,6 +119,18 @@ Decisão do dono: "Remover repetições". Agora **nenhuma passiva é exigida por
 
 Efeito prático: quem já conhecia essas evoluções precisa de outra passiva agora (as exigências de atributo, CON 16 e CAR 16, não mudaram). Testes ajustados em `test_new_content.gd`; `test_weapon_evolution_coverage.gd` não tem mais exceção. A sonda não mostrou regressão: Esmagar Defesas 2,2× e Domínio Coletivo 2,8× em alvo único; O Martelo da Luz media 1,1× na sonda de 20 s, mas essa janela é curta demais para armas lentas (7 golpes por simulação). Medido em 240 s, o Martelo da Glória (Nv 5) dava 7,6 de DPS e a evolução antiga ~1,6× o nominal. Reforçado a pedido do dono: recarga 1,8 → 1,6 e +4 de dano por acerto; em 240 s, 7,6 → 14,3 (1,88×, dentro da faixa das demais). Aviso: as razões de 20 s de armas lentas (Sopro, Ampulheta, Bola de Fogo, Vigília e similares) têm ruído; sonda de depuração com 240 s em `debug_hits.gd`.
 
+## 5c-ter. Revisão r4 (2026-11-04) — Cota de Malha volta ao Romper Armadura; Martelo ganha passiva radiante
+
+Pedido do dono: o Romper Armadura fica com `cota_de_malha`, e o Martelo da Glória ganha uma passiva nova de dano radiante. Para manter a regra de não repetir, a Espada Sombria (Durvall) passou a exigir uma passiva nova (escolha do dono entre 3 opções). **Substitui a tabela da r3**; `quebra_defesas` e `vigor_sagrado` foram removidas.
+
+| Arma base | Passiva antes (r3) | Passiva agora | Efeito por nível |
+|---|---|---|---|
+| Espada Sombria | `cota_de_malha` | `furia_sombria` Fúria Sombria *(nova)* | +5% de dano abaixo de 50% de PV (`low_hp_dmg`, já existente; soma com a passiva do Durvall, +25% na mesma condição) |
+| Romper Armadura | `quebra_defesas` | `cota_de_malha` | +1 CA |
+| Martelo da Glória | `vigor_sagrado` | `fe_radiante` Fé Radiante *(nova)* | +8% de dano radiante (`radiant_pct`, bônus novo) |
+
+Código: uma linha em `core/battle.gd` (bônus `radiant_pct` só para dano radiante, no mesmo ponto do `fire_pct`) e rótulos de `radiant_pct` e `low_hp_dmg` em `core/items.gd`. Testes: `test_battle.gd` (4 pontos que usavam Cota de Malha com a Espada Sombria), `test_new_content.gd`, e `test_weapon_evolution_coverage.gd` (novo teste: Fé Radiante aumenta o dano radiante e não mexe no fogo). Balanço: Martelo da Glória 7,6 → 15,4 de DPS em 240 s (2,0×) com Fé Radiante Nv 1; a Fúria Sombria só atua abaixo de 50% de PV, então a sonda (herói com PV cheios) não a mede. Total: 27 passivas, 13 delas novas. Ícones: folha E06 agora = Fúria Sombria, Fé Radiante, Presença Dominante.
+
 ## 5d. Assets preparados (sem gerar)
 
 `PROMPTS-ASSETS-EVOLUCOES-20261104-r1.md` (22 ícones 128×128 em 5 folhas, prompts e destinos) e `.atena/generated/asset-evolucoes-20261104-r1/jobs.json` (recortes de preparação). Nada foi gerado nem integrado.

@@ -126,7 +126,7 @@ func run() -> Array:
 	if dm.evolve_hint(sw).find("Falta") < 0:
 		out.append("dica de evolução deveria dizer o que falta")
 	sw.level = Weapon.MAX_LEVEL
-	dm.hero.passives["cota_de_malha"] = 1
+	dm.hero.passives["furia_sombria"] = 1
 	if dm.evolve_hint(sw).find("Pronta") < 0:
 		out.append("dica de evolução deveria avisar que a arma está pronta")
 
@@ -298,7 +298,7 @@ func run() -> Array:
 	var evb_w := Weapon.make("espada_sombria")
 	evb_w.level = Weapon.MAX_LEVEL
 	evb.hero.weapons = [evb_w]
-	evb.hero.passives["cota_de_malha"] = 1
+	evb.hero.passives["furia_sombria"] = 1
 	evb.state = "levelup"
 	evb.offer = [{"t": "evolve", "id": "espada_sombria", "into": "espada_do_receptaculo", "name": "x", "desc": ""}]
 	evb.choose(0)
@@ -867,7 +867,7 @@ func run() -> Array:
 	var ev := _bat(8)
 	_quiet(evb)
 	ev.hero.weapons = [Weapon.make("espada_sombria", 5)]
-	ev.hero.passives = {"cota_de_malha": 1}
+	ev.hero.passives = {"furia_sombria": 1}
 	ev.hero.meta_mods = {"choices": 60}
 	ev.hero.recalc()
 	var offer := ev._build_offer()
@@ -886,7 +886,7 @@ func run() -> Array:
 	var sy := _bat(19)
 	_quiet(sy)
 	sy.hero.weapons = [Weapon.make("espada_do_receptaculo")]
-	sy.hero.passives = {"cota_de_malha": 1}
+	sy.hero.passives = {"furia_sombria": 1}
 	sy.hero.meta_mods = {"choices": 60}
 	sy.hero.recalc()
 	if sy._build_offer().any(func(o): return o.t == "synergy_activate"):

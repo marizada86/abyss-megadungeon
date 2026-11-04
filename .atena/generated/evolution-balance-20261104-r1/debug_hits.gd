@@ -3,7 +3,7 @@
 func _init() -> void:
 	call_deferred("_run")
 func _run() -> void:
-	for spec in [["martelo_da_gloria", 5, ""], ["martelo_da_luz", 1, "vigor_sagrado"]]:
+	for spec in [["martelo_da_gloria", 5, ""], ["martelo_da_luz", 1, "fe_radiante"]]:
 		var b := Battle.new(5, "durvall", "dagruve")
 		b.stage.waves = []
 		b.stage.elites = []

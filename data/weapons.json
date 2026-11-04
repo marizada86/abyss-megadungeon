@@ -27,7 +27,7 @@
       }
     ],
     "evolve": {
-      "passive": "cota_de_malha",
+      "passive": "furia_sombria",
       "into": "espada_do_receptaculo"
     }
   },
@@ -742,7 +742,7 @@
       }
     ],
     "evolve": {
-      "passive": "vigor_sagrado",
+      "passive": "fe_radiante",
       "into": "martelo_da_luz",
       "min_attr": {
         "constituicao": 16
@@ -1095,7 +1095,7 @@
       }
     ],
     "evolve": {
-      "passive": "quebra_defesas",
+      "passive": "cota_de_malha",
       "into": "esmagar_defesas"
     }
   },
