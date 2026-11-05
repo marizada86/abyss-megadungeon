@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-05",
+  "owner_reply": "Aceitar as 3",
+  "scope": "EXPLICIT_VISUAL_ACCEPTANCE_OF_THREE_SOURCES_T20_T21_T22",
+  "state": "DRAFT",
+  "supersedes": "human_acceptance PENDING em manifest.json (mantido como foi gerado)",
+  "audit": ".atena/generated/telegraph-comuns-audit-20261105-r1/audit.json",
+  "preserved_holds": [
+    "T20/T21 com 2172x724 (pedido 1536x1024): segmentar por conteudo e medir antes de preparar",
+    "cor: luz forte media amber saturada (T20 193/149/80, T21 208/170/117, T22 188/137/62), nao neutra; tingimento multiplicativo tende a escurecer em violeta e nos tons azuis dos modos de daltonismo; recomendacao do Claude de neutralizar na preparacao (manter luminancia, retirar saturacao), a confirmar",
+    "pulso de brilho min/max T20 0,58, T21 0,61, T22 0,37: decidir se e intencional e qual quadro congela em Impacto reduzido",
+    "T22: marcas angulares (3 por quadro) com passo de rotacao a verificar em animacao; margem do anel mais brilhante 27 a 31 px contra 48 pedidos; raio externo 121 a 124 px contra 111 pedidos",
+    "normalizacao, escala unica por folha, centro medido e loop em jogo ainda por validar"
+  ],
+  "note": "Aceite de fonte nao e aceite de integracao. Conteudo continua DRAFT; sem promocao a CANON; nenhum derivado produzido.",
+  "items": [
+    {
+      "id": "T20",
+      "source": "assets_incoming/queue-20261105-r1/T20_faixa_investida_v01.png",
+      "sha256": "981F8328AD7DD4CD1A1D4F257A16547100C5B4DD7A5CBEB70CFF32C28AC43EB7",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "T21",
+      "source": "assets_incoming/queue-20261105-r1/T21_mira_v01.png",
+      "sha256": "315F21613FD1A2DD5E8EEA72D74CBAB33454D6C6105C70B38C944805B7C33ACD",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "T22",
+      "source": "assets_incoming/queue-20261105-r1/T22_area_v01.png",
+      "sha256": "F2F7B1D85C71EDA62B35166E9A5942E265E91CFF0A37A8C3556F759545947D74",
+      "width": 1536,
+      "height": 1024
+    }
+  ]
+}

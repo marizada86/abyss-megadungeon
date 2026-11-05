@@ -1,0 +1,35 @@
+[
+  {
+    "id": "T20",
+    "path": "assets_incoming/queue-20261105-r1/T20_faixa_investida_v01.png",
+    "generated_source": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1aa20-927e-7771-8a93-2bd62e8a7e51\\exec-061e11b2-3601-4557-8e39-cf9da106dccf.png",
+    "sha256": "981F8328AD7DD4CD1A1D4F257A16547100C5B4DD7A5CBEB70CFF32C28AC43EB7",
+    "bytes": 607382,
+    "width": 2172,
+    "height": 724,
+    "human_acceptance": "PENDING",
+    "status": "DRAFT_SOURCE_ONLY"
+  },
+  {
+    "id": "T21",
+    "path": "assets_incoming/queue-20261105-r1/T21_mira_v01.png",
+    "generated_source": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1aa20-927e-7771-8a93-2bd62e8a7e51\\exec-0804ab70-1d2b-48a9-8668-50eb138f60f1.png",
+    "sha256": "315F21613FD1A2DD5E8EEA72D74CBAB33454D6C6105C70B38C944805B7C33ACD",
+    "bytes": 474564,
+    "width": 2172,
+    "height": 724,
+    "human_acceptance": "PENDING",
+    "status": "DRAFT_SOURCE_ONLY"
+  },
+  {
+    "id": "T22",
+    "path": "assets_incoming/queue-20261105-r1/T22_area_v01.png",
+    "generated_source": "C:\\Users\\Higor Rossini\\.codex\\generated_images\\01a1aa20-927e-7771-8a93-2bd62e8a7e51\\exec-0344db76-78c2-4fe2-ba20-cc7469449df7.png",
+    "sha256": "F2F7B1D85C71EDA62B35166E9A5942E265E91CFF0A37A8C3556F759545947D74",
+    "bytes": 720038,
+    "width": 1536,
+    "height": 1024,
+    "human_acceptance": "PENDING",
+    "status": "DRAFT_SOURCE_ONLY"
+  }
+]
