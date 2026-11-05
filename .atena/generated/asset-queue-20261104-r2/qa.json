@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-04",
+  "source_count": 19,
+  "unique_ids": 19,
+  "copy_hashes": "PASS_19_OF_19",
+  "prompt_hashes": "PASS_19_OF_19",
+  "queue_coverage": "PASS_19_OF_19",
+  "gallery_links": 58,
+  "broken_links": 0,
+  "visual_inspection": "ALL_NINETEEN_VIEWED_DURING_GENERATION",
+  "human_acceptance": "PENDING",
+  "technical_admission": "NOT_GRANTED_NORMALIZATION_AND_CALIBRATION_PENDING",
+  "size_holds": [
+    {
+      "id": "T01_aviso",
+      "actual": "2172x724",
+      "requested": "1536x1024",
+      "disposition": "NORMALIZE_FROM_MEASURED_BOUNDS_NO_FIXED_CROP"
+    },
+    {
+      "id": "T03_aviso",
+      "actual": "2172x724",
+      "requested": "1536x1024",
+      "disposition": "NORMALIZE_FROM_MEASURED_BOUNDS_NO_FIXED_CROP"
+    },
+    {
+      "id": "T03_feixe",
+      "actual": "2172x724",
+      "requested": "1536x1024",
+      "disposition": "NORMALIZE_FROM_MEASURED_BOUNDS_NO_FIXED_CROP"
+    },
+    {
+      "id": "T04_feixe",
+      "actual": "2172x724",
+      "requested": "1536x1024",
+      "disposition": "NORMALIZE_FROM_MEASURED_BOUNDS_NO_FIXED_CROP"
+    },
+    {
+      "id": "T13_carga",
+      "actual": "2172x724",
+      "requested": "1536x1024",
+      "disposition": "NORMALIZE_FROM_MEASURED_BOUNDS_NO_FIXED_CROP"
+    },
+    {
+      "id": "T14_carga",
+      "actual": "2172x724",
+      "requested": "1536x1024",
+      "disposition": "NORMALIZE_FROM_MEASURED_BOUNDS_NO_FIXED_CROP"
+    },
+    {
+      "id": "T15_carga",
+      "actual": "2172x724",
+      "requested": "1536x1024",
+      "disposition": "NORMALIZE_FROM_MEASURED_BOUNDS_NO_FIXED_CROP"
+    },
+    {
+      "id": "T16_carga",
+      "actual": "2172x724",
+      "requested": "1536x1024",
+      "disposition": "NORMALIZE_FROM_MEASURED_BOUNDS_NO_FIXED_CROP"
+    },
+    {
+      "id": "T17_carga",
+      "actual": "2172x724",
+      "requested": "1536x1024",
+      "disposition": "NORMALIZE_FROM_MEASURED_BOUNDS_NO_FIXED_CROP"
+    },
+    {
+      "id": "T18_carga",
+      "actual": "2172x724",
+      "requested": "1536x1024",
+      "disposition": "NORMALIZE_FROM_MEASURED_BOUNDS_NO_FIXED_CROP"
+    }
+  ],
+  "geometry_holds": [
+    "Measure actual circle radius and center for all quadrants and marks; generated circles look larger than requested",
+    "Measure base and bounds of charges before final packing",
+    "Check middle uniformity and cap boundaries for sweeps",
+    "Check loop continuity, border pixels, black key and no-empty frames after preparation"
+  ],
+  "palette_holds": [
+    "Review violet/pink boundary in T04,T09,T13,T15,T18 against no-magenta rule; do not grant palette PASS from prompt alone"
+  ],
+  "prepared_count": 0,
+  "runtime_modified": false,
+  "real_save_accessed": false,
+  "game_tests": "NOT_RUN_SOURCE_ONLY"
+}
