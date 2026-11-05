@@ -3117,8 +3117,8 @@
     },
     "weapon.estocada_transfixante.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.estocada_mistica.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.estocada_mistica.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.estocada_transfixante.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.estocada_transfixante.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3129,8 +3129,8 @@
     },
     "weapon.vigilia_perpetua.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.vela_sagrada.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.vela_sagrada.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.vigilia_perpetua.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.vigilia_perpetua.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3141,8 +3141,8 @@
     },
     "weapon.selo_da_retidao.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.marca_da_retidao.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.marca_da_retidao.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.selo_da_retidao.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.selo_da_retidao.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3153,8 +3153,8 @@
     },
     "weapon.chicote_da_cobica.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.chicote_avarento.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.chicote_avarento.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.chicote_da_cobica.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.chicote_da_cobica.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3165,8 +3165,8 @@
     },
     "weapon.machado_devorador.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.machado_de_xargath.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.machado_de_xargath.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.machado_devorador.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.machado_devorador.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3177,8 +3177,8 @@
     },
     "weapon.abraco_dos_tentaculos.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.colar_dos_tentaculos.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.colar_dos_tentaculos.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.abraco_dos_tentaculos.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.abraco_dos_tentaculos.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3189,8 +3189,8 @@
     },
     "weapon.lamina_dissolvente.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.lamina_da_digestao.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.lamina_da_digestao.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.lamina_dissolvente.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.lamina_dissolvente.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3201,8 +3201,8 @@
     },
     "weapon.cajado_dos_desejos_realizados.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.cajado_dos_desejos.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.cajado_dos_desejos.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.cajado_dos_desejos_realizados.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.cajado_dos_desejos_realizados.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3213,8 +3213,8 @@
     },
     "weapon.ampulheta_do_tempo_parado.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.ampulheta.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.ampulheta.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.ampulheta_do_tempo_parado.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.ampulheta_do_tempo_parado.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3225,8 +3225,8 @@
     },
     "weapon.lamina_do_eclipse.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.lamina_trovejante.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.lamina_trovejante.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.lamina_do_eclipse.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.lamina_do_eclipse.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3237,8 +3237,8 @@
     },
     "weapon.memoria_reescrita.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.dominar_pessoa.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.dominar_pessoa.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.memoria_reescrita.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.memoria_reescrita.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3249,8 +3249,8 @@
     },
     "weapon.pira_do_incendiario.fire": {
       "files": [
-        "res://assets/audio/sfx/weapon/weapon.espada_sombria.fire_01.wav",
-        "res://assets/audio/sfx/weapon/weapon.espada_sombria.fire_02.wav"
+        "res://assets/audio/sfx/weapon/weapon.pira_do_incendiario.fire_01.wav",
+        "res://assets/audio/sfx/weapon/weapon.pira_do_incendiario.fire_02.wav"
       ],
       "bus": "Player",
       "volume_db": -12,
@@ -3298,7 +3298,7 @@
   },
   "ambience": {
     "dagruve": "res://assets/audio/ambience/dagruve.wav",
-    "docas": "res://assets/audio/ambience/dagruve.wav",
+    "docas": "res://assets/audio/ambience/docas.wav",
     "shedaklah": "res://assets/audio/ambience/shedaklah.wav",
     "molor": "res://assets/audio/ambience/molor.wav",
     "durao": "res://assets/audio/ambience/durao.wav",
@@ -3306,8 +3306,8 @@
     "shendilavri": "res://assets/audio/ambience/shendilavri.wav",
     "goranthis": "res://assets/audio/ambience/goranthis.wav",
     "pilares": "res://assets/audio/ambience/pilares.wav",
-    "reino_abissal": "res://assets/audio/ambience/pilares.wav",
-    "domwieck": "res://assets/audio/ambience/goranthis.wav",
+    "reino_abissal": "res://assets/audio/ambience/reino_abissal.wav",
+    "domwieck": "res://assets/audio/ambience/domwieck.wav",
     "raiz_yggdrasil": "res://assets/audio/ambience/pilares.wav"
   }
 }
