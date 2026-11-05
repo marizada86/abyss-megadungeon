@@ -1,0 +1,23 @@
+{
+	"alpha": "real transparency preserved",
+	"human_acceptance": "PENDING",
+	"method": "crop alpha bounds; isotropic Lanczos resize within 240x284; transparent 256x300 canvas; bottom y=292; original untouched",
+	"output_sha256": "b87f291ec07718c9e07a049fb9ecb1138a86ebb0f77831f383b25792d5f5a7f9",
+	"output_size": [
+		256,
+		300
+	],
+	"runtime_modified": false,
+	"source_bounds": [
+		0,
+		4,
+		1146,
+		1352
+	],
+	"source_sha256": "fff89557ceb6fccbfae8e56daa1015fb548d01464b459c68b1b4578b5f151380",
+	"source_size": [
+		1160,
+		1356
+	],
+	"status": "PASS"
+}

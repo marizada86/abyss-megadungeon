@@ -1,0 +1,123 @@
+{
+	"method": "find transparent gaps near five source columns; crop margins using alpha >= 0.1 bounds; uniform isotropic scale per strip; align each cell bottom to y=432 and center to x=256; preserve alpha within crops; original sources untouched",
+	"outputs": [
+		{
+			"alpha": 2,
+			"bounds": [
+				66,
+				182,
+				2421,
+				250
+			],
+			"file_bytes": 823986,
+			"height": 512,
+			"path": "assets_incoming/carga-legiao-20261029-r2/prepared/carga_da_legiao_quebravel/death.png",
+			"sha256": "79c36bf37fec1335d6e2e009775cddd9f48adff39762a847de1bddd7dd3bac7f",
+			"width": 2560
+		},
+		{
+			"alpha": 2,
+			"bounds": [
+				66,
+				182,
+				379,
+				250
+			],
+			"file_bytes": 169620,
+			"height": 512,
+			"path": "assets_incoming/carga-legiao-20261029-r2/prepared/carga_da_legiao_quebravel/static.png",
+			"sha256": "29333735885698a4083edae900aa965df72680da03d02b7260557fdd8b5c050b",
+			"width": 512
+		}
+	],
+	"sources": [
+		{
+			"alpha": 2,
+			"bounds": [
+				31,
+				153,
+				1936,
+				592
+			],
+			"height": 793,
+			"id": "carga_da_legiao_quebravel",
+			"prepared_cells": [
+				[
+					66,
+					182,
+					379,
+					250
+				],
+				[
+					71,
+					184,
+					369,
+					248
+				],
+				[
+					69,
+					199,
+					374,
+					233
+				],
+				[
+					64,
+					220,
+					383,
+					212
+				],
+				[
+					72,
+					263,
+					367,
+					169
+				]
+			],
+			"reference_first_frame_height": 250,
+			"sha256": "a26e4377b1592270e6f0702212ec8f1e96e8cd87f950b0dd20e4f9ee04be7572",
+			"source_cells": [
+				[
+					34,
+					302,
+					365,
+					241
+				],
+				[
+					32,
+					304,
+					356,
+					239
+				],
+				[
+					26,
+					320,
+					361,
+					225
+				],
+				[
+					20,
+					342,
+					369,
+					204
+				],
+				[
+					24,
+					383,
+					354,
+					163
+				]
+			],
+			"source_column_cuts": [
+				0,
+				403,
+				795,
+				1190,
+				1586,
+				1983
+			],
+			"uniform_scale": 1.03734439834025,
+			"width": 1983
+		}
+	],
+	"status": "PASS"
+}

@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-29",
+  "owner_reply": "aprovado, proxima geração",
+  "asset_id": "A05_templo_de_tou_um",
+  "revision": "v01",
+  "status": "APPROVED_OWNER",
+  "source_sha256": "fff89557ceb6fccbfae8e56daa1015fb548d01464b459c68b1b4578b5f151380",
+  "prepared_sha256": "b87f291ec07718c9e07a049fb9ecb1138a86ebb0f77831f383b25792d5f5a7f9",
+  "content_state": "DRAFT",
+  "runtime_integration": "PENDING"
+}

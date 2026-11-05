@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-29",
+  "owner_reply": "aprovado, proximo",
+  "asset_id": "A02_carga_da_legiao_quebravel",
+  "revision": "r2",
+  "status": "APPROVED_OWNER",
+  "source_sha256": "a26e4377b1592270e6f0702212ec8f1e96e8cd87f950b0dd20e4f9ee04be7572",
+  "prepared_death_sha256": "79c36bf37fec1335d6e2e009775cddd9f48adff39762a847de1bddd7dd3bac7f",
+  "prepared_static_sha256": "29333735885698a4083edae900aa965df72680da03d02b7260557fdd8b5c050b",
+  "content_state": "DRAFT",
+  "runtime_integration": "PENDING"
+}

@@ -1,0 +1,122 @@
+{
+	"method": "find transparent gaps near six source columns; crop margins using alpha >= 0.1 bounds; uniform isotropic scale per strip; align each cell bottom to y=356 and center to x=128; preserve alpha within crops; original sources untouched",
+	"outputs": [
+		{
+			"alpha": 2,
+			"bounds": [
+				62,
+				160,
+				1419,
+				196
+			],
+			"file_bytes": 368002,
+			"height": 384,
+			"path": "assets_incoming/discipulo-special-20261029-r1/prepared/discipulo_pestilento/special.png",
+			"sha256": "85180b291a4cc819272e655e82a38723f928d9ef04ebb8254e138883e9fda43f",
+			"width": 1536
+		}
+	],
+	"sources": [
+		{
+			"alpha": 2,
+			"bounds": [
+				39,
+				19,
+				2133,
+				705
+			],
+			"height": 724,
+			"id": "discipulo_pestilento",
+			"prepared_cells": [
+				[
+					62,
+					184,
+					131,
+					172
+				],
+				[
+					52,
+					177,
+					151,
+					179
+				],
+				[
+					50,
+					178,
+					155,
+					178
+				],
+				[
+					52,
+					166,
+					152,
+					190
+				],
+				[
+					50,
+					160,
+					155,
+					196
+				],
+				[
+					55,
+					165,
+					146,
+					191
+				]
+			],
+			"reference_first_frame_height": 172,
+			"sha256": "009013651916b88bab379e193326bbab8d5a7fe14d8b47fa608e504ce4d4416b",
+			"source_cells": [
+				[
+					46,
+					243,
+					284,
+					372
+				],
+				[
+					9,
+					227,
+					326,
+					388
+				],
+				[
+					11,
+					231,
+					336,
+					384
+				],
+				[
+					23,
+					204,
+					329,
+					411
+				],
+				[
+					23,
+					192,
+					336,
+					423
+				],
+				[
+					35,
+					201,
+					315,
+					414
+				]
+			],
+			"source_column_cuts": [
+				0,
+				362,
+				724,
+				1086,
+				1448,
+				1811,
+				2172
+			],
+			"uniform_scale": 0.462365591397849,
+			"width": 2172
+		}
+	],
+	"status": "PASS"
+}
