@@ -1,0 +1,60 @@
+{
+	"cajado_realizado_evo.png": {
+		"frames": [
+			{
+				"cell": 0,
+				"energy_after": 2810.3,
+				"energy_before": 2337.93,
+				"gain": 1.4254
+			},
+			{
+				"cell": 1,
+				"energy_after": 2810.3,
+				"energy_before": 2961.57,
+				"gain": 0.9489
+			},
+			{
+				"cell": 2,
+				"energy_after": 2810.53,
+				"energy_before": 3651.66,
+				"gain": 0.7703
+			},
+			{
+				"cell": 3,
+				"energy_after": 2810.32,
+				"energy_before": 2290.13,
+				"gain": 1.4916
+			}
+		],
+		"target": 2810.32
+	},
+	"eclipse_evo.png": {
+		"frames": [
+			{
+				"cell": 0,
+				"energy_after": 1490.7,
+				"energy_before": 1131.43,
+				"gain": 1.4531
+			},
+			{
+				"cell": 1,
+				"energy_after": 1490.62,
+				"energy_before": 1626.95,
+				"gain": 0.9161
+			},
+			{
+				"cell": 2,
+				"energy_after": 1490.59,
+				"energy_before": 1976.96,
+				"gain": 0.754
+			},
+			{
+				"cell": 3,
+				"energy_after": 1490.44,
+				"energy_before": 1227.18,
+				"gain": 1.2895
+			}
+		],
+		"target": 1490.63
+	}
+}

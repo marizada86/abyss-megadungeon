@@ -1,0 +1,16 @@
+{
+	"cajado_realizado_evo.png": {
+		"alpha0_became_visible": 0,
+		"flight_alpha_pixels_changed": 24105,
+		"impact_alpha_pixels_changed": 0,
+		"rgb_pixels_changed_rows0_255": 0,
+		"size_equal": true
+	},
+	"eclipse_evo.png": {
+		"alpha0_became_visible": 0,
+		"flight_alpha_pixels_changed": 18106,
+		"impact_alpha_pixels_changed": 0,
+		"rgb_pixels_changed_rows0_255": 0,
+		"size_equal": true
+	}
+}
