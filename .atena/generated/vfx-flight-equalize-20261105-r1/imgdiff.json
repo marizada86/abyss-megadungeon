@@ -1,0 +1,136 @@
+{
+	"vfx-cajado_dos_desejos_realizados.png": {
+		"de_total_pct": 5.22,
+		"maior_dif_canal": 253,
+		"pixels_diferentes": 60655,
+		"quadros": [
+			{
+				"col": 0,
+				"diff_px": 53,
+				"row": 0,
+				"sum_after": 28771492,
+				"sum_before": 28771915
+			},
+			{
+				"col": 1,
+				"diff_px": 8469,
+				"row": 0,
+				"sum_after": 28545218,
+				"sum_before": 28595188
+			},
+			{
+				"col": 2,
+				"diff_px": 3096,
+				"row": 0,
+				"sum_after": 29316931,
+				"sum_before": 29312152
+			},
+			{
+				"col": 3,
+				"diff_px": 393,
+				"row": 0,
+				"sum_after": 28756121,
+				"sum_before": 28758062
+			},
+			{
+				"col": 0,
+				"diff_px": 5925,
+				"row": 1,
+				"sum_after": 30272062,
+				"sum_before": 30054300
+			},
+			{
+				"col": 1,
+				"diff_px": 12920,
+				"row": 1,
+				"sum_after": 30780133,
+				"sum_before": 30977237
+			},
+			{
+				"col": 2,
+				"diff_px": 16648,
+				"row": 1,
+				"sum_after": 31553970,
+				"sum_before": 32146586
+			},
+			{
+				"col": 3,
+				"diff_px": 13151,
+				"row": 1,
+				"sum_after": 31055886,
+				"sum_before": 30706248
+			}
+		],
+		"size": [
+			1760,
+			660
+		]
+	},
+	"vfx-lamina_do_eclipse.png": {
+		"de_total_pct": 2.81,
+		"maior_dif_canal": 243,
+		"pixels_diferentes": 32644,
+		"quadros": [
+			{
+				"col": 0,
+				"diff_px": 74,
+				"row": 0,
+				"sum_after": 28227569,
+				"sum_before": 28226425
+			},
+			{
+				"col": 1,
+				"diff_px": 74,
+				"row": 0,
+				"sum_after": 28195618,
+				"sum_before": 28193958
+			},
+			{
+				"col": 2,
+				"diff_px": 970,
+				"row": 0,
+				"sum_after": 28150467,
+				"sum_before": 28154940
+			},
+			{
+				"col": 3,
+				"diff_px": 8037,
+				"row": 0,
+				"sum_after": 28192363,
+				"sum_before": 28219465
+			},
+			{
+				"col": 0,
+				"diff_px": 3742,
+				"row": 1,
+				"sum_after": 29054458,
+				"sum_before": 28951000
+			},
+			{
+				"col": 1,
+				"diff_px": 4589,
+				"row": 1,
+				"sum_after": 28834173,
+				"sum_before": 28657799
+			},
+			{
+				"col": 2,
+				"diff_px": 8277,
+				"row": 1,
+				"sum_after": 29351403,
+				"sum_before": 29604934
+			},
+			{
+				"col": 3,
+				"diff_px": 6881,
+				"row": 1,
+				"sum_after": 29739900,
+				"sum_before": 29533197
+			}
+		],
+		"size": [
+			1760,
+			660
+		]
+	}
+}
