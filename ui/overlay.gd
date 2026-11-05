@@ -174,7 +174,11 @@ func _emit_zone_particles(dt: float) -> void:
 	_emitter_state = next_state
 
 func _draw() -> void:
+	if _art != null:
+		_art.reset()
 	if battle == null:
+		if _art != null:
+			_art.flush()
 		return
 	if mode == "under":
 		_draw_zones()
@@ -183,6 +187,21 @@ func _draw() -> void:
 	else:
 		_text_queue.clear()
 		_draw_over()
+	if _art != null:
+		_art.flush()
+
+## Arte dos avisos dos inimigos comuns (faixa, mira, círculo): nó aditivo filho que desenha atrás deste e é criado no primeiro uso.
+## Os comandos de cada quadro entram nele durante o `_draw`; sem a folha o desenho por código continua (ver TelegraphArt).
+var _art: TelegraphArt
+
+## Na camada "over" (mira) a arte fica NA FRENTE do que o Overlay desenha, para a mira do alvo aparecer sobre o herói; na "under" (anel e faixa)
+## fica atrás, no chão, abaixo dos personagens.
+func _telegraph_art() -> TelegraphArt:
+	if _art == null:
+		_art = TelegraphArt.new()
+		_art.show_behind_parent = mode != "over"
+		add_child(_art)
+	return _art
 
 ## SPEC-173: rótulo do mundo. Com split_text, vai para a fila que a instância "text" desenha acima do filtro de tela.
 func _text(pos: Vector2, text: String, width: float, size: int, color: Color, outline: int = 0, outline_color: Color = Color(0, 0, 0, 0.85)) -> void:
@@ -221,7 +240,22 @@ func _draw_zones() -> void:
 			_draw_trap(z)
 		else:
 			_draw_telegraph(z)
+	_draw_lane_art()
 	_draw_particles()
+
+## Corpo de arte da faixa de investida, na camada de baixo (como o anel de área): em mistura aditiva por cima do herói ele o tingia por inteiro.
+## O preenchimento de progresso, a frente e as setas continuam sendo desenhados por `_draw_charge_lane`, na camada de cima.
+func _draw_lane_art() -> void:
+	if not TelegraphArt.has_sheet("faixa"):
+		return
+	for e in battle.enemies:
+		var dist := float(e.charge_ab.get("dist", 0.0))
+		if e.windup <= 0.0 or e.charge_dir == Vector2.ZERO or dist <= 0.0:
+			continue
+		var total := maxf(0.01, e.windup_total if e.windup_total > 0.0 else e.windup)
+		var progress := clampf(1.0 - e.windup / total, 0.0, 1.0)
+		var warn := _warn(String(e.charge_ab.get("dtype", "fisico")))
+		_telegraph_art().lane(e.pos, e.charge_dir, dist, e.radius + HERO_LANE_PAD, Color(warn.main, 0.5 + progress * 0.45), TelegraphArt.frame_for("faixa", Time.get_ticks_msec(), Game.reduced_impact()))
 
 func _draw_particles() -> void:
 	for particle in _particles:
@@ -350,6 +384,9 @@ func _draw_telegraph(z: Dictionary) -> void:
 	draw_colored_polygon(_ellipse(z.pos, z.radius), Color(warn.main.darkened(0.25), 0.1 + t * 0.18))
 	draw_polyline(_ellipse_closed(z.pos, z.radius), Color(warn.main, 0.56 + t * 0.34), 1.8 + t * 1.6)
 	if not _allow_large_fx(z.pos):
+		return
+	if TelegraphArt.has_sheet("area"):   # anel de arte no lugar do arco e das três marcas; o círculo exato (preenchimento e contorno) fica por código
+		_telegraph_art().ring(z.pos, z.radius, Color(warn.main, 0.55 + t * 0.4), TelegraphArt.frame_for("area", Time.get_ticks_msec(), Game.reduced_impact()))
 		return
 	_draw_ellipse_arc(z.pos, z.radius * (1.03 + beat * 0.045), -PI * 0.2, PI * 0.38, Color(warn.hot, 0.28 + beat * 0.45), 1.4 + t)
 	for i in 3:
@@ -603,12 +640,15 @@ func _draw_charge_lane(origin: Vector2, dir: Vector2, length: float, half_width:
 	var side := Vector2(-dir.y, dir.x) * half_width
 	var end := origin + dir * length
 	var lane := PackedVector2Array([Iso.to_screen(origin + side), Iso.to_screen(end + side), Iso.to_screen(end - side), Iso.to_screen(origin - side)])
-	draw_colored_polygon(lane, Color(warn.main, 0.1 + progress * 0.08))
+	var art := TelegraphArt.has_sheet("faixa")   # folha de arte: o corpo da faixa vem dela (desenhado na camada de baixo por `_draw_lane_art`); preenchimento de progresso, frente, setas e fim seguem aqui por código
+	if not art:
+		draw_colored_polygon(lane, Color(warn.main, 0.1 + progress * 0.08))
 	var mid := origin + dir * length * progress
 	var filled := PackedVector2Array([Iso.to_screen(origin + side), Iso.to_screen(mid + side), Iso.to_screen(mid - side), Iso.to_screen(origin - side)])
 	draw_colored_polygon(filled, Color(warn.main, 0.16 + progress * 0.2))
-	var edge := Color(warn.main, 0.55 + progress * 0.35)
-	draw_polyline(PackedVector2Array([lane[0], lane[1], lane[2], lane[3], lane[0]]), edge, 1.6 + progress * 1.2)
+	if not art:
+		var edge := Color(warn.main, 0.55 + progress * 0.35)
+		draw_polyline(PackedVector2Array([lane[0], lane[1], lane[2], lane[3], lane[0]]), edge, 1.6 + progress * 1.2)
 	draw_line(Iso.to_screen(mid + side * 1.15), Iso.to_screen(mid - side * 1.15), Color(warn.hot, 0.9), 2.2)   # frente do preenchimento
 	var spacing := 1.1
 	var shift := 0.0 if Game.reduced_impact() else fposmod(_phase() * (1.5 + progress * 3.0), spacing)
@@ -627,6 +667,9 @@ func _draw_aim_beam(origin: Vector2, dir: Vector2, length: float, progress: floa
 	var lift := Vector2(0, -16)
 	var a := Iso.to_screen(origin) + lift
 	var b := Iso.to_screen(origin + dir * length) + lift
+	if TelegraphArt.has_sheet("mira"):   # raio e mira vêm da folha (a ponta direita fecha com o progresso); sem ela, o desenho abaixo
+		_telegraph_art().aim(a, b, progress, Color(warn.main, 0.6 + progress * 0.4), TelegraphArt.frame_for("mira", Time.get_ticks_msec(), Game.reduced_impact()))
+		return
 	draw_line(a, b, Color(warn.main, 0.1 + progress * 0.14), 6.0 + progress * 3.0)
 	draw_line(a, b, Color(warn.main, 0.3 + progress * 0.5), 1.6 + progress)
 	_draw_dashes(a, b, Color(warn.hot, 0.35 + progress * 0.45), 1.2, 7.0, 9.0, 0.0 if Game.reduced_impact() else _phase() * 40.0)
