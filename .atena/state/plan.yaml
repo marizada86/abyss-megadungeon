@@ -3422,8 +3422,8 @@ telegraph_comuns_prompts_20261105:
   delivery: assets_incoming/queue-20261105-r1/
   integration_plan: "job tools/asset_jobs/telegraph_comum_v01.json via telegraph_prep.gd; overlay usa a folha e cai no desenho atual sem o arquivo; faixa projetada no chão"
   runtime_modified: true   # ui/overlay.gd, ui/telegraph_art.gd (novo) e 3 folhas em assets/vfx; ver integration
-  porting: PENDING_NOT_PORTED   # alteração comum: AGENTS.md exige portagem registrada e checks na outra versão; não feita (sem sincronização automática)
-  not_authorized: [canonical_promotion, commit, push, build, publication]   # runtime_integration autorizada pelo dono em 2026-11-05 (ver integration)
+  porting: PENDING_SOURCE_NOT_ACCESSIBLE   # alteração comum: AGENTS.md exige portagem registrada e checks na outra versão; registro e patch prontos em asset-queue-20261105-r1/portagem-avisos-comuns.md e portagem-overlay.patch; a origem (D:/dev/nottgard/games/godot/nottgard-survivors) não existe nesta máquina em 2026-11-05
+  not_authorized: [canonical_promotion, push, build, publication]   # runtime_integration autorizada em 2026-11-05; commit da integração autorizado ("Commitar integração", 4356e20 e 84b9cca)
   next_activity: Dono confere em partida real (faixa, mira e círculo, por tipo de dano, daltonismo e Impacto reduzido) e decide o commit; depois avaliar a portagem. Aceite de fonte não é aceite de integração em jogo.
   preparation:
     status: DONE_20261105
@@ -3442,7 +3442,8 @@ telegraph_comuns_prompts_20261105:
     defaults_accepted: {neutralizacao: total, pulso: mantido, quadros_congelados: {faixa: 3, mira: 2, area: 2}, tamanhos: 'corpo 184 (faixa), 195 (mira), raio do anel 83'}
     assets: [assets/vfx/aviso_comum_faixa.png, assets/vfx/aviso_comum_mira.png, assets/vfx/aviso_comum_area.png]   # com .import (parâmetros idênticos aos das folhas de chefe)
     code: {novo: ui/telegraph_art.gd (nó aditivo, funções puras, fila de comandos por quadro), alterado: ui/overlay.gd (_draw, _telegraph_art, _draw_lane_art, _draw_charge_lane, _draw_aim_beam, _draw_telegraph)}
-    layers: 'faixa e anel na camada de baixo (chão, sob os personagens); mira na camada de cima, NA FRENTE (o alvo aparece sobre o herói); preenchimento de progresso, frente, setas e fim da faixa seguem por código'
+    layers: 'faixa e anel na camada de baixo (chão, sob os personagens); mira na camada de cima, NA FRENTE (o alvo aparece sobre o herói). Ajuste do dono em 2026-11-05 (ver lane_revision): a faixa com arte não tem mais preenchimento, frente, setas nem linha de fim por código'
+    lane_revision: "2026-11-05, pedido do dono ('a investida da pra melhorar e pode remover as setas ... deixe somente o feixe'): setas, linha de frente e linha de fim removidas (setas removidas também do desenho por código); a faixa virou feixe: trajeto inteiro fraco (65% do alfa) + parte carregada até o progresso em cor cheia, com ponta em arte, e um fio luminoso no eixo; TelegraphArt.lane ganhou o parâmetro fill; teste atualizado; suíte 0 falhas, auditoria 0 erros; capturas em asset-queue-20261105-r1/integration-r2. ACEITE do dono pelos prints em 2026-11-05 ('não precisa gerar, pelos prints consigo dizer que está bom, aprovado'): aceite visual das capturas, não conferência em partida real; build novo dispensado pelo dono. NÃO incluído no build de 11:13; sem commit."
     fallback: 'sem a folha (ou com geometria errada) cada aviso cai no desenho por código de antes (TelegraphArt.has_sheet)'
     tint: '_warn(dtype).main, que já segue o modo de daltonismo; folhas neutras (branco); verificado em jogo: violeta limpo e protanopia em azul'
     reduced_impact: 'quadro congelado (faixa 3, mira 2, área 2)'
@@ -3450,7 +3451,8 @@ telegraph_comuns_prompts_20261105:
     checks: {suite: 'tests/run_all.gd em perfil sintético (APPDATA isolado): 0 falhas', audit: 'tools/audit_projeto.gd: 0 erros e 0 avisos', capture: 'tools/telegraph_comuns_capture.gd: 11 capturas em .atena/generated/asset-queue-20261105-r1/integration'}
     corrections_found_in_capture: ['a arte aditiva da faixa por cima do herói o tingia de vermelho: movida para a camada de baixo', 'a mira do alvo ficava fraca e atrás do herói: ponta direita reforçada e arte da mira na frente']
     known: ['avisos de vazamento de objetos no encerramento apareceram em 2 de 4 suítes completas com o teste novo (0 de 6 no teste sozinho; a última suíte saiu limpa); mensagens do mesmo tipo já constam em capturas e no plano como dívida de ambiente', 'marcas giratórias do T22 e naturalidade do pulso só se confirmam em partida real', 'o realce hot do aviso não segue o modo de daltonismo (comportamento anterior)']
-    not_done: [portagem, commit, push, build, conferencia_em_partida_real]
+    build: "2026-11-05 11:13, autorizado pelo dono ('Gerar build'): preset 'Windows Playtest Publico' -> build/NottgardSurvivors-Playtest.exe (704659632 bytes), carimbo 84b9cca6-dirty (inclui alterações não commitadas de outras frentes: core/battle.gd, ui/ui_kit.gd, data/difficulty.json, export_presets.cfg, tests/test_pacing.gd); smoke headless em perfil sintético: saída 0; as 3 folhas e telegraph_art estão no pacote; carimbo removido depois. Testar-PC.cmd abre este exe."
+    not_done: [portagem, push, conferencia_em_partida_real]
   generation_authorization: 'atena, verificar fila de assets e começar a gerar imagens (2026-11-05)'
   generation_checkpoint: S-TC02/THREE_SOURCES_DELIVERED_REVIEW_PENDING
   generation_report: .atena/generated/asset-queue-20261105-r1/production.md
