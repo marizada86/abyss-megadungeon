@@ -1,0 +1,305 @@
+{
+	"adjacent_diffs_incl_wrap": [
+		0.0153,
+		0.0169,
+		0.0281,
+		0.025,
+		0.0283,
+		0.0171
+	],
+	"capped_by_margin": false,
+	"energy_min_max": 0.6,
+	"frames": [
+		{
+			"body_center_y": 128.5,
+			"border_alpha_max": 0,
+			"core": [
+				37,
+				95,
+				218,
+				162
+			],
+			"energy_k": 1272.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.41,
+				"tampa_dir": 0.312,
+				"tampa_esq": 0.278
+			},
+			"frame": 1,
+			"margin_min": 30,
+			"mid_cv": 0.073,
+			"mid_span_avg": 57.9,
+			"mid_span_px": [
+				56,
+				60
+			],
+			"used": [
+				30,
+				93,
+				225,
+				163
+			]
+		},
+		{
+			"body_center_y": 128.0,
+			"border_alpha_max": 0,
+			"core": [
+				38,
+				95,
+				219,
+				161
+			],
+			"energy_k": 1408.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.437,
+				"tampa_dir": 0.3,
+				"tampa_esq": 0.263
+			},
+			"frame": 2,
+			"margin_min": 29,
+			"mid_cv": 0.08,
+			"mid_span_avg": 60.5,
+			"mid_span_px": [
+				56,
+				64
+			],
+			"used": [
+				30,
+				93,
+				227,
+				163
+			]
+		},
+		{
+			"body_center_y": 128.0,
+			"border_alpha_max": 0,
+			"core": [
+				35,
+				95,
+				221,
+				161
+			],
+			"energy_k": 1677.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.45,
+				"tampa_dir": 0.298,
+				"tampa_esq": 0.252
+			},
+			"frame": 3,
+			"margin_min": 28,
+			"mid_cv": 0.083,
+			"mid_span_avg": 63.4,
+			"mid_span_px": [
+				59,
+				67
+			],
+			"used": [
+				28,
+				93,
+				228,
+				164
+			]
+		},
+		{
+			"body_center_y": 128.5,
+			"border_alpha_max": 0,
+			"core": [
+				33,
+				94,
+				222,
+				163
+			],
+			"energy_k": 2136.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.471,
+				"tampa_dir": 0.271,
+				"tampa_esq": 0.258
+			},
+			"frame": 4,
+			"margin_min": 25,
+			"mid_cv": 0.058,
+			"mid_span_avg": 67.9,
+			"mid_span_px": [
+				64,
+				71
+			],
+			"used": [
+				25,
+				92,
+				229,
+				167
+			]
+		},
+		{
+			"body_center_y": 127.5,
+			"border_alpha_max": 0,
+			"core": [
+				35,
+				94,
+				220,
+				161
+			],
+			"energy_k": 1769.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.454,
+				"tampa_dir": 0.284,
+				"tampa_esq": 0.262
+			},
+			"frame": 5,
+			"margin_min": 28,
+			"mid_cv": 0.078,
+			"mid_span_avg": 65.4,
+			"mid_span_px": [
+				61,
+				69
+			],
+			"used": [
+				28,
+				92,
+				228,
+				164
+			]
+		},
+		{
+			"body_center_y": 127.0,
+			"border_alpha_max": 0,
+			"core": [
+				38,
+				94,
+				218,
+				160
+			],
+			"energy_k": 1297.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.417,
+				"tampa_dir": 0.305,
+				"tampa_esq": 0.278
+			},
+			"frame": 6,
+			"margin_min": 30,
+			"mid_cv": 0.065,
+			"mid_span_avg": 58.5,
+			"mid_span_px": [
+				56,
+				61
+			],
+			"used": [
+				30,
+				93,
+				226,
+				162
+			]
+		}
+	],
+	"freeze_frame_index": 2,
+	"freeze_frame_note": "quadro de energia mais próxima da média; sugestão para 'Impacto reduzido'",
+	"id": "T20",
+	"neutral_min_channel_of_visible": 255,
+	"neutralize": 1.0,
+	"out": ".atena/generated/asset-queue-20261105-r1/prep/aviso_comum_faixa.png",
+	"scale": 0.5768,
+	"segmentation_exact": true,
+	"size": [
+		1536,
+		256
+	],
+	"source_frames": [
+		{
+			"anchor": [
+				184.5,
+				360.0
+			],
+			"anchor_source": "box",
+			"rect": [
+				0,
+				0,
+				366,
+				724
+			],
+			"size": 315.0
+		},
+		{
+			"anchor": [
+				179.5,
+				361.5
+			],
+			"anchor_source": "box",
+			"rect": [
+				366,
+				0,
+				359,
+				724
+			],
+			"size": 315.0
+		},
+		{
+			"anchor": [
+				183.5,
+				361.5
+			],
+			"anchor_source": "box",
+			"rect": [
+				725,
+				0,
+				363,
+				724
+			],
+			"size": 321.0
+		},
+		{
+			"anchor": [
+				183.0,
+				360.0
+			],
+			"anchor_source": "box",
+			"rect": [
+				1088,
+				0,
+				364,
+				724
+			],
+			"size": 328.0
+		},
+		{
+			"anchor": [
+				178.5,
+				361.0
+			],
+			"anchor_source": "box",
+			"rect": [
+				1452,
+				0,
+				362,
+				724
+			],
+			"size": 321.0
+		},
+		{
+			"anchor": [
+				178.0,
+				361.5
+			],
+			"anchor_source": "box",
+			"rect": [
+				1814,
+				0,
+				358,
+				724
+			],
+			"size": 314.0
+		}
+	],
+	"source_size": [
+		2172,
+		724
+	],
+	"spark_runs_ignored": 0,
+	"wanted_scale": 0.5768,
+	"wrap_ratio": 0.75
+}

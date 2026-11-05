@@ -1,0 +1,181 @@
+{
+	"adjacent_diffs_incl_wrap": [
+		0.0893,
+		0.0822,
+		0.1166,
+		0.0707
+	],
+	"capped_by_margin": true,
+	"energy_min_max": 0.37,
+	"frames": [
+		{
+			"border_alpha_max": 0,
+			"core": [
+				37,
+				44,
+				219,
+				211
+			],
+			"energy_k": 1407.0,
+			"frame": 1,
+			"margin_min": 37,
+			"ring_center": [
+				128.5,
+				127.5
+			],
+			"ring_radius": 80.0,
+			"used": [
+				37,
+				40,
+				219,
+				218
+			]
+		},
+		{
+			"border_alpha_max": 0,
+			"core": [
+				41,
+				45,
+				222,
+				219
+			],
+			"energy_k": 2581.0,
+			"frame": 2,
+			"margin_min": 33,
+			"ring_center": [
+				128.0,
+				132.0
+			],
+			"ring_radius": 83.0,
+			"used": [
+				35,
+				37,
+				223,
+				220
+			]
+		},
+		{
+			"border_alpha_max": 0,
+			"core": [
+				30,
+				40,
+				221,
+				227
+			],
+			"energy_k": 3776.0,
+			"frame": 3,
+			"margin_min": 25,
+			"ring_center": [
+				129.0,
+				128.0
+			],
+			"ring_radius": 88.0,
+			"used": [
+				29,
+				25,
+				227,
+				228
+			]
+		},
+		{
+			"border_alpha_max": 0,
+			"core": [
+				45,
+				43,
+				210,
+				216
+			],
+			"energy_k": 1945.0,
+			"frame": 4,
+			"margin_min": 33,
+			"ring_center": [
+				128.0,
+				127.5
+			],
+			"ring_radius": 82.0,
+			"used": [
+				39,
+				37,
+				223,
+				218
+			]
+		}
+	],
+	"freeze_frame_index": 1,
+	"freeze_frame_note": "quadro de energia mais próxima da média; sugestão para 'Impacto reduzido'",
+	"id": "T22",
+	"neutral_min_channel_of_visible": 255,
+	"neutralize": 1.0,
+	"out": ".atena/generated/asset-queue-20261105-r1/prep/aviso_comum_area.png",
+	"scale": 0.6291,
+	"segmentation_exact": true,
+	"size": [
+		1024,
+		256
+	],
+	"source_frames": [
+		{
+			"anchor": [
+				193.5,
+				496.5
+			],
+			"anchor_source": "ring",
+			"rect": [
+				0,
+				0,
+				376,
+				1024
+			],
+			"size": 127.0
+		},
+		{
+			"anchor": [
+				195.5,
+				502.5
+			],
+			"anchor_source": "ring",
+			"rect": [
+				376,
+				0,
+				384,
+				1024
+			],
+			"size": 133.0
+		},
+		{
+			"anchor": [
+				198.5,
+				503.5
+			],
+			"anchor_source": "ring",
+			"rect": [
+				760,
+				0,
+				399,
+				1024
+			],
+			"size": 139.0
+		},
+		{
+			"anchor": [
+				182.0,
+				508.0
+			],
+			"anchor_source": "ring",
+			"rect": [
+				1159,
+				0,
+				377,
+				1024
+			],
+			"size": 129.0
+		}
+	],
+	"source_size": [
+		1536,
+		1024
+	],
+	"spark_runs_ignored": 3,
+	"wanted_scale": 0.7273,
+	"wrap_ratio": 0.74
+}

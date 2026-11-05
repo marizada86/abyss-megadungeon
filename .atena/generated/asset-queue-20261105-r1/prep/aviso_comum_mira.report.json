@@ -1,0 +1,305 @@
+{
+	"adjacent_diffs_incl_wrap": [
+		0.0086,
+		0.0137,
+		0.0049,
+		0.0147,
+		0.0084,
+		0.0028
+	],
+	"capped_by_margin": true,
+	"energy_min_max": 0.63,
+	"frames": [
+		{
+			"body_center_y": 128.5,
+			"border_alpha_max": 0,
+			"core": [
+				34,
+				108,
+				223,
+				149
+			],
+			"energy_k": 634.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.389,
+				"tampa_dir": 0.28,
+				"tampa_esq": 0.331
+			},
+			"frame": 1,
+			"margin_min": 29,
+			"mid_cv": 0.031,
+			"mid_span_avg": 27.5,
+			"mid_span_px": [
+				26,
+				32
+			],
+			"used": [
+				29,
+				106,
+				226,
+				151
+			]
+		},
+		{
+			"body_center_y": 128.5,
+			"border_alpha_max": 0,
+			"core": [
+				33,
+				108,
+				224,
+				149
+			],
+			"energy_k": 774.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.398,
+				"tampa_dir": 0.258,
+				"tampa_esq": 0.344
+			},
+			"frame": 2,
+			"margin_min": 27,
+			"mid_cv": 0.044,
+			"mid_span_avg": 31.3,
+			"mid_span_px": [
+				30,
+				36
+			],
+			"used": [
+				27,
+				105,
+				227,
+				153
+			]
+		},
+		{
+			"body_center_y": 128.0,
+			"border_alpha_max": 0,
+			"core": [
+				32,
+				106,
+				225,
+				150
+			],
+			"energy_k": 988.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.4,
+				"tampa_dir": 0.274,
+				"tampa_esq": 0.326
+			},
+			"frame": 3,
+			"margin_min": 25,
+			"mid_cv": 0.054,
+			"mid_span_avg": 35.8,
+			"mid_span_px": [
+				34,
+				42
+			],
+			"used": [
+				25,
+				102,
+				230,
+				155
+			]
+		},
+		{
+			"body_center_y": 127.5,
+			"border_alpha_max": 0,
+			"core": [
+				31,
+				105,
+				225,
+				150
+			],
+			"energy_k": 1006.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.4,
+				"tampa_dir": 0.272,
+				"tampa_esq": 0.328
+			},
+			"frame": 4,
+			"margin_min": 25,
+			"mid_cv": 0.061,
+			"mid_span_avg": 36.2,
+			"mid_span_px": [
+				35,
+				41
+			],
+			"used": [
+				25,
+				101,
+				230,
+				156
+			]
+		},
+		{
+			"body_center_y": 128.5,
+			"border_alpha_max": 0,
+			"core": [
+				32,
+				108,
+				224,
+				149
+			],
+			"energy_k": 773.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.393,
+				"tampa_dir": 0.263,
+				"tampa_esq": 0.344
+			},
+			"frame": 5,
+			"margin_min": 26,
+			"mid_cv": 0.046,
+			"mid_span_avg": 31.1,
+			"mid_span_px": [
+				30,
+				34
+			],
+			"used": [
+				26,
+				105,
+				226,
+				153
+			]
+		},
+		{
+			"body_center_y": 128.5,
+			"border_alpha_max": 0,
+			"core": [
+				34,
+				109,
+				222,
+				148
+			],
+			"energy_k": 642.0,
+			"energy_share": {
+				"fora_das_fatias": 0.0,
+				"miolo": 0.395,
+				"tampa_dir": 0.261,
+				"tampa_esq": 0.343
+			},
+			"frame": 6,
+			"margin_min": 29,
+			"mid_cv": 0.035,
+			"mid_span_avg": 28.1,
+			"mid_span_px": [
+				27,
+				32
+			],
+			"used": [
+				29,
+				106,
+				224,
+				151
+			]
+		}
+	],
+	"freeze_frame_index": 1,
+	"freeze_frame_note": "quadro de energia mais próxima da média; sugestão para 'Impacto reduzido'",
+	"id": "T21",
+	"neutral_min_channel_of_visible": 255,
+	"neutralize": 1.0,
+	"out": ".atena/generated/asset-queue-20261105-r1/prep/aviso_comum_mira.png",
+	"scale": 0.6235,
+	"segmentation_exact": true,
+	"size": [
+		1536,
+		256
+	],
+	"source_frames": [
+		{
+			"anchor": [
+				181.0,
+				360.5
+			],
+			"anchor_source": "box",
+			"rect": [
+				0,
+				0,
+				360,
+				724
+			],
+			"size": 302.0
+		},
+		{
+			"anchor": [
+				182.5,
+				360.0
+			],
+			"anchor_source": "box",
+			"rect": [
+				360,
+				0,
+				361,
+				724
+			],
+			"size": 305.0
+		},
+		{
+			"anchor": [
+				183.0,
+				360.0
+			],
+			"anchor_source": "box",
+			"rect": [
+				721,
+				0,
+				363,
+				724
+			],
+			"size": 310.0
+		},
+		{
+			"anchor": [
+				182.0,
+				360.0
+			],
+			"anchor_source": "box",
+			"rect": [
+				1084,
+				0,
+				364,
+				724
+			],
+			"size": 310.0
+		},
+		{
+			"anchor": [
+				181.0,
+				360.0
+			],
+			"anchor_source": "box",
+			"rect": [
+				1448,
+				0,
+				363,
+				724
+			],
+			"size": 306.0
+		},
+		{
+			"anchor": [
+				180.0,
+				360.5
+			],
+			"anchor_source": "box",
+			"rect": [
+				1811,
+				0,
+				361,
+				724
+			],
+			"size": 302.0
+		}
+	],
+	"source_size": [
+		2172,
+		724
+	],
+	"spark_runs_ignored": 0,
+	"wanted_scale": 0.6376,
+	"wrap_ratio": 0.28
+}

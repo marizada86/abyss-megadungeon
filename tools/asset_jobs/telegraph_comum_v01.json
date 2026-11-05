@@ -1,0 +1,5 @@
+[
+{"id":"T20","kind":"lane","cells":6,"src":"assets_incoming/queue-20261105-r1/T20_faixa_investida_v01.png","out":".atena/generated/asset-queue-20261105-r1/prep/aviso_comum_faixa.png","size":184,"neutralize":1.0,"report":".atena/generated/asset-queue-20261105-r1/prep/aviso_comum_faixa.report.json"},
+{"id":"T21","kind":"aim","cells":6,"src":"assets_incoming/queue-20261105-r1/T21_mira_v01.png","out":".atena/generated/asset-queue-20261105-r1/prep/aviso_comum_mira.png","size":195,"neutralize":1.0,"report":".atena/generated/asset-queue-20261105-r1/prep/aviso_comum_mira.report.json"},
+{"id":"T22","kind":"ring","cells":4,"src":"assets_incoming/queue-20261105-r1/T22_area_v01.png","out":".atena/generated/asset-queue-20261105-r1/prep/aviso_comum_area.png","size":96,"neutralize":1.0,"report":".atena/generated/asset-queue-20261105-r1/prep/aviso_comum_area.report.json"}
+]
