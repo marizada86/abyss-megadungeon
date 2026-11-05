@@ -122,7 +122,20 @@ static func apply_window(panel: PanelContainer, size: Vector2) -> void:
 	panel.custom_minimum_size = size
 	var background := SheetArt.background()
 	background.modulate_color = Color(1, 1, 1, window_alpha())
-	Game.visual_settings_changed.connect(func(): if is_instance_valid(panel): background.modulate_color = Color(1, 1, 1, window_alpha()))
+	# A conexão vive só enquanto o painel está na árvore: o sinal é global e um lambda que capturava o painel
+	# ficava pendurado depois de ele ser liberado ("Lambda capture was freed" a cada mudança de acessibilidade).
+	var sync_alpha := func(): background.modulate_color = Color(1, 1, 1, window_alpha())
+	var attach := func():
+		if not Game.visual_settings_changed.is_connected(sync_alpha):
+			Game.visual_settings_changed.connect(sync_alpha)
+		sync_alpha.call()
+	var detach := func():
+		if Game.visual_settings_changed.is_connected(sync_alpha):
+			Game.visual_settings_changed.disconnect(sync_alpha)
+	panel.tree_entered.connect(attach)
+	panel.tree_exited.connect(detach)
+	if panel.is_inside_tree():
+		attach.call()
 	background.expand_margin_left = -WINDOW_BG_TRIM.x
 	background.expand_margin_right = -WINDOW_BG_TRIM.x
 	background.expand_margin_top = -WINDOW_BG_TRIM.y
