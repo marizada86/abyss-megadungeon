@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-05",
+  "owner_reply": "atena, O aceite de 19 folhas de chefes da segunda leva, aprovado",
+  "scope": "EXPLICIT_VISUAL_ACCEPTANCE_OF_NINETEEN_SOURCES_OF_SECOND_BATCH",
+  "state": "DRAFT",
+  "supersedes": "human_acceptance PENDING em manifest.json e qa.json (mantidos como foram gerados)",
+  "preserved_holds": [
+    "normalizacao e calibracao tecnica (size_holds de qa.json)",
+    "fronteira violeta/rosa em T04, T09, T13, T15, T18 contra a regra sem magenta: o aceite cobre as fontes como entregues; a decisao especifica sobre a regra continua a confirmar",
+    "carga limitada pela margem em 0 a 12% (sacerdote, discipulo)"
+  ],
+  "note": "Aceite de fonte nao e aceite de integracao. As 19 folhas ja foram integradas sob telegraph_skins_20261104 por pedido de implementacao; este recibo regulariza o aceite visual. Conteudo continua DRAFT; sem promocao a CANON.",
+  "items": [
+    {
+      "id": "T01_aviso",
+      "source": "assets_incoming/queue-20261104-r2/sources/T01_aviso_v01.png",
+      "sha256": "55124C352B357403B1AB777958D5D9F31624750323854E0C6229429C73E821D1"
+    },
+    {
+      "id": "T01_feixe",
+      "source": "assets_incoming/queue-20261104-r2/sources/T01_feixe_v01.png",
+      "sha256": "F2840ECF589C5F8A6B4159D0A866E04696C88FC74E77F9E4291B2F91FB52276B"
+    },
+    {
+      "id": "T03_aviso",
+      "source": "assets_incoming/queue-20261104-r2/sources/T03_aviso_v01.png",
+      "sha256": "D3E64D4852D9C9E545CD87CC3A096CAC2E34CA7DE326EEA99E05956C8B153DF5"
+    },
+    {
+      "id": "T03_feixe",
+      "source": "assets_incoming/queue-20261104-r2/sources/T03_feixe_v01.png",
+      "sha256": "AC737EC34802F184056006E240A03B5E332974E4E57EC77D885BDE2924B8B5FC"
+    },
+    {
+      "id": "T04_aviso",
+      "source": "assets_incoming/queue-20261104-r2/sources/T04_aviso_v01.png",
+      "sha256": "CD0372B75CC0B0F7E8C3991AF5E8D9641274447DD706C99EEAAFBF4CCE3DA4D1"
+    },
+    {
+      "id": "T04_feixe",
+      "source": "assets_incoming/queue-20261104-r2/sources/T04_feixe_v01.png",
+      "sha256": "49325392287EB2C36B7D9363F61020B16071BE61CCC7411197E7211E57B2AF5D"
+    },
+    {
+      "id": "T05_quadrante",
+      "source": "assets_incoming/queue-20261104-r2/sources/T05_quadrante_v01.png",
+      "sha256": "286B3A706565644B8D04EACC67ABB8DECC027ADDA13CE187FF0ACAD3DA6B72F0"
+    },
+    {
+      "id": "T06_quadrante",
+      "source": "assets_incoming/queue-20261104-r2/sources/T06_quadrante_v01.png",
+      "sha256": "F739206565EB7A3E5F8BDAD93EF89B82EC6167D99927F8133AEAF048872BD29C"
+    },
+    {
+      "id": "T07_quadrante",
+      "source": "assets_incoming/queue-20261104-r2/sources/T07_quadrante_v01.png",
+      "sha256": "2D34181B9BB12BFA80E511A78E8A129C5C6587EB92C583CE3E870A2A69A95AF4"
+    },
+    {
+      "id": "T08_quadrante",
+      "source": "assets_incoming/queue-20261104-r2/sources/T08_quadrante_v01.png",
+      "sha256": "BAFF3A4C36AF2ABD257846CE45DA9A7E432ED3D578FEBDC80169963752C91CA6"
+    },
+    {
+      "id": "T09_quadrante",
+      "source": "assets_incoming/queue-20261104-r2/sources/T09_quadrante_v01.png",
+      "sha256": "66B475526475138A0846ABFBA5B9ECCB734E1AF3F3649EF8EACB259A74570030"
+    },
+    {
+      "id": "T11_marca",
+      "source": "assets_incoming/queue-20261104-r2/sources/T11_marca_v01.png",
+      "sha256": "BB710B8F4D3139DA3876B97E82F780547100DD36FCD811CEF1B8C33F7AD3E1CA"
+    },
+    {
+      "id": "T12_marca",
+      "source": "assets_incoming/queue-20261104-r2/sources/T12_marca_v01.png",
+      "sha256": "7B6E48E6E2F394B5871DC1EECE6EF2291343235C0F91A71F4936F0F43546B7C3"
+    },
+    {
+      "id": "T13_carga",
+      "source": "assets_incoming/queue-20261104-r2/sources/T13_carga_v01.png",
+      "sha256": "230176773EFFA400B57060121414A789B277121F59E1600E17BE30F843BC5ABC"
+    },
+    {
+      "id": "T14_carga",
+      "source": "assets_incoming/queue-20261104-r2/sources/T14_carga_v01.png",
+      "sha256": "338DE30A83D8BF80ABCC6D1D1BEE64360A7E187AF59568EFB95A0EAFD9CDF5AA"
+    },
+    {
+      "id": "T15_carga",
+      "source": "assets_incoming/queue-20261104-r2/sources/T15_carga_v01.png",
+      "sha256": "A6B1BFC766186407128AD9C4A7815FD43A9937C2DCAE0C4FB719ED17434F4EE0"
+    },
+    {
+      "id": "T16_carga",
+      "source": "assets_incoming/queue-20261104-r2/sources/T16_carga_v01.png",
+      "sha256": "40E9450C1F39BBC796B3930F96059D1248CCE8069140946CAE8EA7E0AFA80DB0"
+    },
+    {
+      "id": "T17_carga",
+      "source": "assets_incoming/queue-20261104-r2/sources/T17_carga_v01.png",
+      "sha256": "A5BC36C4564645748C50A8160BECCE677AA74D51C65E4CB3B09E1BD2CE6BEE49"
+    },
+    {
+      "id": "T18_carga",
+      "source": "assets_incoming/queue-20261104-r2/sources/T18_carga_v01.png",
+      "sha256": "0E7A8D031EF70A85C771D4F1112CD6EAFF50F9B64828739ECE0F9E74511AD2AA"
+    }
+  ]
+}

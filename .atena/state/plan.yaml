@@ -3387,15 +3387,17 @@ asset_queue_remaining_20261104:
   mode: per-plan
   authorization: "aprovado, gerar proximas imagens (2026-11-04)"
   scope: REMAINING_19_THEMATIC_SHEETS
-  status: COMPLETE_SOURCES_DELIVERED_AWAITING_VISUAL_REVIEW
+  status: COMPLETE_NINETEEN_SOURCES_VISUALLY_ACCEPTED
   content_state: DRAFT
   inherited_pilot_acceptance: APPROVED_OWNER_20261104
   interpretative_themes: DRAFT_VISUAL_PROPOSALS_ONLY_NOT_CANON
   checkpoint: S-R03/NINETEEN_SOURCES_DELIVERED
   generated_source_count: 19
   total_sources: 19
-  prepared_derivative_count: 0
-  human_acceptance: PENDING
+  prepared_derivative_count: 0   # valor da geração; as 19 foram preparadas e integradas depois em telegraph_skins_20261104
+  human_acceptance: APPROVED_OWNER_20261105
+  acceptance_receipt: .atena/generated/asset-queue-20261104-r2/visual-acceptance.json
+  owner_acceptance_reply: 'atena, O aceite de 19 folhas de chefes da segunda leva, aprovado'
   report: .atena/generated/asset-queue-20261104-r2/production.md
   queue: .atena/generated/asset-queue-20261104-r2/queue.json
   delivery: assets_incoming/queue-20261104-r2/
@@ -3406,12 +3408,12 @@ asset_queue_remaining_20261104:
   qa: .atena/generated/asset-queue-20261104-r2/qa.json
   source_generation_complete: true
   technical_status: NORMALIZATION_GEOMETRY_PALETTE_AND_LOOP_CHECKS_PENDING
-  next_activity: Owner reviews nineteen candidates; preserve first eight accepted sources and technical holds; no runtime admission yet.
+  next_activity: Nineteen sources visually accepted by the owner (2026-11-05); preserve first eight accepted sources and all technical holds; runtime integration of these sheets is tracked in telegraph_skins_20261104. Aceite de fonte não é aceite de integração em jogo.
 telegraph_comuns_prompts_20261105:
   revision: r1
   mode: per-plan
   authorization: "dono: 'os golpes telegrafados de investida continuam sem asset' e 'incluir mira e área' (2026-11-05)"
-  status: PROMPTS_DRAFTED_NOT_GENERATED
+  status: THREE_SOURCES_DELIVERED_AWAITING_OWNER_REVIEW
   content_state: DRAFT
   gap: "as 22 peles de telegraph_skins_20261104 cobrem só chefes; faixa de investida/bote, mira do atirador e círculo de área dos inimigos comuns seguem por código em ui/overlay.gd (_draw_charge_lane, _draw_aim_beam, _draw_telegraph)"
   scope: [T20_faixa_investida, T21_mira, T22_area]
@@ -3421,8 +3423,17 @@ telegraph_comuns_prompts_20261105:
   integration_plan: "job tools/asset_jobs/telegraph_comum_v01.json via telegraph_prep.gd; overlay usa a folha e cai no desenho atual sem o arquivo; faixa projetada no chão"
   runtime_modified: false
   porting: NOT_ASSESSED
-  not_authorized: [generation, runtime_integration, canonical_promotion, commit, push, build, publication]
-  next_activity: Atena gera as 3 folhas; dono revisa; Claude prepara e integra.
+  not_authorized: [runtime_integration, canonical_promotion, commit, push, build, publication]
+  next_activity: Dono revisa as 3 fontes; Claude prepara após aceite, medindo o canvas real de T20/T21 antes de cortar.
+  generation_authorization: 'atena, verificar fila de assets e começar a gerar imagens (2026-11-05)'
+  generation_checkpoint: S-TC02/THREE_SOURCES_DELIVERED_REVIEW_PENDING
+  generation_report: .atena/generated/asset-queue-20261105-r1/production.md
+  generated_source_count: 3
+  human_acceptance: PENDING
+  prepared_derivative_count: 0
+  manifest: .atena/generated/asset-queue-20261105-r1/manifest.json
+  gallery: .atena/generated/asset-queue-20261105-r1/index.html
+  technical_status: CANVAS_T20_T21_DIFFERS_GEOMETRY_TINT_AND_LOOP_CHECKS_PENDING
 telegraph_skins_20261104:
   revision: r1
   mode: per-plan
@@ -3430,7 +3441,8 @@ telegraph_skins_20261104:
   status: INTEGRATED_LOCAL_NOT_COMMITTED
   content_state: DRAFT
   sources: [.atena/generated/asset-queue-20261104-r1, .atena/generated/asset-queue-20261104-r2]
-  owner_visual_acceptance: "piloto (T02, T10) APPROVED_OWNER_20261104; 19 folhas de r2 seguem PENDING no recibo de r2 (integradas por pedido explícito 'vamos implementar'; revisar e reverter por chefe se reprovadas)"
+  owner_visual_acceptance: "piloto (T02, T10) APPROVED_OWNER_20261104; 19 folhas de r2 APPROVED_OWNER_20261105 ('atena, O aceite de 19 folhas de chefes da segunda leva, aprovado'), recibo .atena/generated/asset-queue-20261104-r2/visual-acceptance.json (hashes conferidos 19 de 19); integradas antes por pedido explícito 'vamos implementar'"
+  r2_acceptance_note: "o aceite cobre as 19 fontes como entregues; a decisão específica sobre a regra 'sem magenta' nas 5 folhas com fronteira violeta/rosa fica a confirmar (known_holds)"
   scope: 22 folhas temáticas (varredura aviso/feixe, quadrante, marca, carga) para 9 chefes; estouro, interrupção, escudo e estouro de fase seguem neutros
   tool: tools/telegraph_prep.gd (job tools/asset_jobs/telegraph_skins_v01.json); escala única por folha, quadros segmentados pelo conteúdo, centro medido por quadro
   calibration: "varredura: comprimento do corpo 184 (aviso) e 195 (feixe) como G01/G02; selo 72 px e marca 73,5 px de meia extensão como G03/G04; carga com a altura média e a base (198,5) de G05; margem mínima 22 px"

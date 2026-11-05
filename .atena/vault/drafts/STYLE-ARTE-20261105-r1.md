@@ -144,7 +144,7 @@ Fonte: prompt de ícones de evoluções e passivas.
 - **Renomeação por direitos autorais** em andamento (trabalho separado do dono): prompts e arte não devem carregar nomes.
 - **Avisos dos comuns:** folha neutra tingida pelo jogo ou variantes por tipo de dano (3 imagens contra 12) é decisão do dono ao revisar (`PROMPTS-GOLPES-TELEGRAFADOS-COMUNS-20261105-r1.md`). T20 a T22 ainda não foram geradas.
 - **Regra "sem magenta" contra a fronteira violeta/rosa** em cinco folhas de chefes (T04, T09, T13, T15, T18): decisão visual do dono registrada como pendência no plano (`telegraph_skins_20261104`). O plano registra a regra "sem magenta" sem detalhar se ela vale só para o fundo da fonte ou também para o conteúdo da arte; o dono decide.
-- **Aceite pendente** de 19 folhas de chefes da segunda leva (integradas por pedido de implementação; reverter por chefe se reprovadas).
+- **Aceite das 19 folhas de chefes da segunda leva:** dado pelo dono em 2026-11-05 (recibo em `.atena/generated/asset-queue-20261104-r2/visual-acceptance.json`). Fica a confirmar só a decisão específica sobre a regra "sem magenta" nas cinco folhas citadas acima.
 - Este guia é DRAFT: pede revisão do dono antes de virar referência obrigatória.
 
 ## 10. Esqueletos de prompt (extraídos dos lotes aceitos)
