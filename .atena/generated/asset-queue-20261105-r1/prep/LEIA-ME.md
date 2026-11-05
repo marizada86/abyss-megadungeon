@@ -1,6 +1,6 @@
 # Preparação dos avisos dos comuns (T20, T21, T22), 2026-11-05
 
-Status: **DRAFT**. Preparação feita; **nada foi aplicado em `assets/`, `ui/` ou `core/`**. Aceite de fonte não é aceite de integração. Sem commit, push ou build.
+Status: **DRAFT**. Preparação feita em 2026-11-05. **Atualização, mesma data:** o dono aceitou os defaults e autorizou a integração, que foi aplicada localmente (ver a seção "Integração aplicada" no fim). Aceite de fonte não é aceite de integração em jogo. Sem commit, push ou build.
 
 Autorização: dono, 2026-11-05 ("pode seguir o próximo passo na sequência proposta ... pode ter um escopo grande"). A seção `telegraph_comuns_prompts_20261105` do plano mantém `runtime_integration` como não autorizada, então a integração abaixo é só proposta.
 
@@ -64,6 +64,15 @@ Observações:
 9. **Testes** (perfil sintético): `tests/test_telegraph_comuns_art.gd` com presença, tamanhos (1536×256, 1536×256, 1024×256), borda com alfa 0, margem ≥ 22 px, cor neutra, fallback sem arquivo, tingimento por tipo de dano e por modo de daltonismo, e quadro congelado em "Impacto reduzido". Mesmo estilo dos testes de margem de `tests/test_weapon_evolution_vfx.gd`.
 10. **Portagem:** alteração comum; `AGENTS.md` exige portagem registrada para a outra versão. Não avaliada.
 
-## Não feito
+## Integração aplicada (2026-11-05, após "aceito os defaults")
 
-Cópia para `assets/`, mudança em `ui/overlay.gd` ou `core/`, testes novos, `.import`, captura em jogo, commit, push e build.
+Defaults aceitos: neutralização total, pulso mantido, quadros congelados 3 (faixa), 2 (mira) e 2 (área), tamanhos como preparados.
+
+- **Assets:** as três folhas em `assets/vfx/` (`aviso_comum_faixa.png`, `aviso_comum_mira.png`, `aviso_comum_area.png`) com `.import` de parâmetros idênticos aos das folhas de chefe.
+- **Código:** `ui/telegraph_art.gd` (novo: nó aditivo com funções puras e fila de comandos) e `ui/overlay.gd` (`_draw`, `_telegraph_art`, `_draw_lane_art`, `_draw_charge_lane`, `_draw_aim_beam`, `_draw_telegraph`). Sem a folha, cada aviso cai no desenho por código de antes.
+- **Camadas:** faixa e anel no chão (sob os personagens); mira na frente, para o alvo aparecer sobre o herói. Progresso, frente, setas e fim da faixa seguem por código.
+- **Teste:** `tests/test_telegraph_comuns_art.gd`. Suíte completa em perfil sintético: 0 falhas; `tools/audit_projeto.gd`: 0 erros e 0 avisos.
+- **Captura em jogo** (`tools/telegraph_comuns_capture.gd`, 11 imagens em `integration/`): arte contra desenho antigo, por tipo de dano, protanopia, tritanopia e "Impacto reduzido". Violeta limpo; protanopia em azul.
+- **Dois defeitos achados na captura e corrigidos:** a faixa aditiva por cima do herói o tingia de vermelho (movida para a camada de baixo) e a mira do alvo ficava fraca e atrás do herói (ponta direita reforçada, arte da mira na frente).
+
+Pendente: portagem para a outra versão (`AGENTS.md`), conferência em partida real (marcas giratórias do T22, naturalidade do pulso), commit, push e build. Avisos de vazamento no encerramento da suíte apareceram em 2 de 4 rodadas completas com o teste novo (0 de 6 no teste sozinho; a última saiu limpa).

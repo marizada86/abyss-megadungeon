@@ -3413,7 +3413,7 @@ telegraph_comuns_prompts_20261105:
   revision: r1
   mode: per-plan
   authorization: "dono: 'os golpes telegrafados de investida continuam sem asset' e 'incluir mira e área' (2026-11-05)"
-  status: THREE_SOURCES_ACCEPTED_AND_PREPARED_INTEGRATION_NOT_AUTHORIZED
+  status: THREE_SOURCES_ACCEPTED_PREPARED_AND_INTEGRATED_LOCAL_NOT_COMMITTED
   content_state: DRAFT
   gap: "as 22 peles de telegraph_skins_20261104 cobrem só chefes; faixa de investida/bote, mira do atirador e círculo de área dos inimigos comuns seguem por código em ui/overlay.gd (_draw_charge_lane, _draw_aim_beam, _draw_telegraph)"
   scope: [T20_faixa_investida, T21_mira, T22_area]
@@ -3421,10 +3421,10 @@ telegraph_comuns_prompts_20261105:
   color_decision: "folhas neutras prontas para tingir pelo tipo de dano; variantes por tipo (12 imagens) só se o tingimento ficar lavado"
   delivery: assets_incoming/queue-20261105-r1/
   integration_plan: "job tools/asset_jobs/telegraph_comum_v01.json via telegraph_prep.gd; overlay usa a folha e cai no desenho atual sem o arquivo; faixa projetada no chão"
-  runtime_modified: false
-  porting: NOT_ASSESSED
-  not_authorized: [runtime_integration, canonical_promotion, commit, push, build, publication]
-  next_activity: Dono revisa as prévias e as 4 decisões em prep/LEIA-ME.md (neutralização, pulso, quadro congelado, tamanhos); depois autoriza a integração (cópia para assets/vfx, ui/overlay.gd com fallback, testes, portagem). Aceite de fonte não é aceite de integração.
+  runtime_modified: true   # ui/overlay.gd, ui/telegraph_art.gd (novo) e 3 folhas em assets/vfx; ver integration
+  porting: PENDING_NOT_PORTED   # alteração comum: AGENTS.md exige portagem registrada e checks na outra versão; não feita (sem sincronização automática)
+  not_authorized: [canonical_promotion, commit, push, build, publication]   # runtime_integration autorizada pelo dono em 2026-11-05 (ver integration)
+  next_activity: Dono confere em partida real (faixa, mira e círculo, por tipo de dano, daltonismo e Impacto reduzido) e decide o commit; depois avaliar a portagem. Aceite de fonte não é aceite de integração em jogo.
   preparation:
     status: DONE_20261105
     authorization: "atena, pode seguir o proximo passo na sequencia proposta, estou indo dormir entao leve pode ter um escopo grande (dono, 2026-11-05)"
@@ -3435,7 +3435,22 @@ telegraph_comuns_prompts_20261105:
     geometry: {faixa: "1536x256, 6 quadros, escala 0,5768", mira: "1536x256, 6 quadros, escala 0,6235 (limitada pela margem)", area: "1024x256, 4 quadros, escala 0,6291 (limitada pela margem), halo desvanecido de 8 a 32 px"}
     margins: "borda de cada célula com alfa 0; margem mínima 25 px nas três"
     pending_decisions: [neutralizacao_total_ou_parcial, pulso_manter_ou_equalizar, quadro_congelado_impacto_reduzido, tamanhos_do_corpo_e_do_anel]
-    not_done: [copia_para_assets, ui_overlay_gd, core, testes_novos, import, captura_em_jogo, portagem, commit, push, build]
+    not_done: []   # a cópia para assets/, o overlay, o teste e o import foram feitos na integração (ver integration)
+  integration:
+    status: DONE_LOCAL_20261105_NOT_COMMITTED
+    authorization: "atena, sobre ... sim, quero o proximo passo, aceito os defaults (dono, 2026-11-05)"
+    defaults_accepted: {neutralizacao: total, pulso: mantido, quadros_congelados: {faixa: 3, mira: 2, area: 2}, tamanhos: 'corpo 184 (faixa), 195 (mira), raio do anel 83'}
+    assets: [assets/vfx/aviso_comum_faixa.png, assets/vfx/aviso_comum_mira.png, assets/vfx/aviso_comum_area.png]   # com .import (parâmetros idênticos aos das folhas de chefe)
+    code: {novo: ui/telegraph_art.gd (nó aditivo, funções puras, fila de comandos por quadro), alterado: ui/overlay.gd (_draw, _telegraph_art, _draw_lane_art, _draw_charge_lane, _draw_aim_beam, _draw_telegraph)}
+    layers: 'faixa e anel na camada de baixo (chão, sob os personagens); mira na camada de cima, NA FRENTE (o alvo aparece sobre o herói); preenchimento de progresso, frente, setas e fim da faixa seguem por código'
+    fallback: 'sem a folha (ou com geometria errada) cada aviso cai no desenho por código de antes (TelegraphArt.has_sheet)'
+    tint: '_warn(dtype).main, que já segue o modo de daltonismo; folhas neutras (branco); verificado em jogo: violeta limpo e protanopia em azul'
+    reduced_impact: 'quadro congelado (faixa 3, mira 2, área 2)'
+    test: tests/test_telegraph_comuns_art.gd   # folhas (geometria, borda, margem, cor neutra), quadro congelado, fatias, fallback, nó aditivo e camadas do Overlay
+    checks: {suite: 'tests/run_all.gd em perfil sintético (APPDATA isolado): 0 falhas', audit: 'tools/audit_projeto.gd: 0 erros e 0 avisos', capture: 'tools/telegraph_comuns_capture.gd: 11 capturas em .atena/generated/asset-queue-20261105-r1/integration'}
+    corrections_found_in_capture: ['a arte aditiva da faixa por cima do herói o tingia de vermelho: movida para a camada de baixo', 'a mira do alvo ficava fraca e atrás do herói: ponta direita reforçada e arte da mira na frente']
+    known: ['avisos de vazamento de objetos no encerramento apareceram em 2 de 4 suítes completas com o teste novo (0 de 6 no teste sozinho; a última suíte saiu limpa); mensagens do mesmo tipo já constam em capturas e no plano como dívida de ambiente', 'marcas giratórias do T22 e naturalidade do pulso só se confirmam em partida real', 'o realce hot do aviso não segue o modo de daltonismo (comportamento anterior)']
+    not_done: [portagem, commit, push, build, conferencia_em_partida_real]
   generation_authorization: 'atena, verificar fila de assets e começar a gerar imagens (2026-11-05)'
   generation_checkpoint: S-TC02/THREE_SOURCES_DELIVERED_REVIEW_PENDING
   generation_report: .atena/generated/asset-queue-20261105-r1/production.md
