@@ -100,8 +100,9 @@ func _node(out: Array[String]) -> void:
 	art.lane(Vector2.ZERO, Vector2.RIGHT, 3.0, 0.9, Color.WHITE, 0)
 	art.aim(Vector2.ZERO, Vector2(80, 0), 0.5, Color.WHITE, 0)
 	art.ring(Vector2.ZERO, 1.5, Color.WHITE, 0)
-	if art.command_count() != 3:
-		out.append("os três comandos deveriam entrar na fila")
+	art.lane(Vector2.ZERO, Vector2.RIGHT, 3.0, 0.9, Color.WHITE, 0, 0.6)   # com progresso: feixe inteiro fraco + parte carregada forte
+	if art.command_count() != 4:
+		out.append("os quatro comandos deveriam entrar na fila")
 	art.reset()
 	if art.command_count() != 0:
 		out.append("reset deveria esvaziar a fila")

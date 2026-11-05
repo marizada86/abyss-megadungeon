@@ -96,8 +96,9 @@ func flush() -> void:
 	queue_redraw()
 
 ## Faixa no chão: `origin` e `dir` (unitário) em tiles, `length` e `half_width` em tiles.
-func lane(origin: Vector2, dir: Vector2, length: float, half_width: float, color: Color, frame: int) -> void:
-	_cmds.append({"k": "lane", "origin": origin, "dir": dir, "length": length, "half_width": half_width, "color": color, "frame": frame})
+## `fill` (0 a 1) é o progresso do aviso: o feixe inteiro fica fraco e a parte já carregada, do início até `fill`, fica forte, com a ponta em arte.
+func lane(origin: Vector2, dir: Vector2, length: float, half_width: float, color: Color, frame: int, fill: float = 0.0) -> void:
+	_cmds.append({"k": "lane", "origin": origin, "dir": dir, "length": length, "half_width": half_width, "color": color, "frame": frame, "fill": fill})
 
 ## Mira em tela: de `a` (atirador) a `b` (ponto final, já com a elevação do tiro).
 func aim(a: Vector2, b: Vector2, progress: float, color: Color, frame: int) -> void:
@@ -133,12 +134,26 @@ func _draw_lane(c: Dictionary) -> void:
 	var half: float = c.half_width
 	var lateral := CELL * 0.5 * (2.0 * half / LANE_BAND_PX)
 	var color: Color = c.color
+	var fill := clampf(float(c.fill), 0.0, 1.0)
+	var length: float = c.length
+	# Feixe inteiro mais fraco (o trajeto todo) e, por cima, a parte já carregada com a cor cheia: o feixe se enche até o golpe.
+	_draw_lane_pass(texture, tex_w, origin, dir, side, lateral, length, half, int(c.frame), Color(color, color.a * (0.65 if fill > 0.0 else 1.0)))
+	if fill > 0.0:
+		_draw_lane_pass(texture, tex_w, origin, dir, side, lateral, length * fill, half, int(c.frame), color)
+	# Eixo luminoso do feixe: um fio fino no centro, mais forte na parte carregada.
+	var tip := origin + dir * length
+	var charged := origin + dir * length * fill
+	draw_line(Iso.to_screen(origin), Iso.to_screen(tip), Color(color, color.a * 0.3), 1.6)
+	if fill > 0.0:
+		draw_line(Iso.to_screen(origin), Iso.to_screen(charged), Color(color.lerp(Color.WHITE, 0.2), color.a * 0.55), 2.0)
+
+func _draw_lane_pass(texture: Texture2D, tex_w: float, origin: Vector2, dir: Vector2, side: Vector2, lateral: float, length: float, half: float, frame: int, color: Color) -> void:
 	var colors := PackedColorArray([color, color, color, color])
-	for s in lane_slices(float(c.length), half):
+	for s in lane_slices(length, half):
 		if float(s.d1) - float(s.d0) < 0.001:
 			continue
-		var u0 := (float(c.frame) * CELL + float(s.x)) / tex_w
-		var u1 := (float(c.frame) * CELL + float(s.x) + float(s.w)) / tex_w
+		var u0 := (float(frame) * CELL + float(s.x)) / tex_w
+		var u1 := (float(frame) * CELL + float(s.x) + float(s.w)) / tex_w
 		var points := PackedVector2Array([
 			Iso.to_screen(origin + dir * float(s.d0) - side * lateral), Iso.to_screen(origin + dir * float(s.d1) - side * lateral),
 			Iso.to_screen(origin + dir * float(s.d1) + side * lateral), Iso.to_screen(origin + dir * float(s.d0) + side * lateral)])

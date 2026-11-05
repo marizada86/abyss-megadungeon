@@ -244,7 +244,7 @@ func _draw_zones() -> void:
 	_draw_particles()
 
 ## Corpo de arte da faixa de investida, na camada de baixo (como o anel de área): em mistura aditiva por cima do herói ele o tingia por inteiro.
-## O preenchimento de progresso, a frente e as setas continuam sendo desenhados por `_draw_charge_lane`, na camada de cima.
+## O feixe se enche com o progresso (a parte já carregada é mais forte); com a folha não sobra nada por código na camada de cima.
 func _draw_lane_art() -> void:
 	if not TelegraphArt.has_sheet("faixa"):
 		return
@@ -255,7 +255,7 @@ func _draw_lane_art() -> void:
 		var total := maxf(0.01, e.windup_total if e.windup_total > 0.0 else e.windup)
 		var progress := clampf(1.0 - e.windup / total, 0.0, 1.0)
 		var warn := _warn(String(e.charge_ab.get("dtype", "fisico")))
-		_telegraph_art().lane(e.pos, e.charge_dir, dist, e.radius + HERO_LANE_PAD, Color(warn.main, 0.5 + progress * 0.45), TelegraphArt.frame_for("faixa", Time.get_ticks_msec(), Game.reduced_impact()))
+		_telegraph_art().lane(e.pos, e.charge_dir, dist, e.radius + HERO_LANE_PAD, Color(warn.main, 0.5 + progress * 0.45), TelegraphArt.frame_for("faixa", Time.get_ticks_msec(), Game.reduced_impact()), progress)
 
 func _draw_particles() -> void:
 	for particle in _particles:
@@ -632,7 +632,7 @@ func _warn(dtype: String) -> Dictionary:
 	var colors := DangerFeedback.warn_colors(dtype)
 	return {"main": Accessibility.dtype_color(dtype, Game.color_mode(), colors.main), "hot": colors.hot}
 
-## Faixa de investida em coordenadas de chão: preenchimento fraco no trajeto todo, forte até `progress`, bordas e setas que avançam.
+## Faixa de investida em coordenadas de chão: preenchimento fraco no trajeto todo, forte até `progress`, bordas e linha de fim (sem setas).
 func _draw_charge_lane(origin: Vector2, dir: Vector2, length: float, half_width: float, progress: float, dtype := "fisico") -> void:
 	var warn := _warn(dtype)
 	if dir == Vector2.ZERO or length <= 0.0:
@@ -640,25 +640,13 @@ func _draw_charge_lane(origin: Vector2, dir: Vector2, length: float, half_width:
 	var side := Vector2(-dir.y, dir.x) * half_width
 	var end := origin + dir * length
 	var lane := PackedVector2Array([Iso.to_screen(origin + side), Iso.to_screen(end + side), Iso.to_screen(end - side), Iso.to_screen(origin - side)])
-	var art := TelegraphArt.has_sheet("faixa")   # folha de arte: o corpo da faixa vem dela (desenhado na camada de baixo por `_draw_lane_art`); preenchimento de progresso, frente, setas e fim seguem aqui por código
-	if not art:
-		draw_colored_polygon(lane, Color(warn.main, 0.1 + progress * 0.08))
+	if TelegraphArt.has_sheet("faixa"):   # com a folha, a faixa é só o feixe de arte (camada de baixo, `_draw_lane_art`): sem setas, frente nem linha de fim
+		return
+	draw_colored_polygon(lane, Color(warn.main, 0.1 + progress * 0.08))
 	var mid := origin + dir * length * progress
 	var filled := PackedVector2Array([Iso.to_screen(origin + side), Iso.to_screen(mid + side), Iso.to_screen(mid - side), Iso.to_screen(origin - side)])
 	draw_colored_polygon(filled, Color(warn.main, 0.16 + progress * 0.2))
-	if not art:
-		var edge := Color(warn.main, 0.55 + progress * 0.35)
-		draw_polyline(PackedVector2Array([lane[0], lane[1], lane[2], lane[3], lane[0]]), edge, 1.6 + progress * 1.2)
-	draw_line(Iso.to_screen(mid + side * 1.15), Iso.to_screen(mid - side * 1.15), Color(warn.hot, 0.9), 2.2)   # frente do preenchimento
-	var spacing := 1.1
-	var shift := 0.0 if Game.reduced_impact() else fposmod(_phase() * (1.5 + progress * 3.0), spacing)
-	var k := shift
-	while k < length:
-		var c := origin + dir * k
-		var fade := 0.25 + 0.45 * (k / length)
-		var tip := Iso.to_screen(c + dir * 0.32)
-		draw_polyline(PackedVector2Array([Iso.to_screen(c - dir * 0.18 + side * 0.55), tip, Iso.to_screen(c - dir * 0.18 - side * 0.55)]), Color(warn.hot, fade), 1.6)
-		k += spacing
+	draw_polyline(PackedVector2Array([lane[0], lane[1], lane[2], lane[3], lane[0]]), Color(warn.main, 0.55 + progress * 0.35), 1.6 + progress * 1.2)
 	draw_line(lane[1], lane[2], Color(warn.hot, 0.85), 3.0)   # fim do trajeto
 
 ## Raio do atirador: brilho largo, núcleo fino e uma mira no ponto final que fecha conforme o tiro se aproxima.
