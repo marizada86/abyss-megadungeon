@@ -97,7 +97,7 @@ Pedido do dono: nenhuma evolução nova pode repetir a passiva exigida de outra 
 | Cajado dos Desejos | `ventura` Ventura *(nova)* | +1 de sorte | CAR 16 | Cajado dos Desejos Realizados |
 | Ampulheta | `tempo_suspenso` Tempo Suspenso *(nova)* | −4% de recarga | INT 16 | Ampulheta do Tempo Parado |
 | Lâmina de Sombra | `veu_de_sombras` Véu de Sombras *(nova)* | +2% de esquiva | — | Lâmina do Eclipse |
-| Memória Alterada | `memoria_viva` Memória Viva *(nova)* | +4% de XP e +3% de XP por Eco | CAR 16 | Memória Reescrita |
+| Memória Alterada | `memoria_viva` Memória Viva *(nova)* | +4% de XP e +3% de XP por Eco | CAR 15 (era 16) | Memória Reescrita |
 | Tocha do Incendiário | `brasa` Brasa Viva *(nova)* | +8% de dano de fogo (`fire_pct`, já existente: só fogo) | — | Pira do Incendiário |
 
 D-2 resolvida sem código: a Brasa Viva usa `fire_pct`, que o motor já lê, em vez de dano genérico. **Herança preservada**: `cota_de_malha` (Espada Sombria, Martelo da Glória, Romper Armadura) e `sabedoria` (Dominar Pessoa, Sopro de Estrela) continuam divididas por evoluções antigas; o teste `LEGACY_SHARED` as autoriza e barra qualquer outra repetição. Remover essa herança exigiria mais 3 passivas novas e mudaria evoluções já jogadas (decisão D-6).
@@ -150,3 +150,8 @@ Código: uma linha em `core/battle.gd` (bônus `radiant_pct` só para dano radia
 - A passiva exigida por uma evolução só aparece como "NOVA" com peso alto enquanto a arma estiver no Nv 5; nenhuma mudança de oferta é necessária.
 - Evoluções de área (Vela, Colar, Ampulheta) têm DPS baixo por natureza; a avaliação delas deve olhar utilidade (cura, controle), não só dano.
 - Números da tabela são ponto de partida: nenhum foi simulado.
+
+## 5e. Ajuste do gate do Arlindo e VFX da Memória Alterada (2026-11-04, depois do commit 1bf0d61)
+
+- A Memória Reescrita passa a exigir **Carisma 15** (era 16): o Arlindo começa com 15, o único herói que começava abaixo do valor exigido da própria arma (os demais começam exatamente no valor). Simulação: com Nv 5 + Memória Viva e CAR 15 a evolução entra na oferta e a arma troca; a cinemática roda e termina.
+- Projétil da Memória Alterada (família `orbe_memoria`) e habilidade Modify Memory (folha nova de `habilidade_arlindo.png`, `ref_px` 110) integrados a partir das fontes aceitas de `asset_queue_20261104-r1`. Capturas em `.atena/generated/evolution-assets-qa-20261104-r1/captures/arlindo-*.png`.

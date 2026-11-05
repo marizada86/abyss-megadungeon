@@ -3,7 +3,8 @@ extends RefCounted
 
 const FAMILIES := {
 	"orbe_radiante": {"dtype": "radiante", "weapons": ["raio_de_luz", "luz_mais_pura", "marca_da_retidao", "selo_da_retidao"]},
-	"orbe_arcano": {"dtype": "magico", "weapons": ["raio_enfraquecedor", "dominar_pessoa", "cajado_dos_desejos", "raio_da_ruina", "dominio_coletivo", "cajado_dos_desejos_realizados", "memoria_reescrita"]},
+	"orbe_arcano": {"dtype": "magico", "weapons": ["raio_enfraquecedor", "dominar_pessoa", "cajado_dos_desejos", "raio_da_ruina", "dominio_coletivo", "cajado_dos_desejos_realizados"]},
+	"orbe_memoria": {"dtype": "magico", "weapons": ["memoria_alterada", "memoria_reescrita"]},   # Memória Alterada (Arlindo) e a evolução como reserva
 	"onda_cortante": {"dtype": "magico", "weapons": ["lamina_trovejante", "tempestade", "lamina_do_eclipse"]},   # + evoluções do plano de 2026-11-04 (fallback quando a folha própria falta)
 }
 const ABILITY_KINDS := {
@@ -43,7 +44,7 @@ func _projectiles() -> Array[String]:
 			if ProjectileVfx.handles(_bolt(weapon, spec.dtype), true): failures.append(weapon + " ignora impacto reduzido")
 	var star := _bolt("constelacao", "radiante")
 	if ProjectileVfx.family_for(star) != &"orbe_radiante": failures.append("constelacao de Leoric deveria reaproveitar o orbe radiante")
-	for other in ["lamina_de_sombra", "dominio_da_vontade", "memoria_alterada", "bola_de_fogo"]:
+	for other in ["lamina_de_sombra", "dominio_da_vontade", "bola_de_fogo"]:
 		if ProjectileVfx.family_for(_bolt(other, "magico")) != &"": failures.append(other + " fora da allowlist foi roteada")
 	for family in ProjectileVfx.FAMILIES:
 		var path: String = ProjectileVfx.FAMILIES[family].path

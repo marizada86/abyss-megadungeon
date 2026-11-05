@@ -1230,7 +1230,7 @@ func _sync_projectile_vfx() -> void:
 		else:
 			var theme: Dictionary = pr.get("visual_theme", _divine_theme())
 			var tint: Color = theme.primary if String(pr.owner) == "hero" else ProjectileVfx.enemy_tint(pr)
-			if ProjectileVfx.EVOLVED_FAMILIES.has(ProjectileVfx.visual_family_for(pr)):
+			if ProjectileVfx.has_own_color(ProjectileVfx.visual_family_for(pr)):
 				tint = Color.WHITE.lerp(tint, 0.3)   # a arte evoluída já tem cor própria: o deus só a matiza
 			var sprite := ProjectileVfx.create_flight(pr, tint)
 			if sprite == null:
@@ -1256,7 +1256,7 @@ func _retire_projectile_vfx(entry: Dictionary) -> void:
 	var inside: bool = pr.pos.x >= 0.0 and pr.pos.y >= 0.0 and pr.pos.x <= battle.map_size.x and pr.pos.y <= battle.map_size.y
 	if inside and not Game.reduced_impact():
 		var tint: Color = entry.theme.impact_accent if String(pr.owner) == "hero" else entry.tint
-		if ProjectileVfx.EVOLVED_FAMILIES.has(entry.family):
+		if ProjectileVfx.has_own_color(entry.family):
 			tint = Color.WHITE.lerp(tint, 0.3)
 		var impact := ProjectileVfx.create_impact(entry.family, pr.pos, tint)
 		if impact != null:

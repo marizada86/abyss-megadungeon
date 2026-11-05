@@ -1165,7 +1165,7 @@
       "passive": "memoria_viva",
       "into": "memoria_reescrita",
       "min_attr": {
-        "carisma": 16
+        "carisma": 15
       }
     }
   },

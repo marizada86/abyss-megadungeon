@@ -15,7 +15,10 @@ const FAMILIES := {
 	&"orbe_radiante": {"path": "res://assets/vfx/orbe_radiante.png", "dtype": "radiante", "scale": 0.45, "pivot_x": 124.0,
 		"weapons": ["raio_de_luz", "luz_mais_pura", "marca_da_retidao", "constelacao", "selo_da_retidao"]},
 	&"orbe_arcano": {"path": "res://assets/vfx/orbe_arcano.png", "dtype": "magico", "scale": 0.45, "pivot_x": 124.0,
-		"weapons": ["raio_enfraquecedor", "dominar_pessoa", "cajado_dos_desejos", "raio_da_ruina", "dominio_coletivo", "cajado_dos_desejos_realizados", "memoria_reescrita"]},
+		"weapons": ["raio_enfraquecedor", "dominar_pessoa", "cajado_dos_desejos", "raio_da_ruina", "dominio_coletivo", "cajado_dos_desejos_realizados"]},
+	## Memória Alterada (Arlindo): folha própria já colorida (azul e violeta); `own_color` faz o deus só matizar. A evolução herda esta família se faltar a folha dela.
+	&"orbe_memoria": {"path": "res://assets/vfx/orbe_memoria.png", "dtype": "magico", "scale": 0.5, "pivot_x": 123.0, "own_color": true,
+		"weapons": ["memoria_alterada", "memoria_reescrita"]},
 	&"onda_cortante": {"path": "res://assets/vfx/onda_cortante.png", "dtype": "magico", "scale": 0.5, "pivot_x": 147.0,
 		"weapons": ["lamina_trovejante", "tempestade", "lamina_do_eclipse"]},
 }
@@ -39,6 +42,10 @@ const EVOLVED_FAMILIES := {
 	&"memoria_reescrita_evo": {"path": "res://assets/vfx/memoria_reescrita_evo.png", "dtype": "magico", "scale": 0.62, "pivot_x": 128.0,
 		"weapons": ["memoria_reescrita"]},
 }
+
+## Arte com cor própria (evoluções e folhas já coloridas): o deus só matiza, em vez de multiplicar a cor da folha.
+static func has_own_color(family: StringName) -> bool:
+	return EVOLVED_FAMILIES.has(family) or bool(spec_for(family).get("own_color", false))
 
 static func evolved_family_for(projectile: Dictionary) -> StringName:
 	if String(projectile.get("owner", "")) != "hero":
