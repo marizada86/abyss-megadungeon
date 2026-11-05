@@ -3413,7 +3413,7 @@ telegraph_comuns_prompts_20261105:
   revision: r1
   mode: per-plan
   authorization: "dono: 'os golpes telegrafados de investida continuam sem asset' e 'incluir mira e área' (2026-11-05)"
-  status: THREE_SOURCES_DELIVERED_AWAITING_OWNER_REVIEW
+  status: THREE_SOURCES_VISUALLY_ACCEPTED
   content_state: DRAFT
   gap: "as 22 peles de telegraph_skins_20261104 cobrem só chefes; faixa de investida/bote, mira do atirador e círculo de área dos inimigos comuns seguem por código em ui/overlay.gd (_draw_charge_lane, _draw_aim_beam, _draw_telegraph)"
   scope: [T20_faixa_investida, T21_mira, T22_area]
@@ -3424,12 +3424,15 @@ telegraph_comuns_prompts_20261105:
   runtime_modified: false
   porting: NOT_ASSESSED
   not_authorized: [runtime_integration, canonical_promotion, commit, push, build, publication]
-  next_activity: Dono revisa as 3 fontes; Claude prepara após aceite, medindo o canvas real de T20/T21 antes de cortar.
+  next_activity: Fontes aceitas pelo dono (2026-11-05); Claude prepara quando autorizado, segmentando T20/T21 por conteúdo (canvas real 2172x724) e decidindo a neutralização de cor, o pulso e o quadro congelado em Impacto reduzido. Aceite de fonte não é aceite de integração.
   generation_authorization: 'atena, verificar fila de assets e começar a gerar imagens (2026-11-05)'
   generation_checkpoint: S-TC02/THREE_SOURCES_DELIVERED_REVIEW_PENDING
   generation_report: .atena/generated/asset-queue-20261105-r1/production.md
   generated_source_count: 3
-  human_acceptance: PENDING
+  human_acceptance: APPROVED_OWNER_20261105
+  owner_acceptance_reply: 'Aceitar as 3'
+  acceptance_receipt: .atena/generated/asset-queue-20261105-r1/visual-acceptance.json
+  source_audit: .atena/generated/telegraph-comuns-audit-20261105-r1/audit.json   # quadros, centros, laço, cor e pulso medidos; achados em preserved_holds do recibo
   prepared_derivative_count: 0
   manifest: .atena/generated/asset-queue-20261105-r1/manifest.json
   gallery: .atena/generated/asset-queue-20261105-r1/index.html

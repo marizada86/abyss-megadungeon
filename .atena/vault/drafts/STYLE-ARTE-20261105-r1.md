@@ -118,7 +118,7 @@ Fontes: `telegraph_skins_20261104` (plano), `core/boss_vfx.gd`, `ui/overlay.gd`,
 - **Margem na fonte:** 20 px (faixa e mira, células de 256) e 48 px (círculo, células de 384). Nas peles de chefes a margem mínima preparada foi 22 px.
 - **Peles de chefes (integradas, 22 folhas, 9 chefes):** `assets/vfx/boss_*_<chefe>.png`. Calibração: corpo de varredura de 184 px (aviso) e 195 px (feixe), selo de 72 px e marca de 73,5 px de meia extensão, carga com base em 198,5 px. Quando o chefe ou o arquivo não tem pele, o jogo usa a folha neutra.
 - **Contrato de fallback:** o código usa a folha quando ela existe e cai no desenho atual quando falta o arquivo.
-- **Pedidos ainda sem imagem (comuns):** T20 faixa de investida (faixa chata, cerca de 96 px de espessura), T21 mira do atirador (linha de cerca de 12 px com brilho de 24 px) e T22 círculo de golpe em área (círculo perfeito visto de cima). Entrega prevista: 1536×256 (T20, T21) e 1024×256 (T22).
+- **Avisos dos comuns (fontes aceitas em 2026-11-05):** T20 faixa de investida, T21 mira do atirador e T22 círculo de golpe em área, em `assets_incoming/queue-20261105-r1/`. Ainda sem preparação. Entrega prevista: 1536×256 (T20, T21) e 1024×256 (T22). As fontes saíram em âmbar saturado, não neutro, e T20/T21 em 2172×724; ver as retenções do recibo.
 - **Referências:** estes prompts anexam nenhuma imagem de referência e descrevem a geometria por coordenadas; os lotes de VFX e ícones anexam uma prancha de referência. Qualquer das duas formas vale; o importante é a geometria exata no prompt.
 
 ## 7. Ícones
@@ -142,7 +142,7 @@ Fonte: prompt de ícones de evoluções e passivas.
 - **Sem especificação formal** de tamanho para heróis, inimigos, props e retratos; os valores da seção 5 são observações, não contrato.
 - **Sem guia de cor para ambientes** além das duas direções acima.
 - **Renomeação por direitos autorais** em andamento (trabalho separado do dono): prompts e arte não devem carregar nomes.
-- **Avisos dos comuns:** folha neutra tingida pelo jogo ou variantes por tipo de dano (3 imagens contra 12) é decisão do dono ao revisar (`PROMPTS-GOLPES-TELEGRAFADOS-COMUNS-20261105-r1.md`). T20 a T22 ainda não foram geradas.
+- **Avisos dos comuns:** folha neutra tingida pelo jogo ou variantes por tipo de dano (3 imagens contra 12) é decisão do dono ao revisar (`PROMPTS-GOLPES-TELEGRAFADOS-COMUNS-20261105-r1.md`). T20 a T22 foram geradas em âmbar saturado e aceitas como fontes; a neutralização de cor fica para a preparação (ver recibo).
 - **Regra "sem magenta" contra a fronteira violeta/rosa** em cinco folhas de chefes (T04, T09, T13, T15, T18): o dono aprovou essas folhas como entregues em 2026-11-05 (`telegraph_skins_20261104`). Fica sem registro se a regra vale só para o fundo da fonte ou também para o conteúdo da arte; para folhas novas, tratar a fronteira violeta/rosa como risco a avisar, não como erro.
 - **Aceite das 19 folhas de chefes da segunda leva:** dado pelo dono em 2026-11-05 (recibo em `.atena/generated/asset-queue-20261104-r2/visual-acceptance.json`). A decisão sobre a regra "sem magenta" nas cinco folhas citadas acima foi aprovada em seguida (mesma data).
 - Este guia é DRAFT: pede revisão do dono antes de virar referência obrigatória.
