@@ -3413,7 +3413,7 @@ telegraph_comuns_prompts_20261105:
   revision: r1
   mode: per-plan
   authorization: "dono: 'os golpes telegrafados de investida continuam sem asset' e 'incluir mira e área' (2026-11-05)"
-  status: THREE_SOURCES_VISUALLY_ACCEPTED
+  status: THREE_SOURCES_ACCEPTED_AND_PREPARED_INTEGRATION_NOT_AUTHORIZED
   content_state: DRAFT
   gap: "as 22 peles de telegraph_skins_20261104 cobrem só chefes; faixa de investida/bote, mira do atirador e círculo de área dos inimigos comuns seguem por código em ui/overlay.gd (_draw_charge_lane, _draw_aim_beam, _draw_telegraph)"
   scope: [T20_faixa_investida, T21_mira, T22_area]
@@ -3424,7 +3424,18 @@ telegraph_comuns_prompts_20261105:
   runtime_modified: false
   porting: NOT_ASSESSED
   not_authorized: [runtime_integration, canonical_promotion, commit, push, build, publication]
-  next_activity: Fontes aceitas pelo dono (2026-11-05); Claude prepara quando autorizado, segmentando T20/T21 por conteúdo (canvas real 2172x724) e decidindo a neutralização de cor, o pulso e o quadro congelado em Impacto reduzido. Aceite de fonte não é aceite de integração.
+  next_activity: Dono revisa as prévias e as 4 decisões em prep/LEIA-ME.md (neutralização, pulso, quadro congelado, tamanhos); depois autoriza a integração (cópia para assets/vfx, ui/overlay.gd com fallback, testes, portagem). Aceite de fonte não é aceite de integração.
+  preparation:
+    status: DONE_20261105
+    authorization: "atena, pode seguir o proximo passo na sequencia proposta, estou indo dormir entao leve pode ter um escopo grande (dono, 2026-11-05)"
+    tool: tools/telegraph_prep_comuns.gd   # novo; prévias em tools/telegraph_preview_comuns.gd; job tools/asset_jobs/telegraph_comum_v01.json
+    outputs: [.atena/generated/asset-queue-20261105-r1/prep/aviso_comum_faixa.png, .atena/generated/asset-queue-20261105-r1/prep/aviso_comum_mira.png, .atena/generated/asset-queue-20261105-r1/prep/aviso_comum_area.png]
+    report: .atena/generated/asset-queue-20261105-r1/prep/LEIA-ME.md   # medições, decisões pendentes e plano de integração proposto
+    color: "neutra (branco, brilho no alfa); canal mínimo visível 255 nas três; prévias tingidas por tipo de dano e modos de daltonismo sem marrom"
+    geometry: {faixa: "1536x256, 6 quadros, escala 0,5768", mira: "1536x256, 6 quadros, escala 0,6235 (limitada pela margem)", area: "1024x256, 4 quadros, escala 0,6291 (limitada pela margem), halo desvanecido de 8 a 32 px"}
+    margins: "borda de cada célula com alfa 0; margem mínima 25 px nas três"
+    pending_decisions: [neutralizacao_total_ou_parcial, pulso_manter_ou_equalizar, quadro_congelado_impacto_reduzido, tamanhos_do_corpo_e_do_anel]
+    not_done: [copia_para_assets, ui_overlay_gd, core, testes_novos, import, captura_em_jogo, portagem, commit, push, build]
   generation_authorization: 'atena, verificar fila de assets e começar a gerar imagens (2026-11-05)'
   generation_checkpoint: S-TC02/THREE_SOURCES_DELIVERED_REVIEW_PENDING
   generation_report: .atena/generated/asset-queue-20261105-r1/production.md
@@ -3433,10 +3444,10 @@ telegraph_comuns_prompts_20261105:
   owner_acceptance_reply: 'Aceitar as 3'
   acceptance_receipt: .atena/generated/asset-queue-20261105-r1/visual-acceptance.json
   source_audit: .atena/generated/telegraph-comuns-audit-20261105-r1/audit.json   # quadros, centros, laço, cor e pulso medidos; achados em preserved_holds do recibo
-  prepared_derivative_count: 0
+  prepared_derivative_count: 3   # em .atena/generated/asset-queue-20261105-r1/prep (aviso_comum_faixa, aviso_comum_mira, aviso_comum_area); nada copiado para assets/
   manifest: .atena/generated/asset-queue-20261105-r1/manifest.json
   gallery: .atena/generated/asset-queue-20261105-r1/index.html
-  technical_status: CANVAS_T20_T21_DIFFERS_GEOMETRY_TINT_AND_LOOP_CHECKS_PENDING
+  technical_status: PREPARED_NEUTRAL_COLOR_SEGMENTED_BY_CONTENT_MEASURED_INTEGRATION_AND_INGAME_CHECK_PENDING   # era CANVAS_T20_T21_DIFFERS_GEOMETRY_TINT_AND_LOOP_CHECKS_PENDING
 telegraph_skins_20261104:
   revision: r1
   mode: per-plan
