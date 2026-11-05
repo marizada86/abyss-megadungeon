@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-04",
+  "owner_reply": "aprovado, gerar proximas imagens",
+  "scope": "EXPLICIT_VISUAL_ACCEPTANCE_OF_EIGHT_PREVIOUSLY_DELIVERED_CANDIDATES",
+  "state": "DRAFT",
+  "items": [
+    {
+      "id": "A06_altar_do_limo",
+      "source": "assets_incoming/queue-20261104-r1/sources/A06_altar_do_limo_v01.png",
+      "sha256": "0D60BF5538C494141E06D856E6BE4FA5E03E344D81ECF6D2249B3066376D1934"
+    },
+    {
+      "id": "A07_altar_disputado_feng_tu",
+      "source": "assets_incoming/queue-20261104-r1/sources/A07_altar_disputado_feng_tu_v01.png",
+      "sha256": "45D7BF414FE556F0872E109866B2927438BDBCFA6305C1A3A18ED81EA3817099"
+    },
+    {
+      "id": "A08_pedra_runica",
+      "source": "assets_incoming/queue-20261104-r1/sources/A08_pedra_runica_v01.png",
+      "sha256": "DD220CA3C3C83E50B4FAE5A5B2277F58042AEC1382C6A324B643D9223F162613"
+    },
+    {
+      "id": "memoria_habilidade",
+      "source": "assets_incoming/queue-20261104-r1/sources/memoria_habilidade_v01.png",
+      "sha256": "CC2F92B8AA39284250A7713A7D59D28C8E0D3F1165C1F24A4F48794469A78100"
+    },
+    {
+      "id": "memoria_projetil",
+      "source": "assets_incoming/queue-20261104-r1/sources/memoria_projetil_v01.png",
+      "sha256": "1A897C7AB437DF526AAC83E84375E7B17E1215DE044F5B488C88C44311ADB767"
+    },
+    {
+      "id": "T02_aviso",
+      "source": "assets_incoming/queue-20261104-r1/sources/T02_aviso_v01.png",
+      "sha256": "FB87C11E13E52E7FBE4F798C84A11FFD698FD9F0D2DD2B9C2035B2D4E5D0F6E4"
+    },
+    {
+      "id": "T02_feixe",
+      "source": "assets_incoming/queue-20261104-r1/sources/T02_feixe_v01.png",
+      "sha256": "BA2072002F1697C79CE8F3EFE6BD7419A4C7FFBFC4717E0124542D67EA3F9AF4"
+    },
+    {
+      "id": "T10_marca",
+      "source": "assets_incoming/queue-20261104-r1/sources/T10_marca_v01.png",
+      "sha256": "18733EBD0883AF0B4140D085F2FC82DBADC5120D4C61E2B37D1A51280679346C"
+    }
+  ],
+  "technical_holds": "PRESERVED_NORMALIZATION_AND_CALIBRATION_PENDING",
+  "runtime_integration": false
+}

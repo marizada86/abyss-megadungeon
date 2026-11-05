@@ -23,16 +23,46 @@ func _ready() -> void:
 func _rebuild() -> void:
 	for child in get_children():
 		child.queue_free()
+	var index := 0
 	for anchor in TerrainLayout.mountain_anchors(terrain_layout_id):
 		var ridge := Ridge.new()
 		ridge.position = Iso.to_screen(Vector2(anchor.x, anchor.y))
 		ridge.radius = anchor.z
 		ridge.ground_offset = visual_ground_offset
+		ridge.flip = index % 2 == 1   # a mesma arte, espelhada nas montanhas alternadas, quebra a repetição
+		index += 1
 		add_child(ridge)
+
+## A08 (2026-11-04): pedra rúnica aceita como arte da montanha; sem o PNG vale o desenho por polígonos abaixo.
+const ART_PATH := "res://assets/props/montanha_runica_01.png"
+## Largura do embasamento de rochas da arte (208 px com 4 px de margem) = largura da elipse de colisão: raio x sqrt(2) x TILE_W.
+const ART_BASE_PX := 200.0
 
 class Ridge extends Node2D:
 	var radius := 2.0: set = _set_radius
 	var ground_offset := 0.0: set = _set_ground_offset
+	var flip := false: set = _set_flip
+	static var _art: Texture2D
+
+	func _set_flip(value: bool) -> void:
+		flip = value
+		queue_redraw()
+
+	static func art() -> Texture2D:
+		if _art == null and ResourceLoader.exists(ART_PATH):
+			_art = load(ART_PATH) as Texture2D
+		return _art
+
+	## Retângulo de destino da arte (coordenadas locais): a largura do embasamento coincide com a elipse de colisão do raio e a base
+	## da arte apoia-se na borda da frente da elipse, para o herói não travar em rocha que não existe.
+	func art_rect() -> Rect2:
+		var tex := Ridge.art()
+		if tex == null:
+			return Rect2()
+		var s := radius * sqrt(2.0) * Iso.TILE_W / ART_BASE_PX
+		var size := tex.get_size() * s
+		var front := radius * sqrt(2.0) * Iso.TILE_H * 0.5 * 0.8
+		return Rect2(Vector2(-size.x * 0.5, ground_offset + front - size.y), size)
 
 	func _set_radius(value: float) -> void:
 		radius = value
@@ -60,6 +90,13 @@ class Ridge extends Node2D:
 		draw_polyline(rim, Color("806050", 0.75), 2.0)
 
 	func _draw() -> void:
+		var tex := Ridge.art()
+		if tex != null:
+			var rect := art_rect()
+			if flip:   # largura negativa espelha a arte, sem mudar a caixa
+				rect = Rect2(rect.position.x + rect.size.x, rect.position.y, -rect.size.x, rect.size.y)
+			draw_texture_rect(tex, rect, false)
+			return
 		var w := 24.0 + radius * 12.0
 		var h := 14.0 + radius * 7.0
 		var base := Vector2(0, ground_offset)

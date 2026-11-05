@@ -1,0 +1,12 @@
+{
+  "source_count": 8,
+  "copies_sha256": "PASS_8_OF_8",
+  "prompt_count": 8,
+  "human_acceptance": "PENDING",
+  "runtime_modified": false,
+  "prepared_count": 0,
+  "technical_status": "PENDING_NORMALIZATION_AND_CALIBRATION",
+  "pulse_source_size_mismatch": "2172x724_actual_vs_1536x1024_requested",
+  "A07_corner_alpha": 1,
+  "game_tests": "NOT_RUN_SOURCE_ONLY"
+}

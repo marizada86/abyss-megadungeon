@@ -215,6 +215,7 @@
       "jitter": 0.1,
       "title": "Altar disputado",
       "label": "o altar do limo",
+      "asset": "altar_do_limo",
       "color": [
         200,
         150,
@@ -547,6 +548,7 @@
       "jitter": 0.1,
       "title": "Altar disputado",
       "label": "o altar disputado",
+      "asset": "altar_disputado_feng_tu",
       "color": [
         190,
         220,

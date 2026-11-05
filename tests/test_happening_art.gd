@@ -1,7 +1,7 @@
 extends RefCounted
 
 const ART := preload("res://ui/happening_art.gd")
-const ADMITTED := ["npc_joao_barbosa", "npc_desertor_durao", "npc_vitima_enfeiticada", "npc_nyxara", "npc_vaelis", "npc_grazzt_aliado", "npc_reaper_barqueiro", "npc_vhaerith_aetherion", "npc_mercador_rivenheart", "estrela_do_norte", "trono_zuggtmoy", "arco_pedra", "massa_thullgrime", "coracao_limo", "esporo_zuggtmoy", "limo_juiblex"]
+const ADMITTED := ["npc_joao_barbosa", "npc_desertor_durao", "npc_vitima_enfeiticada", "npc_nyxara", "npc_vaelis", "npc_grazzt_aliado", "npc_reaper_barqueiro", "npc_vhaerith_aetherion", "npc_mercador_rivenheart", "estrela_do_norte", "trono_zuggtmoy", "arco_pedra", "massa_thullgrime", "coracao_limo", "esporo_zuggtmoy", "limo_juiblex", "altar_do_limo", "altar_disputado_feng_tu"]
 
 func _battle(stage: String) -> Battle:
 	var b := Battle.new(7, "durvall", stage)
@@ -64,7 +64,7 @@ func _check_event_consumption(out: Array) -> void:
 	pedido._kill(carrier[0])
 	if String(_points(pedido, "event_item")[0].asset) != "coracao_limo" or String(_points(pedido, "event_target")[0].asset) != "trono_zuggtmoy":
 		out.append("Elite drop lost the heart asset or throne target")
-	for spec in [["durao", "desertores", "event_npc", "npc_desertor_durao"], ["shendilavri", "vitimas_drenadas", "event_npc", "npc_vitima_enfeiticada"], ["feng_tu", "peregrinacao_da_estrela", "event_star", "estrela_do_norte"], ["molor", "ritual_de_estagnacao", "event_target", "massa_thullgrime"], ["shedaklah", "barqueiro_do_estige", "event_pact", "npc_reaper_barqueiro"], ["durao", "vhaerith_na_jaula", "event_pact", "npc_vhaerith_aetherion"], ["shendilavri", "mercador_de_rivenheart", "event_pact", "npc_mercador_rivenheart"], ["goranthis", "o_nome_tres_vezes", "event_pact", "npc_grazzt_aliado"]]:
+	for spec in [["durao", "desertores", "event_npc", "npc_desertor_durao"], ["shendilavri", "vitimas_drenadas", "event_npc", "npc_vitima_enfeiticada"], ["feng_tu", "peregrinacao_da_estrela", "event_star", "estrela_do_norte"], ["molor", "ritual_de_estagnacao", "event_target", "massa_thullgrime"], ["shedaklah", "barqueiro_do_estige", "event_pact", "npc_reaper_barqueiro"], ["durao", "vhaerith_na_jaula", "event_pact", "npc_vhaerith_aetherion"], ["shendilavri", "mercador_de_rivenheart", "event_pact", "npc_mercador_rivenheart"], ["goranthis", "o_nome_tres_vezes", "event_pact", "npc_grazzt_aliado"], ["shedaklah", "altar_disputado_shedaklah", "event_pact", "altar_do_limo"], ["feng_tu", "altar_disputado_feng_tu", "event_pact", "altar_disputado_feng_tu"]]:
 		var b := _fire(spec[0], spec[1])
 		for point in _points(b, spec[2]):
 			if String(point.asset) != spec[3]:
@@ -107,7 +107,7 @@ func _without_art(value: Variant) -> Variant:
 	return value
 
 func _check_rng_preserved(out: Array) -> void:
-	for spec in [["shedaklah", "portal_sem_vao"], ["shedaklah", "pedido_de_zuggtmoy"], ["feng_tu", "escolta_do_peregrino"], ["shendilavri", "vitimas_drenadas"], ["molor", "ritual_de_estagnacao"]]:
+	for spec in [["shedaklah", "portal_sem_vao"], ["shedaklah", "pedido_de_zuggtmoy"], ["feng_tu", "escolta_do_peregrino"], ["shendilavri", "vitimas_drenadas"], ["molor", "ritual_de_estagnacao"], ["shedaklah", "altar_disputado_shedaklah"], ["feng_tu", "altar_disputado_feng_tu"]]:
 		var a := _battle(spec[0])
 		var b := _battle(spec[0])
 		var definition := _definition(spec[0], spec[1])
