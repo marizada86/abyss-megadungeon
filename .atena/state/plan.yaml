@@ -3442,14 +3442,14 @@ telegraph_skins_20261104:
   content_state: DRAFT
   sources: [.atena/generated/asset-queue-20261104-r1, .atena/generated/asset-queue-20261104-r2]
   owner_visual_acceptance: "piloto (T02, T10) APPROVED_OWNER_20261104; 19 folhas de r2 APPROVED_OWNER_20261105 ('atena, O aceite de 19 folhas de chefes da segunda leva, aprovado'), recibo .atena/generated/asset-queue-20261104-r2/visual-acceptance.json (hashes conferidos 19 de 19); integradas antes por pedido explícito 'vamos implementar'"
-  r2_acceptance_note: "o aceite cobre as 19 fontes como entregues; a decisão específica sobre a regra 'sem magenta' nas 5 folhas com fronteira violeta/rosa fica a confirmar (known_holds)"
+  r2_acceptance_note: "o aceite cobre as 19 fontes como entregues; a decisão sobre a regra 'sem magenta' nas 5 folhas com fronteira violeta/rosa foi aprovada pelo dono em 2026-11-05 ('tudo aprovado de acordo com as recomendações'; ver addendum_20261105b do recibo)"
   scope: 22 folhas temáticas (varredura aviso/feixe, quadrante, marca, carga) para 9 chefes; estouro, interrupção, escudo e estouro de fase seguem neutros
   tool: tools/telegraph_prep.gd (job tools/asset_jobs/telegraph_skins_v01.json); escala única por folha, quadros segmentados pelo conteúdo, centro medido por quadro
   calibration: "varredura: comprimento do corpo 184 (aviso) e 195 (feixe) como G01/G02; selo 72 px e marca 73,5 px de meia extensão como G03/G04; carga com a altura média e a base (198,5) de G05; margem mínima 22 px"
   runtime: {core: [boss_vfx.gd (SKINS, skinned, BEAM por pele), boss_mechanics.gd (campo boss nos eventos quad/mark)], fallback: "folha neutra quando o chefe ou o arquivo não tem pele", assets: "assets/vfx/boss_*_<chefe>.png (22) + .import"}
   tests: {test_boss_vfx: "0 falhas (pele por id, fallback, BEAM, textura lida, boss no evento, margens das 22 folhas)"}
   capture: tools/telegraph_skin_capture.gd (perfil sintético isolado; capturas em tmp/telegraph/, não versionadas)
-  known_holds: ["fronteira violeta/rosa em T04, T09, T13, T15, T18 contra a regra sem magenta: decisão visual do dono", "carga capada pela margem em 0 a 12% (sacerdote, discipulo)", "a porta para a outra versão (AGENTS.md) não foi feita: alteração comum exige portagem registrada"]
+  known_holds: ["fronteira violeta/rosa em T04, T09, T13, T15, T18 contra a regra sem magenta: RESOLVIDO, aceita pelo dono em 2026-11-05","carga capada pela margem em 0 a 12% (sacerdote, discipulo)", "a porta para a outra versão (AGENTS.md) não foi feita: alteração comum exige portagem registrada"]
   not_authorized: [commit, push, build, publication]
   next_activity: Owner reviews in-game captures; commit on request.
 asset_evolucoes_generation_20261104:

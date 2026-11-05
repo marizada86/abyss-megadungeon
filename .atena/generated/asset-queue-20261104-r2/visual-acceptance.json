@@ -6,7 +6,7 @@
   "supersedes": "human_acceptance PENDING em manifest.json e qa.json (mantidos como foram gerados)",
   "preserved_holds": [
     "normalizacao e calibracao tecnica (size_holds de qa.json)",
-    "fronteira violeta/rosa em T04, T09, T13, T15, T18 contra a regra sem magenta: o aceite cobre as fontes como entregues; a decisao especifica sobre a regra continua a confirmar",
+    "fronteira violeta/rosa em T04, T09, T13, T15, T18 contra a regra sem magenta: o aceite cobre as fontes como entregues; a decisao especifica sobre a regra continua a confirmar [RESOLVIDO em 2026-11-05: aceita pelo dono, ver addendum_20261105b]",
     "carga limitada pela margem em 0 a 12% (sacerdote, discipulo)"
   ],
   "note": "Aceite de fonte nao e aceite de integracao. As 19 folhas ja foram integradas sob telegraph_skins_20261104 por pedido de implementacao; este recibo regulariza o aceite visual. Conteudo continua DRAFT; sem promocao a CANON.",
@@ -106,5 +106,13 @@
       "source": "assets_incoming/queue-20261104-r2/sources/T18_carga_v01.png",
       "sha256": "0E7A8D031EF70A85C771D4F1112CD6EAFF50F9B64828739ECE0F9E74511AD2AA"
     }
-  ]
+  ],
+  "addendum_20261105b": {
+    "owner_reply": "atena, tudo aprovado de acordo com as recomendações, commite",
+    "effect": "o dono aprovou também a decisão pendente sobre a regra sem magenta nas folhas T04, T09, T13, T15 e T18: aceitas como entregues",
+    "still_preserved": [
+      "normalizacao e calibracao tecnica (size_holds de qa.json)",
+      "carga limitada pela margem em 0 a 12% (sacerdote, discipulo)"
+    ]
+  }
 }
