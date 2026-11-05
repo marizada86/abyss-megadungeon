@@ -125,6 +125,8 @@
     "min_seconds": 80,
     "spread_seconds": 35,
     "max_alive": 3,
+    "max_alive_long": 4,
+    "max_alive_long_min_duration": 300,
     "retry_seconds": 8,
     "scale_above": 200,
     "reference_duration": 600,

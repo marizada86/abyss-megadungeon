@@ -116,13 +116,28 @@ func _check_stream(out: Array) -> void:
 		out.append("a ordem dos interativos não deveria depender da RNG do combate")
 
 func _check_retry_and_cadence(out: Array) -> void:
+	# Mapa longo (>= 300 s): o teto sobe de 3 para 4 vivos; com 3 ainda há vaga, com 4 o sorteio tenta de novo em 8 s.
 	var b := _bat(31, "molor")
 	for i in 3:
 		b._add_interaction("chest", b.hero.pos + Vector2(2 + i, 0))
 	b._inter_t = 0.0
 	b._spawn_random_interaction()
+	if absf(b._inter_t - 8.0) < 0.01:
+		out.append("mapa longo com 3 interativos vivos ainda deveria ter vaga (teto 4)")
+	b = _bat(31, "molor")
+	for i in 4:
+		b._add_interaction("chest", b.hero.pos + Vector2(2 + i, 0))
+	b._inter_t = 0.0
+	b._spawn_random_interaction()
 	if absf(b._inter_t - 8.0) > 0.01:
 		out.append("sem vaga o sorteio deveria tentar de novo em 8 s, ficou %.1f" % b._inter_t)
+	var short := _bat(35, "docas")
+	for i in 3:
+		short._add_interaction("chest", short.hero.pos + Vector2(2 + i, 0))
+	short._inter_t = 0.0
+	short._spawn_random_interaction()
+	if absf(short._inter_t - 8.0) > 0.01:
+		out.append("mapa curto (180 s) deveria manter o teto de 3 interativos vivos, ficou %.1f" % short._inter_t)
 	var docas := _bat(32, "docas")
 	for i in 20:
 		if docas._interaction_interval() < 80.0:

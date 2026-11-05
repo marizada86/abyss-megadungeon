@@ -3813,7 +3813,11 @@ func _spawn_random_interaction() -> void:
 		return
 	var cfg: Dictionary = Data.table("difficulty").get("interactions", {})
 	var alive_n := interactions.filter(func(i): return not i.used and i.kind != "portal" and not bool(i.get("fixed", false))).size()
-	if alive_n >= int(cfg.get("max_alive", 4)):
+	# Mapas longos (>= max_alive_long_min_duration) toleram uma vaga a mais: acontecimentos que ninguém resolve não bloqueiam os comuns.
+	var cap := int(cfg.get("max_alive", 4))
+	if float(stage.duration) >= float(cfg.get("max_alive_long_min_duration", 300.0)):
+		cap = maxi(cap, int(cfg.get("max_alive_long", cap)))
+	if alive_n >= cap:
 		_inter_t = float(cfg.get("retry_seconds", 8.0))   # sem vaga: tenta de novo logo, em vez de perder o sorteio e esperar o intervalo inteiro
 		return
 	var weights: Dictionary = stage.interactions
