@@ -3356,6 +3356,73 @@ weapon_evolution_plan_20261104:
   porting: NOT_ASSESSED   # AGENTS.md exige portagem registrada para alterações comuns; origem não consultada nesta frente
   not_authorized: [build, publication, canonical_promotion]
   next_activity: Dono confere o jogo (ícones e VFX em partida real), decide nomes finais, sons próprios e Codex; reexecutar bots de campanha; avaliar portagem.
+asset_queue_generation_20261104:
+  revision: r1
+  mode: per-plan
+  authorization: "atena, seguindo as recomendações vamos começar a geração de imagens (2026-11-04)"
+  status: FIRST_BATCH_VISUALLY_ACCEPTED
+  content_state: DRAFT
+  scope: [A06_altar_do_limo, A07_altar_feng_tu, A08_pedra_runica, memoria_habilidade, memoria_projetil, T02_aviso, T02_feixe, T10_marca]
+  deferred_until_pilot_review: []  # continued by explicit owner approval; proposed themes remain DRAFT
+  ordered_steps: [S-Q01_prompts, S-Q02_statics, S-Q03_memory, S-Q04_molydeus_pilot, S-Q05_owner_review]
+  checkpoint: S-Q05/EIGHT_SOURCES_VISUALLY_ACCEPTED
+  report: .atena/generated/asset-queue-20261104-r1/production.md
+  delivery: assets_incoming/queue-20261104-r1/
+  generated_source_count: 8
+  human_acceptance: APPROVED_OWNER_20261104
+  runtime_modified: false
+  not_authorized: [runtime_integration, canonical_promotion, commit, push, build, publication]
+
+  completed_steps: 5
+  total_steps: 5
+  prepared_derivative_count: 0
+  gallery: .atena/generated/asset-queue-20261104-r1/index.html
+  manifest: .atena/generated/asset-queue-20261104-r1/manifest.json
+  technical_status: SOURCE_ONLY_NORMALIZATION_AND_CALIBRATION_PENDING
+  next_activity: Preserve accepted sources and technical holds; remaining nineteen authorized in asset_queue_remaining_20261104.
+
+  acceptance_receipt: .atena/generated/asset-queue-20261104-r1/visual-acceptance.json
+asset_queue_remaining_20261104:
+  revision: r2
+  mode: per-plan
+  authorization: "aprovado, gerar proximas imagens (2026-11-04)"
+  scope: REMAINING_19_THEMATIC_SHEETS
+  status: COMPLETE_SOURCES_DELIVERED_AWAITING_VISUAL_REVIEW
+  content_state: DRAFT
+  inherited_pilot_acceptance: APPROVED_OWNER_20261104
+  interpretative_themes: DRAFT_VISUAL_PROPOSALS_ONLY_NOT_CANON
+  checkpoint: S-R03/NINETEEN_SOURCES_DELIVERED
+  generated_source_count: 19
+  total_sources: 19
+  prepared_derivative_count: 0
+  human_acceptance: PENDING
+  report: .atena/generated/asset-queue-20261104-r2/production.md
+  queue: .atena/generated/asset-queue-20261104-r2/queue.json
+  delivery: assets_incoming/queue-20261104-r2/
+  runtime_modified: false
+  not_authorized: [runtime_integration, canonical_promotion, commit, push, build, publication]
+  gallery: .atena/generated/asset-queue-20261104-r2/index.html
+  manifest: .atena/generated/asset-queue-20261104-r2/manifest.json
+  qa: .atena/generated/asset-queue-20261104-r2/qa.json
+  source_generation_complete: true
+  technical_status: NORMALIZATION_GEOMETRY_PALETTE_AND_LOOP_CHECKS_PENDING
+  next_activity: Owner reviews nineteen candidates; preserve first eight accepted sources and technical holds; no runtime admission yet.
+telegraph_comuns_prompts_20261105:
+  revision: r1
+  mode: per-plan
+  authorization: "dono: 'os golpes telegrafados de investida continuam sem asset' e 'incluir mira e área' (2026-11-05)"
+  status: PROMPTS_DRAFTED_NOT_GENERATED
+  content_state: DRAFT
+  gap: "as 22 peles de telegraph_skins_20261104 cobrem só chefes; faixa de investida/bote, mira do atirador e círculo de área dos inimigos comuns seguem por código em ui/overlay.gd (_draw_charge_lane, _draw_aim_beam, _draw_telegraph)"
+  scope: [T20_faixa_investida, T21_mira, T22_area]
+  prompts: .atena/vault/drafts/PROMPTS-GOLPES-TELEGRAFADOS-COMUNS-20261105-r1.md
+  color_decision: "folhas neutras prontas para tingir pelo tipo de dano; variantes por tipo (12 imagens) só se o tingimento ficar lavado"
+  delivery: assets_incoming/queue-20261105-r1/
+  integration_plan: "job tools/asset_jobs/telegraph_comum_v01.json via telegraph_prep.gd; overlay usa a folha e cai no desenho atual sem o arquivo; faixa projetada no chão"
+  runtime_modified: false
+  porting: NOT_ASSESSED
+  not_authorized: [generation, runtime_integration, canonical_promotion, commit, push, build, publication]
+  next_activity: Atena gera as 3 folhas; dono revisa; Claude prepara e integra.
 telegraph_skins_20261104:
   revision: r1
   mode: per-plan
@@ -3373,3 +3440,76 @@ telegraph_skins_20261104:
   known_holds: ["fronteira violeta/rosa em T04, T09, T13, T15, T18 contra a regra sem magenta: decisão visual do dono", "carga capada pela margem em 0 a 12% (sacerdote, discipulo)", "a porta para a outra versão (AGENTS.md) não foi feita: alteração comum exige portagem registrada"]
   not_authorized: [commit, push, build, publication]
   next_activity: Owner reviews in-game captures; commit on request.
+asset_evolucoes_generation_20261104:
+  revision: r1
+  mode: per-plan
+  authorization: 'atena, verificar fila de assets e executar comando para gerar.'
+  status: COMPLETE_SELECTED_25_SOURCES_VISUALLY_ACCEPTED
+  content_state: DRAFT
+  scope: [E01, E02, E06, E03, E04, E05]
+  generated_sheet_count: 6
+  icon_count: 25
+  generated_revision_count: 2
+  prepared_derivative_count: 0
+  checkpoint: S-EG04/SELECTED_25_SOURCES_VISUALLY_ACCEPTED
+  report: .atena/generated/asset-evolucoes-20261104-r1/production.md
+  manifest: .atena/generated/asset-evolucoes-20261104-r1/manifest.json
+  gallery: .atena/generated/asset-evolucoes-20261104-r1/index.html
+  human_acceptance: APPROVED_OWNER_SELECTED_25_20261104
+  acceptance_receipt: .atena/generated/asset-evolucoes-20261104-r1/visual-acceptance.json
+  role_clarification: 'Atena: geração de imagens; Claude: preparação e implementação, conforme dono em 2026-11-04'
+  staff_v01: REJECTED_OWNER_BENT_SHAFT
+  staff_v02: assets_incoming/cajado_dos_desejos_realizados_a_v02.png
+  staff_v02_acceptance: REJECTED_OWNER_HEAD_SHAFT_AXIS_MISMATCH
+  staff_v03: assets_incoming/cajado_dos_desejos_realizados_a_v03.png
+  staff_v03_acceptance: APPROVED_OWNER_20261104
+  staff_v03_acceptance_receipt: .atena/generated/asset-evolucoes-20261104-r1/staff-v03-visual-acceptance.json
+  staff_v03_authorization: 'a haste continua para a diagonal enquanto a ponta(cabeça) do cajado está virada para um ângulo vertical, por favor refaça revendo essas proporções'
+  staff_revision_authorization: 'Haste está torta desse asset, refaça'
+  runtime_modified: false
+  not_authorized: [runtime_integration, canonical_promotion, commit, push, build, publication]
+  next_activity: Source generation complete and selected 25 approved; preparation and implementation belong to Claude. Atena handles further image generation only; preserve accepted sources and rejected staff v01/v02.
+asset_vfx_evolucoes_generation_20261104:
+  revision: r1
+  mode: per-plan
+  authorization: 'atena, proximo plote'
+  scope: [selo_da_retidao, cajado_dos_desejos_realizados, lamina_do_eclipse, memoria_reescrita, vigilia_perpetua, abraco_dos_tentaculos, ampulheta_do_tempo_parado]
+  status: COMPLETE_SEVEN_SOURCES_VISUALLY_ACCEPTED
+  content_state: DRAFT
+  checkpoint: S-VE03/SEVEN_SOURCES_VISUALLY_ACCEPTED
+  generated_source_count: 7
+  total_sources: 7
+  prepared_derivative_count: 7   # reconciliado em 2026-11-05 (era 0 na geração); ver reconciliation_20261105
+  human_acceptance: APPROVED_OWNER_20261104
+  owner_acceptance_reply: 'atena aprovado'
+  acceptance_receipt: .atena/generated/vfx-evolucoes-20261104-r1/visual-acceptance.json
+  queue: .atena/generated/vfx-evolucoes-20261104-r1/queue.json
+  manifest: .atena/generated/vfx-evolucoes-20261104-r1/manifest.json
+  gallery: .atena/generated/vfx-evolucoes-20261104-r1/index.html
+  handoff: .atena/generated/vfx-evolucoes-20261104-r1/handoff.md
+  delivery_audit: PASS_SEVEN_BYTE_COPIES_1536x1024
+  technical_status: SEVEN_PREPARED_INTEGRATED_AUDITED_FLIGHT_EQUALIZED_PENDING_HUMAN_INGAME_CHECK   # reconciliado em 2026-11-05 (era SOURCE_ONLY_...PENDING na geração)
+  visual_notes: 'VE06 five visible tentacles accepted after disclosure; technical margin and loop checks remain for Claude.'
+  delivery: assets_incoming/vfx-evolucoes-20261104-r1/
+  runtime_modified: false   # valor da etapa de geração (Atena); a integração em runtime ocorreu sob weapon_evolution_plan_20261104 (ver reconciliation_20261105)
+  implementation_owner: Claude
+  not_authorized: [runtime_integration, canonical_promotion, commit, push, build, publication]   # escopo da geração; integração, commit e push foram autorizados à parte em weapon_evolution_plan_20261104
+  reconciliation_20261105:
+    authorization: 'Preparar VFX; Equalizar voos; Atualizar plano (dono, 2026-11-05)'
+    status: RECONCILED_READ_AND_TWO_ASSET_EDITS
+    preparation: DONE_20261104   # as 7 fontes foram preparadas e integradas no commit 42fce70 sob weapon_evolution_plan_20261104; nada foi preparado de novo em 2026-11-05
+    prepared_files: [selo_retidao_evo, cajado_realizado_evo, eclipse_evo, memoria_reescrita_evo, pulso_vigilia, abraco_laco, pulso_ampulheta_tempo]   # em assets/vfx
+    prep_records: [.atena/generated/vfx-evolucoes-20261104-r1/prep, .atena/generated/evolution-assets-qa-20261104-r1/RELATORIO.md]
+    source_audit: .atena/generated/vfx-evolucoes-audit-20261105-r1/summary.md   # medição somente leitura das 7 fontes; sem defeito bloqueante; grades obedecidas, 0 pixels de núcleo nas costuras; laço da VE06 fecha (razão 0,86); nota de margem direita da VE06 não confirmada (margens simétricas, ~7%)
+    flight_equalization:
+      status: APPLIED_20261105
+      files: [assets/vfx/eclipse_evo.png, assets/vfx/cajado_realizado_evo.png]
+      change: alfa dos 4 quadros de voo equalizado à média da energia; RGB e quadros de impacto idênticos aos originais
+      min_max_before_after: {eclipse_evo: [0.57, 1.00], cajado_realizado_evo: [0.63, 1.00]}
+      evidence: .atena/generated/vfx-flight-equalize-20261105-r1/README.md
+      originals: .atena/generated/vfx-flight-equalize-20261105-r1/original   # com original.sha256, para reverter
+      tests: tests/run_all.gd em perfil sintético (APPDATA isolado), 0 falhas e 0 erros; working tree com outras alterações não commitadas incluídas
+      committed: d20e2c8   # commit local na branch feat/codex-lore, autorizado pelo dono em 2026-11-05 ('commit'); evidências em 9a05e2a; push não feito
+    pending: [conferir_em_partida_real_se_o_voo_ficou_natural, commit_deste_plan_yaml_junto_com_as_secoes_de_outras_frentes]
+    not_done: [push, build, publication, canonical_promotion]
+  next_activity: Dono confere em partida real o voo de eclipse_evo e cajado_realizado_evo (brilho equalizado, commit d20e2c8); ver também next_activity de weapon_evolution_plan_20261104. Atena não gera mais imagens neste lote; fontes aceitas e demais checkpoints preservados.
