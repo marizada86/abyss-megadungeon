@@ -1,0 +1,12 @@
+version: 2
+
+# For a new conversation, copy this shape to conversations/<key>/plan.yaml and
+# add conversation: {key, kind, evidence} as a YAML mapping (see CONTRACT.md).
+# kind is platform only for a real exposed identifier; otherwise use local.
+# Never overwrite another chat or infer ownership of a legacy unbound plan.
+# No plan is active in a newly initialized workspace. An active plan also
+# records its selected approval mode and current PLAN, B-XXX, or S-XXX checkpoint.
+active_plan: null
+plan_cursor: null
+suspension: null
+deferred_requests: []

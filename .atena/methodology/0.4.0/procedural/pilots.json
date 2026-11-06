@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "revision": 1,
+  "state": "DRAFT",
+  "pilots": [
+    {
+      "id": "P2D-001",
+      "toolId": "noct-2d",
+      "state": "DRAFT",
+      "objective": "One 64x64 original stylized cyan ore icon plus one-frame atlas; verify PNG/JSON transfer without engine/runtime source",
+      "bible": {"id":"VB-ADD-SYNTHETIC","revision":1,"state":"DRAFT","intent":"Fixture-only technical pilot, no game canon","visualLanguage":"Block-readable silhouette, muted cyan and dark blue, no typography or borrowed character design","camera":"orthographic UI presentation","lighting":"simple readable top-left shading","ui":"dark inventory cell; inspect at 64 logical pixels","animation":"N/A, single frame","accessibility":"recognizable silhouette without relying only on color","productionLimits":"one frame, 64x64 PNG RGBA; no paid generation"},
+      "identity": {"applicability":"N/A","reason":"Generic ore icon; no named entity/character"},
+      "scene": "Technical test inventory cell, no production game/lore context",
+      "references": [{"id":"TEXT-SELF-001","revision":1,"state":"DRAFT","usage":"Author-created textual direction, not a third-party visual reference"}],
+      "requiredOutputs": ["PNG", "atlas JSON"],
+      "budgets": {"maxBytes":8388608,"maxWidth":64,"maxHeight":64,"maxFrames":1},
+      "review": ["Inspect actual pixels at target size and transparency/bounds", "Check atlas bounds against image dimensions", "Human visual acceptance pending", "No project integration before scoped review"],
+      "readiness": "Textual inputs prepared; engine source materialization/identity, exact recipe command and each execution/setup confirmation pending"
+    },
+    {
+      "id": "P3D-001",
+      "toolId": "noct-3d",
+      "state": "DRAFT",
+      "objective": "One stylized generic crate with GLB/BBModel and a PNG texture; review bridge from the separately approved 2D output",
+      "bible": {"id":"VB-ADD-SYNTHETIC","revision":1,"state":"DRAFT","intent":"Fixture-only technical pilot, no game canon","visualLanguage":"Simple block forms, muted cyan/dark blue accent compatible with P2D-001","camera":"orthographic three-quarter review and front/side views","lighting":"neutral test lighting; no claim of PBR fidelity","ui":"N/A, prop review","animation":"N/A, static prop; rig not requested","accessibility":"clear silhouette and scale reference","productionLimits":"1 metre reference extent, <=1500 triangles, one PNG texture, no PBR-complete requirement"},
+      "identity": {"applicability":"N/A","reason":"Generic prop, no named entity/character"},
+      "scene": "Neutral test ground with a 1 metre scale reference; no production game context",
+      "references": [{"id":"TEXT-SELF-002","revision":1,"state":"DRAFT","usage":"Author-created textual direction"},{"id":"P2D-001-TEXTURE","revision":1,"state":"DRAFT","usage":"Optional file bridge only after 2D output is actually reviewed and rights cleared"}],
+      "requiredOutputs": ["GLB", "BBModel", "PNG"],
+      "budgets": {"maxBytes":33554432,"maxTriangles":1500,"maxTextureWidth":1024,"maxTextureHeight":1024},
+      "review": ["Review actual mesh, scale/axes, normals, UVs and texture appearance", "Validate GLB with an approved validator and target importer", "Open BBModel only after separate execution confirmation", "Serialize regeneration; preserve prior geometry/output hashes", "Human visual acceptance pending"],
+      "readiness": "Textual inputs prepared; archive named v2/report 1.0.0 dirty unresolved, source/recipe verification and each action confirmation pending"
+    }
+  ]
+}

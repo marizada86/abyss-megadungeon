@@ -7,3 +7,6 @@
 *.png binary
 *.wav binary
 *.ttf binary
+
+# Metodologia Atena instalada: bytes exatos (hashes do manifesto/recibo); nunca normalizar.
+.atena/methodology/** -text
