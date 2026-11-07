@@ -1,0 +1,33 @@
+[
+  {
+    "phrase": "Ativar Atena no projeto",
+    "flow": "prepare-adoption"
+  },
+  {
+    "phrase": "Atena, elabore um plano com suas recomendações",
+    "flow": "guided-plan"
+  },
+  {
+    "phrase": "Atena, me entreviste",
+    "flow": "adaptive-discovery"
+  },
+  {
+    "phrase": "Atena, atualize-se para a versão mais recente",
+    "flow": "update-methodology"
+  },
+  {
+    "phrase": "Atena, atualize-se para a versão mais recente.",
+    "flow": "update-methodology",
+    "alias_of": "Atena, atualize-se para a versão mais recente"
+  },
+  {
+    "phrase": "Atena, se atualize",
+    "flow": "update-methodology",
+    "alias_of": "Atena, atualize-se para a versão mais recente"
+  },
+  {
+    "phrase": "Atena, se atualize.",
+    "flow": "update-methodology",
+    "alias_of": "Atena, atualize-se para a versão mais recente"
+  }
+]

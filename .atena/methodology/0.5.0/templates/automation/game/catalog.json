@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "kind": "portable-source-catalog",
+  "selection": "needs-based",
+  "visualPrerequisites": [
+    "visualBible",
+    "identityWhenApplicable",
+    "sceneContext"
+  ],
+  "positionRequired": false,
+  "specialists": [
+    {
+      "skill": "atena-game-design",
+      "agent": "game-designer",
+      "label": "Design e sistemas",
+      "visual": "conditional",
+      "trigger": "Core loop indefinido, regras contraditórias, progressão ou balanceamento sem hipótese.",
+      "inputs": "Visão, público, pilares, regras aprovadas, restrições e observações de playtests.",
+      "output": "Design delimitado, hipóteses de balanceamento e plano de teste.",
+      "skillPath": "skills/atena-game-design/SKILL.md",
+      "agentPath": "agents/game-designer.md"
+    },
+    {
+      "skill": "atena-game-gameplay",
+      "agent": "gameplay-engineer",
+      "label": "Engenharia de gameplay",
+      "visual": "conditional",
+      "trigger": "Ação central, input, controle, transição de estados, colisão ou regra jogável falha.",
+      "inputs": "Regra aprovada, cenário reproduzível, engine/versão existente, caminhos e critérios.",
+      "output": "Mudança mínima de comportamento e evidência reproduzível.",
+      "skillPath": "skills/atena-game-gameplay/SKILL.md",
+      "agentPath": "agents/gameplay-engineer.md"
+    },
+    {
+      "skill": "atena-game-levels",
+      "agent": "level-world-designer",
+      "label": "Level, mundo e câmera",
+      "visual": "conditional",
+      "trigger": "Fluxo espacial, navegação, enquadramento, encontros ou progressão de nível precisam de revisão.",
+      "inputs": "Ações e medidas de gameplay, ritmo desejado, restrições e cena/nível atual.",
+      "output": "Layout/graybox delimitado, hipótese de câmera e roteiro de travessia.",
+      "skillPath": "skills/atena-game-levels/SKILL.md",
+      "agentPath": "agents/level-world-designer.md"
+    },
+    {
+      "skill": "atena-game-narrative",
+      "agent": "content-narrative-editor",
+      "label": "Conteúdo e narrativa",
+      "visual": "conditional",
+      "trigger": "Lore, diálogos, objetivos de quests, continuidade ou volume de conteúdo precisam de estrutura.",
+      "inputs": "Pilares, lore CANON, drafts identificados, eventos jogáveis e limites de conteúdo.",
+      "output": "Conteúdo delimitado, rastreio de continuidade e lacunas de aprovação.",
+      "skillPath": "skills/atena-game-narrative/SKILL.md",
+      "agentPath": "agents/content-narrative-editor.md"
+    },
+    {
+      "skill": "atena-game-ui-accessibility",
+      "agent": "ui-accessibility-designer",
+      "label": "UI e acessibilidade",
+      "visual": "conditional",
+      "trigger": "Jogador não entende objetivo/estado, menu difícil, HUD ilegível ou barreira de input/percepção.",
+      "inputs": "Fluxo atual, tarefas do jogador, plataformas/inputs e critérios de leitura.",
+      "output": "Fluxo/interface delimitados, alternativas de comunicação e teste de uso.",
+      "skillPath": "skills/atena-game-ui-accessibility/SKILL.md",
+      "agentPath": "agents/ui-accessibility-designer.md"
+    },
+    {
+      "skill": "atena-game-audio-feedback",
+      "agent": "audio-feedback-designer",
+      "label": "Áudio e feedback",
+      "visual": "conditional",
+      "trigger": "Ações sem retorno claro, mixagem compete com pistas, música/sons ou VFX incoerentes.",
+      "inputs": "Eventos de gameplay, prioridade perceptiva, referências autorizadas e limites de áudio.",
+      "output": "Mapa evento→feedback, critérios de mixagem/sincronia e revisão delimitada.",
+      "skillPath": "skills/atena-game-audio-feedback/SKILL.md",
+      "agentPath": "agents/audio-feedback-designer.md"
+    },
+    {
+      "skill": "atena-game-qa",
+      "agent": "qa-playtest-planner",
+      "label": "QA e playtests",
+      "visual": "conditional",
+      "trigger": "Bug sem reprodução, milestone sem evidência, regressão ou playtest precisa de roteiro.",
+      "inputs": "Build/versão, escopo, critérios, ambiente e passos/observações disponíveis.",
+      "output": "Reprodução, resultado de checks e roteiro/feedback de playtest rastreáveis.",
+      "skillPath": "skills/atena-game-qa/SKILL.md",
+      "agentPath": "agents/qa-playtest-planner.md"
+    },
+    {
+      "skill": "atena-game-performance-delivery",
+      "agent": "performance-delivery-engineer",
+      "label": "Performance e entrega",
+      "visual": "conditional",
+      "trigger": "Queda de desempenho, uso de memória excessivo, exportação reproduzível ou build de milestone.",
+      "inputs": "Cenário, baseline, alvo/hardware, limites e caminhos de build autorizados.",
+      "output": "Comparação baseline/candidato ou build identificado com checklist de entrega.",
+      "skillPath": "skills/atena-game-performance-delivery/SKILL.md",
+      "agentPath": "agents/performance-delivery-engineer.md"
+    },
+    {
+      "skill": "atena-game-sprite-fit",
+      "agent": "technical-artist-2d",
+      "label": "Consistência de sprites 2D",
+      "visual": "always",
+      "trigger": "Sprite muda tamanho/identidade, fica desalinhado, cortado ou parece deformado entre frames.",
+      "inputs": "Bible/identidade/cena prontos, originals, contrato de sprite e referência mestra.",
+      "output": "Diagnóstico por causa, candidato preservando identidade e contrato rastreável.",
+      "skillPath": "skills/atena-game-sprite-fit/SKILL.md",
+      "agentPath": "agents/technical-artist-2d.md"
+    },
+    {
+      "skill": "atena-game-sprite-animation-review",
+      "agent": "visual-qa-2d",
+      "label": "Movimento e animação 2D",
+      "visual": "always",
+      "trigger": "Movimento rígido, pés deslizam, loop salta, ritmo estranho ou transição reinicia animação.",
+      "inputs": "Readiness, frames/tempos/playback, estado de input e contrato de movimento.",
+      "output": "Revisão temporal com hipóteses separadas e correções delimitadas.",
+      "skillPath": "skills/atena-game-sprite-animation-review/SKILL.md",
+      "agentPath": "agents/visual-qa-2d.md"
+    }
+  ]
+}

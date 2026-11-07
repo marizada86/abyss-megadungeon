@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "id": "atena",
+  "revision": 1,
+  "state": "DRAFT",
+  "unicodeHeader": "◈ 🦉 ATENA",
+  "asciiHeader": "[ATENA]",
+  "mark": "assets/atena-mark-eyes-v2.png",
+  "markRevision": "eyes-v2",
+  "scope": "Assistant work response; never inject into code, logs or third-party content",
+  "roleReporting": "Report only actually consulted/executing roles; identify self-review as self-review"
+}

@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "revision": 1,
+  "state": "DRAFT",
+  "executionPolicy": "Per-action confirmation required; this integration has no engine runner",
+  "sourceAuthority": "User-supplied Library attachments; publisher not authenticated; findings supplied by parent static audit",
+  "tools": [
+    {
+      "id": "noct-2d",
+      "displayName": "NoctAssetForge 2.5",
+      "archive": "noct-asset-forge-v2.5.zip",
+      "archiveBytes": 745645,
+      "archiveSha256": "016c2f170f36bac1ecfebdd33b02bb1ccc6297944bbbbc08f0729f5eb92b6ff0",
+      "reportedVersion": "2.5",
+      "requirements": ["Node >=20", "npm", "Playwright Chromium"],
+      "reportedLockedDependencies": {"paper":"0.12.18","picocolors":"1.1.1","playwright":"1.63.0","simplex-noise":"4.0.3","tsx":"4.23.13","typescript":"5.9.3","vite":"6.4.3"},
+      "outputs": ["PNG", "JPEG", "atlas JSON"],
+      "limits": ["Primary flow does not supply editable SVG", "Source publisher is not authenticated", "Installation and every engine/recipe invocation remain unconfirmed"],
+      "license": {"redistribution":"restricted","service":"restricted","outputs":"Reported permitted subject to terms and input rights; review per artifact"}
+    },
+    {
+      "id": "noct-3d",
+      "displayName": "NoctAssetForge3DBB — attachment named v2",
+      "archive": "noct-asset-forge-3d-bb-v2.zip",
+      "archiveBytes": 984113,
+      "archiveSha256": "bbf566bd35bcffd0dd2ca00826800f076957becda0411aab2233e8da2a9589cc",
+      "reportedVersion": "1.0.0",
+      "reportedDirty": true,
+      "requirements": ["Python >=3.12", "Pillow >=10", "numpy >=1.26", "playwright >=1.40", "Chromium/WebGL"],
+      "optionalRequirements": ["Node and gltf-validator 2.0.0-dev.3.10 for validation", "Blockbench desktop optional"],
+      "outputs": ["GLB", "BBModel", "PNG"],
+      "limits": ["Archive name v2 conflicts with reported 1.0.0 dirty; identify by archive hash", "No complete PBR export pipeline claimed", "Recipes are executable Python with inherited environment, no engine sandbox", "Regeneration can overwrite BBModel geometry; serialize jobs and preserve references", "Windows documented; POSIX not validated", "Source publisher is not authenticated"],
+      "license": {"redistribution":"restricted","service":"restricted","outputs":"Reported permitted subject to terms and input rights; review per artifact"}
+    }
+  ]
+}

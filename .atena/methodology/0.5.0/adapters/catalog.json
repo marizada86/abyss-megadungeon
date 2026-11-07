@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "revision": 1,
+  "state": "DRAFT",
+  "capabilities": ["persistentWorkspace", "projectInstructionsLoaded", "boundedFileRead", "boundedFileWrite", "processExecution", "network", "browser", "nativeDelegation", "isolatedAgentContext", "secretReferences"],
+  "adapters": [
+    {"id": "generic", "requirements": ["Read the project's local instructions and conversation-bound plan", "Report unknown capabilities; use sequential roles when delegation is unavailable"]},
+    {"id": "codex", "requirements": ["Verify selected workspace and instructions actually loaded", "Honor sandbox, approval and tool availability", "Test isolation before a comparison; native delegation alone is insufficient"]},
+    {"id": "dot-local", "requirements": ["Verify actual Dot client capabilities and project binding", "Record which instruction revisions were loaded", "Do not infer client registration from CLI installation"]},
+    {"id": "dot-cloud", "requirements": ["Verify cloud workspace persistence and permitted data transfer", "Load a reviewed allowlisted package; never copy local credentials or execution approvals", "Observe cloud tools, process and delegation capabilities independently of local observations"]}
+  ]
+}

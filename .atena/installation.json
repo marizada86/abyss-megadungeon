@@ -1,15 +1,15 @@
 {
   "schema": 2,
-  "version": "0.4.0",
-  "blockHash": "b4f677279594e44fbde8d814787dac809f6fa6c07f7c2870d1a803969b4fa1cc",
-  "payloadHash": "6ce995cf4eabcb06a29b567189b7009f1ac7ade28399a9b5b59f6a9e042efb0c",
+  "version": "0.5.0",
+  "blockHash": "8334b266a067cbe2078214db3ac656ad187137635b9dc5125e50cffb601c3592",
+  "payloadHash": "72c988994c6b96db2725dfbd5ce7bbf4e0f054b659071913e9691c63ad3c1c89",
   "source": {
     "kind": "local-package",
-    "version": "0.4.0",
-    "manifestHash": "6ce995cf4eabcb06a29b567189b7009f1ac7ade28399a9b5b59f6a9e042efb0c"
+    "version": "0.5.0",
+    "manifestHash": "72c988994c6b96db2725dfbd5ce7bbf4e0f054b659071913e9691c63ad3c1c89"
   },
   "identityRevision": 1,
-  "previousVersion": null,
+  "previousVersion": "0.4.0",
   "clientRecognition": "unverified",
   "agentRuntime": "not-installed"
 }

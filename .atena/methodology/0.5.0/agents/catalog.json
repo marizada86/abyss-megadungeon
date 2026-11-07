@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "revision": 1,
+  "kind": "atena-native-role-library",
+  "state": "DRAFT",
+  "owner": "atena",
+  "routing": "on-demand",
+  "runtimeInstalled": false,
+  "recursiveDelegation": false,
+  "contract": "CONTRACT.md",
+  "agents": [
+    {"id":"atena","name":"Atena","responsibility":"Coordenação ADD, planos, integração e conformidade","instructions":"atena.md","revision":1},
+    {"id":"indiano","name":"Indiano","responsibility":"Desenvolvimento de aplicações e documentação técnica","instructions":"indiano.md","revision":1},
+    {"id":"odin","name":"Odin","responsibility":"Pesquisa e curadoria explícita de conhecimento","instructions":"odin.md","revision":1},
+    {"id":"miyazaki","name":"Miyazaki","responsibility":"Game design, desenvolvimento e implementação de jogos","instructions":"miyazaki.md","revision":1},
+    {"id":"prometeus","name":"Prometeus","responsibility":"Arte e assets de jogos","instructions":"prometeus.md","revision":1},
+    {"id":"stanley","name":"Stanley","responsibility":"HQs, storyboards e continuidade visual","instructions":"stanley.md","revision":1},
+    {"id":"zeus","name":"Zeus","responsibility":"Campanhas e sessões de RPG","instructions":"zeus.md","revision":1},
+    {"id":"tolkien","name":"Tolkien","responsibility":"Extração narrativa e revisão de continuidade","instructions":"tolkien.md","revision":1}
+  ],
+  "additionalProcedures": ["animation.md"]
+}
