@@ -45,6 +45,15 @@ func _ready() -> void:
 	call_deferred("_apply_profile_mix")
 
 
+## Ao encerrar, para os tocadores e solta os fluxos: com a música ou a ambiência ainda tocando, o servidor de áudio segurava o playback
+## e o Godot avisava "ObjectDB instances were leaked / resources still in use" (intermitente, depende de a mixagem ter rodado).
+func _exit_tree() -> void:
+	for player in [_music_a, _music_b, _ambience] + _voices:
+		if player != null and is_instance_valid(player):
+			player.stop()
+			player.stream = null
+
+
 func _new_loop_player(bus_name: String) -> AudioStreamPlayer:
 	var player := AudioStreamPlayer.new()
 	player.bus = bus_name
