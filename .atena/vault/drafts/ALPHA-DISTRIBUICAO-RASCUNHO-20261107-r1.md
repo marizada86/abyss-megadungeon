@@ -6,7 +6,7 @@ Estado: **DRAFT**, não canônico, nada aplicado ao jogo. Origem: `SPEC-ABYSS-OR
 
 | # | Decisão | Recomendação | Efeito |
 |---|---|---|---|
-| D1 | Número da versão do alpha | `0.6.0-alpha.1` | Muda `core/version.gd` e as 6 linhas `file_version`/`product_version` de `export_presets.cfg` (formato `0.6.0.1`). `test_version_contract` precisa ser conferido com o novo número antes do build. |
+| D1 | Número da versão do alpha | `0.6.0-alpha.1` (aplicado como `0.6.0`: o contrato de versão não aceita sufixo; alpha é o canal) | **Aplicado em 2026-11-07** (decisão do dono: recomendação aceita). Mudou `core/version.gd` e as 6 linhas `file_version`/`product_version` de `export_presets.cfg` (formato `0.6.0.1`). `test_version_contract` precisa ser conferido com o novo número antes do build. |
 | D2 | Canal de retorno dos testadores | Mensagem direta ou formulário simples | Entra na seção 5 do LEIA-ME. Sem F5/F6/F7 na Produção, o relato é por texto e print do próprio testador. |
 | D3 | Aviso sobre nomes provisórios (renomeação por direitos autorais) | Incluir uma linha | Os nomes atuais valem só para o grupo combinado; a renomeação é feita antes de qualquer divulgação pública. |
 | D4 | Teto de interativos vivos (4 em mapas de 300 s ou mais, 3 nos curtos) | Manter | Implementado na sessão do checkup a partir da recomendação; reversível em `data/difficulty.json`. |

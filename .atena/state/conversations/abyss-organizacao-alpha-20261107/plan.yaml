@@ -2,7 +2,7 @@ version: 2
 conversation:
   key: "abyss-organizacao-alpha-20261107"
   kind: "local"
-  evidence: "Aprovação explícita por plano neste chat em 2026-11-07; chave local, não é ID de plataforma. Plano PLAN-ABYSS-ORGANIZATION-20261107 concluído (5 de 5); evidência em .atena/evidence/EVID-ABYSS-ORGANIZATION-20261107-r1.md."
+  evidence: "Aprovação explícita neste chat em 2026-11-07; chave local, não é ID de plataforma. PLAN-ABYSS-ALPHA-RELEASE-20261107 concluído (7 de 7); merge, push e build aguardam sim explícito."
 active_plan: null
 plan_cursor: null
 suspension: null
