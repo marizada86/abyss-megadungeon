@@ -1,0 +1,1148 @@
+[
+ {
+  "event": "ui.hover",
+  "group": "S-sfx-ui",
+  "n": "001",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/ui/ui.hover_01.wav",
+   "assets/audio/sfx/ui/ui.hover_02.wav"
+  ],
+  "volume_db": -10,
+  "pitch": 1.0
+ },
+ {
+  "event": "ui.click",
+  "group": "S-sfx-ui",
+  "n": "002",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/ui/ui.click_01.mp3"
+  ],
+  "volume_db": -5,
+  "pitch": 1.0
+ },
+ {
+  "event": "ui.confirm",
+  "group": "S-sfx-ui",
+  "n": "003",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/ui/ui.confirm_01.mp3"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "ui.cancel",
+  "group": "S-sfx-ui",
+  "n": "004",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/ui/ui.cancel_01.wav",
+   "assets/audio/sfx/ui/ui.cancel_02.wav"
+  ],
+  "volume_db": -10,
+  "pitch": 1.0
+ },
+ {
+  "event": "ui.open",
+  "group": "S-sfx-ui",
+  "n": "005",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/ui/ui.open_01.wav",
+   "assets/audio/sfx/ui/ui.open_02.wav"
+  ],
+  "volume_db": -10,
+  "pitch": 1.0
+ },
+ {
+  "event": "ui.close",
+  "group": "S-sfx-ui",
+  "n": "006",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/ui/ui.close_01.wav",
+   "assets/audio/sfx/ui/ui.close_02.wav"
+  ],
+  "volume_db": -10,
+  "pitch": 1.0
+ },
+ {
+  "event": "ui.invalid",
+  "group": "S-sfx-ui",
+  "n": "007",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/ui/ui.invalid_01.wav",
+   "assets/audio/sfx/ui/ui.invalid_02.wav"
+  ],
+  "volume_db": -10,
+  "pitch": 1.0
+ },
+ {
+  "event": "ui.pause",
+  "group": "S-sfx-ui",
+  "n": "008",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/ui/ui.pause_01.wav",
+   "assets/audio/sfx/ui/ui.pause_02.wav"
+  ],
+  "volume_db": -10,
+  "pitch": 1.0
+ },
+ {
+  "event": "ui.resume",
+  "group": "S-sfx-ui",
+  "n": "009",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/ui/ui.resume_01.wav",
+   "assets/audio/sfx/ui/ui.resume_02.wav"
+  ],
+  "volume_db": -10,
+  "pitch": 1.0
+ },
+ {
+  "event": "ui.tab",
+  "group": "S-sfx-ui",
+  "n": "010",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/ui/ui.tab_01.wav",
+   "assets/audio/sfx/ui/ui.tab_02.wav"
+  ],
+  "volume_db": -10,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.xp",
+  "group": "S-sfx-progress",
+  "n": "011",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.xp_01.wav",
+   "assets/audio/sfx/progress/progress.xp_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.coin",
+  "group": "S-sfx-progress",
+  "n": "012",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.coin_01.wav",
+   "assets/audio/sfx/progress/progress.coin_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.gold",
+  "group": "S-sfx-progress",
+  "n": "013",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.gold_01.mp3"
+  ],
+  "volume_db": -4.5,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.chest",
+  "group": "S-sfx-progress",
+  "n": "014",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.chest_01.wav",
+   "assets/audio/sfx/progress/progress.chest_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.fountain",
+  "group": "S-sfx-progress",
+  "n": "015",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.fountain_01.wav",
+   "assets/audio/sfx/progress/progress.fountain_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.altar",
+  "group": "S-sfx-progress",
+  "n": "016",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.altar_01.wav",
+   "assets/audio/sfx/progress/progress.altar_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.ritual",
+  "group": "S-sfx-progress",
+  "n": "017",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.ritual_01.wav",
+   "assets/audio/sfx/progress/progress.ritual_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.item",
+  "group": "S-sfx-progress",
+  "n": "018",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.item_01.wav",
+   "assets/audio/sfx/progress/progress.item_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.upgrade",
+  "group": "S-sfx-progress",
+  "n": "019",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.upgrade_01.wav",
+   "assets/audio/sfx/progress/progress.upgrade_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.levelup",
+  "group": "S-sfx-progress",
+  "n": "020",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.levelup_01.mp3"
+  ],
+  "volume_db": -17,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.evolution",
+  "group": "S-sfx-progress",
+  "n": "021",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.evolution_01.wav",
+   "assets/audio/sfx/progress/progress.evolution_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.achievement",
+  "group": "S-sfx-progress",
+  "n": "022",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.achievement_01.wav",
+   "assets/audio/sfx/progress/progress.achievement_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.reroll",
+  "group": "S-sfx-progress",
+  "n": "023",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.reroll_01.wav",
+   "assets/audio/sfx/progress/progress.reroll_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.unlock",
+  "group": "S-sfx-progress",
+  "n": "024",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.unlock_01.wav",
+   "assets/audio/sfx/progress/progress.unlock_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.portal",
+  "group": "S-sfx-progress",
+  "n": "025",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.portal_01.wav",
+   "assets/audio/sfx/progress/progress.portal_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.potion",
+  "group": "S-sfx-progress",
+  "n": "026",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.potion_01.mp3"
+  ],
+  "volume_db": -8,
+  "pitch": 1.0
+ },
+ {
+  "event": "progress.magnet",
+  "group": "S-sfx-progress",
+  "n": "027",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/progress.magnet_01.mp3"
+  ],
+  "volume_db": -8.5,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.impact",
+  "group": "S-sfx-combat",
+  "n": "028",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.impact_01.wav",
+   "assets/audio/sfx/combat/combat.impact_02.wav",
+   "assets/audio/sfx/combat/combat.impact_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.critical",
+  "group": "S-sfx-combat",
+  "n": "029",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.critical_01.wav",
+   "assets/audio/sfx/combat/combat.critical_02.wav",
+   "assets/audio/sfx/combat/combat.critical_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.miss",
+  "group": "S-sfx-combat",
+  "n": "030",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.miss_01.wav",
+   "assets/audio/sfx/combat/combat.miss_02.wav",
+   "assets/audio/sfx/combat/combat.miss_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.swing",
+  "group": "S-sfx-combat",
+  "n": "031",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.swing_01.wav",
+   "assets/audio/sfx/combat/combat.swing_02.wav",
+   "assets/audio/sfx/combat/combat.swing_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.magic",
+  "group": "S-sfx-combat",
+  "n": "032",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.magic_01.wav",
+   "assets/audio/sfx/combat/combat.magic_02.wav",
+   "assets/audio/sfx/combat/combat.magic_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.nova",
+  "group": "S-sfx-combat",
+  "n": "033",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.nova_01.wav",
+   "assets/audio/sfx/combat/combat.nova_02.wav",
+   "assets/audio/sfx/combat/combat.nova_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.zone",
+  "group": "S-sfx-combat",
+  "n": "034",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.zone_01.wav",
+   "assets/audio/sfx/combat/combat.zone_02.wav",
+   "assets/audio/sfx/combat/combat.zone_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.explosion",
+  "group": "S-sfx-combat",
+  "n": "035",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.explosion_01.wav",
+   "assets/audio/sfx/combat/combat.explosion_02.wav",
+   "assets/audio/sfx/combat/combat.explosion_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.block",
+  "group": "S-sfx-combat",
+  "n": "036",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.block_01.wav",
+   "assets/audio/sfx/combat/combat.block_02.wav",
+   "assets/audio/sfx/combat/combat.block_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.dodge",
+  "group": "S-sfx-combat",
+  "n": "037",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.dodge_01.wav",
+   "assets/audio/sfx/combat/combat.dodge_02.wav",
+   "assets/audio/sfx/combat/combat.dodge_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.barrier",
+  "group": "S-sfx-combat",
+  "n": "038",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.barrier_01.wav",
+   "assets/audio/sfx/combat/combat.barrier_02.wav",
+   "assets/audio/sfx/combat/combat.barrier_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.fire",
+  "group": "S-sfx-combat",
+  "n": "039",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.fire_01.wav",
+   "assets/audio/sfx/combat/combat.fire_02.wav",
+   "assets/audio/sfx/combat/combat.fire_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.radiant",
+  "group": "S-sfx-combat",
+  "n": "040",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.radiant_01.wav",
+   "assets/audio/sfx/combat/combat.radiant_02.wav",
+   "assets/audio/sfx/combat/combat.radiant_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.physical",
+  "group": "S-sfx-combat",
+  "n": "041",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.physical_01.wav",
+   "assets/audio/sfx/combat/combat.physical_02.wav",
+   "assets/audio/sfx/combat/combat.physical_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.stun",
+  "group": "S-sfx-combat",
+  "n": "042",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.stun_01.wav",
+   "assets/audio/sfx/combat/combat.stun_02.wav",
+   "assets/audio/sfx/combat/combat.stun_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.knockback",
+  "group": "S-sfx-combat",
+  "n": "043",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.knockback_01.wav",
+   "assets/audio/sfx/combat/combat.knockback_02.wav",
+   "assets/audio/sfx/combat/combat.knockback_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.projectile",
+  "group": "S-sfx-combat",
+  "n": "044",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.projectile_01.wav",
+   "assets/audio/sfx/combat/combat.projectile_02.wav",
+   "assets/audio/sfx/combat/combat.projectile_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "combat.burn",
+  "group": "S-sfx-combat",
+  "n": "045",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/combat/combat.burn_01.wav",
+   "assets/audio/sfx/combat/combat.burn_02.wav",
+   "assets/audio/sfx/combat/combat.burn_03.wav"
+  ],
+  "volume_db": -12,
+  "pitch": 1.0
+ },
+ {
+  "event": "player.hurt",
+  "group": "S-sfx-player",
+  "n": "046",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/player/player.hurt_01.wav",
+   "assets/audio/sfx/player/player.hurt_02.wav",
+   "assets/audio/sfx/player/player.hurt_03.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "player.heal",
+  "group": "S-sfx-player",
+  "n": "047",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/player/player.heal_01.wav",
+   "assets/audio/sfx/player/player.heal_02.wav",
+   "assets/audio/sfx/player/player.heal_03.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "player.death",
+  "group": "S-sfx-player",
+  "n": "048",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/player/player.death_01.wav",
+   "assets/audio/sfx/player/player.death_02.wav",
+   "assets/audio/sfx/player/player.death_03.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "player.revive",
+  "group": "S-sfx-player",
+  "n": "049",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/player/player.revive_01.wav",
+   "assets/audio/sfx/player/player.revive_02.wav",
+   "assets/audio/sfx/player/player.revive_03.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "player.guard",
+  "group": "S-sfx-player",
+  "n": "050",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/player/player.guard_01.wav",
+   "assets/audio/sfx/player/player.guard_02.wav",
+   "assets/audio/sfx/player/player.guard_03.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "player.dash",
+  "group": "S-sfx-player",
+  "n": "051",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/player/player.dash_01.wav",
+   "assets/audio/sfx/player/player.dash_02.wav",
+   "assets/audio/sfx/player/player.dash_03.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "player.footstep",
+  "group": "S-sfx-player",
+  "n": "052",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/player/player.footstep_01.wav",
+   "assets/audio/sfx/player/player.footstep_02.wav",
+   "assets/audio/sfx/player/player.footstep_03.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "player.overdrive",
+  "group": "S-sfx-player",
+  "n": "053",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/player/player.overdrive_01.wav",
+   "assets/audio/sfx/player/player.overdrive_02.wav",
+   "assets/audio/sfx/player/player.overdrive_03.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.ferreiro",
+  "group": "S-sfx-world",
+  "n": "054",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.ferreiro_01.mp3"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.boss_chest",
+  "group": "S-sfx-world",
+  "n": "055",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.boss_chest_01.mp3"
+  ],
+  "volume_db": -13.5,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.loja",
+  "group": "S-sfx-world",
+  "n": "056",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.loja_01.mp3"
+  ],
+  "volume_db": -9.5,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.curandeiro",
+  "group": "S-sfx-world",
+  "n": "057",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.curandeiro_01.mp3"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.ampulheta",
+  "group": "S-sfx-world",
+  "n": "058",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.ampulheta_01.mp3"
+  ],
+  "volume_db": -25,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.doacao",
+  "group": "S-sfx-world",
+  "n": "059",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.doacao_01.mp3"
+  ],
+  "volume_db": -1,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.aposta",
+  "group": "S-sfx-world",
+  "n": "060",
+  "kinds": [
+   "atual",
+   "novo_01"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.aposta_01.mp3"
+  ],
+  "volume_db": -6.5,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.chest",
+  "group": "S-sfx-world",
+  "n": "061",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.chest_01.wav",
+   "assets/audio/sfx/progress/world.chest_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.fountain",
+  "group": "S-sfx-world",
+  "n": "062",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.fountain_01.wav",
+   "assets/audio/sfx/progress/world.fountain_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.altar",
+  "group": "S-sfx-world",
+  "n": "063",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.altar_01.wav",
+   "assets/audio/sfx/progress/world.altar_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.ritual",
+  "group": "S-sfx-world",
+  "n": "064",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.ritual_01.wav",
+   "assets/audio/sfx/progress/world.ritual_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.portal",
+  "group": "S-sfx-world",
+  "n": "065",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.portal_01.wav",
+   "assets/audio/sfx/progress/world.portal_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.descent",
+  "group": "S-sfx-world",
+  "n": "066",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.descent_01.wav",
+   "assets/audio/sfx/progress/world.descent_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.elite",
+  "group": "S-sfx-world",
+  "n": "067",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.elite_01.wav",
+   "assets/audio/sfx/progress/world.elite_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "world.warning",
+  "group": "S-sfx-world",
+  "n": "068",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/world.warning_01.wav",
+   "assets/audio/sfx/progress/world.warning_02.wav"
+  ],
+  "volume_db": -7,
+  "pitch": 1.0
+ },
+ {
+  "event": "result.victory",
+  "group": "S-sfx-result",
+  "n": "069",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/progress/result.victory_01.wav",
+   "assets/audio/sfx/progress/result.victory_02.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "result.defeat",
+  "group": "S-sfx-result",
+  "n": "070",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/result.defeat_01.wav",
+   "assets/audio/sfx/boss/result.defeat_02.wav"
+  ],
+  "volume_db": -5,
+  "pitch": 1.0
+ }
+]

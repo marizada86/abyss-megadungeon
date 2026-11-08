@@ -22,3 +22,12 @@ Decisão do dono: sem LUDO.AI (custo); teste local aprovado e ouvido por ele.
 - Aplicado: a variação escolhida substitui `_01` e `_02` do evento (80 WAV; nomes e manifesto inalterados). Pico e duração igualados aos arquivos anteriores.
 - Testes headless isolados (audio, impact_fx, new_content, options_menu, quartel, save_upgrade_050, stage_deferrals, vfx_sfx_coverage, volume_and_result_panel): 0 falhas.
 - Scripts: pilot_sfx.py, apply_votes.js em `F:\dev\audio-lab`. Reverter: `git checkout -- assets/audio/sfx/weapon assets/audio/sfx/hero`.
+
+## Lote 1 de SFX (2026-11-08)
+
+Combate, jogador, UI, progressão, mundo e resultado: 70 eventos, 153 clipes gerados com Stable Audio Open (`gen_batch.py`, sementes 101/202/303), votados pelo dono na ferramenta de audição. Votos em `resultado-lote1.json` (alvos em `items-lote1.json`).
+
+- 17 mantiveram o som atual (incluindo os 13 eventos em mp3: nenhum foi trocado, então o manifesto não mudou).
+- 46 receberam o clipe escolhido, copiado sobre todos os arquivos do evento (`apply_lote.js lote1`).
+- 7 pediram nova geração (`regerar`): player.overdrive, world.ritual, world.portal, world.descent, world.elite, result.victory, result.defeat. Regerados com sementes 404/505/606 (`gen_regen.py`, lote `lote1r`).
+- Testes `test_audio` e `test_vfx_sfx_coverage` com 0 falha (APPDATA isolado). Licença Stability: obrigações ainda pendentes (ver seções anteriores).
