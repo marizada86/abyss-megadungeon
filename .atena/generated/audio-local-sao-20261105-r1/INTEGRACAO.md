@@ -15,3 +15,10 @@ Decisão do dono: sem LUDO.AI (custo); teste local aprovado e ouvido por ele.
 - Licença Stability AI Community: registro em stability.ai/community-license, aviso "Powered by Stability AI" visível no jogo ou na documentação, arquivo Notice com a linha de licença, e limite de US$ 1 mi de receita anual. Decisão e execução do dono antes de distribuir.
 - Renomeação por direitos autorais do jogo continua pendente.
 - Reproduzir: ambiente em `F:\dev\audio-lab` (venv, modelo em cache do Hugging Face); scripts nesta pasta.
+
+## Piloto de SFX de armas e habilidades (2026-11-08)
+- 40 eventos (28 armas, 12 habilidades) gerados com 2 variações (sementes 101 e 202); 15 eventos que compartilham arquivo com outro herdam o som do primeiro.
+- Dono votou na ferramenta de audição (`F:\dev\audio-lab\audition`): 40 de 40 preferiram o novo (21 novo_01, 19 novo_02), nenhum "manter atual" ou "gerar de novo".
+- Aplicado: a variação escolhida substitui `_01` e `_02` do evento (80 WAV; nomes e manifesto inalterados). Pico e duração igualados aos arquivos anteriores.
+- Testes headless isolados (audio, impact_fx, new_content, options_menu, quartel, save_upgrade_050, stage_deferrals, vfx_sfx_coverage, volume_and_result_panel): 0 falhas.
+- Scripts: pilot_sfx.py, apply_votes.js em `F:\dev\audio-lab`. Reverter: `git checkout -- assets/audio/sfx/weapon assets/audio/sfx/hero`.
