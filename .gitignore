@@ -20,3 +20,6 @@ evidencias/
 .atena/generated/**/appdata/
 .atena/generated/**/localappdata/
 .atena/generated/**/validation-*/
+
+# Dados do editor/jogo em modo autocontido (Godot/ ao lado do .exe): configurações do editor e user:// local, nunca publicar.
+Godot/
