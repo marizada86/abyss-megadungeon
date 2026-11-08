@@ -1,0 +1,452 @@
+[
+ {
+  "event": "boss.sacerdote_mente_derretida.arrival",
+  "group": "S-sfx-chefe",
+  "n": "001",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.sacerdote_mente_derretida.arrival_01.wav",
+   "assets/audio/sfx/boss/boss.sacerdote_mente_derretida.arrival_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.sacerdote_mente_derretida.phase",
+  "group": "S-sfx-chefe",
+  "n": "002",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.sacerdote_mente_derretida.phase_01.wav",
+   "assets/audio/sfx/boss/boss.sacerdote_mente_derretida.phase_02.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.sacerdote_mente_derretida.defeat",
+  "group": "S-sfx-chefe",
+  "n": "003",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.sacerdote_mente_derretida.defeat_01.wav",
+   "assets/audio/sfx/boss/boss.sacerdote_mente_derretida.defeat_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.zuggtmoy.arrival",
+  "group": "S-sfx-chefe",
+  "n": "004",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.zuggtmoy.arrival_01.wav",
+   "assets/audio/sfx/boss/boss.zuggtmoy.arrival_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.zuggtmoy.phase",
+  "group": "S-sfx-chefe",
+  "n": "005",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.zuggtmoy.phase_01.wav",
+   "assets/audio/sfx/boss/boss.zuggtmoy.phase_02.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.zuggtmoy.defeat",
+  "group": "S-sfx-chefe",
+  "n": "006",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.zuggtmoy.defeat_01.wav",
+   "assets/audio/sfx/boss/boss.zuggtmoy.defeat_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.blogbog.arrival",
+  "group": "S-sfx-chefe",
+  "n": "007",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.blogbog.arrival_01.wav",
+   "assets/audio/sfx/boss/boss.blogbog.arrival_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.blogbog.phase",
+  "group": "S-sfx-chefe",
+  "n": "008",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.blogbog.phase_01.wav",
+   "assets/audio/sfx/boss/boss.blogbog.phase_02.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.blogbog.defeat",
+  "group": "S-sfx-chefe",
+  "n": "009",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.blogbog.defeat_01.wav",
+   "assets/audio/sfx/boss/boss.blogbog.defeat_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.molydeus_chefe.arrival",
+  "group": "S-sfx-chefe",
+  "n": "010",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.molydeus_chefe.arrival_01.wav",
+   "assets/audio/sfx/boss/boss.molydeus_chefe.arrival_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.molydeus_chefe.phase",
+  "group": "S-sfx-chefe",
+  "n": "011",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.molydeus_chefe.phase_01.wav",
+   "assets/audio/sfx/boss/boss.molydeus_chefe.phase_02.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.molydeus_chefe.defeat",
+  "group": "S-sfx-chefe",
+  "n": "012",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.molydeus_chefe.defeat_01.wav",
+   "assets/audio/sfx/boss/boss.molydeus_chefe.defeat_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.lu_yueh.arrival",
+  "group": "S-sfx-chefe",
+  "n": "013",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.lu_yueh.arrival_01.wav",
+   "assets/audio/sfx/boss/boss.lu_yueh.arrival_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.lu_yueh.phase",
+  "group": "S-sfx-chefe",
+  "n": "014",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.lu_yueh.phase_01.wav",
+   "assets/audio/sfx/boss/boss.lu_yueh.phase_02.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.lu_yueh.defeat",
+  "group": "S-sfx-chefe",
+  "n": "015",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.lu_yueh.defeat_01.wav",
+   "assets/audio/sfx/boss/boss.lu_yueh.defeat_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.malcanthet.arrival",
+  "group": "S-sfx-chefe",
+  "n": "016",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.malcanthet.arrival_01.wav",
+   "assets/audio/sfx/boss/boss.malcanthet.arrival_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.malcanthet.phase",
+  "group": "S-sfx-chefe",
+  "n": "017",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.malcanthet.phase_01.wav",
+   "assets/audio/sfx/boss/boss.malcanthet.phase_02.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.malcanthet.defeat",
+  "group": "S-sfx-chefe",
+  "n": "018",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.malcanthet.defeat_01.wav",
+   "assets/audio/sfx/boss/boss.malcanthet.defeat_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.socothbenoth.arrival",
+  "group": "S-sfx-chefe",
+  "n": "019",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.socothbenoth.arrival_01.wav",
+   "assets/audio/sfx/boss/boss.socothbenoth.arrival_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.socothbenoth.phase",
+  "group": "S-sfx-chefe",
+  "n": "020",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.socothbenoth.phase_01.wav",
+   "assets/audio/sfx/boss/boss.socothbenoth.phase_02.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.socothbenoth.defeat",
+  "group": "S-sfx-chefe",
+  "n": "021",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.socothbenoth.defeat_01.wav",
+   "assets/audio/sfx/boss/boss.socothbenoth.defeat_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.sintese_abissal.arrival",
+  "group": "S-sfx-chefe",
+  "n": "022",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.sintese_abissal.arrival_01.wav",
+   "assets/audio/sfx/boss/boss.sintese_abissal.arrival_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.sintese_abissal.phase",
+  "group": "S-sfx-chefe",
+  "n": "023",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.sintese_abissal.phase_01.wav",
+   "assets/audio/sfx/boss/boss.sintese_abissal.phase_02.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.sintese_abissal.defeat",
+  "group": "S-sfx-chefe",
+  "n": "024",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.sintese_abissal.defeat_01.wav",
+   "assets/audio/sfx/boss/boss.sintese_abissal.defeat_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.guardiao_verdadeiro.arrival",
+  "group": "S-sfx-chefe",
+  "n": "025",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.guardiao_verdadeiro.arrival_01.wav",
+   "assets/audio/sfx/boss/boss.guardiao_verdadeiro.arrival_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.guardiao_verdadeiro.phase",
+  "group": "S-sfx-chefe",
+  "n": "026",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.guardiao_verdadeiro.phase_01.wav",
+   "assets/audio/sfx/boss/boss.guardiao_verdadeiro.phase_02.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.guardiao_verdadeiro.defeat",
+  "group": "S-sfx-chefe",
+  "n": "027",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.guardiao_verdadeiro.defeat_01.wav",
+   "assets/audio/sfx/boss/boss.guardiao_verdadeiro.defeat_02.wav"
+  ],
+  "volume_db": -3,
+  "pitch": 1.0
+ },
+ {
+  "event": "boss.arrival",
+  "group": "S-sfx-chefe",
+  "n": "028",
+  "kinds": [
+   "atual",
+   "novo_01",
+   "novo_02",
+   "novo_03"
+  ],
+  "targets": [
+   "assets/audio/sfx/boss/boss.arrival_01.wav",
+   "assets/audio/sfx/boss/boss.arrival_02.wav",
+   "assets/audio/sfx/boss/boss.arrival_03.wav"
+  ],
+  "volume_db": -4,
+  "pitch": 1.0
+ }
+]

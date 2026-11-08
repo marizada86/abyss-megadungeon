@@ -33,3 +33,7 @@ Combate, jogador, UI, progressão, mundo e resultado: 70 eventos, 153 clipes ger
 - Testes `test_audio` e `test_vfx_sfx_coverage` com 0 falha (APPDATA isolado). Licença Stability: obrigações ainda pendentes (ver seções anteriores).
 
 Regeração do Lote 1 (`lote1r`, sementes 404/505/606): world.descent, world.portal e world.ritual (novo 2) e world.elite (novo 1) aplicados; player.overdrive, result.victory e result.defeat mantiveram o som atual. Votos em `resultado-lote1r.json`.
+
+## Lote 2 de SFX: chefes (2026-11-08)
+
+28 eventos, 57 clipes (`gen_batch.py lote2 S-sfx-chefe`). Votos em `resultado-lote2.json`: 10 trocados (7 novo 2, 3 novo 1), 17 mantidos, 1 pediu nova geração (boss.sacerdote_mente_derretida.defeat). O dono avaliou que o conjunto soa estridente e sem alma e aprovou como substituto provisório; medição (lote 1): centróide espectral médio 2184 Hz nos novos contra 1011 Hz nos atuais, e 25% da energia acima de 4 kHz contra 5%. Próximo passo: teste de suavização por EQ.
