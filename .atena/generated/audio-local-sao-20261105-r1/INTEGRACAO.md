@@ -31,3 +31,5 @@ Combate, jogador, UI, progressão, mundo e resultado: 70 eventos, 153 clipes ger
 - 46 receberam o clipe escolhido, copiado sobre todos os arquivos do evento (`apply_lote.js lote1`).
 - 7 pediram nova geração (`regerar`): player.overdrive, world.ritual, world.portal, world.descent, world.elite, result.victory, result.defeat. Regerados com sementes 404/505/606 (`gen_regen.py`, lote `lote1r`).
 - Testes `test_audio` e `test_vfx_sfx_coverage` com 0 falha (APPDATA isolado). Licença Stability: obrigações ainda pendentes (ver seções anteriores).
+
+Regeração do Lote 1 (`lote1r`, sementes 404/505/606): world.descent, world.portal e world.ritual (novo 2) e world.elite (novo 1) aplicados; player.overdrive, result.victory e result.defeat mantiveram o som atual. Votos em `resultado-lote1r.json`.
