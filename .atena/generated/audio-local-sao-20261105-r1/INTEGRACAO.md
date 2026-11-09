@@ -37,3 +37,5 @@ Regeração do Lote 1 (`lote1r`, sementes 404/505/606): world.descent, world.por
 ## Lote 2 de SFX: chefes (2026-11-08)
 
 28 eventos, 57 clipes (`gen_batch.py lote2 S-sfx-chefe`). Votos em `resultado-lote2.json`: 10 trocados (7 novo 2, 3 novo 1), 17 mantidos, 1 pediu nova geração (boss.sacerdote_mente_derretida.defeat). O dono avaliou que o conjunto soa estridente e sem alma e aprovou como substituto provisório; medição (lote 1): centróide espectral médio 2184 Hz nos novos contra 1011 Hz nos atuais, e 25% da energia acima de 4 kHz contra 5%. Próximo passo: teste de suavização por EQ.
+
+Teste de suavização por EQ (`suave.py`: passa-baixa 4,5 kHz de 4ª ordem + reforço de banda 80-250 Hz): 12 sons de UI/progresso, 6 preferiram a versão suavizada e 6 a original (`resultado-suave.json`). Aplicada a suavizada em ui.invalid, ui.pause, ui.resume, progress.xp, progress.fountain e progress.ritual. Resultado inconclusivo como regra geral; Lote 3 segue sem EQ. O dono avalia ElevenLabs Starter após fechar este formato.

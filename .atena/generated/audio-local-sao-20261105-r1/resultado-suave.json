@@ -1,0 +1,14 @@
+{
+	"progress.altar": "novo_01",
+	"progress.chest": "novo_01",
+	"progress.coin": "novo_01",
+	"progress.fountain": "novo_02",
+	"progress.item": "novo_01",
+	"progress.ritual": "novo_02",
+	"progress.xp": "novo_02",
+	"ui.close": "novo_01",
+	"ui.invalid": "novo_02",
+	"ui.open": "novo_01",
+	"ui.pause": "novo_02",
+	"ui.resume": "novo_02"
+}
