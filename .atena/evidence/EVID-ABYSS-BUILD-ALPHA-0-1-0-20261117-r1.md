@@ -28,3 +28,10 @@ Estado: DRAFT. Build de Produção Alpha 0.1.0 (Windows x86_64), gerada em 2026-
 
 ## Como testar
 `build/dist-0.1.0/NottgardSurvivors.exe` abre o diretório de saves real do jogo; para um perfil separado, rodar com `APPDATA` e `LOCALAPPDATA` apontando para uma pasta de teste.
+
+## Revisão de nomes de terceiros (2026-11-17, r2 da build)
+- Varredura de `data/`, `ui/` e `core/`: nenhuma forma capitalizada dos 37 nomes de DEC-NOMES-OFICIAIS-20261108-r2 restou; só IDs minúsculos intencionais.
+- Termos de D&D trocados no texto exibido: "Underdark" → "subterrâneo profundo", "Cloudkill" → "Nuvem Mortal" (4 trechos), "Aboleth" → "outro nome"; teste do codex ajustado. Gate `RELEASE-GATES: PASS` depois da troca.
+- DECISÃO DO DONO (2026-11-17): manter Dante, Vergil, Trish (Devil May Cry), Wonka, Willie (Willy Wonka) e Arondir (Tolkien) nesta Alpha; a troca fica para um patch futuro, com decisão correspondente no Vault (DEC-NOMES-OFICIAIS r3). Risco aceito pelo dono com a distribuição aberta.
+- Não trocados por serem mitologia ou termo genérico: Gehenna, Estige, Kraken, Amatsu-Mikaboshi, Lu Yueh, Tou Um, Molor; raças Drow, Tiefling, Aasimar, Goliath; herói Leoric (também personagem de Diablo).
+- Limite: arte com nome desenhado e áudio não foram varridos; termos de D&D fora da lista usada podem ter escapado.

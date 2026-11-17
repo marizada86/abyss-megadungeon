@@ -89,7 +89,7 @@
       "hqs": ["hqn_01", "hqn_21"],
       "curiosities": [
         {"req": "base", "text": "Zynara Vellen tem parentesco distante com a família Vellen de Maelor.", "fonte": "03_NPCs/Zynara, Sessão 13; 12_Lore/Família Vellen"},
-        {"req": "base", "text": "Ela estuda botânica. Em Domwieck achou raízes de outro plano e cogumelos que lembravam o Underdark, e acha que vêm do Reino Abissal. O grupo a viu sorrir pela primeira vez.", "fonte": "03_NPCs/Zynara, Sessão 13"},
+        {"req": "base", "text": "Ela estuda botânica. Em Domwieck achou raízes de outro plano e cogumelos que lembravam o subterrâneo profundo, e acha que vêm do Reino Abissal. O grupo a viu sorrir pela primeira vez.", "fonte": "03_NPCs/Zynara, Sessão 13"},
         {"req": "bio", "text": "Helion revelou que foi ela quem apagou os registros da antiga Aluris.", "fonte": "03_NPCs/Zynara, S9-16"},
         {"req": "bio", "text": "Na Sessão 23 abrigou o grupo no laboratório das Docas e montou o portal azul para o Castelo da Fome com as plantas de um túmulo.", "fonte": "03_NPCs/Zynara, Sessão 23; 06_Itens/Plantas do Túmulo"},
         {"req": "hq:hqn_21", "text": "Ao fim do arco organizou as eleições com Gilly e partiu com Arlindo Orlando.", "fonte": "03_NPCs/Zynara, Sessão 24"}
@@ -225,7 +225,7 @@
       "quem": "Parte do Kraken das Docas: enorme, metade dentro da água, com tentáculos que agarram e a capacidade de dominar mentes.",
       "curiosities": [
         {"req": "base", "text": "Agarrou Leoric e tentou afogá-lo e dominá-lo. Sylas dominou a mente do próprio Kraken e Korrak, em fúria, decepou todos os tentáculos.", "fonte": "07_Criaturas/Kraken, Sessão 13"},
-        {"req": "base", "text": "Nos registros da mesa, a criatura chegou a ser chamada de “Aboleth”; o certo é Kraken.", "fonte": "07_Criaturas/Kraken"},
+        {"req": "base", "text": "Nos registros da mesa, a criatura chegou a ser chamada por outro nome; o certo é Kraken.", "fonte": "07_Criaturas/Kraken"},
         {"req": "hq:hqn_21", "text": "Um segundo Kraken, com dez tentáculos, saiu das Docas numa névoa fortíssima. Imune a frio e raio, só deixou a cidade quando Thalion o puxou por um portal.", "fonte": "07_Criaturas/Kraken, Sessão 21"}
       ]
     },
@@ -460,9 +460,9 @@
     },
     "discipulo_pestilento": {
       "onde": ["feng_tu"],
-      "quem": "Sacerdote de Lu Yueh no templo de Tou Um. Lança Cloudkill, transforma o chão em névoa tóxica e desfere um ataque psíquico em área.",
+      "quem": "Sacerdote de Lu Yueh no templo de Tou Um. Lança Nuvem Mortal, transforma o chão em névoa tóxica e desfere um ataque psíquico em área.",
       "curiosities": [
-        {"req": "base", "text": "O Cloudkill dele cobriu uma área enorme e quase matou o grupo.", "fonte": "Sessão 18"},
+        {"req": "base", "text": "A Nuvem Mortal dele cobriu uma área enorme e quase matou o grupo.", "fonte": "Sessão 18"},
         {"req": "boss", "text": "Kayron foi decisivo: teleportava para atacar e voltava, e um golpe psíquico dele em área matou cerca de quatro inimigos de uma vez.", "fonte": "Sessão 18"},
         {"req": "boss", "text": "Depois do combate, Erik e Brook estavam doentes e só se curaram na peregrinação da estrela de Tou Um: oito dias de transe seguindo uma miragem.", "fonte": "Sessão 18; 12_Lore/Tou Um"}
       ]

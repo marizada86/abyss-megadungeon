@@ -187,8 +187,8 @@ func run() -> Array:
 	if Catalog.detail("enemies", "sacerdote_mente_derretida", false, seen) != Catalog.UNKNOWN_DETAIL:
 		out.append("inimigo não descoberto continua sem informação")
 	var kraken := Catalog.detail("enemies", "tentaculo_kraken", true, Profile.new())
-	if kraken.find("Aboleth") < 0 or kraken.find("segundo Kraken") >= 0:
-		out.append("Kraken: Aboleth (base) sim, o da Sessão 21 só depois da HQ final")
+	if kraken.find("outro nome") < 0 or kraken.find("segundo Kraken") >= 0:
+		out.append("Kraken: nota de variante de nome (base) sim, o da Sessão 21 só depois da HQ final")
 
 
 	# quebráveis: detalhe enxuto, com e sem perfil (a pausa não passa perfil)
