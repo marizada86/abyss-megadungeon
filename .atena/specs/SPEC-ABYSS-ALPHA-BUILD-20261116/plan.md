@@ -1,7 +1,7 @@
 ---
 id: "PLAN-ABYSS-ALPHA-BUILD-20261116"
 spec_id: "SPEC-ABYSS-ALPHA-BUILD-20261116"
-status: "draft"
+status: "completed"
 approval:
   mode: "per-plan"
 ---
