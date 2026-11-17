@@ -32,8 +32,8 @@ O que voce reportar muda o jogo de verdade.
    Controle: nunca foi testado em controle fisico. Se tiver um, tente e conte como foi.
 
 5. ENVIAR O RELATO
-   - Canal de retorno: <CANAL DE RETORNO - PREENCHER ANTES DE ENVIAR>
-   - Esta versao nao tem atalhos de relato dentro do jogo (F5/F6/F7). Escreva e envie um texto,
+   - Canal de retorno: mensagem direta para o organizador (a pessoa que te enviou este ZIP).
+   - Esta versao nao tem atalhos de relato dentro do jogo (F5/F6/F7). Escreva e envie uma mensagem,
      com prints se ajudarem.
    - Conte: qual fase e qual heroi, o que estranhou ou gostou, e se algo travou ou ficou confuso.
    - Diga tambem: placa de video, processador, memoria, resolucao e se usou controle.
