@@ -6,8 +6,8 @@ conversation:
 active_plan: "PLAN-ABYSS-ALPHA-BUILD-20261116"
 plan_cursor:
   step: "S-009"
-  status: "BUILD_DONE_WAITING_OWNER_PLAYTEST"
-  note: "S-008 feita: build Producao 0.1.0 (commit e3894a91), smoke sintetico saida 0, zip e SHA-256 em build/dist-0.1.0. Evidencia EVID-ABYSS-BUILD-ALPHA-0-1-0-20261117-r1. Pendentes do dono: playtest humano, aceite visual do icone, passe com controle, decisao de redesenho Vigia/Zburator, merge/push/tag/envio."
+  status: "RELEASED_WAITING_SEND_TO_TESTERS"
+  note: "2026-11-17: dono aprovou playtest, icone e acentos; manteve nomes Dante/Vergil/Trish/Wonka/Willie/Arondir para patch futuro; build regenerada (commit ff881993), merge em main, push e tag alpha-0.1.0 feitos; envio aos testadores e do dono. Anterior: S-008 feita: build Producao 0.1.0 (commit e3894a91), smoke sintetico saida 0, zip e SHA-256 em build/dist-0.1.0. Evidencia EVID-ABYSS-BUILD-ALPHA-0-1-0-20261117-r1. Pendentes do dono: playtest humano, aceite visual do icone, passe com controle, decisao de redesenho Vigia/Zburator, merge/push/tag/envio."
   g002: "Amostra de 7 imagens (4 retratos de chefe, HQs 04/08/18) sem texto desenhado; nao exaustivo. Aparencia de Vigia e Zburator segue como decisao de redesenho do dono/Vault."
 approval:
   mode: "per-plan"
