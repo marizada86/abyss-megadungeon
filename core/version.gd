@@ -1,7 +1,9 @@
 class_name Version
 extends RefCounted
 
-const VERSION := "0.6.0"
+const VERSION := "0.1.0"
+## Canal de distribuição. A contagem foi reiniciada em 0.1.0 no Alpha (decisão do dono, 2026-11-16); 0.5.x e 0.6.0 foram builds de playtest anteriores.
+const CHANNEL := "Alpha"
 const GAME_NAME := "Nottgard - Abyss Megadungeon"
 
 enum BuildProfile { PRODUCTION, PUBLIC_PLAYTEST, QA_INTERNAL }

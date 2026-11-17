@@ -1,0 +1,46 @@
+NOTTGARD - ABYSS MEGADUNGEON  |  ALPHA 0.1.0  (Windows 64 bits)
+================================================================
+
+Obrigado por testar. Esta e uma versao Alpha: o jogo esta em construcao e ainda nao foi lancado.
+O que voce reportar muda o jogo de verdade.
+
+1. REQUISITOS
+   - Windows 10 ou 11, 64 bits.
+   - Placa de video com suporte a OpenGL 3.3 ou superior (o jogo usa o modo de compatibilidade).
+   - Cerca de 700 MB livres (mais o espaco do seu progresso).
+
+2. INSTALAR
+   - Extraia o ZIP INTEIRO para uma pasta sua, por exemplo Documentos\Nottgard.
+     Nao execute de dentro do ZIP.
+   - Opcional: confira o SHA-256 do ZIP com o valor que o organizador enviou:
+       certutil -hashfile Nottgard-Alpha-0.1.0.zip SHA256
+
+3. AVISO DO WINDOWS / ANTIVIRUS
+   O executavel NAO e assinado digitalmente, entao o SmartScreen pode avisar
+   "O Windows protegeu seu computador". Clique em "Mais informacoes" e depois em
+   "Executar assim mesmo". Se o antivirus apagar ou bloquear o arquivo, avise o
+   organizador; nao desative a protecao do seu computador por causa disso.
+
+4. JOGAR
+   - Abra NottgardSurvivors.exe.
+   - A campanha segue a ordem do mapa: cada fase libera a proxima. Comece por Docas.
+   - Nao precisa jogar tudo de uma vez; o progresso fica salvo.
+
+   Teclas:  WASD/setas ou mouse = mover | Q ou botao direito = habilidade | E = interagir
+            C = ficha | Esc = pausa | F11 = tela cheia
+            As teclas podem ser trocadas em Configuracoes > TECLAS.
+   Controle: nunca foi testado em controle fisico. Se tiver um, tente e conte como foi.
+
+5. ENVIAR O RELATO
+   - Canal de retorno: <CANAL DE RETORNO - PREENCHER ANTES DE ENVIAR>
+   - Esta versao nao tem atalhos de relato dentro do jogo (F5/F6/F7). Escreva e envie um texto,
+     com prints se ajudarem.
+   - Conte: qual fase e qual heroi, o que estranhou ou gostou, e se algo travou ou ficou confuso.
+   - Diga tambem: placa de video, processador, memoria, resolucao e se usou controle.
+
+6. PRIVACIDADE
+   O jogo NAO envia nada automaticamente. So sai da sua maquina o que voce mandar.
+
+7. SEU PROGRESSO
+   Fica gravado no perfil local do Windows (pasta de dados do jogo no seu usuario).
+   Versoes futuras podem exigir recomecar; avisaremos antes.

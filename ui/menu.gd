@@ -72,7 +72,7 @@ func _ready() -> void:
 		%Tabs.add_child(ranking)
 	heroes = p.heroes_sorted()
 	stages = p.stages_sorted().filter(func(id): return not bool(Data.table("stages")[id].get("qa_only", false)))
-	version_label.text = "%s v%s%s" % [Version.GAME_NAME, Version.VERSION, "  ·  build de %s (%s)" % [Version.profile_slug(), Version.build_id()] if Version.evidence_enabled() else ""]
+	version_label.text = "%s %s v%s%s" % [Version.GAME_NAME, Version.CHANNEL, Version.VERSION,"  ·  build de %s (%s)" % [Version.profile_slug(), Version.build_id()] if Version.evidence_enabled() else ""]
 	hero_list.item_selected.connect(func(_i): _refresh_hero())
 	stage_list.item_selected.connect(func(_i): _refresh_stage())
 	play_btn.pressed.connect(_play)

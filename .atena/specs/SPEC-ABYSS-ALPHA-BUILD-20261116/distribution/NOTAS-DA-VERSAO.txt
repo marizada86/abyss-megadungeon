@@ -1,0 +1,34 @@
+NOTTGARD - ABYSS MEGADUNGEON  |  NOTAS DA VERSAO ALPHA 0.1.0
+============================================================
+
+Primeira versao do canal Alpha. A contagem de versao foi reiniciada (antes eram builds de playtest 0.5.x e 0.6.0).
+Esta versao substitui as anteriores; se voce ja tem uma, use esta.
+
+O QUE ESTA NESTA VERSAO
+- Campanha completa jogavel (11 mapas, 12 herois), seguindo a trilha da campanha.
+- Nomes oficiais de Nottgard aplicados em personagens, criaturas, deuses e lugares (por exemplo Lodovar e Lavrie
+  no lugar dos nomes anteriores de fases). Pode haver algum texto antigo perdido: conte se vir.
+- Ritmo e duracao dos mapas revistos; teto de inimigos interativos vivos por mapa.
+- Favor divino no HUD, quebraveis do Reino Abissal e de Domwieck, templo de Tou Um, carga da legiao, discipulo.
+- Evolucoes de arma (12 armas, 13 passivas novas) com efeitos visuais proprios.
+- Avisos telegrafados dos golpes dos inimigos comuns (faixa, mira e area).
+- Retratos dos 12 herois no HUD e na Ficha; Codex do Quartel com personagens, inimigos, armas e itens.
+- Sons de efeitos proprios (armas, habilidades, chefes, interface), ainda provisorios.
+- Acessibilidade: tamanho do texto, contraste alto, daltonismo, impacto reduzido, teclas remapeaveis.
+
+O QUE TESTAR (em ordem de interesse)
+1. Primeira partida em Docas: a abertura esta justa para quem nunca jogou? Voce entendeu o que fazer?
+2. Campanha em ordem (Docas, Reino Abissal, Domwieck, Dagruve, Shedaklah/Lodovar): ritmo, dificuldade e
+   se ficou claro qual e a proxima fase.
+3. Chefes: os avisos (anel, faixa, marca) sao suficientes para reagir a tempo?
+4. Evolucoes de arma: voce entendeu como evoluir e o efeito valeu a pena?
+5. Desempenho em Goranthis e Pilares (muitos inimigos): trava? Em qual fase e heroi?
+6. Pilares e o mais dificil: robos so derrotam o chefe com o Quartel no maximo. Diga se esta na medida.
+7. Controle fisico, se tiver um.
+
+JA SABEMOS (nao precisa reportar)
+- Musica e ambiencia do Reino Abissal, Domwieck e Pilares sao reaproveitadas de outras fases.
+- Os sons de efeitos sao provisorios.
+- Equilibrio dos mapas finais (Goranthis e Pilares) ainda sem validacao com muitos jogadores humanos.
+- Controle fisico nunca foi testado em hardware.
+- Os limiares das medalhas sao provisorios.

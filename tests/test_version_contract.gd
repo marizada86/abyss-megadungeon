@@ -7,6 +7,8 @@ func run() -> Array:
 	rx.compile("^[0-9]+[.][0-9]+[.][0-9]+$")
 	if rx.search(Version.VERSION) == null:
 		out.append("VERSION fora do formato major.minor.patch: %s" % Version.VERSION)
+	if Version.CHANNEL.strip_edges() == "":
+		out.append("CHANNEL (canal de distribuição) não pode ser vazio")
 	var presets := FileAccess.get_file_as_string("res://export_presets.cfg")
 	var expected := Version.VERSION + ".0"
 	var seen := 0
