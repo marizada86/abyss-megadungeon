@@ -35,3 +35,10 @@ Estado: DRAFT. Build de Produção Alpha 0.1.0 (Windows x86_64), gerada em 2026-
 - DECISÃO DO DONO (2026-11-17): manter Dante, Vergil, Trish (Devil May Cry), Wonka, Willie (Willy Wonka) e Arondir (Tolkien) nesta Alpha; a troca fica para um patch futuro, com decisão correspondente no Vault (DEC-NOMES-OFICIAIS r3). Risco aceito pelo dono com a distribuição aberta.
 - Não trocados por serem mitologia ou termo genérico: Gehenna, Estige, Kraken, Amatsu-Mikaboshi, Lu Yueh, Tou Um, Molor; raças Drow, Tiefling, Aasimar, Goliath; herói Leoric (também personagem de Diablo).
 - Limite: arte com nome desenhado e áudio não foram varridos; termos de D&D fora da lista usada podem ter escapado.
+
+## Build regenerada após a revisão de nomes (substitui os artefatos acima)
+- Carimbo: commit `ff881993`, versão `0.1.0`, sem `-dirty`; `data/build_info.json` removido depois da exportação.
+- `NottgardSurvivors.exe`: 705 149 392 bytes, SHA-256 `f0e9fc4b00d3f46ede5dba7bf789435ddd84a73ad60fc511af9b67e7e81a1e71`.
+- `Nottgard-Alpha-0.1.0.zip`: 630 796 829 bytes, SHA-256 `fa85e5aca17934d2eccf99817cfc58b2cc5a62bea865789789cc2450bd2772c9` (exe + LEIA-ME + NOTAS, conferido com `tar -tvf`).
+- Gate `RELEASE-GATES: PASS` antes da exportação; smoke em perfil sintético (`tmp/smoke-alpha010b`): headless e com janela 1366x768, ambos saída 0. No pacote: "Nuvem Mortal" presente, "Cloudkill" e "Underdark" ausentes.
+- Os hashes da primeira geração (b46e2d25…, 29d58739…) ficam obsoletos.
