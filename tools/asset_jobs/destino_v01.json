@@ -1,0 +1,10 @@
+[
+ {
+  "src": "assets_incoming/alpha-destino-20261117-r1/destino_v01.png",
+  "key": "gray",
+  "out": "assets/icons/stages/destino.png",
+  "crop": true,
+  "fit": [128, 128],
+  "pad": 6
+ }
+]

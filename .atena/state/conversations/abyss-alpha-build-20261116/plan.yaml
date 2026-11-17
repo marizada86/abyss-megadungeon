@@ -5,12 +5,13 @@ conversation:
   evidence: "Pedido do dono neste chat em 2026-11-16 (nova build com todas as pendencias, exceto audio); chave local, nao e ID de plataforma."
 active_plan: "PLAN-ABYSS-ALPHA-BUILD-20261116"
 plan_cursor:
-  step: "S-001"
-  status: "WAITING_BLOCKING_GAPS"
-  note: "G-001 lista final de renomeacao e G-002 arte com nome desenhado; G-003 a G-005 resolviveis."
+  step: "S-008"
+  status: "WAITING_OWNER_INPUT"
+  note: "S-002 (renomeacao, commit 961a24c), S-004 (versao Alpha 0.1.0) e S-005 (textos) feitos; S-006 gate PASS (suite 0 falhas, auditoria 0 erros, 2026-11-17); S-007 commits 961a24c e 17b6ff6 locais. Faltam G-004 (canal de retorno no LEIA-ME) e G-005 (PNG do icone destino ou decisao de ficar sem) antes de S-008 (build)."
+  g002: "Amostra de 7 imagens (4 retratos de chefe, HQs 04/08/18) sem texto desenhado; nao exaustivo. Aparencia de Vigia e Zburator segue como decisao de redesenho do dono/Vault."
 approval:
   mode: "per-plan"
   scope: "sem push, merge, tag ou envio"
-  checkpoint_PLAN: "pending_zero_blocking"
+  checkpoint_PLAN: "approved_20261116_per_plan_no_push"
 suspension: null
 deferred_requests: []
