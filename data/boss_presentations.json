@@ -34,8 +34,8 @@
   },
   "zuggtmoy": {
     "image": "res://assets/ui/boss-intros/zuggtmoy.png",
-    "title": "Zuggtmoy, Dama dos Fungos",
-    "subtitle": "Shedaklah · andar 222",
+    "title": "Amanessa, Dama dos Fungos",
+    "subtitle": "Lodovár · andar 222",
     "pause_seconds": 1,
     "overlay_seconds": 1.8,
     "transition_color": [
@@ -58,7 +58,7 @@
   },
   "molydeus_chefe": {
     "image": "res://assets/ui/boss-intros/molydeus_chefe.png",
-    "title": "Molydeus, Carcereiro-Chefe",
+    "title": "Zburător, Carcereiro-Chefe",
     "subtitle": "Durao · andar 274",
     "pause_seconds": 1,
     "overlay_seconds": 1.8,
@@ -82,8 +82,8 @@
   },
   "malcanthet": {
     "image": "res://assets/ui/boss-intros/malcanthet.png",
-    "title": "Malcanthet, Rainha das Súcubos",
-    "subtitle": "Shendilavri · camada 570",
+    "title": "Miradéssa, Rainha das Súcubos",
+    "subtitle": "Lavriê · camada 570",
     "pause_seconds": 1,
     "overlay_seconds": 1.8,
     "transition_color": [
@@ -94,7 +94,7 @@
   },
   "socothbenoth": {
     "image": "res://assets/ui/boss-intros/socothbenoth.png",
-    "title": "Socothbenoth, Âncora de Juiblex",
+    "title": "Socobenoth, Âncora de Sathla",
     "subtitle": "Goranthis · camada 597",
     "pause_seconds": 1,
     "overlay_seconds": 1.8,

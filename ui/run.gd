@@ -125,7 +125,7 @@ func _ready() -> void:
 		hud.show_revive_offer(battle)
 	var intro := String(battle.stage.sub) if battle.is_dagruve_encounter() else String(Data.table("stage_story").get(battle.stage_id, {}).get("epigrafe", battle.stage.sub))
 	hud.toast("%s — %s" % [battle.stage.name, intro], Color(0.9, 0.85, 0.6))
-	# SPEC-117 H6: uma linha sobre Adam nas Docas e em Shedaklah, logo depois da epígrafe
+	# SPEC-117 H6: uma linha sobre Adam nas Docas e em Lodovár, logo depois da epígrafe
 	if not Game.qa_sandbox:
 		ChapterFlow.prepare_start(Game.profile.data, battle.stage_id)
 		Game.save()
@@ -1283,7 +1283,7 @@ func _ability_effect(ability_id: String, ev: Dictionary) -> bool:
 		fx.add_child(effect)
 	return true
 
-## Guarda de Lliira e Sobrecarga Mistica: o anel dura enquanto o efeito de jogo dura.
+## Guarda de Avelune e Sobrecarga Mistica: o anel dura enquanto o efeito de jogo dura.
 func _sync_ability_follow() -> void:
 	for id in _ability_follow.keys():
 		var node: Node = _ability_follow[id]

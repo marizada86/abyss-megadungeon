@@ -32,7 +32,7 @@ const AFFIX_NAMES := {"veloz": "Veloz", "resistente": "Resistente", "mortal": "M
 const AFFIX_COLORS := {"veloz": Color(0.4, 0.9, 1.0), "resistente": Color(0.8, 0.5, 0.2), "mortal": Color(0.95, 0.2, 0.2), "avaro": Color(1.0, 0.85, 0.3),
 	"blindado": Color(0.7, 0.75, 0.85), "explosivo": Color(1.0, 0.5, 0.1), "vampirico": Color(0.75, 0.1, 0.45), "invocador": Color(0.6, 0.35, 0.95),
 	"escudeiro": Color(0.3, 0.8, 0.5)}
-const HORDE_FIRST_STAGE := 2        # SPEC-120: `order` da primeira fase com horda (Shedaklah)
+const HORDE_FIRST_STAGE := 2        # SPEC-120: `order` da primeira fase com horda (Lodovár)
 const HORDE_AT := 0.45               # fração da duração da fase em que a horda começa
 const HORDE_WARNING := 5.0
 const HORDE_DURATION := 20.0
@@ -44,7 +44,7 @@ const AFFIX_SHIELD_REDUCTION := 0.25
 const AFFIX_LEECH := 0.2
 const AFFIX_SUMMON_EVERY := 8.0
 const AFFIX_SUMMON_N := 3
-const AFFIX_FIRST_AFFIXED_STAGE := 2   # `order` da fase em que os afixos novos começam (Shedaklah)
+const AFFIX_FIRST_AFFIXED_STAGE := 2   # `order` da fase em que os afixos novos começam (Lodovár)
 const TRUCE_KINDS := ["loja", "ferreiro", "arcanista", "curandeiro"]   # SPEC-143: o que a marca Sem trégua tira da run
 const AFFIX_BOSS_FIRST_STAGE := 4      # chefe afixado a partir da quinta fase (Durao)
 ## Cada bioma tem seu próprio quebrável temático, alinhado à família de prop
@@ -2181,7 +2181,7 @@ func _combat_count() -> int:
 			n += 1
 	return n
 
-## MEC-051: Graz'zt limpa o mapa. Mata todos os inimigos comuns e destrutíveis, com as mortes e os drops normais;
+## MEC-051: Vardrém limpa o mapa. Mata todos os inimigos comuns e destrutíveis, com as mortes e os drops normais;
 ## poupam-se chefe, elites (afixo, baú, `elite_only`) e inimigos de objetivo de acontecimento. Devolve quantos morreram.
 func wipe_map() -> int:
 	var n := 0

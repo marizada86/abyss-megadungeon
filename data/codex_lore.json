@@ -17,7 +17,7 @@
         {"req": "base", "text": "A carta de Bromnor, entregue por Gilly, admite o que Brook dizia: havia algo errado em Fateridge. Bromnor também não sentia mais a presença do próprio martelo.", "fonte": "06_Itens/Carta de Bromnor para Brook"},
         {"req": "base", "text": "Brook entende língua de sinais.", "fonte": "02_Personagens/Brook França, Sessões 16 a 24"},
         {"req": "bio", "text": "Entre os papéis do grupo, Brook achou uma cópia autenticada da carta de trégua de Helion, de 1400, sobre Dagruve e o território humano.", "fonte": "06_Itens/Carta de Trégua de 1400"},
-        {"req": "hq:hqn_19", "text": "No depoimento público em Fateridge, o martelo falhou diante de todos e só voltou a brilhar quando Brook pediu perdão pelo juramento a Lliira.", "fonte": "02_Personagens/Brook França, Sessão 21"},
+        {"req": "hq:hqn_19", "text": "No depoimento público em Fateridge, o martelo falhou diante de todos e só voltou a brilhar quando Brook pediu perdão pelo juramento a Avelune.", "fonte": "02_Personagens/Brook França, Sessão 21"},
         {"req": "hq:hqn_21", "text": "Depois do arco, Brook foi eleito Conselheiro de Fateridge.", "fonte": "02_Personagens/Brook França, Sessão 24"}
       ]
     },
@@ -39,8 +39,8 @@
         {"req": "base", "text": "Sylas conseguiu roupas com capuz para o grupo atravessar a área humana de Fateridge.", "fonte": "02_Personagens/Sylas Malafaia, Sessão 03"},
         {"req": "base", "text": "O colar de visão verdadeira do Santuário dá visão da verdade a quem o usa. Sylas o ativou contra Willie e depois diante da estrela.", "fonte": "06_Itens/Colar de visão verdadeira do Santuário"},
         {"req": "bio", "text": "Foi Sylas quem fez o ritual que fechou a Tarn em Dagruve e encerrou a névoa na cidade.", "fonte": "02_Personagens/Sylas Malafaia, Sessão 08"},
-        {"req": "hq:hqn_14", "text": "A aura de Nyrelia é amarela e lembra Mask. A névoa do santuário é roxa. São duas coisas diferentes.", "fonte": "02_Personagens/Sylas Malafaia, Conhecimento do grupo e limites"},
-        {"req": "hq:hqn_21", "text": "Ao fim do arco, sacou o Baralho de Muitas Coisas e perdeu os bens, o cajado e parte da inteligência.", "fonte": "02_Personagens/Sylas Malafaia, Sessão 24"}
+        {"req": "hq:hqn_14", "text": "A aura de Nyrelia é amarela e lembra Sovren. A névoa do santuário é roxa. São duas coisas diferentes.", "fonte": "02_Personagens/Sylas Malafaia, Conhecimento do grupo e limites"},
+        {"req": "hq:hqn_21", "text": "Ao fim do arco, sacou o Bety 1.23 e perdeu os bens, o cajado e parte da inteligência.", "fonte": "02_Personagens/Sylas Malafaia, Sessão 24"}
       ]
     },
     "kayron": {
@@ -51,7 +51,7 @@
         {"req": "base", "text": "Quando Kayron derramou o sangue do recipiente ao atacar o sacerdote, interrompeu o ritual da igreja de Dagruve.", "fonte": "02_Personagens/Kayron, Sessão 03"},
         {"req": "bio", "text": "O Broche Celestial que ele recebeu com o grupo abre as portas de Castle Rodhe.", "fonte": "06_Itens/Broche Celestial"},
         {"req": "bio", "text": "No templo de Tou Um, o dano psíquico dele em área decidiu o combate. Mais tarde, no Castelo da Fome, foi o dano radiante que furou o mini-chefe.", "fonte": "02_Personagens/Kayron, Sessões 18 e 23"},
-        {"req": "hq:hqn_16", "text": "Em homenagem a Shar, sacrificou os três rebeldes sob custódia; uma asa negra em aura vermelha apareceu e sumiu.", "fonte": "02_Personagens/Kayron, Sessão 06"}
+        {"req": "hq:hqn_16", "text": "Em homenagem a Nemúria, sacrificou os três rebeldes sob custódia; uma asa negra em aura vermelha apareceu e sumiu.", "fonte": "02_Personagens/Kayron, Sessão 06"}
       ]
     },
     "korrak": {
@@ -113,7 +113,7 @@
         {"req": "base", "text": "Os Grimholders se dizem “os mais antigos dessas bandas”. A cidade que hoje é Dagruve se chamava Grimhold.", "fonte": "03_NPCs/Arlindo Orlando, S9-37; 05_Organizações/Grimholders"},
         {"req": "bio", "text": "Com Modify Memory, mostrou a Brook a memória do Massacre Celestial.", "fonte": "03_NPCs/Arlindo Orlando, S8-11"},
         {"req": "bio", "text": "Avisou o grupo: “tomem cuidado com o orgulho elfo” e que o nome Aluris podia dar problema.", "fonte": "03_NPCs/Arlindo Orlando, S9-39"},
-        {"req": "hq:hqn_21", "text": "Liderou uma força-tarefa dos Grimholders atrás dos cultistas restantes de Ghaunadaur e, no fim do arco, partiu com Zynara.", "fonte": "03_NPCs/Arlindo Orlando, Sessão 20 parte 2; 03_NPCs/Zynara, Sessão 24"}
+        {"req": "hq:hqn_21", "text": "Liderou uma força-tarefa dos Grimholders atrás dos cultistas restantes de Ubboghau e, no fim do arco, partiu com Zynara.", "fonte": "03_NPCs/Arlindo Orlando, Sessão 20 parte 2; 03_NPCs/Zynara, Sessão 24"}
       ]
     },
     "erik": {
@@ -147,7 +147,7 @@
     },
     "cultista_adaga": {
       "onde": ["dagruve", "docas", "reino_abissal", "domwieck"],
-      "quem": "Cultista de A Mente Derretida, grupo ligado à névoa e ao culto de Ghaunadaur em Dagruve. Anda encapuzado.",
+      "quem": "Cultista de A Mente Derretida, grupo ligado à névoa e ao culto de Ubboghau em Dagruve. Anda encapuzado.",
       "curiosities": [
         {"req": "base", "text": "Na Praça da Loucura havia de dez a quatorze cultistas. O combate foi longo e um aventureiro chegou perto da morte.", "fonte": "05_Organizações/A Mente Derretida, S3-45"},
         {"req": "base", "text": "Maelor os reconheceu pelo capuz e viu para onde iam: uma igreja que ele conhecia da infância, antes dedicada a Nott.", "fonte": "05_Organizações/A Mente Derretida, S3-39"},
@@ -274,16 +274,16 @@
     },
     "cogumelo_fungico": {
       "onde": ["shedaklah", "molor"],
-      "quem": "Fungo vivo do andar 222, o domínio de Zuggtmoy. Criaturas fúngicas emboscaram o grupo no caminho do rio de almas.",
+      "quem": "Fungo vivo do andar 222, o domínio de Amanessa. Criaturas fúngicas emboscaram o grupo no caminho do rio de almas.",
       "curiosities": [
-        {"req": "base", "text": "Para abrir um arco de pedra antigo, as runas pediam que se unissem os dois opostos da camada: o fungo de Zuggtmoy e o slime de Juiblex.", "fonte": "Sessão 16; 04_Locais/Camadas do Plano Abissal"}
+        {"req": "base", "text": "Para abrir um arco de pedra antigo, as runas pediam que se unissem os dois opostos da camada: o fungo de Amanessa e o slime de Sathla.", "fonte": "Sessão 16; 04_Locais/Camadas do Plano Abissal"}
       ]
     },
     "servo_de_zuggtmoy": {
       "onde": ["shedaklah"],
-      "quem": "Humano ou meio-orc que serve Zuggtmoy por escolha. Ela mantém uns quatrocentos.",
+      "quem": "Humano ou meio-orc que serve Amanessa por escolha. Ela mantém uns quatrocentos.",
       "curiosities": [],
-      "fonte": "03_NPCs/Zuggtmoy, Guarnição"
+      "fonte": "03_NPCs/Amanessa, Guarnição"
     },
     "esporo_voador": {
       "onde": ["shedaklah"],
@@ -293,26 +293,26 @@
     },
     "pudim_negro": {
       "onde": ["shedaklah", "molor"],
-      "quem": "Pudim negro, do séquito de limos de Juiblex.",
+      "quem": "Pudim negro, do séquito de limos de Sathla.",
       "curiosities": [
-        {"req": "base", "text": "Quando a mente de Sylas foi projetada ao Abismo profundo, ele viu Juiblex cercado de limos e pudins negros.", "fonte": "03_NPCs/Juiblex, Sessão 12"}
+        {"req": "base", "text": "Quando a mente de Sylas foi projetada ao Abismo profundo, ele viu Sathla cercado de limos e pudins negros.", "fonte": "03_NPCs/Sathla, Sessão 12"}
       ]
     },
     "slime_de_juiblex": {
       "onde": ["shedaklah", "molor", "goranthis", "pilares"],
-      "quem": "Slime do território de Juiblex. Divide-se ao morrer. Juiblex é uma mente-colmeia, e cada limo que o grupo matou era ele.",
+      "quem": "Slime do território de Sathla. Divide-se ao morrer. Sathla é uma mente-colmeia, e cada limo que o grupo matou era ele.",
       "curiosities": [
-        {"req": "base", "text": "Marciela explicou: as criaturas que o grupo mata são Juiblex, e matá-las desequilibra as camadas.", "fonte": "03_NPCs/Juiblex, Sessão 16"},
+        {"req": "base", "text": "Marciela explicou: as criaturas que o grupo mata são Sathla, e matá-las desequilibra as camadas.", "fonte": "03_NPCs/Sathla, Sessão 16"},
         {"req": "base", "text": "O grupo atravessou o território coberto de limo furtivamente, entre slimes e bolhas explosivas.", "fonte": "Sessão 15"}
       ]
     },
     "zuggtmoy": {
       "onde": ["shedaklah"],
-      "quem": "Soberana fúngica de Shedaklah. Não pode sair do próprio domínio. Oferece mapa e orientação ao grupo em troca de ajuda para conter Juiblex.",
+      "quem": "Soberana fúngica de Lodovár. Não pode sair do próprio domínio. Oferece mapa e orientação ao grupo em troca de ajuda para conter Sathla.",
       "curiosities": [
-        {"req": "base", "text": "Juiblex toma território dela e se fortalece com as almas do Rio Estige.", "fonte": "03_NPCs/Zuggtmoy e Juiblex, Sessão 15"},
-        {"req": "base", "text": "O grupo negociou com ela no palácio, antes de entrar no território de Juiblex.", "fonte": "04_Locais/Palácio de Zuggtmoy"},
-        {"req": "base", "text": "Na mesa, Zuggtmoy foi aliada. No jogo, ela é o desafio do andar.", "fonte": "03_NPCs/Zuggtmoy; divergência entre o jogo e o Vault"}
+        {"req": "base", "text": "Sathla toma território dela e se fortalece com as almas do Rio Estige.", "fonte": "03_NPCs/Amanessa e Sathla, Sessão 15"},
+        {"req": "base", "text": "O grupo negociou com ela no palácio, antes de entrar no território de Sathla.", "fonte": "04_Locais/Palácio de Amanessa"},
+        {"req": "base", "text": "Na mesa, Amanessa foi aliada. No jogo, ela é o desafio do andar.", "fonte": "03_NPCs/Amanessa; divergência entre o jogo e o Vault"}
       ]
     },
     "bolha_de_slime": {
@@ -323,16 +323,16 @@
     },
     "cultista_thullgrime": {
       "onde": ["molor"],
-      "quem": "Habitante de Thullgrime, assentamento de Molor onde só há cultistas de Ghaunadaur.",
+      "quem": "Habitante de Thullgrime, assentamento de Molor onde só há cultistas de Ubboghau.",
       "curiosities": [
-        {"req": "base", "text": "Ouvem as vozes de Ghaunadaur, mas nunca o viram. Falam “daquele que está aqui, mas não está”.", "fonte": "Sessão 17"},
+        {"req": "base", "text": "Ouvem as vozes de Ubboghau, mas nunca o viram. Falam “daquele que está aqui, mas não está”.", "fonte": "Sessão 17"},
         {"req": "base", "text": "Quando o grupo atacou o sítio do ritual, os cultistas cortaram a própria garganta. O sangue escorreu até a massa, que despertou.", "fonte": "Sessão 17"},
         {"req": "base", "text": "O diário do chefe deles registra o “ritual de estagnação” do Rio Estige.", "fonte": "06_Itens/Diário do Chefe dos Cultistas de Thullgrime"}
       ]
     },
     "receptaculo_de_juiblex": {
       "onde": ["shedaklah", "molor", "goranthis", "pilares"],
-      "quem": "“Backup” de Juiblex, sem a consciência do original, sustentado por ritual em Thullgrime: uma massa gigantesca de carne e gosma, com um casulo e olhos ao centro.",
+      "quem": "“Backup” de Sathla, sem a consciência do original, sustentado por ritual em Thullgrime: uma massa gigantesca de carne e gosma, com um casulo e olhos ao centro.",
       "curiosities": [
         {"req": "base", "text": "Resiste a concussão, perfuração e corte, é imune a veneno e fraco a dano radiante.", "fonte": "Sessão 17"},
         {"req": "base", "text": "Conjurou uma poça de ácido enorme que quase matou o grupo.", "fonte": "Sessão 17"},
@@ -342,16 +342,16 @@
     },
     "manifestacao_de_juiblex": {
       "onde": [],
-      "quem": "Juiblex é uma mente-colmeia: um único ser dividido em muitos. Cada manifestação que o grupo derrota é ele.",
+      "quem": "Sathla é uma mente-colmeia: um único ser dividido em muitos. Cada manifestação que o grupo derrota é ele.",
       "curiosities": [
-        {"req": "base", "text": "O plano dele sempre foi seguir o Rio Estige de andar em andar, gelatinizando-o, e isso desequilibra as camadas.", "fonte": "03_NPCs/Juiblex, Sessões 17 e 18"},
-        {"req": "base", "text": "O grupo chegou a cogitar selar Juiblex em vez de matá-lo, para não desequilibrar o Abismo.", "fonte": "03_NPCs/Juiblex, Sessão 17"},
-        {"req": "hq:hqn_09", "text": "Juiblex foi derrotado em Goranthis, depois de consumir Socothbenoth. O Rio Estige voltou a correr em todas as camadas.", "fonte": "03_NPCs/Juiblex, Sessões 19 e 20 (parte 1)"}
+        {"req": "base", "text": "O plano dele sempre foi seguir o Rio Estige de andar em andar, gelatinizando-o, e isso desequilibra as camadas.", "fonte": "03_NPCs/Sathla, Sessões 17 e 18"},
+        {"req": "base", "text": "O grupo chegou a cogitar selar Sathla em vez de matá-lo, para não desequilibrar o Abismo.", "fonte": "03_NPCs/Sathla, Sessão 17"},
+        {"req": "hq:hqn_09", "text": "Sathla foi derrotado em Goranthis, depois de consumir Socobenoth. O Rio Estige voltou a correr em todas as camadas.", "fonte": "03_NPCs/Sathla, Sessões 19 e 20 (parte 1)"}
       ]
     },
     "blogbog": {
       "onde": ["molor"],
-      "quem": "Chefe fúngico de Molor. Seu núcleo verde é uma manifestação de Juiblex.",
+      "quem": "Chefe fúngico de Molor. Seu núcleo verde é uma manifestação de Sathla.",
       "curiosities": [
         {"req": "base", "text": "Usava ácido em área e teve os pontos de vida reforçados durante a luta.", "fonte": "Sessão 16"},
         {"req": "boss", "text": "Dentro do corpo havia um núcleo verde que continuava a se agitar. O grupo o usou como essência no portal de Molor, e o Rio Estige voltou a correr ali.", "fonte": "Sessão 16; 07_Criaturas/Blogbog"}
@@ -359,7 +359,7 @@
     },
     "saco_de_esporos_quebravel": {
       "onde": [],
-      "quem": "Saco de esporos de Shedaklah, onde fungo e limo dividem o andar.",
+      "quem": "Saco de esporos de Lodovár, onde fungo e limo dividem o andar.",
       "curiosities": [],
       "fonte": "04_Locais/Camadas do Plano Abissal"
     },
@@ -373,7 +373,7 @@
       "onde": ["durao"],
       "quem": "Alma presa no rio de almas de Durao, um rio em parte solidificado como gelatina.",
       "curiosities": [
-        {"req": "base", "text": "O rio virou gelatina porque Juiblex passou por ali: o resíduo dele é o rio.", "fonte": "Sessão 16, desertores capturados"}
+        {"req": "base", "text": "O rio virou gelatina porque Sathla passou por ali: o resíduo dele é o rio.", "fonte": "Sessão 16, desertores capturados"}
       ]
     },
     "demonio_de_gehenna": {
@@ -390,17 +390,17 @@
       "curiosities": [
         {"req": "base", "text": "Dentro da jaula está Vhaerith Aetherion, primo de Thalion, exilado ao Abismo por desobedecer a uma ordem dele. Brook reconheceu o sobrenome num teste de história.", "fonte": "Sessão 16"},
         {"req": "base", "text": "Vhaerith diz que ensinou runas a Thalion e que, no Abismo, “as coisas têm que ser do jeito que são”: não se pode simplesmente libertar os prisioneiros.", "fonte": "Sessão 16"},
-        {"req": "base", "text": "O portal diante da jaula abre com sangue de Molydeus e sangue de elfo verdadeiro. Vhaerith deu o dele de bom grado, em troca de uma runa que o deixasse sair dali.", "fonte": "12_Lore/Portal de Durao; Sessões 16 e 17"}
+        {"req": "base", "text": "O portal diante da jaula abre com sangue de Zburător e sangue de elfo verdadeiro. Vhaerith deu o dele de bom grado, em troca de uma runa que o deixasse sair dali.", "fonte": "12_Lore/Portal de Durao; Sessões 16 e 17"}
       ]
     },
     "molydeus_menor": {
       "onde": ["durao", "pilares"],
       "quem": "Carcereiro de Durao. São três, e patrulham atrás de desertores e espiões para prendê-los numa jaula imensa. Voam e se deslocam por portais.",
       "curiosities": [
-        {"req": "base", "text": "Resistem a fogo, raio, trovão, concussão, perfuração, corte e veneno. São fracos a dano radiante e necrótico.", "fonte": "07_Criaturas/Molydeus; Sessão 16"},
-        {"req": "base", "text": "O grupo ouviu falar de três, mas viu e derrotou só um.", "fonte": "07_Criaturas/Molydeus"},
-        {"req": "base", "text": "Durante a luta, o Molydeus matou e mutilou os desertores capturados.", "fonte": "Sessão 16"},
-        {"req": "base", "text": "Corpo musculoso vermelho, cabeça lupina escura, uma segunda cabeça serpentina verde e cauda escura.", "fonte": "07_Criaturas/Molydeus, referência visual r1"}
+        {"req": "base", "text": "Resistem a fogo, raio, trovão, concussão, perfuração, corte e veneno. São fracos a dano radiante e necrótico.", "fonte": "07_Criaturas/Zburător; Sessão 16"},
+        {"req": "base", "text": "O grupo ouviu falar de três, mas viu e derrotou só um.", "fonte": "07_Criaturas/Zburător"},
+        {"req": "base", "text": "Durante a luta, o Zburător matou e mutilou os desertores capturados.", "fonte": "Sessão 16"},
+        {"req": "base", "text": "Corpo musculoso vermelho, cabeça lupina escura, uma segunda cabeça serpentina verde e cauda escura.", "fonte": "07_Criaturas/Zburător, referência visual r1"}
       ]
     },
     "molydeus_chefe": {
@@ -415,7 +415,7 @@
       "onde": ["durao"],
       "quem": "Aberração semelhante a um gafanhoto, de origem não estabelecida. Normalmente age por conta própria.",
       "curiosities": [
-        {"req": "base", "text": "Na mesa, Shu foi encontrada sob controle de Ghaunadaur, na Vila das Sombras. Erik estranhou, porque criaturas assim costumam ser independentes.", "fonte": "07_Criaturas/Shu; Sessão 11"},
+        {"req": "base", "text": "Na mesa, Shu foi encontrada sob controle de Ubboghau, na Vila das Sombras. Erik estranhou, porque criaturas assim costumam ser independentes.", "fonte": "07_Criaturas/Shu; Sessão 11"},
         {"req": "base", "text": "O grupo colheu o sangue da aberração depois de derrotá-la.", "fonte": "Sessão 11"},
         {"req": "base", "text": "No jogo, Shu aparece em Durao.", "fonte": "divergência entre o jogo e o Vault"}
       ]
@@ -424,7 +424,7 @@
       "onde": ["durao"],
       "quem": "Demônio-sapo naturalmente maligno.",
       "curiosities": [
-        {"req": "base", "text": "Na mesa, Ezro estava subordinado a Ghaunadaur na Vila das Sombras, o que Erik achou estranho.", "fonte": "07_Criaturas/Ezro; Sessão 11"},
+        {"req": "base", "text": "Na mesa, Ezro estava subordinado a Ubboghau na Vila das Sombras, o que Erik achou estranho.", "fonte": "07_Criaturas/Ezro; Sessão 11"},
         {"req": "base", "text": "O grupo colheu a saliva do sapo.", "fonte": "Sessão 11"},
         {"req": "base", "text": "No jogo, Ezro aparece em Durao.", "fonte": "divergência entre o jogo e o Vault"}
       ]
@@ -449,7 +449,7 @@
       "quem": "Cultista de Lu Yueh. Cerca de cinco conduziam um ritual no templo de Tou Um, um deles de máscara, ao centro.",
       "curiosities": [
         {"req": "base", "text": "O de máscara era provavelmente Kūkan Shito.", "fonte": "Sessão 17"},
-        {"req": "base", "text": "Lu Yueh destruiu o templo de Tou Um e massacrou os fiéis dela, aproveitando o desequilíbrio que Juiblex causou no andar.", "fonte": "12_Lore/Tou Um e Lu Yueh; Sessão 17"}
+        {"req": "base", "text": "Lu Yueh destruiu o templo de Tou Um e massacrou os fiéis dela, aproveitando o desequilíbrio que Sathla causou no andar.", "fonte": "12_Lore/Tou Um e Lu Yueh; Sessão 17"}
       ]
     },
     "estatua_do_templo": {
@@ -469,9 +469,9 @@
     },
     "lu_yueh": {
       "onde": [],
-      "quem": "Deus das epidemias. Agressivo, “não é do tipo que conversa”. Tomou Feng-tu depois do desequilíbrio que Juiblex causou.",
+      "quem": "Deus das epidemias. Agressivo, “não é do tipo que conversa”. Tomou Feng-tu depois do desequilíbrio que Sathla causou.",
       "curiosities": [
-        {"req": "base", "text": "Feng-tu se autoequilibrava pelo conflito de território entre Tou Um e Lu Yueh, como Shedaklah entre Zuggtmoy e Juiblex.", "fonte": "12_Lore/Tou Um e Lu Yueh; Sessão 18"},
+        {"req": "base", "text": "Feng-tu se autoequilibrava pelo conflito de território entre Tou Um e Lu Yueh, como Lodovár entre Amanessa e Sathla.", "fonte": "12_Lore/Tou Um e Lu Yueh; Sessão 18"},
         {"req": "base", "text": "Os servos dele são criaturas pequenas com rostos de pessoas, que espalham praga ao serem tocadas.", "fonte": "12_Lore/Tou Um e Lu Yueh"},
         {"req": "base", "text": "A rival dele, Tou Um, é a deusa da Estrela do Norte. Só se segue a estrela, que é uma miragem e nunca se aproxima.", "fonte": "12_Lore/Tou Um e Lu Yueh"}
       ]
@@ -484,49 +484,49 @@
     },
     "escravo_de_rivenheart": {
       "onde": ["shendilavri"],
-      "quem": "Vítima humanoide de Rivenheart, cidade murada de comércio de escravos, enfeitiçada e drenada até ficar quase raquítica.",
+      "quem": "Vítima humanoide de Avarência, cidade murada de comércio de escravos, enfeitiçada e drenada até ficar quase raquítica.",
       "curiosities": [
         {"req": "base", "text": "O grupo entrou na cidade disfarçado: Sylas de mercador, os outros de escravos.", "fonte": "Sessão 18"}
       ]
     },
     "sucubo": {
       "onde": ["shendilavri", "pilares"],
-      "quem": "Súcubo de Rivenheart, cidade que ela e os íncubos dominam sob uma ilusão.",
+      "quem": "Súcubo de Avarência, cidade que ela e os íncubos dominam sob uma ilusão.",
       "curiosities": [
         {"req": "base", "text": "Com o amuleto, o grupo viu através da ilusão: quase todos na cidade eram súcubos e íncubos.", "fonte": "Sessão 18"}
       ]
     },
     "ilusao_de_sucubo": {
       "onde": ["shendilavri"],
-      "quem": "Rivenheart é quase toda ilusão de súcubos: o que parece um morador comum é só a máscara.",
+      "quem": "Avarência é quase toda ilusão de súcubos: o que parece um morador comum é só a máscara.",
       "curiosities": [
         {"req": "base", "text": "Só o amuleto do grupo mostrava a cidade como ela era.", "fonte": "Sessão 18"}
       ]
     },
     "guarda_do_castelo": {
       "onde": ["shendilavri"],
-      "quem": "Guarda do Castelo Argento, castelo de Graz'zt, que se alcança por uma passagem secreta da masmorra de Malcanthet.",
+      "quem": "Guarda do Castelo Argento, castelo de Vardrém, que se alcança por uma passagem secreta da masmorra de Miradéssa.",
       "curiosities": [
         {"req": "base", "text": "Quando o grupo emergiu ao lado da sala de música, os servos do castelo estavam enfeitiçados.", "fonte": "Sessão 19"},
-        {"req": "base", "text": "A passagem foi construída quando Malcanthet e Graz'zt eram amantes. As Irmãs Radiantes a revelaram.", "fonte": "Sessão 18"}
+        {"req": "base", "text": "A passagem foi construída quando Miradéssa e Vardrém eram amantes. As Irmãs Radiantes a revelaram.", "fonte": "Sessão 18"}
       ]
     },
     "malcanthet": {
       "onde": ["shendilavri"],
-      "quem": "Rainha das súcubos de Shendilavri. Na sala do trono, quem falha no teste de Constituição passa a concordar com tudo que ela diz.",
+      "quem": "Rainha das súcubos de Lavriê. Na sala do trono, quem falha no teste de Constituição passa a concordar com tudo que ela diz.",
       "curiosities": [
-        {"req": "base", "text": "Contratou o grupo, em segredo, para trazer Graz'zt e/ou recuperar o Espelho das Almas Desejantes, que ele roubou dela.", "fonte": "03_NPCs/Malcanthet, Sessão 18"},
+        {"req": "base", "text": "Contratou o grupo, em segredo, para trazer Vardrém e/ou recuperar o Espelho das Almas Desejantes, que ele roubou dela.", "fonte": "03_NPCs/Miradéssa, Sessão 18"},
         {"req": "base", "text": "Emprestou duas guerreiras como guias, as Irmãs Radiantes, Nyxara e Vaelis.", "fonte": "Sessão 18"},
         {"req": "base", "text": "Sylas resistiu ao enfeitiçamento e a enganou num teste crítico de negociação.", "fonte": "Sessão 18"},
-        {"req": "hq:hqn_08", "text": "Graz'zt arrancou o chifre dela com a mão, jogou-o no portal e declarou guerra.", "fonte": "03_NPCs/Malcanthet; Sessão 19"}
+        {"req": "hq:hqn_08", "text": "Vardrém arrancou o chifre dela com a mão, jogou-o no portal e declarou guerra.", "fonte": "03_NPCs/Miradéssa; Sessão 19"}
       ]
     },
     "ilusao_de_socothbenoth": {
       "onde": ["goranthis"],
-      "quem": "Goranthis (Camada 597) se chama “o verdadeiro Paraíso”, mas o castelo de Socothbenoth era todo ilusão, sustentada por Juiblex.",
+      "quem": "Goranthis (Camada 597) se chama “o verdadeiro Paraíso”, mas o castelo de Socobenoth era todo ilusão, sustentada por Sathla.",
       "curiosities": [
         {"req": "base", "text": "A festa tinha bebida e comida de graça e não havia um guarda.", "fonte": "Sessão 19"},
-        {"req": "base", "text": "Para quebrar a ilusão, foi preciso tirar Socothbenoth do trono.", "fonte": "Sessão 19"}
+        {"req": "base", "text": "Para quebrar a ilusão, foi preciso tirar Socobenoth do trono.", "fonte": "Sessão 19"}
       ]
     },
     "guardiao_de_goranthis": {
@@ -538,22 +538,22 @@
     },
     "cultista_de_socothbenoth": {
       "onde": ["goranthis"],
-      "quem": "Sacerdote de ilusões do castelo de Socothbenoth.",
+      "quem": "Sacerdote de ilusões do castelo de Socobenoth.",
       "curiosities": [],
       "fonte": "jogo"
     },
     "socothbenoth": {
       "onde": ["goranthis"],
-      "quem": "Lorde do Abismo que Juiblex usava como âncora para manter o castelo em festa.",
+      "quem": "Lorde do Abismo que Sathla usava como âncora para manter o castelo em festa.",
       "curiosities": [
         {"req": "base", "text": "Tirado do trono, o palácio verdadeiro se revelou: paredes e tetos de carne e uma gosma preta onde estaria o rosto dele, espalhando-se pelo teto.", "fonte": "Sessão 19"},
         {"req": "base", "text": "As paredes de carne se moviam de forma caótica, “como se pedissem um mestre”.", "fonte": "Sessão 19"},
-        {"req": "hq:hqn_09", "text": "Foi consumido dentro de Juiblex depois do último golpe da batalha final do arco no Abismo.", "fonte": "03_NPCs/Socothbenoth; Sessão 19 e 20 (parte 1)"}
+        {"req": "hq:hqn_09", "text": "Foi consumido dentro de Sathla depois do último golpe da batalha final do arco no Abismo.", "fonte": "03_NPCs/Socobenoth; Sessão 19 e 20 (parte 1)"}
       ]
     },
     "espelho_ilusorio_quebravel": {
       "onde": [],
-      "quem": "Espelho de um reino de ilusão. O Espelho das Almas Desejantes, o verdadeiro, estava com Graz'zt.",
+      "quem": "Espelho de um reino de ilusão. O Espelho das Almas Desejantes, o verdadeiro, estava com Vardrém.",
       "curiosities": [],
       "fonte": "06_Itens/Espelho das Almas Desejantes; Sessão 18"
     },
@@ -561,24 +561,24 @@
       "onde": [],
       "quem": "Estátua de um paraíso que era ilusão.",
       "curiosities": [],
-      "fonte": "04_Locais/Castelo de Socothbenoth"
+      "fonte": "04_Locais/Castelo de Socobenoth"
     },
     "cultista_ghaunadaur": {
       "onde": ["feng_tu", "shendilavri", "pilares"],
-      "quem": "Seguidor de Ghaunadaur. A rede de cultos que o segue se estende pelas camadas do Abismo por onde corre o Rio Estige.",
+      "quem": "Seguidor de Ubboghau. A rede de cultos que o segue se estende pelas camadas do Abismo por onde corre o Rio Estige.",
       "curiosities": [
-        {"req": "base", "text": "Um livro que Sylas leu descreve Ghaunadaur como muito antigo, anterior a muitos deuses e quase primordial.", "fonte": "12_Lore/Ghaunadaur, Sessão 03"},
-        {"req": "base", "text": "Ghaunadaur domina também animais e criaturas normalmente independentes, como Ezro e Shu.", "fonte": "12_Lore/Ghaunadaur"},
-        {"req": "base", "text": "Quem usa o Colar de Ghaunadaur é dominado pela consciência dele.", "fonte": "12_Lore/Ghaunadaur, S7-04"}
+        {"req": "base", "text": "Um livro que Sylas leu descreve Ubboghau como muito antigo, anterior a muitos deuses e quase primordial.", "fonte": "12_Lore/Ubboghau, Sessão 03"},
+        {"req": "base", "text": "Ubboghau domina também animais e criaturas normalmente independentes, como Ezro e Shu.", "fonte": "12_Lore/Ubboghau"},
+        {"req": "base", "text": "Quem usa o Colar de Ubboghau é dominado pela consciência dele.", "fonte": "12_Lore/Ubboghau, S7-04"}
       ]
     },
     "master_of_cruelties": {
       "onde": ["pilares"],
       "quem": "Criatura encontrada no ritual do Castelo da Fome. Fala Abissal, voa e enfeitiça com uma presença cativante.",
       "curiosities": [
-        {"req": "base", "text": "Afirmou que o grupo a usava para invadir a casa do mestre dela, que ainda teria um mestre próprio.", "fonte": "07_Criaturas/Master of Cruelties, Sessão 23"},
-        {"req": "base", "text": "É imune a fogo e resistente à maior parte dos danos. O dano radiante é eficaz.", "fonte": "07_Criaturas/Master of Cruelties"},
-        {"req": "base", "text": "O grupo a matou ali mesmo, na Sessão 23.", "fonte": "07_Criaturas/Master of Cruelties"}
+        {"req": "base", "text": "Afirmou que o grupo a usava para invadir a casa do mestre dela, que ainda teria um mestre próprio.", "fonte": "07_Criaturas/Crueldades, Sessão 23"},
+        {"req": "base", "text": "É imune a fogo e resistente à maior parte dos danos. O dano radiante é eficaz.", "fonte": "07_Criaturas/Crueldades"},
+        {"req": "base", "text": "O grupo a matou ali mesmo, na Sessão 23.", "fonte": "07_Criaturas/Crueldades"}
       ]
     },
     "sintese_abissal": {
@@ -586,16 +586,16 @@
       "quem": "Monstruosidade grande e aberrante, a última do primeiro arco. Ocupa quatro espaços no grid.",
       "curiosities": [
         {"req": "base", "text": "Na mesa, resistia a dano psíquico e a armas não mágicas, e era imune a Enfeitiçado e Amedrontado. Só o dano radiante a furava. No jogo, o psíquico não a atinge.", "fonte": "07_Criaturas/A Síntese Abissal; divergência entre o jogo e o Vault"},
-        {"req": "hq:hqn_10", "text": "Carrega a presença de Ghaunadaur, que causa medo em área, e invoca e absorve slimes.", "fonte": "07_Criaturas/A Síntese Abissal"},
+        {"req": "hq:hqn_10", "text": "Carrega a presença de Ubboghau, que causa medo em área, e invoca e absorve slimes.", "fonte": "07_Criaturas/A Síntese Abissal"},
         {"req": "hq:hqn_10", "text": "Usou as runas do salão para erguer o Castelo da Fome à superfície.", "fonte": "07_Criaturas/A Síntese Abissal"},
         {"req": "boss", "text": "Foi derrotada sem nenhuma morte entre os personagens-jogadores. A última gota de Slime deixou a cabeça de Ailalore, que acordou livre.", "fonte": "07_Criaturas/A Síntese Abissal"}
       ]
     },
     "death_tyrant": {
       "onde": ["reino_abissal"],
-      "quem": "Forma criada quando o cadáver de Kein se fundiu ao de um Beholder, depois do ritual no Reino Abissal.",
+      "quem": "Forma criada quando o cadáver de Kein se fundiu ao do Vigia, depois do ritual no Reino Abissal.",
       "curiosities": [
-        {"req": "base", "text": "O grupo o destruiu, e o martelo de Bromnor deu o golpe final.", "fonte": "07_Criaturas/Death Tyrant; 03_NPCs/Bromnor Martelo da Luz, Sessão 12"},
+        {"req": "base", "text": "O grupo o destruiu, e o martelo de Bromnor deu o golpe final.", "fonte": "07_Criaturas/Skullgaze; 03_NPCs/Bromnor Martelo da Luz, Sessão 12"},
         {"req": "hq:hqn_11", "text": "Bella apontou Kein como o assassino de Bromnor, disfarçado de Guarda Celestial.", "fonte": "Sessão 09, S9-31"},
         {"req": "base", "text": "Kein desprezava os traços élficos de Maelor e não agradeceu quando ele o escoltou ao Conselho.", "fonte": "02_Personagens/Maelor, Relações"}
       ]
@@ -652,7 +652,7 @@
       "curiosities": [
         {"req": "base", "text": "O efeito dura cerca de uma hora, e a mesa trata a ativação como algo que se “conjura”.", "fonte": "06_Itens/Colar de visão verdadeira do Santuário, S8-37"},
         {"req": "base", "text": "Há registro de uma maldição, mas ninguém esclareceu como ela funciona.", "fonte": "06_Itens/Colar de visão verdadeira do Santuário"},
-        {"req": "base", "text": "Com o colar, Sylas viu a aura amarela de Nyrelia, que lembra Mask, e um rastro que deixou o grupo seguir a figura mascarada.", "fonte": "Sessão 09"},
+        {"req": "base", "text": "Com o colar, Sylas viu a aura amarela de Nyrelia, que lembra Sovren, e um rastro que deixou o grupo seguir a figura mascarada.", "fonte": "Sessão 09"},
         {"req": "base", "text": "Diante de Ailalore, viu uma aura dourada e celestial e resistiu a uma força que tentava dominar a mente dele. A origem dessa força não foi identificada.", "fonte": "Sessão 09"}
       ]
     },
@@ -688,23 +688,23 @@
     "cajado_dos_desejos": {
       "quem": "Cajado amaldiçoado que sussurra desejos a quem o porta.",
       "curiosities": [
-        {"req": "base", "text": "Malcanthet o deu ao grupo, com outros equipamentos, quando os contratou.", "fonte": "Sessão 18"},
+        {"req": "base", "text": "Miradéssa o deu ao grupo, com outros equipamentos, quando os contratou.", "fonte": "Sessão 18"},
         {"req": "base", "text": "Sylas o usou, com cargas de re-rolagem.", "fonte": "02_Personagens/Sylas Malafaia, Sessões 16 a 24"}
       ]
     },
     "colar_dos_tentaculos": {
-      "quem": "Colar que invoca uma criatura tentacular, até nove vezes. Também chamado Olho de Ghaunadaur.",
+      "quem": "Colar que invoca uma criatura tentacular, até nove vezes. Também chamado Olho de Ubboghau.",
       "curiosities": [
         {"req": "base", "text": "Foi encontrado no navio das Docas.", "fonte": "06_Itens/Colar dos Tentáculos, Sessão 14"},
-        {"req": "base", "text": "Ao fim do arco, o grupo carregava um Olho de Ghaunadaur com nove usos.", "fonte": "Sessão 19 e 20 (parte 1)"},
-        {"req": "base", "text": "Na mesa, o Colar dos Tentáculos e o Olho de Ghaunadaur são dois itens. No jogo, são um só.", "fonte": "divergência entre o jogo e o Vault"}
+        {"req": "base", "text": "Ao fim do arco, o grupo carregava um Olho de Ubboghau com nove usos.", "fonte": "Sessão 19 e 20 (parte 1)"},
+        {"req": "base", "text": "Na mesa, o Colar dos Tentáculos e o Olho de Ubboghau são dois itens. No jogo, são um só.", "fonte": "divergência entre o jogo e o Vault"}
       ]
     },
     "sopro_de_estrela": {
       "quem": "Concha com um Sopro de Estrela, que abre o portal do segundo andar do templo de Tou Um.",
       "curiosities": [
         {"req": "base", "text": "João Barbosa, devoto de Tou Um, a entregou ao grupo em agradecimento por “desinfestar” o templo.", "fonte": "Sessão 18"},
-        {"req": "base", "text": "Sylas a usou para ativar o portal que levou o grupo a Shendilavri.", "fonte": "Sessão 18"}
+        {"req": "base", "text": "Sylas a usou para ativar o portal que levou o grupo a Lavriê.", "fonte": "Sessão 18"}
       ]
     },
     "ampulheta": {
@@ -727,9 +727,9 @@
       ]
     },
     "aneis_de_grazzt": {
-      "quem": "Anéis que invocam Graz'zt, o Lorde do Abismo, uma única vez, quando o nome dele é dito três vezes.",
+      "quem": "Anéis que invocam Vardrém, o Lorde do Abismo, uma única vez, quando o nome dele é dito três vezes.",
       "curiosities": [
-        {"req": "base", "text": "Graz'zt deu o primeiro ao grupo, como dádiva, no castelo dele. O segundo, o último, vira cinzas ao ser usado.", "fonte": "Sessão 19"},
+        {"req": "base", "text": "Vardrém deu o primeiro ao grupo, como dádiva, no castelo dele. O segundo, o último, vira cinzas ao ser usado.", "fonte": "Sessão 19"},
         {"req": "base", "text": "O grupo carregava dois, um uso cada.", "fonte": "Sessão 19 e 20 (parte 1)"}
       ]
     },
@@ -763,11 +763,11 @@
       ]
     },
     "wave_of_terror": {
-      "quem": "Espada longa mágica, recompensa de Graz'zt. Causa dano de ácido (Toque do Abismo).",
+      "quem": "Espada longa mágica, recompensa de Vardrém. Causa dano de ácido (Toque do Abismo).",
       "curiosities": [
         {"req": "base", "text": "Dança das Sombras: o portador se esconde mesmo observado.", "fonte": "Sessão 19 e 20 (parte 1)"},
         {"req": "base", "text": "Traz a Maldição da Ambição Sombria: em tensão social, o portador é compelido a semear discórdia.", "fonte": "Sessão 19 e 20 (parte 1)"},
-        {"req": "base", "text": "Graz'zt a deu ao grupo, com 4000 de ouro, como recompensa.", "fonte": "Sessão 19 e 20 (parte 1)"}
+        {"req": "base", "text": "Vardrém a deu ao grupo, com 4000 de ouro, como recompensa.", "fonte": "Sessão 19 e 20 (parte 1)"}
       ]
     },
     "detector_arcano": {
@@ -789,11 +789,11 @@
       ]
     },
     "espelho_das_almas_desejantes": {
-      "quem": "Espelho que mostra o maior desejo de quem o encara. Graz'zt o roubou de Malcanthet.",
+      "quem": "Espelho que mostra o maior desejo de quem o encara. Vardrém o roubou de Miradéssa.",
       "curiosities": [
-        {"req": "base", "text": "Malcanthet contratou o grupo, em segredo, para recuperá-lo ou trazer Graz'zt.", "fonte": "06_Itens/Espelho das Almas Desejantes; Sessão 18"},
+        {"req": "base", "text": "Miradéssa contratou o grupo, em segredo, para recuperá-lo ou trazer Vardrém.", "fonte": "06_Itens/Espelho das Almas Desejantes; Sessão 18"},
         {"req": "base", "text": "Ficava na parede secreta da sala de música do Castelo Argento, atrás de sete runas.", "fonte": "04_Locais/Sala de Música do Castelo Argento; Sessão 19"},
-        {"req": "base", "text": "Graz'zt entregou o espelho ao grupo ao oferecer a aliança.", "fonte": "Sessão 19"}
+        {"req": "base", "text": "Vardrém entregou o espelho ao grupo ao oferecer a aliança.", "fonte": "Sessão 19"}
       ]
     },
     "coracao_da_dominancia": {
@@ -814,16 +814,16 @@
     "ampulheta": {"igual_a": "ampulheta"},
     "dominio_da_vontade": {"igual_a": "coracao_da_dominancia"},
     "sentenca_de_lliira": {
-      "quem": "O golpe de fé de Brook, paladino de Lliira, a divindade a quem ele fez o juramento.",
+      "quem": "O golpe de fé de Brook, paladino de Avelune, a divindade a quem ele fez o juramento.",
       "curiosities": [
-        {"req": "hq:hqn_19", "text": "Na Sessão 21, diante do QG saqueado, uma voz cobrou Brook: “Cumpra seu juramento, ou o julgamento será inevitável”. Ele viu a imagem de Lliira chorando.", "fonte": "12_Lore/Lliira, Sessão 21"}
+        {"req": "hq:hqn_19", "text": "Na Sessão 21, diante do QG saqueado, uma voz cobrou Brook: “Cumpra seu juramento, ou o julgamento será inevitável”. Ele viu a imagem de Avelune chorando.", "fonte": "12_Lore/Avelune, Sessão 21"}
       ]
     },
     "julgamento_da_gloria": {
-      "quem": "Julgamento espiritual ligado a Lliira e ao Martelo da Glória de Brook.",
+      "quem": "Julgamento espiritual ligado a Avelune e ao Martelo da Glória de Brook.",
       "curiosities": [
         {"req": "hq:hqn_19", "text": "No depoimento público em Fateridge, o martelo falhou diante de todos e só voltou a brilhar quando Brook pediu perdão pelo juramento quebrado.", "fonte": "12_Lore/Julgamento da Glória, Sessão 21"},
-        {"req": "hq:hqn_19", "text": "O espírito de Bromnor deu a Brook uma prorrogação: “só dessa vez; você ainda tem que se provar digno”.", "fonte": "12_Lore/Lliira, Sessão 21"}
+        {"req": "hq:hqn_19", "text": "O espírito de Bromnor deu a Brook uma prorrogação: “só dessa vez; você ainda tem que se provar digno”.", "fonte": "12_Lore/Avelune, Sessão 21"}
       ]
     },
     "raio_de_luz": {
@@ -845,9 +845,9 @@
       ]
     },
     "dominar_pessoa": {
-      "quem": "Magia de controle da mente. Sylas, devoto de Mask, é o conjurador de ilusão e Dominar Pessoa do grupo.",
+      "quem": "Magia de controle da mente. Sylas, devoto de Sovren, é o conjurador de ilusão e Dominar Pessoa do grupo.",
       "curiosities": [],
-      "fonte": "02_Personagens/Sylas Malafaia; 12_Lore/Mask"
+      "fonte": "02_Personagens/Sylas Malafaia; 12_Lore/Sovren"
     },
     "tocha_do_incendiario": {
       "quem": "A arma de Erik Blackthorn, que incendiou dois navios nas Docas na noite de 9/10/1690.",

@@ -41,11 +41,11 @@ func run() -> Array:
 	var shedaklah_left_branch := Vector2(TerrainLayout.shedaklah_styx_center_x(20.0, true), 20.0)
 	var shedaklah_right_branch := Vector2(TerrainLayout.shedaklah_styx_center_x(20.0, false), 20.0)
 	if not TerrainLayout.is_shedaklah_styx("shedaklah", shedaklah_left_branch) or not TerrainLayout.is_shedaklah_styx("shedaklah", shedaklah_right_branch):
-		out.append("Shedaklah deveria ter dois braços do Estige nas bordas")
+		out.append("Lodovár deveria ter dois braços do Estige nas bordas")
 	if not TerrainLayout.is_styx_water("shedaklah", shedaklah_left_branch):
-		out.append("os braços de Shedaklah deveriam ativar a memória do Estige")
+		out.append("os braços de Lodovár deveriam ativar a memória do Estige")
 	if TerrainLayout.is_shedaklah_styx("shedaklah", Vector2(20.0, 20.0)):
-		out.append("centro de Shedaklah deveria permanecer terreno fúngico")
+		out.append("centro de Lodovár deveria permanecer terreno fúngico")
 	if TerrainLayout.material_at("molor", Vector2(7.0, 10.0)) != TerrainLayout.MATERIAL_MOLOR_OOZE:
 		out.append("Molor deveria ter bolsão determinístico de ooze")
 	if TerrainLayout.material_at("molor", Vector2(20.0, 20.0)) == TerrainLayout.MATERIAL_MOLOR_OOZE:
@@ -56,11 +56,11 @@ func run() -> Array:
 		out.append("borda de Feng-tu deveria ter fundação determinística")
 	var shendilavri_branch := Vector2(TerrainLayout.shendilavri_styx_center_x(20.0), 20.0)
 	if not TerrainLayout.is_shendilavri_styx("shendilavri", shendilavri_branch):
-		out.append("Shendilavri deveria ter o braço visual do Estige na margem")
+		out.append("Lavriê deveria ter o braço visual do Estige na margem")
 	if not TerrainLayout.is_styx_water("shendilavri", shendilavri_branch):
-		out.append("o braço de Shendilavri deveria ativar a memória do Estige")
+		out.append("o braço de Lavriê deveria ativar a memória do Estige")
 	if TerrainLayout.is_shendilavri_styx("shendilavri", Vector2(20.0, 20.0)):
-		out.append("centro de Shendilavri deveria permanecer mármore de Rivenheart")
+		out.append("centro de Lavriê deveria permanecer mármore de Avarência")
 	var goranthis_fall := Vector2(TerrainLayout.goranthis_styxfall_center_x(20.0), 20.0)
 	if not TerrainLayout.is_goranthis_styxfall("goranthis", goranthis_fall):
 		out.append("Goranthis deveria ter queda visual do Estige na margem")
@@ -102,7 +102,7 @@ func run() -> Array:
 	var shedaklah: Node = load("res://ui/stages/shedaklah.tscn").instantiate()
 	var shedaklah_ground: Node = shedaklah.get_node("Ground")
 	if shedaklah_ground.terrain_layout_id != "shedaklah":
-		out.append("Shedaklah deveria usar o macroterreno fúngico entre os braços do Estige")
+		out.append("Lodovár deveria usar o macroterreno fúngico entre os braços do Estige")
 	shedaklah.free()
 	var molor: Node = load("res://ui/stages/molor.tscn").instantiate()
 	var molor_ground: Node = molor.get_node("Ground")
@@ -117,7 +117,7 @@ func run() -> Array:
 	var shendilavri: Node = load("res://ui/stages/shendilavri.tscn").instantiate()
 	var shendilavri_ground: Node = shendilavri.get_node("Ground")
 	if shendilavri_ground.terrain_layout_id != "shendilavri":
-		out.append("Shendilavri deveria usar o macroterreno de mármore e Estige visual")
+		out.append("Lavriê deveria usar o macroterreno de mármore e Estige visual")
 	shendilavri.free()
 	var goranthis: Node = load("res://ui/stages/goranthis.tscn").instantiate()
 	var goranthis_ground: Node = goranthis.get_node("Ground")

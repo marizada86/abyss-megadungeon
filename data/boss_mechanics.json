@@ -1,5 +1,5 @@
 {
-  "_spec": "L5 (PROPOSTA-l5-mecanicas-de-chefe): mecânicas de chefe por fase. Chave '1' = ao cair a 70% do PV, '2' = a 35% (as mesmas de boss_phases.json). 'verbs' substitui os verbos repetidos da fase anterior; 'skip' lista ações de boss_phases.json que esta mecânica substitui nesta fase. Piloto: Sacerdote (Dagruve), Guardião Alado (Docas) e Blogbog (Molor). PLAN-105 B-002: Zuggtmoy e Molydeus. B-003: Discípulo Pestilento e Malcanthet. B-004: Socothbenoth e A Síntese Abissal. Chave \"enrage\" no chefe: início próprio do enrage suave (start_s).",
+  "_spec": "L5 (PROPOSTA-l5-mecanicas-de-chefe): mecânicas de chefe por fase. Chave '1' = ao cair a 70% do PV, '2' = a 35% (as mesmas de boss_phases.json). 'verbs' substitui os verbos repetidos da fase anterior; 'skip' lista ações de boss_phases.json que esta mecânica substitui nesta fase. Piloto: Sacerdote (Dagruve), Guardião Alado (Docas) e Blogbog (Molor). PLAN-105 B-002: Amanessa e Zburător. B-003: Discípulo Pestilento e Miradéssa. B-004: Socobenoth e A Síntese Abissal. Chave \"enrage\" no chefe: início próprio do enrage suave (start_s).",
   "sacerdote_mente_derretida": {
     "1": {"verbs": [{"t": "totems", "n": 2, "hp": 45, "shield": 0.3}]},
     "2": {"verbs": [{"t": "cast", "name": "Sussurro", "first": 4, "cd": 16, "windup": 2.5, "dice": "2d8", "stun": 2}]}
@@ -29,7 +29,7 @@
     "2": {"verbs": [{"t": "cast", "name": "Beijo da Rainha", "first": 3, "cd": 15, "windup": 2.5, "dice": "3d6", "stun": 2}, {"t": "sweep", "first": 4, "cd": 12, "warn": 1.2, "dur": 2.8, "arc": 90, "len": 9, "dice": "2d6", "beams": 1}], "skip": ["summon"]}
   },
   "socothbenoth": {
-    "1": {"verbs": [{"t": "quadrants", "first": 2, "cd": 12, "warn": 1.5, "radius": 9, "dice": "2d8", "lit": 3, "puddle": false}, {"t": "totems", "n": 2, "hp": 80, "heal_pct_s": 0.01, "heal_cap_pct": 0.2, "name": "Âncora de Juiblex"}], "skip": ["hazard"]},
+    "1": {"verbs": [{"t": "quadrants", "first": 2, "cd": 12, "warn": 1.5, "radius": 9, "dice": "2d8", "lit": 3, "puddle": false}, {"t": "totems", "n": 2, "hp": 80, "heal_pct_s": 0.01, "heal_cap_pct": 0.2, "name": "Âncora de Sathla"}], "skip": ["hazard"]},
     "2": {"verbs": [{"t": "cast", "name": "Verdade desfeita", "first": 3, "cd": 18, "windup": 2.5, "dice": "3d8", "stun": 2}, {"t": "immune_adds", "id": "ilusao_de_socothbenoth", "n": 6, "hp": 40, "max_s": 12, "name": "Ilusão do Paraíso"}], "skip": ["summon", "ring"]},
     "enrage": {"start_s": 135}
   },

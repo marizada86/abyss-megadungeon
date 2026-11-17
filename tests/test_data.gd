@@ -81,7 +81,7 @@ func run() -> Array:
 		if not stage_rules.has(sid):
 			out.append("fase %s sem regra principal" % sid)
 	if String(stages.dagruve.boss) != "sacerdote_mente_derretida" or String(stages.dagruve.next) != "shedaklah":
-		out.append("Dagruve não está configurada antes de Shedaklah (depois de Domwieck)")
+		out.append("Dagruve não está configurada antes de Lodovár (depois de Domwieck)")
 	if String(stages.docas.boss) != "guardiao_verdadeiro" or String(stages.docas.next) != "reino_abissal":
 		out.append("Docas não está configurada antes do Reino Abissal")
 	var styx_stages := ["shedaklah", "durao", "shendilavri", "goranthis"]

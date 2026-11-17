@@ -52,7 +52,7 @@ func _check_imports_and_geometry(out: Array) -> void:
 	var boss := (load("res://assets/enemies/manifestacao_de_juiblex.png") as Texture2D).get_image()
 	var old := (load("res://assets/enemies/receptaculo_de_juiblex.png") as Texture2D).get_image()
 	if boss == null or boss.get_data() == old.get_data():
-		out.append("Juiblex still uses the receptacle instead of the accepted manifestation")
+		out.append("Sathla still uses the receptacle instead of the accepted manifestation")
 
 func _check_event_consumption(out: Array) -> void:
 	var portal := _fire("shedaklah", "portal_sem_vao")
@@ -86,7 +86,7 @@ func _check_rewards_and_legacy(out: Array) -> void:
 	var grazzt := _battle("goranthis")
 	grazzt.happenings._apply_reward(grazzt, _definition("goranthis", "o_nome_tres_vezes").choices[0].effect, grazzt.hero.pos)
 	if grazzt.happenings.allies.size() != 1 or String(grazzt.happenings.allies[0].asset) != "npc_grazzt_aliado" or not is_equal_approx(grazzt.happenings.allies[0].hp, 500):
-		out.append("Graz'zt ally lost art/count/existing stats")
+		out.append("Vardrém ally lost art/count/existing stats")
 	var legacy := _battle("shedaklah")
 	legacy.happenings._add_ally(legacy, {"sprite": "servo_de_zuggtmoy", "label": "legacy"})
 	if legacy.happenings.allies[0].asset != "" or legacy.happenings.allies[0].sprite != "servo_de_zuggtmoy":

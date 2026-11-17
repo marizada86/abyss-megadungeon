@@ -46,7 +46,7 @@ func run() -> Array:
 	if descent.stage_id != "reino_abissal" or descent.descent_depth != 1:
 		out.append("descida não levou ao Reino Abissal com profundidade 1")
 	descent.enter_next_stage()
-	# Contrato do capítulo 1 (r2): Docas -> Reino Abissal -> Domwieck -> Dagruve -> Shedaklah.
+	# Contrato do capítulo 1 (r2): Docas -> Reino Abissal -> Domwieck -> Dagruve -> Lodovár.
 	if descent.stage_id != "domwieck" or descent.descent_depth != 2:
 		out.append("segunda descida não levou a Domwieck com profundidade 2 (%s)" % descent.stage_id)
 	if absf(descent.reward_multiplier() - 1.55) > 0.001 or int(descent.hero.passives.get("forca", 0)) != 2:

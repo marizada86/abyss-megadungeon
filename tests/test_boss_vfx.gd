@@ -40,7 +40,7 @@ func _sheet(out: Array[String]) -> void:
 
 ## Peles temáticas por chefe: escolha por id, fallback neutro, `k` da barra, arte lida da folha certa e `boss` nos eventos.
 func _skins(out: Array[String], m: BossMechanics, at: Vector2) -> void:
-	if BossVfx.skinned("boss_varredura_aviso", "molydeus_chefe") != "boss_varredura_aviso_molydeus": out.append("Molydeus deveria ter pele na varredura em aviso")
+	if BossVfx.skinned("boss_varredura_aviso", "molydeus_chefe") != "boss_varredura_aviso_molydeus": out.append("Zburător deveria ter pele na varredura em aviso")
 	for neutral in [["boss_marca_alvo", "guardiao_verdadeiro"], ["boss_varredura_aviso", ""], ["boss_varredura_aviso", "chefe_que_nao_existe"], ["boss_escudo", "molydeus_chefe"]]:
 		if BossVfx.skinned(neutral[0], neutral[1]) != neutral[0]: out.append("sem pele deveria ficar a folha neutra: %s/%s" % neutral)
 	for sheet in BossVfx.skin_sheets():
@@ -60,12 +60,12 @@ func _skins(out: Array[String], m: BossMechanics, at: Vector2) -> void:
 	m.cast = {"name": "Teste", "t": 1.0, "total": 2.5, "dice": "1d4", "stun": 2.0, "effect": "heavy", "armor_s": 6.0}
 	var kinds := {}
 	for d in BossVfx.describe(m): kinds[String(d.key)] = d
-	if String(kinds["sweep:0"].sheet) != "boss_varredura_aviso_molydeus": out.append("varredura do Molydeus deveria usar a pele")
+	if String(kinds["sweep:0"].sheet) != "boss_varredura_aviso_molydeus": out.append("varredura do Zburător deveria usar a pele")
 	var ring := BossVfx.build(kinds["mark"]) as AnimatedSprite2D
-	if ring == null or String((ring.sprite_frames.get_frame_texture(&"default", 0) as AtlasTexture).atlas.resource_path) != BossVfx.path_for("boss_marca_alvo_molydeus"): out.append("marca do Molydeus deveria ler a pele")
+	if ring == null or String((ring.sprite_frames.get_frame_texture(&"default", 0) as AtlasTexture).atlas.resource_path) != BossVfx.path_for("boss_marca_alvo_molydeus"): out.append("marca do Zburător deveria ler a pele")
 	if ring != null: ring.free()
 	var charge := BossVfx.build(kinds["cast"]) as AnimatedSprite2D
-	if charge == null or String((charge.sprite_frames.get_frame_texture(&"default", 0) as AtlasTexture).atlas.resource_path) != BossVfx.path_for("boss_conjuracao_carga"): out.append("conjuração do Molydeus não tem pele: deveria ficar a neutra")
+	if charge == null or String((charge.sprite_frames.get_frame_texture(&"default", 0) as AtlasTexture).atlas.resource_path) != BossVfx.path_for("boss_conjuracao_carga"): out.append("conjuração do Zburător não tem pele: deveria ficar a neutra")
 	if charge != null: charge.free()
 	m.boss.id = "zuggtmoy"
 	m.quad = {"center": m.boss.pos, "sectors": [0, 2], "t": 0.5, "total": 1.5, "radius": 9.0, "dice": "1d4", "puddle": false}
@@ -74,7 +74,7 @@ func _skins(out: Array[String], m: BossMechanics, at: Vector2) -> void:
 		if String(d.key) == "quad": quad_desc = d
 	if String(quad_desc.get("boss", "")) != "zuggtmoy": out.append("descrição do quadrante deveria levar o id do chefe")
 	var skin_burst := BossVfx.create_burst({"verb": "quad", "pos": at, "sectors": [0, 1], "radius": 5.0, "boss": "zuggtmoy"}) as BossVfx.SectorNode
-	if skin_burst == null or skin_burst.texture.resource_path != BossVfx.path_for("boss_quadrante_runas_zuggtmoy"): out.append("detonação do quadrante da Zuggtmoy deveria ler a pele")
+	if skin_burst == null or skin_burst.texture.resource_path != BossVfx.path_for("boss_quadrante_runas_zuggtmoy"): out.append("detonação do quadrante da Amanessa deveria ler a pele")
 	if skin_burst != null: skin_burst.free()
 	var plain_burst := BossVfx.create_burst({"verb": "quad", "pos": at, "sectors": [0, 1], "radius": 5.0, "boss": "malcanthet"}) as BossVfx.SectorNode
 	if plain_burst == null or plain_burst.texture.resource_path != BossVfx.path_for("boss_quadrante_runas"): out.append("chefe sem pele de quadrante deveria detonar com a neutra")

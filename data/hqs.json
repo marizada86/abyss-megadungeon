@@ -103,7 +103,7 @@
     ]
   },
   "hqn_04": {
-    "title": "O Palácio de Zuggtmoy",
+    "title": "O Palácio de Amanessa",
     "trigger": {
       "type": "stage_cleared",
       "stage": "shedaklah"
@@ -111,19 +111,19 @@
     "panels": [
       {
         "image": "res://assets/hq/chapter2_r1/hq_n04_q1_fungus_slime_frontier_v01.png",
-        "text": "Em Shedaklah, o domínio do fungo recuava diante do limo."
+        "text": "Em Lodovár, o domínio do fungo recuava diante do limo."
       },
       {
         "image": "res://assets/hq/chapter2_r1/hq_n04_q2_zuggtmoy_reception_v01.png",
-        "text": "Marciela os levou até Zuggtmoy, senhora do fungo."
+        "text": "Marciela os levou até Amanessa, senhora do fungo."
       },
       {
         "image": "res://assets/hq/chapter2_r1/hq_n04_q3_map_negotiation_v01.png",
-        "text": "Em troca de ajuda contra Juiblex, ela ofereceu um mapa e orientação."
+        "text": "Em troca de ajuda contra Sathla, ela ofereceu um mapa e orientação."
       },
       {
         "image": "res://assets/hq/chapter2_r1/hq_n04_q4_stilled_styx_v01.png",
-        "text": "O Estige havia parado. Juiblex se fortalecia com as almas do rio."
+        "text": "O Estige havia parado. Sathla se fortalecia com as almas do rio."
       },
       {
         "image": "res://assets/hq/chapter2_r1/hq_n04_q5_incomplete_activation_v01.png",
@@ -157,7 +157,7 @@
       },
       {
         "image": "res://assets/hq/hq_n05_q4.png",
-        "text": "Dentro dele, um núcleo verde ainda pulsava. Era parte de Juiblex."
+        "text": "Dentro dele, um núcleo verde ainda pulsava. Era parte de Sathla."
       }
     ]
   },
@@ -212,7 +212,7 @@
     ]
   },
   "hqn_08": {
-    "title": "O Chifre de Malcanthet",
+    "title": "O Chifre de Miradéssa",
     "trigger": {
       "type": "stage_cleared",
       "stage": "shendilavri"
@@ -220,11 +220,11 @@
     "panels": [
       {
         "image": "res://assets/hq/hq_n08_q1.png",
-        "text": "Rivenheart: luxo, ilusão e correntes."
+        "text": "Avarência: luxo, ilusão e correntes."
       },
       {
         "image": "res://assets/hq/hq_n08_q2.png",
-        "text": "Malcanthet quer o Espelho de volta. Em segredo."
+        "text": "Miradéssa quer o Espelho de volta. Em segredo."
       },
       {
         "image": "res://assets/hq/hq_n08_q3.png",
@@ -232,7 +232,7 @@
       },
       {
         "image": "res://assets/hq/hq_n08_q4.png",
-        "text": "Graz'zt arrancou o chifre de Malcanthet e declarou guerra."
+        "text": "Vardrém arrancou o chifre de Miradéssa e declarou guerra."
       }
     ]
   },
@@ -362,7 +362,7 @@
       },
       {
         "image": "res://assets/hq/chapter1_r1/hq_n14_q2_yellow_aura_v01.png",
-        "text": "O colar revelou uma aura amarela, ligada a Mask."
+        "text": "O colar revelou uma aura amarela, ligada a Sovren."
       },
       {
         "image": "res://assets/hq/chapter1_r1/hq_n14_q3_nyrelia_encounter_v01.png",
@@ -416,7 +416,7 @@
       },
       {
         "image": "res://assets/hq/chapter1_r1/hq_n16_q2_cultists_v01.png",
-        "text": "No altar, os seguidores de Ghaunadaur continuavam seus rituais."
+        "text": "No altar, os seguidores de Ubboghau continuavam seus rituais."
       },
       {
         "image": "res://assets/hq/chapter1_r1/hq_n16_q3_nott_fire_v01.png",
@@ -478,7 +478,7 @@
       },
       {
         "image": "res://assets/hq/chapter1_r1/hq_n18_q4_beholder_v01.png",
-        "text": "Um segundo sacrifício trouxe um Beholder para o combate."
+        "text": "Um segundo sacrifício trouxe o Vigia para o combate."
       },
       {
         "image": "res://assets/hq/chapter1_r1/hq_n18_q5_recovery_v01.png",
@@ -486,11 +486,11 @@
       },
       {
         "image": "res://assets/hq/chapter1_r1/hq_n18_q6_counter_ritual_v01.png",
-        "text": "Sylas fechou o portal. Então os dois cadáveres se uniram em um Death Tyrant."
+        "text": "Sylas fechou o portal. Então os dois cadáveres se uniram em um Skullgaze."
       },
       {
         "image": "res://assets/hq/chapter1_r1/hq_n18_q7_vision_v02.png",
-        "text": "Depois de vencê-lo, Sylas viu Juiblex nas profundezas: uma parte de Ghaunadaur se espalhava pelo Abismo."
+        "text": "Depois de vencê-lo, Sylas viu Sathla nas profundezas: uma parte de Ubboghau se espalhava pelo Abismo."
       },
       {
         "image": "res://assets/hq/chapter1_r1/hq_n18_q8_return_v01.png",
@@ -590,7 +590,7 @@
       },
       {
         "image": "res://assets/hq/chapter2_r1/hq_n20_q3_passage_v02.png",
-        "text": "Ela os guiou por uma passagem para Shedaklah."
+        "text": "Ela os guiou por uma passagem para Lodovár."
       },
       {
         "image": "res://assets/hq/chapter2_r1/hq_n20_q4_maelor_alone_v01.png",
@@ -644,7 +644,7 @@
       },
       {
         "image": "res://assets/hq/chapter2_r1/hq_n21_q7_shedaklah_reunion_v01.png",
-        "text": "Em Shedaklah, os caminhos voltaram a se encontrar."
+        "text": "Em Lodovár, os caminhos voltaram a se encontrar."
       }
     ],
     "caption_below_image": true

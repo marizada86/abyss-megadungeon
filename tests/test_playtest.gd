@@ -57,7 +57,7 @@ func run() -> Array:
 	if docas_comics[0] != "hqn_02":
 		failures.append("HQ da fase selecionada deveria vir primeiro para Docas")
 	if shedaklah_comics[0] != "hqn_04":
-		failures.append("Shedaklah deveria priorizar HQN-04; HQN-03 agora pertence a Domwieck")
+		failures.append("Lodovár deveria priorizar HQN-04; HQN-03 agora pertence a Domwieck")
 	# As 18 HQs preservadas continuam e o catálogo cresceu (capítulo 2): o QA deve listar o catálogo inteiro.
 	if shedaklah_comics.size() != hqs.size() or hqs.size() < 18 or not shedaklah_comics.has("hqn_01") or not shedaklah_comics.has("hqn_18"):
 		failures.append("todas as HQs do catálogo (incluindo as 18 preservadas) devem continuar acessíveis em QA")

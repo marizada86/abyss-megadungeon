@@ -16,14 +16,14 @@
     "vida": ["A sorte me deve uma, Sendrinah.", "Ainda tenho fé. Muita. Preciso dela agora."]
   },
   "sylas": {
-    "entrada": ["Mask vê o que a névoa esconde. Eu só vejo mais névoa.", "Mais um rito contra a névoa."],
+    "entrada": ["Sovren vê o que a névoa esconde. Eu só vejo mais névoa.", "Mais um rito contra a névoa."],
     "chefe": ["Nyrelia me ensinou a não recuar. Não me ensinou a gostar.", "Nas sombras, eu sou melhor."],
     "vida": ["Sombras, não me abandonem agora.", "Eu já sobrevivi a pior. Acho."]
   },
   "kayron": {
     "entrada": ["Há inscrições abissais aqui. Vou lê-las.", "Zynara quer respostas. Eu as trago."],
     "chefe": ["Esse armamento cheira a guerra humana.", "Sangue celestial, não me falhe."],
-    "vida": ["Shar, não me deixe ver a luz ainda.", "Preciso de mais um rito."]
+    "vida": ["Nemúria, não me deixe ver a luz ainda.", "Preciso de mais um rito."]
   },
   "bromnor": {
     "entrada": ["Todas as raças juntas, ou nenhuma sobrevive.", "Fateridge resiste. Eu também."],
@@ -36,7 +36,7 @@
     "vida": ["Recuar também é estratégia.", "Isso não estava nos planos."]
   },
   "nyrelia": {
-    "entrada": ["Mask acompanha quem anda em silêncio.", "Cuido de quem preciso cuidar."],
+    "entrada": ["Sovren acompanha quem anda em silêncio.", "Cuido de quem preciso cuidar."],
     "chefe": ["Fiquem atrás de mim.", "Já protegi coisas menores com mais medo."],
     "vida": ["Ainda não é a minha hora.", "Sylas precisa de mim viva."]
   },

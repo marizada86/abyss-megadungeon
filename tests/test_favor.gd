@@ -52,7 +52,7 @@ func run() -> Array:
 	# sem rival: Favor só sobe
 	var mk := _boon("mask_faca_sombra")
 	var mk2 := _boon("mask_fechaduras")
-	if Favor.net([mk, mk2], "Mask") != 2 or Favor.tier(2) != 1 or Favor.tier(3) != 2 or Favor.tier(1) != 0:
+	if Favor.net([mk, mk2], "Sovren") != 2 or Favor.tier(2) != 1 or Favor.tier(3) != 2 or Favor.tier(1) != 0:
 		out.append("limiares de Favor errados")
 	# o herói aplica o Favor em recalc() e o rival nunca bloqueia a oferta
 	var b := _bat()

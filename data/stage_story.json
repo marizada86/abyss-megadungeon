@@ -3,7 +3,7 @@
   "dagruve": {
     "epigrafe": "De volta a Dagruve, o distrito esquecido: a névoa entra por uma fratura no cemitério e os cultistas esperam um messias: Adam.",
     "fonte_vault": "04_Locais/Dagruve (Base canônica; Sessões 07 e 08); 03_NPCs/Adam (Sessão 03: tratado em Dagruve como libertador ou messias)",
-    "chefe": "Sacerdote de A Mente Derretida, culto de Ghaunadaur.",
+    "chefe": "Sacerdote de A Mente Derretida, culto de Ubboghau.",
     "fonte_chefe": "05_Organizações/A Mente Derretida (S3-47)",
     "aparece": "A névoa revela algo no distrito...",
     "fonte_uso": "O poço aceita a oferenda: +%d%% PV"
@@ -13,7 +13,7 @@
     "fonte_vault": "04_Locais/Docas (Sessões 02 e 13)",
     "chefe": "O ritual do porão desperta.",
     "fonte_chefe": "10_Sessões/Sessão 02 (guardião alado: a primeira cópia cai, o verdadeiro deixa sangue negro); sprites CANON em DEC-GUARDIAO-ORIGIN-004",
-    "rumor": "Kayron ainda ouviria o nome do suposto messias dos cultistas: Adam, suspeito de fortalecer Ghaunadaur.",
+    "rumor": "Kayron ainda ouviria o nome do suposto messias dos cultistas: Adam, suspeito de fortalecer Ubboghau.",
     "fonte_rumor": "03_NPCs/Adam (relato de Kayron a Zynara, Sessão 05)",
     "aparece": "Algo se move entre os galpões...",
     "fonte_uso": "A oficina do cais devolve o ânimo: +%d%% PV"
@@ -21,21 +21,21 @@
   "shedaklah": {
     "epigrafe": "Fungo e limo dividem o andar 222. O equilíbrio já não segura.",
     "fonte_vault": "04_Locais/Camadas do Plano Abissal (Arco 01)",
-    "rumor": "Em Nottgard, Adam, o \"Messias do Caos\", emissário de Ghaunadaur, fugira vivo.",
+    "rumor": "Em Nottgard, Adam, o \"Messias do Caos\", emissário de Ubboghau, fugira vivo.",
     "fonte_rumor": "03_NPCs/Adam (Sessão 12)",
-    "chefe": "Zuggtmoy, senhora do fungo, divide o andar com Juiblex.",
+    "chefe": "Amanessa, senhora do fungo, divide o andar com Sathla.",
     "fonte_chefe": "04_Locais/Camadas do Plano Abissal (Arco 01)"
   },
   "molor": {
     "epigrafe": "Bolhas de limo no andar 528. O Estige corre de novo depois do núcleo verde.",
     "fonte_vault": "04_Locais/Camadas do Plano Abissal (Arco 01)",
-    "chefe": "Blogbog, chefe fúngico de Molor; dele sai o núcleo verde de Juiblex.",
+    "chefe": "Blogbog, chefe fúngico de Molor; dele sai o núcleo verde de Sathla.",
     "fonte_chefe": "04_Locais/Camadas do Plano Abissal (Arco 01)"
   },
   "durao": {
     "epigrafe": "Uma jaula gigante e um rio de almas. A guerra acabou, os carcereiros ficaram.",
     "fonte_vault": "04_Locais/Camadas do Plano Abissal (Arco 01)",
-    "chefe": "Um dos três Molydeus que guardam a jaula de Durao.",
+    "chefe": "Um dos três Zburător que guardam a jaula de Durao.",
     "fonte_chefe": "04_Locais/Camadas do Plano Abissal (Arco 01)"
   },
   "feng_tu": {
@@ -47,13 +47,13 @@
   "shendilavri": {
     "epigrafe": "Uma única cidade, murada, quase toda feita de ilusão.",
     "fonte_vault": "04_Locais/Camadas do Plano Abissal (Arco 01)",
-    "chefe": "Malcanthet, Rainha das Súcubos, senhora de Rivenheart.",
+    "chefe": "Miradéssa, Rainha das Súcubos, senhora de Avarência.",
     "fonte_chefe": "04_Locais/Camadas do Plano Abissal (Arco 01)"
   },
   "goranthis": {
     "epigrafe": "O verdadeiro Paraíso é uma ilusão, e o castelo inteiro a sustenta.",
     "fonte_vault": "04_Locais/Camadas do Plano Abissal (Arco 01)",
-    "chefe": "Socothbenoth: o castelo é todo ilusão, sustentada por Juiblex.",
+    "chefe": "Socobenoth: o castelo é todo ilusão, sustentada por Sathla.",
     "fonte_chefe": "04_Locais/Camadas do Plano Abissal (Arco 01)"
   },
   "pilares": {

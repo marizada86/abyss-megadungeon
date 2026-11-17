@@ -6,7 +6,7 @@ const EXPECTED := ["loja", "ferreiro", "curandeiro", "doacao", "aposta", "ampulh
 	"trono_zuggtmoy", "arco_pedra", "massa_thullgrime", "estrela_do_norte", "coracao_limo", "esporo_zuggtmoy", "limo_juiblex",
 	"pacto_sangue", "relicario", "carroca", "eclipse_pedra", "eco", "camara_selada", "camara_aberta",
 	"ruina_dagruve", "ruina_docas", "ruina_shedaklah", "ruina_molor", "ruina_feng_tu"]
-## Retidos pelo pacote (nada disso pode entrar na tabela): NE06 Graz'zt, RU05 Durao, RU07 Shendilavri, RU08 Goranthis.
+## Retidos pelo pacote (nada disso pode entrar na tabela): NE06 Vardrém, RU05 Durao, RU07 Lavriê, RU08 Goranthis.
 const RETAINED := ["npc_grazzt_aliado", "ruina_durao", "ruina_shendilavri", "ruina_goranthis"]
 
 func run() -> Array:

@@ -479,10 +479,10 @@
         "life": 6
       }
     ],
-    "note": "Shedaklah: domínio de Zuggtmoy."
+    "note": "Lodovár: domínio de Amanessa."
   },
   "servo_de_zuggtmoy": {
-    "name": "Servo de Zuggtmoy",
+    "name": "Servo de Amanessa",
     "hp": 30,
     "atk": "1d8",
     "bonus": 3,
@@ -556,10 +556,10 @@
         "life": 7
       }
     ],
-    "note": "Cercado por limos: séquito de Juiblex."
+    "note": "Cercado por limos: séquito de Sathla."
   },
   "slime_de_juiblex": {
-    "name": "Limo de Juiblex",
+    "name": "Limo de Sathla",
     "hp": 30,
     "atk": "1d6",
     "bonus": 3,
@@ -578,7 +578,7 @@
     "note": "Divide-se ao morrer."
   },
   "zuggtmoy": {
-    "name": "Zuggtmoy, Dama dos Fungos",
+    "name": "Amanessa, Dama dos Fungos",
     "hp": 520,
     "atk": "2d6",
     "bonus": 6,
@@ -621,7 +621,7 @@
         "speed": 3.8
       }
     ],
-    "note": "Soberana fúngica de Shedaklah."
+    "note": "Soberana fúngica de Lodovár."
   },
   "bolha_de_slime": {
     "name": "Bolha de Slime",
@@ -643,7 +643,7 @@
     "note": "Molor: caverna de bolhas."
   },
   "cultista_thullgrime": {
-    "name": "Cultista de Ghaunadaur",
+    "name": "Cultista de Ubboghau",
     "hp": 30,
     "atk": "1d8",
     "bonus": 4,
@@ -674,7 +674,7 @@
     "note": "Thullgrime."
   },
   "receptaculo_de_juiblex": {
-    "name": "Receptáculo de Juiblex",
+    "name": "Receptáculo de Sathla",
     "hp": 200,
     "atk": "2d6",
     "bonus": 5,
@@ -708,7 +708,7 @@
         "cap": 8
       }
     ],
-    "note": "Backup de Juiblex, sem a consciência original."
+    "note": "Backup de Sathla, sem a consciência original."
   },
   "blogbog": {
     "name": "Blogbog",
@@ -754,7 +754,7 @@
         "cap": 10
       }
     ],
-    "note": "Chefe fúngico de Molor; seu núcleo verde é de Juiblex."
+    "note": "Chefe fúngico de Molor; seu núcleo verde é de Sathla."
   },
   "alma_penada": {
     "name": "Alma Penada",
@@ -834,7 +834,7 @@
     "note": "Guarda da jaula gigante."
   },
   "molydeus_menor": {
-    "name": "Molydeus",
+    "name": "Zburător",
     "hp": 300,
     "atk": "2d8",
     "bonus": 6,
@@ -870,7 +870,7 @@
     "note": "Carcereiro de Durao: fraco a radiante e necrótico."
   },
   "molydeus_chefe": {
-    "name": "Molydeus, Carcereiro-Chefe",
+    "name": "Zburător, Carcereiro-Chefe",
     "hp": 800,
     "atk": "2d10",
     "bonus": 7,
@@ -1045,7 +1045,7 @@
     "note": "Sacerdote de Lu Yueh no templo de Tou Um: Cloudkill, névoa tóxica e ataque psíquico (Sessão 18)."
   },
   "manifestacao_de_juiblex": {
-    "name": "Manifestação de Juiblex",
+    "name": "Manifestação de Sathla",
     "hp": 560,
     "atk": "2d8",
     "bonus": 6,
@@ -1094,7 +1094,7 @@
         "dtype": "magico"
       }
     ],
-    "note": "Juiblex é uma mente-colmeia: cada manifestação é ele (Sessão 16). Chefe de Shedaklah quando Zuggtmoy vira aliada (SPEC-118)."
+    "note": "Sathla é uma mente-colmeia: cada manifestação é ele (Sessão 16). Chefe de Lodovár quanda Amanessa vira aliada (SPEC-118)."
   },
   "lu_yueh": {
     "name": "Lu Yueh, Deus das Epidemias",
@@ -1149,7 +1149,7 @@
     "note": "Deus das epidemias que tomou Feng-tu."
   },
   "escravo_de_rivenheart": {
-    "name": "Escravo de Rivenheart",
+    "name": "Escravo de Avarência",
     "move": "lunge",
     "hp": 38,
     "atk": "1d8",
@@ -1215,7 +1215,7 @@
     "flags": [
       "illusory"
     ],
-    "note": "Rivenheart é quase toda ilusão."
+    "note": "Avarência é quase toda ilusão."
   },
   "guarda_do_castelo": {
     "name": "Guarda do Castelo Argento",
@@ -1285,7 +1285,7 @@
     "note": "Imune a fogo; o dano radiante é eficaz."
   },
   "malcanthet": {
-    "name": "Malcanthet, Rainha das Súcubos",
+    "name": "Miradéssa, Rainha das Súcubos",
     "hp": 1000,
     "atk": "2d10",
     "bonus": 8,
@@ -1339,10 +1339,10 @@
         "dtype": "magico"
       }
     ],
-    "note": "Rainha das súcubos de Shendilavri."
+    "note": "Rainha das súcubos de Lavriê."
   },
   "ilusao_de_socothbenoth": {
-    "name": "Ilusão de Socothbenoth",
+    "name": "Ilusão de Socobenoth",
     "hp": 1,
     "atk": "1d6",
     "bonus": 4,
@@ -1428,7 +1428,7 @@
     ]
   },
   "socothbenoth": {
-    "name": "Socothbenoth, Âncora de Juiblex",
+    "name": "Socobenoth, Âncora de Sathla",
     "hp": 1300,
     "atk": "2d12",
     "bonus": 9,
@@ -1486,10 +1486,10 @@
         "bonus": 9
       }
     ],
-    "note": "Lorde do Abismo usado como âncora por Juiblex."
+    "note": "Lorde do Abismo usado como âncora por Sathla."
   },
   "death_tyrant": {
-    "name": "Death Tyrant",
+    "name": "Skullgaze",
     "hp": 300,
     "atk": "2d8",
     "bonus": 8,
@@ -1528,10 +1528,10 @@
         "dtype": "magico"
       }
     ],
-    "note": "Kein fundido a um Beholder."
+    "note": "Kein fundido ao Vigia."
   },
   "cultista_ghaunadaur": {
-    "name": "Fanático de Ghaunadaur",
+    "name": "Fanático de Ubboghau",
     "hp": 70,
     "atk": "2d6",
     "bonus": 7,
@@ -1781,7 +1781,7 @@
       "inerte",
       "quebravel"
     ],
-    "note": "Objeto quebrável de Shedaklah; não se move nem ataca."
+    "note": "Objeto quebrável de Lodovár; não se move nem ataca."
   },
   "casulo_viscoso_quebravel": {
     "name": "Casulo Viscoso",
@@ -1869,7 +1869,7 @@
       "inerte",
       "quebravel"
     ],
-    "note": "Objeto quebrável de Shendilavri; não se move nem ataca."
+    "note": "Objeto quebrável de Lavriê; não se move nem ataca."
   },
   "estatua_rachada_quebravel": {
     "name": "Estátua Rachada",

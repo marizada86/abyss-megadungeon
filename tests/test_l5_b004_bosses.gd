@@ -1,5 +1,5 @@
 extends RefCounted
-## PLAN-105 B-004: mecânicas de Socothbenoth (Goranthis) e da Síntese Abissal (Pilares, modo infinito).
+## PLAN-105 B-004: mecânicas de Socobenoth (Goranthis) e da Síntese Abissal (Pilares, modo infinito).
 
 func _cfg(path: Array, value: Variant) -> void:
 	var d: Dictionary = Data.table("difficulty")
@@ -63,7 +63,7 @@ func _socothbenoth(out: Array) -> void:
 	var b := _boss_battle("goranthis")
 	var m: BossMechanics = b.boss_mech
 	if m == null:
-		out.append("Socothbenoth deveria ter mecânicas")
+		out.append("Socobenoth deveria ter mecânicas")
 		return
 	if m.budget() != 4:
 		out.append("Goranthis tem orçamento 4 (%d)" % m.budget())
@@ -71,8 +71,8 @@ func _socothbenoth(out: Array) -> void:
 	if _puddles(b) != 0:
 		out.append("a 70%% as poças soltas antigas são substituídas (%d)" % _puddles(b))
 	var anchors := b.enemies.filter(func(e): return e.id == "totem_de_chefe" and not e.dead)
-	if anchors.size() != 2 or String(anchors[0].name) != "Âncora de Juiblex":
-		out.append("a 70%% deveria haver 2 Âncoras de Juiblex (%d)" % anchors.size())
+	if anchors.size() != 2 or String(anchors[0].name) != "Âncora de Sathla":
+		out.append("a 70%% deveria haver 2 Âncoras de Sathla (%d)" % anchors.size())
 	if absf(b._shield_factor(b.boss) - 1.0) > 0.001:
 		out.append("âncora que cura não blinda")
 	var saw_quad := false
@@ -84,7 +84,7 @@ func _socothbenoth(out: Array) -> void:
 			saw_quad = true
 			lit = (m.quad.sectors as Array).size()
 	if not saw_quad or lit != 3:
-		out.append("a 70%% Socothbenoth acende 3 quadrantes (%s, %d)" % [str(saw_quad), lit])
+		out.append("a 70%% Socobenoth acende 3 quadrantes (%s, %d)" % [str(saw_quad), lit])
 	# 35%: 6 ilusões de 40 PV, grito interrompível, sem invocar nem anel antigos
 	b.projectiles.clear()
 	_to_phase(b, 0.34)
@@ -104,7 +104,7 @@ func _socothbenoth(out: Array) -> void:
 		b.step(Vector2.ZERO, 0.05)
 		cast_seen = cast_seen or not m.cast.is_empty()
 	if not cast_seen:
-		out.append("a 35%% Socothbenoth deveria conjurar a Verdade desfeita")
+		out.append("a 35%% Socobenoth deveria conjurar a Verdade desfeita")
 
 func _sintese(out: Array) -> void:
 	var b := _boss_battle("pilares")

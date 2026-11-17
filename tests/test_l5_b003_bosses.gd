@@ -1,5 +1,5 @@
 extends RefCounted
-## PLAN-105 B-003: mecânicas do Discípulo Pestilento (Feng-tu) e de Malcanthet (Shendilavri).
+## PLAN-105 B-003: mecânicas do Discípulo Pestilento (Feng-tu) e de Miradéssa (Lavriê).
 
 func _cfg(path: Array, value: Variant) -> void:
 	var d: Dictionary = Data.table("difficulty")
@@ -107,10 +107,10 @@ func _malcanthet(out: Array) -> void:
 	var b := _boss_battle("shendilavri")
 	var m: BossMechanics = b.boss_mech
 	if m == null:
-		out.append("Malcanthet deveria ter mecânicas")
+		out.append("Miradéssa deveria ter mecânicas")
 		return
 	if m.budget() != 4:
-		out.append("Shendilavri tem orçamento 4 (%d)" % m.budget())
+		out.append("Lavriê tem orçamento 4 (%d)" % m.budget())
 	_to_phase(b, 0.69)
 	if _count(b, "ilusao_de_sucubo") != 4:
 		out.append("a 70%% deveria haver 4 ilusões, sem o invocar antigo de 6 (%d)" % _count(b, "ilusao_de_sucubo"))
@@ -119,14 +119,14 @@ func _malcanthet(out: Array) -> void:
 			out.append("as ilusões da rainha têm 30 PV e nome próprio (%.0f, %s)" % [e.max_hp, e.name])
 			break
 	if not m.is_immune(b.boss):
-		out.append("a 70%% Malcanthet fica imune enquanto as ilusões vivem")
+		out.append("a 70%% Miradéssa fica imune enquanto as ilusões vivem")
 	var saw_mark := false
 	for _i in 160:
 		b.hero.hp = b.hero.max_hp
 		b.step(Vector2.ZERO, 0.05)
 		saw_mark = saw_mark or not m.mark.is_empty()
 	if not saw_mark:
-		out.append("a 70%% Malcanthet deveria marcar o herói junto com as ilusões")
+		out.append("a 70%% Miradéssa deveria marcar o herói junto com as ilusões")
 	# 35%: Beijo da Rainha + varredura de um lado só; sem os 3 súcubos do invocar antigo
 	_to_phase(b, 0.34)
 	if _count(b, "sucubo") != 0:
@@ -142,7 +142,7 @@ func _malcanthet(out: Array) -> void:
 			sweep_seen = true
 			offsets = (m.sweep.offsets as Array).size()
 	if not cast_seen or not sweep_seen:
-		out.append("a 35%% Malcanthet deveria conjurar e varrer (conjuração %s, varredura %s)" % [str(cast_seen), str(sweep_seen)])
+		out.append("a 35%% Miradéssa deveria conjurar e varrer (conjuração %s, varredura %s)" % [str(cast_seen), str(sweep_seen)])
 	if sweep_seen and offsets != 1:
 		out.append("o chifre perdido: varredura de um lado só (%d feixes)" % offsets)
 	if m.active_count() > m.budget():

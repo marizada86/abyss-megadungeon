@@ -69,10 +69,10 @@
       "warning": 5,
       "kind": "collect",
       "until_boss": true,
-      "title": "O pedido de Zuggtmoy",
-      "warning_text": "Zuggtmoy não pode deixar o palácio. O limo de Juiblex toma o domínio dela.",
-      "result_text": "Num canto do andar, o trono de Zuggtmoy espera.",
-      "objective_text": "Zuggtmoy precisa de algo. O que ela quer?",
+      "title": "O pedido de Amanessa",
+      "warning_text": "Amanessa não pode deixar o palácio. O limo de Sathla toma o domínio dela.",
+      "result_text": "Num canto do andar, o trono de Amanessa espera.",
+      "objective_text": "Amanessa precisa de algo. O que ela quer?",
       "items": [
         {
           "label": "Coração de Limo",
@@ -81,7 +81,7 @@
         }
       ],
       "target": {
-        "label": "trono de Zuggtmoy",
+        "label": "trono de Amanessa",
         "color": [
           200,
           140,
@@ -89,16 +89,16 @@
         ],
         "asset": "trono_zuggtmoy"
       },
-      "hint_text": "Zuggtmoy: “Juiblex se fortalece no meu domínio. Traga-me o que pulsa dentro do receptáculo dele.”",
-      "success_text": "Zuggtmoy aceita o Coração de Limo. O pacto está selado.",
+      "hint_text": "Amanessa: “Sathla se fortalece no meu domínio. Traga-me o que pulsa dentro do receptáculo dele.”",
+      "success_text": "Amanessa aceita o Coração de Limo. O pacto está selado.",
       "reward": {
         "flag": {
           "id": "zuggtmoy_aliada",
           "boss": "manifestacao_de_juiblex",
-          "text": "Juiblex vem em pessoa, e a guarnição de Zuggtmoy luta ao seu lado.",
+          "text": "Sathla vem em pessoa, e a guarnição de Amanessa luta ao seu lado.",
           "allies": {
             "id": "servo_de_zuggtmoy",
-            "label": "Guarnição de Zuggtmoy",
+            "label": "Guarnição de Amanessa",
             "n": 4,
             "hp": 70,
             "life": 80,
@@ -106,9 +106,9 @@
             "speed": 1.5
           }
         },
-        "text": "Quando o andar ruir, quem virá é Juiblex, não Zuggtmoy."
+        "text": "Quando o andar ruir, quem virá é Sathla, nãa Amanessa."
       },
-      "fonte_vault": "Sessão 15 (negociação no palácio; ajuda contra Juiblex; guarnição que serve por escolha); Sessão 17 (receptáculo)"
+      "fonte_vault": "Sessão 15 (negociação no palácio; ajuda contra Sathla; guarnição que serve por escolha); Sessão 17 (receptáculo)"
     },
     {
       "id": "portal_sem_vao",
@@ -119,11 +119,11 @@
       "deadline": 75,
       "title": "O portal sem vão",
       "warning_text": "Um arco de pedra sem passagem pede os dois opostos da camada.",
-      "result_text": "Leve um esporo de Zuggtmoy e um limo de Juiblex ao arco.",
+      "result_text": "Leve um esporo de Amanessa e um limo de Sathla ao arco.",
       "objective_text": "leve esporo e limo ao arco de pedra",
       "items": [
         {
-          "label": "esporo de Zuggtmoy",
+          "label": "esporo de Amanessa",
           "color": [
             200,
             150,
@@ -132,7 +132,7 @@
           "asset": "esporo_zuggtmoy"
         },
         {
-          "label": "limo de Juiblex",
+          "label": "limo de Sathla",
           "color": [
             110,
             190,
@@ -221,15 +221,15 @@
         150,
         210
       ],
-      "warning_text": "O limo de Juiblex sobe pelo altar de Zuggtmoy.",
+      "warning_text": "O limo de Sathla sobe pelo altar de Amanessa.",
       "result_text": "Escolha um lado; o outro vai se revoltar.",
-      "objective_text": "escolha entre Zuggtmoy e Juiblex (E)",
+      "objective_text": "escolha entre Amanessa e Sathla (E)",
       "leave_text": "Não tomar partido",
       "choices": [
         {
-          "name": "Servir Zuggtmoy",
-          "desc": "Recebe uma bênção de Zuggtmoy. O limo de Juiblex ataca.",
-          "brief": "Bênção de Zuggtmoy · limos de Juiblex",
+          "name": "Servir Amanessa",
+          "desc": "Recebe uma bênção de Amanessa. O limo de Sathla ataca.",
+          "brief": "Bênção de Amanessa · limos de Sathla",
           "effect": {
             "god_boon": [
               "zuggtmoy_esporos",
@@ -239,13 +239,13 @@
               "id": "slime_de_juiblex",
               "n": 6
             },
-            "text": "Zuggtmoy abençoa; o limo de Juiblex responde."
+            "text": "Amanessa abençoa; o limo de Sathla responde."
           }
         },
         {
-          "name": "Servir Juiblex",
-          "desc": "Recebe uma bênção de Juiblex. A guarnição de Zuggtmoy ataca.",
-          "brief": "Bênção de Juiblex · servos de Zuggtmoy",
+          "name": "Servir Sathla",
+          "desc": "Recebe uma bênção de Sathla. A guarnição de Amanessa ataca.",
+          "brief": "Bênção de Sathla · servos de Amanessa",
           "effect": {
             "god_boon": [
               "juiblex_gelatina",
@@ -255,11 +255,11 @@
               "id": "servo_de_zuggtmoy",
               "n": 6
             },
-            "text": "Juiblex toma o altar; a guarnição de Zuggtmoy responde."
+            "text": "Sathla toma o altar; a guarnição de Amanessa responde."
           }
         }
       ],
-      "fonte_vault": "03_NPCs/Zuggtmoy e Juiblex (Juiblex avança sobre o território de Zuggtmoy em Shedaklah)"
+      "fonte_vault": "03_NPCs/Amanessa e Sathla (Sathla avança sobre o território de Amanessa em Lodovár)"
     }
   ],
   "molor": [
@@ -305,7 +305,7 @@
       "fail": {
         "elite": "receptaculo_de_juiblex"
       },
-      "fonte_vault": "Sessão 17 (Thullgrime; o ritual sustenta a massa; receptáculo de Juiblex)",
+      "fonte_vault": "Sessão 17 (Thullgrime; o ritual sustenta a massa; receptáculo de Sathla)",
       "asset": "massa_thullgrime",
       "chamber_hint": "mate os carregadores antes que cheguem à massa"
     },
@@ -349,7 +349,7 @@
         150
       ],
       "title": "Desertores",
-      "warning_text": "Três figuras espiam atrás de um morro. Um Molydeus caça desertores.",
+      "warning_text": "Três figuras espiam atrás de um morro. Um Zburător caça desertores.",
       "result_text": "Alcance os desertores antes do carcereiro.",
       "objective_text": "salve os desertores",
       "success_text": "Os desertores juram que a guerra do andar acabou e que ninguém sabe quem venceu.",
@@ -364,7 +364,7 @@
           "duration": 30
         }
       },
-      "fonte_vault": "Sessão 16 (desertores capturados; Molydeus caçam desertores)",
+      "fonte_vault": "Sessão 16 (desertores capturados; Zburător caçam desertores)",
       "asset": "npc_desertor_durao"
     },
     {
@@ -376,14 +376,14 @@
       "deadline": 70,
       "title": "Patrulha do carcereiro",
       "warning_text": "Asas sobre o rio de almas.",
-      "result_text": "Um dos três Molydeus patrulha o andar.",
-      "objective_text": "derrote o Molydeus antes que ele parta",
-      "leave_text": "O Molydeus some por um portal.",
-      "success_text": "O sangue do Molydeus serve ao portal da jaula.",
+      "result_text": "Um dos três Zburător patrulha o andar.",
+      "objective_text": "derrote o Zburător antes que ele parta",
+      "leave_text": "O Zburător some por um portal.",
+      "success_text": "O sangue do Zburător serve ao portal da jaula.",
       "reward": {
         "gold": 50
       },
-      "fonte_vault": "Sessão 16 (três Molydeus carcereiros; fracos a radiante e necrótico)"
+      "fonte_vault": "Sessão 16 (três Zburător carcereiros; fracos a radiante e necrótico)"
     },
     {
       "id": "arena_do_testador",
@@ -604,13 +604,13 @@
       "warning": 5,
       "kind": "pact",
       "pool": "optional",
-      "label": "mercador de Rivenheart",
+      "label": "mercador de Avarência",
       "color": [
         230,
         170,
         210
       ],
-      "title": "Mercador de Rivenheart",
+      "title": "Mercador de Avarência",
       "warning_text": "Uma loja de itens mágicos, barata demais.",
       "result_text": "O mercador sorri para você.",
       "objective_text": "negocie com o mercador (E)",
@@ -625,7 +625,7 @@
             "chest": 1,
             "illusion": true,
             "illusion_chance": 0.33,
-            "illusion_text": "Na loja de Rivenheart, nenhum item tinha magia."
+            "illusion_text": "Na loja de Avarência, nenhum item tinha magia."
           }
         },
         {
@@ -638,11 +638,11 @@
             "chest": 2,
             "illusion": true,
             "illusion_chance": 0.33,
-            "illusion_text": "Na loja de Rivenheart, nenhum item tinha magia."
+            "illusion_text": "Na loja de Avarência, nenhum item tinha magia."
           }
         }
       ],
-      "fonte_vault": "Sessão 18 (loja de itens sem magia em Rivenheart)",
+      "fonte_vault": "Sessão 18 (loja de itens sem magia em Avarência)",
       "asset": "npc_mercador_rivenheart"
     },
     {
@@ -651,14 +651,14 @@
       "warning": 6,
       "kind": "pact",
       "jitter": 0.1,
-      "label": "convite de Malcanthet",
+      "label": "convite de Miradéssa",
       "color": [
         240,
         120,
         170
       ],
       "title": "O convite",
-      "warning_text": "Um soldado fiend entrega um convite: Malcanthet quer você na festa dela.",
+      "warning_text": "Um soldado fiend entrega um convite: Miradéssa quer você na festa dela.",
       "result_text": "É uma armadilha. Você vai?",
       "objective_text": "responda ao convite (E)",
       "choices": [
@@ -687,7 +687,7 @@
           }
         }
       ],
-      "fonte_vault": "Sessão 18 (convite de Malcanthet; encantamento na sala do trono)"
+      "fonte_vault": "Sessão 18 (convite de Miradéssa; encantamento na sala do trono)"
     },
     {
       "id": "vitimas_drenadas",
@@ -798,9 +798,9 @@
         "desc": "O paraíso caiu: todo santuário fere."
       },
       "title": "Do trono ao lodo",
-      "warning_text": "Alguém tira Socothbenoth do trono: o paraíso começa a ruir.",
+      "warning_text": "Alguém tira Socobenoth do trono: o paraíso começa a ruir.",
       "result_text": "Era ilusão: paredes de carne, santuários que ferem, inimigos mais rápidos.",
-      "fonte_vault": "Sessão 19 (tirar Socothbenoth do trono revela o palácio de carne)",
+      "fonte_vault": "Sessão 19 (tirar Socobenoth do trono revela o palácio de carne)",
       "chamber_hint": "nada a fazer: o paraíso cai sozinho"
     },
     {
@@ -808,7 +808,7 @@
       "at": 331,
       "warning": 5,
       "kind": "pact",
-      "label": "eco de Graz'zt",
+      "label": "eco de Vardrém",
       "color": [
         150,
         120,
@@ -817,10 +817,10 @@
       "title": "O nome dito três vezes",
       "warning_text": "Uma sombra gigantesca se agita no chão.",
       "result_text": "Diga o nome três vezes e ele vem, uma única vez.",
-      "objective_text": "chame Graz'zt (E)",
+      "objective_text": "chame Vardrém (E)",
       "choices": [
         {
-          "name": "“Graz'zt! Graz'zt! Graz'zt!”",
+          "name": "“Vardrém! Vardrém! Vardrém!”",
           "desc": "Ele varre o mapa: morre tudo que não é chefe nem elite, e os destrutíveis caem. Luta ao seu lado por um instante. O preço é um terço das suas moedas.",
           "cost": {
             "gold_pct": 0.33
@@ -828,7 +828,7 @@
           "effect": {
             "wipe": true,
             "allies": {
-              "label": "Graz'zt",
+              "label": "Vardrém",
               "n": 1,
               "hp": 500,
               "life": 25,
@@ -836,11 +836,11 @@
               "speed": 1.8,
               "asset": "npc_grazzt_aliado"
             },
-            "text": "Graz'zt emerge da sombra, triunfante."
+            "text": "Vardrém emerge da sombra, triunfante."
           }
         }
       ],
-      "fonte_vault": "Sessões 19 e 20 (anel que invoca Graz'zt ao dizer o nome três vezes)",
+      "fonte_vault": "Sessões 19 e 20 (anel que invoca Vardrém ao dizer o nome três vezes)",
       "asset": "npc_grazzt_aliado"
     }
   ],

@@ -132,7 +132,7 @@ func run() -> Array:
 		if boss_e.affixes.size() != 1 or boss_e.affix != "" or not (boss_e.affixes[0] in Battle.BOSS_AFFIXES):
 			f.append("%s: chefe devia ter 1 afixo sem virar elite (%s)" % [sid, boss_e.affixes])
 
-	# horda: Dagruve/Docas/Pilares não têm; Shedaklah avisa 5 s antes, dura 20 s e só acontece uma vez
+	# horda: Dagruve/Docas/Pilares não têm; Lodovár avisa 5 s antes, dura 20 s e só acontece uma vez
 	for sid in ["dagruve", "docas", "pilares"]:
 		var bh := _bat(sid)
 		bh.stage.waves = [{"t0": 0, "t1": 999, "id": "zumbi", "every": 1.0, "n": 1, "max": 5}]

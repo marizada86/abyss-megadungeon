@@ -92,7 +92,7 @@ func run() -> Array:
 		out.append("Korrak deveria estar bloqueado")
 	var kill := p.apply_run(_result({"boss_ids": ["molydeus_chefe"], "bosses": 1}))
 	if not p.hero_unlocked("korrak"):
-		out.append("derrotar Molydeus deveria liberar Korrak")
+		out.append("derrotar Zburător deveria liberar Korrak")
 	# perfil sobrevive a serialização
 	var again := Profile.new(JSON.parse_string(JSON.stringify(p.data)))
 	if again.coins() != p.coins() or not again.hero_unlocked("korrak"):

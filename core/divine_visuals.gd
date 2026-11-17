@@ -3,13 +3,13 @@ extends RefCounted
 ## Resolução puramente visual. Não altera dano, atributos, colisões ou RNG.
 
 const DIVINE_THEMES := {
-	"Shar": {"primary": Color("b56bff"), "aura_accent": Color("6b2a91"), "impact_accent": Color("d6a8ff"), "outline": Color("160d24"), "motif": "eclipse"},
+	"Nemúria": {"primary": Color("b56bff"), "aura_accent": Color("6b2a91"), "impact_accent": Color("d6a8ff"), "outline": Color("160d24"), "motif": "eclipse"},
 	"Sendrinah": {"primary": Color("f4c542"), "aura_accent": Color("fff0b3"), "impact_accent": Color("ffffff"), "outline": Color("8c5b12"), "motif": "ascend"},
-	"Mask": {"primary": Color("aeb8c8"), "aura_accent": Color("536174"), "impact_accent": Color("dce5f0"), "outline": Color("171c27"), "motif": "shadow_ribbon"},
-	"Lliira": {"primary": Color("ffa12d"), "aura_accent": Color("ffe05c"), "impact_accent": Color("f04a3a"), "outline": Color("9e2f37"), "motif": "three_stars"},
-	"Ghaunadaur": {"primary": Color("8ad14b"), "aura_accent": Color("a56bda"), "impact_accent": Color("c58bff"), "outline": Color("44205e"), "motif": "elder_eye"},
+	"Sovren": {"primary": Color("aeb8c8"), "aura_accent": Color("536174"), "impact_accent": Color("dce5f0"), "outline": Color("171c27"), "motif": "shadow_ribbon"},
+	"Avelune": {"primary": Color("ffa12d"), "aura_accent": Color("ffe05c"), "impact_accent": Color("f04a3a"), "outline": Color("9e2f37"), "motif": "three_stars"},
+	"Ubboghau": {"primary": Color("8ad14b"), "aura_accent": Color("a56bda"), "impact_accent": Color("c58bff"), "outline": Color("44205e"), "motif": "elder_eye"},
 	"Tou Um": {"primary": Color("6fd4ff"), "aura_accent": Color("f1fbff"), "impact_accent": Color("b9d0ff"), "outline": Color("273c8f"), "motif": "north_star"},
-	"Selûne": {"primary": Color("8ccbff"), "aura_accent": Color("eaf4ff"), "impact_accent": Color("ffffff"), "outline": Color("355f94"), "motif": "seven_stars"},
+	"Selene": {"primary": Color("8ccbff"), "aura_accent": Color("eaf4ff"), "impact_accent": Color("ffffff"), "outline": Color("355f94"), "motif": "seven_stars"},
 }
 
 const HERO_BASE_COLORS := {

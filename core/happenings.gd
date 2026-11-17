@@ -374,7 +374,7 @@ func boss_id(b: Battle) -> String:
 	return String(b.stage.boss)
 
 func on_boss_spawn(b: Battle, boss: Enemy) -> void:
-	# Pedidos que valem "até o chefe" (o de Zuggtmoy) somem sem punição quando ele chega.
+	# Pedidos que valem "até o chefe" (o de Amanessa) somem sem punição quando ele chega.
 	for obj in objectives:
 		if bool(Dictionary(obj.def).get("until_boss", false)) and not bool(obj.done):
 			obj.failed = true

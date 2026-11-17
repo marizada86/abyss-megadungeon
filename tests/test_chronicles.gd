@@ -34,7 +34,7 @@ func run() -> Array:
 				for word in forbidden:
 					if word in text:
 						out.append("%s/%s cita '%s' (segredo do mestre)" % [stage_id, key, word])
-	# rumor de Adam: Docas e Shedaklah, curto e com fonte
+	# rumor de Adam: Docas e Lodovár, curto e com fonte
 	for stage_id in ["docas", "shedaklah"]:
 		var s: Dictionary = stories[stage_id]
 		if not "Adam" in String(s.get("rumor", "")) or String(s.get("fonte_rumor", "")) == "":

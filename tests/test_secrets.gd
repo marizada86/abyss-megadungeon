@@ -1,5 +1,5 @@
 extends RefCounted
-## SPEC-152 e SPEC-157 (MEC-039): pontos de interesse, covil e Ecos de Shedaklah, Molor e Durao (84x84) e de Dagruve e Docas (60x60).
+## SPEC-152 e SPEC-157 (MEC-039): pontos de interesse, covil e Ecos de Lodovár, Molor e Durao (84x84) e de Dagruve e Docas (60x60).
 
 const STAGES := ["shedaklah", "molor", "durao", "dagruve", "docas", "feng_tu", "shendilavri", "goranthis", "reino_abissal", "domwieck", "pilares"]
 const SMALL := ["dagruve", "docas", "reino_abissal", "domwieck", "pilares"]

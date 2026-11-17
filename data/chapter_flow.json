@@ -1,7 +1,7 @@
 {
   "id": "CONTRACT-NOTTGARD-CHAPTER1-FLOW-20261016",
   "revision": "r2",
-  "revision_note": "r2 (2026-10-20, decisão do dono): Docas, Reino Abissal e Domwieck com 180 s exatos (cronogramas reescalados); Domwieck segue para Dagruve e a cadeia legada (Dagruve -> Shedaklah); o capítulo 1 ainda fecha na HQ03. Aprovação: PLAN-NOTTGARD-CHAPTER1-MAPS-STANDARD-20261020 r2, lotes A, B e C.",
+  "revision_note": "r2 (2026-10-20, decisão do dono): Docas, Reino Abissal e Domwieck com 180 s exatos (cronogramas reescalados); Domwieck segue para Dagruve e a cadeia legada (Dagruve -> Lodovár); o capítulo 1 ainda fecha na HQ03. Aprovação: PLAN-NOTTGARD-CHAPTER1-MAPS-STANDARD-20261020 r2, lotes A, B e C.",
   "status": "APPROVED_IMPLEMENTATION_R1",
   "implementation_authorized": true,
   "platform": "windows-x86_64",
@@ -585,7 +585,7 @@
       "unlock": "dagruve"
     },
     "shedaklah": {
-      "name": "Shedaklah",
+      "name": "Lodovár",
       "sub": "Andar 222 · fungo e slime",
       "order": 2,
       "duration": 330,
@@ -937,7 +937,7 @@
         "carroca": 0.8,
         "eclipse_pedra": 0.6
       },
-      "essence": "Sangue de Molydeus",
+      "essence": "Sangue de Zburător",
       "next": "feng_tu",
       "unlock": "molor"
     },
@@ -1054,7 +1054,7 @@
       "unlock": "durao"
     },
     "shendilavri": {
-      "name": "Shendilavri e Rivenheart",
+      "name": "Lavriê e Avarência",
       "sub": "Camada 570 · o reino das súcubos",
       "order": 6,
       "duration": 420,

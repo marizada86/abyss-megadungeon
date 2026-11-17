@@ -1,5 +1,5 @@
 extends RefCounted
-## SPEC-118: acontecimentos exclusivos por fase (tipos novos, dados, chefes de Feng-tu e Shedaklah).
+## SPEC-118: acontecimentos exclusivos por fase (tipos novos, dados, chefes de Feng-tu e Lodovár).
 
 func _bat(stage: String) -> Battle:
 	var b := Battle.new(7, "durvall", stage)
@@ -74,7 +74,7 @@ func _check_data(out: Array) -> void:
 	if String(stages.feng_tu.boss) != "discipulo_pestilento":
 		out.append("Feng-tu: o chefe deveria ser O Discípulo Pestilento")
 	if not enemies.has("manifestacao_de_juiblex") or not enemies.manifestacao_de_juiblex.get("flags", []).has("boss"):
-		out.append("Manifestação de Juiblex deveria existir como chefe")
+		out.append("Manifestação de Sathla deveria existir como chefe")
 
 func _check_select(out: Array) -> void:
 	var defs: Array = Data.table("stage_events").get("durao", [])
@@ -126,8 +126,8 @@ func _check_zuggtmoy(out: Array) -> void:
 	var throne: Dictionary = _points(b, "event_target")[0]
 	b.events.clear()
 	_touch(b, throne)
-	if not _toasts(b).any(func(t): return t.begins_with("Zuggtmoy:")):
-		out.append("tocar o trono sem o item deveria dar a dica de Zuggtmoy")
+	if not _toasts(b).any(func(t): return t.begins_with("Amanessa:")):
+		out.append("tocar o trono sem o item deveria dar a dica de Amanessa")
 	b._kill(carrier[0])
 	var heart := _points(b, "event_item")
 	if heart.size() != 1:
@@ -136,18 +136,18 @@ func _check_zuggtmoy(out: Array) -> void:
 	_touch(b, heart[0])
 	_touch(b, throne)
 	if b.happenings.boss_id(b) != "manifestacao_de_juiblex":
-		out.append("com o pacto, o chefe deveria ser a Manifestação de Juiblex")
+		out.append("com o pacto, o chefe deveria ser a Manifestação de Sathla")
 	var boss := b._spawn(b.happenings.boss_id(b), b.hero.pos + Vector2(5, 0))
 	b.happenings.on_boss_spawn(b, boss)
 	if b.happenings.allies.size() != 4:
-		out.append("a guarnição de Zuggtmoy deveria lutar ao lado (há %d aliados)" % b.happenings.allies.size())
-	# sem o pacto, o pedido some quando o chefe chega e Zuggtmoy segue chefe
+		out.append("a guarnição de Amanessa deveria lutar ao lado (há %d aliados)" % b.happenings.allies.size())
+	# sem o pacto, o pedido some quando o chefe chega e Amanessa segue chefe
 	var c := _bat("shedaklah")
 	_fire(c, "shedaklah", "pedido_de_zuggtmoy")
 	c.happenings.on_boss_spawn(c, c._spawn("zuggtmoy", c.hero.pos + Vector2(5, 0)))
 	c.happenings.step(c, 0.01)
 	if not c.happenings.objectives.is_empty() or c.happenings.boss_id(c) != "zuggtmoy":
-		out.append("sem o pacto, o pedido deveria sumir e o chefe continuar Zuggtmoy")
+		out.append("sem o pacto, o pedido deveria sumir e o chefe continuar Amanessa")
 	# aliado ataca inimigo próximo
 	var d := _bat("shedaklah")
 	d.happenings._add_ally(d, {"label": "teste", "pos": d.hero.pos, "dice": "10d10", "life": 10.0})
@@ -214,11 +214,11 @@ func _check_invasion_rescue_arena(out: Array) -> void:
 	var b := _bat("durao")
 	_fire(b, "durao", "patrulha_do_carcereiro")
 	if _tagged(b).size() != 1:
-		out.append("a patrulha deveria trazer um Molydeus")
+		out.append("a patrulha deveria trazer um Zburător")
 	b.time += 80.0
 	b.happenings.step(b, 0.01)
 	if not _tagged(b).is_empty():
-		out.append("o Molydeus deveria partir ao fim do prazo")
+		out.append("o Zburător deveria partir ao fim do prazo")
 	var r := _bat("durao")
 	_fire(r, "durao", "desertores")
 	for it in _points(r, "event_npc"):
@@ -253,23 +253,23 @@ func _check_grazzt_wipe(out: Array) -> void:
 	b.hero.pos = p.pos
 	p.born_at = -10.0
 	if not b.interact() or b.state != "shop":
-		out.append("E no eco de Graz'zt deveria abrir o pacto")
+		out.append("E no eco de Vardrém deveria abrir o pacto")
 		return
 	var kills0 := int(b.stats.kills)
 	b.choose(0)
 	for e in common:
 		if not e.dead:
-			out.append("Graz'zt deveria matar o inimigo comum")
+			out.append("Vardrém deveria matar o inimigo comum")
 	if not breakable.dead:
-		out.append("Graz'zt deveria destruir os destrutíveis")
+		out.append("Vardrém deveria destruir os destrutíveis")
 	if boss.dead or elite.dead or chest_elite.dead or bound.dead:
 		out.append("chefe, elites e inimigos de objetivo devem sobreviver à limpeza")
 	if int(b.stats.kills) < kills0 + 3:
 		out.append("as mortes da limpeza deveriam contar como mortes normais")
 	if b.happenings.allies.is_empty():
-		out.append("Graz'zt deveria continuar lutando ao lado do herói")
+		out.append("Vardrém deveria continuar lutando ao lado do herói")
 	if b.hero.gold > 70:
-		out.append("o pacto de Graz'zt deveria custar um terço das moedas (restam %d)" % int(b.hero.gold))
+		out.append("o pacto de Vardrém deveria custar um terço das moedas (restam %d)" % int(b.hero.gold))
 	if not b.events.any(func(ev): return ev.type == "decoy_blast"):
 		out.append("a limpeza deveria emitir o evento visual")
 

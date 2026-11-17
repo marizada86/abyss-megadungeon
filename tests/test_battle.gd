@@ -945,7 +945,7 @@ func run() -> Array:
 		bs.step(Vector2.ZERO, 0.66)
 		bs.hero.pos = bs.interactions.filter(func(i): return i.kind == "portal")[0].pos
 		bs.interact()
-		# Contrato do capítulo 1 r2: Dagruve (depois de Domwieck) segue para Shedaklah.
+		# Contrato do capítulo 1 r2: Dagruve (depois de Domwieck) segue para Lodovár.
 		if bs.stage_id != "shedaklah":
 			out.append("portal não levou a shedaklah (%s)" % bs.stage_id)
 		else:
@@ -985,25 +985,25 @@ func run() -> Array:
 
 	# 14) Afinidade visual nasce do patrono e só fica ativa após escolha divina.
 	var kayron := _bat(104, "kayron")
-	if kayron.visual_god != "Shar" or kayron.visual_boon_selected:
-		out.append("Kayron deveria iniciar em Shar sem aura")
+	if kayron.visual_god != "Nemúria" or kayron.visual_boon_selected:
+		out.append("Kayron deveria iniciar em Nemúria sem aura")
 	var selune: Dictionary = Data.table("boons").boons.filter(func(b): return b.id == "selune_luar")[0]
 	kayron.state = "altar"
 	kayron.offer_kind = "altar"
 	kayron.offer = [{"t": "boon", "boon": selune}]
 	kayron.choose(0)
-	if kayron.visual_god != "Selûne" or not kayron.visual_boon_selected:
-		out.append("bênção de Selûne deveria substituir a afinidade visual")
-	var kayron_base: Dictionary = DivineVisuals.resolve("kayron", "Shar", false)
+	if kayron.visual_god != "Selene" or not kayron.visual_boon_selected:
+		out.append("bênção de Selene deveria substituir a afinidade visual")
+	var kayron_base: Dictionary = DivineVisuals.resolve("kayron", "Nemúria", false)
 	if kayron_base.primary != Color("d13e54"):
 		out.append("Kayron deveria preservar vermelho abissal antes da bênção")
-	var shar_theme: Dictionary = DivineVisuals.resolve("kayron", "Shar", true)
+	var shar_theme: Dictionary = DivineVisuals.resolve("kayron", "Nemúria", true)
 	if shar_theme.primary != Color("b56bff") or shar_theme.outline != Color("160d24"):
-		out.append("sobreposição de Shar deveria usar a paleta violeta aprovada")
-	var ghaunadaur_theme: Dictionary = DivineVisuals.resolve("brook", "Ghaunadaur", true)
+		out.append("sobreposição de Nemúria deveria usar a paleta violeta aprovada")
+	var ghaunadaur_theme: Dictionary = DivineVisuals.resolve("brook", "Ubboghau", true)
 	if ghaunadaur_theme.primary != Color("8ad14b") or ghaunadaur_theme.aura_accent != Color("a56bda"):
-		out.append("Ghaunadaur deveria ser verde com acentos roxos")
-	var divine_primaries := {"Shar": "b56bff", "Sendrinah": "f4c542", "Mask": "aeb8c8", "Lliira": "ffa12d", "Ghaunadaur": "8ad14b", "Tou Um": "6fd4ff", "Selûne": "8ccbff"}
+		out.append("Ubboghau deveria ser verde com acentos roxos")
+	var divine_primaries := {"Nemúria": "b56bff", "Sendrinah": "f4c542", "Sovren": "aeb8c8", "Avelune": "ffa12d", "Ubboghau": "8ad14b", "Tou Um": "6fd4ff", "Selene": "8ccbff"}
 	for god in divine_primaries:
 		var theme: Dictionary = DivineVisuals.resolve("brook", String(god), true)
 		if theme.primary != Color(String(divine_primaries[god])):

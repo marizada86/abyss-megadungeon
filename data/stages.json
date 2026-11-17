@@ -263,7 +263,7 @@
     "unlock": "start"
   },
   "shedaklah": {
-    "name": "Shedaklah",
+    "name": "Lodovár",
     "sub": "Andar 222 · fungo e slime",
     "order": 4,
     "duration": 330,
@@ -615,7 +615,7 @@
       "carroca": 0.8,
       "eclipse_pedra": 0.6
     },
-    "essence": "Sangue de Molydeus",
+    "essence": "Sangue de Zburător",
     "next": "feng_tu",
     "unlock": "molor"
   },
@@ -732,7 +732,7 @@
     "unlock": "durao"
   },
   "shendilavri": {
-    "name": "Shendilavri e Rivenheart",
+    "name": "Lavriê e Avarência",
     "sub": "Camada 570 · o reino das súcubos",
     "order": 8,
     "duration": 420,

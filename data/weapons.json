@@ -209,8 +209,8 @@
     }
   },
   "sentenca_de_lliira": {
-    "name": "Sentença de Lliira",
-    "src": "Carta: Sentença de Lliira",
+    "name": "Sentença de Avelune",
+    "src": "Carta: Sentença de Avelune",
     "kind": "nova",
     "dtype": "radiante",
     "attr": "carisma",

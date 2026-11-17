@@ -8,7 +8,7 @@ const SHADOW_LIFT := 0.4
 ## Raio da sombra (px) por px de altura visível do inimigo: grande tem sombra grande, pequeno, pequena.
 const SHADOW_RADIUS_PER_HEIGHT := 0.2
 const ANIMATED := {
-	# SPEC-185 (LOT13 e LOT14): Manifestação de Juiblex (5 estados), Mímico (4) e Turíbulo (só idle; a ruptura TD segue retida)
+	# SPEC-185 (LOT13 e LOT14): Manifestação de Sathla (5 estados), Mímico (4) e Turíbulo (só idle; a ruptura TD segue retida)
 	"manifestacao_de_juiblex": {"cell": Vector2i(512, 320), "body_height": 266.1, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6, "special": 6}, "flip_h_for_move": true},
 	"mimico": {"cell": Vector2i(384, 352), "body_height": 403.4, "states": {"idle": 4, "move": 6, "attack": 4, "death": 6}, "flip_h_for_move": true},
 	"totem_de_chefe": {"cell": Vector2i(384, 352), "body_height": 515.4, "states": {"idle": 4}},

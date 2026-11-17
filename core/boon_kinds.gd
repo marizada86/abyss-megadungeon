@@ -1,7 +1,7 @@
 class_name BoonKinds
 extends RefCounted
 ## SPEC-129 B-002: bênçãos com dinâmica própria, em vez de só "+X, mas -Y".
-##  - `oath` (Juramento de Lliira): janelas periódicas de objetivo; cumprir dá Glória, quebrar dá Julgamento (nunca mata).
+##  - `oath` (Juramento de Avelune): janelas periódicas de objetivo; cumprir dá Glória, quebrar dá Julgamento (nunca mata).
 ##  - `path` (Caminho da Estrela, Tou Um): uma estrela recua quando o herói chega perto; segui-la cura, seguir demais cansa.
 ## Parâmetros em data/boons.json (blocos `oath` e `path`). A Battle chama `reset_stage`, `step` e `on_hit`;
 ## a UI lê `hud_lines` e `star_pos`. Sem referência guardada à Battle (evita ciclo de RefCounted).
@@ -101,7 +101,7 @@ func _step_oath(b: Battle, o: Dictionary, dt: float) -> void:
 		oath.window_t = float(o.window)
 		oath.to_open = float(o.cycle)
 		oath.hits = 0
-		b.events.append({"type": "toast", "text": "Juramento de Lliira: aguente %d s com no máximo %d golpes." % [int(o.window), int(o.max_hits)]})
+		b.events.append({"type": "toast", "text": "Juramento de Avelune: aguente %d s com no máximo %d golpes." % [int(o.window), int(o.max_hits)]})
 
 func _close_oath(b: Battle, o: Dictionary, kept: bool) -> void:
 	oath.open = false
@@ -113,7 +113,7 @@ func _close_oath(b: Battle, o: Dictionary, kept: bool) -> void:
 	b.hero.set_kind_buff("oath_glory" if kept else "oath_judgment", side.mods, float(side.duration))
 	b.hero.kind_buffs.erase("oath_judgment" if kept else "oath_glory")
 	b.hero.recalc()
-	b.events.append({"type": "toast", "text": ("Glória de Lliira: %s por %d s." if kept else "Julgamento da Glória: %s por %d s.") % [Items.mods_text(side.mods), int(side.duration)]})
+	b.events.append({"type": "toast", "text": ("Glória de Avelune: %s por %d s." if kept else "Julgamento da Glória: %s por %d s.") % [Items.mods_text(side.mods), int(side.duration)]})
 
 # ------------------------------------------------------------------ estrela
 

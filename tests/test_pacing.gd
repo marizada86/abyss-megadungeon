@@ -72,7 +72,7 @@ func _check_optional_happening(out: Array) -> void:
 	for s in 20:
 		var picked := Happenings.select("shedaklah", Data.table("stage_events").get("shedaklah", []), 900 + s)
 		if picked.size() != fixed + 1:
-			out.append("Shedaklah deveria ter os fixos + 1 opcional em toda semente (semente %d veio com %d)" % [900 + s, picked.size()])
+			out.append("Lodovár deveria ter os fixos + 1 opcional em toda semente (semente %d veio com %d)" % [900 + s, picked.size()])
 			return
 
 func _check_speed_unlock(out: Array) -> void:

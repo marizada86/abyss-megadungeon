@@ -1,5 +1,5 @@
 extends RefCounted
-## SPEC-185 (LOT13 e LOT14): Manifestação de Juiblex, Mímico e Turíbulo animados; a ruptura do Turíbulo (TD) segue retida.
+## SPEC-185 (LOT13 e LOT14): Manifestação de Sathla, Mímico e Turíbulo animados; a ruptura do Turíbulo (TD) segue retida.
 
 const EnemyViewScript := preload("res://ui/enemy_view.gd")
 const STATES := {

@@ -3,8 +3,8 @@ extends RefCounted
 ## Conta pura com Profile em memória: não carrega nem grava o save real.
 
 const FORBIDDEN := ["Receptáculo", "receptáculo", "Gellad", "Zapomoni", "Síntese", " Adam", "Astherion"]
-## Inimigos: "Receptáculo de Juiblex" e "A Síntese Abissal" são nomes de inimigos; o que segue proibido é o segredo do Durvall e o ritual de Ghaunadaur.
-const ENEMY_FORBIDDEN := ["Gellad", "Zapomoni", " Adam", "Astherion", "receptáculo de Ghaunadaur"]
+## Inimigos: "Receptáculo de Sathla" e "A Síntese Abissal" são nomes de inimigos; o que segue proibido é o segredo do Durvall e o ritual de Ubboghau.
+const ENEMY_FORBIDDEN := ["Gellad", "Zapomoni", " Adam", "Astherion", "receptáculo de Ubboghau"]
 const MAX_TEXT := 260
 
 func run() -> Array:
@@ -315,7 +315,7 @@ func run() -> Array:
 			out.append("item único sem entrada em codex_lore.items: %s" % uid)
 	if not weapons_lore.has("dominio_da_vontade"):
 		out.append("arma dominio_da_vontade deveria apontar para o Coração da Dominância")
-	# W-3: só o Colar de visão verdadeira evita Astherion e o olho de Ghaunadaur; os demais itens podem citar o Olho (Colar dos Tentáculos)
+	# W-3: só o Colar de visão verdadeira evita Astherion e o olho de Ubboghau; os demais itens podem citar o Olho (Colar dos Tentáculos)
 	var vision: Dictionary = items_lore.colar_visao_verdadeira
 	var vision_all := String(vision.quem)
 	for c in Array(vision.curiosities):

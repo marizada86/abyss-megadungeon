@@ -1,5 +1,5 @@
 extends RefCounted
-## SPEC-129 B-002: bênçãos de família. Juramento de Lliira (oath) e Caminho da Estrela de Tou Um (path).
+## SPEC-129 B-002: bênçãos de família. Juramento de Avelune (oath) e Caminho da Estrela de Tou Um (path).
 
 func _bat(boon_id: String, seed_value := 3) -> Battle:
 	var b := Battle.new(seed_value, "durvall", "dagruve")

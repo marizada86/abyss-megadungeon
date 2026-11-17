@@ -1,5 +1,5 @@
 extends RefCounted
-## SPEC-129 B-005: eventos divinos (Altar disputado em Feng-tu e Shedaklah; recompensa `god_boon`).
+## SPEC-129 B-005: eventos divinos (Altar disputado em Feng-tu e Lodovár; recompensa `god_boon`).
 
 func _bat(stage: String) -> Battle:
 	var b := Battle.new(7, "durvall", stage)
@@ -31,7 +31,7 @@ func _count(b: Battle, enemy_id: String) -> int:
 
 func run() -> Array:
 	var out: Array = []
-	var pairs := [["feng_tu", "altar_disputado_feng_tu", "Tou Um", "Lu Yueh"], ["shedaklah", "altar_disputado_shedaklah", "Zuggtmoy", "Juiblex"]]
+	var pairs := [["feng_tu", "altar_disputado_feng_tu", "Tou Um", "Lu Yueh"], ["shedaklah", "altar_disputado_shedaklah", "Amanessa", "Sathla"]]
 	var boon_ids := {}
 	for bn in Data.table("boons").boons:
 		boon_ids[String(bn.id)] = String(bn.god)

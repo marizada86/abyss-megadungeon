@@ -1,5 +1,5 @@
 extends RefCounted
-## PLAN-105 B-002: mecânicas de Zuggtmoy (Shedaklah) e Molydeus (Durao).
+## PLAN-105 B-002: mecânicas de Amanessa (Lodovár) e Zburător (Durao).
 
 func _cfg(path: Array, value: Variant) -> void:
 	var d: Dictionary = Data.table("difficulty")
@@ -63,10 +63,10 @@ func _zuggtmoy(out: Array) -> void:
 	var b := _boss_battle("shedaklah")
 	var m: BossMechanics = b.boss_mech
 	if m == null:
-		out.append("Zuggtmoy deveria ter mecânicas")
+		out.append("Amanessa deveria ter mecânicas")
 		return
 	if m.budget() != 2:
-		out.append("Shedaklah tem orçamento 2 (%d)" % m.budget())
+		out.append("Lodovár tem orçamento 2 (%d)" % m.budget())
 	_to_phase(b, 0.69)
 	if _puddles(b) != 0:
 		out.append("a 70%% os esporos antigos (poças soltas) são substituídos pelos quadrantes (%d poças)" % _puddles(b))
@@ -75,7 +75,7 @@ func _zuggtmoy(out: Array) -> void:
 		if not m.quad.is_empty():
 			break
 	if m.quad.is_empty():
-		out.append("a 70%% Zuggtmoy deveria acender quadrantes")
+		out.append("a 70%% Amanessa deveria acender quadrantes")
 		return
 	if (m.quad.sectors as Array).size() != 3 or not bool(m.quad.puddle):
 		out.append("os quadrantes de esporos acendem 3 e deixam poça")
@@ -111,19 +111,19 @@ func _molydeus(out: Array) -> void:
 	var b := _boss_battle("durao")
 	var m: BossMechanics = b.boss_mech
 	if m == null:
-		out.append("Molydeus deveria ter mecânicas")
+		out.append("Zburător deveria ter mecânicas")
 		return
 	if m.budget() != 3:
 		out.append("Durao tem orçamento 3 (%d)" % m.budget())
 	_to_phase(b, 0.69)
 	if _count(b, "molydeus_menor") != 2:
-		out.append("a 70%% as jaulas se abrem: 2 Molydeus menores (%d)" % _count(b, "molydeus_menor"))
+		out.append("a 70%% as jaulas se abrem: 2 Zburător menores (%d)" % _count(b, "molydeus_menor"))
 	for _i in 120:
 		b.step(Vector2.ZERO, 0.05)
 		if not m.mark.is_empty():
 			break
 	if m.mark.is_empty():
-		out.append("a 70%% Molydeus deveria marcar o herói")
+		out.append("a 70%% Zburător deveria marcar o herói")
 		return
 	if float(m.mark.slow) <= 0.0 or float(m.mark.follow) < 2.0:
 		out.append("a marca de sentença segue 2 s e retarda")
@@ -138,7 +138,7 @@ func _molydeus(out: Array) -> void:
 		if not m.sweep.is_empty():
 			break
 	if m.sweep.is_empty():
-		out.append("a 35%% Molydeus deveria varrer com correntes")
+		out.append("a 35%% Zburător deveria varrer com correntes")
 		return
 	if (m.sweep.offsets as Array).size() != 2:
 		out.append("as correntes são 2 feixes")

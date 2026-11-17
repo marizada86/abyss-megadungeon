@@ -58,12 +58,12 @@ func _permissions(out: Array[String]) -> void:
 		out.append("Dagruve não abre antes de vencer Domwieck")
 	ChapterFlow.clear_stage(p.data, "domwieck")
 	if not p.stage_unlocked("dagruve") or p.stage_unlocked("shedaklah"):
-		out.append("vencer Domwieck abre Dagruve, mas não Shedaklah")
+		out.append("vencer Domwieck abre Dagruve, mas não Lodovár")
 	if String(p.data.campaign_progress.next_stage) != "dagruve":
 		out.append("o próximo da campanha depois do capítulo 1 deveria ser Dagruve")
 	p.data.cleared["dagruve"] = true
 	if not p.stage_unlocked("shedaklah") or p.stage_unlocked("molor"):
-		out.append("Dagruve vencida abre Shedaklah, e só ela")
+		out.append("Dagruve vencida abre Lodovár, e só ela")
 	p.data.cleared["shedaklah"] = true
 	if not p.stage_unlocked("molor"):
 		out.append("a cadeia deveria seguir pelo campo unlock")
@@ -103,7 +103,7 @@ func _victory(out: Array[String]) -> void:
 	b.stage_cleared = true
 	b.enter_next_stage()
 	if b.stage_id != "shedaklah":
-		out.append("depois de Dagruve a descida segue para Shedaklah: %s" % b.stage_id)
+		out.append("depois de Dagruve a descida segue para Lodovár: %s" % b.stage_id)
 	var x := Battle.new(4311, "durvall", "domwieck")
 	x.map_size = Vector2(60, 60)
 	x.hero.pos = x.objective_target()

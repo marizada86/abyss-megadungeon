@@ -50,8 +50,8 @@ const STYX_CENTER_X := 27.0
 const STYX_CURRENT_HALF_WIDTH := 1.25
 const STYX_SHALLOW_HALF_WIDTH := 2.35
 const STYX_BANK_HALF_WIDTH := 3.35
-## Presença documentada do Estige na campanha: dois braços em Shedaklah,
-## embarcadouro em Durao, braço de Shendilavri e queda de Goranthis.
+## Presença documentada do Estige na campanha: dois braços em Lodovár,
+## embarcadouro em Durao, braço de Lavriê e queda de Goranthis.
 const STYX_STAGES := [&"shedaklah", &"durao", &"shendilavri", &"goranthis"]
 const MOUNTAINS := [
 	Vector3(7.0, 9.0, 2.2), Vector3(10.0, 30.0, 2.0),
